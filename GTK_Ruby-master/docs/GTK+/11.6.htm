@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html><head>
+
+
+  <title>Hello World in Ruby-GNOME2</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <meta name="GENERATOR" content="Quanta Plus">
+  <link rel="stylesheet" type="text/css" href="site-style.css">
+</head><body>
+<h1>11.6. Aspect Frame</h1>
+
+<p>The aspect frame widget is like a frame widget, except that it also enforces 
+the aspect ratio (that is, the ratio of the width to the height) of the child 
+widget to have a certain value, adding extra space if necessary. This is useful, 
+for instance, if you want to preview a larger image. The size of the preview should 
+vary when the user resizes the window, but the aspect ratio needs to always match 
+the original image.</p>
+
+<p>To create a new aspect frame use:</p>
+
+<pre>Gtk::AspectFrame.new( label, xalign, yalign, ratio, obey_child)</pre>
+
+<p><i>xalign</i> and <i>yalign</i> specify alignment as with Alignment widgets. If <i>obey_child</i> is true,
+the aspect ratio of a child widget will match the aspect ratio of the ideal size it requests.
+Otherwise, it is given by ratio.</p>
+
+<p>To change the options of an existing aspect frame, you can use:</p>
+
+<pre>Gtk::AspectFrame#set( xalign, yalign, ratio, obey_child)</pre>
+
+<p>As an example, the following program uses an AspectFrame to present a drawing area
+whose aspect ratio will always be 2:1, no matter how the user resizes the top-level 
+window.</p>
+
+<img src="images/aspect_frame.png" border="0" width="236" height="264">
+
+<pre>require 'gtk2'
+
+Gtk.init
+window = Gtk::Window.new( Gtk::Window::TOPLEVEL )
+window.title=( "Aspect Frame" )
+window.signal_connect( "destroy" ) { Gtk.main_quit }
+window.border_width=( 10 )
+
+# Create an aspect frame and it to our window
+aspect_frame = Gtk::AspectFrame.new( "2x1", 0.5, 0.5, 2, false )
+window.add( aspect_frame )
+drawing_area = Gtk::DrawingArea.new
+
+# Ask for a 200x200 window, but the AspectFrame will give us a 200x100
+# Window since we are forcing a 2x1 aspect ratio
+drawing_area.set_size_request( 200, 200 )
+aspect_frame.add( drawing_area )
+window.show_all
+Gtk.main
+</pre>
+
+<hr>
+<table>
+	<tbody><tr>
+		<td align="left"><a href="11.5.htm">Prev</a></td>
+		<td align="right"><a href="11.7.htm">Next</a></td>
+	</tr>
+</tbody></table>
+</body></html>

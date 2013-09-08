@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Rakefile_for_windows</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            Rakefile_for_windows
+        </h1>
+        <ul class="files">
+            <li>Rakefile_for_windows</li>
+            <li>Last modified: 2013-04-23 09:29:51 -0500</li>
+        </ul>
+    </div>
+
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>$:.unshift ‘.’</p>
+
+<p>require ‘rubygems’ require ‘rake’ require ‘rake/clean’ if RUBY_VERSION !=
+‘1.8.7’ require_relative ‘platform/skel’ else require
+File.join(File.dirname(__FILE__), ‘platform/skel’) end require ‘fileutils’
+require ‘find’ require ‘yaml’ include FileUtils</p>
+
+<p>APP = <a href="http://'APP'">YAML.load_file(File.join(ENV</a> || “.”,
+“app.yaml”)) APPNAME = <a href="http://'name'">APP</a> RELEASE_ID,
+RELEASE_NAME = <a href="http://'version'">APP</a>, <a
+href="http://'release'">APP</a> NAME = <a href="http://'shortname'">APP</a>
+|| <a href="http://'name'">APP</a>.downcase.gsub(/W+/, ”) SONAME = ‘shoes’</p>
+
+<p>GIT = <a href="http://'GIT'">ENV</a> || “git” REVISION = (`#{GIT} rev-list
+HEAD`.split.length + 1).to_s VERS = <a href="http://'VERSION'">ENV</a> ||
+“0.r#{REVISION}” PKG = “#{NAME}-#{VERS}” APPARGS = <a
+href="http://'run'">APP</a> FLAGS = %w[DEBUG VIDEO] VLC_VERSION =
+(RUBY_PLATFORM =~ /win32/ ? “0.8”: `vlc –version <a
+href="http://2">2>/dev/null`.split</a>) VLC_0_8 = VLC_VERSION !~ /^0.9/</p>
+
+<p>BIN = “*.{bundle,jar,o,so,obj,pdb,pch,res,lib,def,exp,exe,ilk}”
+CLEAN.include [“{bin,shoes}/#{BIN}”, “req   /#{BIN}”, “dist”]</p>
+
+<p>RUBY_SO = <a href="http://'RUBY_SO_NAME'">RbConfig::CONFIG</a> RUBY_V = <a
+href="http://'ruby_version'">RbConfig::CONFIG</a> RUBY_LIB_BASE = <a
+href="http://'libdir'">File.basename(RbConfig::CONFIG</a>)
+RUBY_PROGRAM_VERSION = <a
+href="http://'RUBY_PROGRAM_VERSION'">RbConfig::CONFIG</a> SHOES_RUBY_ARCH =
+<a href="http://'arch'">RbConfig::CONFIG</a> RUBY_1_9 = (RUBY_V =~ /^1.9/)
+if RUBY_1_9</p>
+
+<pre>$: &lt;&lt; &quot;.&quot;</pre>
+
+<p>end</p>
+
+<p>if <a href="http://'APP'">ENV</a></p>
+
+<pre class="ruby"><span class="ruby-node">%w[dmg icons]</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">subk</span><span class="ruby-operator">|</span>
+  <span class="ruby-constant">APP</span>[<span class="ruby-identifier">subk</span>].<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span><span class="ruby-operator">|</span>
+    <span class="ruby-constant">APP</span>[<span class="ruby-identifier">subk</span>][<span class="ruby-identifier">name</span>] = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">ENV</span>[<span class="ruby-string">'APP'</span>], <span class="ruby-constant">APP</span>[<span class="ruby-identifier">subk</span>][<span class="ruby-identifier">name</span>])
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>end</p>
+
+<p>if File.exists? “.git/refs/tags/#{RELEASE_ID}/#{RELEASE_NAME}”</p>
+
+<pre>abort &quot;** Rename this release (and add to lib/shoes.rb) #{RELEASE_NAME} has already been tagged.&quot;</pre>
+
+<p>end</p>
+
+<p>case RUBY_PLATFORM when /mingw/</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-string">'rakefile_mingw'</span>)
+<span class="ruby-constant">Builder</span> = <span class="ruby-constant">MakeMinGW</span>
+</pre>
+
+<p>when /darwin/</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-string">'rakefile_darwin'</span>)
+<span class="ruby-constant">Builder</span> = <span class="ruby-constant">MakeDarwin</span>
+</pre>
+
+<p>when /linux/</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-string">'rakefile_linux'</span>)
+<span class="ruby-constant">Builder</span> = <span class="ruby-constant">MakeLinux</span>
+</pre>
+
+<p>else</p>
+
+<pre>puts &quot;Sorry, your platform [#{RUBY_PLATFORM}] is not supported...&quot;</pre>
+
+<p>end</p>
+
+<p># ————————– # common platform tasks</p>
+
+<p>desc “Same as `rake build’” task :default =&gt; [:build]</p>
+
+<p>desc “Does a full compile, with installer” task :package =&gt; [:build,
+:installer]</p>
+
+<p>task “shoes/version.h” do |t|</p>
+
+<pre class="ruby"><span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">t</span>.<span class="ruby-identifier">name</span>, <span class="ruby-string">'w'</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">f</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">%Q{#define SHOES_RELEASE_ID #{RELEASE_ID}\n#define SHOES_RELEASE_NAME &quot;#{RELEASE_NAME}&quot;\n#define SHOES_REVISION #{REVISION}\n#define SHOES_BUILD_DATE #{Time.now.strftime(&quot;%Y%m%d&quot;)}\n#define SHOES_PLATFORM &quot;#{RUBY_PLATFORM}&quot;\n}</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>end</p>
+
+<p>task “dist/VERSION.txt” do |t|</p>
+
+<pre class="ruby"><span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">t</span>.<span class="ruby-identifier">name</span>, <span class="ruby-string">'w'</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">f</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">%Q{shoes #{RELEASE_NAME.downcase} (0.r#{REVISION}) [#{RUBY_PLATFORM} Ruby#{RUBY_VERSION}]}</span>
+  <span class="ruby-node">%w[VIDEO DEBUG]</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">f</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot; +#{x.downcase}&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">ENV</span>[<span class="ruby-identifier">x</span>] }
+  <span class="ruby-identifier">f</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;\n&quot;</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>end</p>
+
+<p># shoes is small, if any include changes, go ahead and build from scratch.
+SRC.zip(OBJ).each do |c, o|</p>
+
+<pre class="ruby"><span class="ruby-identifier">file</span> <span class="ruby-identifier">o</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-identifier">c</span>] <span class="ruby-operator">+</span> <span class="ruby-constant">Dir</span>[<span class="ruby-string">&quot;shoes/*.h&quot;</span>]
+</pre>
+
+<p>end</p>
+
+<p># ————————– # tasks depending on Builder = MakeLinux|MakeDarwin|<a
+href="../classes/MakeMinGW.html">MakeMinGW</a></p>
+
+<p>desc “Does a full compile, for the OS you’re running on” task :build =&gt;
+[:build_os, “dist/VERSION.txt”] do</p>
+
+<pre>Builder.common_build
+Builder.copy_deps_to_dist
+Builder.copy_files_to_dist
+Builder.setup_system_resources</pre>
+
+<p>end</p>
+
+<p>task “dist/#{NAME}” =&gt; [“dist/lib#{SONAME}.#{DLEXT}”, “bin/main.o”] +
+ADD_DLL do |t|</p>
+
+<pre>Builder.make_app t.name</pre>
+
+<p>end</p>
+
+<p>task “dist/lib#{SONAME}.#{DLEXT}” =&gt; [‘shoes/version.h’] + OBJ do |t|</p>
+
+<pre>Builder.make_so t.name</pre>
+
+<p>end</p>
+
+<p>rule “.o” =&gt; “.m” do |t|</p>
+
+<pre>Builder.cc t</pre>
+
+<p>end</p>
+
+<p>rule “.o” =&gt; “.c” do |t|</p>
+
+<pre>Builder.cc t</pre>
+
+<p>end</p>
+
+<p>task :installer do</p>
+
+<pre>Builder.make_installer</pre>
+
+<p>end</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+              </div>
+
+    </div>
+  </body>
+</html>

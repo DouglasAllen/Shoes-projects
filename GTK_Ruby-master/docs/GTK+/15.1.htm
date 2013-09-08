@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html><head>
+
+
+  <title>Hello World in Ruby-GNOME2</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <link rel="stylesheet" type="text/css" href="site-style.css">
+</head><body>
+<h1>15.1. Timeouts</h1>
+
+<p>You may be wondering how you make Ruby-GNOME2 do useful work while
+in Gtk.main. Well, you have several options. Using the following method
+you can create a timeout method that will be called every "interval"
+milliseconds.</p>
+
+<pre>Gtk.timeout_add( interval ) { method( data ) }</pre>
+
+<p>The first argument is the number of milliseconds between calls to
+your method. The second argument is the method you wish to have called,
+and the third, the data passed to the callback method. The return value
+is an integer "tag" which may be used to stop the timeout by calling:</p>
+
+<pre>Gtk.timeout_remove( tag )</pre>
+
+<p>You may also stop the timeout out method by returning zero or <i>false</i> from your callback method. Obviously this means if you want your 
+method to continue, it should return a non-zero value, i.e. <i>true</i>.</p> 
+
+<hr>
+<table>
+	<tbody><tr>
+		<td align="left"><a href="15.0.htm">Prev</a></td>
+		<td align="right"><a href="15.2.htm">Next</a></td>
+	</tr>
+</tbody></table>
+	  </body></html>

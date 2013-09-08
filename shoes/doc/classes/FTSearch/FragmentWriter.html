@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>FTSearch::FragmentWriter</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            FTSearch::FragmentWriter 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/req/ftsearch/lib/ftsearch/fragment_writer_rb.html">req/ftsearch/lib/ftsearch/fragment_writer.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-add_document">add_document</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-documents">documents</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>F</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-field_id">field_id</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-fields">fields</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-finish-21">finish!</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>M</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-merge">merge</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">DEFAULT_OPTIONS</td>
+            <td>=</td>
+            <td class="attr-value">{
+:path                      =&gt; &quot;ftsearch-#{Process.pid}-#{rand(100000)}&quot;,
+:default_analyzer_class    =&gt; FTSearch::Analysis::WhiteSpaceAnalyzer,
+:field_infos_class         =&gt; FieldInfos,
+:fulltext_writer_class     =&gt; FulltextWriter,
+:suffix_array_writer_class =&gt; SuffixArrayWriter,
+:doc_map_writer_class      =&gt; DocumentMapWriter,
+:field_infos               =&gt; nil,
+:fulltext_writer           =&gt; nil,
+:suffix_array_writer       =&gt; nil,
+:doc_map_writer_nil        =&gt; nil,
+}</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+      <!-- Section attributes -->
+      <div class="sectiontitle">Attributes</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>doc_map_writer</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>fulltext_writer</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>suffix_array_writer</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+      </table>
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>(options = {})
+            
+            <a href="../../classes/FTSearch/FragmentWriter.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/ftsearch/lib/ftsearch/fragment_writer.rb, line 31</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">options</span> = <span class="ruby-constant">DEFAULT_OPTIONS</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">create</span>  = <span class="ruby-identifier">lambda</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span>, *<span class="ruby-identifier">args</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">options</span>[<span class="ruby-identifier">name</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">options</span>[(<span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;_class&quot;</span>).<span class="ruby-identifier">to_sym</span>].<span class="ruby-identifier">new</span>(*<span class="ruby-identifier">args</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">build_path</span> = <span class="ruby-identifier">lambda</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">suffix</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@path</span>
+      <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-ivar">@tmpdir</span>, <span class="ruby-identifier">suffix</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-keyword">nil</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@path</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:path</span>]
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@path</span>
+    <span class="ruby-ivar">@path</span>   = <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-ivar">@path</span>)
+    <span class="ruby-ivar">@tmpdir</span> = <span class="ruby-ivar">@path</span> <span class="ruby-operator">+</span> <span class="ruby-node">&quot;#{Process.pid}-#{rand(100000)}&quot;</span>
+    <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">mkdir_p</span>(<span class="ruby-ivar">@tmpdir</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-ivar">@fulltext_writer</span>     = <span class="ruby-identifier">create</span>.<span class="ruby-identifier">call</span>(<span class="ruby-value">:fulltext_writer</span>, <span class="ruby-value">:path</span>     =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">build_path</span>[<span class="ruby-string">&quot;fulltext&quot;</span>])
+  <span class="ruby-ivar">@suffix_array_writer</span> = <span class="ruby-identifier">create</span>.<span class="ruby-identifier">call</span>(<span class="ruby-value">:suffix_array_writer</span>, <span class="ruby-value">:path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">build_path</span>[<span class="ruby-string">&quot;suffixes&quot;</span>])
+  <span class="ruby-ivar">@doc_map_writer</span>      = <span class="ruby-identifier">create</span>.<span class="ruby-identifier">call</span>(<span class="ruby-value">:doc_map_writer</span>, <span class="ruby-value">:path</span>      =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">build_path</span>[<span class="ruby-string">&quot;docmap&quot;</span>])
+
+  <span class="ruby-identifier">default_analyzer</span> = (<span class="ruby-identifier">klass</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:default_analyzer_class</span>]) <span class="ruby-operator">?</span> <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">new</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@field_infos</span>     = <span class="ruby-identifier">create</span>.<span class="ruby-identifier">call</span>(<span class="ruby-value">:field_infos</span>, <span class="ruby-value">:default_analyzer</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">default_analyzer</span>)
+  <span class="ruby-ivar">@num_documents</span>   = <span class="ruby-number">0</span>
+  <span class="ruby-ivar">@field_map</span>       = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">h</span>,<span class="ruby-identifier">k</span><span class="ruby-operator">|</span> <span class="ruby-identifier">h</span>[<span class="ruby-identifier">k</span>.<span class="ruby-identifier">to_sym</span>] = <span class="ruby-identifier">h</span>.<span class="ruby-identifier">size</span>}
+  <span class="ruby-ivar">@field_map</span>[<span class="ruby-value">:uri</span>] <span class="ruby-comment"># init</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-add_document">
+            
+              <b>add_document</b>(doc_hash)
+            
+            <a href="../../classes/FTSearch/FragmentWriter.html#method-i-add_document" name="method-i-add_document" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-add_document_source')" id="l_method-i-add_document_source">show</a>
+                
+              </p>
+              <div id="method-i-add_document_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/ftsearch/lib/ftsearch/fragment_writer.rb, line 61</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">add_document</span>(<span class="ruby-identifier">doc_hash</span>)
+  <span class="ruby-identifier">uri</span> = <span class="ruby-identifier">doc_hash</span>[<span class="ruby-value">:uri</span>] <span class="ruby-operator">||</span> <span class="ruby-ivar">@num_documents</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-ivar">@fulltext_writer</span>.<span class="ruby-identifier">add_document</span>(<span class="ruby-ivar">@num_documents</span>, <span class="ruby-identifier">doc_hash</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:uri</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">uri</span>), 
+                                <span class="ruby-ivar">@field_map</span>, <span class="ruby-ivar">@field_infos</span>, <span class="ruby-ivar">@suffix_array_writer</span>, <span class="ruby-ivar">@doc_map_writer</span>)
+  <span class="ruby-ivar">@num_documents</span> <span class="ruby-operator">+=</span> <span class="ruby-number">1</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-documents">
+            
+              <b>documents</b>()
+            
+            <a href="../../classes/FTSearch/FragmentWriter.html#method-i-documents" name="method-i-documents" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-documents_source')" id="l_method-i-documents_source">show</a>
+                
+              </p>
+              <div id="method-i-documents_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/ftsearch/lib/ftsearch/fragment_writer.rb, line 90</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">documents</span>
+  <span class="ruby-ivar">@num_documents</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-field_id">
+            
+              <b>field_id</b>(field)
+            
+            <a href="../../classes/FTSearch/FragmentWriter.html#method-i-field_id" name="method-i-field_id" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-field_id_source')" id="l_method-i-field_id_source">show</a>
+                
+              </p>
+              <div id="method-i-field_id_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/ftsearch/lib/ftsearch/fragment_writer.rb, line 94</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">field_id</span>(<span class="ruby-identifier">field</span>)
+  <span class="ruby-ivar">@field_map</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">field</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@field_map</span>[<span class="ruby-identifier">field</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-fields">
+            
+              <b>fields</b>()
+            
+            <a href="../../classes/FTSearch/FragmentWriter.html#method-i-fields" name="method-i-fields" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-fields_source')" id="l_method-i-fields_source">show</a>
+                
+              </p>
+              <div id="method-i-fields_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/ftsearch/lib/ftsearch/fragment_writer.rb, line 86</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">fields</span>
+  <span class="ruby-ivar">@field_map</span>.<span class="ruby-identifier">sort_by</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">field</span>, <span class="ruby-identifier">fid</span><span class="ruby-operator">|</span> <span class="ruby-identifier">fid</span>}.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">field</span>, <span class="ruby-identifier">fid</span><span class="ruby-operator">|</span> <span class="ruby-identifier">field</span>}
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-finish-21">
+            
+              <b>finish!</b>()
+            
+            <a href="../../classes/FTSearch/FragmentWriter.html#method-i-finish-21" name="method-i-finish-21" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-finish-21_source')" id="l_method-i-finish-21_source">show</a>
+                
+              </p>
+              <div id="method-i-finish-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/ftsearch/lib/ftsearch/fragment_writer.rb, line 98</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">finish!</span>
+  <span class="ruby-ivar">@fulltext_writer</span>.<span class="ruby-identifier">finish!</span>
+  <span class="ruby-identifier">fulltext</span> = <span class="ruby-ivar">@fulltext_writer</span>.<span class="ruby-identifier">data</span>
+  <span class="ruby-ivar">@suffix_array_writer</span>.<span class="ruby-identifier">finish!</span>(<span class="ruby-identifier">fulltext</span>)
+  <span class="ruby-ivar">@doc_map_writer</span>.<span class="ruby-identifier">finish!</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@path</span>
+    <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-ivar">@tmpdir</span>, <span class="ruby-string">&quot;fieldmap&quot;</span>), <span class="ruby-string">&quot;wb&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+      <span class="ruby-ivar">@field_map</span>.<span class="ruby-identifier">sort_by</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">field_name</span>, <span class="ruby-identifier">field_id</span><span class="ruby-operator">|</span> <span class="ruby-identifier">field_id</span>}.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">field_name</span>, <span class="ruby-identifier">field_id</span><span class="ruby-operator">|</span> 
+        <span class="ruby-identifier">f</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">field_name</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-constant">File</span>.<span class="ruby-identifier">rename</span>(<span class="ruby-ivar">@tmpdir</span>, <span class="ruby-ivar">@path</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-merge">
+            
+              <b>merge</b>(fragment_directory)
+            
+            <a href="../../classes/FTSearch/FragmentWriter.html#method-i-merge" name="method-i-merge" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-merge_source')" id="l_method-i-merge_source">show</a>
+                
+              </p>
+              <div id="method-i-merge_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/ftsearch/lib/ftsearch/fragment_writer.rb, line 68</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">merge</span>(<span class="ruby-identifier">fragment_directory</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-string">&quot;Cannot import old data unless the destination Fragment is empty.&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@num_documents</span> <span class="ruby-operator">==</span> <span class="ruby-number">0</span>
+  <span class="ruby-comment"># TODO: use a FragmentReader to access old data</span>
+  <span class="ruby-identifier">fulltext_reader</span>     = <span class="ruby-constant">FulltextReader</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{fragment_directory}/fulltext&quot;</span>)
+  <span class="ruby-identifier">suffix_array_reader</span> = <span class="ruby-constant">SuffixArrayReader</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">fulltext_reader</span>, <span class="ruby-keyword">nil</span>, 
+                                              <span class="ruby-value">:path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{fragment_directory}/suffixes&quot;</span>)
+  <span class="ruby-identifier">doc_map_reader</span>      = <span class="ruby-constant">DocumentMapReader</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{fragment_directory}/docmap&quot;</span>)
+  <span class="ruby-ivar">@fulltext_writer</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">fulltext_reader</span>)
+  <span class="ruby-ivar">@suffix_array_writer</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">suffix_array_reader</span>)
+  <span class="ruby-ivar">@doc_map_writer</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">doc_map_reader</span>)
+  <span class="ruby-comment">#FIXME: .num_documents will be wrong if some URIs were repeated</span>
+  <span class="ruby-ivar">@num_documents</span> = <span class="ruby-identifier">doc_map_reader</span>.<span class="ruby-identifier">num_documents</span>
+  <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">fragment_directory</span>, <span class="ruby-string">&quot;fieldmap&quot;</span>), <span class="ruby-string">&quot;rb&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">i</span> = <span class="ruby-number">0</span>
+    <span class="ruby-identifier">f</span>.<span class="ruby-identifier">each_line</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">l</span><span class="ruby-operator">|</span> <span class="ruby-ivar">@field_map</span>[<span class="ruby-identifier">l</span>.<span class="ruby-identifier">chomp</span>.<span class="ruby-identifier">to_sym</span>] = <span class="ruby-identifier">i</span>; <span class="ruby-identifier">i</span><span class="ruby-operator">+=</span> <span class="ruby-number">1</span>}
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

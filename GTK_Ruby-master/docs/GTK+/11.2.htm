@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html><head>
+
+
+  <title>Hello World in Ruby-GNOME2</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <meta name="GENERATOR" content="Quanta Plus">
+  <link rel="stylesheet" type="text/css" href="site-style.css">
+</head><body>
+<h1>11.2. The Alignment Widget</h1>
+
+<p>The alignment widget allows you to place a widget within its window at a position and 
+size relative to the size of the Alignment widget itself. For example, it can be very useful 
+for centering a widget within the window.</p>
+
+<p>There are only two methods associated with the Alignment widget:</p>
+
+<pre>Gtk::Alignment.new( xalign, yalign, xscale, yscale )
+
+Gtk::Alignment#set( xalign, yalign, xscale, yscale )</pre>
+
+<p>The first method creates a new Alignment widget with the specified parameters. The second method 
+allows the alignment parameters of an exisiting Alignment widget to be altered.</p>
+
+<p>All four alignment parameters are floating point numbers which can range from 0.0 to 1.0. The <i>xalign</i> 
+and <i>yalign</i> arguments affect the position of the widget placed within the Alignment widget. The 
+<i>xscale</i> and <i>yscale</i> arguments effect the amount of space allocated to the widget.
+
+</p><p>For an example of using an Alignment widget, refer to the example for the Progress Bar widget.</p>
+
+<hr>
+<table>
+	<tbody><tr>
+		<td align="left"><a href="11.1.htm">Prev</a></td>
+		<td align="right"><a href="11.3.htm">Next</a></td>
+	</tr>
+</tbody></table>
+</body></html>

@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Makefile</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            Makefile
+        </h1>
+        <ul class="files">
+            <li>ext/shoes/Makefile</li>
+            <li>Last modified: 2013-04-26 21:57:23 -0500</li>
+        </ul>
+    </div>
+
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>SHELL = /bin/sh</p>
+
+<p># V=0 quiet, V=1 verbose.  other values don’t work. V = 0 Q1 = $(V:1=) Q =
+$(Q1:0=@) n=$(NULLCMD) ECHO1 = $(V:1=@$n) ECHO = $(ECHO1:0=@echo)</p>
+
+<p>#### Start of system configuration section. ####</p>
+
+<p>srcdir = . topdir = /C/Ruby193/include/ruby-1.9.1 hdrdir =
+/C/Ruby193/include/ruby-1.9.1 arch_hdrdir =
+C:/Ruby193/include/ruby-1.9.1/$(arch) VPATH =
+$(srcdir):$(arch_hdrdir)/ruby:$(hdrdir)/ruby</p>
+
+<p>DESTDIR = C: prefix = $(DESTDIR)/Ruby193 rubylibprefix =
+$(libdir)/$(RUBY_BASE_NAME) exec_prefix = $(prefix) vendorhdrdir =
+$(rubyhdrdir)/vendor_ruby sitehdrdir = $(rubyhdrdir)/site_ruby rubyhdrdir =
+$(includedir)/$(RUBY_BASE_NAME)-$(ruby_version) vendordir =
+$(rubylibprefix)/vendor_ruby sitedir = $(rubylibprefix)/site_ruby ridir =
+$(datarootdir)/$(RI_BASE_NAME) mandir = $(datarootdir)/man localedir =
+$(datarootdir)/locale libdir = $(exec_prefix)/lib psdir = $(docdir) pdfdir
+= $(docdir) dvidir = $(docdir) htmldir = $(docdir) infodir =
+$(datarootdir)/info docdir = $(datarootdir)/doc/$(PACKAGE) oldincludedir =
+$(DESTDIR)/usr/include includedir = $(prefix)/include localstatedir =
+$(prefix)/var sharedstatedir = $(prefix)/com sysconfdir = $(prefix)/etc
+datadir = $(datarootdir) datarootdir = $(prefix)/share libexecdir =
+$(exec_prefix)/libexec sbindir = $(exec_prefix)/sbin bindir =
+$(exec_prefix)/bin rubylibdir = $(rubylibprefix)/$(ruby_version) archdir =
+$(rubylibdir)/$(arch) sitelibdir = $(sitedir)/$(ruby_version) sitearchdir =
+$(sitelibdir)/$(sitearch) vendorlibdir = $(vendordir)/$(ruby_version)
+vendorarchdir = $(vendorlibdir)/$(sitearch)</p>
+
+<p>NULLCMD = :</p>
+
+<p>CC = gcc CXX = g++ LIBRUBY = lib$(RUBY_SO_NAME).dll.a LIBRUBY_A =
+lib$(RUBY_SO_NAME)-static.a LIBRUBYARG_SHARED = -l$(RUBY_SO_NAME)
+LIBRUBYARG_STATIC = -l$(RUBY_SO_NAME)-static empty = OUTFLAG = -o $(empty)
+COUTFLAG = -o $(empty)</p>
+
+<p>RUBY_EXTCONF_H =  cflags   =  $(optflags) $(debugflags) $(warnflags)
+optflags = -O3 -fno-omit-frame-pointer debugflags = -g warnflags = -Wall
+-Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long
+-Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings
+-Wdeclaration-after-statement -Wimplicit-function-declaration CFLAGS   = 
+$(cflags) $(ARCH_FLAG) INCFLAGS = -I. -I$(arch_hdrdir)
+-I$(hdrdir)/ruby/backward -I$(hdrdir) -I$(srcdir) DEFS     =  CPPFLAGS = 
+-IC:/MinGW/include -IC:/GTK+/include -IC:/GTK+/include/glib-2.0
+-IC:/GTK+/lib/glib-2.0/include -IC:/GTK+/include/pango-1.0
+-IC:/Ruby193/include -DFD_SETSIZE=2048 $(DEFS) $(cppflags)-Wall
+-Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations
+-Wredundant-decls   -O3 -fno-omit-frame-pointer -g -Wall -Wextra
+-Wno-unused-parameter -Wno-parentheses -Wno-long-long
+-Wno-missing-field-initializers -Werror=pointer-arith -Werror=write-strings
+-Werror=declaration-after-statement -Werror=implicit-function-declaration
+-x objective-c -fobjc-exceptions -g CXXFLAGS = $(CFLAGS) $(cxxflags)
+ldflags  = -L.  -lcairo -lpangocairo-1.0 -lgif -ljpeg dldflags = 
+-Wl,–enable-auto-image-base,–enable-auto-import $(DEFFILE) ARCH_FLAG = 
+DLDFLAGS = $(ldflags) $(dldflags) $(ARCH_FLAG) LDSHARED = $(CC) -shared
+$(if $(filter-out -g -g0,$(debugflags)),,-s) LDSHAREDXX = $(CXX) -shared
+$(if $(filter-out -g -g0,$(debugflags)),,-s) AR = ar EXEEXT = .exe</p>
+
+<p>RUBY_BASE_NAME = ruby RUBY_INSTALL_NAME = ruby RUBY_SO_NAME =
+msvcrt-ruby191 arch = i386-mingw32 sitearch = i386-msvcrt ruby_version =
+1.9.1 ruby = C:/Ruby193/bin/ruby <a
+href="../../req/json/RUBY.html">RUBY</a> = $(ruby) RM = rm -f RM_RF = $(<a
+href="../../req/json/RUBY.html">RUBY</a>) -run -e rm – -rf RMDIRS = rmdir
+–ignore-fail-on-non-empty -p MAKEDIRS = /usr/bin/mkdir -p <a
+href="../../platform/nix/INSTALL.html">INSTALL</a> = /usr/bin/install -c
+INSTALL_PROG = $(<a href="../../platform/nix/INSTALL.html">INSTALL</a>) -m
+0755 INSTALL_DATA = $(<a
+href="../../platform/nix/INSTALL.html">INSTALL</a>) -m 644 COPY = cp TOUCH
+= exit &gt;</p>
+
+<p>#### End of system configuration section. ####</p>
+
+<p>preload =</p>
+
+<p>libpath = . $(libdir) C:/MinGW/lib C:/GTK+/lib C:/Ruby193/lib LIBPATH = 
+-L. -L$(libdir) -LC:/MinGW/lib -LC:/GTK+/lib -LC:/Ruby193/lib DEFFILE =
+$(TARGET)-$(arch).def</p>
+
+<p>CLEANFILES = mkmf.log $(DEFFILE) DISTCLEANFILES =  DISTCLEANDIRS =</p>
+
+<p>extout =  extout_prefix =  target_prefix =  LOCAL_LIBS =  LIBS =
+$(LIBRUBYARG_SHARED)  -lshell32 -lws2_32 -limagehlp -lshlwapi</p>
+
+<p>SRCS = app.c canvas.c effects.c gtk.c image.c internal.c shoes_ruby.c
+windows.c world.c cocoa.m OBJS = app.o canvas.o effects.o gtk.o image.o
+internal.o shoes_ruby.o windows.o world.o cocoa.o TARGET = shoes DLLIB =
+$(TARGET).so EXTSTATIC =  STATIC_LIB =</p>
+
+<p>BINDIR        = $(bindir) RUBYCOMMONDIR = $(sitedir)$(target_prefix)
+RUBYLIBDIR    = $(sitelibdir)$(target_prefix) RUBYARCHDIR   =
+$(sitearchdir)$(target_prefix) HDRDIR        =
+$(rubyhdrdir)/ruby$(target_prefix) ARCHHDRDIR    =
+$(rubyhdrdir)/$(arch)/ruby$(target_prefix)</p>
+
+<p>TARGET_SO     = $(DLLIB) CLEANLIBS     = $(TARGET).so  CLEANOBJS     = *.o 
+*.bak</p>
+
+<p>all:    $(DLLIB) static: $(STATIC_LIB) .PHONY: all install static
+install-so install-rb .PHONY: clean clean-so clean-rb</p>
+<dl class="rdoc-list note-list"><dt>clean-static
+<dd></dd><dt>clean-rb-default
+<dd></dd><dt>clean-rb
+<dd></dd><dt>clean-so
+<dd>
+<p>clean: clean-so clean-static clean-rb-default clean-rb</p>
+
+<pre>-$(Q)$(RM) $(CLEANLIBS) $(CLEANOBJS) $(CLEANFILES) .*.time</pre>
+<dl class="rdoc-list note-list"><dt>distclean-rb-default
+<dd></dd><dt>distclean-rb
+<dd></dd><dt>distclean-so
+<dd>
+<p>distclean: clean distclean-so distclean-rb-default distclean-rb</p>
+
+<pre>@-$(RM) Makefile $(RUBY_EXTCONF_H) conftest.* mkmf.log
+@-$(RM) core ruby$(EXEEXT) *~ $(DISTCLEANFILES)
+@-$(RMDIRS) $(DISTCLEANDIRS) 2&gt; /dev/null || true</pre>
+
+<p>realclean: distclean install: install-so install-rb</p>
+
+<p>install-so: $(RUBYARCHDIR)/$(DLLIB) $(RUBYARCHDIR)/$(DLLIB): $(DLLIB)</p>
+
+<pre>-$(Q)$(MAKEDIRS) $(@D)
+$(INSTALL_PROG) $(DLLIB) $(@D)</pre>
+<dl class="rdoc-list note-list"><dt>clean-static
+<dd>
+<p>-$(Q)$(RM) $(STATIC_LIB)</p>
+</dd></dl>
+
+<p>install-rb: pre-install-rb install-rb-default install-rb-default:
+pre-install-rb-default pre-install-rb: <a href="Makefile.html">Makefile</a>
+pre-install-rb-default: <a href="Makefile.html">Makefile</a>
+pre-install-rb-default:</p>
+
+<pre>$(ECHO) installing default shoes libraries</pre>
+
+<p>./.RUBYARCHDIR.time:</p>
+
+<pre>$(Q) $(MAKEDIRS) $(RUBYARCHDIR)
+$(Q) $(TOUCH) $@</pre>
+
+<p>site-install: site-install-so site-install-rb site-install-so: install-so
+site-install-rb: install-rb</p>
+
+<p>.SUFFIXES: .c .m .cc .mm .cxx .cpp .o</p>
+
+<p>.cc.o:</p>
+
+<pre>$(ECHO) compiling $(&lt;)
+$(Q) $(CXX) $(INCFLAGS) $(CPPFLAGS) $(CXXFLAGS) $(COUTFLAG)$@ -c $&lt;</pre>
+
+<p>.mm.o:</p>
+
+<pre>$(ECHO) compiling $(&lt;)
+$(Q) $(CXX) $(INCFLAGS) $(CPPFLAGS) $(CXXFLAGS) $(COUTFLAG)$@ -c $&lt;</pre>
+
+<p>.cxx.o:</p>
+
+<pre>$(ECHO) compiling $(&lt;)
+$(Q) $(CXX) $(INCFLAGS) $(CPPFLAGS) $(CXXFLAGS) $(COUTFLAG)$@ -c $&lt;</pre>
+
+<p>.cpp.o:</p>
+
+<pre>$(ECHO) compiling $(&lt;)
+$(Q) $(CXX) $(INCFLAGS) $(CPPFLAGS) $(CXXFLAGS) $(COUTFLAG)$@ -c $&lt;</pre>
+
+<p>.c.o:</p>
+
+<pre>$(ECHO) compiling $(&lt;)
+$(Q) $(CC) $(INCFLAGS) $(CPPFLAGS) $(CFLAGS) $(COUTFLAG)$@ -c $&lt;</pre>
+
+<p>.m.o:</p>
+
+<pre>$(ECHO) compiling $(&lt;)
+$(Q) $(CC) $(INCFLAGS) $(CPPFLAGS) $(CFLAGS) $(COUTFLAG)$@ -c $&lt;</pre>
+
+<p>$(DLLIB): $(DEFFILE) $(OBJS) <a href="Makefile.html">Makefile</a></p>
+
+<pre>$(ECHO) linking shared-object $(DLLIB)
+-$(Q)$(RM) $(@)
+$(Q) $(LDSHARED) -o $@ $(OBJS) $(LIBPATH) $(DLDFLAGS) $(LOCAL_LIBS) $(LIBS)</pre>
+
+<p>$(DEFFILE):</p>
+
+<pre>$(ECHO) generating $(@)
+$(Q) $(RUBY) -e &quot;puts 'EXPORTS', '' + 'Init_$(TARGET)'.sub(/\..*\z/,'')&quot;  &gt; $@</pre>
+
+<p>$(OBJS): $(hdrdir)/ruby.h $(hdrdir)/ruby/defines.h
+$(arch_hdrdir)/ruby/config.h</p>
+</dd></dl>
+</dd></dl>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+              </div>
+
+    </div>
+  </body>
+</html>

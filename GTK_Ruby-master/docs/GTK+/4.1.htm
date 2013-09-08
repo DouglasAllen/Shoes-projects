@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html><head>
+
+
+  <title>Hello World in Ruby-GNOME2</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <meta name="GENERATOR" content="Quanta Plus">
+  <link rel="stylesheet" type="text/css" href="site-style.css">
+</head><body>
+<h1>4.1. More on Signal Handlers</h1>
+<p>There are a few things you probably noticied in the previous examples that may need a little explaining. 
+Let's take another look at  the <i>#signal_connect</i> method again.</p>
+
+<pre>GLib::Instantiatable#signal_connect( name, data ) { |widget, data| callback_method }</pre>
+
+<p>As stated before, you can have as many callbacks per signal 
+and per object as you need, and each will be executed in turn, 
+in the order they were attached.</p>
+
+<p>This tag allows you to remove this callback from the list by using:</p>
+
+<pre>GLib::Instantiatable#signal_handler_disconnect</pre>
+
+<p>So, by passing in the widget you wish to remove the handler from, and 
+the tag returned by one of the signal_connect methods, you can disconnect 
+a signal handler.</p>
+
+<p>You can also temporarily disable signal handlers with the 
+GLib::Instantiatable#signal_handler_block and 
+GLib::Instantiatable#signal_handler_unblock methods.</p>
+
+<pre>GLib::Instantiatable#signal_handler_block
+GLib::Instantiatable#signal_handler_unblock
+</pre>
+
+<hr>
+<table>
+	<tbody><tr>
+		<td align="left"><a href="4.0.htm">Prev</a></td>
+		<td align="right"><a href="4.2.htm">Next</a></td>
+	</tr>
+</tbody></table>
+</body></html>

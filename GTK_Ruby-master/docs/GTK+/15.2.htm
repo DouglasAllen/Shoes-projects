@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html><head>
+
+
+  <title>Hello World in Ruby-GNOME2</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <link rel="stylesheet" type="text/css" href="site-style.css">
+</head><body>
+<h1>15.2. Monitoring IO</h1>
+
+<p>A nifty feature of GDK is the ability to have it check for data on a
+file descriptor for you. This is especially useful for networking
+applications. The method:</p>
+
+<pre> Gdk::Input#add( source, condition ) { method( data ) }</pre>
+
+<p>Where the first argument is the file descriptor you wish to have
+watched, and the second specifies what you want GDK to look for. This
+may
+be one of:</p>
+
+<pre>Gdk::Input::READ
+Gdk::Input::WRITE
+Gdk::Input::EXCEPTION
+</pre>
+
+<p>The first calls your method when there is data ready for reading on
+your file descriptor. The second, calls your method when the file
+descriptor
+is ready for writting.</p>
+
+<p>As I'm sure you've figured out by now, the third argument is the
+method you wish to have called when the above conditions are satisfied,
+and the fourth is the data to pass to the method.</p>
+
+<p>The return value is a tag that may be used to stop GDK from monitoring this file descriptor using the following method:</p>
+
+<pre>Gdk::Input#remove( tag )</pre>
+
+<hr>
+<table>
+	<tbody><tr>
+		<td align="left"><a href="15.1.htm">Prev</a></td>
+		<td align="right"><a href="15.3.htm">Next</a></td>
+	</tr>
+</tbody></table>
+		  </body></html>

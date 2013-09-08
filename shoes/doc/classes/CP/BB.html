@@ -1,0 +1,691 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>CP::BB</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            CP::BB 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/req/chipmunk/ext/chipmunk/rb_chipmunk_c.html">req/chipmunk/ext/chipmunk/rb_chipmunk.c</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>B</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-b">b</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-b-3D">b=</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-clamp_vect">clamp_vect</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-intersect-3F">intersect?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>L</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-l">l</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-l-3D">l=</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-r">r</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-r-3D">r=</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-t">t</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-t-3D">t=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-to_s">to_s</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>W</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-wrap_vect">wrap_vect</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>(p1, p2, p3, p4)
+            
+            <a href="../../classes/CP/BB.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre>static VALUE
+rb_cpBBInitialize(VALUE self, VALUE l, VALUE b, VALUE r, VALUE t)
+{
+        cpBB *bb = BBGET(self);
+        bb-&gt;l = NUM2DBL(l);
+        bb-&gt;b = NUM2DBL(b);
+        bb-&gt;r = NUM2DBL(r);
+        bb-&gt;t = NUM2DBL(t);
+        
+        return self;
+}</pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-b">
+            
+              <b>b</b>()
+            
+            <a href="../../classes/CP/BB.html#method-i-b" name="method-i-b" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-b_source')" id="l_method-i-b_source">show</a>
+                
+              </p>
+              <div id="method-i-b_source" class="dyn-source">
+                <pre>static VALUE
+rb_cpBBGetB(VALUE self)
+{
+        return rb_float_new(BBGET(self)-&gt;b);
+}</pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-b-3D">
+            
+              <b>b=</b>(p1)
+            
+            <a href="../../classes/CP/BB.html#method-i-b-3D" name="method-i-b-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-b-3D_source')" id="l_method-i-b-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-b-3D_source" class="dyn-source">
+                <pre>static VALUE
+rb_cpBBSetB(VALUE self, VALUE val)
+{
+        BBGET(self)-&gt;b = NUM2DBL(val);
+        return val;
+}</pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-clamp_vect">
+            
+              <b>clamp_vect</b>(p1)
+            
+            <a href="../../classes/CP/BB.html#method-i-clamp_vect" name="method-i-clamp_vect" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-clamp_vect_source')" id="l_method-i-clamp_vect_source">show</a>
+                
+              </p>
+              <div id="method-i-clamp_vect_source" class="dyn-source">
+                <pre>static VALUE
+rb_cpBBClampVect(VALUE self, VALUE v)
+{
+        return VNEW(cpBBClampVect(*BBGET(self), *VGET(v)));
+}</pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-intersect-3F">
+            
+              <b>intersect?</b>(p1)
+            
+            <a href="../../classes/CP/BB.html#method-i-intersect-3F" name="method-i-intersect-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-intersect-3F_source')" id="l_method-i-intersect-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-intersect-3F_source" class="dyn-source">
+                <pre>static VALUE
+rb_cpBBintersects(VALUE self, VALUE other)
+{
+        int bool = cpBBintersects(*BBGET(self), *BBGET(other));
+        return bool ? Qtrue : Qfalse;
+}</pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-l">
+            
+              <b>l</b>()
+            
+            <a href="../../classes/CP/BB.html#method-i-l" name="method-i-l" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-l_source')" id="l_method-i-l_source">show</a>
+                
+              </p>
+              <div id="method-i-l_source" class="dyn-source">
+                <pre>static VALUE
+rb_cpBBGetL(VALUE self)
+{
+        return rb_float_new(BBGET(self)-&gt;l);
+}</pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-l-3D">
+            
+              <b>l=</b>(p1)
+            
+            <a href="../../classes/CP/BB.html#method-i-l-3D" name="method-i-l-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-l-3D_source')" id="l_method-i-l-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-l-3D_source" class="dyn-source">
+                <pre>static VALUE
+rb_cpBBSetL(VALUE self, VALUE val)
+{
+        BBGET(self)-&gt;l = NUM2DBL(val);
+        return val;
+}</pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-r">
+            
+              <b>r</b>()
+            
+            <a href="../../classes/CP/BB.html#method-i-r" name="method-i-r" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-r_source')" id="l_method-i-r_source">show</a>
+                
+              </p>
+              <div id="method-i-r_source" class="dyn-source">
+                <pre>static VALUE
+rb_cpBBGetR(VALUE self)
+{
+        return rb_float_new(BBGET(self)-&gt;r);
+}</pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-r-3D">
+            
+              <b>r=</b>(p1)
+            
+            <a href="../../classes/CP/BB.html#method-i-r-3D" name="method-i-r-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-r-3D_source')" id="l_method-i-r-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-r-3D_source" class="dyn-source">
+                <pre>static VALUE
+rb_cpBBSetR(VALUE self, VALUE val)
+{
+        BBGET(self)-&gt;r = NUM2DBL(val);
+        return val;
+}</pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-t">
+            
+              <b>t</b>()
+            
+            <a href="../../classes/CP/BB.html#method-i-t" name="method-i-t" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-t_source')" id="l_method-i-t_source">show</a>
+                
+              </p>
+              <div id="method-i-t_source" class="dyn-source">
+                <pre>static VALUE
+rb_cpBBGetT(VALUE self)
+{
+        return rb_float_new(BBGET(self)-&gt;t);
+}</pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-t-3D">
+            
+              <b>t=</b>(p1)
+            
+            <a href="../../classes/CP/BB.html#method-i-t-3D" name="method-i-t-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-t-3D_source')" id="l_method-i-t-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-t-3D_source" class="dyn-source">
+                <pre>static VALUE
+rb_cpBBSetT(VALUE self, VALUE val)
+{
+        BBGET(self)-&gt;t = NUM2DBL(val);
+        return val;
+}</pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-to_s">
+            
+              <b>to_s</b>()
+            
+            <a href="../../classes/CP/BB.html#method-i-to_s" name="method-i-to_s" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-to_s_source')" id="l_method-i-to_s_source">show</a>
+                
+              </p>
+              <div id="method-i-to_s_source" class="dyn-source">
+                <pre>static VALUE
+rb_cpBBToString(VALUE self)
+{
+        char str[256];
+        cpBB *bb = BBGET(self);
+        
+        sprintf(str, &quot;#&lt;CP::BB:(% .3f, % .3f) -&gt; (% .3f, % .3f)&gt;&quot;, bb-&gt;l, bb-&gt;b, bb-&gt;r, bb-&gt;t);
+        
+        return rb_str_new2(str);
+}</pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-wrap_vect">
+            
+              <b>wrap_vect</b>(p1)
+            
+            <a href="../../classes/CP/BB.html#method-i-wrap_vect" name="method-i-wrap_vect" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-wrap_vect_source')" id="l_method-i-wrap_vect_source">show</a>
+                
+              </p>
+              <div id="method-i-wrap_vect_source" class="dyn-source">
+                <pre>static VALUE
+rb_cpBBWrapVect(VALUE self, VALUE v)
+{
+        return VNEW(cpBBWrapVect(*BBGET(self), *VGET(v)));
+}</pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

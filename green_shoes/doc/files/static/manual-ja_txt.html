@@ -1,0 +1,4032 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>manual-ja.txt</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            manual-ja.txt
+        </h1>
+        <ul class="files">
+            <li>static/manual-ja.txt</li>
+            <li>Last modified: 2013-02-15 10:28:00 -0600</li>
+        </ul>
+    </div>
+
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<h1 id="label-Hello%21+%3D">Hello! =</h1>
+
+<p>Shoesは軽量なグラフィックツールキットです。これは単純で分かりやすいです。
+Shoesは簡単になるように生まれました。本当に、これは全くの初心者のために作られました。 本当に簡単です。 Green
+ShoesはカラフルなShoesの一つです。Ruby/GTK2を使ってRubyだけで書かれています。</p>
+
+<p>このたった一行の取るに足りないShoesのプログラムを見てください：</p>
+
+<p>{{{</p>
+
+<pre>#!ruby
+Shoes.app{button(&quot;Click me!&quot;){alert(&quot;Good job.&quot;)}}</pre>
+
+<p>}}}</p>
+
+<p>ShoesプログラムはRubyと呼ばれる言語で書かれています。 ShoesがこのRubyコードの単純な行を渡されたとき、“Click
+me!”と中に書かれたボタンを持った ウィンドウを表示します。このボタンをクリックすると、メッセージがポップアップします。</p>
+
+<p>Windows 7では、このように見えるでしょう: !{margin_left: 100}man-shot1.png!</p>
+
+<p>多くのShoesのアプリケーションがグラフィカルなゲームやアートのプログラムである一方、 テキストを配置したり編集したりすることも簡単にできます。
+!{margin_left: 80}shoes-manual-apps.png!</p>
+
+<p>そして、理想的には、Shoesプログラムは世の中のいくつかの有名なプラットフォームで実行できるでしょう。
+マイクロソフトWindows、アップルのMac OS X、Linuxや多くの他のプラットフォームで。</p>
+
+<p>^Green Shoesのビルトインマニュアルへようこそ。このマニュアルはGreen Shoesのプログラムそのものです。^</p>
+
+<h2 id="label-Introducing+Green+Shoes+%3D%3D">Introducing Green <a href="../../classes/Shoes.html">Shoes</a> ==</h2>
+
+<p>Green Shoesは、OS XやLinuxではどうですか？Windowsと同様ですか? 人々はすぐにもそのように攻め立てます！
+でも大丈夫、全て試していますからね。</p>
+
+<p>それでは、Green Shoesのインストールや実行について入る前に、何ができるのかの参考に、 ちょっといくつかのスクリーンショットを確認します。</p>
+
+<h4 id="label-Mac+OS+X+%3D%3D%3D%3D">Mac OS X ====</h4>
+
+<p>Green ShoesはアップルのMac OSX10.5 PPC via X11で動作します。 !{margin_left:
+100}../snapshots/sample3-osx.png!</p>
+
+<p>これはMac OS X上で`sample3.rb`を実行した時のスナップショットです。 全ての円がランダムに描かれています。 Green
+Shoesではさまざまな図形を描いたり動かしたりすることができます。</p>
+
+<h4 id="label-Windows+%3D%3D%3D%3D">Windows ====</h4>
+
+<p>Green Shoesは”‘Microsoft Windows XP”’と”‘Windows 7”’で動作を確認しています。
+!{margin_left: 0}../snapshots/sample33.png!</p>
+
+<p>上記はWindows 7で`sample33.rb`サンプルが動作している図です。 Green Shoesは3つの拡張ライブラリを含んでいます。
+chipmunk physicsとbloopsaphoneと3D texture mappingです。
+最初の2つはバイナリで提供しているため、今のところWindowsでしか動作しません。</p>
+
+<h4 id="label-Linux+%3D%3D%3D%3D">Linux ====</h4>
+
+<p>これは”‘Ubuntu on VirtualBox for
+Windows”’上で`sample44.rb`サンプルが動作しているスクリーンショットです。 !{margin_left:
+130}../snapshots/sample44-linux.png!</p>
+
+<p>この例では時計を作るために線や円を描いています。 時計の針の動作は線の表示/非表示を毎秒数回切り替えることにより実現しています。</p>
+
+<p>アプリケーション上部のテキストが、現在の時刻を表示していることに注意してください。 Green
+Shoesは、いくつかの色、太字、斜字、下線、そしてファイルからフォントをロードして語句を配置する 機能を持っています。</p>
+
+<h2 id="label-Installing+Green+Shoes+%3D%3D">Installing Green <a href="../../classes/Shoes.html">Shoes</a> ==</h2>
+
+<p>はい、ではGreen Shoesのインストールを行います。あなたは次のような疑問を持っているでしょう:
+Rubyのインストールは必要ですか？なにも解凍しなくてもいいですか？どんなコマンドをタイプする必要がありますか？</p>
+
+<p>はい。RubyやGemをインストールする必要はあります。でも心配しないで下さい。 以下に必要なステップを全て示しますから。</p>
+
+<h4 id="label-Step+1%3A+Green+Shoes%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB+%3D%3D%3D%3D">Step 1: Green Shoesのインストール ====</h4>
+
+<p>まず最初にRubyをインストールします。 Windowsの場合はこのサイト[[<a
+href="http://rubyinstaller.org/">rubyinstaller.org/</a> RubyInstaller for
+Windows]] にアクセスして、最新の”‘RubyInstaller 1.9.2 or 1.9.3”’をインストールして下さい。</p>
+
+<p>そして、以下のコマンドを実行してください。</p>
+
+<pre>* gem install green_shoes</pre>
+
+<p>これだけです。簡単でしょう?</p>
+
+<p>”‘注意:”’ green_shoes gemはこのサイト[[<a
+href="http://rubygems.org/gems/green_shoes">rubygems.org/gems/green_shoes</a>
+RubyGems.org]] にあります。</p>
+
+<p>もしriやrdocの作成でエラーが発生したら、次のオプション`–no-ri –no-rdoc`を試してみて下さい。</p>
+
+<h4 id="label-Step+2%3A+%E6%96%B0%E3%81%97%E3%81%84%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%AE%E4%BD%9C%E6%88%90+%3D%3D%3D%3D">Step 2: 新しいテキストファイルの作成 ====</h4>
+
+<p>Shoesプログラムは”‘.rb”’の拡張子で終わる、ただの単純なテキストファイルです。</p>
+
+<p>空のテキストファイルを作成するいくつかの方法は:</p>
+
+<pre>* '''Mac OS X'''では'''Applications'''フォルダに移動して'''TextEdit'''アプリケーションをダブルクリックします。空のエディタウィンドウが表示されます。そして'''Format'''メニューから'''Make Plain Text'''オプションを選択します。はい、準備ができました。!man-editor-osx.png!
+* '''Windows'''では、スタートメニューへ行きます。'''All Programs'''、'''Accessories'''そして'''Notepad'''を選択します。. !man-editor-notepad.png!
+* '''Linux'''では、多くのディストリビューションが'''gedit'''を備えています。それを実行してください。または、もしあなたのディストリビューションがKDEを基にしているのであれば'''kate'''を実行してください。</pre>
+
+<p>そして、空のウィンドウに次のようにタイプしてください:</p>
+
+<p>{{{</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">'green_shoes'</span>
+<span class="ruby-constant">Shoes</span>.<span class="ruby-identifier">app</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">para</span> <span class="ruby-string">&quot;Welcome to Shoes&quot;</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>}}}</p>
+
+<p>`welcome.rb`としてデスクトップに保存してください。</p>
+
+<h4 id="label-Step+3%3A+%E3%81%9D%E3%82%8C%E3%82%92%E5%AE%9F%E8%A1%8C%E3%81%97%E3%81%A6%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%EF%BC%81Shoes%E3%81%B8%E8%A1%8C%E3%81%93%E3%81%86%EF%BC%81+%3D%3D%3D%3D">Step 3: それを実行してください！Shoesへ行こう！ ====</h4>
+
+<p>プログラムを実行するためには、コンソールウィンドウを開いて、以下のコマンドを実行します。</p>
+
+<pre>* ruby welcome.rb !man-editor-osx.png!</pre>
+
+<p>まだ大したものではないですが、確かにそれはプログラムです！少なくとも、そのコツが分かったでしょう！</p>
+
+<h4 id="label-Shoes%E3%81%A7%E4%BD%95%E3%82%92%E4%BD%9C%E3%82%8A%E3%81%BE%E3%81%99%E3%81%8B%EF%BC%9F+%3D%3D%3D%3D">Shoesで何を作りますか？ ====</h4>
+
+<p>さて、ウィンドウアプリケーションを作成することができます。
+しかし、Shoesはウェブから影響を受けているので、アプリケーションは多くのウィジェットよりも、
+画像を使ったりテキストを配置する傾向があります。例えば、Shoesはタブコントロールやツールバーを備えていません。
+Shoesは”軽量な”ツールキットだと言うことを覚えていますか？</p>
+
+<p>それでもShoesはボタンやエディットボックスのようなウィジェットを少しだけ持っています。
+そして、多くの（タブコントロールまたはツールバーのような）不足している要素は、画像でシミュレーションすることが できます。</p>
+
+<p>ShoesはCairoと呼ばれるとてもよくできた描画エンジンによって一部書かれており、
+それは形状や色彩を描くのに利用されています。このように、Shoesは、生き生きとしたグラフィックを描画するために
+とてもいい言語である、NodeBoxとProcessingから影響を受けています。</p>
+
+<h2 id="label-The+Rules+of+Green+Shoes+%3D%3D">The Rules of Green <a href="../../classes/Shoes.html">Shoes</a> ==</h2>
+
+<p>Green Shoesがどのように動作するのか推測するのはやめましょう。トリッキーな動作で悩むと思います。
+私はShoesの中心的な規則を要約しまいた。これらは、それにすべての働きをさせるためには知らなくては ならないものです。</p>
+
+<p>これらはGreen Shoesの至る所で目にする一般的な規則です。Green Shoesは単純さと明解さという
+全体的な理念を持っていますが、いくつか勉強したり覚えたりする必要のあるポイントがあります。</p>
+
+<h4 id="label-Shoes%E3%81%AE%E3%83%88%E3%83%AA%E3%83%83%E3%82%AD%E3%83%BC%E3%81%AA%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF+%3D%3D%3D%3D">Shoesのトリッキーなブロック ====</h4>
+
+<p>はい、これは極めて重要です。Green Shoesはブロックによってトリックをします。
+このトリックはすべてのものを読みやすくします。しかし、これは深い階層でブロックを利用することを難しくもします。</p>
+
+<p>”‘普通のRubyブロックを試しましょう：”’</p>
+
+<p>{{{</p>
+
+<pre class="ruby"><span class="ruby-constant">Shoes</span>.<span class="ruby-identifier">app</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">ary</span> = [<span class="ruby-string">'potion'</span>, <span class="ruby-string">'swords'</span>, <span class="ruby-string">'shields'</span>]
+  <span class="ruby-identifier">ary</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">item</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">item</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>}}}</p>
+
+<p>Green Shoesでは、これらの種類のブロックは同じ働きをします。この上記のブロックは配列をループして
+各オブジェクトを`item`変数に格納します。この`item`変数はブロックが終わると消滅（スコープから出る）します。</p>
+
+<p>考え方を守っているもう一つのことは、普通のRubyブロックの内部と`self`を同じままにしています。
+`each`の前に呼ばれるどんな`self`でも、それは`each`ブロック内部と同じです。</p>
+
+<p>”‘これらはどちらも大部分のGreen Shoesのブロックで正しいです。”’</p>
+
+<p>{{{</p>
+
+<pre>Shoes.app do
+  stack do
+    para &quot;First&quot;
+    para &quot;Second&quot;
+    para &quot;Third&quot;
+  end
+end</pre>
+
+<p>}}}</p>
+
+<p>ここでは二つのブロックがあります。一つ目は`<a
+href="../../classes/Shoes.html#method-c-app">Shoes.app</a>`によるものです。この`app`ブロックは`self`を変更します。</p>
+
+<p>もう一方のブロックは`stack`ブロックです。このブロックはselfを変更しません。</p>
+
+<p>”‘どんな理由があって`app`ブロックはselfを変更するのでしょうか？”’ 最後の例を徹底的に詳しく説明することから 始めましょう。</p>
+
+<p>{{{</p>
+
+<pre>Shoes.app do
+  self.stack do
+    self.para &quot;First&quot;
+    self.para &quot;Second&quot;
+    self.para &quot;Third&quot;
+  end
+end</pre>
+
+<p>}}}</p>
+
+<p>上記の例におけるすべての`self`はアプリケーションオブジェクトです。Shoesは`app`ブロック内部でselfを
+変更するために、Rubyの`instance_eval`を利用します。そして、そのメソッドは`stack`を呼び出して
+`para`をアプリケーションへ送ります。</p>
+
+<p>”‘これはShoesアプリケーション全体でインスタンス変数が利用できる理由でもあります：”’</p>
+
+<p>{{{</p>
+
+<pre>Shoes.app do
+  @s = stack do
+    @p1 = para &quot;First&quot;
+    @p2 = para &quot;Second&quot;
+    @p3 = para &quot;Third&quot;
+  end
+end</pre>
+
+<p>}}}</p>
+
+<p>これらのインスタンス変数は、すべてアプリケーションオブジェクト内部で終了します。</p>
+
+<p>”‘新しいウィンドウを作成するときはいつでも、`self`も変更されます。”’</p>
+
+<p>{{{</p>
+
+<pre>Shoes.app title: &quot;MAIN&quot; do
+  para self
+  button &quot;Spawn&quot; do
+    Shoes.app title: &quot;CHILD&quot; do
+      para self
+    end
+  end
+end</pre>
+
+<p>}}}</p>
+
+<h4 id="label-%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF%E3%83%AA%E3%83%80%E3%82%A4%E3%83%AC%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3+%3D%3D%3D%3D">ブロックリダイレクション ====</h4>
+
+<p>もっとも、`stack`ブロックは別の話です。これは`self`を変えませんし、基本的に標準のブロックです。</p>
+
+<p>”‘しかしトリックがあります：”’`stack`を配置してブロックを与えたとき、アプリケーションオブジェクトはstackを
+メモリへ配置します。ブロックが終了するときstackは立ち去ります。
+そのため、アプリケーションのトップスロットから新しいstackまで、ブロック内部のすべての描画は”‘リダイレクト”’されます。</p>
+
+<p>そのため、まず、たとえ彼らが確かにアプリケーションオブジェクトへ渡したとしても、それらの3つの`para`は `stack`上に描画されます。</p>
+
+<p>{{{</p>
+
+<pre>Shoes.app do
+  stack do
+    para &quot;First&quot;
+    para &quot;Second&quot;
+    para &quot;Third&quot;
+  end
+end</pre>
+
+<p>}}}</p>
+
+<p>少しトリッキーですよね？これについて知っていても噛みつかれるかもしれません。</p>
+
+<p>それがあなたをつかまえる一つの方法は、`app`ブロック外のプログラム内のどこか他で、stackを編集しようと することです。</p>
+
+<p>例えばstackオブジェクトを使いまわすとしましょう。そして、そのオブジェクトを編集するクラスを持ちます。</p>
+
+<p>{{{</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">Messenger</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span> <span class="ruby-identifier">slot</span>
+    <span class="ruby-ivar">@slot</span> = <span class="ruby-identifier">slot</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">add</span> <span class="ruby-identifier">msg</span>
+    <span class="ruby-identifier">para</span> <span class="ruby-identifier">msg</span> <span class="ruby-keyword">rescue</span> <span class="ruby-identifier">puts</span> <span class="ruby-identifier">$!</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-constant">Shoes</span>.<span class="ruby-identifier">app</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">slot</span> = <span class="ruby-identifier">stack</span>
+  <span class="ruby-identifier">m</span> = <span class="ruby-constant">Messenger</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">slot</span>
+  <span class="ruby-identifier">m</span>.<span class="ruby-identifier">add</span> <span class="ruby-string">'hello'</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>}}}</p>
+
+<p>アプリケーションが始まるときに、stackオブジェクトをMessengerクラスへ渡すと仮定します。
+そして、後で、メッセージが来るとき、`add`メソッドはそのstackにパラグラフを追加するのに用いられます。 正しく動作するでしょうか？</p>
+
+<p>いや、それは動作しません。`para`メソッドが見つかりません。すでにアプリケーションオブジェクトは
+まわりにありません。そして、それは`para`メソッドによるものです。</p>
+
+<p>幸いにも、それぞれのShoesオブジェクトはアプリケーションオブジェクトを再び開かせる`app`メソッドを 持っているため、さらなる編集ができます。</p>
+
+<p>{{{</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">Messenger</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span> <span class="ruby-identifier">slot</span>
+    <span class="ruby-ivar">@slot</span> = <span class="ruby-identifier">slot</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">add</span> <span class="ruby-identifier">msg</span>
+    <span class="ruby-ivar">@slot</span>.<span class="ruby-identifier">app</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">para</span> <span class="ruby-identifier">msg</span> <span class="ruby-keyword">rescue</span> <span class="ruby-identifier">puts</span> <span class="ruby-identifier">$!</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-constant">Shoes</span>.<span class="ruby-identifier">app</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">slot</span> = <span class="ruby-identifier">stack</span>
+  <span class="ruby-identifier">m</span> = <span class="ruby-constant">Messenger</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">slot</span>
+  <span class="ruby-identifier">m</span>.<span class="ruby-identifier">add</span> <span class="ruby-string">'hello'</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>}}}</p>
+
+<p>ご想像のとおり、その`app`オブジェクトは`self`をアプリケーションオブジェクトに変更します。</p>
+
+<p>ルールは次のようになります：</p>
+<ol><li>
+<p>”‘“app”という名前か新しいウィンドウを作成するメソッドはアプリケーションオブジェクトの`self`を変更します。</p>
+</li></ol>
+
+<p>”‘[[<a href="http://Element.window">BR]]（これは、[</a>] <a
+href="http://Element.dialog">と[</a>]同様に、<a
+href="../../classes/Shoes.html#method-c-app">Shoes.app</a>とSlot.appの両方にとって正しいです。）
+[[BR]]2. ”’stackへ加えられるブロックは、フローや（追加などの）どんな操作メソッドでもselfを
+変更しません。その代わりに、彼らはスロットをアプリケーションの編集stackにポップします。”‘</p>
+
+<h4 id="label-%E5%9B%BA%E5%AE%9A%E3%81%95%E3%82%8C%E3%81%9F%E9%AB%98%E3%81%95%E3%81%AB%E6%B3%A8%E6%84%8F+%3D%3D%3D%3D">固定された高さに注意 ====</h4>
+
+<p>列でウィンドウを区切るように、スロットの固定された幅は重要です。</p>
+
+<p>{{{</p>
+
+<pre class="ruby"><span class="ruby-constant">Shoes</span>.<span class="ruby-identifier">app</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">flow</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">stack</span> :<span class="ruby-identifier">width</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">200</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">background</span> <span class="ruby-identifier">lavender</span>
+      <span class="ruby-identifier">caption</span> <span class="ruby-string">&quot;Column one&quot;</span>
+      <span class="ruby-identifier">para</span> <span class="ruby-string">&quot;is 200 pixels wide&quot;</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">stack</span> :<span class="ruby-identifier">width</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">-200</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">background</span> <span class="ruby-identifier">bisque</span>
+      <span class="ruby-identifier">caption</span> <span class="ruby-string">&quot;Column two&quot;</span>
+      <span class="ruby-identifier">para</span> <span class="ruby-string">&quot;is 100% minus 200 pixels wide&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>}}}</p>
+
+<p>スロットの固定された高さは、より一般的ではありません。通常は、テキストや画像がウィンドウの下へ
+できるだけ流れることを望みます。高さは通常は自然に決定します。</p>
+
+<p>ここで重要なことは、固定された高さが実際はスロットに違うように振る舞わせることです。
+確かに最後にはスロットは完全に切り離なされて、”‘入れ子のウィンドウ”’になります。
+新しいレイヤーはオペレーティングシステムによってスロットを一定の正方形に保つために作成されます。</p>
+
+<p>通常のスロットと入れ子ウィンドウのスロットとの違いは、後者はスクロールバーを持てることです。</p>
+
+<p>{{{</p>
+
+<pre class="ruby"><span class="ruby-constant">Shoes</span>.<span class="ruby-identifier">app</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">stack</span> <span class="ruby-identifier">width</span><span class="ruby-operator">:</span> <span class="ruby-value">200</span>, <span class="ruby-identifier">height</span><span class="ruby-operator">:</span> <span class="ruby-value">200</span>, <span class="ruby-identifier">scroll</span><span class="ruby-operator">:</span> <span class="ruby-keyword">true</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">background</span> <span class="ruby-node">&quot;#DFA&quot;</span>
+    <span class="ruby-value">100</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">para</span> <span class="ruby-node">&quot;Paragraph No. #{i}&quot;</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">flush</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>}}}</p>
+
+<p>これらの入れ子ウィンドウはより多くのメモリを必要とします。彼らはアプリケーションにもう少し負担をかけます。
+もしあなたが、固定された高さのたくさんのスロットで遅さを経験しているなら、違うアプローチを試してください。</p>
+
+<p>”‘注意:”’ 固定された高さのマジック(スロットを入れ子のウィンドウにする)は今のところGreen Shoesでは お試し版です。`flush`
+メソッドを追記する必要があります。</p>
+
+<p>{{{</p>
+
+<pre class="ruby"><span class="ruby-constant">Shoes</span>.<span class="ruby-identifier">app</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">stack</span> :<span class="ruby-identifier">width</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">200</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">background</span> <span class="ruby-node">&quot;#DFA&quot;</span>
+    <span class="ruby-value">100</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">para</span> <span class="ruby-node">&quot;Paragraph No. #{i}&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>}}}</p>
+
+<h4 id="label-%E7%94%BB%E5%83%8F%E3%81%A8%E5%BD%A2%E7%8A%B6%E3%81%AE%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF+%3D%3D%3D%3D">画像と形状のブロック ====</h4>
+
+<p>多くの初心者が形状でウィンドウを散らかし始めます。すべての長方形や楕円形をスロットへ投げ入れるのは 確かに簡単です。</p>
+
+<p>”‘しかしながら、Shoesはそれらすべての形状のためにオブジェクトを生成することを覚えておいて下さい！。”’</p>
+
+<p>{{{</p>
+
+<pre class="ruby"><span class="ruby-constant">Shoes</span>.<span class="ruby-identifier">app</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">fill</span> <span class="ruby-identifier">black</span>.<span class="ruby-identifier">push</span>(<span class="ruby-value">0.1</span>)
+  <span class="ruby-value">100</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">oval</span> <span class="ruby-identifier">i</span>, <span class="ruby-identifier">i</span>, <span class="ruby-identifier">i</span> * <span class="ruby-value">2</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">i</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>}}}</p>
+
+<p>この例では、100個の楕円形オブジェクトが生成されます。これは悪すぎるわけではありません。
+しかし、一つの形状の中にこれらを作成するのなら、これはより軽量になるでしょう。</p>
+
+<p>{{{</p>
+
+<pre class="ruby"><span class="ruby-comment"># Not yet available</span>
+<span class="ruby-constant">Shoes</span>.<span class="ruby-identifier">app</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">fill</span> <span class="ruby-identifier">black</span>(<span class="ruby-value">0.1</span>)
+  <span class="ruby-identifier">shape</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-value">100</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">oval</span> <span class="ruby-identifier">i</span>, <span class="ruby-identifier">i</span>, <span class="ruby-identifier">i</span> * <span class="ruby-value">2</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">i</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>}}}</p>
+
+<p>ああ、待ってください。この楕円形は今回は満たされません。なぜなら、この形状たちは一つの大きな形状に
+結合されたからです。そして、このケースではShoesはどこを満たすべきか、分かりません。</p>
+
+<p>そして、アウトラインを厳密に扱うとき、通常は一つの形状に結合することを望みます。</p>
+
+<p>別のオプションでは、これらすべての楕円形を一つの画像に結合します。</p>
+
+<p>{{{</p>
+
+<pre class="ruby"><span class="ruby-comment"># Not yet available</span>
+<span class="ruby-constant">Shoes</span>.<span class="ruby-identifier">app</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">fill</span> <span class="ruby-identifier">black</span>(<span class="ruby-value">0.1</span>)
+  <span class="ruby-identifier">image</span> <span class="ruby-value">300</span>, <span class="ruby-value">300</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-value">100</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">oval</span> <span class="ruby-identifier">i</span>, <span class="ruby-identifier">i</span>, <span class="ruby-identifier">i</span> * <span class="ruby-value">2</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>}}}</p>
+
+<p>そうしよう！その楕円形はすべて一つの300 x 300の画像に結合されます。この場合では、その画像を
+メモリに保管するのは、おそらく100個の楕円形を持つよりはるかに大きくなるかもしれません。
+しかし、何千もの形状を扱う場合には、イメージブロックはより安っぽくなる可能性があります。</p>
+
+<p>ポイントは以下の通りです：画像やブロックへ形状をグループ化することは簡単ですので、もし速度を
+得ようとするのなら、それを試してください。形状ブロックは特にメモリと速度を節約させるでしょう。</p>
+
+<p>”注意:” 今のところGreen Shoesではこのマジック(複数の形状をグループにして一つの画像や形状にする) はサポートしていません。</p>
+
+<h4 id="label-%E3%81%A9%E3%81%93%E3%81%A7%E3%82%82UTF-8+%3D%3D%3D%3D">どこでもUTF-8 ====</h4>
+
+<p>Ruby自体はUnicodeを意識しません。そして、UTF-8は一種のUnicodeです。 (UTF-8の完全な説明は[[<a
+href="http://en.wikipedia.org/wiki/UTF-8">en.wikipedia.org/wiki/UTF-8</a>
+Wikipedia]]を見てください。)</p>
+
+<p>しかしながら、UTF-8はWEBで一般的です。そして、多くの異なったプラットホームがそれをサポートします。 そこで、Green
+Shoesがしなくてはならない変換の量を減らすために、Green Shoesはすべての文字列が UTF-8フォーマットであることを期待します。</p>
+
+<p>すばらしいことに、Green ShoesでUTF-8を使えば無数の言語（ロシア語、日本語、スペイン語、英語）を
+表示ことができます。テキストエディタでUTF-8を使用することだけを確認してください!</p>
+
+<p>実例を示します：</p>
+
+<p>{{{</p>
+
+<pre class="ruby"><span class="ruby-constant">Shoes</span>.<span class="ruby-identifier">app</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">stack</span> :<span class="ruby-identifier">margin</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">10</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-ivar">@edit</span> = <span class="ruby-identifier">edit_box</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-ivar">@para</span>.<span class="ruby-identifier">text</span> = <span class="ruby-ivar">@edit</span>.<span class="ruby-identifier">text</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-ivar">@para</span> = <span class="ruby-identifier">para</span> <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>}}}</p>
+
+<p>このアプリケーションは何でもコピーして編集ボックスに貼り付けて、Green Shoesパラグラフで表示することが
+できます。外国語（ギリシャ語か日本語のような）のテキストをこのボックスにコピーして、どのように表示されるかを 見ることができます。</p>
+
+<p>これは、その編集ボックスがUTF-8の文字を返すことを確かめるのにいいテストです。
+そして、そのパラグラフはどんなUTF-8の文字でも設定することができます。</p>
+
+<p>”‘重要事項：”’もしいくつかのUTF-8の文字が表示されないなら、パラグラフのフォントを変更する必要があります。 これは特にOS Xで一般的です。</p>
+
+<p>そして、OS Xでのおすすめの日本語フォントは”‘AppleGothic”’です。Windowsでは”‘MS UI Gothic”’です。</p>
+
+<p>{{{</p>
+
+<pre>Shoes.app do
+  para &quot;てすと (te-su-to)&quot;,
+   font: case RUBY_PLATFORM
+   when /mingw/; &quot;MS UI Gothic&quot;
+   when /darwin/; &quot;AppleGothic, Arial&quot;
+   else &quot;Arial&quot;
+   end
+end</pre>
+
+<p>}}}</p>
+
+<p>さらに、Green Shoesで文字列を扱う場合もUTF-8の文字列を必要とします。
+編集ボックス、編集ライン、リストボックス、ウィンドウタイトルやテキストブロックはすべてUTF-8をとります。
+間違った文字の入った文字列をあたえた場合は、コンソールにエラーが表示されます。</p>
+
+<h4 id="label-%E3%83%A1%E3%82%A4%E3%83%B3%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%A8Require+%3D%3D%3D%3D">メインアプリケーションとRequire ====</h4>
+
+<p>”‘注意:”’ このルールはRaisinsのためのものです。PolicemanとGreen ShoesではTOPLEVEL_BINDINGを
+使っているので、最初の例では `main` (Rubyトップレベルオブジェクト)が表示されます。 `<a
+href="../../classes/Shoes.html#method-c-app">Shoes.app</a>`ブロックの外側では、`Para`ではなく`Shoes::Para`と記述する必要がありますが。</p>
+
+<p>それぞれのShoesアプリケーションは、それ自体を作ることができる小さな部屋を与えられます。
+クラスを作成したり変数を設定できますが、それらは他のShoesプログラムから見ることはできません。
+それぞれのプログラムはそれ自身の匿名クラス内で実行されます。</p>
+
+<p>{{{</p>
+
+<pre>main = self
+Shoes.app do
+  para main.to_s
+end</pre>
+
+<p>}}}</p>
+
+<p>この匿名クラスは`(shoes)`と呼ばれ、それは空の無名クラスです。`Shoes`モジュールは （`include
+Shoes`を利用して）このクラスにミックスインされているため、パラグラフクラスを参照しているときに
+`Para`や`Shoes::Para`を利用することができます。</p>
+
+<p>このアプローチの長所は：</p>
+
+<pre>* Shoesアプリケーションはローカル変数を共有できません。
+* メインアプリケーションコードに作成されるクラスは一時的です。
+* Shoesモジュールは、Ruby自身のトップレベル環境ではなく、匿名クラスにミックスインされることができます、
+* ガベージコレクションが一度完了すれば、アプリケーションを完全にきれいにできます。</pre>
+
+<p>二つ目の部分は特に重要なので忘れないこと。</p>
+
+<p>{{{</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">Storage</span>; <span class="ruby-keyword">end</span>
+
+<span class="ruby-constant">Shoes</span>.<span class="ruby-identifier">app</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">para</span> <span class="ruby-constant">Storage</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>}}}</p>
+
+<p>アプリケーションが完了すれば`Storage`クラスは消えます。ほかのアプリケーションはStorageクラスを
+利用できません。そして、それは`require`を利用してロードされるファイルから手に入れることはできません。</p>
+
+<p>もっとも、`require`するときそのコードは近くにいます。それはRubyのトップレベル環境に保持されます。</p>
+
+<p>そして、この規則は：”‘アプリケーションのコードに一時的なクラスを保持し、requireに永続的なクラスを 保持しなさい”’です。</p>
+
+<h1 id="label-Shoes+%3D"><a href="../../classes/Shoes.html">Shoes</a> =</h1>
+
+<p>Green Shoesはウィンドウや、それらウィンドウ内部の要素を描くことがすべてです。 今はウィンドウ自体に焦点を当てましょう。 <a
+href="http://Slots">他のセクションの[</a>]<a
+href="http://Elements">や[</a>]がウィンドウ内部に関してのすべてを対象としています。</p>
+
+<p>ここでは、このマニュアルはより辞書のように読んでください。それぞれのページのほとんどは、利用可能なメソッドの
+一覧であり、各トピックを対象としています。この考えは、すべてに関してとても詳細かつ明確であることです。</p>
+
+<p>そして、このマニュアルの難しさにぶつかって、始めることについてまだ分からないなら、おそらくこのマニュアルの [[Hello!
+beginning]]に戻るべきです。 または、ウェブ上の初心者のリーフレットである [[<a
+href="https://github.com/downloads/shoes/shoes/nks.pdf">github.com/downloads/shoes/shoes/nks.pdf</a>
+Nobody Knows Shoes]]を試してください。</p>
+
+<h4 id="label-%E6%96%B9%E6%B3%95%E3%81%AE%E8%A6%8B%E3%81%A4%E3%81%91%E6%96%B9+%3D%3D%3D%3D">方法の見つけ方 ====</h4>
+
+<p>このセクションは以下を対象とします：</p>
+
+<pre>* [[Built-in Built-in methods]] - Green Shoesプログラムのどこでも利用できる一般的なメソッド。
+* [[App The App window]] - Green Shoesのすべてのメインウィンドウに添付されたメソッド。
+* [[Styles The Styles Master List]] - Green Shoesのすべてのスタイルの完全な一覧。
+* [[Classes The Classes list]] - Green Shoesのクラスやサブクラスについて表示している表。
+* [[Colors The Colors list]] - すべてのビルトインカラーと[[Built-in.rgb]]におけるそれぞれの数の表。</pre>
+
+<p><a href="http://Search">ページをよく見ても見つからないものがあれば、[</a>]ページを試してください。
+それは問題をさける手っ取り早い方法です。</p>
+
+<p>この一般的なリファレンスのあとに、他の２つの特別なセクションがあります：</p>
+
+<pre>* [[Slots]] - [[Element.stack]]と[[Element.flow]]を対象とする、２つの種類のスロット。
+* [[Elements]] - すべてのボタン、形状、画像などのためのドキュメント。</pre>
+
+<p>ここに[[Element Element Creation]]ページ（追加できるすべてのエレメントの一覧）と</p>
+<dl class="rdoc-list label-list"><dt>[Common Common Methods]
+<dd>
+<p>ページ（すべてのスロットやエレメントにあるメソッドの一覧）の</p>
+</dd></dl>
+
+<p>２つのとても大切なページがあります。</p>
+
+<h2 id="label-Built-in+Methods+%3D%3D">Built-in Methods ==</h2>
+
+<p>これらのメソッドはGreen Shoesのプログラムを通してどこでも利用できます。</p>
+
+<p>これらすべてのコマンドは、あなたがドットをそれらに付与しない点が珍しいです。
+”‘このマニュアルのほかのすべてのメソッドはオブジェクトにドットを付与すべきです。”’
+しかし、これらのビルトインメソッド（カーネルメソッドとも呼ばれている）はドットがないことを意味します。</p>
+
+<p>一般的なものとして`alert`があります：</p>
+
+<p>{{{</p>
+
+<pre>alert &quot;No dots in sight&quot;</pre>
+
+<p>}}}</p>
+
+<p>これと、ArrayとStringに対してだけ利用可能な、カーネルメソッドではない、 `reverse`メソッドを比較してください：</p>
+
+<p>{{{</p>
+
+<pre class="ruby"><span class="ruby-comment">#!ruby</span>
+<span class="ruby-constant">Shoes</span>.<span class="ruby-identifier">app</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">para</span> <span class="ruby-string">&quot;Plaster of Paris&quot;</span>.<span class="ruby-identifier">reverse</span>
+  <span class="ruby-comment">#=&gt; &quot;siraP fo retsalP&quot;</span>
+  <span class="ruby-identifier">para</span> [:<span class="ruby-identifier">dogs</span>, :<span class="ruby-identifier">cows</span>, :<span class="ruby-identifier">snakes</span>].<span class="ruby-identifier">reverse</span>
+  <span class="ruby-comment">#=&gt; [:snakes, :cows, :dogs]</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>}}}</p>
+
+<p>描画やボタンを作成したりするための多くのGreen Shoesメソッドはスロットへ付与されます。 <a
+href="http://Slots">より詳しい情報については[</a>]のセクションを見てください。</p>
+
+<h4 id="label-%E3%83%93%E3%83%AB%E3%83%88%E3%82%A4%E3%83%B3%E5%AE%9A%E6%95%B0+%3D%3D%3D%3D">ビルトイン定数 ====</h4>
+
+<p>Green Shoesにはいくつかのビルトイン定数があり、それはどんなバージョンのGreen Shoesが
+実行されているかを判別することを証明するのに利用できるかもしれません</p>
+
+<p>”‘DIR”’ は、`green_shoes/lib`のフルパスです。</p>
+
+<p>”‘COLORS”’ は、アプリケーションで利用できる色の完全な一覧です。</p>
+
+<p>”‘FONTS”’ は、アプリケーションで利用できるフォントの完全な一覧です。</p>
+
+<p>”‘VERSION”’ は、Green Shoesのバージョンです。</p>
+
+<p>{{{</p>
+
+<pre class="ruby"><span class="ruby-constant">Shoes</span>.<span class="ruby-identifier">app</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">para</span> <span class="ruby-constant">VERSION</span>
+  <span class="ruby-identifier">para</span> <span class="ruby-identifier">fg</span>(<span class="ruby-constant">DIR</span>, <span class="ruby-identifier">red</span>)
+  <span class="ruby-identifier">image</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">DIR</span>, <span class="ruby-string">'../static/gshoes-icon.png'</span>)
+  <span class="ruby-identifier">para</span> <span class="ruby-identifier">fg</span>(<span class="ruby-constant">FONTS</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">', '</span>), <span class="ruby-identifier">green</span>)
+  <span class="ruby-identifier">para</span> <span class="ruby-constant">COLORS</span>.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span> [<span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span>]}
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>}}}</p>
+
+<h3 id="label-alert%28message%3A+a+string%2C+%3Ablock+%3D%3E+true+or+false%2C+title%3A+a+string%29+%C2%BB+nil+%3D%3D%3D">alert(message: a string, :block =&gt; true or false, title: a string) » nil ===</h3>
+
+<p>短いメッセージを含むウィンドウをポップアップします。</p>
+
+<p>{{{</p>
+
+<pre>#!ruby
+alert &quot;I'm afraid I must interject!&quot;</pre>
+
+<p>}}}</p>
+
+<p>alertは信じられないほど煩わしいので控えめに利用してください！
+プログラムをデバッグする手助けのメッセージを表示するためにalertを利用するなら、 Rubyの標準メソッド`puts`や`p`を試してみて下さい。</p>
+
+<p>もしalert()メソッドをスレッドセーフにしたい場合、すなわちメインスレッドをブロックしたくない場合は、 `:block =&gt;
+false`オプションを使ってください。またウィンドウのタイトルを変更したい場合は、 `:title =&gt; a
+string`オプションを使ってください。</p>
+
+<h3 id="label-ask%28message%3A+a+string%29+%C2%BB+a+string+%3D%3D%3D">ask(message: a string) » a string ===</h3>
+
+<p>ウィンドウをポップアップして質問をします。例えば、あなたは誰かに名前を尋ねたいかもしれません。</p>
+
+<p>{{{</p>
+
+<pre>#!ruby
+if name = ask(&quot;Please, enter your name:&quot;)
+  Shoes.app{para &quot;Welcome, #{name}!&quot;}
+end</pre>
+
+<p>}}}</p>
+
+<p>上記のスクリプトを実行するとき、コンピュータを利用している人は、名前を入力するための空のボックスを
+持つウィンドウを見るでしょう。そして、その名前は`name`変数に保存されます。</p>
+
+<h3 id="label-ask_color%28title%3A+a+string%29+%C2%BB+RGB+array+%3D%3D%3D">ask_color(title: a string) » RGB array ===</h3>
+
+<p>カラーピッカーウィンドウをポップアップします。このプログラムは色が選ばれるのを待ち、そしてあなたに
+色オブジェクトを与えます。いくつかの方法でこの色を利用するために`Color`ヘルプを見てください。</p>
+
+<p>{{{</p>
+
+<pre>#!ruby
+backcolor = ask_color &quot;Pick a background&quot;
+Shoes.app do
+  background backcolor
+end</pre>
+
+<p>}}}</p>
+
+<h3 id="label-ask_open_file%28%29+%C2%BB+a+string+%3D%3D%3D">ask_open_file() » a string ===</h3>
+
+<p>“ファイルを開く。。。”ウィンドウをポップアップします。これは標準のウィンドウであり、すべてのフォルダを表示して
+開くファイルを選択させます。そしてファイルの名前を返します。</p>
+
+<p>{{{</p>
+
+<pre>#!ruby
+filename = ask_open_file
+Shoes.app do
+  para File.read(filename)
+end</pre>
+
+<p>}}}</p>
+
+<h3 id="label-ask_save_file%28%29+%C2%BB+a+string+%3D%3D%3D">ask_save_file() » a string ===</h3>
+
+<p>これは先ほど述べた`ask_open_file`と似ており、“ファイルを保存する。。。”ウィンドウをポップアップします。</p>
+
+<p>{{{</p>
+
+<pre>#!ruby
+save_as = ask_save_file
+Shoes.app do
+  para save_as
+end</pre>
+
+<p>}}}</p>
+
+<h3 id="label-ask_open_folder%28%29+%C2%BB+a+string+%3D%3D%3D">ask_open_folder() » a string ===</h3>
+
+<p>“フォルダを開く。。。”ウィンドウをポップアップします。これは、すべてのフォルダを表示し、開くフォルダを
+選択させる標準のウィンドウです。これはあなたにフォルダの名前を渡します。</p>
+
+<p>{{{</p>
+
+<pre>#!ruby
+folder = ask_open_folder
+Shoes.app do
+  para Dir.entries(folder)
+end</pre>
+
+<p>}}}</p>
+
+<h3 id="label-ask_save_folder%28%29+%C2%BB+a+string+%3D%3D%3D">ask_save_folder() » a string ===</h3>
+
+<p>これは先ほど述べた`ask_open_folder`と似ており、“フォルダを保存する。。。”ウィンドウをポップアップします。</p>
+
+<p>{{{</p>
+
+<pre>#!ruby
+save_to = ask_save_folder
+Shoes.app do
+  para save_to
+end</pre>
+
+<p>}}}</p>
+
+<h3 id="label-confirm%28question%3A+a+string%29+%C2%BB+true+or+false+%3D%3D%3D">confirm(question: a string) » true or false ===</h3>
+
+<p>yes-または-noの質問をポップアップします。コンピュータの前の人が”‘yes”’をクリックするなら、
+返される`true`を受け取ります。そうでは無いなら、返される`false`を受け取ります。</p>
+
+<p>{{{</p>
+
+<pre>#!ruby
+if confirm(&quot;Draw a circle?&quot;)
+ Shoes.app{ oval top: 0, left: 0, radius: 50 }
+end</pre>
+
+<p>}}}</p>
+
+<h3 id="label-exit%28%29+%3D%3D%3D">exit() ===</h3>
+
+<p>プログラムを止めます。突然に終了したいときはいつでも、これを呼んでください。</p>
+
+<p>”‘注意:”’ Ruby自身の標準`exit`メソッドを使う必要がある場合は (フォークされたRubyプロセス内で等)
+`Kernel.exit`を呼び出して下さい。</p>
+
+<h3 id="label-font%28message%3A+a+string%29+%C2%BB+an+array+of+font+family+names+%3D%3D%3D">font(message: a string) » an array of font family names ===</h3>
+
+<p>ファイルからTrueType（または他の種類のフォント）をロードします。TrueTypeはすべてのプラットフォームで
+サポートされるとはいえ、あなたのプラットフォームは他の種類のフォントをサポートするかもしれません。
+Shoesはこの動作に、それぞれのオペレーティングシステムのビルトインフォントシステムを利用します。</p>
+
+<p>”‘注意:”’ 今のところGreen Shoesでは、fontメソッドをサポートしていません。</p>
+
+<p>ここにどのプラットフォームで何のフォントが動作するかの目安があります。</p>
+
+<pre>* Bitmap fonts (.bdf, .pcf, .snf) - Linux
+* Font resource (.fon) - Windows
+* Windows bitmap font file (.fnt) - Linux, Windows
+* PostScript OpenType font (.otf) - Mac OS X, Linux, Windows
+* Type1 multiple master (.mmm) - Windows
+* Type1 font bits (.pfb) - Linux, Windows
+* Type1 font metrics (.pfm) - Linux, Windows
+* TrueType font (.ttf) - Mac OS X, Linux, Windows
+* TrueType collection (.ttc) - Mac OS X, Linux, Windows</pre>
+
+<p>フォントが適切にロードされたなら、ファイルに見つかったフォントの名前の配列を取り戻すでしょう。
+そうではなく、ファイルにはフォントが見つからないなら`nil`が返されます。</p>
+
+<p>また興味深いことに:`Shoes::FONTS`定数はこのプラットフォームで利用可能なフォントの完全な一覧です。
+`include?`を利用していくつかのフォントをチェックできます。</p>
+
+<p>{{{</p>
+
+<pre>if Shoes::FONTS.include? &quot;Coolvetica&quot;
+  alert &quot;Coolvetica is available on this system.&quot;
+else
+  alert &quot;You do not have the Coolvetica font.&quot;
+end</pre>
+
+<p>}}}</p>
+
+<p>もしフォントを表示することに問題があるなら、それを利用する前に、アプリケーションがフォントを ロードすることを確認してください。特にOS
+Xでは、もしフォントがロードされる前に利用されたなら、 フォントキャッシュはロードされたフォントを無視する傾向があります。</p>
+
+<h3 id="label-gradient%28color1%2C+color2%29+%C2%BB+a+range+of+RGB+array+%3D%3D%3D">gradient(color1, color2) » a range of RGB array ===</h3>
+
+<p>二つの色から直線勾配を作ります。それぞれの色に、色を描画するためにRGB arrayか文字列を渡します。 例えば、`gradient(green,
+red)`は、`green..red`と同じです。 また`gradient(green, ‘#FA3’)`のように記述することもできます。</p>
+
+<p>{{{</p>
+
+<pre>Shoes.app do
+  oval 100, 100, 100,
+    fill: gradient(green, '#FA3'), angle: 45
+end</pre>
+
+<p>}}}</p>
+
+<h3 id="label-gray%28the+numbers%3A+darkness%2C+alpha%29+%C2%BB+RGB+array+%3D%3D%3D">gray(the numbers: darkness, alpha) » RGB array ===</h3>
+
+<p>暗さのレベルや、任意的にはアルファレベルからグレースケールカラーを作成します。</p>
+
+<p>{{{</p>
+
+<pre class="ruby"><span class="ruby-constant">Shoes</span>.<span class="ruby-identifier">app</span> <span class="ruby-keyword">do</span>
+ <span class="ruby-identifier">nostroke</span>
+ <span class="ruby-value">11</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+   <span class="ruby-identifier">y</span> = <span class="ruby-identifier">x</span> = <span class="ruby-value">50</span> <span class="ruby-operator">+</span> <span class="ruby-value">10</span> * <span class="ruby-identifier">i</span>
+   <span class="ruby-identifier">r</span> = <span class="ruby-value">200</span> <span class="ruby-operator">-</span> <span class="ruby-value">10</span> * <span class="ruby-identifier">i</span>
+   <span class="ruby-identifier">oval</span> <span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>, <span class="ruby-identifier">r</span>, <span class="ruby-identifier">fill</span><span class="ruby-operator">:</span> <span class="ruby-identifier">gray</span>(<span class="ruby-value">1</span><span class="ruby-operator">-</span><span class="ruby-identifier">i</span>*<span class="ruby-value">0.1</span>)
+ <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>}}}</p>
+
+<h3 id="label-rgb%28red%2C+green%2C+blue%2C+alpha%29+%C2%BB+an+array+of+decimal+numbers+%3D%3D%3D">rgb(red, green, blue, alpha) » an array of decimal numbers ===</h3>
+
+<p>赤、緑、青の構成要素から色を作成します。アルファレベル（透明度を示す）は任意に加えることができます。</p>
+
+<p>整数を渡すときは、0から255までの値を利用してください。</p>
+
+<p>{{{</p>
+
+<pre>Shoes.app do
+  blueviolet = rgb(138, 43, 226, 0.5)
+  darkgreen = rgb(0, 100, 0, 0.5)
+  oval 100, 100, 100,
+    fill: [blueviolet, darkgreen].sample(1)
+end</pre>
+
+<p>}}}</p>
+
+<p>または、0.0から1.0までの10進数を利用してください。</p>
+
+<p>{{{</p>
+
+<pre>Shoes.app do
+  blueviolet = rgb(0.54, 0.17, 0.89)
+  darkgreen = rgb(0, 0.4, 0)
+  oval 100, 100, 100,
+    fill: [blueviolet, darkgreen].sample(1)
+end</pre>
+
+<p>}}}</p>
+
+<h2 id="label-The+App+Object+%3D%3D">The App <a href="../../classes/Object.html">Object</a> ==</h2>
+
+<p>アプリケーションはURLでコードを実行する一つのウィンドウです。URLを切り替えるとき、新しい
+アプリケーションオブジェクトが作成され、スタック、フローや他の要素で満たされます。</p>
+
+<p>アプリケーションはウィンドウ自体です。それは閉じられるか、クリアされるか、新しい要素で満たされる かもしれません。!{:margin_left
+=&gt; 100}../snapshots/sample46.png!</p>
+
+<p>スロット／ボックスの用語では、アプリケーション自体がフローです。詳しくは”Slots”セクションを
+見てください、しかし、これはどんな要素も直接フローのトップレベルに置かれることを単に意味します。</p>
+
+<h3 id="label-Shoes.app%28styles%29+%7B+...+%7D+%C2%BB+Shoes%3A%3AApp+%3D%3D%3D"><a href="../../classes/Shoes.html#method-c-app">Shoes.app</a> { … } » <a href="../../classes/Shoes/App.html">Shoes::App</a> ===</h3>
+
+<p>Green Shoesのアプリケーションウィンドウを開始します。これはGreen Shoesプログラムを作るための
+出発地点です。ブロックの内部では、ウィンドウを様々なGreen Shoesの要素（ボタン、アートワーク、
+その他）で満たし、そしてブロックの外では、ウィンドウがどれぐらい大きいのかを説明するために
+`styles`を利用します。おそらくアプリケーションの名前についてもです。</p>
+
+<p>{{{</p>
+
+<pre>#!ruby
+Shoes.app title: &quot;White Circle&quot;,
+  width: 200, height: 200 do
+  background black
+  fill white
+  oval top: 20, left: 20, radius: 160
+end</pre>
+
+<p>}}}</p>
+
+<p>上記のケースでは、小さなウィンドウを作成します。200×200ピクセルです。 そして、そのウィンドウには黒い背景と白い輪の2つの要素があります。</p>
+
+<p><a href="http://App.Shoes.APPS">いったんアプリケーションが作成されれば、それは[</a>]の一覧に追加されます。 <a
+href="http://Element.window">もしあなたがより多くのウィンドウを生成したいなら、[</a>]メソッドや
+[[Element.dialog]]メソッドを見てください。</p>
+
+<h3 id="label-Shoes.APPS%28%29+%C2%BB+An+array+of+Shoes%3A%3AApp+objects+%3D%3D%3D"><a href="../../classes/Shoes.html">Shoes</a>.APPS() » An array of <a href="../../classes/Shoes/App.html">Shoes::App</a> objects ===</h3>
+
+<p>現在開いているすべてのGreen Shoesアプリケーションの完全な一覧を作成します。
+いったんアプリケーションが閉じられると、その一覧から取り除かれます。 そう、Green
+Shoesでは一度に多くの実行できます。それはとても元気付けられます。</p>
+
+<h3 id="label-clipboard%28%29+%C2%BB+a+string+%3D%3D%3D">clipboard() » a string ===</h3>
+
+<p>システムのクリップボードのすべてのテキストを含む文字列を返します。
+これはコンピュータ上のどのプログラムからでもカットアンドペーストできるグローバルクリップボードです。</p>
+
+<h3 id="label-clipboard+%3D+a+string+%3D%3D%3D">clipboard = a string ===</h3>
+
+<p>システムクリップボードに`a string`のテキストを保存します。</p>
+
+<h3 id="label-close%28%29+%3D%3D%3D">close() ===</h3>
+
+<p>アプリケーションのウィンドウを閉じます。 複数のウィンドウを開いていて、すべてのアプリケーションを閉じたいなら、ビルトインメソッドの
+`exit`を利用してください。</p>
+
+<p>{{{</p>
+
+<pre>Shoes.app do
+ para 'hello'
+ button 'spawn' do
+  Shoes.app do
+   para 'hello'
+   button('close: close this window only'){close}
+   button('exit: quit Green Shoes'){exit}
+  end
+ end
+ button('close: close this window only'){close}
+ button('exit: quit Green Shoes'){exit}
+end</pre>
+
+<p>}}}</p>
+
+<h3 id="label-download%28url%3A+a+string%2C+styles%29+%3D%3D%3D">download(url: a string, styles) ===</h3>
+
+<p>ダウンロードのスレッド（あなたがJavaScriptに詳しいのなら、およそXMLHttpRequestのようなものです）
+を開始します。このメソッドは、すぐに戻り値を返してバックグラウンドでダウンロードを開始します。
+また、それぞれのダウンロードスレッドが`start`、`progress`や`finish`イベントを開始します。
+downloadにファイルを送ることや、（`finish`イベントの中で）文字列を取り戻すことができます。</p>
+
+<p>downloadにブロックを付けると、それは`finish`イベントとして呼ばれます。</p>
+
+<p>{{{</p>
+
+<pre class="ruby"><span class="ruby-constant">Shoes</span>.<span class="ruby-identifier">app</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">stack</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">title</span> <span class="ruby-string">&quot;Searching Google&quot;</span>, <span class="ruby-identifier">size</span><span class="ruby-operator">:</span> <span class="ruby-value">16</span>
+    <span class="ruby-ivar">@status</span> = <span class="ruby-identifier">para</span> <span class="ruby-string">&quot;One moment...&quot;</span>
+
+    <span class="ruby-identifier">download</span> <span class="ruby-string">&quot;http://is.gd/bXTVY7&quot;</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">goog</span><span class="ruby-operator">|</span>
+      <span class="ruby-ivar">@status</span>.<span class="ruby-identifier">text</span> = <span class="ruby-node">&quot;Headers: #{goog.meta}&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>}}}</p>
+
+<p>この例は本当に`download`の最も簡単な形です：いくつかのウェブデータをメモリにダウンロードして、
+ダウンロードが完了するとそのデータを操作しています。</p>
+
+<p>`download`のもう一つのサンプルはいくつかのウェブデータを、`:save`スタイルを利用してファイルに 保存します。</p>
+
+<p>{{{</p>
+
+<pre class="ruby"><span class="ruby-constant">Shoes</span>.<span class="ruby-identifier">app</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">stack</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">title</span> <span class="ruby-string">&quot;Downloading Google image&quot;</span>, <span class="ruby-identifier">size</span><span class="ruby-operator">:</span> <span class="ruby-value">16</span>
+    <span class="ruby-ivar">@status</span> = <span class="ruby-identifier">para</span> <span class="ruby-string">&quot;One moment...&quot;</span>
+
+    <span class="ruby-identifier">download</span> <span class="ruby-string">&quot;http://is.gd/GVAGF7&quot;</span>,
+      :<span class="ruby-identifier">save</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;nasa50th.gif&quot;</span> <span class="ruby-keyword">do</span>
+     <span class="ruby-ivar">@status</span>.<span class="ruby-identifier">text</span> = <span class="ruby-string">&quot;Okay, is downloaded.&quot;</span>
+     <span class="ruby-identifier">image</span> <span class="ruby-string">&quot;nasa50th.gif&quot;</span>, <span class="ruby-identifier">top</span><span class="ruby-operator">:</span> <span class="ruby-value">100</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>}}}</p>
+
+<p>もしも特定のヘッダかアクションをウェブサーバへ送る必要があるのならば、HTTPリクエストを
+カスタマイズするために`:method`、`:headers`や`:body`スタイルを利用することができます。
+（そして、それら以上のスタイルが必要なら、いつでもRubyのOpenURIクラスを準備することができます。）</p>
+
+<p>{{{</p>
+
+<pre class="ruby"><span class="ruby-comment">#!ruby</span>
+<span class="ruby-comment"># Not yet available</span>
+<span class="ruby-constant">Shoes</span>.<span class="ruby-identifier">app</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">stack</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">title</span> <span class="ruby-string">&quot;GET Google&quot;</span>, <span class="ruby-identifier">size</span><span class="ruby-operator">:</span> <span class="ruby-value">16</span>
+    <span class="ruby-ivar">@status</span> = <span class="ruby-identifier">para</span> <span class="ruby-string">&quot;One moment...&quot;</span>
+
+    <span class="ruby-identifier">download</span> <span class="ruby-string">&quot;http://is.gd/bXTVY7&quot;</span>, 
+        :<span class="ruby-identifier">method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;GET&quot;</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">dump</span><span class="ruby-operator">|</span>
+      <span class="ruby-ivar">@status</span>.<span class="ruby-identifier">text</span> = <span class="ruby-identifier">dump</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">body</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>}}}</p>
+
+<p>上記の例から、Shoesは、Googleのサーチエンジンへ質問するために“GET”メソッドを 利用することが分かります。</p>
+
+<p>”‘注意:”’ Green Shoesは、`:method`, `:headers`, `:body`スタイルをサポートしていません。</p>
+
+<p>{{{</p>
+
+<pre class="ruby"><span class="ruby-identifier">include</span> <span class="ruby-constant">Hpricot</span>
+<span class="ruby-constant">Shoes</span>.<span class="ruby-identifier">app</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">status</span> = <span class="ruby-identifier">para</span> <span class="ruby-string">&quot;One moment...&quot;</span>
+  <span class="ruby-identifier">download</span> <span class="ruby-string">'http://is.gd/BatiRt'</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">dl</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">samples</span> = []
+    <span class="ruby-constant">Hpricot</span>(<span class="ruby-identifier">dl</span>).<span class="ruby-identifier">inner_text</span>.<span class="ruby-identifier">each_line</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">samples</span>.<span class="ruby-identifier">push</span>(<span class="ruby-node">$1</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/(sample.*\.rb)/</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">status</span>.<span class="ruby-identifier">text</span> = <span class="ruby-identifier">samples</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">', '</span>)
+    <span class="ruby-identifier">flush</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>}}}</p>
+
+<p>上記の例から、Green ShoesはHTML解析のためにHpricotライブラリを組み込んでいることが わかります。</p>
+
+<p>”‘注意:”’ 今のところWindowsプラットフォームのみです。</p>
+
+<h3 id="label-location%28%29+%C2%BB+a+string+%3D%3D%3D">location() » a string ===</h3>
+
+<p>現在のアプリケーションのURLを含む文字列を取得します。</p>
+
+<h3 id="label-mouse%28%29+%C2%BB+an+array+of+numbers%3A+button%2C+left%2C+top+%3D%3D%3D">mouse() » an array of numbers: button, left, top ===</h3>
+
+<p>どちらのボタンが押されたのかと共に、マウスカーソルの位置を特定します。</p>
+
+<p>{{{</p>
+
+<pre>#!ruby
+Shoes.app do
+  @p = para
+  animate do
+    button, left, top = self.mouse
+    @p.replace &quot;mouse: #{button}, #{left}, #{top}&quot;
+  end
+end</pre>
+
+<p>}}}</p>
+
+<h3 id="label-owner%28%29+%C2%BB+Shoes%3A%3AApp+%3D%3D%3D">owner() » <a href="../../classes/Shoes/App.html">Shoes::App</a> ===</h3>
+
+<p>このアプリケーションを開始したアプリケーションを取得します。多くの場合、これは`nil`でしょう。 <a
+href="http://Element.window">しかし[</a>]メソッドを利用してアプリケーションが開始されたなら、
+その所有者は`window`と呼ばれるアプリケーションでしょう。</p>
+
+<h3 id="label-started%3F%28%29+%C2%BB+true+or+false+%3D%3D%3D">started?() » true or false ===</h3>
+
+<p>ウィンドウはすべて構築され、表示されましたか？これは完全に構築される前に、 ウィンドウを利用しようとするスレッド化されたコードのために役に立ちます。
+（また、ウィンドウが開くときに実行される`start`イベントも見てください。）</p>
+
+<p>”注意:”‘ 今のところGreen Shoesではstarted?メソッドをサポートしていません。</p>
+
+<h3 id="label-visit%28url%3A+a+string%29+%3D%3D%3D">visit(url: a string) ===</h3>
+
+<p>異なるShoesのURLを見るために、ロケーションを変更します。</p>
+
+<p>（<a
+href="http://google.comのような）絶対パスのURLは悪くないですが、Green">google.comのような）絶対パスのURLは悪くないですが、Green</a>
+ShoesはGreen <a href="../../classes/Shoes.html">Shoes</a>
+アプリケーションがそのアドレスに存在することを期待するでしょう。 （そのため、google.comはHTMLアプリケーションとしては動作しません。）</p>
+
+<h2 id="label-The+Styles+Master+List+%3D%3D">The Styles Master List ==</h2>
+
+<p>外観を変更したいですか？ Green Shoesにおいてはスタイルが要素の表示方法を変更するために利用されます。
+場合によっては、要素のすべてのクラスのスタイルでさえ設定できます。 （すべての段落に特定のフォントを与えるように）</p>
+
+<p>スタイルは簡単にspotできます。通常は要素が生成されるときに現れます。</p>
+
+<p>{{{</p>
+
+<pre>Shoes.app title: &quot;A Styling Sample&quot; do
+  para 'Green Shoes', align: 'center', size: 50
+end</pre>
+
+<p>}}}</p>
+
+<p>このappには`:title`スタイルが設定されています。そしてこのappの内部の段落には、
+中央揃えの`:align`スタイルとフォントサイズ50の`:size`スタイルが設定されます。</p>
+
+<p><a
+href="http://Common.style">このスタイルのハッシュは、どんな要素やスロットも利用できる[</a>]メソッドを利用して変更できます。</p>
+
+<p>”‘注意:”’ 今のところGreen Shoesでは、styleメソッドで変更できる要素は形状のみです。</p>
+
+<p>{{{</p>
+
+<pre>Shoes.app title: &quot;A Styling Sample&quot; do
+  choose = 
+    lambda{[red, blue, green, yellow].sample}
+  s = star 100, 50, 30, 200, 180, strokewidth: 5
+  button 'change colors' do
+    s.style stroke: choose.call, fill: choose.call
+  end
+end</pre>
+
+<p>}}}</p>
+
+<p>多くのスタイルもメソッドとして呼び出すことで設定することができます。 （メソッドを見つけるために手動での検索を行うでしょう。）</p>
+
+<p>”‘注意:”’ Green Shoesではメソッドとしてはそれらをサポートしていません。</p>
+
+<p>{{{</p>
+
+<pre># Not yet available
+Shoes.app title: &quot;A Styling Sample&quot; do
+  choose = 
+    lambda{[red, blue, green, yellow].sample}
+  s = star 100, 50, 30, 200, 180, strokewidth: 5
+  button 'change colors' do
+    s.stroke = choose.call; s.fill = choose.call
+  end
+end</pre>
+
+<p>}}}</p>
+
+<p>どんなスタイルでも分かるようにすべてのマニュアルを苦労して読ませるよりも、この役に立つページは Green
+Shoesのあらゆるスタイルを急いで駆け抜けて、どこでスタイルが利用されるかについて示唆します。</p>
+
+<h3 id="label-%3Aalign+%C2%BB+a+string+%3D%3D%3D">:align » a string ===</h3>
+
+<p>”banner, caption, inscription, para, subtitle, tagline, title”で利用できます。</p>
+
+<p>テキストの整列です。これは次のどれかです：</p>
+
+<pre>* 'left': 左へテキストを整列します。
+* 'center': 中央へテキストを整列します。
+* 'right': 右へテキストを整列します。</pre>
+
+<h3 id="label-%3Aangle+%C2%BB+a+number+%3D%3D%3D">:angle » a number ===</h3>
+
+<p>”background, border, line, oval, rect, shape, star”で利用できます。</p>
+
+<p>グラデーションに適用する角度です。通常はグラデーションの色の効果は上から下です。
+`:angle`を90に設定するなら反時計回りに90度回転し、グラデーションは左から右になるでしょう。</p>
+
+<h3 id="label-%3Aattach+%C2%BB+a+slot+or+element+%3D%3D%3D">:attach » a slot or element ===</h3>
+
+<p>”flow, stack”で利用できます。</p>
+
+<p>他のスロットや要素と比較してスロットをピンで止めます。ウィンドウの左上の角からスロットを配置する ために`:attach =&gt;
+Window`と書く人もいるかもしれません。 これについてもう少し取り上げると、`:top =&gt; 10, :left =&gt; 10,
+:attach =&gt; Window`のスタイルは スロットをウインドウの座標の(10, 10)に配置します。</p>
+
+<p>動く要素にスロットがアタッチされた場合は、そのスロットはそれとともに動きます。
+アタッチメントが`nil`にリセットされるなら、通常はそのスロットはそれを取り囲む他のオブジェクトとともに流れます。</p>
+
+<p>”‘注意:”’ Green Shoesは`:attach`スタイルをサポートしていません。</p>
+
+<h3 id="label-%3Aautoplay+%C2%BB+true+or+false+%3D%3D%3D">:autoplay » true or false ===</h3>
+
+<p>”video”で利用できます。</p>
+
+<p>ビデオは現れた後で再生を開始すべきですか？`true`を設定すると、ビデオはユーザに尋ねること無く 開始するでしょう。</p>
+
+<p>”‘注意:”’ Green Shoesは`:autoplay`スタイルをサポートしていません。</p>
+
+<h3 id="label-%3Aback+%C2%BB+true+or+false+%3D%3D%3D">:back » true or false ===</h3>
+
+<p>”shapes, image, textblocks”で利用できます。</p>
+
+<p>他の要素の後ろに配置されます。</p>
+
+<p>{{{</p>
+
+<pre>Shoes.app do
+  rect 100, 100, 100, 100, fill: green
+  rect 120, 120, 100, 100, fill: yellow
+  para 'hello', left: 150, top: 150, front: true
+  oval 150, 150, 100, 100, fill: red
+  oval 180, 180, 100, 100, fill: gray, back: true
+end</pre>
+
+<p>}}}</p>
+
+<h3 id="label-%3Abottom+%C2%BB+a+number+%3D%3D%3D">:bottom » a number ===</h3>
+
+<p>”すべてのスロットと要素”で利用できます。</p>
+
+<p>要素の下の端の座標にピクセルを設定します。その端はコンテナの下の端に対して配置されます。 そのため、`:bottom =&gt;
+0`は、スロットの下の端とその下の端が接するように要素を配置するでしょう。</p>
+
+<p>”‘注意:”’ Green Shoesは`:bottom`スタイルをサポートしていません。</p>
+
+<h3 id="label-%3Acap+%C2%BB+%3Acurve+or+%3Arect+or+%3Aproject+%3D%3D%3D">:cap » :curve or :rect or :project ===</h3>
+
+<p>”arc, line, shape”で利用できます。</p>
+
+<p>線の終点の形状を曲がったもの（curved）か角張ったもの（square）に設定します。 <a
+href="http://Art.cap">追加の説明は[</a>]メソッドを見てください。</p>
+
+<h3 id="label-%3Acenter+%C2%BB+true+or+false+%3D%3D%3D">:center » true or false ===</h3>
+
+<p>”arc, image, oval, rect, shape”で利用できます。</p>
+
+<p>`:top`と`:left`の座標が形状の中心を意味するかどうか示します。 `<a
+href="http://Art.transform">true`を設定すると、[</a>]メソッドに`:center`を設定したのと似ています。</p>
+
+<p>”‘注意:”’ Green Shoesは`:center`スタイルをサポートしていません。</p>
+
+<h3 id="label-%3Achange+%C2%BB+a+proc+%3D%3D%3D">:change » a proc ===</h3>
+
+<p>”edit_box, edit_line, list_box”で利用できます。</p>
+
+<p>`change`イベントハンドラはスタイルに保存されます。例として、edit_boxの [[EditBox.change]]メソッドを見てください。</p>
+
+<h3 id="label-%3Achecked+%C2%BB+true+or+false+%3D%3D%3D">:checked » true or false ===</h3>
+
+<p>”check, radio”で利用できます。</p>
+
+<p>チェックボックスまたはラジオボタンがクリックされましたか？ `<a
+href="http://Check.checked=">true`が設定されるなら、そのボックスはチェックされます。[</a>]メソッドも見てください。</p>
+
+<h3 id="label-%3Achoose+%C2%BB+a+string+%3D%3D%3D">:choose » a string ===</h3>
+
+<p>”list_box”で利用できます。</p>
+
+<p><a href="http://ListBox.choose">リスト内の現在選択されたアイテムを設定します。追加の情報は[</a>]にあります。</p>
+
+<h3 id="label-%3Aclick+%C2%BB+a+proc+%3D%3D%3D">:click » a proc ===</h3>
+
+<p>”arc, arrow, button, check, flow, image, line, link, oval, radio, rect,
+shape, stack, star”で利用できます。</p>
+
+<p>`<a
+href="http://Events.click">click`イベントハンドラはスタイルに保存されます。解説は[</a>]メソッドを見てください。</p>
+
+<h3 id="label-%3Acurve+%C2%BB+a+number+%3D%3D%3D">:curve » a number ===</h3>
+
+<p>”background, border, rect”で利用できます。</p>
+
+<p>長方形の要素のそれぞれの曲がった角の半径です。例として、6を設定した場合、長方形の角は 6ピクセルの半径のカーブを与えられます。</p>
+
+<h3 id="label-%3Adisplace_left+%C2%BB+a+number+%3D%3D%3D">:displace_left » a number ===</h3>
+
+<p>”すべてのスロットと要素”で利用できます。</p>
+
+<p>形状、テキストブロックまたはその他のどんな種類のオブジェクトでも左か右に置き換えます。
+正数は与えられた数のピクセルによって右へ置き換え、負数は左へ置き換えます。 オブジェクトを置き換えることはページの実際のレイアウトに影響を与えません。
+<a
+href="http://Position.displace">この振る舞いに少し驚くかもしれないので、このスタイルを利用する前に、[</a>]の
+ドキュメントを読むようにしてください。</p>
+
+<p>”‘注意:”’ Green Shoesは`:displace_left`スタイルをサポートしていません。</p>
+
+<h3 id="label-%3Adisplace_top+%C2%BB+a+number+%3D%3D%3D">:displace_top » a number ===</h3>
+
+<p>”すべてのスロットと要素”で利用できます。</p>
+
+<p>形状、テキストブロックまたはその他のどんな種類のオブジェクトでも上か下に置き換えます。
+正数は与えられた数のピクセルによって下へ置き換え、負数は上へ置き換えます。
+オブジェクトを置き換えることはページの実際のレイアウトやオブジェクトの本当の座標に影響を与えません。 <a
+href="http://Position.displace">この振る舞いに少し驚くかもしれないので、[</a>]のドキュメントを読んでください。</p>
+
+<p>”‘注意:”’ Green Shoesは`:displace_top`スタイルをサポートしていません。</p>
+
+<h3 id="label-%3Aemphasis+%C2%BB+a+string+%3D%3D%3D">:emphasis » a string ===</h3>
+
+<p>”banner, caption, inscription, para, span, subtitle, tagline,
+title”で利用できます。</p>
+
+<p>強調によってテキストを整えます。（一般的にはイタリック体にされます。）</p>
+
+<p>このスタイルは3つの設定ができます：</p>
+
+<pre>* &quot;normal&quot; - 直立のフォント。
+* &quot;oblique&quot; - ローマン体の傾いたフォント。
+* &quot;italic&quot; - イタリック体の傾いたフォント。</pre>
+
+<h3 id="label-%3Afamily+%C2%BB+a+string+%3D%3D%3D">:family » a string ===</h3>
+
+<p>”banner, caption, inscription, para, span, subtitle, tagline,
+title”で利用できます。</p>
+
+<p>与えられたフォントファミリーでテキストを整えます。文字列はフォントファミリー名かカンマで区切られた フォントファミリーの一覧を含むべきです。</p>
+
+<h3 id="label-%3Afill+%C2%BB+a+hex+code%2C+a+RGB+array+or+a+range+of+either+%3D%3D%3D">:fill » a hex code, a RGB array or a range of either ===</h3>
+
+<p>”background, banner, border, caption, inscription, para, line, oval,  rect,
+shape, star, subtitle, tagline, title”で利用できます。</p>
+
+<p>背景のペンの色です。形状では、これは形状の内側を塗りつぶすペンキの色です。
+テキストなどでは、この色で背景が塗られます。（まるで蛍光ペンでマークされたように）</p>
+
+<h3 id="label-%3Afont+%C2%BB+a+string+%3D%3D%3D">:font » a string ===</h3>
+
+<p>”banner, caption, inscription, para, subtitle, tagline, title”で利用できます。</p>
+
+<p>フォントの種類でテキストを整えます。この文字列は非常に柔軟ですが、 “[FAMILY-LIST] [STYLE-OPTIONS]
+[SIZE]”の形である必要があり、 FAMILY-LISTの部分は任意にカンマで終わりカンマで区切られたフォントファミリーの一覧、
+STYLE_OPTIONSはvariant、weight、stretch、またはgravityなどの空白で区切られた
+スタイルを表現する単語の一覧、そしてSIZEは（ポイントのサイズの）10進数または絶対的な
+サイズのために単位修飾子“px”を任意に続けます。オプションのどれかは設定されないかもしれません。
+FAMILY-LISTが設定されない場合は、デフォルトフォントファミリー（Arial）が利用されます。</p>
+
+<h3 id="label-%3Afront+%C2%BB+true+or+false+%3D%3D%3D">:front » true or false ===</h3>
+
+<p>”shapes, image, textblocks”で利用できます。</p>
+
+<p>他の要素の前に配置されます。</p>
+
+<h3 id="label-%3Agroup+%C2%BB+a+string+%3D%3D%3D">:group » a string ===</h3>
+
+<p>”radio”で利用できます。</p>
+
+<p>どのグループにラジオボタンが所属するかを示します。この設定がない場合は、ラジオボタンは
+周辺のスロットのラジオボタンとグループ化されます。ラジオボタンを“グループ化”することはスクリーン上で
+お互いに隣接してグループ化されることを意味するのではありません。 それは、一度にグループから一つだけのラジオボタンだけを選択できることを意味します。</p>
+
+<p>文字列にスタイルを与えることによって、ラジオボタンは同じグループ名を持つ他のラジオボタンとグループ化されます。</p>
+
+<h3 id="label-%3Aheight+%C2%BB+a+number+%3D%3D%3D">:height » a number ===</h3>
+
+<p>”すべてのスロットと要素”で利用できます。</p>
+
+<p>オブジェクトの高さをピクセルで設定します。数値が10進数なら、その高さは親の高さの
+パーセンテージになります。（0.0は0%に、1.0は100%になります。）</p>
+
+<h3 id="label-%3Ahidden+%C2%BB+true+or+false+%3D%3D%3D">:hidden » true or false ===</h3>
+
+<p>”すべてのスロットと要素”で利用できます。</p>
+
+<p>オブジェクトの表示または非表示です。すべてのオブジェクトにとって`:hidden =&gt; true`は
+画面上での非表示になります。その子供のスロットと要素でも同様です。</p>
+
+<p>{{{</p>
+
+<pre>Shoes.app do
+  slot = stack hidden: true do
+    title 'hello'
+    flow do
+      image File.join DIR, '../samples/loogink.png'
+    end
+    para link('Go go!'){alert 'hi'}
+  end
+  timer(2){slot.show}
+  timer(5){slot.hide}
+end</pre>
+
+<p>}}}</p>
+
+<p>”‘注意:”’ 今のところGreen Shoesで`:hidden`スタイルをサポートしている要素は、 slots, shapes,
+textblocks, imagesのみです。</p>
+
+<h3 id="label-%3Ainner+%C2%BB+a+number+%3D%3D%3D">:inner » a number ===</h3>
+
+<p>”star”で利用できます。</p>
+
+<p>内側の半径のサイズ（ピクセル）です。その内側の半径は点が別れ始める星の中に中空でない円を描きます。</p>
+
+<h3 id="label-%3Aitems+%C2%BB+an+array+%3D%3D%3D">:items » an array ===</h3>
+
+<p>”list_box”で利用できます。</p>
+
+<p><a href="http://Element.list_box">リストボックスの項目の一覧です。例のために[</a>]メソッドを見てください。</p>
+
+<h3 id="label-%3Ajustify+%C2%BB+true+or+false+%3D%3D%3D">:justify » true or false ===</h3>
+
+<p>”banner, caption, inscription, para, subtitle, tagline, title”で利用できます。</p>
+
+<p>均一に水平にテキストの間隔を開けます。</p>
+
+<h3 id="label-%3Akerning+%C2%BB+a+number+%3D%3D%3D">:kerning » a number ===</h3>
+
+<p>”banner, caption, code, del, em, ins, inscription, link, para, span,
+strong, sub, sup, subtitle, tagline, title”で利用できます。</p>
+
+<p>文字の間に自然な空白をピクセルで追加します。</p>
+
+<p>”‘注意:”’ Green Shoesは`:kerning`スタイルをサポートしていません。</p>
+
+<h3 id="label-%3Aleading+%C2%BB+a+number+%3D%3D%3D">:leading » a number ===</h3>
+
+<p>”banner, caption, inscription, para, subtitle, tagline, title”で利用できます。</p>
+
+<p>テキストブロックの行間に空白を設定します。デフォルトは4ピクセルです。</p>
+
+<h3 id="label-%3Aleft+%C2%BB+a+number+%3D%3D%3D">:left » a number ===</h3>
+
+<p>”すべてのスロットと要素”で利用できます。</p>
+
+<p>オブジェクトの左の座標を特定のピクセルに設定します。 `:left =&gt;
+10`の設定はそのオブジェクトを含むスロットの左の端からオブジェクトの左の端が10ピクセル
+離れた位置に配置します。このleftのスタイルが設定されていない（または`nil`が設定される）なら、
+そのオブジェクトはそれを囲んでいる他のオブジェクトとともに動くでしょう。</p>
+
+<h3 id="label-%3Amargin+%C2%BB+a+number+or+an+array+of+four+numbers+%3D%3D%3D">:margin » a number or an array of four numbers ===</h3>
+
+<p>”すべてのスロットと要素”で利用できます。</p>
+
+<p>マージンは要素の周囲に間隔をあけます。 それぞれの要素はleft、top、right、そしてbottomのマージンを持っています。
+`:margin`スタイルに一つの数が設定されると、要素の周囲の間隔は均一にその数にとなります。 言い換えると、`:margin =&gt;
+8`を設定すると、その要素の周囲のすべてのマージンは8ピクセルの 長さに設定されます。</p>
+
+<p>このスタイルは4つの数を`[left, top, right, bottom]`の形の配列で与えることもできます。</p>
+
+<h3 id="label-%3Amargin_bottom+%C2%BB+a+number+%3D%3D%3D">:margin_bottom » a number ===</h3>
+
+<p>”すべてのスロットと要素”で利用できます。</p>
+
+<p>要素の下側（bottom）のマージンをピクセルで設定します。</p>
+
+<h3 id="label-%3Amargin_left+%C2%BB+a+number+%3D%3D%3D">:margin_left » a number ===</h3>
+
+<p>”すべてのスロットと要素”で利用できます。</p>
+
+<p>要素の左側（left）のマージンをピクセルで設定します。</p>
+
+<h3 id="label-%3Amargin_right+%C2%BB+a+number+%3D%3D%3D">:margin_right » a number ===</h3>
+
+<p>”すべてのスロットと要素”で利用できます。</p>
+
+<p>要素の右側（right）のマージンをピクセルで設定します。</p>
+
+<h3 id="label-%3Amargin_top+%C2%BB+a+number+%3D%3D%3D">:margin_top » a number ===</h3>
+
+<p>”すべてのスロットと要素”で利用できます。</p>
+
+<p>要素の上側（top）のマージンをピクセルで設定します。</p>
+
+<h3 id="label-%3Aouter+%C2%BB+a+number+%3D%3D%3D">:outer » a number ===</h3>
+
+<p>”star”で利用できます。</p>
+
+<p>星の外側の半径（”全”幅の半分）をピクセルで設定します。</p>
+
+<h3 id="label-%3Apoints+%C2%BB+a+number+%3D%3D%3D">:points » a number ===</h3>
+
+<p>”star”で利用できます。</p>
+
+<p>その星はいくつの頂点を持ちますか？`:points =&gt; 5`のスタイルは5つの頂点を持つ星を作成します。</p>
+
+<h3 id="label-%3Aradius+%C2%BB+a+number+%3D%3D%3D">:radius » a number ===</h3>
+
+<p>”oval”で利用できます。</p>
+
+<p>それらの要素に半径（直径または全幅の半分）を設定します。
+これを設定することは、この数値の2倍の`:width`と`:height`を設定することと同等です。</p>
+
+<h3 id="label-%3Aright+%C2%BB+a+number+%3D%3D%3D">:right » a number ===</h3>
+
+<p>”すべてのスロットと要素”で利用できます。</p>
+
+<p>要素の右端の座標をピクセルで設定します。その端はコンテナの右端に対して配置されます。 そのため、`:right =&gt;
+0`は、スロットの右端とその右端が接するように要素を配置するでしょう。 一方`:right =&gt;
+20`は要素の右端をそのスロットの右端から左側に向けて20ピクセル 離れたところに配置します。</p>
+
+<p>”‘注意:”’ Green Shoesは`:right`スタイルをサポートしていません。</p>
+
+<h3 id="label-%3Arise+%C2%BB+a+number+%3D%3D%3D">:rise » a number ===</h3>
+
+<p>”banner, caption, inscription, para, span, subtitle, tagline,
+title”で利用できます。</p>
+
+<p>テキストのフォントを基準から上げたり下げたりします。 <a
+href="http://Element.sup">例えば、[</a>]は10ピクセルの`:rise`を行います。 <a
+href="http://Element.sub">逆に、[</a>]の要素は-10ピクセルの`:rise`となります。</p>
+
+<h3 id="label-%3Ascroll+%C2%BB+true+or+false+%3D%3D%3D">:scroll » true or false ===</h3>
+
+<p>”flow, stack”で利用できます。</p>
+
+<p>スロットをスクロールするスロットとします。 `:scroll =&gt;
+true`が設定され、そのコンテンツがスロットの高さ以上の場合はスクロールバーが
+スロットに表示されます。スクロールバーは必要に応じて表示したり非表示になります。
+それはスロットの幅の内側で表示されるので、スクロールバーのあるなしに関わらず、スロットの幅は 決して変わらないことを意味します。</p>
+
+<p>”‘注意:”’ Green Shoesでは制約があります。今のところ`:scroll`スタイルはお試し版です。</p>
+
+<pre>* スロットのインスタンスメソッド(clear, hide, etc.)が期待通り動きません。
+* マウスイベントをハンドリングできません。
+* `flush`メソッドを明示的に記述する必要があります。</pre>
+
+<p>{{{</p>
+
+<pre>Shoes.app do
+  s = stack left: 100, top: 50, width: 300, 
+    height: 100, scroll: true do
+    background gold
+    image File.join(DIR, '../samples/loogink.png')
+    10.times{para 'hello'}
+    flush
+  end
+end</pre>
+
+<p>}}}</p>
+
+<h3 id="label-%3Asecret+%C2%BB+true+or+false+%3D%3D%3D">:secret » true or false ===</h3>
+
+<p>”ask, edit_line”で利用できます。</p>
+
+<p>パスワードフィールドのために利用され、この設定は入力された文字を画面上で表示されない
+ようにします。そのかわり、置き換えられた文字（たとえばアスタリスク）をそれぞれの文字が 入力されるごとに表示します。</p>
+
+<h3 id="label-%3Asize+%C2%BB+a+number+%3D%3D%3D">:size » a number ===</h3>
+
+<p>”banner, caption, inscription, para, span, subtitle, tagline,
+title”で利用できます。</p>
+
+<p>このテキストブロックまたはテキストの一部の内部で利用されたフォントのサイズをピクセルで設定します。</p>
+
+<p>フォントサイズは次の文字列を利用することでも大きくすることができるかもしれません:</p>
+
+<pre>* &quot;xx-small&quot; - 現在のサイズの57%
+* &quot;x-small&quot; - 現在のサイズの64%
+* &quot;small&quot; - 現在のサイズの83%
+* &quot;medium&quot; - サイズ変更なし
+* &quot;large&quot; - 現在のサイズの120%
+* &quot;x-large&quot; - 現在のサイズの143%
+* &quot;xx-large&quot; - 現在のサイズの173%</pre>
+
+<h3 id="label-%3Astate+%C2%BB+a+string+%3D%3D%3D">:state » a string ===</h3>
+
+<p>”button, check, edit_box, edit_line, list_box, radio”で利用できます。</p>
+
+<p>この`:state`スタイルは編集されたくないコントロールを利用不能または固定するためにあります。</p>
+
+<p>利用可能なスタイルの設定：</p>
+
+<pre>* nil - コントロールはアクティブで編集可能です。
+* &quot;readonly&quot; - コントロールはアクティブですが編集不可能です。
+* &quot;disabled&quot; - コントロールはアクティブはなく（グレイアウト）、編集不可能です。</pre>
+
+<h3 id="label-%3Astretch+%C2%BB+a+string+%3D%3D%3D">:stretch » a string ===</h3>
+
+<p>”banner, caption, code, del, em, ins, inscription, link, para, span,
+strong, sub, sup, subtitle, tagline, title”で利用できます。</p>
+
+<p>テキストオブジェクトに伸縮したフォントを設定します。</p>
+
+<p>利用可能な設定：</p>
+
+<pre>* &quot;condensed&quot; - 狭い幅の文字
+* &quot;normal&quot; - 標準の幅の文字
+* &quot;expanded&quot; - 広い幅の文字
+
+'''注意:''' Green Shoesは`:stretch`スタイルをサポートしていません。</pre>
+
+<h3 id="label-%3Astrikecolor+%C2%BB+a+RGB+array+%3D%3D%3D">:strikecolor » a RGB array ===</h3>
+
+<p>”banner, caption, inscription, para, span, subtitle, tagline,
+title”で利用できます。</p>
+
+<p>テキストに棒線を引いて削除するときの線の色です。</p>
+
+<h3 id="label-%3Astrikethrough+%C2%BB+a+string+%3D%3D%3D">:strikethrough » a string ===</h3>
+
+<p>”banner, caption, inscription, para, span, subtitle, tagline,
+title”で利用できます。</p>
+
+<p>このテキストに棒線を引いて削除しますか？2つのオプションがあります：</p>
+
+<pre>* &quot;none&quot; - 棒線を引いて削除しません。
+* &quot;single&quot; - 1本の棒線を引いて削除します。</pre>
+
+<h3 id="label-%3Astroke+%C2%BB+a+hex+code%2C+a+rgb+array+or+a+range+of+either+%3D%3D%3D">:stroke » a hex code, a rgb array or a range of either ===</h3>
+
+<p>”background, banner, border, caption, inscription, para, line, oval,  rect,
+shape, star, subtitle, tagline, title”で利用できます。</p>
+
+<p>フォアグラウンドのペンの色です。形状の場合は描かれる線の色です。 段落や他のテキストでは、この色で文字が表示されます。</p>
+
+<h3 id="label-%3Astrokewidth+%C2%BB+a+number+%3D%3D%3D">:strokewidth » a number ===</h3>
+
+<p>”background, border, line, oval, rect, shape, star”で利用できます。</p>
+
+<p>描かれる線のピクセルでの太さで、形状の線を特徴付けます。 例えば、数値の2が設定されればstrokewidthは2ピクセルになります。</p>
+
+<h3 id="label-%3Atext+%C2%BB+a+string+%3D%3D%3D">:text » a string ===</h3>
+
+<p>”edit_box, edit_line”で利用できます。</p>
+
+<p>edit_boxやedit_lineのコンテンツに表示されるメッセージを設定します。</p>
+
+<h3 id="label-%3Atop+%C2%BB+a+number+%3D%3D%3D">:top » a number ===</h3>
+
+<p>”すべてのスロットと要素”で利用できます。</p>
+
+<p>オブジェクトの上側の座標を、その親のスロットに対して設定します。 オブジェクトに`:top =&gt;
+40`が設定されたなら、オブジェクトの上端はそのオブジェクトを含む
+スロットの上端から40ピクセル下に配置されることを意味します。`:top`スタイルが与えられないなら、
+そのスロットの自然な流れでオブジェクトは自動的に配置されます。</p>
+
+<h3 id="label-%3Aundercolor+%C2%BB+a+RGB+array+%3D%3D%3D">:undercolor » a RGB array ===</h3>
+
+<p>”banner, caption, inscription, para, span, subtitle, tagline,
+title”で利用できます。</p>
+
+<p>テキストの下線に利用される色です。</p>
+
+<h3 id="label-%3Aunderline+%C2%BB+a+string+%3D%3D%3D">:underline » a string ===</h3>
+
+<p>”banner, caption, inscription, para, span, subtitle, tagline,
+title”で利用できます。</p>
+
+<p>テキストに下線のスタイルを指示します。</p>
+
+<p>この設定の選択肢は：</p>
+
+<pre>* &quot;none&quot; - 下線なし。　
+* &quot;single&quot; - 途切れのない下線。
+* &quot;double&quot; - 平行な途切れのない2本の下線。
+* &quot;low&quot; - フォントの基準より下の低い下線。（一般的に１つの文字に対してだけ、得にキーボードアクセラレータを表示するときに推奨されます。）
+* &quot;error&quot; - 波状の下線、通常はミススペルの指摘を見つけます。</pre>
+
+<h3 id="label-%3Avariant+%C2%BB+a+string+%3D%3D%3D">:variant » a string ===</h3>
+
+<p>”banner, caption, code, del, em, ins, inscription, link, para, span,
+strong, sub, sup, subtitle, tagline, title”で利用できます。</p>
+
+<p>テキストのグループのためにフォントを変化させます。2つの選択肢：</p>
+
+<pre>* &quot;normal&quot; - 通常のフォント。
+* &quot;smallcaps&quot; - 大文字が小さく変化することによって置き換えられた小文字のフォント。</pre>
+
+<p>”‘注意:”’ Green Shoesは`:variant`スタイルをサポートしていません。</p>
+
+<h3 id="label-%3Aweight+%C2%BB+a+string+%3D%3D%3D">:weight » a string ===</h3>
+
+<p>”banner, caption, inscription, para, span, subtitle, tagline,
+title”で利用できます。</p>
+
+<p>テキストを太文字に設定します。一般的には、このスタイルは次の文字列の内の1つを設定します：</p>
+
+<pre>* &quot;ultralight&quot; - 超軽量の太さ (= 200)
+* &quot;light&quot; - 軽量の太さ (=300)
+* &quot;normal&quot; - 通常の太さ (= 400)
+* &quot;semibold&quot; - 通常と太文字の中間の太さ (=600)
+* &quot;bold&quot; - 太文字 (= 700)
+* &quot;ultrabold&quot; - 極端な太文字の太さ (= 800)
+* &quot;heavy&quot; - 重厚な太さ (= 900)</pre>
+
+<p>しかしながら、数値で太さを直接渡すこともできます。</p>
+
+<h3 id="label-%3Awidth+%C2%BB+a+number+%3D%3D%3D">:width » a number ===</h3>
+
+<p>”すべてのスロットと要素”で利用できます。</p>
+
+<p>要素の幅をピクセルで設定します。数値が10進数なら、その幅はパーセンテージに変換されます。
+（0.0は0%に、1.0は100%になります。）100%の幅は親のスロットを埋め尽くすことを意味します。</p>
+
+<h3 id="label-%3Awrap+%C2%BB+a+number+%3D%3D%3D">:wrap » a number ===</h3>
+
+<p>”banner, caption, inscription, para, span, subtitle, tagline,
+title”で利用できます。</p>
+
+<p>どこで改行するか? 選択可能のオプションは以下の通りです。</p>
+
+<pre>* &quot;word&quot; - 単語の区切りで改行します。
+* &quot;char&quot; - 文字の区切りで改行します。そのため単語が分割される場合があります。
+* &quot;trim&quot; - はみ出した部分は省略します。</pre>
+
+<h2 id="label-Classes+List+%3D%3D">Classes List ==</h2>
+
+<p>Green Shoesで紹介するすべてのクラスの完全な一覧です。</p>
+
+<p>こちら([[<a
+href="http://rdoc.info/github/ashbb/green_shoes/master/frames/file/README.md">rdoc.info/github/ashbb/green_shoes/master/frames/file/README.md</a>
+Green <a href="../../classes/Shoes.html">Shoes</a> RDoc]]) を参照下さい。</p>
+
+<h2 id="label-Colors+List+%3D%3D">Colors List ==</h2>
+
+<p>以下はGreen Shoes全体で利用可能な色の一覧です。背景色または枠線の色として。
+描かれる線や塗りつぶされる色として。これらの色の大部分はX11やHTMLのパレットから来ています。</p>
+
+<p>これらの色はすべて名前によって利用できます。（そのため、どんなスロットの内部からでも
+`tomato`メソッドを呼ぶことで、すてきな赤みがかった色が手に入るでしょう。） <a
+href="http://Built-in.rgb">それぞれの色の下には、[</a>]メソッドで利用できる正確な数値を見つけることもできます。</p>
+
+<p>{COLORS}</p>
+
+<h1 id="label-Slots+%3D">Slots =</h1>
+
+<p>スロットは画像やテキストなどのレイアウトに使われる箱です。2つの最も一般的なスロットは
+`スタック（stack）`と`フロー（flow）`です。スロットはGreen Shoesの専門用語で“箱”または “キャンバス”とも言えます</p>
+
+<p>マウスホイールやページアップやページダウンはあらゆるプラットフォームで普及しているため、
+縦のスクロールだけが溢れて問題になりました。そのためGreen Shoesでは、まさにWEBのように
+通常は幅が固定です。一方で高さは際限なく続いて行きます。</p>
+
+<p>さて、そうしたいなら、どんなものでも幅や高さを指定することもできます。それはいくらかの数学を 用いるでしょうが、完璧かもしれません。</p>
+
+<p>一般的には、スタックとフローを使うことを提案するでしょう。ここでの目的は、あなたがいくらかの
+幅を何かで満たして、幅を満たしながら、ページの下に進みたいということです。
+これらを、HTMLの“ブロック”と“インライン”のスタイルと類似しているのように考えることができます。</p>
+
+<h4 id="label-Stacks+%3D%3D%3D%3D">Stacks ====</h4>
+
+<p>スタックは単純に要素の垂直なスタックです。スタック内のそれぞれの要素は、その上位の要素の 直下に配置されます。</p>
+
+<p>また、スタックは箱のように形作られます。そのため、スタックが250の幅を与えられたら、 そのスタックはそれ自身が250ピクセルの幅の要素となります。</p>
+
+<p><a href="http://Element.stack">新しいスタックを作成するには[</a>]メソッドを利用し、それはすべてのスロットの
+内部で利用できます。そのためスタックは他のスタックやフローを含むことができます。</p>
+
+<h4 id="label-Flows+%3D%3D%3D%3D">Flows ====</h4>
+
+<p>フローは要素をできるだけしっかりと詰め込みます。幅は満たされ、それらの下の要素を包みます。
+互いに隣接して配置されたテキストの要素は一つのパラグラフとして表示されます。 画像とウィジェットは同じシリーズとして実行されます。</p>
+
+<p>スタックのように、フローは箱です。そのためスタックとフローは安全に埋め込むことができ、
+それらのコンテンツに気を使うことなく、同質です。スタックとフローはそれらのコンテンツだけを 異なって扱います。</p>
+
+<p><a href="http://Element.flow">フローを作成するには[</a>]を呼びます。
+フローは他のフローやスタックを含むかもしれません。</p>
+
+<p>最後に：Green Shoesのウィンドウはそれ自身がフローです。</p>
+
+<h2 id="label-Art+for+Slots+%3D%3D">Art for Slots ==</h2>
+
+<p>それぞれのスロットは、色のついた形状やグラデーションなどでおおうことにできる白紙の表面の キャンバスのようなものです。</p>
+
+<p>多くの一般的な形状は`oval`と`rect`メソッドで描かれます。 まず、絵筆の色を準備する必要があります。</p>
+
+<p>`stroke`コマンドは線の色を設定します。 `fill`コマンドは線の内部を塗りつぶすために利用する色を設定します。　</p>
+
+<p>{{{</p>
+
+<pre>#!ruby
+Shoes.app do
+  stroke red
+  fill blue
+  oval top: 10, left: 10, radius: 100
+end</pre>
+
+<p>}}}</p>
+
+<p>このコードはまわりに赤い線のある青いパイを与えます。 100ピクセルの幅で、ウィンドウの左上から南東に少しのピクセルを配置します。</p>
+
+<p>上記の`blue`と`red`メソッドはRGB配列です。 どうやって色を混ぜるかはColorsセクションを見てください。</p>
+
+<h4 id="label-Processing+%E3%81%A8+NodeBox+%E3%81%8B%E3%82%89%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%94%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3+%3D%3D%3D%3D">Processing と NodeBox からのインスピレーション ====</h4>
+
+<p>この技巧的なメソッドの大抵は文字通りPythonのドローイングキットのNodeBoxから来ています。
+次に、NodeBoxは多くのアイデアを、グラフィックとアニメーションのためのJavaのような言語である
+Processingから得ています。私はそれらのすばらしいプログラムの作者から大きな恩を受けています。</p>
+
+<p>Green ShoesはNodeBoxとProcessingから少しの点が違います。 例えば、Green
+Shoesはそれ自身のRGB配列を持っていることを含めて、異なるカラーメソッドを
+持っていますが、それらはとてもProcessingのカラーメソッドに似ています。 そしてGreen
+Shoesは線を描くことや形状内を塗りつぶすために画像やグラデーションを 利用することも許しています。</p>
+
+<p>ShoesはいくつかのアニメーションのアイデアをProcessingから取り入れており、
+Processingのメソッドをしっかりと参考にしようとしながらそれを拡張しています。</p>
+
+<h3 id="label-arc%28left%2C+top%2C+width%2C+height%2C+angle1%2C+angle2%29+%C2%BB+Shoes%3A%3AOval+%3D%3D%3D">arc(left, top, width, height, angle1, angle2) » <a href="../../classes/Shoes/Oval.html">Shoes::Oval</a> ===</h3>
+
+<p>弧の形状（楕円形の一部）を座標（left, top）に描きます。 このメソッドは`:angle1`と`:angle2`のスタイルを提供することにより
+[[oval]]より 少し多くの制御をが行えます。（実際には、`:angle1`に0と`:angle2`に`2*Math::PI`を
+設定することにより、`oval`メソッドをまねることができます。）</p>
+
+<p>{{{</p>
+
+<pre class="ruby"><span class="ruby-constant">Shoes</span>.<span class="ruby-identifier">app</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">fill</span> <span class="ruby-identifier">yellow</span><span class="ruby-operator">..</span><span class="ruby-identifier">green</span>
+  <span class="ruby-identifier">stroke</span> <span class="ruby-identifier">red</span><span class="ruby-operator">..</span><span class="ruby-identifier">blue</span>
+  <span class="ruby-identifier">strokewidth</span> <span class="ruby-value">10</span>
+  <span class="ruby-identifier">cap</span> :<span class="ruby-identifier">curve</span>
+
+  <span class="ruby-identifier">a</span> = <span class="ruby-identifier">animate</span> <span class="ruby-value">12</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+    <span class="ruby-ivar">@e</span>.<span class="ruby-identifier">remove</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@e</span>
+    <span class="ruby-identifier">r</span> = <span class="ruby-identifier">i</span> * (<span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span> * <span class="ruby-value">0.01</span>)
+    <span class="ruby-ivar">@e</span> = <span class="ruby-identifier">arc</span> <span class="ruby-value">100</span>, <span class="ruby-value">50</span>, <span class="ruby-value">180</span>, <span class="ruby-value">360</span>, <span class="ruby-value">0</span>, <span class="ruby-identifier">r</span>
+    <span class="ruby-identifier">a</span>.<span class="ruby-identifier">stop</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">r</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-value">2</span>*<span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>}}}</p>
+
+<h3 id="label-arrow%28left%2C+top%2C+width%29+%C2%BB+Shoes%3A%3AShape+%3D%3D%3D">arrow(left, top, width) » <a href="../../classes/Shoes/Shape.html">Shoes::Shape</a> ===</h3>
+
+<p>座標（left, top）に`width`ピクセルの矢を描きます。</p>
+
+<p>{{{</p>
+
+<pre>Shoes.app do
+  para 'An arrow shape:', left: 20, top: 10
+  arrow 30, 40, 70
+end</pre>
+
+<p>}}}</p>
+
+<h3 id="label-cap%28%3Acurve+or+%3Arect+or+%3Aproject%29+%C2%BB+self+%3D%3D%3D">cap(:curve or :rect or :project) » self ===</h3>
+
+<p>描くすべての線の終点の形状である線の頂点を設定します。 `:curve`が設定されるなら、終点はまるくなります。
+デフォルトは`:rect`で、線の終点は突然に平らになります。 `:project`の頂点も平らですが、棒の外側は少し長くなります。</p>
+
+<p>{{{</p>
+
+<pre>Shoes.app do
+  nofill
+  strokewidth 20
+  stroke green
+  cap :curve
+  line 100, 100, 300, 100
+  line 100, 250, 300, 300
+  cap :rect
+  line 100, 150, 300, 150
+  stroke blue
+  cap :project
+  line 100, 200, 300, 200
+  line 200, 100, 200, 300
+  strokewidth 1
+  stroke red
+  rect 100, 100, 200, 200
+end</pre>
+
+<p>}}}</p>
+
+<h3 id="label-fill%28pattern%29+%C2%BB+pattern+%3D%3D%3D">fill(pattern) » pattern ===</h3>
+
+<p>塗りつぶすバケツの色の指定（またはパターン）を設定します。 パターンは色やグラデーションまたは画像が設定できます。
+そして、一度塗りつぶすバケツが設定されたら、選択されたパターンで色づけられた形状を 描くことができます。</p>
+
+<p>画像のパターンで星を描くためには：</p>
+
+<p>{{{</p>
+
+<pre>#!ruby
+Shoes.app do
+  fill File.join(DIR, &quot;../static/gshoes-icon.png&quot;)
+  star 200, 200, 5, 100, 50
+end</pre>
+
+<p>}}}</p>
+
+<p>塗りつぶすバケツをクリアするには`nofill`を使ってください。 そして`stroke`メソッドを利用して線（星の枠線）の色を設定してください。</p>
+
+<h3 id="label-nofill%28%29+%C2%BB+self+%3D%3D%3D">nofill() » self ===</h3>
+
+<p>塗りつぶす色を削除するため、形状は塗りつぶされずに描かれます。 その代わりに、形状は線だけを持ち、中央を透明のままにします。</p>
+
+<h3 id="label-nostroke%28%29+%C2%BB+self+%3D%3D%3D">nostroke() » self ===</h3>
+
+<p>線の色を空にします。形状は外側の線が描かれなくなります。 `nofill`も設定された場合は、形状は表示されずに描かれます。</p>
+
+<h3 id="label-line%28left%2C+top%2C+x2%2C+y2%29+%C2%BB+Shoes%3A%3ALine+%3D%3D%3D">line(left, top, x2, y2) » <a href="../../classes/Shoes/Line.html">Shoes::Line</a> ===</h3>
+
+<p>現在の線の色（別名“stroke”）を使って座標（left, top）から（x2, y2）まで線を描きます。</p>
+
+<h3 id="label-oval%28left%2C+top%2C+radius%29+%C2%BB+Shoes%3A%3AOval+%3D%3D%3D">oval(left, top, radius) » <a href="../../classes/Shoes/Oval.html">Shoes::Oval</a> ===</h3>
+
+<p>座標（left, top）ピクセルに`radius`ピクセルの幅と高さの円を描きます。 線の色や塗りつぶす色が形状を描くために利用されます。 <a
+href="http://Art.transform">デフォルトでは、座標は楕円形の最も左上の角ですが、これは[</a>]メソッドを
+呼ぶことや、次のメソッドの下の`:center`スタイルを使用することによって変更することができます。</p>
+
+<p>{{{</p>
+
+<pre>#!ruby
+Shoes.app do
+  stroke blue
+  strokewidth 4
+  fill black
+  oval 10, 10, 50
+end</pre>
+
+<p>}}}</p>
+
+<p>様々な比率の楕円形を描くためには、`oval(left, top, width, height)`のシンタックスを 利用してもいいです。</p>
+
+<h3 id="label-oval%28styles%29+%C2%BB+Shoes%3A%3AOval+%3D%3D%3D">oval(styles) » <a href="../../classes/Shoes/Oval.html">Shoes::Oval</a> ===</h3>
+
+<p>スタイルのハッシュを利用して円を描きます。次のスタイルがサポートされています：</p>
+
+<pre>* `top`: 楕円形の囲いのy座標。
+* `left`: 楕円形の囲いのx座標。
+* `radius`: 円の幅と高さ。
+* `width`: 楕円形の幅のピクセルでの指定。
+* `height`: 楕円形の高さのピクセルでの指定。
+* `center`: 座標を楕円形の中央に指定しますか？（trueまたはfalse）</pre>
+
+<p>これらのスタイルは形状オブジェクトの`style`メソッドを利用して変更されます。</p>
+
+<p>”‘注意:”’ Green Shoesは`:center`スタイルをサポートしていません。</p>
+
+<h3 id="label-rect%28top%2C+left%2C+width%2C+height%2C+corners+%3D+0%29+%C2%BB+Shoes%3A%3ARect+%3D%3D%3D">rect(top, left, width, height, corners = 0) » <a href="../../classes/Shoes/Rect.html">Shoes::Rect</a> ===</h3>
+
+<p>座標（left, top）からwidth x heightの寸法の長方形を描きます。
+オプションとして、5番目の引数（ピクセルでの角の半径）により長方形の角を丸くすることもできます。
+他の形状と同様に、長方形は描く線の色や塗りつぶす色を利用して描かれます。</p>
+
+<p>{{{</p>
+
+<pre>#!ruby
+Shoes.app do
+  stroke rgb(0.5, 0.5, 0.7)
+  fill rgb(1.0, 1.0, 0.9)
+  rect 10, 10, self.width - 20, self.height - 20
+end</pre>
+
+<p>}}}</p>
+
+<p>上記のサンプルは角の周囲に10ピクセルのマージンを残して、その親の箱の範囲を塗りつぶす
+長方形を描きます。デフォルトで親の箱を塗りつぶした長方形のためには`background`も 見てください。</p>
+
+<h3 id="label-rect%28styles%29+%C2%BB+Shoes%3A%3ARect+%3D%3D%3D">rect(styles) » <a href="../../classes/Shoes/Rect.html">Shoes::Rect</a> ===</h3>
+
+<p>スタイルのハッシュを利用して長方形を描きます。次のスタイルがサポートされています：</p>
+
+<pre>* `top`: 長方形のy座標。
+* `left`: 長方形のx座標。
+* `curve`: 長方形の角の半径のピクセル。
+* `width`: 長方形のピクセルによる幅。
+* `height`:長方形のピクセルによる高さ。
+* `center`: 座標を長方形の中央に指定しますか？（trueまたはfalse）</pre>
+
+<p>これらのスタイルは形状オブジェクトの`style`メソッドを利用して変更されます。</p>
+
+<p>”‘注意:”’ Green Shoesは`:center`スタイルをサポートしていません。</p>
+
+<h3 id="label-rotate%28degrees%3A+a+number%29+%C2%BB+self+%3D%3D%3D">rotate(degrees: a number) » self ===</h3>
+
+<p>形状をその角度で描画するために、`度（degrees）`数により描画のために利用される 範囲を回転させます。</p>
+
+<p>下の例では、長方形は(30, 30)に45度回転されて描かれます。</p>
+
+<p>{{{</p>
+
+<pre>#!ruby
+Shoes.app do
+  fill &quot;#333&quot;
+  rotate 45
+  rect 30, 30, 40, 40
+end</pre>
+
+<p>}}}</p>
+
+<h3 id="label-shape%28left%2C+top%29+%7B+...+%7D+%C2%BB+Shoes%3A%3AShape+%3D%3D%3D">shape(left, top) { … } » <a href="../../classes/Shoes/Shape.html">Shoes::Shape</a> ===</h3>
+
+<p>(left, top)から開始して、続いてブロックの内部で`line_to`、`move_to`、`curve_to`
+そして`arc_to`を呼ぶことにより、任意の形状を表現（記述）します。 曲がったり弧を描いたりする長い線の形状をスケッチして見ることができます。</p>
+
+<p>{{{</p>
+
+<pre>Shoes.app do
+  fill yellow
+  shape do
+    move_to 50, 30
+    curve_to 100, 100, 10, 20, 100, 50
+    line_to 20, 100
+    line_to 30, 30
+  end
+end</pre>
+
+<p>}}}</p>
+
+<p>形状は他の形状を含むこともできます。 <a href="http://Art.oval">そして、形状の内部に[</a>]、[[<a
+href="http://Art.line">Art.rect]]、[</a>]、[[Art.star]]または [[<a
+href="http://Art">Art.arrow]]（さらに、[</a>]セクションの他のメソッドすべて）を配置することができますが、
+それらは線の一部ではないでしょう。形状のグループのようなそれらは、すべて1つとして描かれます。</p>
+
+<p>”‘注意:”’ Green Shoesでは、上記の`line_to`、`move_to`、`curve_to`は
+Cairo::Contextのメソッドです。ブロックの中で直接それらを呼び出しています。 そのため、Green
+Shoesでは`arc_to`はサポートしていません。また他の形状もShapeブロック 内に含めることができません。</p>
+
+<h3 id="label-star%28left%2C+top%2C+points+%3D+10%2C+outer+%3D+100.0%2C+inner+%3D+50.0%29+%C2%BB+Shoes%3A%3AStar+%3D%3D%3D">star(left, top, points = 10, outer = 100.0, inner = 50.0) » <a href="../../classes/Shoes/Star.html">Shoes::Star</a> ===</h3>
+
+<p>描く線の色や塗りつぶす色を利用して星を描きます。 星は(left, top)の座標を中心点として`頂点（points）`の数とともに配置されます。
+`outer`の幅は星の全半径をを定義します；`inner`の幅は頂点の始まる星の中央の半径を 指定します。</p>
+
+<h3 id="label-stroke%28pattern%29+%C2%BB+pattern+%3D%3D%3D">stroke(pattern) » pattern ===</h3>
+
+<p>スロットのアクティブな線の色を設定します。`pattern`は色、グラデーションまたは画像で、
+それらはすべて“patterns”に分類されます。その線の色はそれに続く形状すべての枠線を 描くときに利用されます。</p>
+
+<p>つまり、まわりに赤い線を持つ矢印を描くには：</p>
+
+<p>{{{</p>
+
+<pre>#!ruby
+Shoes.app do
+  stroke red
+  nofill
+  star 100, 100
+end</pre>
+
+<p>}}}</p>
+
+<p>線の色をクリアするには、`nostroke`メソッドを利用します。</p>
+
+<h3 id="label-strokewidth%28a+number%29+%C2%BB+self+%3D%3D%3D">strokewidth(a number) » self ===</h3>
+
+<p>スロットの内部で描かれるすべての線のサイズを設定します。
+`stroke`メソッドが線の色を変更する一方、`strokewidth`メソッドは線のサイズを
+ピクセルで変更します。`strokewidth(4)`を呼ぶことにより4ピクセルの太さで線を描きます。</p>
+
+<h3 id="label-transform%28%3Acenter+or+%3Acorner%29+%C2%BB+self+%3D%3D%3D">transform(:center or :corner) » self ===</h3>
+
+<p>（`skew`や`rotate`のような）変化は形状の中心あたりで実行されるべきですか？
+またはその形状の角ですか？Shoesの初期値は`:corner`です。</p>
+
+<p>”‘注意:”’ Green Shoesは`:transform`メソッドをサポートしていません。</p>
+
+<h3 id="label-translate%28left%2C+top%29+%C2%BB+self+%3D%3D%3D">translate(left, top) » self ===</h3>
+
+<p>スロットの描画の範囲を開始する位置を移動します。 通常は、すべての形状がこの位置から描くことができるように、その範囲は左上の角の (0,
+0)から開始します。`translate`により開始位置が(10, 20)に移動されて、 (50,
+60)に形状が描かれるなら、その形状は実際にはスロットの(60, 80)に描かれます。</p>
+
+<p>”‘注意:”’ Green Shoesは`:translate`メソッドをサポートしていません。</p>
+
+<h2 id="label-Element+Creation+%3D%3D">Element Creation ==</h2>
+
+<p>Green Shoesは幅広い種類の要素を持っており、その多くをHTMLからよいところを選んで
+採用しています。このページはどのようにしてスロットにそれらの要素を作成するかを記述して
+います。それらの要素を配置した後でさらにどのようにして変更したり利用するのかについては、
+このマニュアルの要素（Elements）のセクションを見てください。</p>
+
+<h3 id="label-animate%28fps%29+%7B+%7Cframe%7C+...+%7D+%C2%BB+Shoes%3A%3AAnim+%3D%3D%3D">animate(fps) { |frame| … } » <a href="../../classes/Shoes/Anim.html">Shoes::Anim</a> ===</h3>
+
+<p>アプリケーションをそのままにして並列で実行するアニメーションタイマーを開始します。 `fps`は秒ごとのフレームの数です。
+この数は付属するブロックが1秒に何回呼ばれるのかを決定します。</p>
+
+<p>このブロックは`frame`の数が与えられます。 `frame`の数はゼロから始まり、そのブロックが何フレームのアニメーションを表示したのかを
+教えます。</p>
+
+<p>{{{</p>
+
+<pre class="ruby"><span class="ruby-comment">#!ruby</span>
+<span class="ruby-constant">Shoes</span>.<span class="ruby-identifier">app</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">counter</span> = <span class="ruby-identifier">para</span> <span class="ruby-string">&quot;STARTING&quot;</span>
+  <span class="ruby-identifier">animate</span> <span class="ruby-value">24</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">frame</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">counter</span>.<span class="ruby-identifier">replace</span> <span class="ruby-node">&quot;FRAME #{frame}&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>}}}</p>
+
+<p>上記のアニメーションは1秒間に24回表示されます。 数が与えられないなら、`fps`のデフォルトは10です。</p>
+
+<h3 id="label-background%28pattern%29+%C2%BB+Shoes%3A%3ABackground+%3D%3D%3D">background(pattern) » <a href="../../classes/Shoes/Background.html">Shoes::Background</a> ===</h3>
+
+<p>色（またはパターン）を指定して背景（Background）要素を描きます。
+パターンは色、グラデーションまたは画像です。色と画像は背景全体に敷き詰めます。 グラデーションは背景を塗りつぶすように伸びます。</p>
+
+<p>”‘注意してください:”’ 背景は実際には要素であり、スタイルではありません。 HTMLは背景をスタイルのようにあつかいます。
+それはすべての箱は一つの背景だけを持てることを意味します。 Green Shoesは背景の要素を重ねることができます。</p>
+
+<p>{{{</p>
+
+<pre>#!ruby
+Shoes.app do
+  background black
+  background white, width: 50
+end</pre>
+
+<p>}}}</p>
+
+<p>上記の例は二つの背景を塗ります。 まず、黒い背景がアプリケーションの表面のエリア全体に塗られます。
+そして、50ピクセルの白い縞が左側にそって塗られます。</p>
+
+<h3 id="label-banner%28text%29+%C2%BB+Shoes%3A%3ABanner+%3D%3D%3D">banner(text) » <a href="../../classes/Shoes/Banner.html">Shoes::Banner</a> ===</h3>
+
+<p>バナー（Banner）のテキストブロックを作成します。 Green Shoesは自動的に48ピクセルの大きさにテキストを整形します。</p>
+
+<h3 id="label-border%28text%2C+%3Astrokewidth+%3D%3E+a+number%29+%C2%BB+Shoes%3A%3ABorder+%3D%3D%3D">border(text, :strokewidth =&gt; a number) » <a href="../../classes/Shoes/Border.html">Shoes::Border</a> ===</h3>
+
+<p>色（またはパターン）を指定して枠線（Border）の要素を描きます。 パターンは色、グラデーションまたは画像です。色と画像は枠線全体に敷き詰めます。
+グラデーションは背景を塗りつぶすように伸びます。</p>
+
+<p>”‘注意してください:”’ 背景のように、枠線は実際には要素であり、スタイルではありません。 HTMLは背景や枠線をスタイルのようにあつかいます。
+それはすべての箱は一つの枠線だけを持てることを意味します。 Green
+Shoesはテキストブロック、画像、他のすべてのものにそって、枠線や背景の要素を 重ねることができます。</p>
+
+<h3 id="label-button%28text%29+%7B+...+%7D+%C2%BB+Shoes%3A%3AButton+%3D%3D%3D">button(text) { … } » <a href="../../classes/Shoes/Button.html">Shoes::Button</a> ===</h3>
+
+<p>表面にわたってメッセージ`テキスト（text）`の書かれた押しボタンを追加します。
+ボタンが押されたときに呼ばれる、任意のブロックを取り付けることができます。</p>
+
+<h3 id="label-caption%28text%29+%C2%BB+Shoes%3A%3ACaption+%3D%3D%3D">caption(text) » <a href="../../classes/Shoes/Caption.html">Shoes::Caption</a> ===</h3>
+
+<p>キャプション（Caption）テキストブロックを作成します。 Green Shoesは14ピクセルの大きさにこのテキストを整形します。</p>
+
+<h3 id="label-check%28%29+%C2%BB+Shoes%3A%3ACheck+%3D%3D%3D">check() » <a href="../../classes/Shoes/Check.html">Shoes::Check</a> ===</h3>
+
+<p>チェックボックスを追加します。</p>
+
+<h3 id="label-code%28text%29+%C2%BB+String+%3D%3D%3D">code(text) » <a href="../../classes/String.html">String</a> ===</h3>
+
+<p>コード（Code）のテキストの一部を作成します。 このテキストはデフォルトで等幅フォントになります。</p>
+
+<h3 id="label-del%28text%29+%C2%BB+String+%3D%3D%3D">del(text) » <a href="../../classes/String.html">String</a> ===</h3>
+
+<p>デフォルトで中央に1本の棒線を引いてテキストを削除した、 削除された（Del）（“deleted”の省略形）テキストの一部を作成します。</p>
+
+<h3 id="label-dialog%28styles%29+%7B+...+%7D+%C2%BB+Shoes%3A%3AApp+%3D%3D%3D">dialog(styles) { … } » <a href="../../classes/Shoes/App.html">Shoes::App</a> ===</h3>
+
+<p>（まさに [[Element.window]]メソッドを実効したように）新しいアプリケーションのウィンドウを
+開きますが、そのウィンドウはダイアログボックスの外観を与えられます。</p>
+
+<p>”‘注意:”’ Green Shoesは`dialog`メソッドをサポートしていません。</p>
+
+<h3 id="label-edit_box%28text%2C+%3Aaccepts_tab+%3D%3E+true+or+false%29+%C2%BB+Shoes%3A%3AEditBox+%3D%3D%3D">edit_box(text, :accepts_tab =&gt; true or false) » <a href="../../classes/Shoes/EditBox.html">Shoes::EditBox</a> ===</h3>
+
+<p>スロットに大きなマルチラインのテキストエリアを追加します。 この`text`はオプションでこの箱の開始時に与えられる文字列です。
+オプションのブロックをここに取り付けることができ、これはボックスのテキストに対するどんな種類の ユーザの変更でも呼び出されます。</p>
+
+<p>`accepts_tab`にtrueを設定するとタブが挿入できます。
+`accepts_tab`にfalseを設定するとタブによるフォーカス移動ができます。 デフォルトはfalseです。</p>
+
+<p>{{{</p>
+
+<pre>#!ruby
+Shoes.app do
+  edit_box
+  edit_box text: &quot;HORRAY EDIT ME&quot;
+  edit_box text: &quot;small one&quot;,
+    width: 100, height: 160
+end</pre>
+
+<p>}}}</p>
+
+<h3 id="label-edit_line%28text%29+%C2%BB+Shoes%3A%3AEditLine+%3D%3D%3D">edit_line(text) » <a href="../../classes/Shoes/EditLine.html">Shoes::EditLine</a> ===</h3>
+
+<p>スロットに一行のテキストボックスを追加します。 この`text`はオプションでこの箱の開始時に与えられる文字列です。
+オプションのブロックをここに取り付けることができ、これはボックスのテキストに対するどんな種類の ユーザの変更でも呼び出されます。</p>
+
+<h3 id="label-em%28text%29+%C2%BB+String+%3D%3D%3D">em(text) » <a href="../../classes/String.html">String</a> ===</h3>
+
+<p>Em（“emphasized”の省略形）テキストの一部を作成し、これはデフォルトでイタリック体で 整形されます。</p>
+
+<h3 id="label-every%28seconds%29+%7B+%7Ccount%7C+...+%7D+%C2%BB+Shoes%3A%3AAnim+%3D%3D%3D">every(seconds) { |count| … } » <a href="../../classes/Shoes/Anim.html">Shoes::Anim</a> ===</h3>
+
+<p>`animate`メソッドとよく似たタイマーですが、より非常に遅いです。
+このタイマーは与えられた数の秒（seconds）で、取り付けられたブロックを実行します。
+そのため、例えば5秒毎にwebサイトを確認する必要があるなら、実際にwebサイトにpingを
+打つコードを含むブロックと共に`every(300)`を呼び出します。</p>
+
+<h3 id="label-flow%28styles%29+%7B+...+%7D+%C2%BB+Shoes%3A%3AFlow+%3D%3D%3D">flow(styles) { … } » <a href="../../classes/Shoes/Flow.html">Shoes::Flow</a> ===</h3>
+
+<p>フロー（flow）はGreen Shoesの要素を配置できる目に見えない箱（または“スロット”）です。 <a
+href="http://Slots">フローとスタックのどちらもメインの[</a>]のページでとても詳細に説明されます。</p>
+
+<p>フローは要素を水平にまとめます。ものを垂直に積み重ねたままにするために
+[[Element.stack]]を利用するところで、フローはそのコンテンツをページの端から端にわたって
+配置します。いったんページの最後に到達したら、フローは要素の新しい行を開始します。</p>
+
+<h3 id="label-image%28path%29+%C2%BB+Shoes%3A%3AImage+%3D%3D%3D">image(path) » <a href="../../classes/Shoes/Image.html">Shoes::Image</a> ===</h3>
+
+<p><a href="http://Image">写真を表示するために[</a>]の要素を作成します。
+PNG、JPEGそしてGIFのフォーマットが許されます。</p>
+
+<p>`path`はファイルのパスまたはURLです。すべての画像はメモリに一時的にキャッシュされ、
+リモートの画像はローカルのユーザの個人的なShoesディレクトリにもキャッシュされます。
+リモートの画像はバックグラウンドでロードされます；ブラウザと同様に、画像はすぐには 表示されませんが、それらがロードされたときに表示されます。</p>
+
+<p>”‘注意:”’ Green Shoesは上述のローカルのユーザの個人的なShoesディレクトリへの キャッシュをサポートしていません。</p>
+
+<h3 id="label-imagesize%28path%29+%C2%BB+%5Bwidth%2C+height%5D+%3D%3D%3D">imagesize(path) » [width, height] ===</h3>
+
+<p>画像の幅と高さを素早く手に入れます。 画像はキャッシュにロードされず表示もされません。</p>
+
+<p>緊急の注意：このメソッドはリモートの画像（ハードディスクドライブからではなくHTTPにより ロードされた）には利用できません。</p>
+
+<h3 id="label-ins%28text%29+%C2%BB+String+%3D%3D%3D">ins(text) » <a href="../../classes/String.html">String</a> ===</h3>
+
+<p>一本の下線のGreen Shoesスタイルである、Ins（“inserted”の省略形）テキストの一部を 作成します。</p>
+
+<h3 id="label-inscription%28text%29+%C2%BB+Shoes%3A%3AInscription+%3D%3D%3D">inscription(text) » <a href="../../classes/Shoes/Inscription.html">Shoes::Inscription</a> ===</h3>
+
+<p>題名（Inscription）のテキストブロックを作成します。 Green Shoesは10ピクセルの大きさにこのテキストを整形します。</p>
+
+<h3 id="label-link%28text%2C+%3Aclick+%3D%3E+proc+or+string%29+%C2%BB+Shoes%3A%3ALink+%3D%3D%3D">link(text, :click =&gt; proc or string) » <a href="../../classes/Shoes/Link.html">Shoes::Link</a> ===</h3>
+
+<p>一本の下線を持ち線の色を#06E（青色）に整形したリンクテキストブロックを作成します。
+デフォルトのリンクホバースタイルは一本の下線を持ち線の色を#039（ダークブルー）に整形します。</p>
+
+<h3 id="label-link%28text%29%7B+...+%7D+%C2%BB+Shoes%3A%3ALink+%3D%3D%3D">link(text){ … } » <a href="../../classes/Shoes/Link.html">Shoes::Link</a> ===</h3>
+
+<p>この形式でもリンクテキストブロックを作成できます。 この場合、ユーザがリンクテキストをクリックするとブロック内のコードが実行されます。</p>
+
+<h3 id="label-list_box%28%3Aitems+%3D%3E+%5Bstrings%2C+...%5D%29+%C2%BB+Shoes%3A%3AListBox+%3D%3D%3D">list_box(:items =&gt; [strings, …]) » <a href="../../classes/Shoes/ListBox.html">Shoes::ListBox</a> ===</h3>
+
+<p>`items`の配列のすべてのエントリを含むドロップダウンリストボックスを追加します。
+オプションでブロックを取り付けることができ、これはユーザがボックスの項目を選択したら 呼び出されます。</p>
+
+<p>{{{</p>
+
+<pre class="ruby"><span class="ruby-comment">#!ruby</span>
+<span class="ruby-constant">Shoes</span>.<span class="ruby-identifier">app</span> <span class="ruby-keyword">do</span>
+ <span class="ruby-identifier">stack</span>  <span class="ruby-identifier">margin</span><span class="ruby-operator">:</span> <span class="ruby-value">10</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">para</span> <span class="ruby-string">&quot;Pick a card:&quot;</span>
+  <span class="ruby-identifier">list_box</span> <span class="ruby-identifier">items</span><span class="ruby-operator">:</span> [<span class="ruby-string">&quot;Jac&quot;</span>, <span class="ruby-string">&quot;Ace&quot;</span>, <span class="ruby-string">&quot;Jok&quot;</span>] <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">item</span><span class="ruby-operator">|</span>
+   <span class="ruby-ivar">@p</span>.<span class="ruby-identifier">text</span> = <span class="ruby-node">&quot;#{item} was picked!&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@p</span> = <span class="ruby-identifier">para</span>
+ <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>}}}</p>
+
+<p>選択された文字列をを得るために`ListBox#text`を呼び出します。
+より多くのヘルプは`リストボックス（ListBox）`のセクションの`ネイティブ`コントロールを見てください。</p>
+
+<h3 id="label-progress%28%29+%C2%BB+Shoes%3A%3AProgress+%3D%3D%3D">progress() » <a href="../../classes/Shoes/Progress.html">Shoes::Progress</a> ===</h3>
+
+<p>プログレスバーを追加します。</p>
+
+<h3 id="label-para%28text%29+%C2%BB+Shoes%3A%3APara+%3D%3D%3D">para(text) » <a href="../../classes/Shoes/Para.html">Shoes::Para</a> ===</h3>
+
+<p>12ピクセルの大きさに整形する、Para（“paragraph”の省略形）テキストブロックを作成します。</p>
+
+<h3 id="label-radio%28group+name%3A+a+string+or+symbol%29+%C2%BB+Shoes%3A%3ARadio+%3D%3D%3D">radio(group name: a string or symbol) » <a href="../../classes/Shoes/Radio.html">Shoes::Radio</a> ===</h3>
+
+<p>ラジオボタンを追加します。`グループ名（group name）`が与えられたら、ラジオボタンは
+グループの一部だとみなされます。同じグループのラジオボタンのうちで、
+1つだけをクリックすることができます。（もしグループ名が与えられなければ、そのラジオボタンは
+同じスロットの他のすべてのラジオボタンとグループ化されます）</p>
+
+<h3 id="label-span%28text%29+%C2%BB+String+%3D%3D%3D">span(text) » <a href="../../classes/String.html">String</a> ===</h3>
+
+<p>デフォルトでスタイル付けされていない、Spanテキストの一部を作成します。</p>
+
+<p>{{{</p>
+
+<pre>Shoes.app do
+  tagline &quot;\n&quot;, 'hello ' * 5, 
+    span(em('Green Shoes'), size: 8, rise: 15)
+end</pre>
+
+<p>}}}</p>
+
+<h3 id="label-stack%28styles%29+%7B+...+%7D+%C2%BB+Shoes%3A%3AStack+%3D%3D%3D">stack(styles) { … } » <a href="../../classes/Shoes/Stack.html">Shoes::Stack</a> ===</h3>
+
+<p>新しいスタックを作成します。スタックはスロットの一種です。 （<a
+href="http://Slots">スタックとフローの完全な説明はメインの[</a>]のページを見てください。）</p>
+
+<p>要するに、スタックは要素を配置するための目に見えない箱（“スロット”）です。 スタックにボタンや画像などを追加して、それらは垂直に積み上げられます。
+そう、それらは重なります。</p>
+
+<h3 id="label-strong%28text%29+%C2%BB+String+%3D%3D%3D">strong(text) » <a href="../../classes/String.html">String</a> ===</h3>
+
+<p>デフォルトで太字に整形された、Strongテキストの一部を作成します。</p>
+
+<h3 id="label-sub%28text%29+%C2%BB+String+%3D%3D%3D">sub(text) » <a href="../../classes/String.html">String</a> ===</h3>
+
+<p>デフォルトでテキストは10ピクセル（位置を）下げられx-smallフォントに整形された、
+Sub（“subscript”の省略形）テキストの一部を作成します。</p>
+
+<h3 id="label-subtitle%28text%29+%C2%BB+Shoes%3A%3ASubtitle+%3D%3D%3D">subtitle(text) » <a href="../../classes/Shoes/Subtitle.html">Shoes::Subtitle</a> ===</h3>
+
+<p>サブタイトル（Subtitle）テキストブロックを作成します。 26ピクセルの大きさにこのテキストを整形します。</p>
+
+<h3 id="label-sup%28text%29+%C2%BB+String+%3D%3D%3D">sup(text) » <a href="../../classes/String.html">String</a> ===</h3>
+
+<p>デフォルトでテキストは10ピクセル（位置を）上げられx-smallフォントに整形された、
+Sup（“superscript”の省略形）テキストの一部を作成します。</p>
+
+<h3 id="label-tagline%28text%29+%C2%BB+Shoes%3A%3ATagline+%3D%3D%3D">tagline(text) » <a href="../../classes/Shoes/Tagline.html">Shoes::Tagline</a> ===</h3>
+
+<p>タグライン（Tagline）テキストブロックを作成します。このテキストを18ピクセルの大きさに整形します。</p>
+
+<h3 id="label-timer%28seconds%29+%7B+...+%7D+%C2%BB+Fixnum+%3D%3D%3D">timer(seconds) { … } » Fixnum ===</h3>
+
+<p>1回だけのタイマーです。少しの秒（または分、時）後にいくらかのコードの実行をスケジュールしたい
+なら、ここにブロックとしてコードを取り付けることができます。</p>
+
+<p>今から5秒後にアラートボックスを表示するためには：</p>
+
+<p>{{{</p>
+
+<pre>#!ruby
+Shoes.app do
+  timer 5 do
+    alert &quot;Your five seconds are up.&quot;
+  end
+end</pre>
+
+<p>}}}</p>
+
+<h3 id="label-title%28text%29+%C2%BB+Shoes%3A%3ATitle+%3D%3D%3D">title(text) » <a href="../../classes/Shoes/Title.html">Shoes::Title</a> ===</h3>
+
+<p>タイトル（Title）テキストブロックを作成します。これらの要素を34ピクセルの大きさに整形します。</p>
+
+<h3 id="label-video%28path+or+url%29+%C2%BB+Shoes%3A%3AVideo+%3D%3D%3D">video(path or url) » <a href="../../classes/Shoes/Video.html">Shoes::Video</a> ===</h3>
+
+<p>動画を埋め込みます。音声を再生します。</p>
+
+<h3 id="label-window%28styles%29+%7B+...+%7D+%C2%BB+Shoes%3A%3AApp+%3D%3D%3D">window(styles) { … } » <a href="../../classes/Shoes/App.html">Shoes::App</a> ===</h3>
+
+<p>新しいアプリケーションウィンドウを開きます。 <a
+href="http://App.Shoes.app">このメソッドは初めにアプリケーションを開始するために使われる[</a>]メソッドと <a
+href="http://App.owner">ほとんど同一です。違いは`window`メソッドは新しいウィンドウの[</a>]プロパティを
+設定することです。（普通の<a
+href="../../classes/Shoes.html#method-c-app">Shoes.app</a>はその`owner`を`nil`に設定します。）</p>
+
+<p>そのため、新しいウィンドウの`owner`はウィンドウを開始したShoes::Appに設定されるでしょう。
+この方法により子のウィンドウが親を呼べます。</p>
+
+<p>{{{</p>
+
+<pre>#!ruby
+Shoes.app title: &quot;The Owner&quot; do
+ button &quot;Pop up?&quot; do
+  window do
+   para &quot;Okay, popped up from [#{owner.inspect}].&quot;
+  end
+ end
+end</pre>
+
+<p>}}}</p>
+
+<h2 id="label-Events+%3D%3D">Events ==</h2>
+
+<p>どのようにしてマウスのクリックを離したことやキーボードをタイプしたことが分かるか
+不思議に思いませんか？スロットの内部でマウスが動いたときはいつでもイベントが スロットに送られます。また、キーが押されたときはいつでも。
+スロットが作成されたり破壊されたときでさえ。それぞれのそれらのイベントをブロックを 取り付けることができます。</p>
+
+<p>マウスイベントは`motion`、`click`、`hover`そして`leave`を含みます。
+キーボードのタイピングは`keypress`イベントによって表されます。
+そして`start`や`finish`イベントはキャンバスを開始するときや破棄されたときを指し示します。</p>
+
+<p>では、マウスでスロットの上をフロートするときに背景を変更したいとしましょう。
+スロットの内部にマウスがくるときに背景を変更するためには`hover`イベントを使います。
+そして、マウスがフロートして離れるときに戻すには`leave`を使います。</p>
+
+<p>{{{</p>
+
+<pre>#!ruby
+Shoes.app do
+  s = stack width: 200, height: 200 do
+    background red
+  end
+  s.hover do
+    s.clear { background blue }
+  end
+  s.leave do
+    s.clear { background red }
+  end
+end</pre>
+
+<p>}}}</p>
+
+<h3 id="label-click+%7B+%7Cbutton%2C+left%2C+top%7C+...+%7D+%C2%BB+self+%3D%3D%3D">click { |button, left, top| … } » self ===</h3>
+
+<p>マウスボタンがクリックされたときにはclickブロックが呼ばれます。 `button`はマウスボタンのどれが押されたかの数です。
+`left`や`top`はどこがクリックされたかのマウスの座標です。</p>
+
+<p><a href="http://Events.release">マウスのクリックを離した瞬間をとらえるには、[</a>]イベントを見てください。</p>
+
+<h3 id="label-finish+%7B+%7Cself%7C+...+%7D+%C2%BB+self+%3D%3D%3D">finish { |self| … } » self ===</h3>
+
+<p>スロットが取り除かれたときは、finishイベントが発生します。
+finishブロックはすぐに`self`を手渡し、スロットオブジェクトは取り除かれます。</p>
+
+<p>”‘注意:”’ Green Shoesは`finish`メソッドをサポートしていません。</p>
+
+<h3 id="label-hover+%7B+%7Cself%7C+...+%7D+%C2%BB+self+%3D%3D%3D">hover { |self| … } » self ===</h3>
+
+<p>hoverイベントはスロットにマウスが入ったときに発生します。 このブロックは`self`を手に入れ、どのオブジェクトの上を通ったかを意味します。</p>
+
+<p><a href="http://Events.leave">スロットからマウスが出ていくことをとらえるには、[</a>]イベントを確認してください。</p>
+
+<h3 id="label-keypress+%7B+%7Ckey%7C+...+%7D+%C2%BB+self+%3D%3D%3D">keypress { |key| … } » self ===</h3>
+
+<p>キー（またはキーの組み合わせ）がいつ押されても、そのブロックは呼ばれます。 そのブロックにはキーの性質を表す文字列である`key`を送られます。</p>
+
+<p>そして、例えば、`Shift-a`が押されたなら、そのブロックは`“A”`の文字列を得ます。 また、F1が押されたなら、
+`F1`の文字列を受けとります。</p>
+
+<p>`“Control_L”`, `“Shift_L”`, `“Alt_L”`は左サイドに位置する修飾キーです。
+もし`Shift-Control-Alt-PgUp`が押されたなら、得られる文字列は、以下の順番で現れます:  `“Shift_L”`,
+`“Control_L”`, `“Alt_L”`, `“Page_Up”`</p>
+
+<p>シフトキーについて１つ。USキーボードでは、`Shift-7`はアンパサンド（&amp;）です。
+そのため、`“Shift_L”`と`“7”`ではなく、`“Shift_L”`と`“ampersand”`を得ます。
+そして、そのようなキーボードで`Shift-Alt-7`を押したら、`“Shift_L”`と`“Alt_L”`と
+`“ampersand”`という文字列を得るでしょう。</p>
+
+<p>{{{</p>
+
+<pre class="ruby"><span class="ruby-comment">#!ruby</span>
+<span class="ruby-constant">Shoes</span>.<span class="ruby-identifier">app</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">info</span> = <span class="ruby-identifier">para</span> <span class="ruby-string">&quot;NO KEY is PRESSED.&quot;</span>
+  <span class="ruby-identifier">keypress</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">info</span>.<span class="ruby-identifier">replace</span> <span class="ruby-node">&quot;#{k.inspect} was PRESSED.&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>}}}</p>
+
+<h3 id="label-leave+%7B+%7Cself%7C+...+%7D+%C2%BB+self+%3D%3D%3D">leave { |self| … } » self ===</h3>
+
+<p>スロットからマウスカーソルが出て行くときleaveイベントが発生します。 その瞬間すでにマウスカーソルはスロットの端の中にはありません。
+leaveイベントが発生するとき、`self`とともにブロックが呼ばれ、そのスロットオブジェクトは 取り残されます。</p>
+
+<p><a href="http://Events.hover">スロットにマウスが入ることを見つけたいなら[</a>]も見てください。</p>
+
+<h3 id="label-motion+%7B+%7Cleft%2C+top%7C+...+%7D+%C2%BB+self+%3D%3D%3D">motion { |left, top| … } » self ===</h3>
+
+<p>マウスがスロットの内部を移動するたびにモーションのブロックは呼ばれます。 ブロックはカーソルの`left`や`top`の座標を渡します。</p>
+
+<p>{{{</p>
+
+<pre class="ruby"><span class="ruby-comment">#!ruby</span>
+<span class="ruby-constant">Shoes</span>.<span class="ruby-identifier">app</span> <span class="ruby-identifier">width</span><span class="ruby-operator">:</span> <span class="ruby-value">200</span>, <span class="ruby-identifier">height</span><span class="ruby-operator">:</span> <span class="ruby-value">200</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">background</span> <span class="ruby-identifier">black</span>
+  <span class="ruby-identifier">fill</span> <span class="ruby-identifier">white</span>
+  <span class="ruby-identifier">circ</span> = <span class="ruby-identifier">oval</span> <span class="ruby-value">0</span>, <span class="ruby-value">0</span>, <span class="ruby-value">100</span>, <span class="ruby-value">100</span>
+
+  <span class="ruby-identifier">motion</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">top</span>, <span class="ruby-identifier">left</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">circ</span>.<span class="ruby-identifier">move</span> <span class="ruby-identifier">top</span> <span class="ruby-operator">-</span> <span class="ruby-value">50</span>, <span class="ruby-identifier">left</span> <span class="ruby-operator">-</span> <span class="ruby-value">50</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>}}}</p>
+
+<h3 id="label-release+%7B+%7Cbutton%2C+left%2C+top%7C+...+%7D+%C2%BB+self+%3D%3D%3D">release { |button, left, top| … } » self ===</h3>
+
+<p>マウスがアンクリック（マウスアップ）のときにreleaseのブロックは実行されます。
+それは指が持ち上げられたときです。`button`は押し下げられたボタンに対応する数です。
+`left`や`top`はボタンが離されたときのマウスのの座標です。</p>
+
+<p><a href="http://Events.click">実際のマウスクリックを捕まえるには、[</a>]イベントを利用してください。</p>
+
+<h3 id="label-start+%7B+%7Cself%7C+...+%7D+%C2%BB+self+%3D%3D%3D">start { |self| … } » self ===</h3>
+
+<p>初めてスロットが描かれるとき、スタート（start）イベントが実行されます。
+まさに今描かれたスロットオブジェクトが`self`としてブロックに渡されます。</p>
+
+<p>”‘注意:”’ Green Shoesは`start`メソッドをサポートしていません。</p>
+
+<h2 id="label-Manipulation+Blocks+%3D%3D">Manipulation Blocks ==</h2>
+
+<p>以下のmanipulationメソッドはスロットの周囲を変更したり新しい要素を挿入することを 手早く片付けます。</p>
+
+<h3 id="label-append%28%29+%7B+...+%7D+%C2%BB+self+%3D%3D%3D">append() { … } » self ===</h3>
+
+<p>スロットの最後に要素を追加します。</p>
+
+<p>{{{</p>
+
+<pre>#!ruby
+Shoes.app do
+  @slot = stack { para 'Good Morning' }
+  timer 3 do
+    @slot.append do
+      title &quot;Breaking News&quot;
+      tagline &quot;Astronauts &quot;,
+        &quot;arrested for space shuttle DUI.&quot;
+    end
+  end
+end</pre>
+
+<p>}}}</p>
+
+<p>`title`や`tagline`の要素を`@slot`の最後に追加します。</p>
+
+<h3 id="label-after%28element%29+%7B+...+%7D+%C2%BB+self+%3D%3D%3D">after(element) { … } » self ===</h3>
+
+<p>スロットの子として`element`のすぐ後に、スロットの指定した箇所に要素を追加します。</p>
+
+<h3 id="label-before%28element%29+%7B+...+%7D+%C2%BB+self+%3D%3D%3D">before(element) { … } » self ===</h3>
+
+<p>スロットの子として`element`のすぐ前に、スロットの指定した箇所に要素を追加します。</p>
+
+<h3 id="label-clear%28%29+%C2%BB+self+%3D%3D%3D">clear() » self ===</h3>
+
+<p>タイマーやネストしたスロットなど、スロットのすべての要素を空にします。
+スロットのコンテンツを最初から最後までループしてそれぞれの要素の`remove`メソッドを 呼ぶことと効果としては同一です。</p>
+
+<h3 id="label-clear%28%29+%7B+...+%7D+%C2%BB+self+%3D%3D%3D">clear() { … } » self ===</h3>
+
+<p>clearメソッドはオプションでブロックも取ります。 このブロックはスロットのコンテンツを置き換えるために利用されます。</p>
+
+<p>{{{</p>
+
+<pre>#!ruby
+Shoes.app do
+  @slot = stack { para &quot;Old text&quot; }
+  timer 3 do
+    @slot.clear { para &quot;Brand new text&quot; }
+  end
+end</pre>
+
+<p>}}}</p>
+
+<p>この例では、“Old text”パラグラフは排除され、“Brand new text”によって置き換えられます。</p>
+
+<h3 id="label-prepend%28%29+%7B+...+%7D+%C2%BB+self+%3D%3D%3D">prepend() { … } » self ===</h3>
+
+<p>スロットの初めに要素を追加します。</p>
+
+<p>{{{</p>
+
+<pre>#!ruby
+Shoes.app do
+  @slot = stack { para 'Good Morning' }
+  timer 3 do
+    @slot.prepend { para &quot;Your car is ready.&quot; }
+  end
+end</pre>
+
+<p>}}}</p>
+
+<p>`@slot`の初めに`para`要素を追加します。</p>
+
+<h2 id="label-Position+of+a+Slot+%3D%3D">Position of a Slot ==</h2>
+
+<p>他のすべての要素と同様に、スロットは作成されたときに整形することやカスタマイズすることが できます。</p>
+
+<p>スタックの幅を150ピクセルに設定するためには：</p>
+
+<p>{{{</p>
+
+<pre>#!ruby
+Shoes.app do
+  stack width: 150 do
+    background yellow
+    para &quot;Now that's precision.&quot; 
+  end
+end</pre>
+
+<p>}}}</p>
+
+<p>それぞれのスタイルの設定は、詳細な設定を手に入れるために利用することのできるメソッドも
+持っています。（例えば、`width`メソッドはスロットの幅をピクセルで返します。）</p>
+
+<h3 id="label-displace%28left%3A+a+number%2C+top%3A+a+number%29+%C2%BB+self+%3D%3D%3D">displace(left: a number, top: a number) » self ===</h3>
+
+<p>:displace_leftと:displace_topスタイルの設定のためのショートカットメソッドです。
+置き換えはレイアウトを変更しないでスロットを移動する便利な方法です。 実際には、`top`と`left`メソッドは置き換えを全く報告しません。
+そのため、通常、置き換えは一時的なアニメーションのためにあります。 例えば、適当な位置にボタンを少し移動するなど。</p>
+
+<p>`left`と`top`の数は`displace`に送られ、スロット自身のtopとleftの座標に追加されます。
+topとleftの座標から差し引くには、負数を利用してください。</p>
+
+<p>”‘注意:”’ Green Shoesは`displace`メソッドをサポートしていません。</p>
+
+<h3 id="label-gutter%28%29+%C2%BB+a+number+%3D%3D%3D">gutter() » a number ===</h3>
+
+<p>スクロールバーエリアの大きさです。Green Shoesがスクロールバーを表示する必要があるとき、
+スクロールバーがウィンドウの端にふれているいくつかの要素を隠してしまうかもしれません。
+`gutter`はどのくらいのピクセルをスクロールバーが隠すことを期待するかを教えます。</p>
+
+<p>これは一般的には、次のように右側に詰め物の要素として利用します：</p>
+
+<p>{{{</p>
+
+<pre>Shoes.app do
+  stack margin_right: 20 + gutter do
+    para &quot;Insert fat and ratified &quot;,
+      &quot;declaration of independence here...&quot;
+  end
+end</pre>
+
+<p>}}}</p>
+
+<h3 id="label-height%28%29+%C2%BB+a+number+%3D%3D%3D">height() » a number ===</h3>
+
+<p>スロットの目に見えるピクセルでの垂直の大きさです。そして、スクロールするスロットの場合は、
+スロットの全体の大きさを得るために`scroll_height()`の利用を必要とするでしょう。</p>
+
+<h3 id="label-hide%28%29+%C2%BB+self+%3D%3D%3D">hide() » self ===</h3>
+
+<p><a href="http://Position.show">見えなくするために、スロットを隠します。[</a>]<a
+href="http://Position.toggle">と[</a>]も見てください。</p>
+
+<h3 id="label-left%28%29+%C2%BB+a+number+%3D%3D%3D">left() » a number ===</h3>
+
+<p>スロットの位置の左のピクセルです。x-axis座標でも知ることができます。</p>
+
+<h3 id="label-move%28left%2C+top%29+%C2%BB+self+%3D%3D%3D">move(left, top) » self ===</h3>
+
+<p>スロットの左上の角である（left、top）の座標を指定してスロットを移動します。</p>
+
+<p>”‘注意:”’ Green Shoesは`move`メソッドをサポートしていません。</p>
+
+<h3 id="label-remove%28%29+%C2%BB+self+%3D%3D%3D">remove() » self ===</h3>
+
+<p>スロットを削除します。それは表示されなくなり親のコンテンツに記載されなくなります。 それは消え去ります。</p>
+
+<p>”‘注意:”’ Green Shoesは`remove`メソッドをサポートしていません。`clear`メソッドを 使用して下さい。</p>
+
+<h3 id="label-scroll%28%29+%C2%BB+true+or+false+%3D%3D%3D">scroll() » true or false ===</h3>
+
+<p>スロットにスクロールバーを表示することを許しますか？trueかfalseです。 スロットの高さも固定されているときだけスクロールバーが表示されます。</p>
+
+<p>”‘注意:”’ Green Shoesは`scroll`メソッドをサポートしていません。</p>
+
+<h3 id="label-scroll_height%28%29+%C2%BB+a+number+%3D%3D%3D">scroll_height() » a number ===</h3>
+
+<p>スクロールによって隠されているすべてを含む、スロット全体の垂直の大きさです。</p>
+
+<p>”‘注意:”’ Green Shoesは`scroll_height`メソッドをサポートしていません。</p>
+
+<h3 id="label-scroll_max%28%29+%C2%BB+a+number+%3D%3D%3D">scroll_max() » a number ===</h3>
+
+<p>このスロットでスクロールダウンできる上側（top）の座標です。 スクロールバーの上側（top）の座標はいつもゼロです。
+下側（bottom）の座標はスロット全体の高さから1ページのスクロール分を引いたものです。
+この下側（bottom）の座標は`scroll_max`が返す値です。</p>
+
+<p>これは基本的に`slot.scroll_height - slot.height`と書くためのショートカットです。</p>
+
+<p>スロットの下側にスクロールするためには、`slot.scroll_top = slot.scroll_max`を利用します。</p>
+
+<h3 id="label-scroll_top%28%29+%C2%BB+a+number+%3D%3D%3D">scroll_top() » a number ===</h3>
+
+<p>スロットがスクロールダウンする上側（top）の座標です。 そのため、スロットが20ピクセルスクロールダウンされたら、このメソッドは`20`を返します。</p>
+
+<p>”‘注意:”’ Green Shoesは`scroll_top`メソッドをサポートしていません。</p>
+
+<h3 id="label-scroll_top+%3D+a+number+%3D%3D%3D">scroll_top = a number ===</h3>
+
+<p>任意の座標にスロットをスクロールします。ゼロから`scroll_max`までの間である必要があります。</p>
+
+<p>”‘注意:”’ Green Shoesは`scroll_top=`メソッドをサポートしていません。</p>
+
+<h3 id="label-show%28%29+%C2%BB+self+%3D%3D%3D">show() » self ===</h3>
+
+<p><a href="http://Position.hide">スロットが隠されていた場合、表示します。[</a>]<a
+href="http://Position.toggle">と[</a>]も見てください。</p>
+
+<h3 id="label-style%28%29+%C2%BB+styles+%3D%3D%3D">style() » styles ===</h3>
+
+<p>引数なしで`style`メソッドを呼ぶことでスロットに現在適用されているスタイルのハッシュを返します。</p>
+
+<p>`height`と`width`などのメソッドはスロットの本当のサイズをピクセルで返しますが、 `<a
+href="http://:height">style</a>`<a
+href="http://:width">または`style</a>`を利用することで初めに要求されたサイズを 得ることができます。</p>
+
+<p>{{{</p>
+
+<pre>#!ruby
+Shoes.app do
+  s = stack width: 1.0
+  para s.style[:width]
+  button('Then..'){s.append{para s.style[:width]}}
+end</pre>
+
+<p>}}}</p>
+
+<p>この例では、このスタックの下のパラグラフは最初に“1.0”の文字列を表示しますが、ボタンを クリックした後は“600”の文字列を表示するでしょう。</p>
+
+<h3 id="label-style%28styles%29+%C2%BB+styles+%3D%3D%3D">style(styles) » styles ===</h3>
+
+<p>ハッシュのスタイル設定を使ってスロットを修正してください。
+このページのどんなメソッドでも（もちろん、このメソッドは除いて）スタイルの設定に利用できます。
+そして、例えば、`width`メソッドがあり、このように`width`スタイルもあります。</p>
+
+<p>{{{</p>
+
+<pre>#!ruby
+Shoes.app do
+  s = stack { background green }
+  s.style width: 400, height: 200
+end</pre>
+
+<p>}}}</p>
+
+<h3 id="label-toggle%28%29+%C2%BB+self+%3D%3D%3D">toggle() » self ===</h3>
+
+<p>スロットが表示されているなら非表示にします。また、スロットが非表示なら表示します。</p>
+
+<h3 id="label-top%28%29+%C2%BB+a+number+%3D%3D%3D">top() » a number ===</h3>
+
+<p>スロットの上（top）の位置です。y軸の座標としても知られています。</p>
+
+<h3 id="label-width%28%29+%C2%BB+a+number+%3D%3D%3D">width() » a number ===</h3>
+
+<p>スロットの水平のピクセルサイズです。</p>
+
+<h2 id="label-Traversing+the+Page+%3D%3D">Traversing the Page ==</h2>
+
+<p>スロット内部の要素を最初から最後までループする必要性に気づくかもしれません。 または、ページを登って要素の親のスタックを探す必要があるかもしれません。</p>
+
+<p>すべての要素で、上位のスロット直接得るために`parent`メソッドを呼ぶことができます。
+そしてスロットでは、すべての子を得るために`contents`メソッドを呼ぶことができます。
+（テキストブロックなどのいくつかの要素は、それらの子を得るための`contents`メソッドも 持っています。）</p>
+
+<h3 id="label-contents%28%29+%C2%BB+an+array+of+elements+%3D%3D%3D">contents() » an array of elements ===</h3>
+
+<p>スロットのすべての要素を一覧にします。</p>
+
+<h3 id="label-parent%28%29+%C2%BB+a+Shoes%3A%3AStack+or+Shoes%3A%3AFlow+%3D%3D%3D">parent() » a <a href="../../classes/Shoes/Stack.html">Shoes::Stack</a> or <a href="../../classes/Shoes/Flow.html">Shoes::Flow</a> ===</h3>
+
+<p>要素のコンテナのオブジェクトを得ます。</p>
+
+<p>{{{</p>
+
+<pre>Shoes.app do
+  s = stack do
+    para 'Green'
+    @p = para 'Shoes'
+  end
+  para s
+  para s.contents
+  para @p.parent
+end</pre>
+
+<p>}}}</p>
+
+<h1 id="label-Elements+%3D">Elements =</h1>
+
+<p>これはGreen Shoesの要素です。要素は楕円の形状と同じくらい単純です。 またはparaのテキスト文字列と同じくらい複雑です。
+あなたは以前このマニュアルのスロットのセクションでこれらすべての要素に出会ったことがあります。</p>
+
+<p>Green Shoesは7つのネイティブコントロールを持ちます：
+ボタン（Button）、エディットライン（EditLine）、エディットボックス（EditBox）、
+リストボックス（ListBox）、プログレスメータ（Progress meter）、チェックボックス（Check box）、
+ラジオ（Radio）。私たちの言う“native”コントロールとは、それらの7つの要素が
+Ruby/GTK2のAPIを使って直接描画されることを意味します。そのため、プログレスバーでは PNG画像データに変換されることなく描画されます。</p>
+
+<p>またShoesは7つの他の種類の要素を持っています：背景（Background）、ボーダー（Border）、
+画像（Image）、形状（Shape）、テキストブロック（TextBlock）、タイマー（Animate）、
+そしてビデオ（Video）。それらすべてはどんなオペレーティングシステムでも同じような見え方と 動きになるべきです。</p>
+
+<p>いったん要素を生成した後でも、それを変更したくなるでしょう。それを動かしたり隠したり
+またはそれを取り除くために。それらの種類のことを行うために、このセクションのコマンドを 利用するでしょう。
+（特にどんな要素上でも利用できるコマンドの[[Common Common Methods]]セクションを 確認してください。）</p>
+
+<p>そして、例として、PNGをスクリーンを配置するためにスロットの`image`メソッドを使ってください。
+この`image`メソッドはイメージオブジェクトを返します。 これらをすっかり変更するためにイメージオブジェクトのこのメソッドを使ってみてください。</p>
+
+<h2 id="label-Common+Methods+%3D%3D">Common Methods ==</h2>
+
+<p>Green Shoesでは少しのメソッドがすべての小さな要素によって共有されてます。 移動、表示、非表示。要素の削除。基本的でとても一般的なことです。
+この一覧はそれらの一般的なコマンドを含んでいます。</p>
+
+<p>すべてのメソッドの中でもっとも一般的なメソッドの一つは`style`です。 （<a
+href="http://Position.style">これはスロットの[</a>]メソッドとしてもカバーされます。）</p>
+
+<p>{{{</p>
+
+<pre>#!ruby
+Shoes.app do
+  stack do
+    # Background, text and a button: 
+    # both are elements!
+    @back  = background green
+    @text  = banner &quot;A Message for You, Rudy&quot;
+    @press = button &quot;Stop your messin about!&quot;
+
+    # And so, both can be styled.
+    @text.style size: 12, 
+      markup: fg(@text.text, red), margin: 10
+    @press.style width: 400
+    @back.style height: 10
+  end
+end</pre>
+
+<p>}}}</p>
+
+<p>個別のコマンドについては、左にあるElementsセクションの他のリンクを見てください。
+ビデオファイルの中断または再生がしたいなら、ビデオの中断や再生は特異なので、
+[[Video]]セクションを確認してください。中断するボタンという感じではありません。</p>
+
+<h3 id="label-displace%28left%3A+a+number%2C+top%3A+a+number%29+%C2%BB+self+%3D%3D%3D">displace(left: a number, top: a number) » self ===</h3>
+
+<p>要素を移動して置き換えます。しかし周囲のレイアウトは変更しません。
+特にアニメーションしている間でも要素の位置を保持したいなら、これは微妙なアニメーションに
+重要です。おそらく素早く震えるボタンや視界にスロットを滑り込ませるような。</p>
+
+<p>要素を置き換えるとき、それが配置されている左上の角から相対的に移動します。 そのため、要素が(20,
+40)の座標にあり、2ピクセル左と6ピクセル上に置き換えるなら、 結果的に(22, 46)の座標となります。</p>
+
+<p>{{{</p>
+
+<pre class="ruby"><span class="ruby-comment">#!ruby</span>
+<span class="ruby-comment"># Not yet available</span>
+<span class="ruby-constant">Shoes</span>.<span class="ruby-identifier">app</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">flow</span> :<span class="ruby-identifier">margin</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">12</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-comment"># Set up three buttons</span>
+    <span class="ruby-identifier">button</span> <span class="ruby-string">&quot;One&quot;</span>
+    <span class="ruby-ivar">@two</span> = <span class="ruby-identifier">button</span> <span class="ruby-string">&quot;Two&quot;</span>
+    <span class="ruby-identifier">button</span> <span class="ruby-string">&quot;Three&quot;</span>
+
+    <span class="ruby-comment"># Bounce the second button</span>
+    <span class="ruby-identifier">animate</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+      <span class="ruby-ivar">@two</span>.<span class="ruby-identifier">displace</span>(<span class="ruby-value">0</span>, (<span class="ruby-constant">Math</span>.<span class="ruby-identifier">sin</span>(<span class="ruby-identifier">i</span>) * <span class="ruby-value">6</span>).<span class="ruby-identifier">to_i</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>}}}</p>
+
+<p>他の２つのボタンは動かずにじっとしていますが、２番目のボタンが飛び跳ねることに
+注目してください。この状況で普通の`move`を使うなら、２番目のボタンはレイアウトから
+取り除かれて、２番目のボタンが全くそこにないかのように振る舞うでしょう。 （[[Common.move]]の例を見てください。）</p>
+
+<p>”‘特に注意してください：”’表示される要素の座標を得るために`left`と`top`メソッドを
+利用するなら、通常の座標を得るだけです。それは置き換えが行われていないかのようです。 置き換えは即座のアニメーションだけを目的とします。</p>
+
+<p>”‘注意:”’ Green Shoesは`displace`メソッドをサポートしていません。</p>
+
+<h3 id="label-height%28%29+%C2%BB+a+number+%3D%3D%3D">height() » a number ===</h3>
+
+<p>エレメントの垂直のピクセルによるスクリーンサイズです。画像の場合には、これは画像全体の サイズではありません。これは要素の現在表示されている高さです。</p>
+
+<p>150x150ピクセルの画像を持っていて50ピクセルに幅を設定するなら、このメソッドは50を 返します。</p>
+
+<p><a href="http://Common.width">例や他の解説のために[</a>]メソッドも見てください。</p>
+
+<h3 id="label-hide%28%29+%C2%BB+self+%3D%3D%3D">hide() » self ===</h3>
+
+<p><a href="http://Common.show">要素が見えないように、非表示にします。[</a>]<a
+href="http://Common.toggle">や[</a>]も 見てください。</p>
+
+<h3 id="label-left%28%29+%C2%BB+a+number+%3D%3D%3D">left() » a number ===</h3>
+
+<p>要素の左端の位置をピクセルで得ます。</p>
+
+<h3 id="label-move%28left%3A+a+number%2C+top%3A+a+number%29+%C2%BB+self++%3D%3D%3D">move(left: a number, top: a number) » self  ===</h3>
+
+<p>スロットの範囲内でピクセルによって指定した位置に要素を移動します。 その要素はスロットの内部にあります。しかし、もはやスロットの他の要素と一緒に
+積み上げられたりフローされたりしません。その要素は絶対的な位置指定ではなく、 自由に浮かんでいます。</p>
+
+<p>{{{</p>
+
+<pre class="ruby"><span class="ruby-comment">#!ruby</span>
+<span class="ruby-constant">Shoes</span>.<span class="ruby-identifier">app</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-comment"># Set up three buttons</span>
+  <span class="ruby-identifier">b</span> = <span class="ruby-identifier">button</span> <span class="ruby-string">&quot;One&quot;</span>
+  <span class="ruby-ivar">@two</span> = <span class="ruby-identifier">button</span> <span class="ruby-string">&quot;Two&quot;</span>
+  <span class="ruby-identifier">button</span> <span class="ruby-string">&quot;Three&quot;</span>
+
+  <span class="ruby-comment"># Bounce the second button</span>
+  <span class="ruby-identifier">animate</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+    <span class="ruby-ivar">@two</span>.<span class="ruby-identifier">move</span>(<span class="ruby-value">33</span>, <span class="ruby-value">33</span> <span class="ruby-operator">+</span> (<span class="ruby-constant">Math</span>.<span class="ruby-identifier">sin</span>(<span class="ruby-identifier">i</span>) * <span class="ruby-value">6</span>).<span class="ruby-identifier">to_i</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>}}}</p>
+
+<p>３番目のボタンがその位置にスライドすることを許しており、２番目のボタンは特定の場所に 動かされてします。要素を別の場所に変更しないで移動したいなら、
+[[Common.displace]]メソッドを見てください。</p>
+
+<h3 id="label-parent%28%29+%C2%BB+a+Shoes%3A%3AStack+or+Shoes%3A%3AFlow+%3D%3D%3D">parent() » a <a href="../../classes/Shoes/Stack.html">Shoes::Stack</a> or <a href="../../classes/Shoes/Flow.html">Shoes::Flow</a> ===</h3>
+
+<p>その要素のコンテナのオブジェクトを得ます。反対のことを行うためにはスロットの
+[[Traversing.contents]]も見てください：コンテナの要素を得ます。</p>
+
+<h3 id="label-remove%28%29+%C2%BB+self+%3D%3D%3D">remove() » self ===</h3>
+
+<p>スロットから要素を削除します。（他の言葉で言い換えると：ガベージに投げます。） その要素はもう表示されません。</p>
+
+<h3 id="label-show%28%29+%C2%BB+self+%3D%3D%3D">show() » self ===</h3>
+
+<p><a href="http://Common.hide">要素が非表示なら、表示します。[</a>]<a
+href="http://Common.toggle">や[</a>]も見てください。</p>
+
+<h3 id="label-style%28%29+%C2%BB+styles+%3D%3D%3D">style() » styles ===</h3>
+
+<p>ハッシュの形で、要素に適用するフルセットのスタイルを得ます。`width`や`height`や `<a
+href="http://:width">top`のようなメソッドは特定のピクセルでのサイズを返しますが、`style</a>`または `<a
+href="http://:top">style</a>`を利用すると、初めの設定を得ることができます。
+（“100%”の幅または“10px”のトップのような）</p>
+
+<p>{{{</p>
+
+<pre>#!ruby
+Shoes.app do
+  # A button which take up the whole page
+  @b = button &quot;All of it&quot;, 
+    width: width, height: height
+
+  # When clicked, show the styles
+  @b.click { alert(@b.style.inspect) }
+end</pre>
+
+<p>}}}</p>
+
+<h3 id="label-style%28styles%29+%C2%BB+styles+%3D%3D%3D">style(styles) » styles ===</h3>
+
+<p>要素のスタイルを変更します。これは要素の`:width`と`:height`、テキストのフォントの
+`:size`、形状の`:stroke`や`:fill`を含みます。または他の多くのスタイルの設定もです。</p>
+
+<h3 id="label-toggle%28%29+%C2%BB+self+%3D%3D%3D">toggle() » self ===</h3>
+
+<p>要素が表示されているなら非表示にします。または要素が非表示なら表示します。</p>
+
+<h3 id="label-top%28%29+%C2%BB+a+number+%3D%3D%3D">top() » a number ===</h3>
+
+<p>要素の上端のピクセルの位置を得ます。</p>
+
+<h3 id="label-width%28%29+%C2%BB+a+number+%3D%3D%3D">width() » a number ===</h3>
+
+<p>要素の全体の大きさの幅をピクセルで得ます。 このメソッドはいつも正確なピクセルサイズを返します。
+画像の場合は、画像の全幅ではなく、表示されているサイズだけです。 <a
+href="http://Common.height">詳しくは[</a>]メソッドも見てください。</p>
+
+<p>また、120ピクセルの幅のスタック内に1.0の幅の要素を作成したなら、`120`が返されます。 `<a
+href="http://:width">style</a>`を呼んだなら、`120`を得ます。</p>
+
+<p>{{{</p>
+
+<pre>#!ruby
+Shoes.app do
+  stack width: 120 do
+    @b = button &quot;Click me&quot;, width: 1.0 do
+      alert &quot;button.width = #{@b.width}\n&quot; +
+        &quot;button.style[:width] = &quot; +
+        &quot;#{@b.style[:width]}&quot;
+    end
+  end
+end</pre>
+
+<p>}}}</p>
+
+<p><a href="http://Common.style">幅を設定するためには、[</a>]メソッドをもう一度調べる必要があります。
+そして、150ピクセルの幅にボタンを設定するには：`@b.style(width: 150)`。</p>
+
+<h2 id="label-Background+%3D%3D">Background ==</h2>
+
+<p>背景はスロット全体に渡って塗られた、グラデーションまたは画像の色です。
+背景と枠線はShoes::Patternの種類の一つです。!{:margin_left =&gt;
+100}man-ele-background.png!</p>
+
+<p>”背景（background）”と呼ばれているにも関わらず、この要素は他の要素よりも前面に
+表示されます。背景がスロットで塗られた何か他のもの（`rect`または`oval`のような）の 後にきた場合、背景はその要素の上に塗られます。</p>
+
+<p><a href="http://Element.background">もっとも単純な背景は、黒の背景のような[</a>]メソッドによって作成された、
+単色の背景です。</p>
+
+<p>{{{</p>
+
+<pre>#!ruby
+Shoes.app do
+  background black
+end</pre>
+
+<p>}}}</p>
+
+<p>このような単純な背景はスロットが含むもの全体を塗りつぶします （この場合は、ウィンドウ全体が黒で塗られます。）</p>
+
+<p>好きなように背景のサイズを切り詰めたりあちこち移動したりするためのスタイルを利用できます。</p>
+
+<p>ウィンドウの上側を50ピクセルに渡って黒い背景で塗りつぶします：</p>
+
+<p>{{{</p>
+
+<pre>#!ruby
+Shoes.app do
+  background black, height: 50
+end</pre>
+
+<p>}}}</p>
+
+<p>または、ウィンドウの右端の50ピクセルの列を塗りつぶします：</p>
+
+<p>{{{</p>
+
+<pre>#!ruby
+Shoes.app do
+  background black, width: 50
+end</pre>
+
+<p>}}}</p>
+
+<p><a href="http://Elements">背景は普通の要素と同様なので、その他のすべてのメソッドについては[</a>]セクションの
+始めの部分も見てください。</p>
+
+<h3 id="label-to_pattern%28%29+%C2%BB+a+Shoes%3A%3APattern+%3D%3D%3D">to_pattern() » a <a href="../../classes/Shoes/Pattern.html">Shoes::Pattern</a> ===</h3>
+
+<p>背景を塗りつぶすために利用されたグラデーションや画像を通常のShoes::Patternオブジェクトに
+配置し、色をヤンクします。そして、他のオブジェクトに背景や枠線に渡すことができます。 好きなように再利用してください。</p>
+
+<p>”‘注意:”’ Green Shoesは`to_pattern`メソッドをサポートしていません。</p>
+
+<h2 id="label-Border+%3D%3D">Border ==</h2>
+
+<p>枠線はスロットの周囲の線に塗られた、色やグラデーションや画像です。
+前のセクションの背景（background）と同様に、枠線（Border）はShoes::Patternの一種です。 !{:margin_left
+=&gt; 100}man-ele-border.png!</p>
+
+<p>はじめに、すべての枠線はスロットの周囲の外側ではなく、”‘内側”’を塗ることについて知ることは
+重要です。そのため、50ピクセルの幅のスロットに5ピクセルの枠線を塗るなら、それは枠線で
+囲まれたスロットが内部に40ピクセルの幅のエリアを持つことを意味します。</p>
+
+<p><a href="http://Background">これは枠線（Border）を[</a>]の上に塗るなら、その背景の端の上を枠線によって
+塗られることも意味します。</p>
+
+<p>正にそのようなスロットがここにあります：</p>
+
+<p>{{{</p>
+
+<pre>#!ruby
+Shoes.app do
+  stack width: 50 do
+    border black, strokewidth: 5
+    para fg &quot;=^.^=&quot;, green
+  end
+end</pre>
+
+<p>}}}</p>
+
+<p>スロットの外側の修正に枠線を塗りたいなら、もう一つのスロットでそのスロットをラップする 必要があります。その結果、スロットの外側に枠線が配置されます。</p>
+
+<p>{{{</p>
+
+<pre>#!ruby
+Shoes.app do
+  stack width: 60 do
+    border black, strokewidth: 5
+    stack width: 50 do
+      para fg &quot;=^.^=&quot;, green
+    end
+  end
+end</pre>
+
+<p>}}}</p>
+
+<p>HTMLや他の多くの言語では、枠線は箱の外側に塗られるため、ボックス全体の幅が 増加します。Green
+Shoesは一貫性を考慮してデザインされているため、枠線や マージンや他のどんなものも気にしないでそれは50ピクセルの幅のままです。</p>
+
+<p><a href="http://Elements">枠線に利用する他のメソッドについては[</a>]セクションも確認してください。</p>
+
+<h3 id="label-to_pattern%28%29+%C2%BB+a+Shoes%3A%3APattern+%3D%3D%3D">to_pattern() » a <a href="../../classes/Shoes/Pattern.html">Shoes::Pattern</a> ===</h3>
+
+<p>枠線を塗るための色、グラデーションまたは画像を元にした基本のパターンオブジェクトを 作成します。</p>
+
+<p>”‘注意:”’ Green Shoesは`to_pattern`メソッドをサポートしていません。</p>
+
+<h2 id="label-Button+%3D%3D">Button ==</h2>
+
+<p>ボタン（Button）は、ご存知のとおり、押しボタンです。それらをクリックしたら何かを行います。 ボタンは“OK”または“Are you
+sure?”などを表示します。そして、よければボタンをクリックします。 !{:margin_left =&gt;
+100}man-ele-button.png!</p>
+
+<p>{{{</p>
+
+<pre>#!ruby
+Shoes.app do
+  button &quot;OK!&quot;
+  button &quot;Are you sure?&quot;
+end</pre>
+
+<p>}}}</p>
+
+<p>上記の例のボタンはそれらがクリックされたときに何も行いません。 働きを行わせるためには、それぞれのボタンにブロックを取り付けます。</p>
+
+<p>{{{</p>
+
+<pre>#!ruby
+Shoes.app do
+  button &quot;OK!&quot; do
+    append { para &quot;Well okay then.&quot; }
+  end
+  button &quot;Are you sure?&quot; do
+    append { para &quot;Your confidence is inspiring.&quot; }
+  end
+end</pre>
+
+<p>}}}</p>
+
+<p>このようにボタンにブロックを取り付けました。 それぞれのブロックはページに新しいパラグラフを取り付けます。
+クリックする度に、パラグラフが追加されます。</p>
+
+<p>これはこれ以上深くはしません。ボタンはクリック可能な句でしかありません。</p>
+
+<p>厳密に言えば、次に続く例では他の方法でそれを書いています。</p>
+
+<p>{{{</p>
+
+<pre>#!ruby
+Shoes.app do
+  @b1 = button &quot;OK!&quot;
+  @b1.click{para &quot;Well okay then.&quot;}
+  @b2 = button &quot;Are you sure?&quot;
+  @b2.click{para &quot;Your confidence is inspiring.&quot;}
+end</pre>
+
+<p>}}}</p>
+
+<p>見た目は劇的に違いますが、これは同じ動きです。 １つ目の違い：直接ブロックをボタンに取り付けるのではなく、`click`メソッドを通して、
+ブロックを後で取り付けています。</p>
+
+<p>２つ目の違いはボタンには全く関係がありません。Green Shoesがスロットに要素を直接
+追加することを許しているので、`append`ブロックが取り除かれています。
+そのため直接`para`を呼ぶことができます。（`prepend`、`before`または `after`メソッドの場合にはできません。）</p>
+
+<p><a href="http://Common">以下のメソッドに加えて、ボタンは[</a>]のすべてのメソッドも継承します。</p>
+
+<h3 id="label-click%28%29+%7B+%7Cself%7C+...+%7D+%C2%BB+self+%3D%3D%3D">click() { |self| … } » self ===</h3>
+
+<p>ボタンがクリックされたときには、`click`ブロックが呼ばれます。
+このブロックは`self`を渡します。意味すること：どちらのボタンでクリックされたか。</p>
+
+<h3 id="label-focus%28%29+%C2%BB+self+%3D%3D%3D">focus() » self ===</h3>
+
+<p>ボタンのフォーカスを移動します。 そのボタンはハイライトされ、ユーザがエンターキーを打てば、クリックされます。</p>
+
+<h2 id="label-Check+%3D%3D">Check ==</h2>
+
+<p>チェックボックスはチェックされた状態またはチェックされていない状態になるクリック可能な
+四角い箱です。１つのチェックボックスでは通常は“はい（yes）”または“いいえ（no）”の
+質問をたずねます。複数のチェックボックスのセットではto-doリストでも見られます。 !{:margin_left =&gt;
+100}man-ele-check.png!</p>
+
+<p>ここにチェックリストのサンプルがあります。</p>
+
+<p>{{{</p>
+
+<pre>#!ruby
+Shoes.app do
+  stack do
+    flow do
+      check; para &quot;Frances Johnson&quot;, width: 200
+    end
+    flow do
+      check; para &quot;Ignatius J. Reilly&quot;, width: 200
+    end
+    flow do
+      check
+      para &quot;Winston Niles Rumfoord&quot;, width: 200
+    end
+  end
+end</pre>
+
+<p>}}}</p>
+
+<p>基本的にはチェック（check）を利用するための２つの方法があります。 チェックにチェックがクリックされたときに呼ばれるブロックを取り付けます。
+そして／または、ボックスがチェックされているかどうか確認する`checked?`メソッドを 利用できます。</p>
+
+<p>では、上記の例に追加しましょう。</p>
+
+<p>{{{</p>
+
+<pre class="ruby"><span class="ruby-comment">#!ruby</span>
+<span class="ruby-constant">Shoes</span>.<span class="ruby-identifier">app</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-ivar">@list</span> = [<span class="ruby-string">'Frances Johnson'</span>, <span class="ruby-string">'Ignatius J. Reilly'</span>,
+    <span class="ruby-string">'Winston Niles Rumfoord'</span>]
+
+  <span class="ruby-identifier">stack</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-ivar">@list</span>.<span class="ruby-identifier">map!</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">flow</span> { <span class="ruby-ivar">@c</span> = <span class="ruby-identifier">check</span>; <span class="ruby-identifier">para</span> <span class="ruby-identifier">name</span>, <span class="ruby-identifier">width</span><span class="ruby-operator">:</span> <span class="ruby-value">200</span> }
+      [<span class="ruby-ivar">@c</span>, <span class="ruby-identifier">name</span>]
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">button</span> <span class="ruby-string">&quot;What's been checked?&quot;</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">selected</span> = 
+        <span class="ruby-ivar">@list</span>.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">c</span>, <span class="ruby-identifier">n</span><span class="ruby-operator">|</span> <span class="ruby-identifier">n</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">checked?</span>}.<span class="ruby-identifier">compact</span>
+      <span class="ruby-identifier">alert</span>(<span class="ruby-string">&quot;You selected: &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">selected</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">', '</span>))
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>}}}</p>
+
+<p>そして、ボタンが押されたときに、`checked?`メソッドを利用して、それぞれのチェックは その状態を尋ねます。</p>
+
+<p><a href="http://Common">下のボタンメソッドの一覧だけでなく、すべての要素が応答できる、[</a>]メソッドの
+一覧も見てください。</p>
+
+<h3 id="label-checked%3F%28%29+%C2%BB+true+or+false+%3D%3D%3D">checked?() » true or false ===</h3>
+
+<p>その箱がチェックされているかどうかを返します。 そして、`true`の意味は“はい、この箱はチェックされています！”です。</p>
+
+<h3 id="label-checked+%3D+true+or+false+%3D%3D%3D">checked = true or false ===</h3>
+
+<p>チェックボックスをマークしたりマークを外したりします。 例えば、`checked = false`を利用して、箱のチェックを外します。</p>
+
+<h3 id="label-click%28%29+%7B+%7Cself%7C+...+%7D+%C2%BB+self+%3D%3D%3D">click() { |self| … } » self ===</h3>
+
+<p>チェックボックスがクリックされたときに、その`click`ブロックが呼ばれます。
+このブロックは、クリックされたチェックボックスオブジェクトの`self`を渡します。</p>
+
+<p>箱がチェックされるときとチェックを外すときのどちらもクリックが渡されます。</p>
+
+<h3 id="label-focus%28%29+%C2%BB+self+%3D%3D%3D">focus() » self ===</h3>
+
+<p>チェックボックスにフォーカスを移動します。そのチェックボックスはハイライトされ、
+ユーザがエンターキーを打てば、そのチェックボックスはチェックされた状態とチェックされていない 状態の間をトグルします。</p>
+
+<h2 id="label-EditBox+%3D%3D">EditBox ==</h2>
+
+<p>エディットボックス（Edit box）は、テキストを入力するための幅広い長方形の箱です。
+webでは、それらはテキストエリアと呼ばれます。それらは長い記述を入力するための マルチラインエディットボックスです。エッセイでさえ書けます！
+!{:margin_left =&gt; 100}man-ele-editbox.png!</p>
+
+<p>スタイルを何も設定しなければ、エディットボックスは200ピクセルx108ピクセルのサイズです。
+特定のサイズに設定するために`:width`と`:height`のスタイルを利用することもできます。</p>
+
+<p>{{{</p>
+
+<pre>#!ruby
+Shoes.app do
+  edit_box
+  edit_box width: 100, height: 100
+end</pre>
+
+<p>}}}</p>
+
+<p>（[[<a href="http://Check">Button]]や[</a>]などの）他のコントロールはクリックイベントだけを持っていますが、
+[[EditLine]]やエディットボックス（EditBox）は`change`イベントも持っています。
+誰かがタイプしたり箱から削除したら`change`のブロックはいつでも呼ばれます。</p>
+
+<p>{{{</p>
+
+<pre class="ruby"><span class="ruby-comment">#!ruby</span>
+<span class="ruby-constant">Shoes</span>.<span class="ruby-identifier">app</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">edit_box</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span>
+    <span class="ruby-ivar">@counter</span>.<span class="ruby-identifier">text</span> = 
+      <span class="ruby-identifier">strong</span>(<span class="ruby-node">&quot;#{e.text.size}&quot;</span>) <span class="ruby-operator">+</span> <span class="ruby-string">&quot; characters&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@counter</span> = <span class="ruby-identifier">para</span> <span class="ruby-identifier">strong</span>(<span class="ruby-string">&quot;0&quot;</span>), <span class="ruby-string">&quot; characters&quot;</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>}}}</p>
+
+<p><a href="http://EditBox.text">この例ではブロック内部で[</a>]メソッドを利用していることにも注意してください。
+このメソッドは箱に対してタイプしたすべての文字の文字列をあなたに与えます。</p>
+
+<p>エディットボックスの更なるメソッドは以下に一覧にしますが、すべての要素が応答できる、 [[Common]]メソッドの一覧も見てください。</p>
+
+<h3 id="label-change%28%29+%7B+%7Cself%7C+...+%7D+%C2%BB+self+%3D%3D%3D">change() { |self| … } » self ===</h3>
+
+<p>エディットボックスに文字が追加されたり取り除かれるたびに、`chenage`ブロックが
+呼ばれます。ブロックには変更されたエディットボックスのオブジェクトである`self`が 与えられます。</p>
+
+<h3 id="label-focus%28%29+%C2%BB+self+%3D%3D%3D">focus() » self ===</h3>
+
+<p>エディットボックスにフォーカスを移動します。そのエディットボックスはハイライトされ、 ユーザはエディットボックスにタイプできます。</p>
+
+<h3 id="label-text%28%29+%C2%BB+self+%3D%3D%3D">text() » self ===</h3>
+
+<p>箱にタイプされた文字を文字列として返します。</p>
+
+<h3 id="label-text+%3D+a+string+%3D%3D%3D">text = a string ===</h3>
+
+<p>`a string`の文字をエディットボックスに代入します。</p>
+
+<h2 id="label-EditLine+%3D%3D">EditLine ==</h2>
+
+<p>エディットライン（Edit line）は細長い、小さなテキストを入力する箱です。 エディットボックスはマルチラインですが、エディットラインは１行です。
+これはエディットラインです。ちなみに水平です。 !{:margin_left =&gt; 100}man-ele-editline.png!</p>
+
+<p>スタイルが設定されていないエディットラインは200ピクセルの幅と28ピクセルの高さです。 これはおおよそです。プラットフォームによって高さは様々です。</p>
+
+<p>{{{</p>
+
+<pre>#!ruby
+Shoes.app do
+  stack do
+    edit_line
+    edit_line width: 400
+  end
+end</pre>
+
+<p>}}}</p>
+
+<p>`:width`と`:height`の両方のスタイルを設定することによりサイズを変更することができます。
+しかしながら、高さはフォントに合わせて調整されるため、一般的には`:width`だけの スタイルを設定します。（そして、現在のバージョンのGreen
+Shoesでは、エディットラインと エディットボックスフォントはどうやっても変更できません。）</p>
+
+<p>エディットラインにブロックが与えられたら、`change`イベントを受けとります。 <a
+href="http://EditBox">changeブロックを利用した例については[</a>]のページを確認してください。
+実際には、そのエディットボックスはエディットラインとすべて同じメソッドを持ちます。 <a
+href="http://Common">すべての要素が応答できる、[</a>]メソッドの一覧も見てください。</p>
+
+<h3 id="label-change%28%29+%7B+%7Cself%7C+...+%7D+%C2%BB+self+%3D%3D%3D">change() { |self| … } » self ===</h3>
+
+<p>エディットラインに文字が追加されたり取り除かれるたびに、`chenage`ブロックが呼ばれます。
+ブロックには変更されたエディットラインのオブジェクトである`self`が与えられます。</p>
+
+<h3 id="label-focus%28%29+%C2%BB+self+%3D%3D%3D">focus() » self ===</h3>
+
+<p>エディットラインにフォーカスを移動します。そのエディットラインはハイライトされ、 ユーザはエディットラインにタイプできます。</p>
+
+<h3 id="label-text%28%29+%C2%BB+self+%3D%3D%3D">text() » self ===</h3>
+
+<p>箱にタイプされた文字を文字列として返します。</p>
+
+<h3 id="label-text+%3D+a+string+%3D%3D%3D">text = a string ===</h3>
+
+<p>`a string`の文字をエディットボックスに代入します。</p>
+
+<h2 id="label-Image+%3D%3D">Image ==</h2>
+
+<p>画像（image）はPNG、JPEGまたはGIFフォーマットの画像ファイルです。 Green
+Shoesは画像をリサイズまたはテキストとともにそれらをフローすることができます。 !{:margin_left =&gt;
+100}man-ele-image.png!</p>
+
+<p>画像を作成するために、スロット内部で`image`メソッドを利用します：</p>
+
+<p>{{{</p>
+
+<pre>#!ruby
+Shoes.app do
+  para &quot;Nice, nice, very nice.  Busy, busy, busy.&quot;
+  image File.join DIR,
+    &quot;../static/shoes-manual-apps.png&quot;
+ end</pre>
+
+<p>}}}</p>
+
+<p>Green Shoesに何らかの画像をロードしたとき、それはメモリにキャッシュされます。
+それは、同じファイルの画像の要素をたくさんロードした場合でも、それは実際には １回だけファイルをロードすることを意味します。</p>
+
+<p>webのURLを直接利用することもできます。</p>
+
+<p>{{{</p>
+
+<pre>#!ruby
+Shoes.app do
+  image &quot;http://is.gd/c0mBtb&quot;
+end</pre>
+
+<p>}}}</p>
+
+<p>webから画像がロードされたとき、それはハードディスクドライブとメモリの両方にキャッシュ
+されます。これは画像が変更されなければ再度ダウンロードをすることを防止します。
+（不思議に思う場合：正にブラウザが行うetagのようにShoesは変更時間の軌跡を 保持します。）</p>
+
+<p>”‘注意:”’ Green Shoesは、Red Shoesのようなハードドライブキャッシュ管理機能を サポートしていません。</p>
+
+<p>Green Shoesはバックグラウンドでシステムのスレッドを使ってリモートの画像もロードします。
+そのため、リモートの画像を利用することはRubyを妨げることはなく、またどんな強烈な グラフィカルな表示でも進み続けるでしょう。</p>
+
+<h3 id="label-full_height%28%29+%C2%BB+a+number+%3D%3D%3D">full_height() » a number ===</h3>
+
+<p>画像全体のピクセルでの高さです。通常は、ピクセルでの画像の高さを知るために
+[[Common.height]]メソッドを利用できます。しかし画像がリサイズされていたり
+より大きいサイズなどにスタイルが設定されていた場合は、`height`は変更された サイズを返します。</p>
+
+<p>`full_height`メソッドは保存されたオリジナルファイルの画像の（ピクセルでの）高さを与えます。</p>
+
+<h3 id="label-full_width%28%29+%C2%BB+a+number+%3D%3D%3D">full_width() » a number ===</h3>
+
+<p><a href="http://Common.width">画像全体のピクセルでの幅です。[</a>]ではなくこのメソッドを使う理由の <a
+href="http://Image.full_height">説明については[</a>]メソッドを見てください。</p>
+
+<h3 id="label-path%28%29+%C2%BB+a+string+%3D%3D%3D">path() » a string ===</h3>
+
+<p>画像のURLまたはファイル名です。</p>
+
+<h3 id="label-path+%3D+a+string+%3D%3D%3D">path = a string ===</h3>
+
+<p>ファイルまたはURLからロードして、画像を他のものに入れ替えます。</p>
+
+<h3 id="label-rotate%28degrees%3A+a+number%29+%C2%BB+self+%3D%3D%3D">rotate(degrees: a number) » self ===</h3>
+
+<p>画像を`degrees`度回転させます。</p>
+
+<p>{{{</p>
+
+<pre class="ruby"><span class="ruby-constant">Shoes</span>.<span class="ruby-identifier">app</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">img</span> = <span class="ruby-identifier">image</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">DIR</span>, <span class="ruby-string">'../samples/cy.png'</span>)
+  <span class="ruby-identifier">img</span>.<span class="ruby-identifier">move</span> <span class="ruby-value">200</span>, <span class="ruby-value">200</span>
+  <span class="ruby-identifier">animate</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">img</span>.<span class="ruby-identifier">rotate</span> <span class="ruby-identifier">i</span>*<span class="ruby-value">10</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>}}}</p>
+
+<h2 id="label-ListBox+%3D%3D">ListBox ==</h2>
+
+<p>リストボックス（List box）（環境によって“コンボボックス（combo box）”または “ドロップダウンボックス（drop-down
+box）”または“セレクトボックス（select box）”とも
+呼ばれています。）は箱をクリックしたときドロップダウンしてオプションが一覧として表示されます。 !{:margin_left =&gt;
+100}man-ele-listbox.png!</p>
+
+<p>リストボックスは配列からオプションを取得します。 配列（リスト）の文字列は、`:items`スタイルに渡されます。</p>
+
+<p>{{{</p>
+
+<pre>#!ruby
+Shoes.app do
+  para &quot;Choose a fruit:&quot;
+  list_box items: [&quot;Grapes&quot;, &quot;Pears&quot;, &quot;Apricots&quot;]
+end</pre>
+
+<p>}}}</p>
+
+<p>そして、リストボックスの基本のサイズは200ピクセルの幅と28ピクセルの高さです。 この長さは`width`スタイルを利用して調整することができます。</p>
+
+<p>{{{</p>
+
+<pre class="ruby"><span class="ruby-comment">#!ruby</span>
+<span class="ruby-constant">Shoes</span>.<span class="ruby-identifier">app</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">para</span> <span class="ruby-string">&quot;Choose a fruit:&quot;</span>
+  <span class="ruby-identifier">list_box</span> <span class="ruby-identifier">items</span><span class="ruby-operator">:</span> [<span class="ruby-string">&quot;Grapes&quot;</span>, <span class="ruby-string">&quot;Pears&quot;</span>, <span class="ruby-string">&quot;Apricots&quot;</span>],
+    <span class="ruby-identifier">width</span><span class="ruby-operator">:</span> <span class="ruby-value">120</span>, <span class="ruby-identifier">choose</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;Apricots&quot;</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">list</span><span class="ruby-operator">|</span>
+      <span class="ruby-ivar">@fruit</span>.<span class="ruby-identifier">text</span> = <span class="ruby-identifier">list</span>.<span class="ruby-identifier">text</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-ivar">@fruit</span> = <span class="ruby-identifier">para</span> <span class="ruby-string">&quot;No fruit selected&quot;</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>}}}</p>
+
+<p>`:width`スタイルに続いて、この例ではもう１つの便利なオプションを利用します。
+`:choose`オプションは始めからハイライトされるべきアイテムをリストボックスに教えます。 （<a
+href="http://ListBox.choose">箱が作成された後でアイテムをハイライトするには[</a>]メソッドもあります。）</p>
+
+<p><a href="http://ListBox.change">リストボックスは[</a>]イベントも持っています。次の例では、リストボックスに
+ブロックを取り付けました。いいですか、この`change`ブロックを見てください。 このブロックは誰かが選択されたアイテムを変更するたびに呼ばれます。</p>
+
+<p>これらは基本的なことです。すべての要素が持っているメソッドの完全な一覧である、 [[Common]]メソッドのページを見てください。</p>
+
+<h3 id="label-change%28%29+%7B+%7Cself%7C+...+%7D+%C2%BB+self+%3D%3D%3D">change() { |self| … } » self ===</h3>
+
+<p>誰かがリストボックスの新しいオプションをハイライトするたびに（例えば、アイテムをクリックする
+ことによって）`change`ブロックは呼ばれます。ブロックには変更されたリストボックスの オブジェクトである`self`が与えられます。</p>
+
+<h3 id="label-choose%28item%3A+a+string%29+%C2%BB+self+%3D%3D%3D">choose(item: a string) » self ===</h3>
+
+<p>`item`として与えられた文字列と一致するリストボックス内のオプションを選択します。</p>
+
+<h3 id="label-focus%28%29+%C2%BB+self+%3D%3D%3D">focus() » self ===</h3>
+
+<p>リストボックスにフォーカスを移動します。そのリストはハイライトされ、ユーザが上や下の 矢印キーを押した場合、リスト内の別のオプションが選択されます。</p>
+
+<h3 id="label-items%28%29+%C2%BB+an+array+of+strings+%3D%3D%3D">items() » an array of strings ===</h3>
+
+<p>リストボックスにオプションとして現在表示されている文字列の完全な一覧を返します。</p>
+
+<h3 id="label-items+%3D+an+array+of+strings+%3D%3D%3D">items = an array of strings ===</h3>
+
+<p>リストボックスのオプションを新しい文字列の一覧で置き換えます。</p>
+
+<h3 id="label-text%28%29+%C2%BB+a+string+%3D%3D%3D">text() » a string ===</h3>
+
+<p>現在リストボックス内でハイライトされて表示されているテキストを含む文字列です。 何も選択されていないなら、`nil`が応答されます。</p>
+
+<h2 id="label-Progress+%3D%3D">Progress ==</h2>
+
+<p>プログレスバー（Progress bar）は活動がどこまで進んでいるかを表示します。 一般的には、プログレスバーはパーセンテージで示されます。
+（0%から100%まで）Shoesは0.0から1.0の10進数を使って進行を考えます。 !{:margin_left =&gt;
+100}man-ele-progress.png!</p>
+
+<p>シンプルなプログレスバーは200ピクセルの幅ですが、長くするために （すべてのGreen
+Shoesの要素のように）`:width`スタイルは利用できません。</p>
+
+<p>”‘注意:”’ Green Shoesでは、最小サイズが幅150ピクセルです。</p>
+
+<p>{{{</p>
+
+<pre class="ruby"><span class="ruby-constant">Shoes</span>.<span class="ruby-identifier">app</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">title</span> <span class="ruby-string">&quot;Progress example&quot;</span>
+  <span class="ruby-ivar">@p</span> = <span class="ruby-identifier">progress</span> <span class="ruby-identifier">left</span><span class="ruby-operator">:</span> <span class="ruby-value">10</span>, <span class="ruby-identifier">top</span><span class="ruby-operator">:</span> <span class="ruby-value">100</span>, <span class="ruby-identifier">width</span><span class="ruby-operator">:</span> <span class="ruby-identifier">width</span><span class="ruby-operator">-</span><span class="ruby-value">20</span>
+
+  <span class="ruby-identifier">animate</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+    <span class="ruby-ivar">@p</span>.<span class="ruby-identifier">fraction</span> = (<span class="ruby-identifier">i</span> <span class="ruby-operator">%</span> <span class="ruby-value">100</span>) <span class="ruby-operator">/</span> <span class="ruby-value">100.0</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>}}}</p>
+
+<p>プログレスバーを含む、すべての要素に備え付けられたメソッドの一覧については [[Common]]メソッドのページを見てください。</p>
+
+<h3 id="label-fraction%28%29+%C2%BB+a+decimal+number+%3D%3D%3D">fraction() » a decimal number ===</h3>
+
+<p>どこまでプログレスバーが進んでいるかを指し示す、0.0から1.0の10進数の数を返します。</p>
+
+<h3 id="label-fraction+%3D+a+decimal+number+%3D%3D%3D">fraction = a decimal number ===</h3>
+
+<p>0.0から1.0の間の10進数の数で進行を設定します。</p>
+
+<h2 id="label-Radio+%3D%3D">Radio ==</h2>
+
+<p>ラジオボタン（Radio button）はクリック可能な円のグループです。
+それをマークするには円をクリックしてください。ラジオボタンは１度に１つだけマークできます。
+（１度に１つのオプションだけしか選択できないところは、リストボックスに似ています。） !{:margin_left =&gt;
+100}man-ele-radio.png!</p>
+
+<p>それでは、リストボックスを利用すべきときと、ラジオボタンを利用すべきときをどのようにして
+決定しますか？そうですね、リストボックスはボックスをクリックしてドロップダウンを表示すること なく１つのハイライトされたアイテムを表示します。
+しかし、ラジオボタンはどれがマークされているか気にすることなく、すべて表示されます。</p>
+
+<p>{{{</p>
+
+<pre>#!ruby
+Shoes.app do
+  para &quot;Among these films, which do you prefer?\n&quot;
+  radio
+  para strong(&quot;The Taste of Tea&quot;), 
+    &quot; by Katsuhito Ishii\n&quot;, width: 570
+  radio
+  para strong(&quot;Kin-Dza-Dza&quot;), 
+    &quot; by Georgi Danelia\n&quot;, width: 570
+  radio
+  para strong(&quot;Children of Heaven&quot;), 
+    &quot; by Majid Majidi\n&quot;, width: 570
+end</pre>
+
+<p>}}}</p>
+
+<p>それらは（たくさんの`para`とともに）同じスロット内で一緒にグループ化されているため、 ３つのラジオボタンから１度に１つだけが選択できます。</p>
+
+<p>これらをそれら自身のスロットに移動したら、この例は壊れます。</p>
+
+<p>{{{</p>
+
+<pre>#!ruby
+Shoes.app do
+  stack do
+    para &quot;Among these films, which do you prefer?&quot;
+    flow do
+      radio
+      para &quot;The Taste of Tea by Katsuhito Ishii&quot;, 
+        width: 300
+    end
+    flow do
+      radio
+      para &quot;Kin-Dza-Dza by Georgi Danelia&quot;,
+        width: 300
+    end
+    flow do
+      radio
+      para &quot;Children of Heaven by Majid Majidi&quot;,
+        width: 300
+    end
+  end
+end</pre>
+
+<p>}}}</p>
+
+<p>しかし、これは修正できます。 違うスロットのラジオボタンを一緒にグループ化することができ、それらにすべて同じグループ名を 与える必要があります。</p>
+
+<p>ここでは`:films`グループにそれらすべてのラジオボタンをグループ化しました。</p>
+
+<p>{{{</p>
+
+<pre>#!ruby
+Shoes.app do
+  stack do
+    para &quot;Among these films, which do you prefer?&quot;
+    flow do
+      radio :films
+      para &quot;The Taste of Tea by Katsuhito Ishii&quot;,
+        width: 300
+    end
+    flow do
+      radio :films
+      para &quot;Kin-Dza-Dza by Georgi Danelia&quot;,
+        width: 300
+    end
+    flow do
+      radio :films
+      para &quot;Children of Heaven by Majid Majidi&quot;,
+        width: 300
+    end
+  end
+end</pre>
+
+<p>}}}</p>
+
+<p><a href="http://Common">下にあるそれらの一覧を越える更なるメソッドについては、[</a>]メソッドのページを
+詳しく調べてください。それらのメソッドをすべてのラジオボタンで同様に利用できるからです。</p>
+
+<h3 id="label-checked%3F%28%29+%C2%BB+true+or+false+%3D%3D%3D">checked?() » true or false ===</h3>
+
+<p>ラジオボタンがチェックされているかどうかを返します。 そして、`true`の意味は“はい、チェックされています！”です。</p>
+
+<h3 id="label-checked+%3D+true+or+false+%3D%3D%3D">checked = true or false ===</h3>
+
+<p>ラジオボタンをマークしたりマークを外したりします。 例えば、`checked = false`を利用して、ラジオボタンをクリアします。</p>
+
+<h3 id="label-click%28%29+%7B+%7Cself%7C+...+%7D+%C2%BB+self+%3D%3D%3D">click() { |self| … } » self ===</h3>
+
+<p>ラジオボタンがクリックされたとき、その`click`ブロックが呼ばれます。
+このブロックは、クリックされたラジオボタンを示すオブジェクトの`self`を渡します。</p>
+
+<p>ラジオボタンをマークしたときとマークを外したときの両方で、クリックが送られます。</p>
+
+<h3 id="label-focus%28%29+%C2%BB+self+%3D%3D%3D">focus() » self ===</h3>
+
+<p>ラジオボタンのフォーカスを移動します。そのラジオボタンはハイライトされます。</p>
+
+<h2 id="label-Shape+%3D%3D">Shape ==</h2>
+
+<p>形状（shape）は通常は`oval`と`rect`のようにドローイングメソッドによって作成される アウトラインパスです。!{:margin_left
+=&gt; 100}man-ele-shape.png!</p>
+
+<p>[[Common]]メソッドのページを見てください。形状はそれらすべてのメソッドに応答できます。</p>
+
+<h2 id="label-TextBlock+%3D%3D">TextBlock ==</h2>
+
+<p>テキストブロック（TextBlock）オブジェクトは単独の要素にとして形成されるテキストの
+グループを示します。例えば、太字のテキストを含むパラグラフです。
+リンクと太字のテキストを含むキャプションです。（そして、`caption`はテキストブロックの
+タイプです。しかしながら、`link`と`strong`はテキストクラスのタイプです。） !{:margin_left =&gt;
+100}man-ele-textblock.png!</p>
+
+<p>テキストブロックのすべての種類はタイプは[[Element Element Creation]]ページで 確認できます。</p>
+
+<pre>* [[Element.banner]], 48ピクセルのフォント。
+* [[Element.title]], 34ピクセルのフォント。
+* [[Element.subtitle]], 26ピクセルのフォント。
+* [[Element.tagline]], 18ピクセルのフォント。
+* [[Element.caption]], 14ピクセルのフォント。
+* [[Element.para]], 12ピクセルのフォント。
+* [[Element.inscription]], 10ピクセルのフォント。</pre>
+
+<h3 id="label-contents%28%29+%C2%BB+an+array+of+elements++%3D%3D%3D">contents() » an array of elements  ===</h3>
+
+<p>ブロック内部の整形された文字列すべてのリストです。</p>
+
+<p>”‘注意:”’ Green Shoesは`contents`メソッドをサポートしていません。</p>
+
+<h3 id="label-cursor%28%29+%C2%BB+an+index+%3D%3D%3D">cursor() » an index ===</h3>
+
+<p>テキストカーソルの位置を返します。このテキストボックス内の文字のインデックスです。</p>
+
+<h3 id="label-cursor+%3D+an+index+or+nil+%3D%3D%3D">cursor = an index or nil ===</h3>
+
+<p>テキストカーソルを表示/非表示します。 例えば、`cursor = 3`は文の先頭から3文字目の位置にテキストカーソルを表示します。 `cursor
+= -1`は文の末尾にテキストカーソルを表示します。 `cursor = nil`はテキストカーソルを非表示にします。</p>
+
+<p>{{{</p>
+
+<pre class="ruby"><span class="ruby-constant">Shoes</span>.<span class="ruby-identifier">app</span> <span class="ruby-keyword">do</span>
+ <span class="ruby-identifier">msg</span> = <span class="ruby-identifier">para</span> <span class="ruby-string">'hello '</span> * <span class="ruby-value">20</span>
+ <span class="ruby-identifier">msg</span>.<span class="ruby-identifier">cursor</span> = <span class="ruby-value">-1</span>
+ <span class="ruby-identifier">keypress</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span><span class="ruby-operator">|</span>
+   <span class="ruby-identifier">n</span> = <span class="ruby-keyword">case</span> <span class="ruby-identifier">k</span>
+     <span class="ruby-keyword">when</span> <span class="ruby-string">'Left'</span>; <span class="ruby-value">-1</span>
+     <span class="ruby-keyword">when</span> <span class="ruby-string">'Right'</span>; <span class="ruby-value">1</span>
+     <span class="ruby-keyword">else</span>
+       <span class="ruby-keyword">next</span>
+   <span class="ruby-keyword">end</span>
+   <span class="ruby-identifier">n</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">msg</span>.<span class="ruby-identifier">cursor</span>
+   <span class="ruby-identifier">len</span> = <span class="ruby-identifier">msg</span>.<span class="ruby-identifier">text</span>.<span class="ruby-identifier">length</span>
+   <span class="ruby-identifier">n</span> = <span class="ruby-identifier">len</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">n</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">-1</span>
+   <span class="ruby-identifier">msg</span>.<span class="ruby-identifier">cursor</span> = <span class="ruby-identifier">n</span> <span class="ruby-operator">%</span> (<span class="ruby-identifier">len</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>)
+   <span class="ruby-identifier">flush</span>
+ <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>}}}</p>
+
+<h3 id="label-highlight%28%29+%C2%BB+an+array+%3D%3D%3D">highlight() » an array ===</h3>
+
+<p>テキストマーカーの開始位置とハイライトする長さを配列形式で返します。</p>
+
+<h3 id="label-hit%28left%2C+top%29+%C2%BB+an+index+or+nil+%3D%3D%3D">hit(left, top) » an index or nil ===</h3>
+
+<p>マウスカーソルが指し示すテキストのインデックスを返します。 `left`と`top` は、マウスの位置です。</p>
+
+<p>{{{</p>
+
+<pre class="ruby"><span class="ruby-constant">Shoes</span>.<span class="ruby-identifier">app</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">para</span> <span class="ruby-string">'index: '</span>, <span class="ruby-identifier">width</span><span class="ruby-operator">:</span> <span class="ruby-value">50</span>
+  <span class="ruby-identifier">index</span> = <span class="ruby-identifier">para</span> <span class="ruby-string">''</span>, <span class="ruby-identifier">width</span><span class="ruby-operator">:</span> <span class="ruby-value">20</span>
+  <span class="ruby-identifier">msg</span> = <span class="ruby-identifier">title</span> <span class="ruby-string">'hello '</span> * <span class="ruby-value">5</span>
+  <span class="ruby-identifier">click</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">b</span>, <span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">index</span>.<span class="ruby-identifier">text</span> = <span class="ruby-identifier">msg</span>.<span class="ruby-identifier">hit</span> <span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>}}}</p>
+
+<h3 id="label-marker%28%29+%C2%BB+an+index+%3D%3D%3D">marker() » an index ===</h3>
+
+<p>テキストマーカーの開始位置を返します。</p>
+
+<h3 id="label-marker+%3D+an+index+%3D%3D%3D">marker = an index ===</h3>
+
+<p>テキストマーカーの開始位置からカーソル位置までの文字列をハイライトします。</p>
+
+<p>{{{</p>
+
+<pre>Shoes.app do
+  background gainsboro
+  extend HH::Markup
+  code = 'alert &quot;Hello Green Shoes! &quot; * 5'
+  msg = para highlight code, nil
+  button 'marker' do
+    msg.cursor = 17
+    msg.marker = 14
+    msg.text = highlight msg.markup, nil
+    para msg.highlight
+    flush
+  end
+end</pre>
+
+<p>}}}</p>
+
+<h3 id="label-markup%28%29+%C2%BB+a+text+%3D%3D%3D">markup() » a text ===</h3>
+
+<p>Pangoのマークアップテキストを返します。</p>
+
+<h3 id="label-replace%28a+string%29+%3D%3D%3D">replace(a string) ===</h3>
+
+<p>ブロック全体のテキストを`a string`の文字で置き換えます。</p>
+
+<h3 id="label-text%28%29+%C2%BB+a+string+%3D%3D%3D">text() » a string ===</h3>
+
+<p>テキストボックスのすべての文字の文字列を返します。画面に表示されるかのように、
+すべてのスタイルまたはテキストクラスが取り除かれて実際の文字だけを返します。</p>
+
+<h3 id="label-text+%3D+a+string+%3D%3D%3D">text = a string ===</h3>
+
+<p>ブロック全体のテキストを`a string`の文字で置き換えます。</p>
+
+<h3 id="label-to_s%28%29+%C2%BB+a+string+%3D%3D%3D">to_s() » a string ===</h3>
+
+<p>[[TextBlock.text]]のエイリアスです。 テキストブロックのすべてのコンテンツをフラットにした文字列を返します。</p>
+
+<h2 id="label-Timers+%3D%3D">Timers ==</h2>
+
+<p>Green Shoesは3つのタイマーを持っています：Animate、EveryそしてTimerです。
+AnimateとEveryの両方は開始してから何度も何度も繰り替えします。 タイマーは１度だけ実行されます。１回限りのタイマーです。</p>
+
+<p>animateとeveryは基本的には同じものです。 違いはanimateは普通は１秒間にとてもたくさん実行されます。
+そしてeveryは数秒間ごとに実行されるか、まれにしか実行されません。</p>
+
+<p>animateとeveryは自動的に開始されます。</p>
+
+<h3 id="label-start%28%29+%C2%BB+self+%3D%3D%3D">start() » self ===</h3>
+
+<p>どちらのタイプのタイマーもそれ自身で自動的に開始されるため、通常はこれは利用する <a
+href="http://Timers.stop">必要がありません。しかし、[</a>]でタイマーを止めて再開したい場合は、
+もちろん：これを利用してください！</p>
+
+<p>”‘注意:”’ Green Shoesは`start`メソッドをサポートしていません。</p>
+
+<h3 id="label-stop%28%29+%C2%BB+self+%3D%3D%3D">stop() » self ===</h3>
+
+<p>animateまたはeveryのループを中断します。</p>
+
+<h3 id="label-pause%28%29+%C2%BB+self+%3D%3D%3D">pause() » self ===</h3>
+
+<p>animateまたはeveryのループを一時停止します。 アニメーションまたはタイマーが停止されていれば、開始します。
+既に実行されていれば、停止します。</p>
+
+<h2 id="label-Video+%3D%3D">Video ==</h2>
+
+<p>Green Shoesは埋め込みのMP4, AVI, WMV, QuickTimeや他の様々な人気のある
+ビデオフォーマットをサポートしています。これはすべてRuby/GStreamerのおかげです。
+Shoes::Videoオブジェクトをセットアップするために`video`メソッドを利用してください。 !{:margin_left =&gt;
+100}man-ele-video.png!</p>
+
+<p>{{{</p>
+
+<pre>Shoes.app width: 400, height: 300 do
+  background gold..cyan, angle: 90
+  space = ' ' * 3
+  v = video 'http://is.gd/xZ6Jih'
+  links = para space, 
+    link('play'){v.play; links.move(0, 300)}, 
+    space, link('pause'){v.pause}, 
+    space, link('-1sec'){v.time -= 1000},
+    space, link('+1sec'){v.time += 1000}, 
+    top: 250
+  msg = para left: 250, top: 300
+  every do
+    msg.text = fg(&quot;#{(v.position*100).to_i}% &quot; + 
+      &quot;(#{v.time/1000}/#{v.length.to_i/1000}sec)&quot;, 
+      darkcyan)
+  end
+end</pre>
+
+<p>}}}</p>
+
+<p>ビデオフォーマットに加えて、MP3、WAVとOgg Vorbisのような、いくつかの オーディオフォーマットもサポートされています。</p>
+
+<h3 id="label-hide%28%29+%C2%BB+self+%3D%3D%3D">hide() » self ===</h3>
+
+<p>ビデオを非表示します。既に再生しているなら、ビデオは再生を続けます。 これはビデオの表示をオフにするだけです。このメソッドの有力な使い方の１つは、
+MP3のようなオーディオファイルを再生するときに、ビデオの範囲を破壊することです。</p>
+
+<p>”‘注意:”’ 今のところGreen Shoesでは`hide`メソッドをサポートしていません。</p>
+
+<h3 id="label-length%28%29+%C2%BB+a+number+%3D%3D%3D">length() » a number ===</h3>
+
+<p>ミリ秒でのビデオ全体の長さです。ビデオがまだロードされていない場合はnilを返します。</p>
+
+<h3 id="label-move%28left%2C+top%29+%C2%BB+self+%3D%3D%3D">move(left, top) » self ===</h3>
+
+<p>（left, top）はビデオの左上の角であり、特定の座標にビデオを移動します。</p>
+
+<p>”‘注意:”’ 今のところGreen Shoesでは`move`メソッドをサポートしていません。</p>
+
+<h3 id="label-pause%28%29+%C2%BB+self+%3D%3D%3D">pause() » self ===</h3>
+
+<p>ビデオが再生されていれば、一時停止します。</p>
+
+<h3 id="label-playing%3F%28%29+%C2%BB+true+of+false+%3D%3D%3D">playing?() » true of false ===</h3>
+
+<p>ビデオを現在再生していれば、trueを返します。または、ビデオが一時停止されていたり 停止されている場合はfalseです。</p>
+
+<h3 id="label-play%28%29+%C2%BB+self+%3D%3D%3D">play() » self ===</h3>
+
+<p>既に再生いなければ、ビデオの再生を開始します。既に再生いるのなら、ビデオは 始めから再度開始します。</p>
+
+<h3 id="label-position%28%29+%C2%BB+a+decimal+%3D%3D%3D">position() » a decimal ===</h3>
+
+<p>（0.0）から（1.0）の間の10進数の（Floatの）数によるビデオの位置です。 例えば、0.5のFloatの値はビデオの中間の位置を示します。</p>
+
+<h3 id="label-position+%3D+a+decimal+%3D%3D%3D">position = a decimal ===</h3>
+
+<p>Floatの値を利用してビデオの位置を設定します。 25%の位置にビデオを移動するなら：`@video.position = 0.25`。</p>
+
+<h3 id="label-remove%28%29+%C2%BB+self+%3D%3D%3D">remove() » self ===</h3>
+
+<p>ビデオをスロットから取り除きます。なおビデオを停止します。</p>
+
+<p>”‘注意:”’ 今のところGreen Shoesでは`remove`メソッドをサポートしていません。</p>
+
+<h3 id="label-show%28%29+%C2%BB+self+%3D%3D%3D">show() » self ===</h3>
+
+<p>`hide()`メソッドによって非表示にされていたなら、ビデオを表示します。</p>
+
+<p>”‘注意:”’ 今のところGreen Shoesでは`show`メソッドをサポートしていません。</p>
+
+<h3 id="label-stop%28%29+%C2%BB+self+%3D%3D%3D">stop() » self ===</h3>
+
+<p>ビデオが再生されていれば、停止します。</p>
+
+<h3 id="label-time%28%29+%C2%BB+a+number+%3D%3D%3D">time() » a number ===</h3>
+
+<p>ビデオのミリ秒での時間の位置です。そのため、そのビデオが10秒の再生時間なら、 このメソッドは10000の数を返します</p>
+
+<h3 id="label-time+%3D+a+number+%3D%3D%3D">time = a number ===</h3>
+
+<p>ミリ秒の時間でビデオの位置を設定します。</p>
+
+<h3 id="label-toggle%28%29+%C2%BB+self+%3D%3D%3D">toggle() » self ===</h3>
+
+<p>ビデオの可視性をトグルします。ビデオが表示されていれば、`hide`が呼ばれます。 そうでなければ、`show`が呼ばれます。</p>
+
+<p>”‘注意:”’ 今のところGreen Shoesでは`toggle`メソッドをサポートしていません。</p>
+
+<h1 id="label-AndSoForth+%3D">AndSoForth =</h1>
+
+<p>その他の情報をこの場所で。</p>
+
+<h2 id="label-Sample+Apps+%3D%3D">Sample Apps ==</h2>
+
+<p>楽しみましょう。</p>
+
+<p>{SAMPLES}</p>
+
+<h2 id="label-FAQ+%3D%3D">FAQ ==</h2>
+
+<p>お役立ち情報:</p>
+
+<pre>* [[http://librelist.com/browser/shoes/ Shoes ML]] 気軽にメーリングリストへ参加下さい。
+* [[https://github.com/ashbb/green_shoes/ 最新のソースコード]]                   は GitHubにあります。
+* Green Shoes Gemは、[[http://rubygems.org/gems/green_shoes RubyGems.org]] にあります。</pre>
+
+<h2 id="label-vs.RedShoes+%3D%3D">vs.RedShoes ==</h2>
+
+<p>Green ShoesはRed Shoesに従っていますが、完全互換ではありません。</p>
+
+<h4 id="label-TextBlock+%3D%3D%3D%3D">TextBlock ====</h4>
+
+<p>以下の2つのコードはRed Shoesでは同じ動作をします。</p>
+
+<p>{{{</p>
+
+<pre>Shoes.app do
+  para 'hello ' * 20
+end</pre>
+
+<p>}}}</p>
+
+<p>{{{</p>
+
+<pre>Shoes.app do
+  20.times{para 'hello '}
+end</pre>
+
+<p>}}}</p>
+
+<p>でもGreen Shoesでは、`:width`オプションを明示的に付ける必要があります。</p>
+
+<p>{{{</p>
+
+<pre>Shoes.app do
+  20.times{para 'hello ', width: 40}
+end</pre>
+
+<p>}}}</p>
+
+<p>もし`:width`オプションを付けないと、Green Shoesは`parent.width`でそのテキストブロックを生成します。</p>
+
+<p>詳細は、[[<a
+href="http://ashbb.github.com/green_shoes/Red_Shoes_and_Green_Shoes.html">ashbb.github.com/green_shoes/Red_Shoes_and_Green_Shoes.html</a>
+Red <a href="../../classes/Shoes.html">Shoes</a> and Green Shoes]]を 参照下さい。</p>
+
+<h2 id="label-gshoes+%3D%3D">gshoes ==</h2>
+
+<p>”‘gshoes”’ は、実行可能なgem コマンドです。いつくかのオプションを持っています。コンソールウィンドウを開いて `gshoes
+(options or app.rb or app.gsy)` と実行します。</p>
+
+<h3 id="label--m%2C+-men+%3D%3D%3D">-m, -men ===</h3>
+
+<p>英語マニュアルを表示します。</p>
+
+<h3 id="label--mjp+%3D%3D%3D">-mjp ===</h3>
+
+<p>日本語マニュアルを表示します。</p>
+
+<h3 id="label--p+%3D%3D%3D">-p ===</h3>
+
+<p>あなたのGreen Shoesアプリケーションを .gsy ファイルにします。GSYはGreen <a
+href="../../classes/Shoes.html">Shoes</a> YAMLの略です。</p>
+
+<h3 id="label--v+%3D%3D%3D">-v ===</h3>
+
+<p>バージョンを表示します。</p>
+
+<h3 id="label--h+%3D%3D%3D">-h ===</h3>
+
+<p>ヘルプメッセージを表示します。</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+              </div>
+
+    </div>
+  </body>
+</html>

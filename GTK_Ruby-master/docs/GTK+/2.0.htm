@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html><head>
+
+
+  <title>Introduction</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <meta name="GENERATOR" content="Quanta Plus">
+  <link rel="stylesheet" type="text/css" href="site-style.css">
+</head><body>
+<h1>Chapter 2. Introduction</h1>
+
+<p>GTK (GIMP Toolkit) is a library for creating graphical users interfaces. It is licensed using the LGPL
+license, so you can develop open software, free software, or even commercial non-free software using GTK
+without having to spend anything for licenses or royalties.</p>
+
+<p>It's called the GIMP toolkit because it was originally written for devloping the GNU Image Manipulation
+Program (GIMP), but GTK has now been used in a large number of software projects, including the GNU Network
+Object Model Environment (GNOME) project. GTK is built on top of GDK (GIMP Drawing Kit) which is basically
+a wrapper around the low-level functions for accessing the underlying windowing functions (Xlib in the case
+of the X Windows system), and the gdk-pixbuf, a library for client-side image manipulation.</p>
+
+<p>The primary authors of GTK are:
+</p><ul>
+	<li>Peter Mattis</li>
+	<li>Spencer Kimball</li>
+	<li>Josh MacDonald</li>
+</ul>
+
+<p>GTK is currently maintained by:
+</p><ul>
+	<li>Owen Taylor</li>
+	<li>Tim Janik</li>
+</ul>
+
+<p>Ruby is "the interpreted scripting language for quick and easy object-oriented programing".It 
+has a simple syntax exception handling features to make it easy to handle errors. The operators are syntax 
+sugar for methods, as you can redefine them easily. Ruby is a true OOL. This means that <u>everything</u> in
+Ruby is an object. Ruby is also cross platform, and will run on many types of UNIX, DOS, Windows, Mac, etc.</p>
+
+<p>The primary author of Ruby is:
+</p><ul>
+	<li>Yukihiro Matsumoto (Matz)</li>
+</ul>
+
+<p>Ruby-GNOME2 is a binding for the Ruby language to use the GTK library, as well as some of the GNOME libraries. 
+Ruby-GNOME2 provides a way to create a GUI frontend for anything you can write in Ruby.</p>
+
+<p>The primary authors of Ruby-GNOME2 are:
+</p><ul>
+	<li>Masahiro Sakai</li>
+	<li>Masao Mutoh</li>
+	<li>Takehiro Kubo</li>
+</ul>
+
+<p>GTK is essentially an object oriented programmer's interface (API). Although written completely in C,
+it is implemented using the idea of classes and callback functions (pointers to functions).</p>
+
+<p>There is also a third component called GLib which contains a few replacements for some standard calls. 
+The replacement functions are used to increase GTK's portability, as some of the functions implemented 
+here are not available or are nonstandard on other Unixes. Some also contain enhancements to the libc 
+versions that have enhanced debugging utilities.</p>
+
+<p>In version 2.0, GLib has picked up the type system which forms the foundation for GTK's class hierarchy,
+the signal system which is used throughout GTK, a thread API which abstracts the different native thread 
+APIs of the various platforms and a facility for loading modules.</p>
+
+<p>As the last component, GTK uses the Pango library for internationalized text output.</p>
+
+<p>There are GTK bindings for many other languages including C++, Guile, Perl, Python, TOM, Ada95, 
+Objective C, Free Pascal, Eiffel, Java, and C#. This tutorial describes the Ruby-GNOME2 interface 
+to the GTK library.</p>
+
+<p>This tutorial is an attempt to document as much as possible of Ruby-GNOME2, but is by no means complete. 
+This tutorial assumes a good understanding of Ruby, and how to create Ruby programs. It would be a great 
+benefit for the reader to have previous X programming experiance, but it shouldn't be necessary. If you are 
+learning Ruby-GNOME2 as your first Ruby binding, please comment on how you found this tutorial, and what
+you had trouble with.</p>
+
+<p>This document is very much a "work in progress". Please look for updates on http://www.cotse.net/users/ghost/. It
+has borrowed heavily from, and is based upon the GTK+ 2.0 tutorial. Please refer to that excellent tutorial if you
+are intrested in using GTK with C.</p>
+
+<p>I would like to hear any comments you may have on this tutorial. Please see the section on contributing
+for further information. Please be aware that most of the sample code found in this tutorial was meant to
+copy the C examples as close as possible, thus it is not optimized, nor is it the only way that it should
+be written (or even the best way). When you get a little experiance, please re-write the code in the Ruby
+way of doing things.</p>
+
+<p>Please note that all the examples in this tutorial were written using the following:
+</p><ul>
+	<li>RedHat 8.0</li>
+	<li>GNOME 2.0.6</li>
+	<li>Ruby 1.6.7</li>
+	<li>Ruby-GNOME2 CVS 20021205</li>
+</ul>
+
+<hr>
+<table>
+	<tbody><tr>
+		<td align="left"><a href="1.0.htm">Prev</a></td>
+		<td align="right"><a href="3.0.htm">Next</a></td>
+	</tr>
+</tbody></table>
+</body></html>

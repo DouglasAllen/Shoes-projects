@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html><head>
+
+
+  <title>Hello World in Ruby-GNOME2</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <meta name="GENERATOR" content="Quanta Plus">
+  <link rel="stylesheet" type="text/css" href="site-style.css">
+</head><body>
+<h1>10.4 Progress Bars</h1>
+
+<p>Progress bars are used to show the status of an operation. They are pretty easy to 
+use, as you will see with the code below. But first lets start out with the calls to 
+create a new progress bar.</p>
+
+<pre>Gtk::ProgressBar.new</pre>
+
+<p>Now that the progress bar has been created we can use it.</p>
+
+<pre>Gtk::ProgressBar#set_fraction( fraction )
+Gtk::ProgressBar#fraction=( fraction )
+</pre>
+
+<p>The first and only argument is the amount "completed", meaning the amount the progress bar 
+has been filled from 0-100%. This is passed to the method as a real number ranging from 0 to 1.</p>
+
+<p>A progress bar may be set to one of a number of orientations using the method</p>
+
+<pre>Gtk::ProgressBar#set_orientation( orientation )
+Gtk::ProgressBar#orientation=( orientation )
+</pre>
+
+<p>The <i>orientation</i> argument may take one of the following values to indicate the direction in
+which the progress bar moves:</p>
+
+<pre>Gtk::Progress::LEFT_TO_RIGHT
+Gtk::Progress::RIGHT_TO_LEFT
+Gtk::Progress::BOTTOM_TO_TOP
+Gtk::Progress::TOP_TO_BOTTOM
+</pre>
+
+<p>As well as indicating the amount of progress that has occured, the progress bar may be set 
+to just indicate that there is some activity. This can be useful in situations where progress 
+cannot be measured against a value range. The following method indicates that some progress 
+has been made.</p>
+
+<pre>Gtk::ProgressBar#pulse</pre>
+
+<p>The step size of the activity indicator is set using the following method.</p>
+
+<pre>Gtk::ProgressBar#pulse_step=( fraction )</pre>
+
+<p>When not in activity mode, the progress bar can also display a configurable text string 
+within its trough, using the following method.</p>
+
+<pre>Gtk::ProgressBar#set_text( text )
+Gtk::ProgressBar#text=( text )
+</pre>
+
+<p>You can turn off the display of the string by calling Gtk::ProgressBar#set_text again with nil as the argument.</p>
+
+<p>The current text setting of a progressbar can be retrieved with the following method.</p>
+
+<pre>Gtk::ProgressBar#text</pre>
+
+<p>Progress Bars are usually used with timeouts or other such methods (see section on Timeouts, I/O
+and Idle methods) to give the illusion of multitasking. All will employ the #set_fraction or #pulse 
+methods in the same manner.</p>
+
+<p>Here is an example of the progress bar, updated using timeouts. This code also shows you how to
+reset the Progress Bar.</p>
+
+<p>INSERT SCREENSHOT HERE</p>
+
+<pre></pre>
+
+<hr>
+<table>
+	<tbody><tr>
+		<td align="left"><a href="10.3.htm">Prev</a></td>
+		<td align="right"><a href="10.5.htm">Next</a></td>
+	</tr>
+</tbody></table>
+</body></html>

@@ -1,0 +1,649 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hpricot</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            Hpricot 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/lib/ext/hpricot/blankslate_rb.html">lib/ext/hpricot/blankslate.rb</a></li>
+            
+            <li><a href="../files/lib/ext/hpricot/builder_rb.html">lib/ext/hpricot/builder.rb</a></li>
+            
+            <li><a href="../files/lib/ext/hpricot/elements_rb.html">lib/ext/hpricot/elements.rb</a></li>
+            
+            <li><a href="../files/lib/ext/hpricot/htmlinfo_rb.html">lib/ext/hpricot/htmlinfo.rb</a></li>
+            
+            <li><a href="../files/lib/ext/hpricot/inspect_rb.html">lib/ext/hpricot/inspect.rb</a></li>
+            
+            <li><a href="../files/lib/ext/hpricot/modules_rb.html">lib/ext/hpricot/modules.rb</a></li>
+            
+            <li><a href="../files/lib/ext/hpricot/parse_rb.html">lib/ext/hpricot/parse.rb</a></li>
+            
+            <li><a href="../files/lib/ext/hpricot/tag_rb.html">lib/ext/hpricot/tag.rb</a></li>
+            
+            <li><a href="../files/lib/ext/hpricot/tags_rb.html">lib/ext/hpricot/tags.rb</a></li>
+            
+            <li><a href="../files/lib/ext/hpricot/traverse_rb.html">lib/ext/hpricot/traverse.rb</a></li>
+            
+            <li><a href="../files/lib/ext/hpricot/xchar_rb.html">lib/ext/hpricot/xchar.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<pre>Permission is granted for use, copying, modification, distribution,
+and distribution of modified versions of this work as long as the
+above copyright notice is included.</pre>
+
+<p>++</p>
+
+<p>require ‘hpricot/tags’ require ‘fast_xs’ require ‘hpricot/blankslate’
+require ‘hpricot/htmlinfo’</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+    <!-- Namespace -->
+    <div class="sectiontitle">Namespace</div>
+    <ul>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="Hpricot/Builder.html">Hpricot::Builder</a>
+        </li>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="Hpricot/Container.html">Hpricot::Container</a>
+        </li>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="Hpricot/Leaf.html">Hpricot::Leaf</a>
+        </li>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="Hpricot/Node.html">Hpricot::Node</a>
+        </li>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="Hpricot/Tag.html">Hpricot::Tag</a>
+        </li>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="Hpricot/Traverse.html">Hpricot::Traverse</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Hpricot/BlankSlate.html">Hpricot::BlankSlate</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Hpricot/BogusETag.html">Hpricot::BogusETag</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Hpricot/CData.html">Hpricot::CData</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Hpricot/Comment.html">Hpricot::Comment</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Hpricot/Context.html">Hpricot::Context</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Hpricot/CssProxy.html">Hpricot::CssProxy</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Hpricot/Doc.html">Hpricot::Doc</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Hpricot/DocType.html">Hpricot::DocType</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Hpricot/ETag.html">Hpricot::ETag</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Hpricot/Elem.html">Hpricot::Elem</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Hpricot/Elements.html">Hpricot::Elements</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Hpricot/EncodingError.html">Hpricot::EncodingError</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Hpricot/Error.html">Hpricot::Error</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Hpricot/Name.html">Hpricot::Name</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Hpricot/ProcIns.html">Hpricot::ProcIns</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Hpricot/Text.html">Hpricot::Text</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Hpricot/XHTMLStrict.html">Hpricot::XHTMLStrict</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Hpricot/XHTMLTransitional.html">Hpricot::XHTMLTransitional</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Hpricot/XMLDecl.html">Hpricot::XMLDecl</a>
+        </li>
+      
+    </ul>
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>X</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-XML">XML</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>B</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-build">build</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-parse">parse</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>U</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-uxs">uxs</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>X</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-xchr">xchr</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-xs">xs</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">FORM_TAGS</td>
+            <td>=</td>
+            <td class="attr-value">[ :form, :input, :select, :textarea ]</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">SELF_CLOSING_TAGS</td>
+            <td>=</td>
+            <td class="attr-value">[ :base, :meta, :link, :hr, :br, :param, :img, :area, :input, :col ]</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">AttrCore</td>
+            <td>=</td>
+            <td class="attr-value">[:id, :class, :style, :title]</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Common sets of attributes.</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">AttrI18n</td>
+            <td>=</td>
+            <td class="attr-value">[:lang, 'xml:lang'.intern, :dir]</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">AttrEvents</td>
+            <td>=</td>
+            <td class="attr-value">[:onclick, :ondblclick, :onmousedown, :onmouseup, :onmouseover, :onmousemove, 
+:onmouseout, :onkeypress, :onkeydown, :onkeyup]</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">AttrFocus</td>
+            <td>=</td>
+            <td class="attr-value">[:accesskey, :tabindex, :onfocus, :onblur]</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">AttrHAlign</td>
+            <td>=</td>
+            <td class="attr-value">[:align, :char, :charoff]</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">AttrVAlign</td>
+            <td>=</td>
+            <td class="attr-value">[:valign]</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">Attrs</td>
+            <td>=</td>
+            <td class="attr-value">AttrCore + AttrI18n + AttrEvents</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-XML">
+            
+              <b>XML</b>(input = nil, opts = {}, &amp;blk)
+            
+            <a href="../classes/Hpricot.html#method-c-XML" name="method-c-XML" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Hpricot::XML parses <em>input</em>, disregarding all the HTML rules and
+returning a document tree.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-XML_source')" id="l_method-c-XML_source">show</a>
+                
+              </p>
+              <div id="method-c-XML_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ext/hpricot/parse.rb, line 20</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">Hpricot</span>.<span class="ruby-constant">XML</span>(<span class="ruby-identifier">input</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">opts</span> = {}, &amp;<span class="ruby-identifier">blk</span>)
+  <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">merge!</span> <span class="ruby-value">:xml</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>
+  <span class="ruby-identifier">make</span>(<span class="ruby-identifier">input</span>, <span class="ruby-identifier">opts</span>, &amp;<span class="ruby-identifier">blk</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-build">
+            
+              <b>build</b>(ele = Doc.new, assigns = {}, &amp;blk)
+            
+            <a href="../classes/Hpricot.html#method-c-build" name="method-c-build" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-build_source')" id="l_method-c-build_source">show</a>
+                
+              </p>
+              <div id="method-c-build_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ext/hpricot/builder.rb, line 14</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">build</span>(<span class="ruby-identifier">ele</span> = <span class="ruby-constant">Doc</span>.<span class="ruby-identifier">new</span>, <span class="ruby-identifier">assigns</span> = {}, &amp;<span class="ruby-identifier">blk</span>)
+  <span class="ruby-identifier">ele</span>.<span class="ruby-identifier">extend</span> <span class="ruby-constant">Builder</span>
+  <span class="ruby-identifier">assigns</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">ele</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-node">&quot;@#{k}&quot;</span>, <span class="ruby-identifier">v</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">ele</span>.<span class="ruby-identifier">instance_eval</span>(&amp;<span class="ruby-identifier">blk</span>)
+  <span class="ruby-identifier">ele</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-parse">
+            
+              <b>parse</b>(input = nil, opts = {}, &amp;blk)
+            
+            <a href="../classes/Hpricot.html#method-c-parse" name="method-c-parse" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p><a href="Hpricot.html#method-c-parse">::parse</a> parses <em>input</em> and
+return a document tree. represented by Hpricot::Doc.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-parse_source')" id="l_method-c-parse_source">show</a>
+                
+              </p>
+              <div id="method-c-parse_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ext/hpricot/parse.rb, line 14</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">Hpricot</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">input</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">opts</span> = {}, &amp;<span class="ruby-identifier">blk</span>)
+  <span class="ruby-identifier">make</span>(<span class="ruby-identifier">input</span>, <span class="ruby-identifier">opts</span>, &amp;<span class="ruby-identifier">blk</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-uxs">
+            
+              <b>uxs</b>(str)
+            
+            <a href="../classes/Hpricot.html#method-c-uxs" name="method-c-uxs" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p><a href="Hpricot.html#method-c-XML">::XML</a> unescape</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-uxs_source')" id="l_method-c-uxs_source">show</a>
+                
+              </p>
+              <div id="method-c-uxs_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ext/hpricot/builder.rb, line 8</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">uxs</span>(<span class="ruby-identifier">str</span>)
+  <span class="ruby-identifier">str</span>.<span class="ruby-identifier">to_s</span>.
+      <span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/\&amp;(\w+);/</span>) { [<span class="ruby-constant">NamedCharacters</span>[<span class="ruby-node">$1</span>] <span class="ruby-operator">||</span> <span class="ruby-string">?</span>].<span class="ruby-identifier">pack</span>(<span class="ruby-string">&quot;U*&quot;</span>) }.
+      <span class="ruby-identifier">gsub</span>(<span class="ruby-node">/\&amp;\#(\d+);/</span>) { [<span class="ruby-node">$1</span>.<span class="ruby-identifier">to_i</span>].<span class="ruby-identifier">pack</span>(<span class="ruby-string">&quot;U*&quot;</span>) }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-xchr">
+            
+              <b>xchr</b>(str)
+            
+            <a href="../classes/Hpricot.html#method-c-xchr" name="method-c-xchr" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p><a href="Hpricot.html#method-c-XML">::XML</a> escaped version of chr</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-xchr_source')" id="l_method-c-xchr_source">show</a>
+                
+              </p>
+              <div id="method-c-xchr_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ext/hpricot/xchar.rb, line 70</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">xchr</span>(<span class="ruby-identifier">str</span>)
+  <span class="ruby-identifier">n</span> = <span class="ruby-constant">XChar</span><span class="ruby-operator">::</span><span class="ruby-constant">CP1252</span>[<span class="ruby-identifier">str</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">str</span>
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">n</span> <span class="ruby-keyword">when</span> *<span class="ruby-constant">XChar</span><span class="ruby-operator">::</span><span class="ruby-constant">VALID</span>
+    <span class="ruby-constant">XChar</span><span class="ruby-operator">::</span><span class="ruby-constant">PREDEFINED</span>[<span class="ruby-identifier">n</span>] <span class="ruby-keyword">or</span> (<span class="ruby-identifier">n</span><span class="ruby-operator">&lt;</span><span class="ruby-number">128</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">n</span>.<span class="ruby-identifier">chr</span> <span class="ruby-operator">:</span> <span class="ruby-node">&quot;&amp;##{n};&quot;</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-string">'*'</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-xs">
+            
+              <b>xs</b>(str)
+            
+            <a href="../classes/Hpricot.html#method-c-xs" name="method-c-xs" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p><a href="Hpricot.html#method-c-XML">::XML</a> escaped version of to_s</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-xs_source')" id="l_method-c-xs_source">show</a>
+                
+              </p>
+              <div id="method-c-xs_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ext/hpricot/xchar.rb, line 80</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">xs</span>(<span class="ruby-identifier">str</span>)
+  <span class="ruby-identifier">str</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">unpack</span>(<span class="ruby-string">'U*'</span>).<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span> <span class="ruby-identifier">xchr</span>(<span class="ruby-identifier">n</span>)}.<span class="ruby-identifier">join</span> <span class="ruby-comment"># ASCII, UTF-8</span>
+<span class="ruby-keyword">rescue</span>
+  <span class="ruby-identifier">str</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">unpack</span>(<span class="ruby-string">'C*'</span>).<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span> <span class="ruby-identifier">xchr</span>(<span class="ruby-identifier">n</span>)}.<span class="ruby-identifier">join</span> <span class="ruby-comment"># ISO-8859-1, WIN-1252</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                        </div>
+
+    </div>
+  </body>
+</html>    

@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>DATABASE</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            DATABASE 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/lib/shoes/data_rb.html">lib/shoes/data.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-check_cache_for">check_cache_for</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-notify_cache_of">notify_cache_of</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-setup">setup</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">DATABASE_VERSION</td>
+            <td>=</td>
+            <td class="attr-value">1</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-check_cache_for">
+            
+              <b>check_cache_for</b>(url)
+            
+            <a href="../classes/DATABASE.html#method-c-check_cache_for" name="method-c-check_cache_for" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-check_cache_for_source')" id="l_method-c-check_cache_for_source">show</a>
+                
+              </p>
+              <div id="method-c-check_cache_for_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/data.rb, line 25</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">check_cache_for</span> <span class="ruby-identifier">url</span>
+  <span class="ruby-identifier">etag</span>, <span class="ruby-identifier">hash</span>, <span class="ruby-identifier">saved</span> = 
+    <span class="ruby-constant">DATABASE</span>.<span class="ruby-identifier">get_first_row</span>(<span class="ruby-string">&quot;SELECT etag, hash, saved FROM cache WHERE url = ?&quot;</span>, <span class="ruby-identifier">url</span>)
+  {<span class="ruby-value">:etag</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">etag</span>, <span class="ruby-value">:hash</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">hash</span>, <span class="ruby-value">:saved</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">saved</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">?</span> <span class="ruby-number">0</span> <span class="ruby-operator">:</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">saved</span>.<span class="ruby-identifier">to_s</span>).<span class="ruby-identifier">to_i</span>}
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-notify_cache_of">
+            
+              <b>notify_cache_of</b>(url, etag, hash)
+            
+            <a href="../classes/DATABASE.html#method-c-notify_cache_of" name="method-c-notify_cache_of" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-notify_cache_of_source')" id="l_method-c-notify_cache_of_source">show</a>
+                
+              </p>
+              <div id="method-c-notify_cache_of_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/data.rb, line 30</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">notify_cache_of</span> <span class="ruby-identifier">url</span>, <span class="ruby-identifier">etag</span>, <span class="ruby-identifier">hash</span>
+  <span class="ruby-constant">DATABASE</span>.<span class="ruby-identifier">query</span> <span class="ruby-string">%Q{
+    REPLACE INTO cache (url, etag, hash, saved)
+    VALUES (?, ?, ?, datetime(&quot;now&quot;, &quot;localtime&quot;));
+  }</span>, <span class="ruby-identifier">url</span>, <span class="ruby-identifier">etag</span>, <span class="ruby-identifier">hash</span>
+  <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-setup">
+            
+              <b>setup</b>()
+            
+            <a href="../classes/DATABASE.html#method-c-setup" name="method-c-setup" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-setup_source')" id="l_method-c-setup_source">show</a>
+                
+              </p>
+              <div id="method-c-setup_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/data.rb, line 11</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">setup</span>
+  <span class="ruby-constant">DATABASE</span>.<span class="ruby-identifier">execute_batch</span> <span class="ruby-string">%Q{
+    CREATE TABLE cache (
+      url   text primary key,
+      etag  text,
+      hash  varchar(40),
+      saved datetime
+    );
+    CREATE TABLE upgrades (
+      version int primary key
+    );
+    INSERT INTO upgrades VALUES (?);
+  }</span>, <span class="ruby-constant">DATABASE_VERSION</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                        </div>
+
+    </div>
+  </body>
+</html>    

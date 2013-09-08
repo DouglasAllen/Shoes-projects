@@ -1,0 +1,65 @@
+<html><head>
+
+  <title>Getting Started</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <meta name="GENERATOR" content="Quanta Plus">
+  <link rel="stylesheet" type="text/css" href="site-style.css">
+</head><body>
+<h1>7.2. Toggle Buttons</h1>
+
+<p>Toggle buttons are derived from normal buttons and are very similar, except they will always be in one of two states, 
+alternated by a click. They may be depressed (toggled), and when you click again, they will pop back up. Click again and 
+they will pop back down.</p>
+
+<p>Toggle buttons are the basis for check buttons and radio buttons, as such, many of the calls used for toggle buttons are
+inherited by radio and check buttons. I will point these out when we come to them.</p>
+
+<p>Creating a new toggle button goes a little like this:</p>
+
+<pre>Gtk::ToggleButton.new
+Gtk::ToggleButton.new( label )
+Gtk::ToggleButton.new( item )
+</pre>
+
+<p>As you can imagine, these work identically to the normal button widget calls. The first creates a blank toggle button,
+while the second creates one with a label widget already packed into it, with <i>label</i> being the string of the label. 
+The third method is for putting a Gtk::Stock item into the button. We'll cover Stock items in detail later in the tutorial.
+</p>
+
+<p>To retrieve the state of the toggle widget, including radio and check buttons, we use Gtk::ToggleButton#active?. It
+returns true if the button is toggled, and false if the button is not toggled. The callback could be something like
+this:</p>
+
+<pre>Gtk::ToggleButton.signal_connect( 'toggled' ) {
+   |widget|
+   
+   if widget.active?
+      toggled_callback
+
+   elsif not widget.active?
+      not_toggled_callback
+   
+   end
+}</pre>
+
+<p>To force the state of the toggle button, and it's children, the radio and check buttons, use these methods:</p>
+
+<pre>Gtk::ToggleButton#set_active( active )
+Gtk::ToggleButton#active=( active )
+</pre>
+
+<p>The above call can be used to set the state of the toggle button, and it's children the radio and check buttons. The 
+first, and only argument is a boolean true or false to specify whether it should be down (depressed) or up (released).
+The default is up, or false.</p>
+
+<p>Note that when you use the Gtk::ToggleButton#set_active method, and the state is actually changed, it causes the
+"clicked" and "toggled" signals to be emitted from the button.</p> 
+
+<hr>
+<table>
+	<tbody><tr>
+		<td align="left"><a href="7.1.htm">Prev</a></td>
+		<td align="right"><a href="7.3.htm">Next</a></td>
+	</tr>
+</tbody></table>
+</body></html>

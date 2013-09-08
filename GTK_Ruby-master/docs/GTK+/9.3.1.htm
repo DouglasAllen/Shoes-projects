@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html><head>
+
+
+  <title>Hello World in Ruby-GNOME2</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <meta name="GENERATOR" content="Quanta Plus">
+  <link rel="stylesheet" type="text/css" href="site-style.css">
+</head><body>
+<h1>9.3.1 Setting the Update Policy</h1>
+
+<p>The "update policy" of a range widget defines at what points during user interaction it will change the <i>value</i> 
+field of its Adjustment and emit the "value_changed" signal on this Adjustment. The update policies are:</p>
+
+<pre>Gtk::UPDATE_CONTINUOUS</pre>
+<p>This is the default. The "value_changed" signal is emitted continuously, i.e. whenever the slider is moved by even the
+tiniest amount.</p>
+
+<pre>Gtk::UPDATE_DISCONTINUOUS</pre>
+<p>The "value_changed" signal is emitted once the slider has stopped moving and the user has released the mouse button.</p>
+
+<pre>Gtk::UPDATE_DELAYED</pre>
+<p>The "value_changed" signal is emitted when the user releases the mouse button, or if the slider stops moving for a short
+period of time.</p>
+
+<p>The update policy of a range widget can be set by using:</p>
+
+<pre>Gtk::Range#set_update_policy( update_policy )
+Gtk::Range#update_policy=( update_policy )
+</pre>
+
+<hr>
+<table>
+	<tbody><tr>
+		<td align="left"><a href="9.3.htm">Prev</a></td>
+		<td align="right"><a href="9.3.2.htm">Next</a></td>
+	</tr>
+</tbody></table>
+</body></html>

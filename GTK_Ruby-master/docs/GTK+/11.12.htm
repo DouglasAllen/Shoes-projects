@@ -1,0 +1,250 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html><head>
+
+
+  <title>Hello World in Ruby-GNOME2</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <meta name="GENERATOR" content="Quanta Plus">
+  <link rel="stylesheet" type="text/css" href="site-style.css">
+</head><body>
+<h1>11.12. Notebooks</h1>
+
+<p>The NoteBook Widget is a collection of "pages" that overlap each other, each page 
+contains different information with only one page visible at a time. This widget has 
+become more common lately in GUI programming, and it is a good way to show blocks of
+similar information that warrant separation in their display.</p>
+
+<p>The first method call you will need to know, as you can probably guess by now, is 
+used to create a new notebook widget.</p>
+
+<pre>Gtk::Notebook.new</pre>
+
+<p>Once the notebook has been created, there are a number of methods that operate 
+on the notebook widget. Let's look at a few of them individually.</p>
+
+<p>The first one we will look at is how to position the page indicators. These page 
+indicators or "tabs" as they are referred to, can be positioned in four ways: top, 
+bottom, left, or right.</p>
+
+<pre>Gtk::Notebook#set_tab_pos( pos )</pre>
+
+<p>The argument <i>pos</i> will be one of the following, which are pretty self explanatory:</p>
+
+
+<pre>Gtk::POS_LEFT
+Gtk::POS_RIGHT
+Gtk::POS_TOP       # This is the default
+Gtk::POS_BOTTOM
+</pre>
+
+<p>Next we will look at how to add pages to the notebook. There are three ways to add pages to 
+the NoteBook. Let's look at the first two together as they are quite similar.</p>
+
+<pre>Gtk::Notebook#append_page( child, tab_label )
+Gtk::Notebook#prepend_page( child, tab_label )
+</pre>
+
+<p>These methods add pages to the notebook by inserting them from the back of the
+notebook (append), or the front of the notebook (prepend). <i>child</i> is the widget that
+is placed within the notebook page, and <i>tab_label</i> is the label for the page being
+added. The child widget must be created separately, and is typically a set of options
+setup witin one of the other container widgets, such as a table.</p>
+
+<p>The final method for adding a page to the notebook contains all of the properties
+of the previous two, but it allows you to specify what position you want the page to be
+in the notebook.</p>
+
+<pre>void Gtk::Notebook#insert_page( child, tab_label, position )</pre>
+
+<p>The parameters are the same as <i>#append</i> and <i>#prepend</i> except it contains an extra
+parameter, <i>position</i>. This parameter is used to specify what place this page will be
+inserted into the first page having position zero.</p>
+
+<p>Now that we know how to add a page, lets see how we can remove a page from the notebook.</p>
+
+<pre>Gtk::Notebook#remove_page( page_num )</pre>
+
+<p>This method takes the page specified by <i>page_num</i> and removes it from the widget
+pointed to by notebook.</p>
+
+<p>To find out what the current page is in a notebook use the method:</p>
+
+<pre>Gtk::Notebook#current_page</pre>
+
+<p>These next two methods are simple calls to move the notebook page forward
+or backward. Simply provide the respective method call with the notebook widget
+you wish to operate on. Note: When the NoteBook is currently on the last page, and
+Gtk::Notebook#next_page() is called, the notebook will wrap back to the first page.
+Likewise, if the NoteBook is on the first page, and Gtk::Notebook#prev_page() is 
+called, the notebook will wrap to the last page.</p>
+
+<pre>Gtk::Notebook#next_page
+Gtk::Notebook#prev_page
+</pre>
+
+<p>These next methods set the "active" page. If you wish the notebook to be opened
+to page 5 for example, you would use one of these methods. Without using these methods, the
+notebook defaults to the first page.</p>
+
+<pre>Gtk::Notebook#set_current_page( page_num )
+Gtk::Notebook#current_page=( page_num )
+</pre>
+
+<p>The next two sets of methods add or remove the notebook page tabs and the
+notebook border respectively.</p>
+
+<pre>Gtk::Notebook#set_show_tabs( show_tabs )
+Gtk::Notebook#show_tabs=( show_tabs )
+
+Gtk::Notebook#set_show_border( show_border )
+Gtk::Notebook#show_border=( show_border )
+</pre>
+
+<p>The next method is useful when the you have a large number of pages, 
+and the tabs don't fit on the page. It allows the tabs to be scrolled through 
+using two arrow buttons.</p>
+
+<pre>Gtk::Notebook#set_scrollable( scrollable )</pre>
+
+<p><i>show_tabs</i>, show_border and scrollable can be either true or false.</p>
+
+<p>Now let's look at an example, it is ported from the notebook code that
+is in the GTK+ 2.0 tutorial. This small program creates a window with a 
+notebook and six buttons. The notebook contains 11 pages, added in three different 
+ways, appended, inserted, and prepended. The buttons allow you rotate the tab positions, 
+add/remove the tabs and border, remove a page, change pages in both a forward and backward 
+manner, and exit the program.</p>
+
+<img src="images/notebook.png" border="0" width="656" height="160">
+
+<pre>require 'gtk2'
+
+# This method rotates the position of the tabs
+def rotate_book( button, notebook )
+   notebook.tab_pos=( (notebook.tab_pos + 1) % 4 )
+end
+
+# Add/remove the page tabs and the borders
+def tabsborder_book( button, notebook )
+   tval = true
+   bval = true
+
+   if notebook.show_tabs?
+      tval = false
+   end
+
+   if notebook.show_border?
+      bval = false
+   end
+
+   notebook.show_tabs=( tval )
+   notebook.show_border=( bval )
+end
+
+# Remove a page from the notebook
+def remove_book( button, notebook )
+   page = notebook.current_page
+   notebook.remove_page( page )
+   # Need to redraw the widget --
+   # This forces the widget to redraw itself
+   notebook.queue_draw
+end
+
+def delete
+   Gtk.main_quit
+end
+
+Gtk.init
+window = Gtk::Window.new( Gtk::Window::TOPLEVEL )
+window.signal_connect( "delete_event" ) { delete }
+window.set_border_width( 10 )
+window.set_title( "Notebook Example" )
+table = Gtk::Table.new( 3, 6, false )
+window.add( table )
+
+# Create a new notebook, place the position of the tabs
+notebook = Gtk::Notebook.new
+notebook.tab_pos=( Gtk::POS_TOP )
+table.attach_defaults( notebook, 0, 6, 0, 1 )
+
+# Let's append a bunch of pages to the notebook
+for i in 1..5
+   bufferf = "Append Frame #{i}"
+   bufferl = "Page #{i}"
+
+   frame = Gtk::Frame.new( bufferf )
+   frame.border_width=( 10 )
+
+   label = Gtk::Label.new( bufferl )
+   frame.add( label )
+
+   label = Gtk::Label.new( bufferl )
+   notebook.append_page( frame, label )
+end
+
+# Now let's add a page to a specific spot
+checkbutton = Gtk::CheckButton.new( "Check me please!" )
+
+label = Gtk::Label.new( "Add Page" )
+notebook.insert_page( checkbutton, label, 2 )
+
+# Now finally lets prepend pages to the notebook
+for i in 1..5
+   bufferf = "Prepend Frame #{i}"
+   bufferl = "PPage #{i}"
+
+   frame = Gtk::Frame.new( bufferf )
+   frame.border_width=( 10 )
+
+   label = Gtk::Label.new( bufferl )
+   frame.add( label )
+
+   label = Gtk::Label.new( bufferl )
+   notebook.prepend_page( frame, label )
+end
+
+# Create a bunch of buttons
+button = Gtk::Button.new( Gtk::Stock::CLOSE )
+button.signal_connect( "clicked" ) { delete }
+table.attach_defaults( button, 0, 1, 1, 2 )
+
+button = Gtk::Button.new( "Next Page" )
+button.signal_connect( "clicked" ) { notebook.next_page }
+table.attach_defaults( button, 1, 2, 1, 2 )
+
+button = Gtk::Button.new( "Prev Page" )
+button.signal_connect( "clicked" ) { notebook.prev_page }
+table.attach_defaults( button, 2, 3, 1, 2 )
+
+button = Gtk::Button.new( "Tab Position" )
+button.signal_connect( "clicked" ) { |w| rotate_book( w, notebook) }
+table.attach_defaults( button, 3, 4, 1, 2 )
+
+button = Gtk::Button.new( "Tabs/Border On/Off" )
+button.signal_connect( "clicked" ) { |w| tabsborder_book( w, notebook) }
+table.attach_defaults( button, 4, 5, 1, 2 )
+
+button = Gtk::Button.new( "Remove Page" )
+button.signal_connect( "clicked" ) { |w| remove_book( w, notebook) }
+table.attach_defaults( button, 5, 6, 1, 2 )
+
+window.show_all
+
+# Set what page to start at (page 4)
+# Note sure if this is a bug or not. Should be able
+# to set page active before showing it.
+notebook.current_page=( 3 )
+
+Gtk.main
+</pre>
+
+<p>I hope this helps you on your way to creating notebooks in Ruby-GNOME2.</p>
+
+<hr>
+<table>
+	<tbody><tr>
+		<td align="left"><a href="11.11.htm">Prev</a></td>
+		<td align="right"><a href="12.0.htm">Next</a></td>
+	</tr>
+</tbody></table>
+</body></html>

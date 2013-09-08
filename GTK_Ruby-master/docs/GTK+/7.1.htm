@@ -1,0 +1,103 @@
+<html><head>
+
+  <title>Getting Started</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <meta name="GENERATOR" content="Quanta Plus">
+  <link rel="stylesheet" type="text/css" href="site-style.css">
+</head><body>
+<h1>7.1. Normal Buttons</h1>
+
+<p>We've almost seen all there is to see of the button widget. It's pretty simple. There is however more than one way to 
+create a button. You can use the Gtk::Button.new("Label"), Gtk::Button#label=("Label"), and Gtk::Button#set_label("Label")
+to create a button with a label, use Gtk::Button.new( Gtk::Stock::item ), (where <i>item</i> is the type of stock
+item you wish to use) to create a button containing the image and text from a stock item or use Gtk::Button.new to
+create a blank button. It's up to you to pack a label or pixmap into this new button. To do this, create a new box, 
+and then pack your objects into this box using the usual Gtk::Box#pack_start, and then use Gtk::Container#add to 
+pack the box inside the button.</p>
+
+<p>Here's an example of using the Gtk::Button.new to create a button and a putting a label in it. I've broken up the 
+code to create a box from the rest so you can use it in your programs. There are further examples of using images 
+later in the tutorial.</p>
+
+<img src="images/pix_button.png" border="0" width="217" height="110">
+
+<pre>require 'gtk2'
+
+# Create a new hbox with an image and a label packed into it
+# and return the box
+def label_box( image, label )
+   # Create box for image and label
+   box = Gtk::HBox.new( false, 0 )
+   box.border_width=( 2 )
+   
+   # Now on to the image stuff
+   image = Gtk::Image.new( image )
+
+   # Create a label for the button
+   label = Gtk::Label.new( label )
+   
+   # Pack the image and label into the box
+   box.pack_start( image, false, false, 3 )
+   box.pack_start( label, false, false, 3 )
+   
+   image.show
+   label.show
+   
+   return box
+end
+
+def callback( widget )
+   puts "Hello again - #{widget} was pressed."
+end
+
+Gtk.init
+
+# Create a new window
+window = Gtk::Window.new( Gtk::Window::TOPLEVEL )
+window.title=( "Pixmap'd Buttons" )
+
+# It's a good ideal to do this for all windows
+window.signal_connect( "destroy" ) { Gtk.main_quit }
+window.signal_connect( "delete_event" ) { Gtk.main_quit }
+
+# Sets the border of the window
+window.border_width=( 10 )
+
+# Create a new button
+button = Gtk::Button.new
+
+# Connect the "clicked" signal of the button to our callback
+button.signal_connect( "clicked" ) { |w| callback( w ) }
+
+# This calls our box creating method
+box = label_box( "ruby.png", "cool button" )
+
+# Pack and show all our widgets
+box.show
+button.add( box )
+button.show
+window.add( button )
+window.show
+
+# Rest in Gtk.main and wait for the fun to begin
+Gtk.main
+</pre>
+
+<p>The Button widget has the following signals:</p>
+<ul>
+   <li>pressed -- emitted when pointer button is pressed within Button widget.</li>
+   <li>released -- emitted when pointer button is released within Button widget.</li>
+   <li>clicked -- emitted when pointer button is pressed and then released within Button widget.</li>
+   <li>enter -- emitted when pointer enters Button widget.</li>
+   <li>leave -- emitted when pointer leaves Button widget.</li>
+</ul>
+
+
+<hr>
+<table>
+   <tbody><tr>
+      <td align="left"><a href="7.0.htm">Prev</a></td>
+      <td align="right"><a href="7.2.htm">Next</a></td>
+   </tr>
+</tbody></table>
+</body></html>

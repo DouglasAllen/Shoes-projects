@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>FTSearch::SuffixArrayReader</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            FTSearch::SuffixArrayReader 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/req/ftsearch/lib/ftsearch/suffix_array_reader_rb.html">req/ftsearch/lib/ftsearch/suffix_array_reader.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+    <!-- Namespace -->
+    <div class="sectiontitle">Namespace</div>
+    <ul>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="SuffixArrayReader/Hit.html">FTSearch::SuffixArrayReader::Hit</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="SuffixArrayReader/LazyHits.html">FTSearch::SuffixArrayReader::LazyHits</a>
+        </li>
+      
+    </ul>
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-count_hits">count_hits</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-dump_data">dump_data</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>F</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-find_all">find_all</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-find_first">find_first</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-find_next">find_next</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>L</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-lazyhits_to_offsets">lazyhits_to_offsets</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-suffix_index_to_offset">suffix_index_to_offset</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">DEFAULT_OPTIONS</td>
+            <td>=</td>
+            <td class="attr-value">{
+:path =&gt; nil,
+:io   =&gt; nil,
+}</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>(fulltext_reader, doc_map, options = {})
+            
+            <a href="../../classes/FTSearch/SuffixArrayReader.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/ftsearch/lib/ftsearch/suffix_array_reader.rb, line 57</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">fulltext_reader</span>, <span class="ruby-identifier">doc_map</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">options</span> = <span class="ruby-constant">DEFAULT_OPTIONS</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">options</span>)
+  <span class="ruby-ivar">@fulltext_reader</span> = <span class="ruby-identifier">fulltext_reader</span>
+  <span class="ruby-ivar">@doc_map</span>         = <span class="ruby-identifier">doc_map</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:path</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:io</span>]
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Need either the path to the suffix array file or an IO.&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">init_internal_structures</span>(<span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-count_hits">
+            
+              <b>count_hits</b>(term)
+            
+            <a href="../../classes/FTSearch/SuffixArrayReader.html#method-i-count_hits" name="method-i-count_hits" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-count_hits_source')" id="l_method-i-count_hits_source">show</a>
+                
+              </p>
+              <div id="method-i-count_hits_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/ftsearch/lib/ftsearch/suffix_array_reader.rb, line 67</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">count_hits</span>(<span class="ruby-identifier">term</span>)
+  <span class="ruby-identifier">from</span> = <span class="ruby-identifier">binary_search</span>(<span class="ruby-identifier">term</span>, <span class="ruby-number">0</span>, <span class="ruby-ivar">@suffixes</span>.<span class="ruby-identifier">size</span>)
+  <span class="ruby-identifier">offset</span> = <span class="ruby-ivar">@suffixes</span>[<span class="ruby-identifier">from</span>]
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@fulltext_reader</span>.<span class="ruby-identifier">get_data</span>(<span class="ruby-identifier">offset</span>, <span class="ruby-identifier">term</span>.<span class="ruby-identifier">size</span>) <span class="ruby-operator">==</span> <span class="ruby-identifier">term</span>
+    <span class="ruby-identifier">to</span> = <span class="ruby-identifier">binary_search_upper</span>(<span class="ruby-identifier">term</span>, <span class="ruby-number">0</span>, <span class="ruby-ivar">@suffixes</span>.<span class="ruby-identifier">size</span>)
+    <span class="ruby-identifier">to</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">from</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-number">0</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-dump_data">
+            
+              <b>dump_data</b>()
+            
+            <a href="../../classes/FTSearch/SuffixArrayReader.html#method-i-dump_data" name="method-i-dump_data" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-dump_data_source')" id="l_method-i-dump_data_source">show</a>
+                
+              </p>
+              <div id="method-i-dump_data_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/ftsearch/lib/ftsearch/suffix_array_reader.rb, line 113</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">dump_data</span>
+  <span class="ruby-ivar">@io</span>.<span class="ruby-identifier">pos</span> = <span class="ruby-ivar">@base</span>
+  <span class="ruby-keyword">while</span> <span class="ruby-identifier">data</span> = <span class="ruby-ivar">@io</span>.<span class="ruby-identifier">read</span>(<span class="ruby-number">32768</span>)
+    <span class="ruby-keyword">yield</span> <span class="ruby-identifier">data</span>.<span class="ruby-identifier">unpack</span>(<span class="ruby-string">&quot;V*&quot;</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-find_all">
+            
+              <b>find_all</b>(term)
+            
+            <a href="../../classes/FTSearch/SuffixArrayReader.html#method-i-find_all" name="method-i-find_all" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-find_all_source')" id="l_method-i-find_all_source">show</a>
+                
+              </p>
+              <div id="method-i-find_all_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/ftsearch/lib/ftsearch/suffix_array_reader.rb, line 78</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">find_all</span>(<span class="ruby-identifier">term</span>)
+  <span class="ruby-identifier">from</span> = <span class="ruby-identifier">binary_search</span>(<span class="ruby-identifier">term</span>, <span class="ruby-number">0</span>, <span class="ruby-ivar">@suffixes</span>.<span class="ruby-identifier">size</span>)
+  <span class="ruby-identifier">offset</span> = <span class="ruby-ivar">@suffixes</span>[<span class="ruby-identifier">from</span>]
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@fulltext_reader</span>.<span class="ruby-identifier">get_data</span>(<span class="ruby-identifier">offset</span>, <span class="ruby-identifier">term</span>.<span class="ruby-identifier">size</span>) <span class="ruby-operator">==</span> <span class="ruby-identifier">term</span>
+    <span class="ruby-identifier">to</span> = <span class="ruby-identifier">binary_search_upper</span>(<span class="ruby-identifier">term</span>, <span class="ruby-number">0</span>, <span class="ruby-ivar">@suffixes</span>.<span class="ruby-identifier">size</span>)
+    <span class="ruby-constant">LazyHits</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">term</span>, <span class="ruby-keyword">self</span>, <span class="ruby-ivar">@fulltext_reader</span>, <span class="ruby-identifier">from</span>, <span class="ruby-identifier">to</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-constant">LazyHits</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">term</span>, <span class="ruby-keyword">self</span>, <span class="ruby-ivar">@fulltext_reader</span>, <span class="ruby-number">0</span>, <span class="ruby-number">0</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-find_first">
+            
+              <b>find_first</b>(term)
+            
+            <a href="../../classes/FTSearch/SuffixArrayReader.html#method-i-find_first" name="method-i-find_first" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-find_first_source')" id="l_method-i-find_first_source">show</a>
+                
+              </p>
+              <div id="method-i-find_first_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/ftsearch/lib/ftsearch/suffix_array_reader.rb, line 89</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">find_first</span>(<span class="ruby-identifier">term</span>)
+  <span class="ruby-identifier">suffix_index</span> = <span class="ruby-identifier">binary_search</span>(<span class="ruby-identifier">term</span>, <span class="ruby-number">0</span>, <span class="ruby-ivar">@suffixes</span>.<span class="ruby-identifier">size</span>)
+  <span class="ruby-identifier">offset</span> = <span class="ruby-ivar">@suffixes</span>[<span class="ruby-identifier">suffix_index</span>]
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@fulltext_reader</span>.<span class="ruby-identifier">get_data</span>(<span class="ruby-identifier">offset</span>, <span class="ruby-identifier">term</span>.<span class="ruby-identifier">size</span>) <span class="ruby-operator">==</span> <span class="ruby-identifier">term</span>
+    <span class="ruby-constant">Hit</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">term</span>, <span class="ruby-identifier">suffix_index</span>, <span class="ruby-identifier">offset</span>, <span class="ruby-ivar">@fulltext_reader</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-find_next">
+            
+              <b>find_next</b>(hit)
+            
+            <a href="../../classes/FTSearch/SuffixArrayReader.html#method-i-find_next" name="method-i-find_next" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-find_next_source')" id="l_method-i-find_next_source">show</a>
+                
+              </p>
+              <div id="method-i-find_next_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/ftsearch/lib/ftsearch/suffix_array_reader.rb, line 99</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">find_next</span>(<span class="ruby-identifier">hit</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-lazyhits_to_offsets">
+            
+              <b>lazyhits_to_offsets</b>(lazyhits)
+            
+            <a href="../../classes/FTSearch/SuffixArrayReader.html#method-i-lazyhits_to_offsets" name="method-i-lazyhits_to_offsets" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-lazyhits_to_offsets_source')" id="l_method-i-lazyhits_to_offsets_source">show</a>
+                
+              </p>
+              <div id="method-i-lazyhits_to_offsets_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/ftsearch/lib/ftsearch/suffix_array_reader.rb, line 106</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">lazyhits_to_offsets</span>(<span class="ruby-identifier">lazyhits</span>)
+  <span class="ruby-identifier">from</span> = <span class="ruby-identifier">lazyhits</span>.<span class="ruby-identifier">from_index</span>
+  <span class="ruby-identifier">to</span>   = <span class="ruby-identifier">lazyhits</span>.<span class="ruby-identifier">to_index</span>
+  <span class="ruby-ivar">@io</span>.<span class="ruby-identifier">pos</span> = <span class="ruby-ivar">@base</span> <span class="ruby-operator">+</span> <span class="ruby-number">4</span> * <span class="ruby-identifier">from</span>
+  <span class="ruby-ivar">@io</span>.<span class="ruby-identifier">read</span>((<span class="ruby-identifier">to</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">from</span>) * <span class="ruby-number">4</span>).<span class="ruby-identifier">unpack</span>(<span class="ruby-string">&quot;V*&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-suffix_index_to_offset">
+            
+              <b>suffix_index_to_offset</b>(suffix_index)
+            
+            <a href="../../classes/FTSearch/SuffixArrayReader.html#method-i-suffix_index_to_offset" name="method-i-suffix_index_to_offset" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-suffix_index_to_offset_source')" id="l_method-i-suffix_index_to_offset_source">show</a>
+                
+              </p>
+              <div id="method-i-suffix_index_to_offset_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/ftsearch/lib/ftsearch/suffix_array_reader.rb, line 102</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">suffix_index_to_offset</span>(<span class="ruby-identifier">suffix_index</span>)
+  <span class="ruby-ivar">@suffixes</span>[<span class="ruby-identifier">suffix_index</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

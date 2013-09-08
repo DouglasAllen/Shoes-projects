@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Shoes::Native</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Shoes::Native 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="Basic.html">Shoes::Basic</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/lib/shoes/basic_rb.html">lib/shoes/basic.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-change">change</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>F</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-focus">focus</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-state-3D">state=</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+      <!-- Section attributes -->
+      <div class="sectiontitle">Attributes</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>state</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+      </table>
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-change">
+            
+              <b>change</b>(obj, &amp;blk)
+            
+            <a href="../../classes/Shoes/Native.html#method-i-change" name="method-i-change" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-change_source')" id="l_method-i-change_source">show</a>
+                
+              </p>
+              <div id="method-i-change_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/basic.rb, line 293</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">change</span> <span class="ruby-identifier">obj</span>, &amp;<span class="ruby-identifier">blk</span>
+  <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">signal_connect</span> <span class="ruby-string">&quot;changed&quot;</span>, &amp;<span class="ruby-identifier">proc</span>{<span class="ruby-identifier">parent</span>.<span class="ruby-identifier">append</span>{<span class="ruby-identifier">blk</span>[<span class="ruby-keyword">self</span>]}} <span class="ruby-keyword">if</span> <span class="ruby-identifier">blk</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-focus">
+            
+              <b>focus</b>()
+            
+            <a href="../../classes/Shoes/Native.html#method-i-focus" name="method-i-focus" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-focus_source')" id="l_method-i-focus_source">show</a>
+                
+              </p>
+              <div id="method-i-focus_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/basic.rb, line 297</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">focus</span>
+  <span class="ruby-identifier">real</span>.<span class="ruby-identifier">grab_focus</span>
+  <span class="ruby-ivar">@app</span>.<span class="ruby-identifier">focus_ele</span> = <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-state-3D">
+            
+              <b>state=</b>(ctl)
+            
+            <a href="../../classes/Shoes/Native.html#method-i-state-3D" name="method-i-state-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-state-3D_source')" id="l_method-i-state-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-state-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/basic.rb, line 304</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">state=</span>(<span class="ruby-identifier">ctl</span>)
+  <span class="ruby-identifier">real</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">EditBox</span>) <span class="ruby-operator">?</span> <span class="ruby-ivar">@textview</span> <span class="ruby-operator">:</span> <span class="ruby-ivar">@real</span>
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">ctl</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;disabled&quot;</span>
+      <span class="ruby-identifier">real</span>.<span class="ruby-identifier">sensitive</span> = <span class="ruby-keyword">false</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-string">'readonly'</span>
+      <span class="ruby-keyword">case</span> <span class="ruby-keyword">self</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-constant">EditLine</span>, <span class="ruby-constant">EditBox</span>
+          <span class="ruby-identifier">real</span>.<span class="ruby-identifier">sensitive</span>, <span class="ruby-identifier">real</span>.<span class="ruby-identifier">editable</span> = <span class="ruby-keyword">true</span>, <span class="ruby-keyword">false</span>
+          <span class="ruby-identifier">real</span>.<span class="ruby-identifier">modify_base</span> <span class="ruby-constant">Gtk</span><span class="ruby-operator">::</span><span class="ruby-constant">STATE_NORMAL</span>, <span class="ruby-constant">Gdk</span><span class="ruby-operator">::</span><span class="ruby-constant">Color</span>.<span class="ruby-identifier">new</span>(<span class="ruby-number">56540</span>, <span class="ruby-number">56540</span>, <span class="ruby-number">54227</span>)
+        <span class="ruby-keyword">else</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-keyword">nil</span>
+      <span class="ruby-identifier">real</span>.<span class="ruby-identifier">sensitive</span> = <span class="ruby-keyword">true</span>
+      <span class="ruby-keyword">case</span> <span class="ruby-keyword">self</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-constant">EditLine</span>, <span class="ruby-constant">EditBox</span>
+          <span class="ruby-identifier">real</span>.<span class="ruby-identifier">editable</span> = <span class="ruby-keyword">true</span>
+          <span class="ruby-identifier">real</span>.<span class="ruby-identifier">modify_base</span> <span class="ruby-constant">Gtk</span><span class="ruby-operator">::</span><span class="ruby-constant">STATE_NORMAL</span>, <span class="ruby-constant">Gdk</span><span class="ruby-operator">::</span><span class="ruby-constant">Color</span>.<span class="ruby-identifier">new</span>(<span class="ruby-number">65535</span>, <span class="ruby-number">65535</span>, <span class="ruby-number">65535</span>)
+        <span class="ruby-keyword">else</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">else</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@state</span> = <span class="ruby-identifier">ctl</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

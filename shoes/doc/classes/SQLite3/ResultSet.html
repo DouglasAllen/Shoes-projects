@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>SQLite3::ResultSet</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            SQLite3::ResultSet 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/req/sqlite3/lib/sqlite3/resultset_rb.html">req/sqlite3/lib/sqlite3/resultset.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>The <a href="ResultSet.html">ResultSet</a> object encapsulates the
+enumerability of a query’s output. It is a simple cursor over the data that
+the query returns. It will very rarely (if ever) be instantiated directly.
+Instead, client’s should obtain a <a href="ResultSet.html">ResultSet</a>
+instance via <a
+href="Statement.html#method-i-execute">SQLite3::Statement#execute</a>.</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+    <!-- Namespace -->
+    <div class="sectiontitle">Namespace</div>
+    <ul>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="ResultSet/ArrayWithTypes.html">SQLite3::ResultSet::ArrayWithTypes</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="ResultSet/ArrayWithTypesAndFields.html">SQLite3::ResultSet::ArrayWithTypesAndFields</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="ResultSet/HashWithTypes.html">SQLite3::ResultSet::HashWithTypes</a>
+        </li>
+      
+    </ul>
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-close">close</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-closed-3F">closed?</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-columns">columns</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>E</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-each">each</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-eof-3F">eof?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-next">next</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-reset">reset</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-types">types</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            <a href="../Enumerable.html">
+              Enumerable
+            </a>
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>(db, stmt)
+            
+            <a href="../../classes/SQLite3/ResultSet.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Create a new <a href="ResultSet.html">ResultSet</a> attached to the given
+database, using the given sql text.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/sqlite3/lib/sqlite3/resultset.rb, line 34</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span> <span class="ruby-identifier">db</span>, <span class="ruby-identifier">stmt</span>
+  <span class="ruby-ivar">@db</span>   = <span class="ruby-identifier">db</span>
+  <span class="ruby-ivar">@stmt</span> = <span class="ruby-identifier">stmt</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-close">
+            
+              <b>close</b>()
+            
+            <a href="../../classes/SQLite3/ResultSet.html#method-i-close" name="method-i-close" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Closes the statement that spawned this result set. <em>Use with
+caution!</em> Closing a result set will automatically close any other
+result sets that were spawned from the same statement.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-close_source')" id="l_method-i-close_source">show</a>
+                
+              </p>
+              <div id="method-i-close_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/sqlite3/lib/sqlite3/resultset.rb, line 105</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">close</span>
+  <span class="ruby-ivar">@stmt</span>.<span class="ruby-identifier">close</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-closed-3F">
+            
+              <b>closed?</b>()
+            
+            <a href="../../classes/SQLite3/ResultSet.html#method-i-closed-3F" name="method-i-closed-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Queries whether the underlying statement has been closed or not.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-closed-3F_source')" id="l_method-i-closed-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-closed-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/sqlite3/lib/sqlite3/resultset.rb, line 110</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">closed?</span>
+  <span class="ruby-ivar">@stmt</span>.<span class="ruby-identifier">closed?</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-columns">
+            
+              <b>columns</b>()
+            
+            <a href="../../classes/SQLite3/ResultSet.html#method-i-columns" name="method-i-columns" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the names of the columns returned by this result set.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-columns_source')" id="l_method-i-columns_source">show</a>
+                
+              </p>
+              <div id="method-i-columns_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/sqlite3/lib/sqlite3/resultset.rb, line 120</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">columns</span>
+  <span class="ruby-ivar">@stmt</span>.<span class="ruby-identifier">columns</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-each">
+            
+              <b>each</b>( &amp;block )
+            
+            <a href="../../classes/SQLite3/ResultSet.html#method-i-each" name="method-i-each" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Required by the <a href="../Enumerable.html">Enumerable</a> mixin. Provides
+an internal iterator over the rows of the result set.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-each_source')" id="l_method-i-each_source">show</a>
+                
+              </p>
+              <div id="method-i-each_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/sqlite3/lib/sqlite3/resultset.rb, line 96</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">each</span>( &amp;<span class="ruby-identifier">block</span> )
+  <span class="ruby-keyword">while</span> <span class="ruby-identifier">node</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">next</span>
+    <span class="ruby-keyword">yield</span> <span class="ruby-identifier">node</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-eof-3F">
+            
+              <b>eof?</b>()
+            
+            <a href="../../classes/SQLite3/ResultSet.html#method-i-eof-3F" name="method-i-eof-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Query whether the cursor has reached the end of the result set or not.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-eof-3F_source')" id="l_method-i-eof-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-eof-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/sqlite3/lib/sqlite3/resultset.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">eof?</span>
+  <span class="ruby-ivar">@stmt</span>.<span class="ruby-identifier">done?</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-next">
+            
+              <b>next</b>()
+            
+            <a href="../../classes/SQLite3/ResultSet.html#method-i-next" name="method-i-next" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Obtain the next row from the cursor. If there are no more rows to be had,
+this will return <code>nil</code>. If type translation is active on the
+corresponding database, the values in the row will be translated according
+to their types.</p>
+
+<p>The returned value will be an array, unless <a
+href="Database.html#attribute-i-results_as_hash">SQLite3::Database#results_as_hash</a>
+has been set to <code>true</code>, in which case the returned value will be
+a hash.</p>
+
+<p>For arrays, the column names are accessible via the <code>fields</code>
+property, and the column types are accessible via the <code>types</code>
+property.</p>
+
+<p>For hashes, the column names are the keys of the hash, and the column types
+are accessible via the <code>types</code> property.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-next_source')" id="l_method-i-next_source">show</a>
+                
+              </p>
+              <div id="method-i-next_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/sqlite3/lib/sqlite3/resultset.rb, line 65</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">next</span>
+  <span class="ruby-identifier">row</span> = <span class="ruby-ivar">@stmt</span>.<span class="ruby-identifier">step</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@stmt</span>.<span class="ruby-identifier">done?</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@db</span>.<span class="ruby-identifier">type_translation</span>
+    <span class="ruby-identifier">row</span> = <span class="ruby-ivar">@stmt</span>.<span class="ruby-identifier">types</span>.<span class="ruby-identifier">zip</span>(<span class="ruby-identifier">row</span>).<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">type</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+      <span class="ruby-ivar">@db</span>.<span class="ruby-identifier">translator</span>.<span class="ruby-identifier">translate</span>( <span class="ruby-identifier">type</span>, <span class="ruby-identifier">value</span> )
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@db</span>.<span class="ruby-identifier">results_as_hash</span>
+    <span class="ruby-identifier">new_row</span> = <span class="ruby-constant">HashWithTypes</span>[*<span class="ruby-ivar">@stmt</span>.<span class="ruby-identifier">columns</span>.<span class="ruby-identifier">zip</span>(<span class="ruby-identifier">row</span>).<span class="ruby-identifier">flatten</span>]
+    <span class="ruby-identifier">row</span>.<span class="ruby-identifier">each_with_index</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">value</span>,<span class="ruby-identifier">idx</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">new_row</span>[<span class="ruby-identifier">idx</span>] = <span class="ruby-identifier">value</span>
+    }
+    <span class="ruby-identifier">row</span> = <span class="ruby-identifier">new_row</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">row</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:fields</span>)
+      <span class="ruby-identifier">row</span> = <span class="ruby-constant">ArrayWithTypes</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">row</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">row</span> = <span class="ruby-constant">ArrayWithTypesAndFields</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">row</span>)
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">row</span>.<span class="ruby-identifier">fields</span> = <span class="ruby-ivar">@stmt</span>.<span class="ruby-identifier">columns</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">row</span>.<span class="ruby-identifier">types</span> = <span class="ruby-ivar">@stmt</span>.<span class="ruby-identifier">types</span>
+  <span class="ruby-identifier">row</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-reset">
+            
+              <b>reset</b>( *bind_params )
+            
+            <a href="../../classes/SQLite3/ResultSet.html#method-i-reset" name="method-i-reset" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Reset the cursor, so that a result set which has reached end-of-file can be
+rewound and reiterated.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-reset_source')" id="l_method-i-reset_source">show</a>
+                
+              </p>
+              <div id="method-i-reset_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/sqlite3/lib/sqlite3/resultset.rb, line 41</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">reset</span>( *<span class="ruby-identifier">bind_params</span> )
+  <span class="ruby-ivar">@stmt</span>.<span class="ruby-identifier">reset!</span>
+  <span class="ruby-ivar">@stmt</span>.<span class="ruby-identifier">bind_params</span>( *<span class="ruby-identifier">bind_params</span> )
+  <span class="ruby-ivar">@eof</span> = <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-types">
+            
+              <b>types</b>()
+            
+            <a href="../../classes/SQLite3/ResultSet.html#method-i-types" name="method-i-types" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the types of the columns returned by this result set.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-types_source')" id="l_method-i-types_source">show</a>
+                
+              </p>
+              <div id="method-i-types_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/sqlite3/lib/sqlite3/resultset.rb, line 115</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">types</span>
+  <span class="ruby-ivar">@stmt</span>.<span class="ruby-identifier">types</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

@@ -1,0 +1,120 @@
+body
+{
+	background: #FFFFFF;
+	/*margin: 10px; */
+	font-family: "adobe-helvetica-iso8859-1", sans;
+	font-size: 12pt;
+	width: 96%;
+}
+
+body.top
+{
+	background: #AA0000;
+	color: #FFFFFF;
+	padding: 4px;
+	margin: 0px;
+   font-family: "sans serif", tahoma, sans-serif;
+	font-size: 12pt;
+}
+table
+{
+	width: 100%;
+	text-align: left;
+	font-size: 12pt;
+}
+
+h1
+{
+	background: #AA0000;
+	color: #FFFFFF;
+	font-size: 16pt;
+	border: thin solid #000000;
+	text-align: justify;
+	padding: 5px;
+}
+
+h2
+{
+	background: #AA0000;
+	color: #FFFFFF;
+	font-size: 12pt;
+	border: thin solid #000000;
+	text-align: justify;
+	padding: 5px;
+}
+
+h3
+{
+	background: #AA0000;
+	color: #FFFFFF;
+	font-size: 10pt;
+	border: thin solid #000000;
+	text-align: justify;
+	padding: 5px;
+}
+
+h3.status
+{
+   background: white;
+   border: none;
+   color: black;
+	font-size: 10pt;
+}
+
+pre
+{
+	background: #DDDDDD;
+	padding: 3px;
+	border: thin solid #000000;
+	font-size: 10pt;
+}
+
+p
+{
+	text-align: justify;
+	padding: 5px;
+	font-size: 12pt;
+}
+
+dl
+{
+	text-align: justify;
+	padding: 5px;
+	font-size: 12pt;
+}
+
+.code
+{
+	text-align: left;
+	font-family: monospace, fixed;
+	background: #CCCCCC;
+	border: thin solid #000000;
+}
+
+.news
+{
+	border: thin solid #000000;
+	background: #CCCCCC;
+	font-size: 12pt;
+}
+
+.navbar
+{
+	margin: 0px;
+	font-size: 12pt;
+	text-decoration: none;
+	color: #FFFFFF;
+	font-family: "sans serif", tahoma, sans-serif
+}
+
+.logo
+{
+	font-size: 18pt;
+}
+
+th {
+    border-color: black;
+    background-color: #ffcccc;
+    text-align:center;
+	 font-size: 12pt;
+}

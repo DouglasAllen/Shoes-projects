@@ -1,0 +1,1613 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Shoes::Manual</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            Shoes::Manual 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/lib/shoes/help_rb.html">lib/shoes/help.rb</a></li>
+            
+            <li><a href="../../files/lib/shoes/manual_rb.html">lib/shoes/manual.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>The <a href="../Shoes.html">Shoes</a> <a href="Manual.html">Manual</a></p>
+
+<p>Note: This is meant for displaying and/or producing an html version of the
+manual from the command line (i.e. executing <a
+href="../../files/bin/shoes.html">bin/shoes</a>). The <a
+href="Manual.html">Shoes::Manual</a> module is mostly defined in
+lib/shoes/help.rb</p>
+
+<p>FIXME: Collect all <a href="Manual.html">Shoes::Manual</a> code in one
+place.</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-add_next_link">add_next_link</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-as">as</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-class_tree">class_tree</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-color_page">color_page</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-dewikify">dewikify</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-dewikify_code">dewikify_code</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-dewikify_hi">dewikify_hi</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-dewikify_p">dewikify_p</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-index_page">index_page</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>L</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-link">link</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-load_docs">load_docs</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>M</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-make_html">make_html</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-manual_search">manual_search</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>O</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-open_link">open_link</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-open_methods">open_methods</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-open_section">open_section</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-p">p</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-path">path</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-run_code">run_code</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-sample_page">sample_page</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-show_search">show_search</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>W</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-wiki_tokens">wiki_tokens</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">PARA_RE</td>
+            <td>=</td>
+            <td class="attr-value">/\s*?(\{{3}(?:.+?)\}{3})|\n\n/m</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">CODE_RE</td>
+            <td>=</td>
+            <td class="attr-value">/\{{3}(?:\s*\#![^\n]+)?(.+?)\}{3}/m</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">IMAGE_RE</td>
+            <td>=</td>
+            <td class="attr-value">/\!(\{([^}\n]+)\})?([^!\n]+\.\w+)\!/</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">CODE_STYLE</td>
+            <td>=</td>
+            <td class="attr-value">{:size =&gt; 9, :margin =&gt; 12}</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">INTRO_STYLE</td>
+            <td>=</td>
+            <td class="attr-value">{:size =&gt; 16, :margin_bottom =&gt; 20, :stroke =&gt; &quot;#000&quot;}</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">SUB_STYLE</td>
+            <td>=</td>
+            <td class="attr-value">{:stroke =&gt; &quot;#CCC&quot;, :margin_top =&gt; 10}</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">IMAGE_STYLE</td>
+            <td>=</td>
+            <td class="attr-value">{:margin =&gt; 8, :margin_left =&gt; 100}</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">COLON</td>
+            <td>=</td>
+            <td class="attr-value">&quot;: &quot;</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">TITLES</td>
+            <td>=</td>
+            <td class="attr-value">{:title =&gt; :h1, :subtitle =&gt; :h2, :tagline =&gt; :h3, :caption =&gt; :h4}</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-as">
+            
+              <b>as</b>(format, *args)
+            
+            <a href="../../classes/Shoes/Manual.html#method-c-as" name="method-c-as" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-as_source')" id="l_method-c-as_source">show</a>
+                
+              </p>
+              <div id="method-c-as_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/manual.rb, line 38</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">as</span> <span class="ruby-identifier">format</span>, *<span class="ruby-identifier">args</span>
+  <span class="ruby-identifier">require</span> <span class="ruby-string">'shoes/search'</span>
+  <span class="ruby-identifier">require</span> <span class="ruby-string">'shoes/help'</span>
+
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">format</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:shoes</span>
+    <span class="ruby-constant">Shoes</span>.<span class="ruby-identifier">app</span>(<span class="ruby-value">:width</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">720</span>, <span class="ruby-value">:height</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">640</span>, &amp;<span class="ruby-constant">Shoes</span><span class="ruby-operator">::</span><span class="ruby-constant">Help</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">man</span> = <span class="ruby-keyword">self</span>
+    <span class="ruby-identifier">dir</span>, = <span class="ruby-identifier">args</span>
+    <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">mkdir_p</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">dir</span>, <span class="ruby-string">'static'</span>)
+    <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">cp</span> <span class="ruby-node">&quot;#{DIR}/static/shoes-icon.png&quot;</span>, <span class="ruby-node">&quot;#{dir}/static&quot;</span>
+    <span class="ruby-node">%w[manual.css code_highlighter.js code_highlighter_ruby.js]</span>.
+      <span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">cp</span> <span class="ruby-node">&quot;#{DIR}/static/#{x}&quot;</span>, <span class="ruby-node">&quot;#{dir}/static&quot;</span> }
+    <span class="ruby-identifier">html_bits</span> = <span class="ruby-identifier">proc</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">proc</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">sym</span>, <span class="ruby-identifier">text</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">case</span> <span class="ruby-identifier">sym</span> <span class="ruby-keyword">when</span> <span class="ruby-value">:intro</span>
+        <span class="ruby-identifier">div</span>.<span class="ruby-identifier">intro</span> { <span class="ruby-identifier">p</span> { <span class="ruby-keyword">self</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">man</span>.<span class="ruby-identifier">p</span>(<span class="ruby-identifier">text</span>, <span class="ruby-identifier">dir</span>) } }
+      <span class="ruby-keyword">when</span> <span class="ruby-value">:code</span>
+        <span class="ruby-identifier">pre</span> { <span class="ruby-identifier">code</span>.<span class="ruby-identifier">rb</span> <span class="ruby-identifier">text</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/^\s*?\n/</span>, <span class="ruby-string">''</span>) }
+      <span class="ruby-keyword">when</span> <span class="ruby-value">:colors</span>
+        <span class="ruby-identifier">color_names</span> = (<span class="ruby-constant">Shoes</span><span class="ruby-operator">::</span><span class="ruby-constant">COLORS</span>.<span class="ruby-identifier">keys</span>*<span class="ruby-string">&quot;\n&quot;</span>).<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;\n&quot;</span>).<span class="ruby-identifier">sort</span>
+        <span class="ruby-identifier">color_names</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">color</span><span class="ruby-operator">|</span>
+          <span class="ruby-identifier">c</span> = <span class="ruby-constant">Shoes</span><span class="ruby-operator">::</span><span class="ruby-constant">COLORS</span>[<span class="ruby-identifier">color</span>.<span class="ruby-identifier">intern</span>]
+          <span class="ruby-identifier">f</span> = <span class="ruby-identifier">c</span>.<span class="ruby-identifier">dark?</span> <span class="ruby-operator">?</span> <span class="ruby-string">&quot;white&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-string">&quot;black&quot;</span>
+          <span class="ruby-identifier">div</span>.<span class="ruby-identifier">color</span>(<span class="ruby-value">:style</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;background: #{c}; color: #{f}&quot;</span>) { <span class="ruby-identifier">h3</span> <span class="ruby-identifier">color</span>; <span class="ruby-identifier">p</span> <span class="ruby-identifier">c</span> }
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-value">:index</span>
+        <span class="ruby-identifier">tree</span> = <span class="ruby-identifier">man</span>.<span class="ruby-identifier">class_tree</span>
+        <span class="ruby-identifier">shown</span> = []
+        <span class="ruby-identifier">i</span> = <span class="ruby-number">0</span>
+        <span class="ruby-identifier">index_p</span> = <span class="ruby-identifier">proc</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">subs</span><span class="ruby-operator">|</span>
+          <span class="ruby-keyword">unless</span> <span class="ruby-identifier">shown</span>.<span class="ruby-identifier">include?</span> <span class="ruby-identifier">k</span>
+            <span class="ruby-identifier">i</span> <span class="ruby-operator">+=</span> <span class="ruby-number">1</span>
+            <span class="ruby-identifier">p</span> <span class="ruby-node">&quot;▸ #{k}&quot;</span>, <span class="ruby-value">:style</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;margin-left: #{20*i}px&quot;</span>
+            <span class="ruby-identifier">subs</span>.<span class="ruby-identifier">uniq</span>.<span class="ruby-identifier">sort</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span>
+              <span class="ruby-identifier">index_p</span>[<span class="ruby-identifier">s</span>, <span class="ruby-identifier">tree</span>[<span class="ruby-identifier">s</span>]]
+            <span class="ruby-keyword">end</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">subs</span>
+            <span class="ruby-identifier">i</span> <span class="ruby-operator">-=</span> <span class="ruby-number">1</span>
+            <span class="ruby-identifier">shown</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">k</span>
+          <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">tree</span>.<span class="ruby-identifier">sort</span>.<span class="ruby-identifier">each</span> &amp;<span class="ruby-identifier">index_p</span>
+      <span class="ruby-comment">#   index_page</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-value">:list</span>
+        <span class="ruby-identifier">ul</span> { <span class="ruby-identifier">text</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">li</span> { <span class="ruby-keyword">self</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">man</span>.<span class="ruby-identifier">p</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">dir</span>) } } }
+      <span class="ruby-keyword">when</span> <span class="ruby-value">:samples</span>
+        <span class="ruby-identifier">folder</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span> <span class="ruby-constant">DIR</span>, <span class="ruby-string">'samples'</span>
+        <span class="ruby-identifier">h</span> = {}
+        <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">glob</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span> <span class="ruby-identifier">folder</span>, <span class="ruby-string">'*'</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span>
+          <span class="ruby-keyword">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">extname</span>(<span class="ruby-identifier">file</span>) <span class="ruby-operator">==</span> <span class="ruby-string">'.rb'</span>
+            <span class="ruby-identifier">key</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">file</span>).<span class="ruby-identifier">split</span>(<span class="ruby-string">'-'</span>)[<span class="ruby-number">0</span>]
+            <span class="ruby-identifier">h</span>[<span class="ruby-identifier">key</span>] <span class="ruby-operator">?</span> <span class="ruby-identifier">h</span>[<span class="ruby-identifier">key</span>].<span class="ruby-identifier">push</span>(<span class="ruby-identifier">file</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">h</span>[<span class="ruby-identifier">key</span>] = [<span class="ruby-identifier">file</span>]
+          <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">h</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+          <span class="ruby-identifier">p</span> <span class="ruby-node">&quot;&lt;h4&gt;#{k}&lt;/h4&gt;&quot;</span>
+          <span class="ruby-identifier">samples</span> = []
+          <span class="ruby-identifier">v</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span>
+            <span class="ruby-identifier">sample</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">file</span>).<span class="ruby-identifier">split</span>(<span class="ruby-string">'-'</span>)[<span class="ruby-number">1</span><span class="ruby-operator">..</span><span class="ruby-number">-1</span>].<span class="ruby-identifier">join</span>(<span class="ruby-string">'-'</span>)[<span class="ruby-number">0</span><span class="ruby-operator">..</span><span class="ruby-number">-4</span>]
+            <span class="ruby-identifier">samples</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;&lt;a href=\&quot;http://github.com/shoes/shoes/raw/master/manual-snapshots/#{k}-#{sample}.png\&quot;&gt;#{sample}&lt;/a&gt;&quot;</span>
+          <span class="ruby-keyword">end</span>
+          <span class="ruby-identifier">p</span> <span class="ruby-identifier">samples</span>.<span class="ruby-identifier">join</span> <span class="ruby-string">' '</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">send</span>(<span class="ruby-constant">TITLES</span>[<span class="ruby-identifier">sym</span>] <span class="ruby-operator">||</span> <span class="ruby-value">:p</span>) { <span class="ruby-keyword">self</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">man</span>.<span class="ruby-identifier">p</span>(<span class="ruby-identifier">text</span>, <span class="ruby-identifier">dir</span>) }
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">docs</span> = <span class="ruby-identifier">load_docs</span>(<span class="ruby-constant">Shoes</span><span class="ruby-operator">::</span><span class="ruby-constant">Manual</span><span class="ruby-operator">::</span><span class="ruby-identifier">path</span>)
+    <span class="ruby-identifier">sections</span> = <span class="ruby-identifier">docs</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span>,<span class="ruby-operator">|</span> <span class="ruby-identifier">x</span> }
+
+    <span class="ruby-identifier">docn</span> = <span class="ruby-number">1</span>
+    <span class="ruby-identifier">docs</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">title1</span>, <span class="ruby-identifier">opt1</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">subsect</span> = <span class="ruby-identifier">opt1</span>[<span class="ruby-string">'sections'</span>].<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span>,<span class="ruby-operator">|</span> <span class="ruby-identifier">x</span> }
+      <span class="ruby-identifier">menu</span> = <span class="ruby-identifier">sections</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span>
+        [<span class="ruby-identifier">x</span>, (<span class="ruby-identifier">subsect</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">x</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">title1</span>)]
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">path1</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">dir</span>, <span class="ruby-identifier">title1</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/\W/</span>, <span class="ruby-string">''</span>))
+      <span class="ruby-identifier">make_html</span>(<span class="ruby-node">&quot;#{path1}.html&quot;</span>, <span class="ruby-identifier">title1</span>, <span class="ruby-identifier">menu</span>) <span class="ruby-keyword">do</span>
+        <span class="ruby-identifier">h2</span> <span class="ruby-string">&quot;The Shoes Manual&quot;</span>
+        <span class="ruby-identifier">h1</span> <span class="ruby-identifier">title1</span>
+        <span class="ruby-identifier">man</span>.<span class="ruby-identifier">wiki_tokens</span> <span class="ruby-identifier">opt1</span>[<span class="ruby-string">'description'</span>], <span class="ruby-keyword">true</span>, &amp;<span class="ruby-identifier">instance_eval</span>(&amp;<span class="ruby-identifier">html_bits</span>)
+        <span class="ruby-identifier">p</span>.<span class="ruby-identifier">next</span> { <span class="ruby-identifier">text</span> <span class="ruby-string">&quot;Next: &quot;</span>
+          <span class="ruby-identifier">a</span> <span class="ruby-identifier">opt1</span>[<span class="ruby-string">'sections'</span>].<span class="ruby-identifier">first</span>[<span class="ruby-number">1</span>][<span class="ruby-string">'title'</span>], <span class="ruby-value">:href</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{opt1['sections'].first[0]}.html&quot;</span> }
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">optn</span> = <span class="ruby-number">1</span>
+      <span class="ruby-identifier">opt1</span>[<span class="ruby-string">'sections'</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">title2</span>, <span class="ruby-identifier">opt2</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">path2</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">dir</span>, <span class="ruby-identifier">title2</span>)
+        <span class="ruby-identifier">make_html</span>(<span class="ruby-node">&quot;#{path2}.html&quot;</span>, <span class="ruby-identifier">opt2</span>[<span class="ruby-string">'title'</span>], <span class="ruby-identifier">menu</span>) <span class="ruby-keyword">do</span>
+          <span class="ruby-identifier">h2</span> <span class="ruby-string">&quot;The Shoes Manual&quot;</span>
+          <span class="ruby-identifier">h1</span> <span class="ruby-identifier">opt2</span>[<span class="ruby-string">'title'</span>]
+          <span class="ruby-identifier">man</span>.<span class="ruby-identifier">wiki_tokens</span> <span class="ruby-identifier">opt2</span>[<span class="ruby-string">'description'</span>], <span class="ruby-keyword">true</span>, &amp;<span class="ruby-identifier">instance_eval</span>(&amp;<span class="ruby-identifier">html_bits</span>)
+          <span class="ruby-identifier">opt2</span>[<span class="ruby-string">'methods'</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">title3</span>, <span class="ruby-identifier">desc3</span><span class="ruby-operator">|</span>
+            <span class="ruby-identifier">sig</span>, <span class="ruby-identifier">val</span> = <span class="ruby-identifier">title3</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">/\s+»\s+/</span>, <span class="ruby-number">2</span>)
+            <span class="ruby-identifier">aname</span> = <span class="ruby-identifier">sig</span>[<span class="ruby-regexp">/^[^(=]+=?/</span>].<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/\s/</span>, <span class="ruby-string">''</span>).<span class="ruby-identifier">downcase</span>
+            <span class="ruby-identifier">a</span> <span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">aname</span>
+            <span class="ruby-identifier">div</span>.<span class="ruby-identifier">method</span> <span class="ruby-keyword">do</span>
+              <span class="ruby-identifier">a</span> <span class="ruby-identifier">sig</span>, <span class="ruby-value">:href</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;##{aname}&quot;</span>
+              <span class="ruby-identifier">text</span> <span class="ruby-node">&quot; » #{val}&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">val</span>
+            <span class="ruby-keyword">end</span>
+            <span class="ruby-identifier">div</span>.<span class="ruby-identifier">sample</span> <span class="ruby-keyword">do</span>
+              <span class="ruby-identifier">man</span>.<span class="ruby-identifier">wiki_tokens</span> <span class="ruby-identifier">desc3</span>, &amp;<span class="ruby-identifier">instance_eval</span>(&amp;<span class="ruby-identifier">html_bits</span>)
+            <span class="ruby-keyword">end</span>
+          <span class="ruby-keyword">end</span>
+          <span class="ruby-keyword">if</span> <span class="ruby-identifier">opt1</span>[<span class="ruby-string">'sections'</span>][<span class="ruby-identifier">optn</span>]
+            <span class="ruby-identifier">p</span>.<span class="ruby-identifier">next</span> { <span class="ruby-identifier">text</span> <span class="ruby-string">&quot;Next: &quot;</span>
+              <span class="ruby-identifier">a</span> <span class="ruby-identifier">opt1</span>[<span class="ruby-string">'sections'</span>][<span class="ruby-identifier">optn</span>][<span class="ruby-number">1</span>][<span class="ruby-string">'title'</span>], <span class="ruby-value">:href</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{opt1['sections'][optn][0]}.html&quot;</span> }
+          <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">docs</span>[<span class="ruby-identifier">docn</span>]
+            <span class="ruby-identifier">p</span>.<span class="ruby-identifier">next</span> { <span class="ruby-identifier">text</span> <span class="ruby-string">&quot;Next: &quot;</span>
+              <span class="ruby-identifier">a</span> <span class="ruby-identifier">docs</span>[<span class="ruby-identifier">docn</span>][<span class="ruby-number">0</span>], <span class="ruby-value">:href</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{docs[docn][0].gsub(/\W/, '')}.html&quot;</span> }
+          <span class="ruby-keyword">end</span>
+          <span class="ruby-identifier">optn</span> <span class="ruby-operator">+=</span> <span class="ruby-number">1</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">docn</span> <span class="ruby-operator">+=</span> <span class="ruby-number">1</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-link">
+            
+              <b>link</b>(sect)
+            
+            <a href="../../classes/Shoes/Manual.html#method-c-link" name="method-c-link" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-link_source')" id="l_method-c-link_source">show</a>
+                
+              </p>
+              <div id="method-c-link_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/manual.rb, line 33</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">link</span>(<span class="ruby-identifier">sect</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-p">
+            
+              <b>p</b>(str, path)
+            
+            <a href="../../classes/Shoes/Manual.html#method-c-p" name="method-c-p" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-p_source')" id="l_method-c-p_source">show</a>
+                
+              </p>
+              <div id="method-c-p_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/manual.rb, line 9</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">p</span>(<span class="ruby-identifier">str</span>, <span class="ruby-identifier">path</span>)
+  <span class="ruby-identifier">str</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/\n+\s*/</span>, <span class="ruby-string">&quot; &quot;</span>).
+    <span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/&amp;/</span>, <span class="ruby-string">'&amp;amp;'</span>).<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/&gt;/</span>, <span class="ruby-string">'&amp;gt;'</span>).<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/&gt;/</span>, <span class="ruby-string">'&amp;lt;'</span>).<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/&quot;/</span>, <span class="ruby-string">'&amp;quot;'</span>).
+    <span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/`(.+?)`/</span>, <span class="ruby-string">'&lt;code&gt;\1&lt;/code&gt;'</span>).<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/\[\[BR\]\]/</span>, <span class="ruby-string">&quot;&lt;br /&gt;\n&quot;</span>).
+    <span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/\^(.+?)\^/</span>, <span class="ruby-string">'\1'</span>).
+    <span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/'''(.+?)'''/</span>, <span class="ruby-string">'&lt;strong&gt;\1&lt;/strong&gt;'</span>).<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/''(.+?)''/</span>, <span class="ruby-string">'&lt;em&gt;\1&lt;/em&gt;'</span>).
+    <span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/\[\[(http:\/\/\S+?)\]\]/</span>, <span class="ruby-string">'&lt;a href=&quot;\1&quot; target=&quot;_new&quot;&gt;\1&lt;/a&gt;'</span>).
+    <span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/\[\[(http:\/\/\S+?) (.+?)\]\]/</span>, <span class="ruby-string">'&lt;a href=&quot;\1&quot; target=&quot;_new&quot;&gt;\2&lt;/a&gt;'</span>).
+    <span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/\[\[(\S+?)\]\]/</span>) <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">ms</span>, <span class="ruby-identifier">mn</span> = <span class="ruby-node">$1</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;.&quot;</span>, <span class="ruby-number">2</span>)
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">mn</span>
+        <span class="ruby-string">'&lt;a href=&quot;'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">ms</span> <span class="ruby-operator">+</span> <span class="ruby-string">'.html#'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">mn</span> <span class="ruby-operator">+</span> <span class="ruby-string">'&quot;&gt;'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">mn</span> <span class="ruby-operator">+</span> <span class="ruby-string">'&lt;/a&gt;'</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-string">'&lt;a href=&quot;'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">ms</span> <span class="ruby-operator">+</span> <span class="ruby-string">'.html&quot;&gt;'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">ms</span> <span class="ruby-operator">+</span> <span class="ruby-string">'&lt;/a&gt;'</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>.
+    <span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/\[\[(\S+?) (.+?)\]\]/</span>, <span class="ruby-string">'&lt;a href=&quot;\1.html&quot;&gt;\2&lt;/a&gt;'</span>).
+    <span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/\!(\{[^}\n]+\})?([^!\n]+\.\w+)\!/</span>) <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">x</span> = <span class="ruby-node">&quot;static/#$2&quot;</span>
+      <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">cp</span>(<span class="ruby-node">&quot;#{DIR}/#{x}&quot;</span>, <span class="ruby-node">&quot;#{path}/#{x}&quot;</span>) <span class="ruby-keyword">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span> <span class="ruby-node">&quot;#{DIR}/#{x}&quot;</span>
+      <span class="ruby-string">'&lt;img src=&quot;'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">x</span> <span class="ruby-operator">+</span> <span class="ruby-string">'&quot; /&gt;'</span>
+    <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-path">
+            
+              <b>path</b>()
+            
+            <a href="../../classes/Shoes/Manual.html#method-c-path" name="method-c-path" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-path_source')" id="l_method-c-path_source">show</a>
+                
+              </p>
+              <div id="method-c-path_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/help.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">path</span>
+  <span class="ruby-identifier">path</span> = <span class="ruby-node">&quot;#{DIR}/static/manual-#{Shoes.language}.txt&quot;</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span> <span class="ruby-identifier">path</span>
+    <span class="ruby-identifier">path</span> = <span class="ruby-node">&quot;#{DIR}/static/manual-en.txt&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">path</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-add_next_link">
+            
+              <b>add_next_link</b>(docn, optn)
+            
+            <a href="../../classes/Shoes/Manual.html#method-i-add_next_link" name="method-i-add_next_link" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-add_next_link_source')" id="l_method-i-add_next_link_source">show</a>
+                
+              </p>
+              <div id="method-i-add_next_link_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/help.rb, line 303</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">add_next_link</span>(<span class="ruby-identifier">docn</span>, <span class="ruby-identifier">optn</span>)
+  <span class="ruby-identifier">opt1</span>, <span class="ruby-identifier">optn</span> = <span class="ruby-ivar">@docs</span>[<span class="ruby-identifier">docn</span>][<span class="ruby-number">1</span>], <span class="ruby-identifier">optn</span> <span class="ruby-operator">+</span> <span class="ruby-number">1</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">opt1</span>[<span class="ruby-string">'sections'</span>][<span class="ruby-identifier">optn</span>]
+    <span class="ruby-ivar">@doc</span>.<span class="ruby-identifier">para</span> <span class="ruby-string">&quot;Next: &quot;</span>,
+      <span class="ruby-identifier">link</span>(<span class="ruby-identifier">opt1</span>[<span class="ruby-string">'sections'</span>][<span class="ruby-identifier">optn</span>][<span class="ruby-number">1</span>][<span class="ruby-string">'title'</span>]) { <span class="ruby-identifier">open_methods</span>(<span class="ruby-identifier">opt1</span>[<span class="ruby-string">'sections'</span>][<span class="ruby-identifier">optn</span>][<span class="ruby-number">0</span>]) },
+      <span class="ruby-value">:align</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;right&quot;</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-ivar">@docs</span>[<span class="ruby-identifier">docn</span> <span class="ruby-operator">+</span> <span class="ruby-number">1</span>]
+    <span class="ruby-ivar">@doc</span>.<span class="ruby-identifier">para</span> <span class="ruby-string">&quot;Next: &quot;</span>,
+      <span class="ruby-identifier">link</span>(<span class="ruby-ivar">@docs</span>[<span class="ruby-identifier">docn</span> <span class="ruby-operator">+</span> <span class="ruby-number">1</span>][<span class="ruby-number">0</span>]) { <span class="ruby-identifier">open_section</span>(<span class="ruby-ivar">@docs</span>[<span class="ruby-identifier">docn</span> <span class="ruby-operator">+</span> <span class="ruby-number">1</span>][<span class="ruby-number">0</span>].<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/\W/</span>, <span class="ruby-string">''</span>)) },
+      <span class="ruby-value">:align</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;right&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-class_tree">
+            
+              <b>class_tree</b>()
+            
+            <a href="../../classes/Shoes/Manual.html#method-i-class_tree" name="method-i-class_tree" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-class_tree_source')" id="l_method-i-class_tree_source">show</a>
+                
+              </p>
+              <div id="method-i-class_tree_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/help.rb, line 163</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">class_tree</span>
+  <span class="ruby-identifier">tree</span> = {}
+  <span class="ruby-constant">Shoes</span>.<span class="ruby-identifier">constants</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">k</span> = <span class="ruby-constant">Shoes</span>.<span class="ruby-identifier">const_get</span>(<span class="ruby-identifier">c</span>)
+    <span class="ruby-keyword">next</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">k</span>.<span class="ruby-identifier">respond_to?</span> <span class="ruby-value">:superclass</span>
+    
+    <span class="ruby-identifier">c</span> = <span class="ruby-node">&quot;Shoes::#{c}&quot;</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">k</span>.<span class="ruby-identifier">superclass</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Object</span>
+      <span class="ruby-identifier">tree</span>[<span class="ruby-identifier">c</span>] <span class="ruby-operator">||=</span> []
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">k</span>.<span class="ruby-identifier">ancestors</span>[<span class="ruby-number">1</span><span class="ruby-operator">..</span><span class="ruby-number">-1</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">sk</span><span class="ruby-operator">|</span>
+        <span class="ruby-keyword">break</span> <span class="ruby-keyword">if</span> [<span class="ruby-constant">Object</span>, <span class="ruby-constant">Kernel</span>].<span class="ruby-identifier">include?</span> <span class="ruby-identifier">sk</span>
+        <span class="ruby-keyword">next</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">sk</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Class</span> <span class="ruby-comment">#don't show mixins</span>
+        (<span class="ruby-identifier">tree</span>[<span class="ruby-identifier">sk</span>.<span class="ruby-identifier">name</span>] <span class="ruby-operator">||=</span> []) <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">c</span>
+        <span class="ruby-identifier">c</span> = <span class="ruby-identifier">sk</span>.<span class="ruby-identifier">name</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">tree</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-color_page">
+            
+              <b>color_page</b>()
+            
+            <a href="../../classes/Shoes/Manual.html#method-i-color_page" name="method-i-color_page" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-color_page_source')" id="l_method-i-color_page_source">show</a>
+                
+              </p>
+              <div id="method-i-color_page_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/help.rb, line 149</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">color_page</span>
+  <span class="ruby-identifier">color_names</span> = (<span class="ruby-constant">Shoes</span><span class="ruby-operator">::</span><span class="ruby-constant">COLORS</span>.<span class="ruby-identifier">keys</span>*<span class="ruby-string">&quot;\n&quot;</span>).<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;\n&quot;</span>).<span class="ruby-identifier">sort</span>
+  <span class="ruby-identifier">flow</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">color_names</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">color</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">flow</span> <span class="ruby-value">:width</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">0.33</span> <span class="ruby-keyword">do</span>
+        <span class="ruby-identifier">c</span> = <span class="ruby-identifier">send</span>(<span class="ruby-identifier">color</span>)
+        <span class="ruby-identifier">background</span> <span class="ruby-identifier">c</span>
+        <span class="ruby-identifier">para</span> <span class="ruby-identifier">strong</span>(<span class="ruby-identifier">color</span>), <span class="ruby-string">&quot;\n&quot;</span>, <span class="ruby-identifier">c</span>, <span class="ruby-value">:stroke</span> =<span class="ruby-operator">&gt;</span> (<span class="ruby-identifier">c</span>.<span class="ruby-identifier">dark?</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">white</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">black</span>),
+          <span class="ruby-value">:margin</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">4</span>, <span class="ruby-value">:align</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'center'</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-dewikify">
+            
+              <b>dewikify</b>(str, intro = false)
+            
+            <a href="../../classes/Shoes/Manual.html#method-i-dewikify" name="method-i-dewikify" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-dewikify_source')" id="l_method-i-dewikify_source">show</a>
+                
+              </p>
+              <div id="method-i-dewikify_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/help.rb, line 103</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">dewikify</span>(<span class="ruby-identifier">str</span>, <span class="ruby-identifier">intro</span> = <span class="ruby-keyword">false</span>)
+  <span class="ruby-identifier">proc</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">wiki_tokens</span>(<span class="ruby-identifier">str</span>, <span class="ruby-identifier">intro</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">sym</span>, <span class="ruby-identifier">text</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">case</span> <span class="ruby-identifier">sym</span> <span class="ruby-keyword">when</span> <span class="ruby-value">:intro</span>
+        <span class="ruby-identifier">dewikify_p</span> <span class="ruby-value">:para</span>, <span class="ruby-identifier">text</span>, <span class="ruby-constant">INTRO_STYLE</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-value">:code</span>
+        <span class="ruby-identifier">dewikify_code</span>(<span class="ruby-identifier">text</span>)
+      <span class="ruby-keyword">when</span> <span class="ruby-value">:colors</span>
+        <span class="ruby-identifier">color_page</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-value">:index</span>
+        <span class="ruby-identifier">index_page</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-value">:samples</span>
+        <span class="ruby-identifier">sample_page</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-value">:list</span>
+        <span class="ruby-identifier">text</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span> <span class="ruby-identifier">stack</span>(<span class="ruby-value">:margin_left</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">30</span>) { 
+          <span class="ruby-identifier">fill</span> <span class="ruby-identifier">black</span>; <span class="ruby-identifier">oval</span> <span class="ruby-number">-10</span>, <span class="ruby-number">7</span>, <span class="ruby-number">6</span>; <span class="ruby-identifier">dewikify_p</span> <span class="ruby-value">:para</span>, <span class="ruby-identifier">t</span> } }
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">dewikify_p</span> <span class="ruby-identifier">sym</span>, <span class="ruby-identifier">text</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-dewikify_code">
+            
+              <b>dewikify_code</b>(str)
+            
+            <a href="../../classes/Shoes/Manual.html#method-i-dewikify_code" name="method-i-dewikify_code" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-dewikify_code_source')" id="l_method-i-dewikify_code_source">show</a>
+                
+              </p>
+              <div id="method-i-dewikify_code_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/help.rb, line 55</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">dewikify_code</span>(<span class="ruby-identifier">str</span>)
+  <span class="ruby-identifier">str</span> = <span class="ruby-identifier">str</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/\A\n+/</span>, <span class="ruby-string">''</span>).<span class="ruby-identifier">chomp</span>
+  <span class="ruby-identifier">stack</span> <span class="ruby-value">:margin_bottom</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">12</span> <span class="ruby-keyword">do</span> 
+    <span class="ruby-identifier">background</span> <span class="ruby-identifier">rgb</span>(<span class="ruby-number">210</span>, <span class="ruby-number">210</span>, <span class="ruby-number">210</span>), <span class="ruby-value">:curve</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">4</span>
+    <span class="ruby-identifier">para</span> <span class="ruby-identifier">code</span>(<span class="ruby-identifier">str</span>), <span class="ruby-constant">CODE_STYLE</span> 
+    <span class="ruby-identifier">stack</span> <span class="ruby-value">:top</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">0</span>, <span class="ruby-value">:right</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">2</span>, <span class="ruby-value">:width</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">70</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">stack</span> <span class="ruby-keyword">do</span>
+        <span class="ruby-identifier">background</span> <span class="ruby-node">&quot;#8A7&quot;</span>, <span class="ruby-value">:margin</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-number">0</span>, <span class="ruby-number">2</span>, <span class="ruby-number">0</span>, <span class="ruby-number">2</span>], <span class="ruby-value">:curve</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">4</span> 
+        <span class="ruby-identifier">para</span> <span class="ruby-identifier">link</span>(<span class="ruby-string">&quot;Run this&quot;</span>, <span class="ruby-value">:stroke</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#eee&quot;</span>, <span class="ruby-value">:underline</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;none&quot;</span>) { <span class="ruby-identifier">run_code</span>(<span class="ruby-identifier">str</span>) },
+          <span class="ruby-value">:margin</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">4</span>, <span class="ruby-value">:align</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'center'</span>, <span class="ruby-value">:weight</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'bold'</span>, <span class="ruby-value">:size</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">9</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-dewikify_hi">
+            
+              <b>dewikify_hi</b>(str, terms, intro = false)
+            
+            <a href="../../classes/Shoes/Manual.html#method-i-dewikify_hi" name="method-i-dewikify_hi" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-dewikify_hi_source')" id="l_method-i-dewikify_hi_source">show</a>
+                
+              </p>
+              <div id="method-i-dewikify_hi_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/help.rb, line 23</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">dewikify_hi</span>(<span class="ruby-identifier">str</span>, <span class="ruby-identifier">terms</span>, <span class="ruby-identifier">intro</span> = <span class="ruby-keyword">false</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">terms</span>
+    <span class="ruby-identifier">code</span> = []
+    <span class="ruby-identifier">str</span> = <span class="ruby-identifier">str</span>.
+      <span class="ruby-identifier">gsub</span>(<span class="ruby-constant">CODE_RE</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">code</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">x</span>; <span class="ruby-node">&quot;CODE#[#{code.length-1}]&quot;</span> }.
+      <span class="ruby-identifier">gsub</span>(<span class="ruby-node">/#{Regexp::quote(terms)}/</span>, <span class="ruby-string">'@\0@'</span>).
+      <span class="ruby-identifier">gsub</span>(<span class="ruby-node">/CODE#\[(\d+)\]/</span>) { <span class="ruby-identifier">code</span>[<span class="ruby-node">$1</span>.<span class="ruby-identifier">to_i</span>] }
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">dewikify</span>(<span class="ruby-identifier">str</span>, <span class="ruby-identifier">intro</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-dewikify_p">
+            
+              <b>dewikify_p</b>(ele, str, *args)
+            
+            <a href="../../classes/Shoes/Manual.html#method-i-dewikify_p" name="method-i-dewikify_p" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-dewikify_p_source')" id="l_method-i-dewikify_p_source">show</a>
+                
+              </p>
+              <div id="method-i-dewikify_p_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/help.rb, line 34</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">dewikify_p</span>(<span class="ruby-identifier">ele</span>, <span class="ruby-identifier">str</span>, *<span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">str</span> = <span class="ruby-identifier">str</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/\n+\s*/</span>, <span class="ruby-string">&quot; &quot;</span>).<span class="ruby-identifier">dump</span>.
+    <span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/`(.+?)`/</span>, <span class="ruby-string">'&quot;, code(&quot;\1&quot;), &quot;'</span>).<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/\[\[BR\]\]/</span>, <span class="ruby-string">&quot;\n&quot;</span>).
+    <span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/\^(.+?)\^/</span>, <span class="ruby-string">'\1'</span>).
+    <span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/@(.+?)@/</span>, <span class="ruby-string">'&quot;, strong(&quot;\1&quot;, :fill =&gt; yellow), &quot;'</span>).
+    <span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/'''(.+?)'''/</span>, <span class="ruby-string">'&quot;, strong(&quot;\1&quot;), &quot;'</span>).<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/''(.+?)''/</span>, <span class="ruby-string">'&quot;, em(&quot;\1&quot;), &quot;'</span>).
+    <span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/\[\[(\S+?)\]\]/</span>, <span class="ruby-string">'&quot;, link(&quot;\1&quot;.split(&quot;.&quot;, 2).last) { open_link(&quot;\1&quot;) }, &quot;'</span>).
+    <span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/\[\[(\S+?) (.+?)\]\]/</span>, <span class="ruby-string">'&quot;, link(&quot;\2&quot;) { open_link(&quot;\1&quot;) }, &quot;'</span>).
+    <span class="ruby-identifier">gsub</span>(<span class="ruby-constant">IMAGE_RE</span>, <span class="ruby-string">'&quot;, *args); stack(IMAGE_STYLE.merge({\2})) { image(&quot;#{DIR}/static/\3&quot;) }; #{ele}(&quot;'</span>)
+  <span class="ruby-comment">#debug str if str =~ /The list of special keys/</span>
+  <span class="ruby-identifier">a</span> = <span class="ruby-identifier">str</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">', &quot;, &quot;, '</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">a</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-number">1</span>
+    <span class="ruby-identifier">eval</span>(<span class="ruby-node">&quot;#{ele}(#{str}, *args)&quot;</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">flow</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">a</span>[<span class="ruby-number">0</span><span class="ruby-operator">...</span><span class="ruby-number">-1</span>].<span class="ruby-identifier">each</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">eval</span>(<span class="ruby-node">&quot;#{ele}(#{s}, ',', *args)&quot;</span>)}
+      <span class="ruby-identifier">eval</span>(<span class="ruby-node">&quot;#{ele}(#{a[-1]}, *args)&quot;</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-index_page">
+            
+              <b>index_page</b>()
+            
+            <a href="../../classes/Shoes/Manual.html#method-i-index_page" name="method-i-index_page" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-index_page_source')" id="l_method-i-index_page_source">show</a>
+                
+              </p>
+              <div id="method-i-index_page_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/help.rb, line 184</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">index_page</span>
+  <span class="ruby-identifier">tree</span> = <span class="ruby-identifier">class_tree</span>
+  <span class="ruby-identifier">shown</span> = []
+  <span class="ruby-identifier">index_p</span> = <span class="ruby-identifier">proc</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">subs</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">shown</span>.<span class="ruby-identifier">include?</span> <span class="ruby-identifier">k</span>
+      <span class="ruby-identifier">stack</span> <span class="ruby-value">:margin_left</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">20</span> <span class="ruby-keyword">do</span>
+        <span class="ruby-identifier">flow</span> <span class="ruby-keyword">do</span> 
+          <span class="ruby-identifier">para</span> <span class="ruby-string">&quot;▸ &quot;</span>, <span class="ruby-value">:font</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">case</span> <span class="ruby-constant">RUBY_PLATFORM</span>
+            <span class="ruby-keyword">when</span> <span class="ruby-regexp">/mingw/</span>; <span class="ruby-string">&quot;MS UI Gothic&quot;</span>
+            <span class="ruby-keyword">when</span> <span class="ruby-regexp">/darwin/</span>; <span class="ruby-string">&quot;AppleGothic, Arial&quot;</span>
+            <span class="ruby-keyword">else</span> <span class="ruby-string">&quot;Arial&quot;</span>
+            <span class="ruby-keyword">end</span>
+          <span class="ruby-identifier">para</span> <span class="ruby-identifier">k</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">subs</span>.<span class="ruby-identifier">uniq</span>.<span class="ruby-identifier">sort</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span>
+          <span class="ruby-identifier">index_p</span>[<span class="ruby-identifier">s</span>, <span class="ruby-identifier">tree</span>[<span class="ruby-identifier">s</span>]]
+        <span class="ruby-keyword">end</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">subs</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">shown</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">k</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">tree</span>.<span class="ruby-identifier">sort</span>.<span class="ruby-identifier">each</span> &amp;<span class="ruby-identifier">index_p</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-load_docs">
+            
+              <b>load_docs</b>(path)
+            
+            <a href="../../classes/Shoes/Manual.html#method-i-load_docs" name="method-i-load_docs" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-load_docs_source')" id="l_method-i-load_docs_source">show</a>
+                
+              </p>
+              <div id="method-i-load_docs_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/help.rb, line 212</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">load_docs</span> <span class="ruby-identifier">path</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-ivar">@docs</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@docs</span>
+  <span class="ruby-identifier">str</span> = <span class="ruby-constant">Shoes</span>.<span class="ruby-identifier">read_file</span>(<span class="ruby-identifier">path</span>)
+  <span class="ruby-ivar">@search</span> = <span class="ruby-constant">Shoes</span><span class="ruby-operator">::</span><span class="ruby-constant">Search</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@sections</span>, <span class="ruby-ivar">@methods</span>, <span class="ruby-ivar">@mindex</span> = {}, {}, {}
+  <span class="ruby-ivar">@docs</span> =
+    (<span class="ruby-identifier">str</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">/^= (.+?) =/</span>)[<span class="ruby-number">1</span><span class="ruby-operator">..</span><span class="ruby-number">-1</span>]<span class="ruby-operator">/</span><span class="ruby-number">2</span>).<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">sparts</span> = <span class="ruby-identifier">v</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">/^== (.+?) ==/</span>)
+
+      <span class="ruby-identifier">sections</span> = (<span class="ruby-identifier">sparts</span>[<span class="ruby-number">1</span><span class="ruby-operator">..</span><span class="ruby-number">-1</span>]<span class="ruby-operator">/</span><span class="ruby-number">2</span>).<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k2</span>,<span class="ruby-identifier">v2</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">meth</span> = <span class="ruby-identifier">v2</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">/^=== (.+?) ===/</span>)
+        <span class="ruby-identifier">k2t</span> = <span class="ruby-identifier">k2</span>[<span class="ruby-regexp">/^(?:The )?([\-\w]+)/</span>, <span class="ruby-number">1</span>]
+        <span class="ruby-identifier">meth_plain</span> = <span class="ruby-identifier">meth</span>[<span class="ruby-number">0</span>].<span class="ruby-identifier">gsub</span>(<span class="ruby-constant">IMAGE_RE</span>, <span class="ruby-string">''</span>)
+        <span class="ruby-ivar">@search</span>.<span class="ruby-identifier">add_document</span> <span class="ruby-value">:uri</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;T #{k2t}&quot;</span>, <span class="ruby-value">:body</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{k2}\n#{meth_plain}&quot;</span>.<span class="ruby-identifier">downcase</span>
+
+        <span class="ruby-identifier">hsh</span> = {<span class="ruby-string">'title'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">k2</span>, <span class="ruby-string">'section'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">k</span>,
+          <span class="ruby-string">'description'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">meth</span>[<span class="ruby-number">0</span>],
+          <span class="ruby-string">'methods'</span> =<span class="ruby-operator">&gt;</span> (<span class="ruby-identifier">meth</span>[<span class="ruby-number">1</span><span class="ruby-operator">..</span><span class="ruby-number">-1</span>]<span class="ruby-operator">/</span><span class="ruby-number">2</span>).<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">_k</span>,<span class="ruby-identifier">_v</span><span class="ruby-operator">|</span>
+            <span class="ruby-ivar">@search</span>.<span class="ruby-identifier">add_document</span> <span class="ruby-value">:uri</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;M #{k}#{COLON}#{k2t}#{COLON}#{_k}&quot;</span>, <span class="ruby-value">:body</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{_k}\n#{_v}&quot;</span>.<span class="ruby-identifier">downcase</span>
+            <span class="ruby-ivar">@mindex</span>[<span class="ruby-node">&quot;#{k2t}.#{_k[/[\w\.]+/]}&quot;</span>] = [<span class="ruby-identifier">k2t</span>, <span class="ruby-identifier">_k</span>]
+            [<span class="ruby-identifier">_k</span>, <span class="ruby-identifier">_v</span>]
+        }}
+        <span class="ruby-ivar">@methods</span>[<span class="ruby-identifier">k2t</span>] = <span class="ruby-identifier">hsh</span>
+        [<span class="ruby-identifier">k2t</span>, <span class="ruby-identifier">hsh</span>]
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-ivar">@search</span>.<span class="ruby-identifier">add_document</span> <span class="ruby-value">:uri</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;S #{k}&quot;</span>, <span class="ruby-value">:body</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{k}\n#{sparts[0]}&quot;</span>.<span class="ruby-identifier">downcase</span>
+      <span class="ruby-identifier">hsh</span> = {<span class="ruby-string">'description'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">sparts</span>[<span class="ruby-number">0</span>], <span class="ruby-string">'sections'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">sections</span>, 
+         <span class="ruby-string">'class'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;toc&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">k</span>.<span class="ruby-identifier">downcase</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/\W+/</span>, <span class="ruby-string">''</span>)}
+      <span class="ruby-ivar">@sections</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-identifier">hsh</span>
+      [<span class="ruby-identifier">k</span>, <span class="ruby-identifier">hsh</span>]
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@search</span>.<span class="ruby-identifier">finish!</span>
+  <span class="ruby-ivar">@docs</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-make_html">
+            
+              <b>make_html</b>(path, title, menu, &amp;blk)
+            
+            <a href="../../classes/Shoes/Manual.html#method-i-make_html" name="method-i-make_html" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-make_html_source')" id="l_method-i-make_html_source">show</a>
+                
+              </p>
+              <div id="method-i-make_html_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/help.rb, line 356</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">make_html</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">title</span>, <span class="ruby-identifier">menu</span>, &amp;<span class="ruby-identifier">blk</span>)
+  <span class="ruby-identifier">require</span> <span class="ruby-string">'hpricot'</span>
+  <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">path</span>, <span class="ruby-string">'w'</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">f</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Hpricot</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">xhtml_transitional</span> <span class="ruby-keyword">do</span>
+        <span class="ruby-identifier">head</span> <span class="ruby-keyword">do</span>
+          <span class="ruby-identifier">meta</span> <span class="ruby-value">:&quot;http-equiv&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Content-Type&quot;</span>, <span class="ruby-string">&quot;content&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;text/html; charset=utf-8&quot;</span>
+          <span class="ruby-identifier">title</span> <span class="ruby-node">&quot;The Shoes Manual // #{title}&quot;</span>
+          <span class="ruby-identifier">script</span> <span class="ruby-value">:type</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;text/javascript&quot;</span>, <span class="ruby-value">:src</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;static/code_highlighter.js&quot;</span>
+          <span class="ruby-identifier">script</span> <span class="ruby-value">:type</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;text/javascript&quot;</span>, <span class="ruby-value">:src</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;static/code_highlighter_ruby.js&quot;</span>
+          <span class="ruby-identifier">style</span> <span class="ruby-value">:type</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;text/css&quot;</span> <span class="ruby-keyword">do</span>
+            <span class="ruby-identifier">text</span> <span class="ruby-string">&quot;@import 'static/manual.css';&quot;</span>
+          <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">body</span> <span class="ruby-keyword">do</span>
+          <span class="ruby-identifier">div</span>.<span class="ruby-identifier">main!</span> <span class="ruby-keyword">do</span>
+            <span class="ruby-identifier">div</span>.<span class="ruby-identifier">manual!</span> &amp;<span class="ruby-identifier">blk</span>
+            <span class="ruby-identifier">div</span>.<span class="ruby-identifier">sidebar</span> <span class="ruby-keyword">do</span>
+              <span class="ruby-identifier">img</span> <span class="ruby-value">:src</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;static/shoes-icon.png&quot;</span>
+              <span class="ruby-identifier">ul</span> <span class="ruby-keyword">do</span>
+                <span class="ruby-identifier">li</span> { <span class="ruby-identifier">a</span>.<span class="ruby-identifier">prime</span> <span class="ruby-string">&quot;HELP&quot;</span>, <span class="ruby-value">:href</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;./&quot;</span> }
+                <span class="ruby-identifier">menu</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">m</span>, <span class="ruby-identifier">sm</span><span class="ruby-operator">|</span>
+                  <span class="ruby-identifier">li</span> <span class="ruby-keyword">do</span>
+                    <span class="ruby-identifier">a</span> <span class="ruby-identifier">m</span>, <span class="ruby-value">:href</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{m[/^\w+/]}.html&quot;</span>
+                    <span class="ruby-keyword">if</span> <span class="ruby-identifier">sm</span>
+                      <span class="ruby-identifier">ul</span>.<span class="ruby-identifier">sub</span> <span class="ruby-keyword">do</span>
+                        <span class="ruby-identifier">sm</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">smm</span><span class="ruby-operator">|</span> <span class="ruby-identifier">li</span> { <span class="ruby-identifier">a</span> <span class="ruby-identifier">smm</span>, <span class="ruby-value">:href</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{smm}.html&quot;</span> } }
+                      <span class="ruby-keyword">end</span>
+                    <span class="ruby-keyword">end</span>
+                  <span class="ruby-keyword">end</span>
+                <span class="ruby-keyword">end</span>
+
+              <span class="ruby-keyword">end</span>
+            <span class="ruby-keyword">end</span>
+          <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>.<span class="ruby-identifier">to_html</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-manual_search">
+            
+              <b>manual_search</b>(terms)
+            
+            <a href="../../classes/Shoes/Manual.html#method-i-manual_search" name="method-i-manual_search" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-manual_search_source')" id="l_method-i-manual_search_source">show</a>
+                
+              </p>
+              <div id="method-i-manual_search_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/help.rb, line 349</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">manual_search</span>(<span class="ruby-identifier">terms</span>)
+  <span class="ruby-identifier">terms</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&quot; &quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">terms</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-number">1</span>
+  <span class="ruby-ivar">@search</span>.<span class="ruby-identifier">find_all</span>(<span class="ruby-identifier">terms</span>).<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">title</span>, <span class="ruby-identifier">count</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">title</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot; &quot;</span>, <span class="ruby-number">2</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-open_link">
+            
+              <b>open_link</b>(head)
+            
+            <a href="../../classes/Shoes/Manual.html#method-i-open_link" name="method-i-open_link" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-open_link_source')" id="l_method-i-open_link_source">show</a>
+                
+              </p>
+              <div id="method-i-open_link_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/help.rb, line 287</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">open_link</span>(<span class="ruby-identifier">head</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">head</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;Search&quot;</span>
+    <span class="ruby-identifier">show_search</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-ivar">@sections</span>.<span class="ruby-identifier">has_key?</span> <span class="ruby-identifier">head</span>
+    <span class="ruby-identifier">open_section</span>(<span class="ruby-identifier">head</span>)
+  <span class="ruby-keyword">elsif</span> <span class="ruby-ivar">@methods</span>.<span class="ruby-identifier">has_key?</span> <span class="ruby-identifier">head</span>
+    <span class="ruby-identifier">open_methods</span>(<span class="ruby-identifier">head</span>)
+  <span class="ruby-keyword">elsif</span> <span class="ruby-ivar">@mindex</span>.<span class="ruby-identifier">has_key?</span> <span class="ruby-identifier">head</span>
+    <span class="ruby-identifier">head</span>, <span class="ruby-identifier">sub</span> = <span class="ruby-ivar">@mindex</span>[<span class="ruby-identifier">head</span>]
+    <span class="ruby-identifier">open_methods</span>(<span class="ruby-identifier">head</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">sub</span>)
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">head</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/^http:\/\//</span>
+    <span class="ruby-identifier">debug</span> <span class="ruby-identifier">head</span>
+    <span class="ruby-identifier">visit</span> <span class="ruby-identifier">head</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-open_methods">
+            
+              <b>open_methods</b>(meth_s, terms = nil, meth_a = nil)
+            
+            <a href="../../classes/Shoes/Manual.html#method-i-open_methods" name="method-i-open_methods" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-open_methods_source')" id="l_method-i-open_methods_source">show</a>
+                
+              </p>
+              <div id="method-i-open_methods_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/help.rb, line 326</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">open_methods</span>(<span class="ruby-identifier">meth_s</span>, <span class="ruby-identifier">terms</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">meth_a</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">meth_h</span> = <span class="ruby-ivar">@methods</span>[<span class="ruby-identifier">meth_s</span>]
+  <span class="ruby-ivar">@title</span>.<span class="ruby-identifier">replace</span> <span class="ruby-identifier">meth_h</span>[<span class="ruby-string">'title'</span>]
+  <span class="ruby-ivar">@doc</span>.<span class="ruby-identifier">clear</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">meth_a</span>
+      <span class="ruby-identifier">instance_eval</span> &amp;<span class="ruby-identifier">dewikify_hi</span>(<span class="ruby-identifier">meth_h</span>[<span class="ruby-string">'description'</span>], <span class="ruby-identifier">terms</span>, <span class="ruby-keyword">true</span>)
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">meth_h</span>[<span class="ruby-string">'methods'</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">mname</span>, <span class="ruby-identifier">expl</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">meth_a</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">meth_a</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">mname</span>
+        <span class="ruby-identifier">sig</span>, <span class="ruby-identifier">val</span> = <span class="ruby-identifier">mname</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;»&quot;</span>, <span class="ruby-number">2</span>)
+        <span class="ruby-identifier">stack</span>(<span class="ruby-value">:margin_top</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">8</span>, <span class="ruby-value">:margin_bottom</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">8</span>) { 
+          <span class="ruby-identifier">background</span> <span class="ruby-node">&quot;#333&quot;</span><span class="ruby-operator">..</span><span class="ruby-node">&quot;#666&quot;</span>, <span class="ruby-value">:curve</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">3</span>, <span class="ruby-value">:angle</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">90</span>
+          <span class="ruby-identifier">tagline</span> <span class="ruby-identifier">sig</span>, (<span class="ruby-identifier">span</span>(<span class="ruby-string">&quot;»&quot;</span>, <span class="ruby-identifier">val</span>, <span class="ruby-value">:stroke</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#BBB&quot;</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">val</span>), <span class="ruby-value">:margin</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">4</span> }
+        <span class="ruby-identifier">instance_eval</span> &amp;<span class="ruby-identifier">dewikify_hi</span>(<span class="ruby-identifier">expl</span>, <span class="ruby-identifier">terms</span>)
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">optn</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">docn</span> = <span class="ruby-ivar">@docs</span>.<span class="ruby-identifier">index</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">_</span>,<span class="ruby-identifier">h</span><span class="ruby-operator">|</span> <span class="ruby-identifier">optn</span> = <span class="ruby-identifier">h</span>[<span class="ruby-string">'sections'</span>].<span class="ruby-identifier">index</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span>,<span class="ruby-operator">|</span> <span class="ruby-identifier">x</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">meth_s</span> } } <span class="ruby-keyword">rescue</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">add_next_link</span>(<span class="ruby-identifier">docn</span>, <span class="ruby-identifier">optn</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">docn</span>
+  <span class="ruby-identifier">app</span>.<span class="ruby-identifier">slot</span>.<span class="ruby-identifier">scroll_top</span> = <span class="ruby-number">0</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-open_section">
+            
+              <b>open_section</b>(sect_s, terms = nil)
+            
+            <a href="../../classes/Shoes/Manual.html#method-i-open_section" name="method-i-open_section" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-open_section_source')" id="l_method-i-open_section_source">show</a>
+                
+              </p>
+              <div id="method-i-open_section_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/help.rb, line 316</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">open_section</span>(<span class="ruby-identifier">sect_s</span>, <span class="ruby-identifier">terms</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">sect_h</span> = <span class="ruby-ivar">@sections</span>[<span class="ruby-identifier">sect_s</span>]
+  <span class="ruby-identifier">sect_cls</span> = <span class="ruby-identifier">sect_h</span>[<span class="ruby-string">'class'</span>]
+  <span class="ruby-ivar">@toc</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">k</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">sect_cls</span> <span class="ruby-operator">?</span> <span class="ruby-value">:show</span> <span class="ruby-operator">:</span> <span class="ruby-value">:hide</span>) }
+  <span class="ruby-ivar">@title</span>.<span class="ruby-identifier">replace</span> <span class="ruby-identifier">sect_s</span>
+  <span class="ruby-ivar">@doc</span>.<span class="ruby-identifier">clear</span>(&amp;<span class="ruby-identifier">dewikify_hi</span>(<span class="ruby-identifier">sect_h</span>[<span class="ruby-string">'description'</span>], <span class="ruby-identifier">terms</span>, <span class="ruby-keyword">true</span>)) 
+  <span class="ruby-identifier">add_next_link</span>(<span class="ruby-ivar">@docs</span>.<span class="ruby-identifier">index</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span>,<span class="ruby-operator">|</span> <span class="ruby-identifier">x</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">sect_s</span> }, <span class="ruby-number">-1</span>) <span class="ruby-keyword">rescue</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">app</span>.<span class="ruby-identifier">slot</span>.<span class="ruby-identifier">scroll_top</span> = <span class="ruby-number">0</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-run_code">
+            
+              <b>run_code</b>(str)
+            
+            <a href="../../classes/Shoes/Manual.html#method-i-run_code" name="method-i-run_code" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-run_code_source')" id="l_method-i-run_code_source">show</a>
+                
+              </p>
+              <div id="method-i-run_code_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/help.rb, line 208</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">run_code</span> <span class="ruby-identifier">str</span>
+  <span class="ruby-identifier">eval</span>(<span class="ruby-identifier">str</span>, <span class="ruby-constant">TOPLEVEL_BINDING</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-sample_page">
+            
+              <b>sample_page</b>()
+            
+            <a href="../../classes/Shoes/Manual.html#method-i-sample_page" name="method-i-sample_page" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-sample_page_source')" id="l_method-i-sample_page_source">show</a>
+                
+              </p>
+              <div id="method-i-sample_page_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/help.rb, line 126</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">sample_page</span>
+  <span class="ruby-identifier">folder</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span> <span class="ruby-constant">DIR</span>, <span class="ruby-string">'samples'</span>
+  <span class="ruby-identifier">h</span> = {}
+  <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">glob</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span> <span class="ruby-identifier">folder</span>, <span class="ruby-string">'*'</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">extname</span>(<span class="ruby-identifier">file</span>) <span class="ruby-operator">==</span> <span class="ruby-string">'.rb'</span>
+      <span class="ruby-identifier">key</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">file</span>).<span class="ruby-identifier">split</span>(<span class="ruby-string">'-'</span>)[<span class="ruby-number">0</span>]
+      <span class="ruby-identifier">h</span>[<span class="ruby-identifier">key</span>] <span class="ruby-operator">?</span> <span class="ruby-identifier">h</span>[<span class="ruby-identifier">key</span>].<span class="ruby-identifier">push</span>(<span class="ruby-identifier">file</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">h</span>[<span class="ruby-identifier">key</span>] = [<span class="ruby-identifier">file</span>]
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">stack</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">h</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">subtitle</span> <span class="ruby-identifier">k</span>
+      <span class="ruby-identifier">flow</span> <span class="ruby-keyword">do</span>
+        <span class="ruby-identifier">v</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span>
+          <span class="ruby-identifier">para</span> <span class="ruby-identifier">link</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">file</span>).<span class="ruby-identifier">split</span>(<span class="ruby-string">'-'</span>)[<span class="ruby-number">1</span><span class="ruby-operator">..</span><span class="ruby-number">-1</span>].<span class="ruby-identifier">join</span>(<span class="ruby-string">'-'</span>)[<span class="ruby-number">0</span><span class="ruby-operator">..</span><span class="ruby-number">-4</span>]){
+            <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">folder</span>){<span class="ruby-identifier">eval</span> <span class="ruby-constant">IO</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">file</span>).<span class="ruby-identifier">force_encoding</span>(<span class="ruby-string">&quot;UTF-8&quot;</span>), <span class="ruby-constant">TOPLEVEL_BINDING</span>}
+          }
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-show_search">
+            
+              <b>show_search</b>()
+            
+            <a href="../../classes/Shoes/Manual.html#method-i-show_search" name="method-i-show_search" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-show_search_source')" id="l_method-i-show_search_source">show</a>
+                
+              </p>
+              <div id="method-i-show_search_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/help.rb, line 248</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">show_search</span>
+  <span class="ruby-ivar">@toc</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">hide</span> }
+  <span class="ruby-ivar">@title</span>.<span class="ruby-identifier">replace</span> <span class="ruby-string">&quot;Search&quot;</span>
+  <span class="ruby-ivar">@doc</span>.<span class="ruby-identifier">clear</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">dewikify_p</span> <span class="ruby-value">:para</span>, <span class="ruby-string">&quot;Try method names (like `button` or `arrow`) or topics (like `slots`)&quot;</span>, <span class="ruby-value">:align</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'center'</span>
+    <span class="ruby-identifier">flow</span> <span class="ruby-value">:margin_left</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">60</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">edit_line</span> <span class="ruby-value">:width</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">-60</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">terms</span><span class="ruby-operator">|</span>
+        <span class="ruby-ivar">@results</span>.<span class="ruby-identifier">clear</span> <span class="ruby-keyword">do</span>
+          <span class="ruby-identifier">termd</span> = <span class="ruby-identifier">terms</span>.<span class="ruby-identifier">text</span>.<span class="ruby-identifier">downcase</span>
+          <span class="ruby-comment">#found = termd.empty? ? [] : manual_search(termd)</span>
+          <span class="ruby-identifier">found</span> = (<span class="ruby-identifier">termd</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">termd</span>[<span class="ruby-number">0</span>] <span class="ruby-operator">==</span> <span class="ruby-string">'z'</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">termd</span>[<span class="ruby-number">0</span>] <span class="ruby-operator">==</span> <span class="ruby-string">'y'</span>) <span class="ruby-operator">?</span> [] <span class="ruby-operator">:</span> <span class="ruby-identifier">manual_search</span>(<span class="ruby-identifier">termd</span>)
+          <span class="ruby-identifier">para</span> <span class="ruby-node">&quot;#{found.length} matches&quot;</span>, <span class="ruby-value">:align</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;center&quot;</span>, <span class="ruby-value">:margin_bottom</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">0</span>
+          <span class="ruby-identifier">found</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">typ</span>, <span class="ruby-identifier">head</span><span class="ruby-operator">|</span>
+            <span class="ruby-identifier">flow</span> <span class="ruby-value">:margin</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">4</span> <span class="ruby-keyword">do</span>
+              <span class="ruby-keyword">case</span> <span class="ruby-identifier">typ</span>
+              <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;S&quot;</span>
+                <span class="ruby-identifier">background</span> <span class="ruby-node">&quot;#333&quot;</span>, <span class="ruby-value">:curve</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">4</span>
+                <span class="ruby-identifier">caption</span> <span class="ruby-identifier">strong</span>(<span class="ruby-identifier">link</span>(<span class="ruby-identifier">head</span>, <span class="ruby-value">:stroke</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">white</span>) { <span class="ruby-identifier">open_section</span>(<span class="ruby-identifier">head</span>, <span class="ruby-identifier">terms</span>.<span class="ruby-identifier">text</span>) })
+                <span class="ruby-identifier">para</span> <span class="ruby-string">&quot;Section header&quot;</span>, <span class="ruby-constant">Shoes</span><span class="ruby-operator">::</span><span class="ruby-constant">Manual</span><span class="ruby-operator">::</span><span class="ruby-constant">SUB_STYLE</span>
+              <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;T&quot;</span>
+                <span class="ruby-identifier">background</span> <span class="ruby-node">&quot;#777&quot;</span>, <span class="ruby-value">:curve</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">4</span>
+                <span class="ruby-identifier">caption</span> <span class="ruby-identifier">strong</span>(<span class="ruby-identifier">link</span>(<span class="ruby-identifier">head</span>, <span class="ruby-value">:stroke</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#EEE&quot;</span>) { <span class="ruby-identifier">open_methods</span>(<span class="ruby-identifier">head</span>, <span class="ruby-identifier">terms</span>.<span class="ruby-identifier">text</span>) })
+                <span class="ruby-identifier">hsh</span> = <span class="ruby-ivar">@methods</span>[<span class="ruby-identifier">head</span>]
+                <span class="ruby-identifier">para</span> <span class="ruby-node">&quot;Sub-section under #{hsh['section']} (#{hsh['methods'].length} methods)&quot;</span>, <span class="ruby-constant">Shoes</span><span class="ruby-operator">::</span><span class="ruby-constant">Manual</span><span class="ruby-operator">::</span><span class="ruby-constant">SUB_STYLE</span>
+              <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;M&quot;</span>
+                <span class="ruby-identifier">background</span> <span class="ruby-node">&quot;#CCC&quot;</span>, <span class="ruby-value">:curve</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">4</span>
+                <span class="ruby-identifier">sect</span>, <span class="ruby-identifier">subhead</span>, <span class="ruby-identifier">head</span> = <span class="ruby-identifier">head</span>.<span class="ruby-identifier">split</span>(<span class="ruby-constant">Shoes</span><span class="ruby-operator">::</span><span class="ruby-constant">Manual</span><span class="ruby-operator">::</span><span class="ruby-constant">COLON</span>, <span class="ruby-number">3</span>)
+                <span class="ruby-identifier">para</span> <span class="ruby-identifier">strong</span>(<span class="ruby-identifier">sect</span>, <span class="ruby-constant">Shoes</span><span class="ruby-operator">::</span><span class="ruby-constant">Manual</span><span class="ruby-operator">::</span><span class="ruby-constant">COLON</span>, <span class="ruby-identifier">subhead</span>, <span class="ruby-constant">Shoes</span><span class="ruby-operator">::</span><span class="ruby-constant">Manual</span><span class="ruby-operator">::</span><span class="ruby-constant">COLON</span>, <span class="ruby-identifier">link</span>(<span class="ruby-identifier">head</span>) { <span class="ruby-identifier">open_methods</span>(<span class="ruby-identifier">subhead</span>, <span class="ruby-identifier">terms</span>.<span class="ruby-identifier">text</span>, <span class="ruby-identifier">head</span>) })
+              <span class="ruby-keyword">end</span>
+            <span class="ruby-keyword">end</span>
+          <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-ivar">@results</span> = <span class="ruby-identifier">stack</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">app</span>.<span class="ruby-identifier">slot</span>.<span class="ruby-identifier">scroll_top</span> = <span class="ruby-number">0</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-wiki_tokens">
+            
+              <b>wiki_tokens</b>(str, intro = false)
+            
+            <a href="../../classes/Shoes/Manual.html#method-i-wiki_tokens" name="method-i-wiki_tokens" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-wiki_tokens_source')" id="l_method-i-wiki_tokens_source">show</a>
+                
+              </p>
+              <div id="method-i-wiki_tokens_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/help.rb, line 70</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">wiki_tokens</span>(<span class="ruby-identifier">str</span>, <span class="ruby-identifier">intro</span> = <span class="ruby-keyword">false</span>)
+  <span class="ruby-identifier">paras</span> = <span class="ruby-identifier">str</span>.<span class="ruby-identifier">split</span>(<span class="ruby-constant">PARA_RE</span>).<span class="ruby-identifier">reject</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">empty?</span> }
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">intro</span>
+    <span class="ruby-keyword">yield</span> <span class="ruby-operator">:</span><span class="ruby-identifier">intro</span>, <span class="ruby-identifier">paras</span>.<span class="ruby-identifier">shift</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">paras</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">ps</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">ps</span> <span class="ruby-operator">=~</span> <span class="ruby-constant">CODE_RE</span>
+      <span class="ruby-keyword">yield</span> <span class="ruby-operator">:</span><span class="ruby-identifier">code</span>, <span class="ruby-node">$1</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-keyword">case</span> <span class="ruby-identifier">ps</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-regexp">/\A\{COLORS\}/</span>
+        <span class="ruby-keyword">yield</span> <span class="ruby-operator">:</span><span class="ruby-identifier">colors</span>, <span class="ruby-keyword">nil</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-regexp">/\A\{INDEX\}/</span>
+        <span class="ruby-keyword">yield</span> <span class="ruby-operator">:</span><span class="ruby-identifier">index</span>, <span class="ruby-keyword">nil</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-regexp">/\A\{SAMPLES\}/</span>
+        <span class="ruby-keyword">yield</span> <span class="ruby-operator">:</span><span class="ruby-identifier">samples</span>, <span class="ruby-keyword">nil</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-regexp">/\A \* (.+)/</span>
+        <span class="ruby-keyword">yield</span> <span class="ruby-operator">:</span><span class="ruby-identifier">list</span>, <span class="ruby-node">$1</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">/^ \* /</span>)
+      <span class="ruby-keyword">when</span> <span class="ruby-regexp">/\A==== (.+) ====/</span>
+        <span class="ruby-keyword">yield</span> <span class="ruby-operator">:</span><span class="ruby-identifier">caption</span>, <span class="ruby-node">$1</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-regexp">/\A=== (.+) ===/</span>
+        <span class="ruby-keyword">yield</span> <span class="ruby-operator">:</span><span class="ruby-identifier">tagline</span>, <span class="ruby-node">$1</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-regexp">/\A== (.+) ==/</span>
+        <span class="ruby-keyword">yield</span> <span class="ruby-operator">:</span><span class="ruby-identifier">subtitle</span>, <span class="ruby-node">$1</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-regexp">/\A= (.+) =/</span>
+        <span class="ruby-keyword">yield</span> <span class="ruby-operator">:</span><span class="ruby-identifier">title</span>, <span class="ruby-node">$1</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-keyword">yield</span> <span class="ruby-operator">:</span><span class="ruby-identifier">para</span>, <span class="ruby-identifier">ps</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

@@ -1,0 +1,186 @@
+@import 'compass';
+
+body {
+  overflow: hidden;
+  background: transparent;
+}
+
+body:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+body.lesson-set {
+  background: transparent;
+  font-family: 'Helvetica Neue', Helvetica, sans-serif; 
+  margin: 0px 10px 0px 0px;
+  overflow: auto;
+  &.intro {
+    background: url("background.png") no-repeat top center;
+    margin-top: 215px;
+
+    li {
+      list-style-image: url("listicon.png");
+      margin-bottom: 20px;
+      margin-left: 50px;
+      
+      a {
+        color: #fff;
+        font-size: 20px;
+        font-weight: bold;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+body.lesson-set > h1 {
+  border-bottom: 1px solid #dfdfdf;
+}
+
+body.lesson-set article > h1 {
+  border-bottom: 1px dotted #dfdfdf;
+  border-left: 4px solid #ff0000;
+  font-size: 18px;
+  padding-left: 5px;
+}
+
+body.lesson-set nav {
+  background-color: #e8e8e8;
+  border: 1px dotted #ccc;
+  margin-bottom: 30px;
+  padding: 3px 5px;
+  width: 245px;
+}
+
+body.lesson-set nav a {
+  margin-right: 7px;
+}
+
+body.lesson-set nav a:last-child {
+  margin-right: 0px;
+}
+
+body.lesson-set nav a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+
+body.lesson-set section code {
+  background-color: #000;
+  color: #fff;
+  font-family: consolas, monospace;
+  padding: 0px 5px;
+}
+
+body.lesson-set section h1 {
+  color: #555;
+  font-size: 13px;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+
+#buttons {
+  position: absolute;
+  float: right;
+  bottom: 2px;
+  width: 49%;
+}
+#buttons button {
+  background-color: red;
+  @include border-radius(4px);
+  @include background(linear-gradient(lighten(red, 10), lighten(red, 00)));
+
+  border: white;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  font-size: 30px;
+  float: right;
+  margin-right: 5px;
+}
+
+#input {
+  float: left;
+  position: relative;
+  width: 50%;
+}
+
+iframe {
+  border: none;
+  height: 100%;
+  width: 100%;
+}
+
+iframe h1 {
+  font-size: 14px;
+}
+
+#output {
+  overflow-y: scroll;
+  font-family: monospace;
+  font-size: 18px;
+}
+
+#stdout {
+  white-space: pre-wrap;
+}
+
+#stdin {
+  padding: 0;
+  margin: 0;
+  white-space: normal;
+}
+#stderr {
+  white-space: pre-wrap;
+  color: #990000;
+}
+.cursor {
+  display:inline-block;
+}
+
+
+#help {
+}
+
+#tabs {
+  position: absolute;
+  height: 92%;
+  right: 0px;
+  width: 50%;
+}
+.ui-tabs-panel {
+  height: 85%;
+  position: relative;
+}
+
+#turtle {
+  height: 90%;
+  width: 90%;
+}
+
+#turtle-canvas {
+}
+
+#container {
+  width: 49%;
+  float: left;
+}
+
+#rubycode {
+  width: 49%;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  bottom: 48px;
+  left: 0;
+  right: 0;
+  clear: both;
+  float: left;
+	font-family: monospace;
+	font-size: 18px;
+}

@@ -1,0 +1,1552 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>pkg-dmg</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            pkg-dmg
+        </h1>
+        <ul class="files">
+            <li>platform/mac/pkg-dmg</li>
+            <li>Last modified: 2013-04-23 09:29:51 -0500</li>
+        </ul>
+    </div>
+
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>#!/usr/bin/perl # ***** BEGIN <a
+href="../../req/binject/ext/binject_c/LICENSE.html">LICENSE</a> BLOCK *****
+# Version: MPL 1.1/GPL 2.0/LGPL 2.1 # # The contents of this file are
+subject to the Mozilla Public License Version # 1.1 (the “License”); you
+may not use this file except in compliance with # the License. You may
+obtain a copy of the License at # <a
+href="http://www.mozilla.org/MPL/">www.mozilla.org/MPL/</a> # # Software
+distributed under the License is distributed on an “AS IS” basis, # WITHOUT
+WARRANTY OF ANY KIND, either express or implied. See the License # for the
+specific language governing rights and limitations under the # License. # #
+The Original Code is pkg-dmg, a Mac OS X disk image (.dmg) packager # # The
+Initial Developer of the Original Code is # Mark Mentovai
+&lt;mark@moxienet.com&gt;. # Portions created by the Initial Developer are
+Copyright (C) 2005 # the Initial Developer. All Rights Reserved. # #
+Contributor(s): # # Alternatively, the contents of this file may be used
+under the terms of # either the GNU General Public License Version 2 or
+later (the “GPL”), or # the GNU Lesser General Public License Version 2.1
+or later (the “LGPL”), # in which case the provisions of the <a
+href="../../req/json/GPL.html">GPL</a> or the LGPL are applicable instead #
+of those above. If you wish to allow use of your version of this file only
+# under the terms of either the <a href="../../req/json/GPL.html">GPL</a>
+or the LGPL, and not to allow others to # use your version of this file
+under the terms of the MPL, indicate your # decision by deleting the
+provisions above and replace them with the notice # and other provisions
+required by the <a href="../../req/json/GPL.html">GPL</a> or the LGPL. If
+you do not delete # the provisions above, a recipient may use your version
+of this file under # the terms of any one of the MPL, the <a
+href="../../req/json/GPL.html">GPL</a> or the LGPL. # # ***** END <a
+href="../../req/binject/ext/binject_c/LICENSE.html">LICENSE</a> BLOCK *****</p>
+
+<p>use strict; use warnings;</p>
+
+<h1 id="label-pod">pod</h1>
+
+<h1 id="label-head1+NAME">head1 NAME</h1>
+
+<p>B&lt;pkg-dmg&gt; - Mac OS X disk image (.dmg) packager</p>
+
+<h1 id="label-head1+SYNOPSIS">head1 SYNOPSIS</h1>
+
+<p>B&lt;pkg-dmg&gt; B&lt;–source&gt; I&lt;source-folder&gt; B&lt;–target&gt;
+I&lt;target-image&gt;</p>
+<dl class="rdoc-list label-list"><dt>B&lt;–format&gt; I&lt;format&gt;
+<dd></dd><dt>B&lt;–volname&gt; I&lt;volume-name&gt;
+<dd></dd><dt>B&lt;–tempdir&gt; I&lt;temp-dir&gt;
+<dd></dd><dt>B&lt;–mkdir&gt; I&lt;directory&gt;
+<dd></dd><dt>B&lt;–copy&gt; <a href="http://:I<dest>“>I<source></a>
+<dd></dd><dt>B&lt;–license&gt; I&lt;file&gt;
+<dd></dd><dt>B&lt;–resource&gt; I&lt;file&gt;
+<dd></dd><dt>B&lt;–icon&gt; I&lt;icns-file&gt;
+<dd></dd><dt>B&lt;–attribute&gt; I&lt;a&gt;:I&lt;file&gt;[:I&lt;file&gt;…
+<dd></dd><dt>B&lt;–idme&gt;
+<dd></dd><dt>B&lt;–sourcefile&gt;
+<dd></dd><dt>B&lt;–verbosity&gt; I&lt;level&gt;
+<dd></dd><dt>B&lt;–dry-run&gt;
+<dd>
+<h1 id="label-head1+DESCRIPTION">head1 DESCRIPTION</h1>
+
+<p>I&lt;pkg-dmg&gt; takes a directory identified by I&lt;source-folder&gt; and
+transforms it into a disk image stored as I&lt;target-image&gt;.  The disk
+image will occupy the least space possible for its format, or the least
+space that the authors have been able to figure out how to achieve.</p>
+
+<h1 id="label-head1+OPTIONS">head1 OPTIONS</h1>
+
+<h1 id="label-over+5">over 5</h1>
+
+<h2 id="label-item+B%3C--source%3E+I%3Csource-folder%3E">item B&lt;–source&gt; I&lt;source-folder&gt;</h2>
+
+<p>Identifies the directory that will be packaged up.  This directory is not
+touched, a copy will be made in a temporary directory for staging purposes.
+See B&lt;–tempdir&gt;.</p>
+
+<h2 id="label-item+B%3C--target%3E+I%3Ctarget-image%3E">item B&lt;–target&gt; I&lt;target-image&gt;</h2>
+
+<p>The disk image to create.  If it exists and is not in use, it will be
+overwritten.  If I&lt;target-image&gt; already contains a suitable
+extension, it will be used unmodified.  If no extension is present, or the
+extension is incorrect for the selected format, the proper extension will
+be added. See B&lt;–format&gt;.</p>
+
+<h2 id="label-item+B%3C--format%3E+I%3Cformat%3E">item B&lt;–format&gt; I&lt;format&gt;</h2>
+
+<p>The format to create the disk image in.  Valid values for I&lt;format&gt;
+are:</p>
+
+<pre>- UDZO - zlib-compressed, read-only; extension I&lt;.dmg&gt;
+- UDRW - read-write; extension I&lt;.dmg&gt;
+- UDSP - read-write, sparse; extension I&lt;.sparseimage&gt;</pre>
+
+<p>UDZO is the default format.</p>
+
+<p>See L&lt;hdiutil(1)&gt; for a description of these formats.</p>
+
+<h1 id="label-item+B%3C--volname%3E+I%3Cvolume-name%3E">item B&lt;–volname&gt; I&lt;volume-name&gt;</h1>
+
+<p>The name of the volume in the disk image.  If not specified,
+I&lt;volume-name&gt; defaults to the name of the source directory from
+B&lt;–source&gt;.</p>
+
+<h1 id="label-item+B%3C--tempdir%3E+I%3Ctemp-dir%3E">item B&lt;–tempdir&gt; I&lt;temp-dir&gt;</h1>
+
+<p>A temporary directory to stage intermediate files in.  I&lt;temp-dir&gt;
+must have enough space available to accommodate twice the size of the files
+being packaged.  If not specified, defaults to the same directory that the
+I&lt;target-image&gt; is to be placed in.  B&lt;pkg-dmg&gt; will remove any
+temporary files it places in I&lt;temp-dir&gt;.</p>
+
+<h1 id="label-item+B%3C--mkdir%3E+I%3Cdirectory%3E">item B&lt;–mkdir&gt; I&lt;directory&gt;</h1>
+
+<p>Specifies a directory that should be created in the disk image.
+I&lt;directory&gt; and any ancestor directories will be created.  This is
+useful in conjunction with B&lt;–copy&gt;, when copying files to
+directories that may not exist in I&lt;source-folder&gt;.  B&lt;–mkdir&gt;
+may appear multiple times.</p>
+
+<h1 id="label-item+B%3C--copy%3E+I%3Csource%3E">item B&lt;–copy&gt; <a href="http://:I<dest>“>I<source></a></h1>
+
+<p>Additional files to copy into the disk image.  If I&lt;dest&gt; is
+specified, I&lt;source&gt; is copied to the location I&lt;dest&gt;
+identifies, otherwise, I&lt;source&gt; is copied to the root of the new
+volume.  B&lt;–copy&gt; provides a way to package up a
+I&lt;source-folder&gt; by adding files to it without modifying the original
+I&lt;source-folder&gt;.  B&lt;–copy&gt; may appear multiple times.</p>
+
+<p>This option is useful for adding .DS_Store files and window backgrounds to
+disk images.</p>
+
+<h1 id="label-item+B%3C--license%3E+I%3Cfile%3E">item B&lt;–license&gt; I&lt;file&gt;</h1>
+
+<p>A plain text file containing a license agreement to be displayed before the
+disk image is mounted.  English is the only supported language.  To include
+license agreements in other languages, in multiple languages, or to use
+formatted text, prepare a resource and use L&lt;–resource&gt;.</p>
+
+<h1 id="label-item+B%3C--resource%3E+I%3Cfile%3E">item B&lt;–resource&gt; I&lt;file&gt;</h1>
+
+<p>A resource file to merge into I&lt;target-image&gt;.  If I&lt;format&gt; is
+UDZO, the disk image will be flattened to a single-fork file that contains
+the resource but may be freely transferred without any special encodings.
+I&lt;file&gt; must be in a format suitable for L&lt;Rez(1)&gt;.  See
+L&lt;Rez(1)&gt; for a description of the format, and L&lt;hdiutil(1)&gt;
+for a discussion on flattened disk images.  B&lt;–resource&gt; may appear
+multiple times.</p>
+
+<p>This option is useful for adding license agreements and other messages to
+disk images.</p>
+
+<h1 id="label-item+B%3C--icon%3E+I%3Cicns-file%3E">item B&lt;–icon&gt; I&lt;icns-file&gt;</h1>
+
+<p>Specifies an I&lt;icns&gt; file that will be used as the icon for the root
+of the volume.  This file will be copied to the new volume and the custom
+icon attribute will be set on the root folder.</p>
+
+<h1 id="label-item+B%3C--attribute%3E+I%3Ca%3E%3AI%3Cfile%3E">item B&lt;–attribute&gt; <a href="http://:I<file>…“>I<a>:I<file></a></h1>
+
+<p>Sets the attributes of I&lt;file&gt; to the attribute list in I&lt;a&gt;. 
+See L&lt;SetFile(1)&gt;</p>
+
+<h1 id="label-item+B%3C--idme%3E">item B&lt;–idme&gt;</h1>
+
+<p>Enable IDME to make the disk image “Internet-enabled.”  The first time the
+image is mounted, if IDME processing is enabled on the system, the contents
+of the image will be copied out of the image and the image will be placed
+in the trash with IDME disabled.</p>
+
+<h1 id="label-item+B%3C--sourcefile%3E">item B&lt;–sourcefile&gt;</h1>
+
+<p>If this option is present, I&lt;source-folder&gt; is treated as a file, and
+is placed as a file within the volume’s root folder.  Without this option,
+I&lt;source-folder&gt; is treated as the volume root itself.</p>
+
+<h1 id="label-item+B%3C--verbosity%3E+I%3Clevel%3E">item B&lt;–verbosity&gt; I&lt;level&gt;</h1>
+
+<p>Adjusts the level of loudness of B&lt;pkg-dmg&gt;.  The possible values for
+I&lt;level&gt; are:</p>
+
+<pre>0 - Only error messages are displayed.
+1 - Print error messages and command invocations.
+2 - Print everything, including command output.</pre>
+
+<p>The default I&lt;level&gt; is 2.</p>
+
+<h1 id="label-item+B%3C--dry-run%3E">item B&lt;–dry-run&gt;</h1>
+
+<p>When specified, the commands that would be executed are printed, without
+actually executing them.  When commands depend on the output of previous
+commands, dummy values are displayed.</p>
+
+<h1 id="label-back">back</h1>
+
+<h1 id="label-head1+NON-OPTIONS">head1 NON-OPTIONS</h1>
+
+<h1 id="label-over+5">over 5</h1>
+
+<h1 id="label-item">item</h1>
+
+<p>Resource forks aren’t copied.</p>
+
+<h1 id="label-item">item</h1>
+
+<p>The root folder of the created volume is designated as the folder to open
+when the volume is mounted.  See L&lt;bless(8)&gt;.</p>
+
+<h1 id="label-item">item</h1>
+
+<p>All files in the volume are set to be world-readable, only writable by the
+owner, and world-executable when appropriate.  All other permissions bits
+are cleared.</p>
+
+<h1 id="label-item">item</h1>
+
+<p>When possible, disk images are created without any partition tables.  This
+is what L&lt;hdiutil(1)&gt; refers to as I&lt;-layout NONE&gt;, and saves a
+handful of kilobytes.  The alternative, I&lt;SPUD&gt;, contains a partition
+table that is not terribly handy on disk images that are not intended to
+represent any physical disk.</p>
+
+<h1 id="label-item">item</h1>
+
+<p>Read-write images are created with journaling off.  Any read-write image
+created by this tool is expected to be transient, and the goal of this tool
+is to create images which consume a minimum of space.</p>
+
+<h1 id="label-back">back</h1>
+
+<h1 id="label-head1+EXAMPLE">head1 EXAMPLE</h1>
+
+<p>pkg-dmg –source /Applications/DeerPark.app –target ~/DeerPark.dmg</p>
+
+<pre>--sourcefile --volname DeerPark --icon ~/DeerPark.icns
+--mkdir /.background
+--copy DeerParkBackground.png:/.background/background.png
+--copy DeerParkDSStore:/.DS_Store</pre>
+
+<h1 id="label-head1+REQUIREMENTS">head1 REQUIREMENTS</h1>
+
+<p>I&lt;pkg-dmg&gt; has been tested with Mac OS X releases 10.2 (“Jaguar”)
+through 10.4 (“Tiger”).  Certain adjustments to behavior are made depending
+on the host system’s release.  Mac OS X 10.3 (“Panther”) or later are
+recommended.</p>
+
+<h1 id="label-head1+LICENSE">head1 <a href="../../req/binject/ext/binject_c/LICENSE.html">LICENSE</a></h1>
+
+<p>MPL 1.1/GPL 2.0/LGPL 2.1.  Your choice.</p>
+
+<h1 id="label-head1+AUTHOR">head1 AUTHOR</h1>
+
+<p>Mark Mentovai</p>
+
+<h1 id="label-head1+SEE+ALSO">head1 SEE ALSO</h1>
+
+<p>L&lt;bless(8)&gt;, L&lt;diskutil(8)&gt;, L&lt;hdid(8)&gt;,
+L&lt;hdiutil(1)&gt;, L&lt;Rez(1)&gt;, L&lt;rsync(1)&gt;,
+L&lt;SetFile(1)&gt;</p>
+
+<h1 id="label-cut">cut</h1>
+
+<p>use Fcntl; use POSIX; use Getopt::Long;</p>
+
+<p>sub argumentEscape(@); sub cleanupDie($); sub command(@); sub
+commandInternal($@); sub commandInternalVerbosity($$@); sub
+commandOutput(@); sub commandOutputVerbosity($@); sub commandVerbosity($@);
+sub diskImageMaker($$$$$$$$); sub giveExtension($$); sub
+hdidMountImage($@); sub licenseMaker($$); sub pathSplit($); sub
+setAttributes($@); sub trapSignal($); sub usage();</p>
+
+<p># Variables used as globals my(@gCleanup, %gConfig, $gDarwinMajor,
+$gDryRun, $gVerbosity);</p>
+
+<p># Use the commands by name if they’re expected to be in the user’s # $PATH
+(/bin:/sbin:/usr/bin:/usr/sbin).  Otherwise, go by absolute # path.  These
+may be overridden with –config. %gConfig = (‘cmd_bless’          =&gt;
+‘bless’,</p>
+
+<pre class="ruby"><span class="ruby-string">'cmd_chmod'</span>          =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'chmod'</span>,
+<span class="ruby-string">'cmd_diskutil'</span>       =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'diskutil'</span>,
+<span class="ruby-string">'cmd_du'</span>             =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'du'</span>,
+<span class="ruby-string">'cmd_hdid'</span>           =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'hdid'</span>,
+<span class="ruby-string">'cmd_hdiutil'</span>        =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'hdiutil'</span>,
+<span class="ruby-string">'cmd_mkdir'</span>          =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'mkdir'</span>,
+<span class="ruby-string">'cmd_mktemp'</span>         =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'mktemp'</span>,
+<span class="ruby-string">'cmd_Rez'</span>            =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'/Developer/Tools/Rez'</span>,
+<span class="ruby-string">'cmd_rm'</span>             =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'rm'</span>,
+<span class="ruby-string">'cmd_rsync'</span>          =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'rsync'</span>,
+<span class="ruby-string">'cmd_SetFile'</span>        =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'/Developer/Tools/SetFile'</span>,
+
+<span class="ruby-comment"># create_directly indicates whether hdiutil create supports</span>
+<span class="ruby-comment"># -srcfolder and -srcdevice.  It does on &gt;= 10.3 (Panther).</span>
+<span class="ruby-comment"># This is fixed up for earlier systems below.  If false,</span>
+<span class="ruby-comment"># hdiutil create is used to create empty disk images that</span>
+<span class="ruby-comment"># are manually filled.</span>
+<span class="ruby-string">'create_directly'</span>    =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>,
+
+<span class="ruby-comment"># If hdiutil attach -mountpoint exists, use it to avoid</span>
+<span class="ruby-comment"># mounting disk images in the default /Volumes.  This reduces</span>
+<span class="ruby-comment"># the likelihood that someone will notice a mounted image and</span>
+<span class="ruby-comment"># interfere with it.  Only available on &gt;= 10.3 (Panther),</span>
+<span class="ruby-comment"># fixed up for earlier systems below.</span>
+<span class="ruby-comment">#</span>
+<span class="ruby-comment"># This is presently turned off for all systems, because there</span>
+<span class="ruby-comment"># is an infrequent synchronization problem during ejection.</span>
+<span class="ruby-comment"># diskutil eject might return before the image is actually</span>
+<span class="ruby-comment"># unmounted.  If pkg-dmg then attempts to clean up its</span>
+<span class="ruby-comment"># temporary directory, it could remove items from a read-write</span>
+<span class="ruby-comment"># disk image or attempt to remove items from a read-only disk</span>
+<span class="ruby-comment"># image (or a read-only item from a read-write image) and fail,</span>
+<span class="ruby-comment"># causing pkg-dmg to abort.  This problem is experienced</span>
+<span class="ruby-comment"># under Tiger, which appears to eject asynchronously where</span>
+<span class="ruby-comment"># previous systems treated it as a synchronous operation.</span>
+<span class="ruby-comment"># Using hdiutil attach -mountpoint didn't always keep images</span>
+<span class="ruby-comment"># from showing up on the desktop anyway.</span>
+<span class="ruby-string">'hdiutil_mountpoint'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>,
+
+<span class="ruby-comment"># hdiutil makehybrid results in optimized disk images that</span>
+<span class="ruby-comment"># consume less space and mount more quickly.  Use it when</span>
+<span class="ruby-comment"># it's available, but that's only on &gt;= 10.3 (Panther).</span>
+<span class="ruby-comment"># If false, hdiutil create is used instead.  Fixed up for</span>
+<span class="ruby-comment"># earlier systems below.</span>
+<span class="ruby-string">'makehybrid'</span>         =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>,
+
+<span class="ruby-comment"># hdiutil create doesn't allow specifying a folder to open</span>
+<span class="ruby-comment"># at volume mount time, so those images are mounted and</span>
+<span class="ruby-comment"># their root folders made holy with bless -openfolder.  But</span>
+<span class="ruby-comment"># only on &gt;= 10.3 (Panther).  Earlier systems are out of luck.</span>
+<span class="ruby-comment"># Even on Panther, bless refuses to run unless root.</span>
+<span class="ruby-comment"># Fixed up below.</span>
+<span class="ruby-string">'openfolder_bless'</span>   =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>,
+
+<span class="ruby-comment"># It's possible to save a few more kilobytes by including the</span>
+<span class="ruby-comment"># partition only without any partition table in the image.</span>
+<span class="ruby-comment"># This is a good idea on any system, so turn this option off.</span>
+<span class="ruby-comment">#</span>
+<span class="ruby-comment"># Except it's buggy.  &quot;-layout NONE&quot; seems to be creating</span>
+<span class="ruby-comment"># disk images with more data than just the partition table</span>
+<span class="ruby-comment"># stripped out.  You might wind up losing the end of the</span>
+<span class="ruby-comment"># filesystem - the last file (or several) might be incomplete.</span>
+<span class="ruby-string">'partition_table'</span>    =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>,
+
+<span class="ruby-comment"># To create a partition table-less image from something</span>
+<span class="ruby-comment"># created by makehybrid, the hybrid image needs to be</span>
+<span class="ruby-comment"># mounted and a new image made from the device associated</span>
+<span class="ruby-comment"># with the relevant partition.  This requires &gt;= 10.4</span>
+<span class="ruby-comment"># (Tiger), presumably because earlier systems have</span>
+<span class="ruby-comment"># problems creating images from devices themselves attached</span>
+<span class="ruby-comment"># to images.  If this is false, makehybrid images will</span>
+<span class="ruby-comment"># have partition tables, regardless of the partition_table</span>
+<span class="ruby-comment"># setting.  Fixed up for earlier systems below.</span>
+<span class="ruby-string">'recursive_access'</span>   =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>);
+</pre>
+
+<p># –verbosity $gVerbosity = 2;</p>
+
+<p># –dry-run $gDryRun = 0;</p>
+
+<p># %gConfig fix-ups based on features and bugs present in certain releases.
+my($ignore, $uname_r, $uname_s); ($uname_s, $ignore, $uname_r, $ignore,
+$ignore) = POSIX::uname(); if($uname_s eq ‘Darwin’) {</p>
+
+<pre>($gDarwinMajor, $ignore) = split(/\./, $uname_r, 2);
+
+# $major is the Darwin major release, which for our purposes, is 4 higher
+# than the interesting digit in a Mac OS X release.
+if($gDarwinMajor &lt;= 6) {
+  # &lt;= 10.2 (Jaguar)
+  # hdiutil create does not support -srcfolder or -srcdevice
+  $gConfig{'create_directly'} = 0;
+  # hdiutil attach does not support -mountpoint
+  $gConfig{'hdiutil_mountpoint'} = 0;
+  # hdiutil mkhybrid does not exist
+  $gConfig{'makehybrid'} = 0;
+}
+if($gDarwinMajor &lt;= 7) {
+  # &lt;= 10.3 (Panther)
+  # Can't mount a disk image and then make a disk image from the device
+  $gConfig{'recursive_access'} = 0;
+  # bless does not support -openfolder on 10.2 (Jaguar) and must run
+  # as root under 10.3 (Panther)
+  $gConfig{'openfolder_bless'} = 0;
+}</pre>
+
+<p>} else {</p>
+
+<pre># If it's not Mac OS X, just assume all of those good features are
+# available.  They're not, but things will fail long before they
+# have a chance to make a difference.
+#
+# Now, if someone wanted to document some of these private formats...
+print STDERR ($0.&quot;: warning, not running on Mac OS X, &quot;.
+ &quot;this could be interesting.\n&quot;);</pre>
+
+<p>}</p>
+
+<p># Non-global variables used in Getopt my(@attributes, @copyFiles, $icon<a
+href="../../../classes/File.html">File</a>, $idme, $license<a
+href="../../../classes/File.html">File</a>, @makeDirs,</p>
+
+<pre>$outputFormat, @resourceFiles, $sourceFile, $sourceFolder, $targetImage,
+$tempDir, $volumeName);</pre>
+
+<p># –format $outputFormat = ‘UDZO’;</p>
+
+<p># –idme $idme = 0;</p>
+
+<p># –sourcefile $source<a href="../../../classes/File.html">File</a> = 0;</p>
+
+<p># Leaving this might screw up the Apple tools. delete $ENV{‘NEXT_ROOT’};</p>
+
+<p># This script can get pretty messy, so trap a few signals. $SIG{‘INT’} =
+&trapSignal; $SIG{‘HUP’} = &trapSignal; $SIG{‘TERM’} = &trapSignal;</p>
+
+<p>Getopt::Long::Configure(‘pass_through’); GetOptions(‘source=s’    =&gt;
+$sourceFolder,</p>
+
+<pre class="ruby"><span class="ruby-string">'target=s'</span>    =<span class="ruby-operator">&gt;</span> \<span class="ruby-identifier">$targetImage</span>,
+<span class="ruby-string">'volname=s'</span>   =<span class="ruby-operator">&gt;</span> \<span class="ruby-identifier">$volumeName</span>,
+<span class="ruby-string">'format=s'</span>    =<span class="ruby-operator">&gt;</span> \<span class="ruby-identifier">$outputFormat</span>,
+<span class="ruby-string">'tempdir=s'</span>   =<span class="ruby-operator">&gt;</span> \<span class="ruby-identifier">$tempDir</span>,
+<span class="ruby-string">'mkdir=s'</span>     =<span class="ruby-operator">&gt;</span> \<span class="ruby-ivar">@makeDirs</span>,
+<span class="ruby-string">'copy=s'</span>      =<span class="ruby-operator">&gt;</span> \<span class="ruby-ivar">@copyFiles</span>,
+<span class="ruby-string">'license=s'</span>   =<span class="ruby-operator">&gt;</span> \<span class="ruby-identifier">$licenseFile</span>,
+<span class="ruby-string">'resource=s'</span>  =<span class="ruby-operator">&gt;</span> \<span class="ruby-ivar">@resourceFiles</span>,
+<span class="ruby-string">'icon=s'</span>      =<span class="ruby-operator">&gt;</span> \<span class="ruby-identifier">$iconFile</span>,
+<span class="ruby-string">'attribute=s'</span> =<span class="ruby-operator">&gt;</span> \<span class="ruby-ivar">@attributes</span>,
+<span class="ruby-string">'idme'</span>        =<span class="ruby-operator">&gt;</span> \<span class="ruby-identifier">$idme</span>,
+<span class="ruby-string">'sourcefile'</span>  =<span class="ruby-operator">&gt;</span> \<span class="ruby-identifier">$sourceFile</span>,
+<span class="ruby-string">'verbosity=i'</span> =<span class="ruby-operator">&gt;</span> \<span class="ruby-identifier">$gVerbosity</span>,
+<span class="ruby-string">'dry-run'</span>     =<span class="ruby-operator">&gt;</span> \<span class="ruby-identifier">$gDryRun</span>,
+<span class="ruby-string">'config=s'</span>    =<span class="ruby-operator">&gt;</span> \<span class="ruby-operator">%</span><span class="ruby-constant">Config</span>); <span class="ruby-comment"># &quot;hidden&quot; option not in usage()</span>
+</pre>
+
+<p>if(@ARGV) {</p>
+
+<pre># All arguments are parsed by Getopt
+usage();
+exit(1);</pre>
+
+<p>}</p>
+
+<p>if($gVerbosity&lt;0 || $gVerbosity&gt;2) {</p>
+
+<pre>usage();
+exit(1);</pre>
+
+<p>}</p>
+
+<p>if(!defined($sourceFolder) || $sourceFolder eq ” ||</p>
+
+<pre>!defined($targetImage) || $targetImage eq '') {
+ # --source and --target are required arguments
+ usage();
+ exit(1);</pre>
+
+<p>}</p>
+
+<p># <a href="../../../classes/Make.html">Make</a> sure $sourceFolder doesn’t
+contain trailing slashes.  It messes with # rsync.
+while(substr($sourceFolder, -1) eq ‘/’) {</p>
+
+<pre>chop($sourceFolder);</pre>
+
+<p>}</p>
+
+<p>if(!defined($volumeName)) {</p>
+
+<pre># Default volumeName is the name of the source directory.
+my(@components);
+@components = pathSplit($sourceFolder);
+$volumeName = pop(@components);</pre>
+
+<p>}</p>
+
+<p>my(@tempDirComponents, $targetImageFilename); @tempDirComponents =
+pathSplit($targetImage); $targetImageFilename = pop(@tempDirComponents);</p>
+
+<p>if(defined($tempDir)) {</p>
+
+<pre>@tempDirComponents = pathSplit($tempDir);</pre>
+
+<p>} else {</p>
+
+<pre># Default tempDir is the same directory as what is specified for
+# targetImage
+$tempDir = join('/', @tempDirComponents);</pre>
+
+<p>}</p>
+
+<p># Ensure that the path of the target image has a suitable extension.  If #
+it didn’t, hdiutil would add one, and we wouldn’t be able to find the #
+file. # # Note that $targetImageFilename is not being reset.  This is
+because it’s # used to build other names below, and we don’t need to be
+adding all sorts # of extra unnecessary extensions to the name.
+my($originalTargetImage, $requiredExtension); $originalTargetImage =
+$targetImage; if($outputFormat eq ‘UDSP’) {</p>
+
+<pre>$requiredExtension = '.sparseimage';</pre>
+
+<p>} else {</p>
+
+<pre>$requiredExtension = '.dmg';</pre>
+
+<p>} $targetImage = giveExtension($originalTargetImage, $requiredExtension);</p>
+
+<p>if($targetImage ne $originalTargetImage) {</p>
+
+<pre>print STDERR ($0.&quot;: warning: target image extension is being added\n&quot;);
+print STDERR ('  The new filename is '.
+ giveExtension($targetImageFilename,$requiredExtension).&quot;\n&quot;);</pre>
+
+<p>}</p>
+
+<p># <a href="../../../classes/Make.html">Make</a> a temporary directory in
+$tempDir for our own nefarious purposes. my(@output, $tempSubdir,
+$tempSubdirTemplate); $tempSubdirTemplate=join(‘/’, @tempDirComponents,</p>
+
+<pre>'pkg-dmg.'.$$.'.XXXXXXXX');</pre>
+
+<p>if(!(@output = commandOutput($gConfig{‘cmd_mktemp’}, ‘-d’,</p>
+
+<pre>$tempSubdirTemplate)) || $#output != 0) {
+ cleanupDie('mktemp failed');</pre>
+
+<p>}</p>
+
+<p>if($gDryRun) {</p>
+
+<pre>(@output)=($tempSubdirTemplate);</pre>
+
+<p>}</p>
+
+<p>($tempSubdir) = @output;</p>
+
+<p>push(@gCleanup,</p>
+
+<pre>sub {commandVerbosity(0, $gConfig{'cmd_rm'}, '-rf', $tempSubdir);});</pre>
+
+<p>my($tempMount, $tempRoot, @tempsToMake); $tempRoot = $tempSubdir.‘/stage’;
+$tempMount = $tempSubdir.‘/mount’; push(@tempsToMake, $tempRoot);
+if($gConfig{‘hdiutil_mountpoint’}) {</p>
+
+<pre>push(@tempsToMake, $tempMount);</pre>
+
+<p>}</p>
+
+<p>if(command($gConfig{‘cmd_mkdir’}, @tempsToMake) != 0) {</p>
+
+<pre>cleanupDie('mkdir tempRoot/tempMount failed');</pre>
+
+<p>}</p>
+
+<p># This cleanup object is not strictly necessary, because $tempRoot is
+inside # of $tempSubdir, but the rest of the script relies on this object
+being # on the cleanup stack and expects to remove it. push(@gCleanup,</p>
+
+<pre>sub {commandVerbosity(0, $gConfig{'cmd_rm'}, '-rf', $tempRoot);});</pre>
+
+<p># If $source<a href="../../../classes/File.html">File</a> is true, it means
+that $sourceFolder is to be treated as # a file and placed as a file within
+the volume root, as opposed to being # treated as the volume root itself. 
+rsync will do this by default, if no # trailing ‘/’ is present.  With a
+trailing ‘/’, $sourceFolder becomes # $tempRoot, instead of becoming an
+entry in $tempRoot. if(command($gConfig{‘cmd_rsync’}, ‘-a’,</p>
+
+<pre>$sourceFolder.($sourceFile?'':'/'),$tempRoot) != 0) {
+ cleanupDie('rsync failed');</pre>
+
+<p>}</p>
+
+<p>if(@makeDirs) {</p>
+
+<pre>my($makeDir, @tempDirsToMake);
+foreach $makeDir (@makeDirs) {
+  if($makeDir =~ /^\//) {
+    push(@tempDirsToMake, $tempRoot.$makeDir);
+  }
+  else {
+    push(@tempDirsToMake, $tempRoot.'/'.$makeDir);
+  }
+}
+if(command($gConfig{'cmd_mkdir'}, '-p', @tempDirsToMake) != 0) {
+  cleanupDie('mkdir failed');
+}</pre>
+
+<p>}</p>
+
+<p>my($copy<a href="../../../classes/File.html">File</a>); foreach $copy<a
+href="../../../classes/File.html">File</a> (@copyFiles) {</p>
+
+<pre>my($copySource, $copyDestination);
+($copySource, $copyDestination) = split(/:/, $copyFile);
+if(!defined($copyDestination)) {
+  $copyDestination = $tempRoot;
+}
+elsif($copyDestination =~ /^\//) {
+  $copyDestination = $tempRoot.$copyDestination;
+}
+else {
+  $copyDestination = $tempRoot.'/'.$copyDestination;
+}
+if(command($gConfig{'cmd_rsync'}, '-a',
+ $copySource, $copyDestination) != 0) {
+  cleanupDie('rsync failed for item copy');
+}</pre>
+
+<p>}</p>
+
+<p>if($gConfig{‘create_directly’}) {</p>
+
+<pre># If create_directly is false, the contents will be rsynced into a
+# disk image and they would lose their attributes.
+setAttributes($tempRoot, @attributes);</pre>
+
+<p>}</p>
+
+<p>if(defined($icon<a href="../../../classes/File.html">File</a>)) {</p>
+
+<pre>if(command($gConfig{'cmd_rsync'}, '-a', $iconFile,
+ $tempRoot.'/.VolumeIcon.icns') != 0) {
+  cleanupDie('rsync failed for volume icon');
+}
+
+# It's pointless to set the attributes of the root when diskutil create
+# -srcfolder is being used.  In that case, the attributes will be set
+# later, after the image is already created.
+if($outputFormat eq 'UDZO' &amp;&amp;
+ (command($gConfig{'cmd_SetFile'}, '-a', 'C', $tempRoot) != 0)) {
+  cleanupDie('SetFile failed');
+}</pre>
+
+<p>}</p>
+
+<p>if(command($gConfig{‘cmd_chmod’}, ‘-R’, ‘a+rX,a-st,u+w,go-w’,</p>
+
+<pre>$tempRoot) != 0) {
+ cleanupDie('chmod failed');</pre>
+
+<p>}</p>
+
+<p>my($unflattenable); if($outputFormat eq ‘UDZO’) {</p>
+
+<pre>$unflattenable = 1;</pre>
+
+<p>} else {</p>
+
+<pre>$unflattenable = 0;</pre>
+
+<p>}</p>
+
+<p>diskImageMaker($tempRoot, $targetImage, $outputFormat, $volumeName,</p>
+
+<pre>$tempSubdir, $tempMount, $targetImageFilename, defined($iconFile));</pre>
+
+<p>if(defined($license<a href="../../../classes/File.html">File</a>)
+&amp;&amp; $license<a href="../../../classes/File.html">File</a> ne ”) {</p>
+
+<pre>my($licenseResource);
+$licenseResource = $tempSubdir.'/license.r';
+if(!licenseMaker($licenseFile, $licenseResource)) {
+  cleanupDie('licenseMaker failed');
+}
+push(@resourceFiles, $licenseResource);
+# Don't add a cleanup object because licenseResource is in tempSubdir.</pre>
+
+<p>}</p>
+
+<p>if(@resourceFiles) {</p>
+
+<pre># Add resources, such as a license agreement.
+
+# Only unflatten read-only and compressed images.  It's not supported
+# on other image times.
+if($unflattenable &amp;&amp;
+ (command($gConfig{'cmd_hdiutil'}, 'unflatten', $targetImage)) != 0) {
+  cleanupDie('hdiutil unflatten failed');
+}
+# Don't push flatten onto the cleanup stack.  If we fail now, we'll be
+# removing $targetImage anyway.
+
+# Type definitions come from Carbon.r.
+if(command($gConfig{'cmd_Rez'}, 'Carbon.r', @resourceFiles, '-a', '-o',
+ $targetImage) != 0) {
+  cleanupDie('Rez failed');
+}
+
+# Flatten.  This merges the resource fork into the data fork, so no
+# special encoding is needed to transfer the file.
+if($unflattenable &amp;&amp;
+ (command($gConfig{'cmd_hdiutil'}, 'flatten', $targetImage)) != 0) {
+  cleanupDie('hdiutil flatten failed');
+}</pre>
+
+<p>}</p>
+
+<p># $tempSubdir is no longer needed.  It’s buried on the stack below the # rm
+of the fresh image file.  Splice in this fashion is equivalent to #
+pop-save, pop, push-save. splice(@gCleanup, -2, 1); # No need to remove
+licenseResource separately, it’s in tempSubdir.
+if(command($gConfig{‘cmd_rm’}, ‘-rf’, $tempSubdir) != 0) {</p>
+
+<pre>cleanupDie('rm -rf tempSubdir failed');</pre>
+
+<p>}</p>
+
+<p>if($idme) {</p>
+
+<pre>if(command($gConfig{'cmd_hdiutil'}, 'internet-enable', '-yes',
+ $targetImage) != 0) {
+  cleanupDie('hdiutil internet-enable failed');
+}</pre>
+
+<p>}</p>
+
+<p># Done.</p>
+
+<p>exit(0);</p>
+
+<p># argumentEscape(@arguments) # # Takes a list of @arguments and makes them
+shell-safe. sub argumentEscape(@) {</p>
+
+<pre>my(@arguments);
+@arguments = @_;
+my($argument, @argumentsOut);
+foreach $argument (@arguments) {
+  $argument =~ s%([^A-Za-z0-9_\-/.=+,])%\\$1%g;
+  push(@argumentsOut, $argument);
+}
+return @argumentsOut;</pre>
+
+<p>}</p>
+
+<p># cleanupDie($message) # # Displays $message as an error message, and then
+runs through the # @gCleanup stack, performing any cleanup operations
+needed before # exiting.  Does not return, exits with exit status 1. sub
+cleanupDie($) {</p>
+
+<pre>my($message);
+($message) = @_;
+print STDERR ($0.': '.$message.(@gCleanup?' (cleaning up)':'').&quot;\n&quot;);
+while(@gCleanup) {
+  my($subroutine);
+  $subroutine = pop(@gCleanup);
+  &amp;$subroutine;
+}
+exit(1);</pre>
+
+<p>}</p>
+
+<p># command(@arguments) # # Runs the specified command at the verbosity level
+defined by $gVerbosity. # Returns nonzero on failure, returning the exit
+status if appropriate. # Discards command output. sub command(@) {</p>
+
+<pre>my(@arguments);
+@arguments = @_;
+return commandVerbosity($gVerbosity,@arguments);</pre>
+
+<p>}</p>
+
+<p># commandInternal($command, @arguments) # # Removes the files specified by
+@arguments with a verbosity level specified # by $gVerbosity. sub
+commandInternal($@) {</p>
+
+<pre>my(@arguments, $command);
+($command, @arguments) = @_;
+return commandInternalVerbosity($gVerbosity, $command, @arguments);</pre>
+
+<p>}</p>
+
+<p># commandInternalVerbosity($verbosity, $command, @arguments) # # Run an
+internal command, printing a bogus command invocation message if #
+$verbosity is true. # # If $command is unlink: # Removes the files
+specified by @arguments.  Wraps unlink. # # If $command is mkdir: # Creates
+the directory specified by @arguments, with an optional mask # argument,
+wrapping mkdir. sub commandInternalVerbosity($$@) {</p>
+
+<pre>my(@arguments, $command, $verbosity);
+($verbosity, $command, @arguments) = @_;
+if($command eq 'unlink') {
+  if($verbosity || $gDryRun) {
+    print(join(' ', 'rm', '-f', argumentEscape(@arguments)).&quot;\n&quot;);
+  }
+  if($gDryRun) {
+    return $#arguments+1;
+  }
+  return unlink(@arguments);
+}</pre>
+
+<p>}</p>
+
+<p># commandOutput(@arguments) # # Runs the specified command at the verbosity
+level defined by $gVerbosity. # Output is returned in an array of lines. 
+undef is returned on failure. # The exit status is available in $?. sub
+commandOutput(@) {</p>
+
+<pre>my(@arguments);
+@arguments = @_;
+return commandOutputVerbosity($gVerbosity, @arguments);</pre>
+
+<p>}</p>
+
+<p># commandOutputVerbosity($verbosity, @arguments) # # Runs the specified
+command at the verbosity level defined by the # $verbosity argument. 
+Output is returned in an array of lines.  undef is # returned on failure. 
+The exit status is available in $?. # # If an error occurs in fork or exec,
+an error message is printed to # stderr and undef is returned. # # If
+$verbosity is 0, the command invocation is not printed, and its # stdout is
+not echoed back to stdout. # # If $verbosity is 1, the command invocation
+is printed. # # If $verbosity is 2, the command invocation is printed and
+the output # from stdout is echoed back to stdout. # # Regardless of
+$verbosity, stderr is left connected. sub commandOutputVerbosity($@) {</p>
+
+<pre>my(@arguments, $verbosity);
+($verbosity, @arguments) = @_;
+my($pid);
+if($verbosity || $gDryRun) {
+  print(join(' ', argumentEscape(@arguments)).&quot;\n&quot;);
+}
+if($gDryRun) {
+  return(1);
+}
+if (!defined($pid = open(*COMMAND, '-|'))) {
+  printf STDERR ($0.': fork: '.$!.&quot;\n&quot;);
+  return undef;
+}
+elsif ($pid) {
+  # parent
+  my(@lines);
+  while(!eof(*COMMAND)) {
+    my($line);
+    chop($line = &lt;COMMAND&gt;);
+    if($verbosity &gt; 1) {
+      print($line.&quot;\n&quot;);
+    }
+    push(@lines, $line);
+  }
+  close(*COMMAND);
+  if ($? == -1) {
+    printf STDERR ($0.': fork: '.$!.&quot;\n&quot;);
+    return undef;
+  }
+  elsif ($? &amp; 127) {
+    printf STDERR ($0.': exited on signal '.($? &amp; 127).
+     ($? &amp; 128 ? ', core dumped' : '').&quot;\n&quot;);
+    return undef;
+  }
+  return @lines;
+}
+else {
+  # child; this form of exec is immune to shell games
+  if(!exec {$arguments[0]} (@arguments)) {
+    printf STDERR ($0.': exec: '.$!.&quot;\n&quot;);
+    exit(-1);
+  }
+}</pre>
+
+<p>}</p>
+
+<p># commandVerbosity($verbosity, @arguments) # # Runs the specified command
+at the verbosity level defined by the # $verbosity argument.  Returns
+nonzero on failure, returning the exit # status if appropriate.  Discards
+command output. sub commandVerbosity($@) {</p>
+
+<pre>my(@arguments, $verbosity);
+($verbosity, @arguments) = @_;
+if(!defined(commandOutputVerbosity($verbosity, @arguments))) {
+  return -1;
+}
+return $?;</pre>
+
+<p>}</p>
+
+<p># diskImageMaker($source, $destination, $format, $name, $tempDir,
+$tempMount, #  $baseName, $setRootIcon) # # Creates a disk image in
+$destination of format $format corresponding to the # source directory
+$source.  $name is the volume name.  $tempDir is a good # place to write
+temporary files, which should be empty (aside from the other # things that
+this script might create there, like stage and mount). # $tempMount is a
+mount point for temporary disk images.  $baseName is the # name of the disk
+image, and is presently unused.  $setRootIcon is true if # a volume icon
+was added to the staged $source and indicates that the # custom volume icon
+bit on the volume root needs to be set. sub diskImageMaker($$$$$$$$) {</p>
+
+<pre>my($baseName, $destination, $format, $name, $setRootIcon, $source,
+ $tempDir, $tempMount);
+($source, $destination, $format, $name, $tempDir, $tempMount,
+ $baseName, $setRootIcon) = @_;
+if($format eq 'UDZO') {
+  my($uncompressedImage);
+
+  if($gConfig{'makehybrid'}) {
+    my($hybridImage);
+    $hybridImage = giveExtension($tempDir.'/hybrid', '.dmg');
+
+    if(command($gConfig{'cmd_hdiutil'}, 'makehybrid', '-hfs',
+     '-hfs-volume-name', $name, '-hfs-openfolder', $source, '-ov',
+     $source, '-o', $hybridImage) != 0) {
+      cleanupDie('hdiutil makehybrid failed');
+    }
+
+    $uncompressedImage = $hybridImage;
+
+    # $source is no longer needed and will be removed before anything
+    # else can fail.  splice in this form is the same as pop/push.
+    splice(@gCleanup, -1, 1,
+     sub {commandInternalVerbosity(0, 'unlink', $hybridImage);});
+
+    if(command($gConfig{'cmd_rm'}, '-rf', $source) != 0) {
+      cleanupDie('rm -rf failed');
+    }
+
+    if(!$gConfig{'partition_table'} &amp;&amp; $gConfig{'recursive_access'}) {
+      # Even if we do want to create disk images without partition tables,
+      # it's impossible unless recursive_access is set.
+      my($rootDevice, $partitionDevice, $partitionMountPoint);
+
+      if(!(($rootDevice, $partitionDevice, $partitionMountPoint) =
+       hdidMountImage($tempMount, '-readonly', $hybridImage))) {
+        cleanupDie('hdid mount failed');
+      }
+
+      push(@gCleanup, sub {commandVerbosity(0,
+       $gConfig{'cmd_diskutil'}, 'eject', $rootDevice);});
+
+      my($udrwImage);
+      $udrwImage = giveExtension($tempDir.'/udrw', '.dmg');
+
+      if(command($gConfig{'cmd_hdiutil'}, 'create', '-format', 'UDRW',
+       '-ov', '-srcdevice', $partitionDevice, $udrwImage) != 0) {
+        cleanupDie('hdiutil create failed');
+      }
+
+      $uncompressedImage = $udrwImage;
+
+      # Going to eject before anything else can fail.  Get the eject off
+      # the stack.
+      pop(@gCleanup);
+
+      # $hybridImage will be removed soon, but until then, it needs to
+      # stay on the cleanup stack.  It needs to wait until after
+      # ejection.  $udrwImage is staying around.  Make it appear as
+      # though it's been done before $hybridImage.
+      #
+      # splice in this form is the same as popping one element to
+      # @tempCleanup and pushing the subroutine.
+      my(@tempCleanup);
+      @tempCleanup = splice(@gCleanup, -1, 1,
+       sub {commandInternalVerbosity(0, 'unlink', $udrwImage);});
+      push(@gCleanup, @tempCleanup);
+
+      if(command($gConfig{'cmd_diskutil'}, 'eject', $rootDevice) != 0) {
+        cleanupDie('diskutil eject failed');
+      }
+
+      # Pop unlink of $uncompressedImage
+      pop(@gCleanup);
+
+      if(commandInternal('unlink', $hybridImage) != 1) {
+        cleanupDie('unlink hybridImage failed: '.$!);
+      }
+    }
+  }
+  else {
+    # makehybrid is not available, fall back to making a UDRW and
+    # converting to UDZO.  It ought to be possible to do a UDZO directly,
+    # but those come out far too large (journaling?) and need to be
+    # read-write to fix up the volume icon anyway.  Luckily, we can
+    # take advantage of a single call back into this function.
+    my($udrwImage);
+    $udrwImage = giveExtension($tempDir.'/udrw', '.dmg');
+
+    diskImageMaker($source, $udrwImage, 'UDRW', $name, $tempDir,
+     $tempMount, $baseName, $setRootIcon);
+
+    # The call back into diskImageMaker already removed $source.
+
+    $uncompressedImage = $udrwImage;
+  }
+
+  # The uncompressed disk image is now in its final form.  Compress it.
+  # Jaguar doesn't support hdiutil convert -ov, but it always allows
+  # overwriting.
+  if(command($gConfig{'cmd_hdiutil'}, 'convert', '-format', 'UDZO',
+   '-imagekey', 'zlib-level=9', 
+   (defined($gDarwinMajor) &amp;&amp; $gDarwinMajor &lt;= 6 ? () : ('-ov')),
+   $uncompressedImage, '-o', $destination) != 0) {
+    cleanupDie('hdiutil convert failed');
+  }
+
+  # $uncompressedImage is going to be unlinked before anything else can
+  # fail.  splice in this form is the same as pop/push.
+  splice(@gCleanup, -1, 1,
+   sub {commandInternalVerbosity(0, 'unlink', $destination);});
+
+  if(commandInternal('unlink', $uncompressedImage) != 1) {
+    cleanupDie('unlink uncompressedImage failed: '.$!);
+  }
+
+  # At this point, the only thing that the UDZO block has added to the
+  # cleanup stack is the removal of $destination.  $source has already
+  # been removed, and its cleanup entry has been removed as well.
+}
+elsif($format eq 'UDRW' || $format eq 'UDSP') {
+  my(@extraArguments);
+  if(!$gConfig{'partition_table'}) {
+    @extraArguments = ('-layout', 'NONE');
+  }
+
+  if($gConfig{'create_directly'}) {
+    # Use -fs HFS+ to suppress the journal.
+    if(command($gConfig{'cmd_hdiutil'}, 'create', '-format', $format,
+     @extraArguments, '-fs', 'HFS+', '-volname', $name,
+     '-ov', '-srcfolder', $source, $destination) != 0) {
+      cleanupDie('hdiutil create failed');
+    }
+
+    # $source is no longer needed and will be removed before anything
+    # else can fail.  splice in this form is the same as pop/push.
+    splice(@gCleanup, -1, 1,
+     sub {commandInternalVerbosity(0, 'unlink', $destination);});
+
+    if(command($gConfig{'cmd_rm'}, '-rf', $source) != 0) {
+      cleanupDie('rm -rf failed');
+    }
+  }
+  else {
+    # hdiutil create does not support -srcfolder or -srcdevice, it only
+    # knows how to create blank images.  Figure out how large an image
+    # is needed, create it, and fill it.  This is needed for Jaguar.
+
+    # Use native block size for hdiutil create -sectors.
+    delete $ENV{'BLOCKSIZE'};
+
+    my(@duOutput, $ignore, $sizeBlocks, $sizeOverhead, $sizeTotal, $type);
+    if(!(@output = commandOutput($gConfig{'cmd_du'}, '-s', $tempRoot)) ||
+     $? != 0) {
+      cleanupDie('du failed');
+    }
+    ($sizeBlocks, $ignore) = split(' ', $output[0], 2);
+
+    # The filesystem itself takes up 152 blocks of its own blocks for the
+    # filesystem up to 8192 blocks, plus 64 blocks for every additional
+    # 4096 blocks or portion thereof.
+    $sizeOverhead = 152 + 64 * POSIX::ceil(
+     (($sizeBlocks - 8192) &gt; 0) ? (($sizeBlocks - 8192) / (4096 - 64)) : 0);
+
+    # The number of blocks must be divisible by 8.
+    my($mod);
+    if($mod = ($sizeOverhead % 8)) {
+      $sizeOverhead += 8 - $mod;
+    }
+
+    # sectors is taken as the size of a disk, not a filesystem, so the
+    # partition table eats into it.
+    if($gConfig{'partition_table'}) {
+      $sizeOverhead += 80;
+    }
+
+    # That was hard.  Leave some breathing room anyway.  Use 1024 sectors
+    # (512kB).  These read-write images wouldn't be useful if they didn't
+    # have at least a little free space.
+    $sizeTotal = $sizeBlocks + $sizeOverhead + 1024;
+
+    # Minimum sizes - these numbers are larger on Jaguar than on later
+    # systems.  Just use the Jaguar numbers, since it's unlikely to wind
+    # up here on any other release.
+    if($gConfig{'partition_table'} &amp;&amp; $sizeTotal &lt; 8272) {
+      $sizeTotal = 8272;
+    }
+    if(!$gConfig{'partition_table'} &amp;&amp; $sizeTotal &lt; 8192) {
+      $sizeTotal = 8192;
+    }
+
+    # hdiutil create without -srcfolder or -srcdevice will not accept
+    # -format.  It uses -type.  Fortunately, the two supported formats
+    # here map directly to the only two supported types.
+    if ($format eq 'UDSP') {
+      $type = 'SPARSE';
+    }
+    else {
+      $type = 'UDIF';
+    }
+
+    if(command($gConfig{'cmd_hdiutil'}, 'create', '-type', $type,
+     @extraArguments, '-fs', 'HFS+', '-volname', $name,
+     '-ov', '-sectors', $sizeTotal, $destination) != 0) {
+      cleanupDie('hdiutil create failed');
+    }
+
+    push(@gCleanup,
+     sub {commandInternalVerbosity(0, 'unlink', $destination);});
+
+    # The rsync will occur shortly.
+  }
+
+  my($mounted, $rootDevice, $partitionDevice, $partitionMountPoint);
+
+  $mounted=0;
+  if(!$gConfig{'create_directly'} || $gConfig{'openfolder_bless'} ||
+   $setRootIcon) {
+    # The disk image only needs to be mounted if:
+    #  create_directly is false, because the content needs to be copied
+    #  openfolder_bless is true, because bless -openfolder needs to run
+    #  setRootIcon is true, because the root needs its attributes set.
+    if(!(($rootDevice, $partitionDevice, $partitionMountPoint) =
+     hdidMountImage($tempMount, $destination))) {
+      cleanupDie('hdid mount failed');
+    }
+
+    $mounted=1;
+
+    push(@gCleanup, sub {commandVerbosity(0,
+     $gConfig{'cmd_diskutil'}, 'eject', $rootDevice);});
+  }
+
+  if(!$gConfig{'create_directly'}) {
+    # Couldn't create and copy directly in one fell swoop.  Now that
+    # the volume is mounted, copy the files.  --copy-unsafe-links is
+    # unnecessary since it was used to copy everything to the staging
+    # area.  There can be no more unsafe links.
+    if(command($gConfig{'cmd_rsync'}, '-a',
+     $source.'/',$partitionMountPoint) != 0) {
+      cleanupDie('rsync to new volume failed');
+    }
+
+    # We need to get the rm -rf of $source off the stack, because it's
+    # being cleaned up here.  There are two items now on top of it:
+    # removing the target image and, above that, ejecting it.  Splice it
+    # out.
+    my(@tempCleanup);
+    @tempCleanup = splice(@gCleanup, -2);
+    # The next splice is the same as popping once and pushing @tempCleanup.
+    splice(@gCleanup, -1, 1, @tempCleanup);
+
+    if(command($gConfig{'cmd_rm'}, '-rf', $source) != 0) {
+      cleanupDie('rm -rf failed');
+    }
+  }
+
+  if($gConfig{'openfolder_bless'}) {
+    # On Tiger, the bless docs say to use --openfolder, but only
+    # --openfolder is accepted on Panther.  Tiger takes it with a single
+    # dash too.  Jaguar is out of luck.
+    if(command($gConfig{'cmd_bless'}, '-openfolder',
+     $partitionMountPoint) != 0) {
+      cleanupDie('bless failed');
+    }
+  }
+
+  setAttributes($partitionMountPoint, @attributes);
+
+  if($setRootIcon) {
+    # When &quot;hdiutil create -srcfolder&quot; is used, the root folder's
+    # attributes are not copied to the new volume.  Fix up.
+
+    if(command($gConfig{'cmd_SetFile'}, '-a', 'C',
+     $partitionMountPoint) != 0) {
+      cleanupDie('SetFile failed');
+    }
+  }
+
+  if($mounted) {
+    # Pop diskutil eject
+    pop(@gCleanup);
+
+    if(command($gConfig{'cmd_diskutil'}, 'eject', $rootDevice) != 0) {
+      cleanupDie('diskutil eject failed');
+    }
+  }
+
+  # End of UDRW/UDSP section.  At this point, $source has been removed
+  # and its cleanup entry has been removed from the stack.
+}
+else {
+  cleanupDie('unrecognized format');
+  print STDERR ($0.&quot;: unrecognized format\n&quot;);
+  exit(1);
+}</pre>
+
+<p>}</p>
+
+<p># giveExtension($file, $extension) # # If $file does not end in $extension,
+$extension is added.  The new # filename is returned. sub giveExtension($$)
+{</p>
+
+<pre>my($extension, $file);
+($file, $extension) = @_;
+if(substr($file, -length($extension)) ne $extension) {
+  return $file.$extension;
+}
+return $file;</pre>
+
+<p>}</p>
+
+<p># hdidMountImage($mountPoint, @arguments) # # Runs the hdid command with
+arguments specified by @arguments. # @arguments may be a single-element
+array containing the name of the # disk image to mount.  Returns a
+three-element array, with elements # corresponding to: #  - The root device
+of the mounted image, suitable for ejection #  - The device corresponding
+to the mounted partition #  - The mounted partition’s mount point # # If
+running on a system that supports easy mounting at points outside # of the
+default /Volumes with hdiutil attach, it is used instead of hdid, # and
+$mountPoint is used as the mount point. # # The root device will differ
+from the partition device when the disk # image contains a partition table,
+otherwise, they will be identical. # # If hdid fails, undef is returned.
+sub hdidMountImage($@) {</p>
+
+<pre>my(@arguments, @command, $mountPoint);
+($mountPoint, @arguments) = @_;
+my(@output);
+
+if($gConfig{'hdiutil_mountpoint'}) {
+  @command=($gConfig{'cmd_hdiutil'}, 'attach', @arguments,
+   '-mountpoint', $mountPoint);
+}
+else {
+  @command=($gConfig{'cmd_hdid'}, @arguments);
+}
+
+if(!(@output = commandOutput(@command)) ||
+ $? != 0) {
+  return undef;
+}
+
+if($gDryRun) {
+  return('/dev/diskX','/dev/diskXsY','/Volumes/'.$volumeName);
+}
+
+my($line, $restOfLine, $rootDevice);
+
+foreach $line (@output) {
+  my($device, $mountpoint);
+  if($line !~ /^\/dev\//) {
+    # Consider only lines that correspond to /dev entries
+    next;
+  }
+  ($device, $restOfLine) = split(' ', $line, 2);
+
+  if(!defined($rootDevice) || $rootDevice eq '') {
+    # If this is the first device seen, it's the root device to be
+    # used for ejection.  Keep it.
+    $rootDevice = $device;
+  }
+
+  if($restOfLine =~ /(\/.*)/) {
+    # The first partition with a mount point is the interesting one.  It's
+    # usually Apple_HFS and usually the last one in the list, but beware of
+    # the possibility of other filesystem types and the Apple_Free partition.
+    # If the disk image contains no partition table, the partition will not
+    # have a type, so look for the mount point by looking for a slash.
+    $mountpoint = $1;
+    return($rootDevice, $device, $mountpoint);
+  }
+}
+
+# No mount point?  This is bad.  If there's a root device, eject it.
+if(defined($rootDevice) &amp;&amp; $rootDevice ne '') {
+  # Failing anyway, so don't care about failure
+  commandVerbosity(0, $gConfig{'cmd_diskutil'}, 'eject', $rootDevice);
+}
+
+return undef;</pre>
+
+<p>}</p>
+
+<p># licenseMaker($text, $resource) # # Takes a plain text file at path $text
+and creates a license agreement # resource containing the text at path
+$license.  English-only, and # no special formatting.  This is the
+bare-bones stuff.  For more # intricate license agreements, create your own
+resource. # # <a
+href="ftp://ftp.apple.com/developer/Development_Kits/SLAs_for_UDIFs_1.0.dmg">ftp.apple.com/developer/Development_Kits/SLAs_for_UDIFs_1.0.dmg</a>
+sub licenseMaker($$) {</p>
+
+<pre>my($resource, $text);
+($text, $resource) = @_;
+if(!sysopen(*TEXT, $text, O_RDONLY)) {
+  print STDERR ($0.': licenseMaker: sysopen text: '.$!.&quot;\n&quot;);
+  return 0;
+}
+if(!sysopen(*RESOURCE, $resource, O_WRONLY|O_CREAT|O_EXCL)) {
+  print STDERR ($0.': licenseMaker: sysopen resource: '.$!.&quot;\n&quot;);
+  return 0;
+}
+print RESOURCE &lt;&lt; '__EOT__';</pre>
+
+<p>// See
+/System/Library/Frameworks/CoreServices.framework/Frameworks/CarbonCore.framework/Headers/Script.h
+for language IDs. data ‘LPic’ (5000) {</p>
+
+<pre>// Default language ID, 0 = English
+$&quot;0000&quot;
+// Number of entries in list
+$&quot;0001&quot;
+
+// Entry 1
+// Language ID, 0 = English
+$&quot;0000&quot;
+// Resource ID, 0 = STR#/TEXT/styl 5000
+$&quot;0000&quot;
+// Multibyte language, 0 = no
+$&quot;0000&quot;</pre>
+
+<p>};</p>
+
+<p>resource ‘STR#’ (5000, “English”) {</p>
+
+<pre>{
+  // Language (unused?) = English
+  &quot;English&quot;,
+  // Agree
+  &quot;Agree&quot;,
+  // Disagree
+  &quot;Disagree&quot;,</pre>
+
+<p>__EOT__</p>
+
+<pre># This stuff needs double-quotes for interpolations to work.
+print RESOURCE (&quot;    // Print, ellipsis is 0xC9\n&quot;);
+print RESOURCE (&quot;    \&quot;Print\xc9\&quot;,\n&quot;);
+print RESOURCE (&quot;    // Save As, ellipsis is 0xC9\n&quot;);
+print RESOURCE (&quot;    \&quot;Save As\xc9\&quot;,\n&quot;);
+print RESOURCE ('    // Descriptive text, curly quotes are 0xD2 and 0xD3'.
+ &quot;\n&quot;);
+print RESOURCE ('    &quot;If you agree to the terms of this license '.
+ &quot;agreement, click \xd2Agree\xd3 to access the software.  If you &quot;.
+ &quot;do not agree, press \xd2Disagree.\xd3\&quot;\n&quot;);</pre>
+
+<p>print RESOURCE &lt;&lt; ‘__EOT__’;</p>
+
+<pre>};</pre>
+
+<p>};</p>
+
+<p>// Beware of 1024(?) byte (character?) line length limitation.  Split up
+long // lines. // If straight quotes are used (“), remember to escape them
+("). // Newline is n, to leave a blank line, use two of them. // 0xD2 and
+0xD3 are curly double-quotes (”), 0xD4 and 0xD5 are curly //   single
+quotes (‘), 0xD5 is also the apostrophe. data ’TEXT’ (5000, “English”) {
+__EOT__</p>
+
+<pre>while(!eof(*TEXT)) {
+  my($line);
+  chop($line = &lt;TEXT&gt;);
+
+  while(defined($line)) {
+    my($chunk);
+
+    # Rez doesn't care for lines longer than (1024?) characters.  Split
+    # at less than half of that limit, in case everything needs to be
+    # backwhacked.
+    if(length($line)&gt;500) {
+      $chunk = substr($line, 0, 500);
+      $line = substr($line, 500);
+    }
+    else {
+      $chunk = $line;
+      $line = undef;
+    }
+
+    if(length($chunk) &gt; 0) {
+      # Unsafe characters are the double-quote (&quot;) and backslash (\), escape
+      # them with backslashes.
+      $chunk =~ s/([&quot;\\])/\\$1/g;
+
+      print RESOURCE '  &quot;'.$chunk.'&quot;'.&quot;\n&quot;;
+    }
+  }
+  print RESOURCE '  &quot;\n&quot;'.&quot;\n&quot;;
+}
+close(*TEXT);
+
+print RESOURCE &lt;&lt; '__EOT__';</pre>
+
+<p>};</p>
+
+<p>data ‘styl’ (5000, “English”) {</p>
+
+<pre>// Number of styles following = 1
+$&quot;0001&quot;
+
+// Style 1.  This is used to display the first two lines in bold text.
+// Start character = 0
+$&quot;0000 0000&quot;
+// Height = 16
+$&quot;0010&quot;
+// Ascent = 12
+$&quot;000C&quot;
+// Font family = 1024 (Lucida Grande)
+$&quot;0400&quot;
+// Style bitfield, 0x1=bold 0x2=italic 0x4=underline 0x8=outline
+// 0x10=shadow 0x20=condensed 0x40=extended
+$&quot;00&quot;
+// Style, unused?
+$&quot;02&quot;
+// Size = 12 point
+$&quot;000C&quot;
+// Color, RGB
+$&quot;0000 0000 0000&quot;</pre>
+
+<p>}; __EOT__</p>
+
+<pre>close(*RESOURCE);
+
+return 1;</pre>
+
+<p>}</p>
+
+<p># pathSplit($pathname) # # Splits $pathname into an array of path
+components. sub pathSplit($) {</p>
+
+<pre>my($pathname);
+($pathname) = @_;
+return split(/\//, $pathname);</pre>
+
+<p>}</p>
+
+<p># setAttributes($root, @attributeList) # # @attributeList is an array, each
+element of which must be in the form # &lt;a&gt;:&lt;file&gt;.  &lt;a&gt;
+is a list of attributes, per SetFile.  &lt;file&gt; is a file # which is
+taken as relative to $root (even if it appears as an absolute # path.) 
+SetFile is called to set the attributes on each file in # @attributeList.
+sub setAttributes($@) {</p>
+
+<pre>my(@attributes, $root);
+($root, @attributes) = @_;
+my($attribute);
+foreach $attribute (@attributes) {
+  my($attrList, $file, @fileList, @fixedFileList);
+  ($attrList, @fileList) = split(/:/, $attribute);
+  if(!defined($attrList) || !@fileList) {
+    cleanupDie('--attribute requires &lt;attributes&gt;:&lt;file&gt;');
+  }
+  @fixedFileList=();
+  foreach $file (@fileList) {
+    if($file =~ /^\//) {
+      push(@fixedFileList, $root.$file);
+    }
+    else {
+      push(@fixedFileList, $root.'/'.$file);
+    }
+  }
+  if(command($gConfig{'cmd_SetFile'}, '-a', $attrList, @fixedFileList)) {
+    cleanupDie('SetFile failed to set attributes');
+  }
+}
+return;</pre>
+
+<p>}</p>
+
+<p>sub trapSignal($) {</p>
+
+<pre>my($signalName);
+($signalName) = @_;
+cleanupDie('exiting on SIG'.$signalName);</pre>
+
+<p>}</p>
+
+<p>sub usage() {</p>
+
+<pre>print STDERR (</pre>
+
+<p>“usage: pkg-dmg –source &lt;source-folder&gt;n”. “               –target
+&lt;target-image&gt;n”. “              [–format &lt;format&gt;]       
+(default: UDZO)n”. “              [–volname &lt;volume-name&gt;]  (default:
+same name as source)n”. “              [–tempdir &lt;temp-dir&gt;]    
+(default: same dir as target)n”. “              [–mkdir &lt;directory&gt;] 
+(make directory in image)n”. “              [–copy &lt;<a
+href="http://:<dest>”>source></a>] (extra files to add)n“. ”             
+[–license &lt;file&gt;]         (plain text license agreement)n“. ”        
+[–resource &lt;file&gt;]        (flat .r files to merge)n“. ”             
+[–icon &lt;icns-file&gt;]       (volume icon)n“. ”              [–attribute
+&lt;a&gt;:&lt;file&gt;]   (set file attributes)n“. ”              [–idme]  
+(make an Internet-enabled image)n“. ”              [–sourcefile]           
+(treat –source as a file)n“. ”              [–verbosity &lt;level&gt;]     
+(0, 1, 2; default=2)n“. ”              [–dry-run]                (print
+what would be done)n“);</p>
+
+<pre>return;</pre>
+
+<p>}</p>
+</dd></dl>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+              </div>
+
+    </div>
+  </body>
+</html>

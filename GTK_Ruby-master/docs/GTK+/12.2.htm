@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html><head>
+
+
+  <title>Hello World in Ruby-GNOME2</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <meta name="GENERATOR" content="Quanta Plus">
+  <link rel="stylesheet" type="text/css" href="site-style.css">
+</head><body>
+<h1>12.2. Manual Menu Example</h1>
+
+<p>That should about do it. Let's take a look at an example to help clarify.</p>
+
+<img src="images/manual_menu.png" border="0" width="212" height="126">
+
+<pre>require 'gtk2'
+
+def button_press( widget, event, menu)
+   time = event.time
+   button = event.time
+
+   if event = Gdk::Event::BUTTON_PRESS
+      menu.popup( nil, nil, nil, button, time )
+   end
+end
+
+Gtk.init
+
+# Create a new window
+window = Gtk::Window.new( Gtk::Window::TOPLEVEL )
+window.set_size_request( 200, 100 )
+window.set_title( "Ruby-GNOME2 Menu Test" )
+window.signal_connect( "delete_event" ) { Gtk.main_quit }
+vbox = Gtk::VBox.new( false, 0 )
+window.add( vbox )
+
+# Create the menubar
+menubar = Gtk::MenuBar.new
+vbox.pack_start( menubar, false, false, 0)
+
+# Create our toplevel menuitem
+top_menu = Gtk::MenuItem.new( "Root Menu" )
+
+# Append top_menu into the menubar
+menubar.append( top_menu )
+
+# Create an empty menu to hold all of our menuitems
+menu = Gtk::Menu.new
+
+# Create a few menuitems and append them into "menu"
+for i in 1..10
+   item = Gtk::MenuItem.new( "MenuItem #{i}" )
+   menu.append( item )
+end
+
+# Now we set the submenu of top_menu to our menu
+# holding all of our menuitems
+top_menu.set_submenu( menu )
+
+button = Gtk::Button.new( "Press Me" )
+button.signal_connect( "button_press_event", Gdk::Event::BUTTON_PRESS  ) { 
+   |widget, event, y| 
+   button_press( widget, event, menu ) 
+}
+vbox.pack_start( button, true, true, 0)
+
+window.show_all
+Gtk.main
+</pre>
+
+<hr>
+<table>
+	<tbody><tr>
+		<td align="left"><a href="12.1.htm">Prev</a></td>
+		<td align="right"><a href="12.3.htm">Next</a></td>
+	</tr>
+</tbody></table>
+</body></html>

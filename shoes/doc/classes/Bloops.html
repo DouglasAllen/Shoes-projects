@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Bloops</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Bloops 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/req/bloopsaphone/ext/bloops/rubyext_c.html">req/bloopsaphone/ext/bloops/rubyext.c</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+    <!-- Namespace -->
+    <div class="sectiontitle">Namespace</div>
+    <ul>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Bloops/Sound.html">Bloops::Sound</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Bloops/Track.html">Bloops::Track</a>
+        </li>
+      
+    </ul>
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-clear">clear</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>L</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-load">load</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-play">play</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-sound">sound</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-sound">sound</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-stopped-3F">stopped?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-tempo">tempo</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tempo-3D">tempo=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tune">tune</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-sound">
+            
+              <b>sound</b>(p1)
+            
+            <a href="../classes/Bloops.html#method-c-sound" name="method-c-sound" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-sound_source')" id="l_method-c-sound_source">show</a>
+                
+              </p>
+              <div id="method-c-sound_source" class="dyn-source">
+                <pre>VALUE
+rb_bloops_sound(VALUE self, VALUE type)
+{
+  bloopsaphone *P = bloops_square();
+  P-&gt;type = (unsigned char)NUM2INT(type);
+  return Data_Wrap_Struct(cSound, NULL, rb_bloops_sound_free, P);
+}</pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-clear">
+            
+              <b>clear</b>()
+            
+            <a href="../classes/Bloops.html#method-i-clear" name="method-i-clear" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-clear_source')" id="l_method-i-clear_source">show</a>
+                
+              </p>
+              <div id="method-i-clear_source" class="dyn-source">
+                <pre>VALUE
+rb_bloops_clear(VALUE self)
+{
+  bloops *B;
+  Data_Get_Struct(self, bloops, B);
+  bloops_clear(B);
+  return self;
+}</pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-load">
+            
+              <b>load</b>(p1)
+            
+            <a href="../classes/Bloops.html#method-i-load" name="method-i-load" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-load_source')" id="l_method-i-load_source">show</a>
+                
+              </p>
+              <div id="method-i-load_source" class="dyn-source">
+                <pre>VALUE
+rb_bloops_load(VALUE self, VALUE fname)
+{
+  bloops *B;
+  bloopsaphone *P;
+  Data_Get_Struct(self, bloops, B);
+
+  StringValue(fname);
+  P = bloops_sound_file(B, RSTRING_PTR(fname));
+  if (P == NULL) return Qnil;
+  return Data_Wrap_Struct(cSound, NULL, rb_bloops_sound_free, P);
+}</pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-play">
+            
+              <b>play</b>()
+            
+            <a href="../classes/Bloops.html#method-i-play" name="method-i-play" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-play_source')" id="l_method-i-play_source">show</a>
+                
+              </p>
+              <div id="method-i-play_source" class="dyn-source">
+                <pre>VALUE
+rb_bloops_play(VALUE self)
+{
+  bloops *B;
+  Data_Get_Struct(self, bloops, B);
+  bloops_play(B);
+  return self;
+}</pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-sound">
+            
+              <b>sound</b>(p1)
+            
+            <a href="../classes/Bloops.html#method-i-sound" name="method-i-sound" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-sound_source')" id="l_method-i-sound_source">show</a>
+                
+              </p>
+              <div id="method-i-sound_source" class="dyn-source">
+                <pre>VALUE
+rb_bloops_sound(VALUE self, VALUE type)
+{
+  bloopsaphone *P = bloops_square();
+  P-&gt;type = (unsigned char)NUM2INT(type);
+  return Data_Wrap_Struct(cSound, NULL, rb_bloops_sound_free, P);
+}</pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-stopped-3F">
+            
+              <b>stopped?</b>()
+            
+            <a href="../classes/Bloops.html#method-i-stopped-3F" name="method-i-stopped-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-stopped-3F_source')" id="l_method-i-stopped-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-stopped-3F_source" class="dyn-source">
+                <pre>VALUE
+rb_bloops_is_stopped(VALUE self)
+{
+  bloops *B;
+  Data_Get_Struct(self, bloops, B);
+  return bloops_is_done(B) ? Qtrue : Qfalse;
+}</pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tempo">
+            
+              <b>tempo</b>()
+            
+            <a href="../classes/Bloops.html#method-i-tempo" name="method-i-tempo" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tempo_source')" id="l_method-i-tempo_source">show</a>
+                
+              </p>
+              <div id="method-i-tempo_source" class="dyn-source">
+                <pre>VALUE
+rb_bloops_get_tempo(VALUE self)
+{
+  bloops *B;
+  Data_Get_Struct(self, bloops, B);
+  return INT2NUM(B-&gt;tempo);
+}</pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tempo-3D">
+            
+              <b>tempo=</b>(p1)
+            
+            <a href="../classes/Bloops.html#method-i-tempo-3D" name="method-i-tempo-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tempo-3D_source')" id="l_method-i-tempo-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-tempo-3D_source" class="dyn-source">
+                <pre>VALUE
+rb_bloops_set_tempo(VALUE self, VALUE tempo)
+{
+  bloops *B;
+  Data_Get_Struct(self, bloops, B);
+  bloops_tempo(B, NUM2INT(tempo));
+  return tempo;
+}</pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tune">
+            
+              <b>tune</b>(p1, p2)
+            
+            <a href="../classes/Bloops.html#method-i-tune" name="method-i-tune" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tune_source')" id="l_method-i-tune_source">show</a>
+                
+              </p>
+              <div id="method-i-tune_source" class="dyn-source">
+                <pre>VALUE
+rb_bloops_tune(VALUE self, VALUE sound, VALUE notes)
+{
+  int i;
+  bloops *B;
+  bloopsaphone *phone;
+  bloopsatrack *track;
+  Data_Get_Struct(self, bloops, B);
+  Data_Get_Struct(sound, bloopsaphone, phone);
+
+  StringValue(notes);
+  track = bloops_track(B, phone, RSTRING_PTR(notes), RSTRING_LEN(notes));
+
+  for (i = 0; i &lt; BLOOPS_MAX_TRACKS; i++)
+    if (B-&gt;tracks[i] == NULL) {
+      bloops_track_at(B, track, i);
+      break;
+    }
+  return Data_Wrap_Struct(cTrack, NULL, rb_bloops_track_free, track);
+}</pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

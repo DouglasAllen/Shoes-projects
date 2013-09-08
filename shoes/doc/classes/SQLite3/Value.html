@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>SQLite3::Value</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            SQLite3::Value 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/req/sqlite3/lib/sqlite3/value_rb.html">req/sqlite3/lib/sqlite3/value.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>L</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-length">length</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-null-3F">null?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-to_blob">to_blob</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-to_f">to_f</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-to_i">to_i</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-to_int64">to_int64</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-to_s">to_s</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-type">type</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+      <!-- Section attributes -->
+      <div class="sectiontitle">Attributes</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>handle</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+      </table>
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>( db, handle )
+            
+            <a href="../../classes/SQLite3/Value.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/sqlite3/lib/sqlite3/value.rb, line 8</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>( <span class="ruby-identifier">db</span>, <span class="ruby-identifier">handle</span> )
+  <span class="ruby-ivar">@driver</span> = <span class="ruby-identifier">db</span>.<span class="ruby-identifier">driver</span>
+  <span class="ruby-ivar">@handle</span> = <span class="ruby-identifier">handle</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-length">
+            
+              <b>length</b>( utf16=false )
+            
+            <a href="../../classes/SQLite3/Value.html#method-i-length" name="method-i-length" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-length_source')" id="l_method-i-length_source">show</a>
+                
+              </p>
+              <div id="method-i-length_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/sqlite3/lib/sqlite3/value.rb, line 21</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">length</span>( <span class="ruby-identifier">utf16</span>=<span class="ruby-keyword">false</span> )
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">utf16</span>
+    <span class="ruby-ivar">@driver</span>.<span class="ruby-identifier">value_bytes16</span>( <span class="ruby-ivar">@handle</span> )
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@driver</span>.<span class="ruby-identifier">value_bytes</span>( <span class="ruby-ivar">@handle</span> )
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-null-3F">
+            
+              <b>null?</b>()
+            
+            <a href="../../classes/SQLite3/Value.html#method-i-null-3F" name="method-i-null-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-null-3F_source')" id="l_method-i-null-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-null-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/sqlite3/lib/sqlite3/value.rb, line 13</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">null?</span>
+  <span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-value">:null</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-to_blob">
+            
+              <b>to_blob</b>()
+            
+            <a href="../../classes/SQLite3/Value.html#method-i-to_blob" name="method-i-to_blob" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-to_blob_source')" id="l_method-i-to_blob_source">show</a>
+                
+              </p>
+              <div id="method-i-to_blob_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/sqlite3/lib/sqlite3/value.rb, line 17</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">to_blob</span>
+  <span class="ruby-ivar">@driver</span>.<span class="ruby-identifier">value_blob</span>( <span class="ruby-ivar">@handle</span> )
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-to_f">
+            
+              <b>to_f</b>()
+            
+            <a href="../../classes/SQLite3/Value.html#method-i-to_f" name="method-i-to_f" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-to_f_source')" id="l_method-i-to_f_source">show</a>
+                
+              </p>
+              <div id="method-i-to_f_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/sqlite3/lib/sqlite3/value.rb, line 29</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">to_f</span>
+  <span class="ruby-ivar">@driver</span>.<span class="ruby-identifier">value_double</span>( <span class="ruby-ivar">@handle</span> )
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-to_i">
+            
+              <b>to_i</b>()
+            
+            <a href="../../classes/SQLite3/Value.html#method-i-to_i" name="method-i-to_i" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-to_i_source')" id="l_method-i-to_i_source">show</a>
+                
+              </p>
+              <div id="method-i-to_i_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/sqlite3/lib/sqlite3/value.rb, line 33</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">to_i</span>
+  <span class="ruby-ivar">@driver</span>.<span class="ruby-identifier">value_int</span>( <span class="ruby-ivar">@handle</span> )
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-to_int64">
+            
+              <b>to_int64</b>()
+            
+            <a href="../../classes/SQLite3/Value.html#method-i-to_int64" name="method-i-to_int64" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-to_int64_source')" id="l_method-i-to_int64_source">show</a>
+                
+              </p>
+              <div id="method-i-to_int64_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/sqlite3/lib/sqlite3/value.rb, line 37</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">to_int64</span>
+  <span class="ruby-ivar">@driver</span>.<span class="ruby-identifier">value_int64</span>( <span class="ruby-ivar">@handle</span> )
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-to_s">
+            
+              <b>to_s</b>( utf16=false )
+            
+            <a href="../../classes/SQLite3/Value.html#method-i-to_s" name="method-i-to_s" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-to_s_source')" id="l_method-i-to_s_source">show</a>
+                
+              </p>
+              <div id="method-i-to_s_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/sqlite3/lib/sqlite3/value.rb, line 41</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">to_s</span>( <span class="ruby-identifier">utf16</span>=<span class="ruby-keyword">false</span> )
+  <span class="ruby-ivar">@driver</span>.<span class="ruby-identifier">value_text</span>( <span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">utf16</span> )
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-type">
+            
+              <b>type</b>()
+            
+            <a href="../../classes/SQLite3/Value.html#method-i-type" name="method-i-type" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-type_source')" id="l_method-i-type_source">show</a>
+                
+              </p>
+              <div id="method-i-type_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/sqlite3/lib/sqlite3/value.rb, line 45</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">type</span>
+  <span class="ruby-keyword">case</span> <span class="ruby-ivar">@driver</span>.<span class="ruby-identifier">value_type</span>( <span class="ruby-ivar">@handle</span> )
+    <span class="ruby-keyword">when</span> <span class="ruby-constant">Constants</span><span class="ruby-operator">::</span><span class="ruby-constant">ColumnType</span><span class="ruby-operator">::</span><span class="ruby-constant">INTEGER</span> <span class="ruby-keyword">then</span> <span class="ruby-value">:int</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-constant">Constants</span><span class="ruby-operator">::</span><span class="ruby-constant">ColumnType</span><span class="ruby-operator">::</span><span class="ruby-constant">FLOAT</span>   <span class="ruby-keyword">then</span> <span class="ruby-value">:float</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-constant">Constants</span><span class="ruby-operator">::</span><span class="ruby-constant">ColumnType</span><span class="ruby-operator">::</span><span class="ruby-constant">TEXT</span>    <span class="ruby-keyword">then</span> <span class="ruby-value">:text</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-constant">Constants</span><span class="ruby-operator">::</span><span class="ruby-constant">ColumnType</span><span class="ruby-operator">::</span><span class="ruby-constant">BLOB</span>    <span class="ruby-keyword">then</span> <span class="ruby-value">:blob</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-constant">Constants</span><span class="ruby-operator">::</span><span class="ruby-constant">ColumnType</span><span class="ruby-operator">::</span><span class="ruby-constant">NULL</span>    <span class="ruby-keyword">then</span> <span class="ruby-value">:null</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

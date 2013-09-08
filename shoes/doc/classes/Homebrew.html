@@ -1,0 +1,752 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Homebrew</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Homebrew 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/make/darwin/homebrew_rb.html">make/darwin/homebrew.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-add_custom_formulas">add_custom_formulas</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-add_custom_remote">add_custom_remote</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-checkout_formula">checkout_formula</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-custom_formulas">custom_formulas</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-install">install</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-install_packages">install_packages</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-installed-3F">installed?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>L</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-link">link</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-remove_custom_formulas">remove_custom_formulas</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-remove_custom_remote">remove_custom_remote</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-sh">sh</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>U</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-universal">universal</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-universal-3F">universal?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+      <!-- Section attributes -->
+      <div class="sectiontitle">Attributes</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>shell</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+      </table>
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>()
+            
+            <a href="../classes/Homebrew.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File make/darwin/homebrew.rb, line 7</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>
+  <span class="ruby-ivar">@brew_command</span> = <span class="ruby-constant">ENV</span>[<span class="ruby-string">'BREW'</span>] <span class="ruby-operator">||</span> <span class="ruby-string">&quot;brew&quot;</span>
+  <span class="ruby-ivar">@brew_home</span> = <span class="ruby-node">%x#{@brew_command} --prefix`</span>.<span class="ruby-identifier">chomp</span>
+  <span class="ruby-ivar">@git_command</span> = <span class="ruby-constant">ENV</span>[<span class="ruby-string">'GIT'</span>] <span class="ruby-operator">||</span> <span class="ruby-string">&quot;git&quot;</span>
+  <span class="ruby-ivar">@remote</span> = <span class="ruby-string">&quot;shoes&quot;</span>
+  <span class="ruby-ivar">@remote_branch</span> = <span class="ruby-string">&quot;shoes&quot;</span>
+  <span class="ruby-ivar">@remote_url</span> = <span class="ruby-string">&quot;https://github.com/wasnotrice/homebrew.git&quot;</span>
+  <span class="ruby-ivar">@shell</span> = <span class="ruby-constant">ShellCommandRunner</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-add_custom_formulas">
+            
+              <b>add_custom_formulas</b>()
+            
+            <a href="../classes/Homebrew.html#method-i-add_custom_formulas" name="method-i-add_custom_formulas" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-add_custom_formulas_source')" id="l_method-i-add_custom_formulas_source">show</a>
+                
+              </p>
+              <div id="method-i-add_custom_formulas_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File make/darwin/homebrew.rb, line 58</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">add_custom_formulas</span>
+  <span class="ruby-identifier">cd</span> <span class="ruby-ivar">@brew_home</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">custom_formulas</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">checkout_formula</span> <span class="ruby-node">&quot;#{@remote}/#{@remote_branch}&quot;</span>, <span class="ruby-identifier">f</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-add_custom_remote">
+            
+              <b>add_custom_remote</b>(remote=@remote, remote_url=@remote_url)
+            
+            <a href="../classes/Homebrew.html#method-i-add_custom_remote" name="method-i-add_custom_remote" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-add_custom_remote_source')" id="l_method-i-add_custom_remote_source">show</a>
+                
+              </p>
+              <div id="method-i-add_custom_remote_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File make/darwin/homebrew.rb, line 78</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">add_custom_remote</span> <span class="ruby-identifier">remote</span>=<span class="ruby-ivar">@remote</span>, <span class="ruby-identifier">remote_url</span>=<span class="ruby-ivar">@remote_url</span>
+  <span class="ruby-identifier">cd</span> <span class="ruby-ivar">@brew_home</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@shell</span>.<span class="ruby-identifier">git_repo_has_remote?</span>(<span class="ruby-ivar">@remote</span>)
+      <span class="ruby-ivar">@shell</span>.<span class="ruby-identifier">git_remote_add</span>(<span class="ruby-identifier">remote</span>, <span class="ruby-identifier">remote_url</span>)
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-ivar">@shell</span>.<span class="ruby-identifier">git_fetch</span>(<span class="ruby-ivar">@remote</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-checkout_formula">
+            
+              <b>checkout_formula</b>(branch, formula)
+            
+            <a href="../classes/Homebrew.html#method-i-checkout_formula" name="method-i-checkout_formula" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-checkout_formula_source')" id="l_method-i-checkout_formula_source">show</a>
+                
+              </p>
+              <div id="method-i-checkout_formula_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File make/darwin/homebrew.rb, line 74</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">checkout_formula</span> <span class="ruby-identifier">branch</span>, <span class="ruby-identifier">formula</span>
+  <span class="ruby-identifier">sh</span> <span class="ruby-node">&quot;#{@git_command} checkout #{branch} Library/Formula/#{formula}.rb&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-custom_formulas">
+            
+              <b>custom_formulas</b>()
+            
+            <a href="../classes/Homebrew.html#method-i-custom_formulas" name="method-i-custom_formulas" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-custom_formulas_source')" id="l_method-i-custom_formulas_source">show</a>
+                
+              </p>
+              <div id="method-i-custom_formulas_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File make/darwin/homebrew.rb, line 25</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">custom_formulas</span>
+  [<span class="ruby-string">&quot;pixman&quot;</span>, <span class="ruby-string">&quot;glib&quot;</span>, <span class="ruby-string">&quot;cairo&quot;</span>, <span class="ruby-string">&quot;pango&quot;</span>, <span class="ruby-string">&quot;giflib&quot;</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-install">
+            
+              <b>install</b>(package, args=&quot;&quot;)
+            
+            <a href="../classes/Homebrew.html#method-i-install" name="method-i-install" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-install_source')" id="l_method-i-install_source">show</a>
+                
+              </p>
+              <div id="method-i-install_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File make/darwin/homebrew.rb, line 45</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">install</span> <span class="ruby-identifier">package</span>, <span class="ruby-identifier">args</span>=<span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">installed?</span>(<span class="ruby-identifier">package</span>)
+    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;#{package} already exists, continuing&quot;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">args</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot; --universal&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">universal?</span>
+    <span class="ruby-identifier">sh</span> <span class="ruby-node">&quot;#{@brew_command} install #{package} #{args}&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-install_packages">
+            
+              <b>install_packages</b>()
+            
+            <a href="../classes/Homebrew.html#method-i-install_packages" name="method-i-install_packages" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-install_packages_source')" id="l_method-i-install_packages_source">show</a>
+                
+              </p>
+              <div id="method-i-install_packages_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File make/darwin/homebrew.rb, line 29</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">install_packages</span>
+  <span class="ruby-identifier">install</span> <span class="ruby-string">&quot;gettext&quot;</span>
+  <span class="ruby-identifier">install</span> <span class="ruby-string">&quot;glib&quot;</span>
+  <span class="ruby-identifier">install</span> <span class="ruby-string">&quot;pixman&quot;</span>
+  <span class="ruby-identifier">install</span> <span class="ruby-string">&quot;cairo&quot;</span>, <span class="ruby-string">&quot;--quartz&quot;</span>
+  <span class="ruby-identifier">link</span> <span class="ruby-string">&quot;cairo&quot;</span>
+  <span class="ruby-identifier">install</span> <span class="ruby-string">&quot;pango&quot;</span>, <span class="ruby-string">&quot;--quartz&quot;</span>
+  <span class="ruby-identifier">install</span> <span class="ruby-string">&quot;jpeg&quot;</span>
+  <span class="ruby-identifier">install</span> <span class="ruby-string">&quot;giflib&quot;</span>
+  <span class="ruby-identifier">install</span> <span class="ruby-string">&quot;portaudio&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-installed-3F">
+            
+              <b>installed?</b>(package)
+            
+            <a href="../classes/Homebrew.html#method-i-installed-3F" name="method-i-installed-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-installed-3F_source')" id="l_method-i-installed-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-installed-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File make/darwin/homebrew.rb, line 54</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">installed?</span> <span class="ruby-identifier">package</span>
+  <span class="ruby-ivar">@shell</span>.<span class="ruby-identifier">brew_installed?</span> <span class="ruby-identifier">package</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-link">
+            
+              <b>link</b>(package)
+            
+            <a href="../classes/Homebrew.html#method-i-link" name="method-i-link" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-link_source')" id="l_method-i-link_source">show</a>
+                
+              </p>
+              <div id="method-i-link_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File make/darwin/homebrew.rb, line 41</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">link</span> <span class="ruby-identifier">package</span>
+  <span class="ruby-identifier">sh</span> <span class="ruby-node">&quot;#{@brew_command} link #{package}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-remove_custom_formulas">
+            
+              <b>remove_custom_formulas</b>()
+            
+            <a href="../classes/Homebrew.html#method-i-remove_custom_formulas" name="method-i-remove_custom_formulas" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-remove_custom_formulas_source')" id="l_method-i-remove_custom_formulas_source">show</a>
+                
+              </p>
+              <div id="method-i-remove_custom_formulas_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File make/darwin/homebrew.rb, line 66</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">remove_custom_formulas</span>
+  <span class="ruby-identifier">cd</span> <span class="ruby-ivar">@brew_home</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">custom_formulas</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">checkout_formula</span> <span class="ruby-string">&quot;master&quot;</span>, <span class="ruby-identifier">f</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-remove_custom_remote">
+            
+              <b>remove_custom_remote</b>()
+            
+            <a href="../classes/Homebrew.html#method-i-remove_custom_remote" name="method-i-remove_custom_remote" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-remove_custom_remote_source')" id="l_method-i-remove_custom_remote_source">show</a>
+                
+              </p>
+              <div id="method-i-remove_custom_remote_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File make/darwin/homebrew.rb, line 87</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">remove_custom_remote</span>
+  <span class="ruby-identifier">cd</span> <span class="ruby-ivar">@brew_home</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@shell</span>.<span class="ruby-identifier">git_repo_has_remote?</span>(<span class="ruby-ivar">@remote</span>)
+      <span class="ruby-ivar">@shell</span>.<span class="ruby-identifier">git_remote_rm</span>(<span class="ruby-ivar">@remote</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-sh">
+            
+              <b>sh</b>(command)
+            
+            <a href="../classes/Homebrew.html#method-i-sh" name="method-i-sh" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-sh_source')" id="l_method-i-sh_source">show</a>
+                
+              </p>
+              <div id="method-i-sh_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File make/darwin/homebrew.rb, line 95</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">sh</span> <span class="ruby-identifier">command</span>
+  <span class="ruby-ivar">@shell</span>.<span class="ruby-identifier">run</span> <span class="ruby-identifier">command</span>.<span class="ruby-identifier">strip</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-universal">
+            
+              <b>universal</b>()
+            
+            <a href="../classes/Homebrew.html#method-i-universal" name="method-i-universal" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-universal_source')" id="l_method-i-universal_source">show</a>
+                
+              </p>
+              <div id="method-i-universal_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File make/darwin/homebrew.rb, line 17</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">universal</span>
+  <span class="ruby-ivar">@arch</span> = <span class="ruby-value">:universal</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-universal-3F">
+            
+              <b>universal?</b>()
+            
+            <a href="../classes/Homebrew.html#method-i-universal-3F" name="method-i-universal-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-universal-3F_source')" id="l_method-i-universal-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-universal-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File make/darwin/homebrew.rb, line 21</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">universal?</span>
+  <span class="ruby-ivar">@arch</span> <span class="ruby-operator">==</span> <span class="ruby-value">:universal</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

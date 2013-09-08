@@ -1,0 +1,1184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>MarkdownTest</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            MarkdownTest 
+            
+                <span class="parent">&lt; 
+                    
+                    Test::Unit::TestCase
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/req/redcarpet2/test/redcarpet_test_rb.html">req/redcarpet2/test/redcarpet_test.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-render_with">render_with</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-setup">setup</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-test_autolinking_with_ent_chars">test_autolinking_with_ent_chars</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_block_quotes_preceded_by_spaces">test_block_quotes_preceded_by_spaces</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_headings_with_trailing_space">test_headings_with_trailing_space</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_infinite_loop_in_header">test_infinite_loop_in_header</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_link_syntax_is_not_processed_within_code_blocks">test_link_syntax_is_not_processed_within_code_blocks</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_memory_leak_when_parsing_char_links">test_memory_leak_when_parsing_char_links</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_para_before_block_html_should_not_wrap_in_p_tag">test_para_before_block_html_should_not_wrap_in_p_tag</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_should_return_string_in_same_encoding_as_input">test_should_return_string_in_same_encoding_as_input</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_simple_inline_html">test_simple_inline_html</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_spaced_headers">test_spaced_headers</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_strikethrough_flag_works">test_strikethrough_flag_works</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_that_autolink_flag_works">test_that_autolink_flag_works</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_that_fenced_flag_works">test_that_fenced_flag_works</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_that_headers_are_linkable">test_that_headers_are_linkable</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_that_html_blocks_do_not_require_their_own_end_tag_line">test_that_html_blocks_do_not_require_their_own_end_tag_line</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_that_inline_markdown_goes_to_html">test_that_inline_markdown_goes_to_html</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_that_inline_markdown_starts_and_ends_correctly">test_that_inline_markdown_starts_and_ends_correctly</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_that_intra_emphasis_works">test_that_intra_emphasis_works</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_that_simple_one_liner_goes_to_html">test_that_simple_one_liner_goes_to_html</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_that_tables_flag_works">test_that_tables_flag_works</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_that_tags_can_have_dashes_and_underscores">test_that_tags_can_have_dashes_and_underscores</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_that_urls_are_not_doubly_escaped">test_that_urls_are_not_doubly_escaped</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_whitespace_after_urls">test_whitespace_after_urls</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-render_with">
+            
+              <b>render_with</b>(flags, text)
+            
+            <a href="../classes/MarkdownTest.html#method-i-render_with" name="method-i-render_with" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-render_with_source')" id="l_method-i-render_with_source">show</a>
+                
+              </p>
+              <div id="method-i-render_with_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/redcarpet2/test/redcarpet_test.rb, line 102</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">render_with</span>(<span class="ruby-identifier">flags</span>, <span class="ruby-identifier">text</span>)
+  <span class="ruby-constant">Redcarpet</span><span class="ruby-operator">::</span><span class="ruby-constant">Markdown</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">Redcarpet</span><span class="ruby-operator">::</span><span class="ruby-constant">Render</span><span class="ruby-operator">::</span><span class="ruby-constant">HTML</span>, <span class="ruby-identifier">flags</span>).<span class="ruby-identifier">render</span>(<span class="ruby-identifier">text</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-setup">
+            
+              <b>setup</b>()
+            
+            <a href="../classes/MarkdownTest.html#method-i-setup" name="method-i-setup" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-setup_source')" id="l_method-i-setup_source">show</a>
+                
+              </p>
+              <div id="method-i-setup_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/redcarpet2/test/redcarpet_test.rb, line 98</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">setup</span>
+  <span class="ruby-ivar">@markdown</span> = <span class="ruby-constant">Redcarpet</span><span class="ruby-operator">::</span><span class="ruby-constant">Markdown</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">Redcarpet</span><span class="ruby-operator">::</span><span class="ruby-constant">Render</span><span class="ruby-operator">::</span><span class="ruby-constant">HTML</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_autolinking_with_ent_chars">
+            
+              <b>test_autolinking_with_ent_chars</b>()
+            
+            <a href="../classes/MarkdownTest.html#method-i-test_autolinking_with_ent_chars" name="method-i-test_autolinking_with_ent_chars" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_autolinking_with_ent_chars_source')" id="l_method-i-test_autolinking_with_ent_chars_source">show</a>
+                
+              </p>
+              <div id="method-i-test_autolinking_with_ent_chars_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/redcarpet2/test/redcarpet_test.rb, line 271</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_autolinking_with_ent_chars</span>
+    <span class="ruby-identifier">markdown</span> = <span class="ruby-identifier">render_with</span>({<span class="ruby-value">:autolink</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>}, <span class="ruby-string">&quot;This a stupid link: https://github.com/rtomayko/tilt/issues?milestone=1&amp;state=open
+&quot;</span>)
+    <span class="ruby-identifier">html_equal</span> <span class="ruby-string">&quot;&lt;p&gt;This a stupid link: &lt;a href=\&quot;https://github.com/rtomayko/tilt/issues?milestone=1&amp;state=open\&quot;&gt;https://github.com/rtomayko/tilt/issues?milestone=1&amp;amp;state=open&lt;/a&gt;&lt;/p&gt;\n&quot;</span>, <span class="ruby-identifier">markdown</span>
+  <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_block_quotes_preceded_by_spaces">
+            
+              <b>test_block_quotes_preceded_by_spaces</b>()
+            
+            <a href="../classes/MarkdownTest.html#method-i-test_block_quotes_preceded_by_spaces" name="method-i-test_block_quotes_preceded_by_spaces" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>This isn’t in the spec but is Markdown.pl behavior.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_block_quotes_preceded_by_spaces_source')" id="l_method-i-test_block_quotes_preceded_by_spaces_source">show</a>
+                
+              </p>
+              <div id="method-i-test_block_quotes_preceded_by_spaces_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/redcarpet2/test/redcarpet_test.rb, line 143</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_block_quotes_preceded_by_spaces</span>
+  <span class="ruby-identifier">markdown</span> = <span class="ruby-ivar">@markdown</span>.<span class="ruby-identifier">render</span>(
+    <span class="ruby-string">&quot;A wise man once said:\n\n&quot;</span> <span class="ruby-operator">+</span>
+    <span class="ruby-string">&quot; &gt; Isn't it wonderful just to be alive.\n&quot;</span>
+  )
+  <span class="ruby-identifier">html_equal</span> <span class="ruby-string">&quot;&lt;p&gt;A wise man once said:&lt;/p&gt;\n\n&quot;</span> <span class="ruby-operator">+</span>
+    <span class="ruby-string">&quot;&lt;blockquote&gt;&lt;p&gt;Isn't it wonderful just to be alive.&lt;/p&gt;\n&lt;/blockquote&gt;\n&quot;</span>,
+    <span class="ruby-identifier">markdown</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_headings_with_trailing_space">
+            
+              <b>test_headings_with_trailing_space</b>()
+            
+            <a href="../classes/MarkdownTest.html#method-i-test_headings_with_trailing_space" name="method-i-test_headings_with_trailing_space" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p><a
+href="http://github.com/rtomayko/rdiscount/issues/#issue/13">github.com/rtomayko/rdiscount/issues/#issue/13</a></p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_headings_with_trailing_space_source')" id="l_method-i-test_headings_with_trailing_space_source">show</a>
+                
+              </p>
+              <div id="method-i-test_headings_with_trailing_space_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/redcarpet2/test/redcarpet_test.rb, line 163</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_headings_with_trailing_space</span>
+  <span class="ruby-identifier">text</span> = <span class="ruby-string">&quot;The Ant-Sugar Tales \n&quot;</span>         <span class="ruby-operator">+</span>
+         <span class="ruby-string">&quot;=================== \n\n&quot;</span>        <span class="ruby-operator">+</span>
+         <span class="ruby-string">&quot;By Candice Yellowflower   \n&quot;</span>
+  <span class="ruby-identifier">html_equal</span> <span class="ruby-string">&quot;&lt;h1&gt;The Ant-Sugar Tales &lt;/h1&gt;\n\n&lt;p&gt;By Candice Yellowflower   &lt;/p&gt;\n&quot;</span>, <span class="ruby-ivar">@markdown</span>.<span class="ruby-identifier">render</span>(<span class="ruby-identifier">text</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_infinite_loop_in_header">
+            
+              <b>test_infinite_loop_in_header</b>()
+            
+            <a href="../classes/MarkdownTest.html#method-i-test_infinite_loop_in_header" name="method-i-test_infinite_loop_in_header" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_infinite_loop_in_header_source')" id="l_method-i-test_infinite_loop_in_header_source">show</a>
+                
+              </p>
+              <div id="method-i-test_infinite_loop_in_header_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/redcarpet2/test/redcarpet_test.rb, line 223</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_infinite_loop_in_header</span>
+    <span class="ruby-identifier">html_equal</span> <span class="ruby-ivar">@markdown</span>.<span class="ruby-identifier">render</span>(<span class="ruby-string">&quot;######
+#Body#
+######
+&quot;</span>), <span class="ruby-string">&quot;&lt;h1&gt;Body&lt;/h1&gt;&quot;</span>
+  <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_link_syntax_is_not_processed_within_code_blocks">
+            
+              <b>test_link_syntax_is_not_processed_within_code_blocks</b>()
+            
+            <a href="../classes/MarkdownTest.html#method-i-test_link_syntax_is_not_processed_within_code_blocks" name="method-i-test_link_syntax_is_not_processed_within_code_blocks" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_link_syntax_is_not_processed_within_code_blocks_source')" id="l_method-i-test_link_syntax_is_not_processed_within_code_blocks_source">show</a>
+                
+              </p>
+              <div id="method-i-test_link_syntax_is_not_processed_within_code_blocks_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/redcarpet2/test/redcarpet_test.rb, line 196</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_link_syntax_is_not_processed_within_code_blocks</span>
+  <span class="ruby-identifier">markdown</span> = <span class="ruby-ivar">@markdown</span>.<span class="ruby-identifier">render</span>(<span class="ruby-string">&quot;    This is a code block\n    This is a link [[1]] inside\n&quot;</span>)
+  <span class="ruby-identifier">html_equal</span> <span class="ruby-string">&quot;&lt;pre&gt;&lt;code&gt;This is a code block\nThis is a link [[1]] inside\n&lt;/code&gt;&lt;/pre&gt;\n&quot;</span>,
+    <span class="ruby-identifier">markdown</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_memory_leak_when_parsing_char_links">
+            
+              <b>test_memory_leak_when_parsing_char_links</b>()
+            
+            <a href="../classes/MarkdownTest.html#method-i-test_memory_leak_when_parsing_char_links" name="method-i-test_memory_leak_when_parsing_char_links" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_memory_leak_when_parsing_char_links_source')" id="l_method-i-test_memory_leak_when_parsing_char_links_source">show</a>
+                
+              </p>
+              <div id="method-i-test_memory_leak_when_parsing_char_links_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/redcarpet2/test/redcarpet_test.rb, line 208</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_memory_leak_when_parsing_char_links</span>
+    <span class="ruby-ivar">@markdown</span>.<span class="ruby-identifier">render</span>(<span class="ruby-string">&quot;2. Identify the wild-type cluster and determine all clusters
+   containing or contained by it:
+   
+       wildtype &lt;- wildtype.cluster(h)
+       wildtype.mask &lt;- logical(nclust)
+       wildtype.mask[c(contains(h, wildtype),
+                       wildtype,
+                       contained.by(h, wildtype))] &lt;- TRUE
+  
+   This could be more elegant.
+&quot;</span>)
+  <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_para_before_block_html_should_not_wrap_in_p_tag">
+            
+              <b>test_para_before_block_html_should_not_wrap_in_p_tag</b>()
+            
+            <a href="../classes/MarkdownTest.html#method-i-test_para_before_block_html_should_not_wrap_in_p_tag" name="method-i-test_para_before_block_html_should_not_wrap_in_p_tag" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_para_before_block_html_should_not_wrap_in_p_tag_source')" id="l_method-i-test_para_before_block_html_should_not_wrap_in_p_tag_source">show</a>
+                
+              </p>
+              <div id="method-i-test_para_before_block_html_should_not_wrap_in_p_tag_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/redcarpet2/test/redcarpet_test.rb, line 153</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_para_before_block_html_should_not_wrap_in_p_tag</span>
+  <span class="ruby-identifier">markdown</span> = <span class="ruby-identifier">render_with</span>({<span class="ruby-value">:lax_html_blocks</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>},
+    <span class="ruby-string">&quot;Things to watch out for\n&quot;</span> <span class="ruby-operator">+</span>
+    <span class="ruby-string">&quot;&lt;ul&gt;\n&lt;li&gt;Blah&lt;/li&gt;\n&lt;/ul&gt;\n&quot;</span>)
+
+  <span class="ruby-identifier">html_equal</span> <span class="ruby-string">&quot;&lt;p&gt;Things to watch out for&lt;/p&gt;\n\n&quot;</span> <span class="ruby-operator">+</span>
+    <span class="ruby-string">&quot;&lt;ul&gt;\n&lt;li&gt;Blah&lt;/li&gt;\n&lt;/ul&gt;\n&quot;</span>, <span class="ruby-identifier">markdown</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_should_return_string_in_same_encoding_as_input">
+            
+              <b>test_should_return_string_in_same_encoding_as_input</b>()
+            
+            <a href="../classes/MarkdownTest.html#method-i-test_should_return_string_in_same_encoding_as_input" name="method-i-test_should_return_string_in_same_encoding_as_input" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_should_return_string_in_same_encoding_as_input_source')" id="l_method-i-test_should_return_string_in_same_encoding_as_input_source">show</a>
+                
+              </p>
+              <div id="method-i-test_should_return_string_in_same_encoding_as_input_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/redcarpet2/test/redcarpet_test.rb, line 184</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_should_return_string_in_same_encoding_as_input</span>
+  <span class="ruby-identifier">input</span> = <span class="ruby-string">&quot;Yogācāra&quot;</span>
+  <span class="ruby-identifier">output</span> = <span class="ruby-ivar">@markdown</span>.<span class="ruby-identifier">render</span>(<span class="ruby-identifier">input</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">input</span>.<span class="ruby-identifier">encoding</span>.<span class="ruby-identifier">name</span>, <span class="ruby-identifier">output</span>.<span class="ruby-identifier">encoding</span>.<span class="ruby-identifier">name</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_simple_inline_html">
+            
+              <b>test_simple_inline_html</b>()
+            
+            <a href="../classes/MarkdownTest.html#method-i-test_simple_inline_html" name="method-i-test_simple_inline_html" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_simple_inline_html_source')" id="l_method-i-test_simple_inline_html_source">show</a>
+                
+              </p>
+              <div id="method-i-test_simple_inline_html_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/redcarpet2/test/redcarpet_test.rb, line 130</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_simple_inline_html</span>
+  <span class="ruby-comment">#markdown = Markdown.new(&quot;before\n\n&lt;div&gt;\n  foo\n&lt;/div&gt;\nafter&quot;)</span>
+  <span class="ruby-identifier">markdown</span> = <span class="ruby-ivar">@markdown</span>.<span class="ruby-identifier">render</span>(<span class="ruby-string">&quot;before\n\n&lt;div&gt;\n  foo\n&lt;/div&gt;\n\nafter&quot;</span>)
+  <span class="ruby-identifier">html_equal</span> <span class="ruby-string">&quot;&lt;p&gt;before&lt;/p&gt;\n\n&lt;div&gt;\n  foo\n&lt;/div&gt;\n\n&lt;p&gt;after&lt;/p&gt;\n&quot;</span>, <span class="ruby-identifier">markdown</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_spaced_headers">
+            
+              <b>test_spaced_headers</b>()
+            
+            <a href="../classes/MarkdownTest.html#method-i-test_spaced_headers" name="method-i-test_spaced_headers" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_spaced_headers_source')" id="l_method-i-test_spaced_headers_source">show</a>
+                
+              </p>
+              <div id="method-i-test_spaced_headers_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/redcarpet2/test/redcarpet_test.rb, line 278</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_spaced_headers</span>
+  <span class="ruby-identifier">rd</span> = <span class="ruby-identifier">render_with</span>({<span class="ruby-value">:space_after_headers</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>}, <span class="ruby-node">&quot;#123 a header yes\n&quot;</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">rd</span> <span class="ruby-operator">!~</span> <span class="ruby-regexp">/&lt;h1&gt;/</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_strikethrough_flag_works">
+            
+              <b>test_strikethrough_flag_works</b>()
+            
+            <a href="../classes/MarkdownTest.html#method-i-test_strikethrough_flag_works" name="method-i-test_strikethrough_flag_works" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_strikethrough_flag_works_source')" id="l_method-i-test_strikethrough_flag_works_source">show</a>
+                
+              </p>
+              <div id="method-i-test_strikethrough_flag_works_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/redcarpet2/test/redcarpet_test.rb, line 243</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_strikethrough_flag_works</span>
+  <span class="ruby-identifier">text</span> = <span class="ruby-string">&quot;this is ~some~ striked ~~text~~&quot;</span>
+
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">render_with</span>({}, <span class="ruby-identifier">text</span>) <span class="ruby-operator">!~</span> <span class="ruby-regexp">/&lt;del/</span>
+
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">render_with</span>({<span class="ruby-value">:strikethrough</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>}, <span class="ruby-identifier">text</span>) <span class="ruby-operator">=~</span> <span class="ruby-regexp">/&lt;del/</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_that_autolink_flag_works">
+            
+              <b>test_that_autolink_flag_works</b>()
+            
+            <a href="../classes/MarkdownTest.html#method-i-test_that_autolink_flag_works" name="method-i-test_that_autolink_flag_works" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_that_autolink_flag_works_source')" id="l_method-i-test_that_autolink_flag_works_source">show</a>
+                
+              </p>
+              <div id="method-i-test_that_autolink_flag_works_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/redcarpet2/test/redcarpet_test.rb, line 178</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_that_autolink_flag_works</span>
+  <span class="ruby-identifier">rd</span> = <span class="ruby-identifier">render_with</span>({<span class="ruby-value">:autolink</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>}, <span class="ruby-string">&quot;http://github.com/rtomayko/rdiscount&quot;</span>)
+  <span class="ruby-identifier">html_equal</span> <span class="ruby-string">&quot;&lt;p&gt;&lt;a href=\&quot;http://github.com/rtomayko/rdiscount\&quot;&gt;http://github.com/rtomayko/rdiscount&lt;/a&gt;&lt;/p&gt;\n&quot;</span>, <span class="ruby-identifier">rd</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_that_fenced_flag_works">
+            
+              <b>test_that_fenced_flag_works</b>()
+            
+            <a href="../classes/MarkdownTest.html#method-i-test_that_fenced_flag_works" name="method-i-test_that_fenced_flag_works" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_that_fenced_flag_works_source')" id="l_method-i-test_that_fenced_flag_works_source">show</a>
+                
+              </p>
+              <div id="method-i-test_that_fenced_flag_works_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/redcarpet2/test/redcarpet_test.rb, line 251</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_that_fenced_flag_works</span>
+    <span class="ruby-identifier">text</span> = <span class="ruby-value">&lt;&lt;fenced
+This is a simple test
+
+~~~~~
+This is some awesome code
+    with tabs and shit
+~~~
+fenced</span>
+
+    <span class="ruby-identifier">assert</span> <span class="ruby-identifier">render_with</span>({}, <span class="ruby-identifier">text</span>) <span class="ruby-operator">!~</span> <span class="ruby-regexp">/&lt;code/</span>
+
+    <span class="ruby-identifier">assert</span> <span class="ruby-identifier">render_with</span>({<span class="ruby-value">:fenced_code_blocks</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>}, <span class="ruby-identifier">text</span>) <span class="ruby-operator">=~</span> <span class="ruby-regexp">/&lt;code/</span>
+  <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_that_headers_are_linkable">
+            
+              <b>test_that_headers_are_linkable</b>()
+            
+            <a href="../classes/MarkdownTest.html#method-i-test_that_headers_are_linkable" name="method-i-test_that_headers_are_linkable" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_that_headers_are_linkable_source')" id="l_method-i-test_that_headers_are_linkable_source">show</a>
+                
+              </p>
+              <div id="method-i-test_that_headers_are_linkable_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/redcarpet2/test/redcarpet_test.rb, line 266</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_that_headers_are_linkable</span>
+  <span class="ruby-identifier">markdown</span> = <span class="ruby-ivar">@markdown</span>.<span class="ruby-identifier">render</span>(<span class="ruby-string">'### Hello [GitHub](http://github.com)'</span>)
+  <span class="ruby-identifier">html_equal</span> <span class="ruby-string">&quot;&lt;h3&gt;Hello &lt;a href=\&quot;http://github.com\&quot;&gt;GitHub&lt;/a&gt;&lt;/h3&gt;&quot;</span>, <span class="ruby-identifier">markdown</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_that_html_blocks_do_not_require_their_own_end_tag_line">
+            
+              <b>test_that_html_blocks_do_not_require_their_own_end_tag_line</b>()
+            
+            <a href="../classes/MarkdownTest.html#method-i-test_that_html_blocks_do_not_require_their_own_end_tag_line" name="method-i-test_that_html_blocks_do_not_require_their_own_end_tag_line" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_that_html_blocks_do_not_require_their_own_end_tag_line_source')" id="l_method-i-test_that_html_blocks_do_not_require_their_own_end_tag_line_source">show</a>
+                
+              </p>
+              <div id="method-i-test_that_html_blocks_do_not_require_their_own_end_tag_line_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/redcarpet2/test/redcarpet_test.rb, line 136</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_that_html_blocks_do_not_require_their_own_end_tag_line</span>
+  <span class="ruby-identifier">markdown</span> = <span class="ruby-ivar">@markdown</span>.<span class="ruby-identifier">render</span>(<span class="ruby-node">&quot;Para 1\n\n&lt;div&gt;&lt;pre&gt;HTML block\n&lt;/pre&gt;&lt;/div&gt;\n\nPara 2 [Link](#anchor)&quot;</span>)
+  <span class="ruby-identifier">html_equal</span> <span class="ruby-node">&quot;&lt;p&gt;Para 1&lt;/p&gt;\n\n&lt;div&gt;&lt;pre&gt;HTML block\n&lt;/pre&gt;&lt;/div&gt;\n\n&lt;p&gt;Para 2 &lt;a href=\&quot;#anchor\&quot;&gt;Link&lt;/a&gt;&lt;/p&gt;\n&quot;</span>,
+    <span class="ruby-identifier">markdown</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_that_inline_markdown_goes_to_html">
+            
+              <b>test_that_inline_markdown_goes_to_html</b>()
+            
+            <a href="../classes/MarkdownTest.html#method-i-test_that_inline_markdown_goes_to_html" name="method-i-test_that_inline_markdown_goes_to_html" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_that_inline_markdown_goes_to_html_source')" id="l_method-i-test_that_inline_markdown_goes_to_html_source">show</a>
+                
+              </p>
+              <div id="method-i-test_that_inline_markdown_goes_to_html_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/redcarpet2/test/redcarpet_test.rb, line 111</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_that_inline_markdown_goes_to_html</span>
+  <span class="ruby-identifier">markdown</span> = <span class="ruby-ivar">@markdown</span>.<span class="ruby-identifier">render</span>(<span class="ruby-string">'_Hello World_!'</span>)
+  <span class="ruby-identifier">html_equal</span> <span class="ruby-string">&quot;&lt;p&gt;&lt;em&gt;Hello World&lt;/em&gt;!&lt;/p&gt;&quot;</span>, <span class="ruby-identifier">markdown</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_that_inline_markdown_starts_and_ends_correctly">
+            
+              <b>test_that_inline_markdown_starts_and_ends_correctly</b>()
+            
+            <a href="../classes/MarkdownTest.html#method-i-test_that_inline_markdown_starts_and_ends_correctly" name="method-i-test_that_inline_markdown_starts_and_ends_correctly" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_that_inline_markdown_starts_and_ends_correctly_source')" id="l_method-i-test_that_inline_markdown_starts_and_ends_correctly_source">show</a>
+                
+              </p>
+              <div id="method-i-test_that_inline_markdown_starts_and_ends_correctly_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/redcarpet2/test/redcarpet_test.rb, line 116</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_that_inline_markdown_starts_and_ends_correctly</span>
+  <span class="ruby-identifier">markdown</span> = <span class="ruby-identifier">render_with</span>({<span class="ruby-value">:no_intra_emphasis</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>}, <span class="ruby-string">'_start _ foo_bar bar_baz _ end_ *italic* **bold** &lt;a&gt;_blah_&lt;/a&gt;'</span>)
+
+  <span class="ruby-identifier">html_equal</span> <span class="ruby-string">&quot;&lt;p&gt;&lt;em&gt;start _ foo_bar bar_baz _ end&lt;/em&gt; &lt;em&gt;italic&lt;/em&gt; &lt;strong&gt;bold&lt;/strong&gt; &lt;a&gt;&lt;em&gt;blah&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;&quot;</span>, <span class="ruby-identifier">markdown</span>
+
+  <span class="ruby-identifier">markdown</span> = <span class="ruby-ivar">@markdown</span>.<span class="ruby-identifier">render</span>(<span class="ruby-string">&quot;Run 'rake radiant:extensions:rbac_base:migrate'&quot;</span>)
+  <span class="ruby-identifier">html_equal</span> <span class="ruby-string">&quot;&lt;p&gt;Run 'rake radiant:extensions:rbac_base:migrate'&lt;/p&gt;&quot;</span>, <span class="ruby-identifier">markdown</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_that_intra_emphasis_works">
+            
+              <b>test_that_intra_emphasis_works</b>()
+            
+            <a href="../classes/MarkdownTest.html#method-i-test_that_intra_emphasis_works" name="method-i-test_that_intra_emphasis_works" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_that_intra_emphasis_works_source')" id="l_method-i-test_that_intra_emphasis_works_source">show</a>
+                
+              </p>
+              <div id="method-i-test_that_intra_emphasis_works_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/redcarpet2/test/redcarpet_test.rb, line 170</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_that_intra_emphasis_works</span>
+  <span class="ruby-identifier">rd</span> = <span class="ruby-identifier">render_with</span>({}, <span class="ruby-string">&quot;foo_bar_baz&quot;</span>)
+  <span class="ruby-identifier">html_equal</span> <span class="ruby-string">&quot;&lt;p&gt;foo&lt;em&gt;bar&lt;/em&gt;baz&lt;/p&gt;\n&quot;</span>, <span class="ruby-identifier">rd</span>
+
+  <span class="ruby-identifier">rd</span> = <span class="ruby-identifier">render_with</span>({<span class="ruby-value">:no_intra_emphasis</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>},<span class="ruby-string">&quot;foo_bar_baz&quot;</span>)
+  <span class="ruby-identifier">html_equal</span> <span class="ruby-string">&quot;&lt;p&gt;foo_bar_baz&lt;/p&gt;\n&quot;</span>, <span class="ruby-identifier">rd</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_that_simple_one_liner_goes_to_html">
+            
+              <b>test_that_simple_one_liner_goes_to_html</b>()
+            
+            <a href="../classes/MarkdownTest.html#method-i-test_that_simple_one_liner_goes_to_html" name="method-i-test_that_simple_one_liner_goes_to_html" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_that_simple_one_liner_goes_to_html_source')" id="l_method-i-test_that_simple_one_liner_goes_to_html_source">show</a>
+                
+              </p>
+              <div id="method-i-test_that_simple_one_liner_goes_to_html_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/redcarpet2/test/redcarpet_test.rb, line 106</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_that_simple_one_liner_goes_to_html</span>
+  <span class="ruby-identifier">assert_respond_to</span> <span class="ruby-ivar">@markdown</span>, <span class="ruby-value">:render</span>
+  <span class="ruby-identifier">html_equal</span> <span class="ruby-string">&quot;&lt;p&gt;Hello World.&lt;/p&gt;&quot;</span>, <span class="ruby-ivar">@markdown</span>.<span class="ruby-identifier">render</span>(<span class="ruby-string">&quot;Hello World.&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_that_tables_flag_works">
+            
+              <b>test_that_tables_flag_works</b>()
+            
+            <a href="../classes/MarkdownTest.html#method-i-test_that_tables_flag_works" name="method-i-test_that_tables_flag_works" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_that_tables_flag_works_source')" id="l_method-i-test_that_tables_flag_works_source">show</a>
+                
+              </p>
+              <div id="method-i-test_that_tables_flag_works_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/redcarpet2/test/redcarpet_test.rb, line 231</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_that_tables_flag_works</span>
+    <span class="ruby-identifier">text</span> = <span class="ruby-value">&lt;&lt;EOS
+ aaa | bbbb
+-----|------
+hello|sailor
+EOS</span>
+
+    <span class="ruby-identifier">assert</span> <span class="ruby-identifier">render_with</span>({}, <span class="ruby-identifier">text</span>) <span class="ruby-operator">!~</span> <span class="ruby-regexp">/&lt;table/</span>
+
+    <span class="ruby-identifier">assert</span> <span class="ruby-identifier">render_with</span>({<span class="ruby-value">:tables</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>}, <span class="ruby-identifier">text</span>) <span class="ruby-operator">=~</span> <span class="ruby-regexp">/&lt;table/</span>
+  <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_that_tags_can_have_dashes_and_underscores">
+            
+              <b>test_that_tags_can_have_dashes_and_underscores</b>()
+            
+            <a href="../classes/MarkdownTest.html#method-i-test_that_tags_can_have_dashes_and_underscores" name="method-i-test_that_tags_can_have_dashes_and_underscores" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_that_tags_can_have_dashes_and_underscores_source')" id="l_method-i-test_that_tags_can_have_dashes_and_underscores_source">show</a>
+                
+              </p>
+              <div id="method-i-test_that_tags_can_have_dashes_and_underscores_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/redcarpet2/test/redcarpet_test.rb, line 191</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_that_tags_can_have_dashes_and_underscores</span>
+  <span class="ruby-identifier">rd</span> = <span class="ruby-ivar">@markdown</span>.<span class="ruby-identifier">render</span>(<span class="ruby-string">&quot;foo &lt;asdf-qwerty&gt;bar&lt;/asdf-qwerty&gt; and &lt;a_b&gt;baz&lt;/a_b&gt;&quot;</span>)
+  <span class="ruby-identifier">html_equal</span> <span class="ruby-string">&quot;&lt;p&gt;foo &lt;asdf-qwerty&gt;bar&lt;/asdf-qwerty&gt; and &lt;a_b&gt;baz&lt;/a_b&gt;&lt;/p&gt;\n&quot;</span>, <span class="ruby-identifier">rd</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_that_urls_are_not_doubly_escaped">
+            
+              <b>test_that_urls_are_not_doubly_escaped</b>()
+            
+            <a href="../classes/MarkdownTest.html#method-i-test_that_urls_are_not_doubly_escaped" name="method-i-test_that_urls_are_not_doubly_escaped" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_that_urls_are_not_doubly_escaped_source')" id="l_method-i-test_that_urls_are_not_doubly_escaped_source">show</a>
+                
+              </p>
+              <div id="method-i-test_that_urls_are_not_doubly_escaped_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/redcarpet2/test/redcarpet_test.rb, line 125</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_that_urls_are_not_doubly_escaped</span>
+  <span class="ruby-identifier">markdown</span> = <span class="ruby-ivar">@markdown</span>.<span class="ruby-identifier">render</span>(<span class="ruby-string">'[Page 2](/search?query=Markdown+Test&amp;page=2)'</span>)
+  <span class="ruby-identifier">html_equal</span> <span class="ruby-string">&quot;&lt;p&gt;&lt;a href=\&quot;/search?query=Markdown+Test&amp;amp;page=2\&quot;&gt;Page 2&lt;/a&gt;&lt;/p&gt;\n&quot;</span>, <span class="ruby-identifier">markdown</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_whitespace_after_urls">
+            
+              <b>test_whitespace_after_urls</b>()
+            
+            <a href="../classes/MarkdownTest.html#method-i-test_whitespace_after_urls" name="method-i-test_whitespace_after_urls" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_whitespace_after_urls_source')" id="l_method-i-test_whitespace_after_urls_source">show</a>
+                
+              </p>
+              <div id="method-i-test_whitespace_after_urls_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/redcarpet2/test/redcarpet_test.rb, line 202</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_whitespace_after_urls</span>
+  <span class="ruby-identifier">rd</span> = <span class="ruby-identifier">render_with</span>({<span class="ruby-value">:autolink</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>}, <span class="ruby-string">&quot;Japan: http://www.abc.net.au/news/events/japan-quake-2011/beforeafter.htm (yes, japan)&quot;</span>)
+  <span class="ruby-identifier">exp</span> = <span class="ruby-string">%Q{&lt;p&gt;Japan: &lt;a href=&quot;http://www.abc.net.au/news/events/japan-quake-2011/beforeafter.htm&quot;&gt;http://www.abc.net.au/news/events/japan-quake-2011/beforeafter.htm&lt;/a&gt; (yes, japan)&lt;/p&gt;}</span>
+  <span class="ruby-identifier">html_equal</span> <span class="ruby-identifier">exp</span>, <span class="ruby-identifier">rd</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

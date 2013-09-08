@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hpricot::Doc::Trav</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            Hpricot::Doc::Trav 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/req/hpricot/lib/hpricot/modules_rb.html">req/hpricot/lib/hpricot/modules.rb</a></li>
+            
+            <li><a href="../../../files/req/hpricot/lib/hpricot/traverse_rb.html">req/hpricot/lib/hpricot/traverse.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-author">author</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-css_path">css_path</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-root">root</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-title">title</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-traverse_all_element">traverse_all_element</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-traverse_some_element">traverse_some_element</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>X</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-xpath">xpath</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            <a href="../Container/Trav.html">
+              Hpricot::Container::Trav
+            </a>
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-author">
+            
+              <b>author</b>()
+            
+            <a href="../../../classes/Hpricot/Doc/Trav.html#method-i-author" name="method-i-author" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p><code>author</code> searches author and return it as a text. It returns nil
+if not found.</p>
+
+<p><code>author</code> searchs following information.</p>
+<ul><li>
+<p>&lt;meta name=“author” content=“author-name”&gt; in HTML</p>
+</li><li>
+<p>&lt;link rev=“made” title=“author-name”&gt; in HTML</p>
+</li><li>
+<p>&lt;dc:creator&gt;author-name&lt;/dc:creator&gt; in RSS</p>
+</li><li>
+<p>&lt;dc:publisher&gt;author-name&lt;/dc:publisher&gt; in RSS</p>
+</li></ul>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-author_source')" id="l_method-i-author_source">show</a>
+                
+              </p>
+              <div id="method-i-author_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/hpricot/lib/hpricot/traverse.rb, line 760</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">author</span>
+  <span class="ruby-identifier">traverse_element</span>(<span class="ruby-string">'meta'</span>,
+    <span class="ruby-string">'{http://www.w3.org/1999/xhtml}meta'</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-keyword">next</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">fetch_attr</span>(<span class="ruby-string">'name'</span>).<span class="ruby-identifier">downcase</span> <span class="ruby-operator">==</span> <span class="ruby-string">'author'</span>
+      <span class="ruby-identifier">author</span> = <span class="ruby-identifier">e</span>.<span class="ruby-identifier">fetch_attribute</span>(<span class="ruby-string">'content'</span>).<span class="ruby-identifier">strip</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-identifier">author</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">author</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-keyword">rescue</span> <span class="ruby-constant">IndexError</span>
+    <span class="ruby-keyword">end</span>
+  }
+
+  <span class="ruby-identifier">traverse_element</span>(<span class="ruby-string">'link'</span>,
+    <span class="ruby-string">'{http://www.w3.org/1999/xhtml}link'</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-keyword">next</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">fetch_attr</span>(<span class="ruby-string">'rev'</span>).<span class="ruby-identifier">downcase</span> <span class="ruby-operator">==</span> <span class="ruby-string">'made'</span>
+      <span class="ruby-identifier">author</span> = <span class="ruby-identifier">e</span>.<span class="ruby-identifier">fetch_attribute</span>(<span class="ruby-string">'title'</span>).<span class="ruby-identifier">strip</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-identifier">author</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">author</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-keyword">rescue</span> <span class="ruby-constant">IndexError</span>
+    <span class="ruby-keyword">end</span>
+  } 
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">channel</span> = <span class="ruby-identifier">find_element</span>(<span class="ruby-string">'{http://purl.org/rss/1.0/}channel'</span>)
+    <span class="ruby-identifier">channel</span>.<span class="ruby-identifier">traverse_element</span>(<span class="ruby-string">'{http://purl.org/dc/elements/1.1/}creator'</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">begin</span>
+        <span class="ruby-identifier">author</span> = <span class="ruby-identifier">e</span>.<span class="ruby-identifier">extract_text</span>.<span class="ruby-identifier">strip</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">author</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">author</span>.<span class="ruby-identifier">empty?</span>
+      <span class="ruby-keyword">rescue</span> <span class="ruby-constant">IndexError</span>
+      <span class="ruby-keyword">end</span>
+    }
+    <span class="ruby-identifier">channel</span>.<span class="ruby-identifier">traverse_element</span>(<span class="ruby-string">'{http://purl.org/dc/elements/1.1/}publisher'</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">begin</span>
+        <span class="ruby-identifier">author</span> = <span class="ruby-identifier">e</span>.<span class="ruby-identifier">extract_text</span>.<span class="ruby-identifier">strip</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">author</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">author</span>.<span class="ruby-identifier">empty?</span>
+      <span class="ruby-keyword">rescue</span> <span class="ruby-constant">IndexError</span>
+      <span class="ruby-keyword">end</span>
+    }
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-css_path">
+            
+              <b>css_path</b>()
+            
+            <a href="../../../classes/Hpricot/Doc/Trav.html#method-i-css_path" name="method-i-css_path" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-css_path_source')" id="l_method-i-css_path_source">show</a>
+                
+              </p>
+              <div id="method-i-css_path_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/hpricot/lib/hpricot/traverse.rb, line 640</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">css_path</span>
+  <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-root">
+            
+              <b>root</b>()
+            
+            <a href="../../../classes/Hpricot/Doc/Trav.html#method-i-root" name="method-i-root" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-root_source')" id="l_method-i-root_source">show</a>
+                
+              </p>
+              <div id="method-i-root_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/hpricot/lib/hpricot/traverse.rb, line 804</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">root</span>
+  <span class="ruby-identifier">es</span> = []
+  <span class="ruby-identifier">children</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">es</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">c</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">elem?</span> } <span class="ruby-keyword">if</span> <span class="ruby-identifier">children</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">Hpricot</span><span class="ruby-operator">::</span><span class="ruby-constant">Error</span>, <span class="ruby-string">&quot;no element&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">es</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">Hpricot</span><span class="ruby-operator">::</span><span class="ruby-constant">Error</span>, <span class="ruby-string">&quot;multiple top elements&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-number">1</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">es</span>.<span class="ruby-identifier">length</span>
+  <span class="ruby-identifier">es</span>[<span class="ruby-number">0</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-title">
+            
+              <b>title</b>()
+            
+            <a href="../../../classes/Hpricot/Doc/Trav.html#method-i-title" name="method-i-title" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p><code>title</code> searches title and return it as a text. It returns nil
+if not found.</p>
+
+<p><code>title</code> searchs following information.</p>
+<ul><li>
+<p>&lt;title&gt;…&lt;/title&gt; in HTML</p>
+</li><li>
+<p>&lt;title&gt;…&lt;/title&gt; in RSS</p>
+</li></ul>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-title_source')" id="l_method-i-title_source">show</a>
+                
+              </p>
+              <div id="method-i-title_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/hpricot/lib/hpricot/traverse.rb, line 743</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">title</span>
+  <span class="ruby-identifier">e</span> = <span class="ruby-identifier">find_element</span>(<span class="ruby-string">'title'</span>,
+    <span class="ruby-string">'{http://www.w3.org/1999/xhtml}title'</span>,
+    <span class="ruby-string">'{http://purl.org/rss/1.0/}title'</span>,
+    <span class="ruby-string">'{http://my.netscape.com/rdf/simple/0.9/}title'</span>)
+  <span class="ruby-identifier">e</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">extract_text</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-traverse_all_element">
+            
+              <b>traverse_all_element</b>(&amp;block)
+            
+            <a href="../../../classes/Hpricot/Doc/Trav.html#method-i-traverse_all_element" name="method-i-traverse_all_element" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-traverse_all_element_source')" id="l_method-i-traverse_all_element_source">show</a>
+                
+              </p>
+              <div id="method-i-traverse_all_element_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/hpricot/lib/hpricot/traverse.rb, line 634</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">traverse_all_element</span>(&amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">children</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">traverse_all_element</span>(&amp;<span class="ruby-identifier">block</span>) } <span class="ruby-keyword">if</span> <span class="ruby-identifier">children</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-traverse_some_element">
+            
+              <b>traverse_some_element</b>(name_set, &amp;block)
+            
+            <a href="../../../classes/Hpricot/Doc/Trav.html#method-i-traverse_some_element" name="method-i-traverse_some_element" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-traverse_some_element_source')" id="l_method-i-traverse_some_element_source">show</a>
+                
+              </p>
+              <div id="method-i-traverse_some_element_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/hpricot/lib/hpricot/traverse.rb, line 659</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">traverse_some_element</span>(<span class="ruby-identifier">name_set</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">children</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">traverse_some_element</span>(<span class="ruby-identifier">name_set</span>, &amp;<span class="ruby-identifier">block</span>) } <span class="ruby-keyword">if</span> <span class="ruby-identifier">children</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-xpath">
+            
+              <b>xpath</b>()
+            
+            <a href="../../../classes/Hpricot/Doc/Trav.html#method-i-xpath" name="method-i-xpath" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-xpath_source')" id="l_method-i-xpath_source">show</a>
+                
+              </p>
+              <div id="method-i-xpath_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/hpricot/lib/hpricot/traverse.rb, line 637</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">xpath</span>
+  <span class="ruby-string">&quot;/&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

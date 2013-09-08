@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>HH::Syntax</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            HH::Syntax 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/lib/ext/highlighter/common_rb.html">lib/ext/highlighter/common.rb</a></li>
+            
+            <li><a href="../../files/lib/ext/highlighter/lang/ruby_rb.html">lib/ext/highlighter/lang/ruby.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+    <!-- Namespace -->
+    <div class="sectiontitle">Namespace</div>
+    <ul>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Syntax/Default.html">HH::Syntax::Default</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Syntax/Ruby.html">HH::Syntax::Ruby</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Syntax/Token.html">HH::Syntax::Token</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Syntax/Tokenizer.html">HH::Syntax::Tokenizer</a>
+        </li>
+      
+    </ul>
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-all">all</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>L</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-load">load</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">SYNTAX</td>
+            <td>=</td>
+            <td class="attr-value">Hash.new( Default )</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>A hash for registering syntax implementations.</p></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-all">
+            
+              <b>all</b>()
+            
+            <a href="../../classes/HH/Syntax.html#method-c-all" name="method-c-all" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Return an array of the names of supported syntaxes.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-all_source')" id="l_method-c-all_source">show</a>
+                
+              </p>
+              <div id="method-c-all_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ext/highlighter/common.rb, line 190</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">all</span>
+  <span class="ruby-identifier">lang_dir</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-keyword">__FILE__</span>), <span class="ruby-string">&quot;syntax&quot;</span>, <span class="ruby-string">&quot;lang&quot;</span>)
+  <span class="ruby-constant">Dir</span>[<span class="ruby-node">&quot;#{lang_dir}/*.rb&quot;</span>].<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">path</span><span class="ruby-operator">|</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">path</span>, <span class="ruby-string">&quot;.rb&quot;</span>) }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-load">
+            
+              <b>load</b>( syntax )
+            
+            <a href="../../classes/HH/Syntax.html#method-c-load" name="method-c-load" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Load the implementation of the requested syntax. If the syntax cannot be
+found, or if it cannot be loaded for whatever reason, the <a
+href="Syntax/Default.html">Default</a> syntax handler will be returned.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-load_source')" id="l_method-c-load_source">show</a>
+                
+              </p>
+              <div id="method-c-load_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ext/highlighter/common.rb, line 180</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">load</span>( <span class="ruby-identifier">syntax</span> )
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">require_relative</span> <span class="ruby-node">&quot;lang/#{syntax}&quot;</span>
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">LoadError</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-constant">SYNTAX</span>[ <span class="ruby-identifier">syntax</span> ].<span class="ruby-identifier">new</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                        </div>
+
+    </div>
+  </body>
+</html>    

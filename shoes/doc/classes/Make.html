@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Make</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            Make 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/make/make_rb.html">make/make.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-cc">cc</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-common_build">common_build</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-copy_files">copy_files</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-copy_files_to_dist">copy_files_to_dist</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>E</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-env">env</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-rewrite">rewrite</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            FileUtils
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-cc">
+            
+              <b>cc</b>(t)
+            
+            <a href="../classes/Make.html#method-i-cc" name="method-i-cc" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-cc_source')" id="l_method-i-cc_source">show</a>
+                
+              </p>
+              <div id="method-i-cc_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File make/make.rb, line 27</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">cc</span>(<span class="ruby-identifier">t</span>)
+  <span class="ruby-identifier">sh</span> <span class="ruby-node">&quot;#{CC} -I. -c -o#{t.name} #{LINUX_CFLAGS} #{t.source}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-common_build">
+            
+              <b>common_build</b>()
+            
+            <a href="../classes/Make.html#method-i-common_build" name="method-i-common_build" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-common_build_source')" id="l_method-i-common_build_source">show</a>
+                
+              </p>
+              <div id="method-i-common_build_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File make/make.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">common_build</span>
+  <span class="ruby-identifier">mkdir_p</span> <span class="ruby-string">&quot;dist/ruby&quot;</span>
+  <span class="ruby-identifier">cp_r</span>  <span class="ruby-node">&quot;#{EXT_RUBY_LIBRUBY}&quot;</span>, <span class="ruby-string">&quot;dist/ruby/lib&quot;</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">RUBY_LIB_BASE</span> <span class="ruby-operator">!=</span> <span class="ruby-string">'lib'</span>
+    <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">Dir</span>.<span class="ruby-identifier">pwd</span>,<span class="ruby-string">&quot;dist/ruby&quot;</span>)) { <span class="ruby-identifier">ln_s</span> <span class="ruby-string">&quot;lib&quot;</span>, <span class="ruby-constant">RUBY_LIB_BASE</span> }
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-constant">ENV</span>[<span class="ruby-string">'STANDARD'</span>]
+    <span class="ruby-node">%w[soap wsdl xsd]</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">libn</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">rm_rf</span> <span class="ruby-node">&quot;dist/ruby/lib/#{libn}&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-node">%w[req/ftsearch/lib/* req/rake/lib/*]</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">rdir</span><span class="ruby-operator">|</span>
+    <span class="ruby-constant">FileList</span>[<span class="ruby-identifier">rdir</span>].<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">rlib</span><span class="ruby-operator">|</span> <span class="ruby-identifier">cp_r</span> <span class="ruby-identifier">rlib</span>, <span class="ruby-string">&quot;dist/ruby/lib&quot;</span> }
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-node">%w[req/binject/ext/binject_c req/ftsearch/ext/ftsearchrt req/bloopsaphone/ext/bloops req/chipmunk/ext/chipmunk]</span>.
+    <span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">xdir</span><span class="ruby-operator">|</span> <span class="ruby-identifier">copy_ext</span> <span class="ruby-identifier">xdir</span>, <span class="ruby-node">&quot;dist/ruby/lib/#{RUBY_PLATFORM}&quot;</span> }
+
+  <span class="ruby-identifier">gdir</span> = <span class="ruby-node">&quot;dist/ruby/gems/#{RUBY_V}&quot;</span>
+  {<span class="ruby-string">'hpricot'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'lib'</span>, <span class="ruby-string">'json'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'lib/json/ext'</span>, <span class="ruby-string">'sqlite3'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'lib'</span>}.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">gemn</span>, <span class="ruby-identifier">xdir</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">spec</span> = <span class="ruby-identifier">eval</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-node">&quot;req/#{gemn}/gemspec&quot;</span>))
+    <span class="ruby-identifier">mkdir_p</span> <span class="ruby-node">&quot;#{gdir}/specifications&quot;</span>
+    <span class="ruby-identifier">mkdir_p</span> <span class="ruby-node">&quot;#{gdir}/gems/#{spec.full_name}/lib&quot;</span>
+    <span class="ruby-constant">FileList</span>[<span class="ruby-node">&quot;req/#{gemn}/lib/*&quot;</span>].<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">rlib</span><span class="ruby-operator">|</span> <span class="ruby-identifier">cp_r</span> <span class="ruby-identifier">rlib</span>, <span class="ruby-node">&quot;#{gdir}/gems/#{spec.full_name}/lib&quot;</span> }
+    <span class="ruby-identifier">mkdir_p</span> <span class="ruby-node">&quot;#{gdir}/gems/#{spec.full_name}/#{xdir}&quot;</span>
+    <span class="ruby-constant">FileList</span>[<span class="ruby-node">&quot;req/#{gemn}/ext/*&quot;</span>].<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">elib</span><span class="ruby-operator">|</span> <span class="ruby-identifier">copy_ext</span> <span class="ruby-identifier">elib</span>, <span class="ruby-node">&quot;#{gdir}/gems/#{spec.full_name}/#{xdir}&quot;</span> }
+    <span class="ruby-identifier">cp</span> <span class="ruby-node">&quot;req/#{gemn}/gemspec&quot;</span>, <span class="ruby-node">&quot;#{gdir}/specifications/#{spec.full_name}.gemspec&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-copy_files">
+            
+              <b>copy_files</b>(glob, dir)
+            
+            <a href="../classes/Make.html#method-i-copy_files" name="method-i-copy_files" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-copy_files_source')" id="l_method-i-copy_files_source">show</a>
+                
+              </p>
+              <div id="method-i-copy_files_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File make/make.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">copy_files</span> <span class="ruby-identifier">glob</span>, <span class="ruby-identifier">dir</span>
+  <span class="ruby-constant">FileList</span>[<span class="ruby-identifier">glob</span>].<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">cp_r</span> <span class="ruby-identifier">f</span>, <span class="ruby-identifier">dir</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-copy_files_to_dist">
+            
+              <b>copy_files_to_dist</b>()
+            
+            <a href="../classes/Make.html#method-i-copy_files_to_dist" name="method-i-copy_files_to_dist" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-copy_files_to_dist_source')" id="l_method-i-copy_files_to_dist_source">show</a>
+                
+              </p>
+              <div id="method-i-copy_files_to_dist_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File make/make.rb, line 4</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">copy_files_to_dist</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">ENV</span>[<span class="ruby-string">'APP'</span>]
+    <span class="ruby-keyword">if</span> <span class="ruby-constant">APP</span>[<span class="ruby-string">'clone'</span>]
+      <span class="ruby-identifier">sh</span> <span class="ruby-constant">APP</span>[<span class="ruby-string">'clone'</span>].<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/^git /</span>, <span class="ruby-node">&quot;#{GIT} --git-dir=#{ENV['APP']}/.git &quot;</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">cp_r</span> <span class="ruby-constant">ENV</span>[<span class="ruby-string">'APP'</span>], <span class="ruby-string">&quot;dist/app&quot;</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-constant">APP</span>[<span class="ruby-string">'ignore'</span>]
+      <span class="ruby-constant">APP</span>[<span class="ruby-string">'ignore'</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">nn</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">rm_rf</span> <span class="ruby-node">&quot;dist/app/#{nn}&quot;</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">cp_r</span>  <span class="ruby-string">&quot;fonts&quot;</span>, <span class="ruby-string">&quot;dist/fonts&quot;</span>
+  <span class="ruby-identifier">cp_r</span>  <span class="ruby-string">&quot;lib&quot;</span>, <span class="ruby-string">&quot;dist/lib&quot;</span>
+  <span class="ruby-identifier">cp_r</span>  <span class="ruby-string">&quot;samples&quot;</span>, <span class="ruby-string">&quot;dist/samples&quot;</span>
+  <span class="ruby-identifier">cp_r</span>  <span class="ruby-string">&quot;static&quot;</span>, <span class="ruby-string">&quot;dist/static&quot;</span>
+  <span class="ruby-identifier">cp</span>    <span class="ruby-string">&quot;README.md&quot;</span>, <span class="ruby-string">&quot;dist/README.txt&quot;</span>
+  <span class="ruby-identifier">cp</span>    <span class="ruby-string">&quot;CHANGELOG&quot;</span>, <span class="ruby-string">&quot;dist/CHANGELOG.txt&quot;</span>
+  <span class="ruby-identifier">cp</span>    <span class="ruby-string">&quot;COPYING&quot;</span>, <span class="ruby-string">&quot;dist/COPYING.txt&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-env">
+            
+              <b>env</b>(x)
+            
+            <a href="../classes/Make.html#method-i-env" name="method-i-env" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Check the environment</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-env_source')" id="l_method-i-env_source">show</a>
+                
+              </p>
+              <div id="method-i-env_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File make/make.rb, line 82</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">env</span>(<span class="ruby-identifier">x</span>)
+  <span class="ruby-keyword">unless</span> <span class="ruby-constant">ENV</span>[<span class="ruby-identifier">x</span>]
+    <span class="ruby-identifier">abort</span> <span class="ruby-node">&quot;Your #{x} environment variable is not set!&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-constant">ENV</span>[<span class="ruby-identifier">x</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-rewrite">
+            
+              <b>rewrite</b>(before, after, reg = /\#\{(\w+)\}/, reg2 = '\1')
+            
+            <a href="../classes/Make.html#method-i-rewrite" name="method-i-rewrite" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Subs in special variables</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-rewrite_source')" id="l_method-i-rewrite_source">show</a>
+                
+              </p>
+              <div id="method-i-rewrite_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File make/make.rb, line 32</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">rewrite</span> <span class="ruby-identifier">before</span>, <span class="ruby-identifier">after</span>, <span class="ruby-identifier">reg</span> = <span class="ruby-node">/\#\{(\w+)\}/</span>, <span class="ruby-identifier">reg2</span> = <span class="ruby-string">'\1'</span>
+  <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">after</span>, <span class="ruby-string">'w'</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">a</span><span class="ruby-operator">|</span>
+    <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">before</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">b</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">b</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">a</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">line</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-identifier">reg</span>) <span class="ruby-keyword">do</span>
+          <span class="ruby-keyword">if</span> <span class="ruby-identifier">reg2</span>.<span class="ruby-identifier">include?</span> <span class="ruby-string">'\1'</span>
+            <span class="ruby-identifier">reg2</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">%r\1!</span>, <span class="ruby-constant">Object</span>.<span class="ruby-identifier">const_get</span>(<span class="ruby-node">$1</span>))
+          <span class="ruby-keyword">else</span>
+            <span class="ruby-identifier">reg2</span>
+          <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

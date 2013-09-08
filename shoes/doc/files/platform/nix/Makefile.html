@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Makefile</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            Makefile
+        </h1>
+        <ul class="files">
+            <li>platform/nix/Makefile</li>
+            <li>Last modified: 2013-04-23 09:29:52 -0500</li>
+        </ul>
+    </div>
+
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p># shoes - abstract windowing for gtk, osx, and win32 # by why the lucky
+stiff, released to you under the MIT license</p>
+
+<p>SRC = shoes/app.c shoes/canvas.c shoes/effects.c shoes/image.c
+shoes/internal.c shoes/ruby.c shoes/world.c shoes/native/gtk.c
+shoes/http/curl.c OBJ = ${SRC:.c=.o}</p>
+
+<p>PREFIX = /usr/local INCS = -I. -I/usr/include -I/usr/local/include LIBS =
+-L/usr/lib -L/usr/local/lib -lcairo -lpangocairo-1.0 -lgif -ljpeg -lrt</p>
+
+<p>REVISION = `git rev-list HEAD | wc -l` RUBY_INCS = `ruby -rrbconfig -e
+‘puts <a href="http://"archdir"">RbConfig::CONFIG</a>’` RUBY_SO = `ruby
+-rrbconfig -e ‘puts <a href="http://"RUBY_SO_NAME"">RbConfig::CONFIG</a>’`
+RUBY_LIBS = `ruby -rrbconfig -e ‘puts <a
+href="http://"LIBRUBYARG_SHARED"">RbConfig::CONFIG</a>’` -l${RUBY_SO}
+RUBY_PREFIX = `ruby -rrbconfig -e ‘puts <a
+href="http://"prefix"">RbConfig::CONFIG</a>’` RUBY_PLATFORM = `ruby
+-rrbconfig -e ‘puts RUBY_PLATFORM’` RUBY_VERSION = `ruby -rrbconfig -e
+‘puts <a href="http://"ruby_version"">RbConfig::CONFIG</a>’` CAIRO_CFLAGS =
+`pkg-config –cflags cairo` CAIRO_LIB = `pkg-config –libs cairo`
+PANGO_CFLAGS = `pkg-config –cflags pango` PANGO_LIB = `pkg-config –libs
+pango` GTK_CFLAGS = `pkg-config –cflags gtk+-2.0` GTK_LIB = `pkg-config
+–libs gtk+-2.0` CURL_CFLAGS = `curl-config –cflags` CURL_LIB = `curl-config
+–libs` RELEASE_NAME = `cat shoes/version.h | ruby -ne ‘puts $$1.downcase if
+~/SHOES_RELEASE_NAME “(.+)”/’` HPRICOT_NAME = `ruby -rubygems -e ‘puts
+eval(File.read(“<a
+href="../../req/hpricot/gemspec.html">req/hpricot/gemspec</a>”)).full_name’`
+SQLITE_NAME = `ruby -rubygems -e ‘puts eval(File.read(“<a
+href="../../req/sqlite3/gemspec.html">req/sqlite3/gemspec</a>”)).full_name’`
+JSON_NAME = `ruby -rubygems -e ‘puts eval(File.read(“<a
+href="../../req/json/gemspec.html">req/json/gemspec</a>”)).full_name’`
+GEM_DIR = “dist/ruby/gems/${RUBY_VERSION}” SHOES_IDENT = “shoes
+${RELEASE_NAME} (0.r${REVISION}) [${RUBY_PLATFORM}]”</p>
+
+<p>VERSION = 0.r${REVISION} CFLAGS = -DSHOES_GTK -fPIC ${INCS} ${CAIRO_CFLAGS}
+${PANGO_CFLAGS} ${GTK_CFLAGS} ${CURL_CFLAGS} -I${RUBY_INCS} LDFLAGS = -fPIC
+${LIBS} ${CAIRO_LIB} ${PANGO_LIB} ${GTK_LIB} ${CURL_LIB} ${RUBY_LIBS}
+OPTIONS =</p>
+
+<p>ifeq (${DEBUG}, 1)</p>
+
+<pre>CFLAGS += -DDEBUG
+OPTIONS += DEBUG
+SHOES_IDENT += +debug</pre>
+
+<p>endif</p>
+
+<p>all: options dist/shoes.launch</p>
+
+<p>options:</p>
+
+<pre>@echo build options: ${SHOES_IDENT}
+@echo &quot;CC       = ${CC}&quot;
+@echo &quot;RUBY     = ${RUBY_PREFIX}&quot;
+@echo &quot;OPTIONS  =${OPTIONS}&quot;</pre>
+
+<p>.c.o:</p>
+
+<pre>@echo CC $&lt;
+@${CC} -c ${CFLAGS} -o $@ $&lt;</pre>
+
+<p>dist/libshoes.so: ${OBJ}</p>
+
+<pre>@echo CC -o $@
+@mkdir dist
+@${CC} -o $@ ${OBJ} ${LDFLAGS} -shared</pre>
+
+<p>dist/shoes-bin: dist/libshoes.so bin/main.o</p>
+
+<pre>@echo CC -o $@
+@${CC} -o $@ ${LDFLAGS} bin/main.o -Ldist -lshoes</pre>
+
+<p>dist/shoes.launch: dist/shoes-bin</p>
+
+<pre>@cp platform/nix/shoes.launch dist/
+@mkdir -p dist/ruby
+@ln -s ${RUBY_PREFIX}/lib/ruby/1.8 dist/ruby/lib
+@cp ${RUBY_PREFIX}/lib/lib${RUBY_SO}.so dist
+@ln -s lib${RUBY_SO}.so dist/libruby.so.1.8
+@cp -r lib dist/lib
+@cp -r req/rubygems   dist/lib
+@mkdir -p ${GEM_DIR}/specifications
+@mkdir -p ${GEM_DIR}/gems/${HPRICOT_NAME}
+@cp -r req/hpricot/lib ${GEM_DIR}/gems/${HPRICOT_NAME}/lib
+@cd req/hpricot/ext/hpricot_scan &amp;&amp; ruby extconf.rb &amp;&amp; make
+@cp req/hpricot/ext/hpricot_scan  .so ${GEM_DIR}/gems/${HPRICOT_NAME}/lib
+@cp req/hpricot/gemspec ${GEM_DIR}/specifications/${HPRICOT_NAME}.gemspec
+@mkdir -p ${GEM_DIR}/gems/${SQLITE_NAME}
+@cp -r req/sqlite3/lib ${GEM_DIR}/gems/${SQLITE_NAME}/lib
+@cd req/sqlite3/ext/sqlite3 &amp;&amp; ruby extconf.rb &amp;&amp; make
+@cp req/sqlite3/ext/sqlite3/*.so ${GEM_DIR}/gems/${SQLITE_NAME}/lib
+@cp req/sqlite3/gemspec ${GEM_DIR}/specifications/${SQLITE_NAME}.gemspec
+@mkdir -p ${GEM_DIR}/gems/${JSON_NAME}
+@cp -r req/json/lib ${GEM_DIR}/gems/${JSON_NAME}/lib
+@cd req/json/ext/generator &amp;&amp; ruby extconf.rb &amp;&amp; make
+@cd req/json/ext/parser &amp;&amp; ruby extconf.rb &amp;&amp; make
+@mkdir -p ${GEM_DIR}/gems/${JSON_NAME}/lib/json/ext
+@cp req/json/ext/   *.so ${GEM_DIR}/gems/${JSON_NAME}/lib/json/ext
+@cp req/json/gemspec ${GEM_DIR}/specifications/${JSON_NAME}.gemspec
+@cp -r req/ftsearch/lib/* dist/lib
+@cd req/ftsearch/ext/ftsearchrt &amp;&amp; ruby extconf.rb &amp;&amp; make
+@cp req/ftsearch/ext/ftsearchrt/*.so dist/lib
+@cd req/binject/ext/binject_c &amp;&amp; ruby extconf.rb &amp;&amp; make
+@cp req/binject/ext/binject_c/*.so dist/lib
+@cp -r samples dist/samples
+@cp -r static dist/static
+@rm -rf dist/   .svn
+@echo ${SHOES_IDENT} &gt; dist/VERSION.txt
+@cp README COPYING dist
+@echo 'LD_LIBRARY_PATH=&quot;$$APPPATH/../lib/shoes&quot; $$APPPATH/../lib/shoes/shoes-bin $$@' &gt;&gt; dist/shoes.launch 
+@chmod 755 dist/shoes.launch</pre>
+
+<p>clean:</p>
+
+<pre>@echo cleaning
+@rm -rf dist
+@rm -f ${OBJ} bin/main.o shoes-${VERSION}.tar.gz</pre>
+
+<p>dist: clean</p>
+
+<pre>@echo creating dist tarball
+@mkdir -p shoes-${VERSION}
+@cp -R COPYING Makefile README bin shoes samples static \
+        shoes-${VERSION}
+@rm -f shoes-${VERSION}/bin/main.skel
+@rm -rf shoes-${VERSION}/**/.svn
+@tar -cf shoes-${VERSION}.tar shoes-${VERSION}
+@gzip shoes-${VERSION}.tar
+@rm -rf shoes-${VERSION}</pre>
+
+<p>install: all</p>
+
+<pre>@echo installing executable file to ${DESTDIR}${PREFIX}/bin
+@mkdir -p ${DESTDIR}${PREFIX}/bin
+@cp -f dist/shoes.launch ${DESTDIR}${PREFIX}/bin/shoes
+@chmod 755 ${DESTDIR}${PREFIX}/bin/shoes
+@echo installing libraries to ${DESTDIR}${PREFIX}/lib/shoes
+@rm -rf ${DESTDIR}${PREFIX}/lib/shoes
+@mkdir -p ${DESTDIR}${PREFIX}/lib/shoes
+@cp -r dist/* ${DESTDIR}${PREFIX}/lib/shoes/</pre>
+
+<p>uninstall:</p>
+
+<pre>@echo removing executable file from ${DESTDIR}${PREFIX}/bin
+@rm -f ${DESTDIR}${PREFIX}/bin/shoes
+# @echo removing manual page from ${DESTDIR}${MANPREFIX}/man1
+# @rm -f ${DESTDIR}${MANPREFIX}/man1/shoes.1</pre>
+
+<p>.PHONY: all options clean dist install uninstall</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+              </div>
+
+    </div>
+  </body>
+</html>

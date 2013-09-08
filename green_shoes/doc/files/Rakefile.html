@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Rakefile</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            Rakefile
+        </h1>
+        <ul class="files">
+            <li>Rakefile</li>
+            <li>Last modified: 2013-02-15 10:27:56 -0600</li>
+        </ul>
+    </div>
+
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>require ‘rubygems’ require ‘rake’ require ‘rdoc/task’ require ‘rake/clean’
+begin</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">'jeweler'</span>
+</pre>
+
+<p>rescue LoadError</p>
+
+<pre>raise LoadError, &quot;!!! Please install the gem: jeweler !!!&quot;</pre>
+
+<p>end</p>
+
+<p>Jeweler::Tasks.new do |gem|</p>
+
+<pre class="ruby"><span class="ruby-identifier">gem</span>.<span class="ruby-identifier">name</span> = <span class="ruby-string">&quot;green_shoes&quot;</span>
+<span class="ruby-identifier">gem</span>.<span class="ruby-identifier">summary</span> = <span class="ruby-string">%Q{Green Shoes}</span>
+<span class="ruby-identifier">gem</span>.<span class="ruby-identifier">description</span> = <span class="ruby-string">%Q{Green Shoes is one of colorful Shoes, written in pure Ruby with Ruby/GTK2.}</span>
+<span class="ruby-identifier">gem</span>.<span class="ruby-identifier">email</span> = <span class="ruby-string">&quot;ashbbb@gmail.com&quot;</span>
+<span class="ruby-identifier">gem</span>.<span class="ruby-identifier">executables</span> = [<span class="ruby-string">&quot;gshoes&quot;</span>]
+<span class="ruby-identifier">gem</span>.<span class="ruby-identifier">homepage</span> = <span class="ruby-string">&quot;http://github.com/ashbb/green_shoes&quot;</span>
+<span class="ruby-identifier">gem</span>.<span class="ruby-identifier">authors</span> = [<span class="ruby-string">&quot;ashbb&quot;</span>]
+<span class="ruby-identifier">gem</span>.<span class="ruby-identifier">add_dependency</span> <span class="ruby-string">'gtk2'</span>
+<span class="ruby-identifier">gem</span>.<span class="ruby-identifier">files</span> = <span class="ruby-node">%w[bin lib static samples snapshots]</span>.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">dir</span><span class="ruby-operator">|</span> <span class="ruby-constant">FileList</span>[<span class="ruby-identifier">dir</span> <span class="ruby-operator">+</span> <span class="ruby-string">'   /*'</span>]}.<span class="ruby-identifier">flatten</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">'VERSION'</span>
+</pre>
+
+<p>end</p>
+
+<p>Rake::RDocTask.new do |t|</p>
+
+<pre>t.rdoc_dir = 'doc'
+t.title    = 'Green Shoes'
+t.options &lt;&lt; '--charset' &lt;&lt; 'utf-8'
+t.rdoc_files.include('README.md')
+t.rdoc_files.include('lib/green_shoes.rb')
+t.rdoc_files.include('lib/shoes/*.rb')</pre>
+
+<p>end</p>
+
+<p>CLEAN.include [ ‘pkg’, ‘*.gem’, ‘doc’ ]</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+              </div>
+
+    </div>
+  </body>
+</html>

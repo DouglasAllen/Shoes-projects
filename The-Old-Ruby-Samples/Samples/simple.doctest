@@ -1,0 +1,29 @@
+
+doctest:
+
+>> 1 + 2
+
+=> 3
+
+doctest:
+
+>> 1 + 2
+
+=> 4
+
+doctest:
+
+>> class Person
+
+         attr_accessor :name
+   end
+
+>> Person
+=> Person
+
+>> p = Person.new
+
+>> p.name = “Tom”
+>> p.name
+=> “Tom”
+

@@ -1,0 +1,738 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Tank</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Tank 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/samples/expert-tankspank_rb.html">samples/expert-tankspank.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-aim">aim</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-collide_and_stop">collide_and_stop</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-draw">draw</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>E</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-east">east</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>F</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-fire">fire</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-north">north</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-set_destination">set_destination</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-south">south</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-turn">turn</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>U</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-update">update</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>W</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-west">west</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            <a href="Collisions.html">
+              Collisions
+            </a>
+          
+        </li>
+      
+        <li>
+          
+            <a href="Guidance.html">
+              Guidance
+            </a>
+          
+        </li>
+      
+        <li>
+          
+            <a href="Life.html">
+              Life
+            </a>
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+      <!-- Section attributes -->
+      <div class="sectiontitle">Attributes</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>x</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>y</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+      </table>
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>()
+            
+            <a href="../classes/Tank.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File samples/expert-tankspank.rb, line 85</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>
+        <span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span> = <span class="ruby-number">0</span>, <span class="ruby-number">-125</span>
+        <span class="ruby-ivar">@last_x</span>, <span class="ruby-ivar">@last_y</span> = <span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>
+        <span class="ruby-ivar">@tank_angle</span> = <span class="ruby-number">0.0</span>
+        <span class="ruby-ivar">@dest_x</span>, <span class="ruby-ivar">@dest_y</span> = <span class="ruby-number">0</span>, <span class="ruby-number">0</span>
+        <span class="ruby-ivar">@acceleration</span> = <span class="ruby-number">0.0</span>
+        <span class="ruby-ivar">@speed</span> = <span class="ruby-number">0.0</span>
+        <span class="ruby-ivar">@moving</span> = <span class="ruby-keyword">false</span>
+        
+        <span class="ruby-ivar">@aim_angle</span> = <span class="ruby-number">0.0</span>
+        <span class="ruby-ivar">@target_x</span>, <span class="ruby-ivar">@target_y</span> = <span class="ruby-number">0</span>, <span class="ruby-number">0</span>
+        <span class="ruby-ivar">@aimed</span> = <span class="ruby-keyword">false</span>
+        
+        <span class="ruby-ivar">@health</span> = <span class="ruby-number">100</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-aim">
+            
+              <b>aim</b>(direction)
+            
+            <a href="../classes/Tank.html#method-i-aim" name="method-i-aim" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-aim_source')" id="l_method-i-aim_source">show</a>
+                
+              </p>
+              <div id="method-i-aim_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File samples/expert-tankspank.rb, line 151</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">aim</span> <span class="ruby-identifier">direction</span>
+        <span class="ruby-ivar">@aim_angle</span> <span class="ruby-operator">+=</span> [[<span class="ruby-number">-0.1</span>, <span class="ruby-identifier">direction</span>].<span class="ruby-identifier">max</span>, <span class="ruby-number">0.1</span>].<span class="ruby-identifier">min</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-collide_and_stop">
+            
+              <b>collide_and_stop</b>()
+            
+            <a href="../classes/Tank.html#method-i-collide_and_stop" name="method-i-collide_and_stop" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-collide_and_stop_source')" id="l_method-i-collide_and_stop_source">show</a>
+                
+              </p>
+              <div id="method-i-collide_and_stop_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File samples/expert-tankspank.rb, line 140</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">collide_and_stop</span>
+        <span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span> = <span class="ruby-ivar">@last_x</span>, <span class="ruby-ivar">@last_y</span>
+        <span class="ruby-identifier">hurt</span> <span class="ruby-ivar">@speed</span>.<span class="ruby-identifier">abs</span> * <span class="ruby-number">3</span> <span class="ruby-operator">+</span> <span class="ruby-number">5</span>
+        <span class="ruby-ivar">@speed</span> = <span class="ruby-number">0</span>
+        <span class="ruby-ivar">@moving</span> = <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-draw">
+            
+              <b>draw</b>()
+            
+            <a href="../classes/Tank.html#method-i-draw" name="method-i-draw" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-draw_source')" id="l_method-i-draw_source">show</a>
+                
+              </p>
+              <div id="method-i-draw_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File samples/expert-tankspank.rb, line 155</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">draw</span>
+        <span class="ruby-identifier">$app</span>.<span class="ruby-identifier">stroke</span> <span class="ruby-identifier">$app</span>.<span class="ruby-identifier">blue</span>
+        <span class="ruby-identifier">$app</span>.<span class="ruby-identifier">fill</span> <span class="ruby-identifier">$app</span>.<span class="ruby-identifier">blue</span>(<span class="ruby-number">0.4</span>)
+        <span class="ruby-constant">Opp</span>.<span class="ruby-identifier">draw_opp_rect</span> <span class="ruby-ivar">@x</span> <span class="ruby-operator">-</span> <span class="ruby-number">20</span>, <span class="ruby-ivar">@x</span> <span class="ruby-operator">+</span> <span class="ruby-number">20</span>, <span class="ruby-ivar">@y</span> <span class="ruby-operator">-</span> <span class="ruby-number">15</span>, <span class="ruby-ivar">@y</span> <span class="ruby-operator">+</span> <span class="ruby-number">15</span>, <span class="ruby-number">1.05</span>, <span class="ruby-ivar">@tank_angle</span>
+        <span class="ruby-comment">#Opp.draw_opp_box @x - 20, @x + 20, @y - 20, @y + 20, 1.03, 1.0</span>
+        <span class="ruby-constant">Opp</span>.<span class="ruby-identifier">draw_opp_rect</span> <span class="ruby-ivar">@x</span> <span class="ruby-operator">-</span> <span class="ruby-number">10</span>, <span class="ruby-ivar">@x</span> <span class="ruby-operator">+</span> <span class="ruby-number">10</span>, <span class="ruby-ivar">@y</span> <span class="ruby-operator">-</span> <span class="ruby-number">7</span>, <span class="ruby-ivar">@y</span> <span class="ruby-operator">+</span> <span class="ruby-number">7</span>, <span class="ruby-number">1.05</span>, <span class="ruby-ivar">@aim_angle</span>
+        <span class="ruby-identifier">x</span>, <span class="ruby-identifier">unused1</span>, <span class="ruby-identifier">y</span>, <span class="ruby-identifier">unused2</span> = <span class="ruby-constant">Opp</span>.<span class="ruby-identifier">project</span>(<span class="ruby-ivar">@x</span>, <span class="ruby-number">0</span>, <span class="ruby-ivar">@y</span>, <span class="ruby-number">0</span>, <span class="ruby-number">1.05</span>)
+        <span class="ruby-identifier">$app</span>.<span class="ruby-identifier">line</span> <span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>, <span class="ruby-identifier">x</span> <span class="ruby-operator">+</span> <span class="ruby-number">25</span> * <span class="ruby-constant">Math</span>.<span class="ruby-identifier">cos</span>(<span class="ruby-ivar">@aim_angle</span>), <span class="ruby-identifier">y</span> <span class="ruby-operator">+</span> <span class="ruby-number">25</span> * <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sin</span>(<span class="ruby-ivar">@aim_angle</span>)
+        
+        <span class="ruby-identifier">$app</span>.<span class="ruby-identifier">stroke</span> <span class="ruby-identifier">$app</span>.<span class="ruby-identifier">red</span>
+        <span class="ruby-identifier">$app</span>.<span class="ruby-identifier">fill</span> <span class="ruby-identifier">$app</span>.<span class="ruby-identifier">red</span>(<span class="ruby-ivar">@aimed</span> <span class="ruby-operator">?</span> <span class="ruby-number">0.4</span> <span class="ruby-operator">:</span> <span class="ruby-number">0.1</span>)
+        <span class="ruby-constant">Opp</span>.<span class="ruby-identifier">draw_opp_oval</span> <span class="ruby-ivar">@target_x</span> <span class="ruby-operator">-</span> <span class="ruby-number">10</span>, <span class="ruby-ivar">@target_x</span> <span class="ruby-operator">+</span> <span class="ruby-number">10</span>, <span class="ruby-ivar">@target_y</span> <span class="ruby-operator">-</span> <span class="ruby-number">10</span>, <span class="ruby-ivar">@target_y</span> <span class="ruby-operator">+</span> <span class="ruby-number">10</span>, <span class="ruby-number">1.00</span>
+        
+        <span class="ruby-keyword">if</span> <span class="ruby-ivar">@moving</span>
+                <span class="ruby-identifier">$app</span>.<span class="ruby-identifier">stroke</span> <span class="ruby-identifier">$app</span>.<span class="ruby-identifier">green</span>
+                <span class="ruby-identifier">$app</span>.<span class="ruby-identifier">fill</span> <span class="ruby-identifier">$app</span>.<span class="ruby-identifier">green</span>(<span class="ruby-number">0.2</span>)
+                <span class="ruby-constant">Opp</span>.<span class="ruby-identifier">draw_opp_oval</span> <span class="ruby-ivar">@dest_x</span> <span class="ruby-operator">-</span> <span class="ruby-number">20</span>, <span class="ruby-ivar">@dest_x</span> <span class="ruby-operator">+</span> <span class="ruby-number">20</span>, <span class="ruby-ivar">@dest_y</span> <span class="ruby-operator">-</span> <span class="ruby-number">20</span>, <span class="ruby-ivar">@dest_y</span> <span class="ruby-operator">+</span> <span class="ruby-number">20</span>, <span class="ruby-number">1.00</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-east">
+            
+              <b>east</b>()
+            
+            <a href="../classes/Tank.html#method-i-east" name="method-i-east" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-east_source')" id="l_method-i-east_source">show</a>
+                
+              </p>
+              <div id="method-i-east_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File samples/expert-tankspank.rb, line 79</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">east</span>; <span class="ruby-ivar">@x</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">@@collide_size</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-fire">
+            
+              <b>fire</b>()
+            
+            <a href="../classes/Tank.html#method-i-fire" name="method-i-fire" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-fire_source')" id="l_method-i-fire_source">show</a>
+                
+              </p>
+              <div id="method-i-fire_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File samples/expert-tankspank.rb, line 106</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">fire</span>
+        <span class="ruby-constant">Opp</span>.<span class="ruby-identifier">add_shell</span> <span class="ruby-constant">Shell</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span> <span class="ruby-operator">+</span> <span class="ruby-number">30</span> * <span class="ruby-constant">Math</span>.<span class="ruby-identifier">cos</span>(<span class="ruby-ivar">@aim_angle</span>),
+                <span class="ruby-ivar">@y</span> <span class="ruby-operator">+</span> <span class="ruby-number">30</span> * <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sin</span>(<span class="ruby-ivar">@aim_angle</span>), <span class="ruby-ivar">@aim_angle</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-north">
+            
+              <b>north</b>()
+            
+            <a href="../classes/Tank.html#method-i-north" name="method-i-north" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-north_source')" id="l_method-i-north_source">show</a>
+                
+              </p>
+              <div id="method-i-north_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File samples/expert-tankspank.rb, line 80</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">north</span>; <span class="ruby-ivar">@y</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">@@collide_size</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-set_destination">
+            
+              <b>set_destination</b>()
+            
+            <a href="../classes/Tank.html#method-i-set_destination" name="method-i-set_destination" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-set_destination_source')" id="l_method-i-set_destination_source">show</a>
+                
+              </p>
+              <div id="method-i-set_destination_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File samples/expert-tankspank.rb, line 101</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">set_destination</span>
+        <span class="ruby-ivar">@dest_x</span>, <span class="ruby-ivar">@dest_y</span> = <span class="ruby-ivar">@target_x</span>, <span class="ruby-ivar">@target_y</span>
+        <span class="ruby-ivar">@moving</span> = <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-south">
+            
+              <b>south</b>()
+            
+            <a href="../classes/Tank.html#method-i-south" name="method-i-south" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-south_source')" id="l_method-i-south_source">show</a>
+                
+              </p>
+              <div id="method-i-south_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File samples/expert-tankspank.rb, line 81</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">south</span>; <span class="ruby-ivar">@y</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">@@collide_size</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-turn">
+            
+              <b>turn</b>(direction)
+            
+            <a href="../classes/Tank.html#method-i-turn" name="method-i-turn" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-turn_source')" id="l_method-i-turn_source">show</a>
+                
+              </p>
+              <div id="method-i-turn_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File samples/expert-tankspank.rb, line 147</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">turn</span> <span class="ruby-identifier">direction</span>
+        <span class="ruby-ivar">@tank_angle</span> <span class="ruby-operator">+=</span> [[<span class="ruby-number">-0.03</span>, <span class="ruby-identifier">direction</span>].<span class="ruby-identifier">max</span>, <span class="ruby-number">0.03</span>].<span class="ruby-identifier">min</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-update">
+            
+              <b>update</b>(button, mouse_x, mouse_y)
+            
+            <a href="../classes/Tank.html#method-i-update" name="method-i-update" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-update_source')" id="l_method-i-update_source">show</a>
+                
+              </p>
+              <div id="method-i-update_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File samples/expert-tankspank.rb, line 111</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">update</span> <span class="ruby-identifier">button</span>, <span class="ruby-identifier">mouse_x</span>, <span class="ruby-identifier">mouse_y</span>
+        <span class="ruby-ivar">@target_x</span>, <span class="ruby-ivar">@target_y</span> = <span class="ruby-identifier">mouse_x</span>, <span class="ruby-identifier">mouse_y</span>
+        
+        <span class="ruby-keyword">if</span> <span class="ruby-ivar">@moving</span>
+                <span class="ruby-identifier">guidance_system</span> <span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>, <span class="ruby-ivar">@dest_x</span>, <span class="ruby-ivar">@dest_y</span>, <span class="ruby-ivar">@tank_angle</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">direction</span>, <span class="ruby-identifier">on_target</span><span class="ruby-operator">|</span>
+                        <span class="ruby-identifier">turn</span> <span class="ruby-identifier">direction</span>
+                        <span class="ruby-ivar">@acceleration</span> = <span class="ruby-identifier">on_target</span> * <span class="ruby-number">0.25</span>
+                <span class="ruby-keyword">end</span>
+                
+                <span class="ruby-identifier">distance</span> = <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sqrt</span>((<span class="ruby-ivar">@dest_x</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@x</span>) <span class="ruby-operator">**</span> <span class="ruby-number">2</span> <span class="ruby-operator">+</span> (<span class="ruby-ivar">@dest_y</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@y</span>) <span class="ruby-operator">**</span> <span class="ruby-number">2</span>)
+                <span class="ruby-ivar">@moving</span> = <span class="ruby-keyword">false</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">distance</span> <span class="ruby-operator">&lt;</span> <span class="ruby-number">50</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-ivar">@acceleration</span> = <span class="ruby-number">0.0</span>
+        <span class="ruby-keyword">end</span>
+        
+        <span class="ruby-identifier">guidance_system</span> <span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>, <span class="ruby-ivar">@target_x</span>, <span class="ruby-ivar">@target_y</span>, <span class="ruby-ivar">@aim_angle</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">direction</span>, <span class="ruby-identifier">on_target</span><span class="ruby-operator">|</span>
+                <span class="ruby-identifier">aim</span> <span class="ruby-identifier">direction</span>
+                <span class="ruby-ivar">@aimed</span> = <span class="ruby-identifier">on_target</span> <span class="ruby-operator">&gt;</span> <span class="ruby-number">0.98</span>
+        <span class="ruby-keyword">end</span>
+        
+        <span class="ruby-identifier">integrity</span> = <span class="ruby-ivar">@health</span> <span class="ruby-operator">/</span> <span class="ruby-number">100.0</span> <span class="ruby-comment"># the more hurt you are, the slower you go</span>
+        <span class="ruby-ivar">@speed</span> = [[<span class="ruby-ivar">@speed</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@acceleration</span>, <span class="ruby-number">5.0</span> * <span class="ruby-identifier">integrity</span>].<span class="ruby-identifier">min</span>, <span class="ruby-number">-3.0</span> * <span class="ruby-identifier">integrity</span>].<span class="ruby-identifier">max</span>
+        <span class="ruby-ivar">@speed</span> <span class="ruby-operator">*=</span> <span class="ruby-number">0.9</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@moving</span>
+        
+        <span class="ruby-ivar">@last_x</span>, <span class="ruby-ivar">@last_y</span> = <span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>
+        <span class="ruby-ivar">@x</span> <span class="ruby-operator">+=</span> <span class="ruby-ivar">@speed</span> * <span class="ruby-constant">Math</span>.<span class="ruby-identifier">cos</span>(<span class="ruby-ivar">@tank_angle</span>)
+        <span class="ruby-ivar">@y</span> <span class="ruby-operator">+=</span> <span class="ruby-ivar">@speed</span> * <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sin</span>(<span class="ruby-ivar">@tank_angle</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-west">
+            
+              <b>west</b>()
+            
+            <a href="../classes/Tank.html#method-i-west" name="method-i-west" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-west_source')" id="l_method-i-west_source">show</a>
+                
+              </p>
+              <div id="method-i-west_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File samples/expert-tankspank.rb, line 78</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">west</span>; <span class="ruby-ivar">@x</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">@@collide_size</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

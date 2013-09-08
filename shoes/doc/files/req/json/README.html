@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>README</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            README
+        </h1>
+        <ul class="files">
+            <li>req/json/README</li>
+            <li>Last modified: 2013-04-23 09:29:53 -0500</li>
+        </ul>
+    </div>
+
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>Dependencies for <a href="../../../classes/Building.html">Building</a></p>
+
+<h6 id="label-"></h6>
+<ul><li>
+<p>You need rake to build the extensions and install them.</p>
+
+<p>You can get it from rubyforge:</p>
+
+<pre>http://rubyforge.org/projects/rake</pre>
+
+<p>or just type</p>
+
+<p># gem install rake</p>
+
+<p>for the installation via rubygems.</p>
+</li><li>
+<p>If you want to rebuild the parser.c file or draw nice graphviz images of
+the state machines, you need ragel from:</p>
+
+<pre>http://www.cs.queensu.ca/~thurston/ragel</pre>
+</li></ul>
+
+<p>Installation</p>
+
+<h6 id="label-"></h6>
+
+<p>It’s recommended to use the extension variant of <a
+href="../../../classes/JSON.html">JSON</a>, because it’s quite a bit faster
+than the pure ruby variant. If you cannot build it on your system, you can
+settle for the latter.</p>
+
+<p>Just type into the command line as root:</p>
+
+<p># rake install</p>
+
+<p>The above command will build the extensions and install them on your
+system.</p>
+
+<p># rake install_pure</p>
+
+<p>or</p>
+
+<p># ruby install.rb</p>
+
+<p>will just install the pure ruby implementation of <a
+href="../../../classes/JSON.html">JSON</a>.</p>
+
+<p>If you use Rubygems you can type</p>
+
+<p># gem install json</p>
+
+<p>instead, to install the newest <a
+href="../../../classes/JSON.html">JSON</a> version.</p>
+
+<p>There is also a pure ruby json only variant of the gem, that can be
+installed with:</p>
+
+<p># gem install json_pure</p>
+
+<p>Testing and Examples</p>
+
+<h6 id="label-"></h6>
+
+<p>To run the tests type:</p>
+
+<p>$ rake test_ext</p>
+
+<p>This will build the extensions first and then test them.</p>
+
+<p>$ rake test_pure</p>
+
+<p>This will test the pure ruby extensions.</p>
+
+<p>There is also a small example in tools/server.rb if you want to see, how
+receiving a <a href="../../../classes/JSON.html">JSON</a> object from a
+webrick server in your browser with the javasript prototype library (<a
+href="http://www.prototypejs.org">www.prototypejs.org</a>) works.</p>
+
+<p>Author</p>
+
+<h6 id="label-"></h6>
+
+<p>Florian Frank &lt;flori@ping.de&gt;</p>
+
+<p>License</p>
+
+<h6 id="label-"></h6>
+
+<p>Ruby License, see the <a href="RUBY.html">RUBY</a> file included in the
+source distribution. The Ruby License includes the GNU General Public
+License (<a href="GPL.html">GPL</a>), Version 2, so see the file <a
+href="GPL.html">GPL</a> as well.</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+              </div>
+
+    </div>
+  </body>
+</html>

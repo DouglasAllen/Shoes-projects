@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ChipMunk</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            ChipMunk 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/lib/ext/chipmunk_rb.html">lib/ext/chipmunk.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-cp_line">cp_line</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-cp_oval">cp_oval</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-cp_space">cp_space</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-cp_line">
+            
+              <b>cp_line</b>(x0, y0, x1, y1, opts = {})
+            
+            <a href="../classes/ChipMunk.html#method-i-cp_line" name="method-i-cp_line" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-cp_line_source')" id="l_method-i-cp_line_source">show</a>
+                
+              </p>
+              <div id="method-i-cp_line_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ext/chipmunk.rb, line 25</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">cp_line</span> <span class="ruby-identifier">x0</span>, <span class="ruby-identifier">y0</span>, <span class="ruby-identifier">x1</span>, <span class="ruby-identifier">y1</span>, <span class="ruby-identifier">opts</span> = {}
+  <span class="ruby-identifier">opts</span>[<span class="ruby-value">:strokewidth</span>] = <span class="ruby-number">5</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">opts</span>[<span class="ruby-value">:strokewidth</span>]
+  <span class="ruby-identifier">sb</span> = <span class="ruby-constant">CP</span><span class="ruby-operator">::</span><span class="ruby-constant">Body</span>.<span class="ruby-identifier">new</span> <span class="ruby-number">1.0</span><span class="ruby-operator">/</span><span class="ruby-number">0.0</span>, <span class="ruby-number">1.0</span><span class="ruby-operator">/</span><span class="ruby-number">0.0</span>
+  <span class="ruby-identifier">seg</span> = <span class="ruby-constant">CP</span><span class="ruby-operator">::</span><span class="ruby-constant">Shape</span><span class="ruby-operator">::</span><span class="ruby-constant">Segment</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">sb</span>, <span class="ruby-identifier">vec2</span>(<span class="ruby-identifier">x0</span>, <span class="ruby-identifier">y0</span>), <span class="ruby-identifier">vec2</span>(<span class="ruby-identifier">x1</span>, <span class="ruby-identifier">y1</span>), <span class="ruby-identifier">opts</span>[<span class="ruby-value">:strokewidth</span>]
+  <span class="ruby-ivar">@space</span>.<span class="ruby-identifier">add_shape</span> <span class="ruby-identifier">seg</span>
+  <span class="ruby-identifier">line</span> <span class="ruby-identifier">x0</span>, <span class="ruby-identifier">y0</span>, <span class="ruby-identifier">x1</span>, <span class="ruby-identifier">y1</span>, <span class="ruby-identifier">opts</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-cp_oval">
+            
+              <b>cp_oval</b>(l, t, r, opts = {})
+            
+            <a href="../classes/ChipMunk.html#method-i-cp_oval" name="method-i-cp_oval" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-cp_oval_source')" id="l_method-i-cp_oval_source">show</a>
+                
+              </p>
+              <div id="method-i-cp_oval_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ext/chipmunk.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">cp_oval</span> <span class="ruby-identifier">l</span>, <span class="ruby-identifier">t</span>, <span class="ruby-identifier">r</span>, <span class="ruby-identifier">opts</span> = {}
+  <span class="ruby-identifier">b</span> = <span class="ruby-constant">CP</span><span class="ruby-operator">::</span><span class="ruby-constant">Body</span>.<span class="ruby-identifier">new</span> <span class="ruby-number">1</span>,<span class="ruby-number">1</span>
+  <span class="ruby-identifier">b</span>.<span class="ruby-identifier">p</span> = <span class="ruby-identifier">vec2</span> <span class="ruby-identifier">l</span>, <span class="ruby-identifier">t</span>
+  <span class="ruby-ivar">@space</span>.<span class="ruby-identifier">add_body</span> <span class="ruby-identifier">b</span>
+  <span class="ruby-ivar">@space</span>.<span class="ruby-identifier">add_shape</span> <span class="ruby-constant">CP</span><span class="ruby-operator">::</span><span class="ruby-constant">Shape</span><span class="ruby-operator">::</span><span class="ruby-constant">Circle</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">b</span>, <span class="ruby-identifier">r</span>, <span class="ruby-identifier">vec2</span>(<span class="ruby-number">0</span>, <span class="ruby-number">0</span>))
+    
+  <span class="ruby-identifier">opts</span> = <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">merge</span>({<span class="ruby-identifier">left</span><span class="ruby-operator">:</span> <span class="ruby-identifier">l</span><span class="ruby-operator">-</span><span class="ruby-identifier">r</span><span class="ruby-operator">-</span><span class="ruby-number">1</span>, <span class="ruby-identifier">top</span><span class="ruby-operator">:</span> <span class="ruby-identifier">t</span><span class="ruby-operator">-</span><span class="ruby-identifier">r</span><span class="ruby-operator">-</span><span class="ruby-number">1</span>, <span class="ruby-identifier">width</span><span class="ruby-operator">:</span> <span class="ruby-number">2</span>*<span class="ruby-identifier">r</span><span class="ruby-operator">+</span><span class="ruby-number">2</span>, <span class="ruby-identifier">height</span><span class="ruby-operator">:</span> <span class="ruby-number">2</span>*<span class="ruby-identifier">r</span><span class="ruby-operator">+</span><span class="ruby-number">2</span>, <span class="ruby-identifier">body</span><span class="ruby-operator">:</span> <span class="ruby-identifier">b</span>, <span class="ruby-identifier">inflate</span><span class="ruby-operator">:</span> <span class="ruby-identifier">r</span><span class="ruby-operator">-</span><span class="ruby-number">2</span>})
+  <span class="ruby-identifier">oval</span> <span class="ruby-identifier">opts</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-cp_space">
+            
+              <b>cp_space</b>()
+            
+            <a href="../classes/ChipMunk.html#method-i-cp_space" name="method-i-cp_space" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-cp_space_source')" id="l_method-i-cp_space_source">show</a>
+                
+              </p>
+              <div id="method-i-cp_space_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ext/chipmunk.rb, line 8</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">cp_space</span>
+  <span class="ruby-ivar">@space</span> = <span class="ruby-constant">CP</span><span class="ruby-operator">::</span><span class="ruby-constant">Space</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@space</span>.<span class="ruby-identifier">damping</span> = <span class="ruby-number">0.8</span>
+  <span class="ruby-ivar">@space</span>.<span class="ruby-identifier">gravity</span> = <span class="ruby-identifier">vec2</span> <span class="ruby-number">0</span>, <span class="ruby-number">25</span>
+  <span class="ruby-ivar">@space</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

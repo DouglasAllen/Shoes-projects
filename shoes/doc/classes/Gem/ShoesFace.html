@@ -1,0 +1,605 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Gem::ShoesFace</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Gem::ShoesFace 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/lib/shoes/setup_rb.html">lib/shoes/setup.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+    <!-- Namespace -->
+    <div class="sectiontitle">Namespace</div>
+    <ul>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="ShoesFace/ProgressReporter.html">Gem::ShoesFace::ProgressReporter</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="ShoesFace/SilentDownloadReporter.html">Gem::ShoesFace::SilentDownloadReporter</a>
+        </li>
+      
+    </ul>
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-alert">alert</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ask">ask</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ask_yes_no">ask_yes_no</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-download_reporter">download_reporter</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>E</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-error">error</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>M</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-method_missing">method_missing</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-progress">progress</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-progress_reporter">progress_reporter</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-say">say</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-title">title</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>(app)
+            
+            <a href="../../classes/Gem/ShoesFace.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/setup.rb, line 322</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span> <span class="ruby-identifier">app</span>
+  <span class="ruby-ivar">@title</span>, <span class="ruby-ivar">@status</span>, <span class="ruby-ivar">@prog</span>, = <span class="ruby-identifier">app</span>.<span class="ruby-identifier">slot</span>.<span class="ruby-identifier">contents</span>[<span class="ruby-number">-1</span>].<span class="ruby-identifier">contents</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-alert">
+            
+              <b>alert</b>(msg, quiz=nil)
+            
+            <a href="../../classes/Gem/ShoesFace.html#method-i-alert" name="method-i-alert" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-alert_source')" id="l_method-i-alert_source">show</a>
+                
+              </p>
+              <div id="method-i-alert_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/setup.rb, line 355</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">alert</span> <span class="ruby-identifier">msg</span>, <span class="ruby-identifier">quiz</span>=<span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">say</span>(<span class="ruby-identifier">msg</span>)
+  <span class="ruby-identifier">ask</span>(<span class="ruby-identifier">quiz</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">quiz</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ask">
+            
+              <b>ask</b>(msg)
+            
+            <a href="../../classes/Gem/ShoesFace.html#method-i-ask" name="method-i-ask" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ask_source')" id="l_method-i-ask_source">show</a>
+                
+              </p>
+              <div id="method-i-ask_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/setup.rb, line 339</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ask</span> <span class="ruby-identifier">msg</span>
+  <span class="ruby-constant">Kernel</span>.<span class="ruby-identifier">ask</span>(<span class="ruby-identifier">msg</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ask_yes_no">
+            
+              <b>ask_yes_no</b>(msg)
+            
+            <a href="../../classes/Gem/ShoesFace.html#method-i-ask_yes_no" name="method-i-ask_yes_no" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ask_yes_no_source')" id="l_method-i-ask_yes_no_source">show</a>
+                
+              </p>
+              <div id="method-i-ask_yes_no_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/setup.rb, line 335</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ask_yes_no</span> <span class="ruby-identifier">msg</span>
+  <span class="ruby-constant">Kernel</span>.<span class="ruby-identifier">confirm</span>(<span class="ruby-identifier">msg</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-download_reporter">
+            
+              <b>download_reporter</b>(*args)
+            
+            <a href="../../classes/Gem/ShoesFace.html#method-i-download_reporter" name="method-i-download_reporter" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-download_reporter_source')" id="l_method-i-download_reporter_source">show</a>
+                
+              </p>
+              <div id="method-i-download_reporter_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/setup.rb, line 359</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">download_reporter</span>(*<span class="ruby-identifier">args</span>)
+  <span class="ruby-constant">SilentDownloadReporter</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">nil</span>, *<span class="ruby-identifier">args</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-error">
+            
+              <b>error</b>(msg, e)
+            
+            <a href="../../classes/Gem/ShoesFace.html#method-i-error" name="method-i-error" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-error_source')" id="l_method-i-error_source">show</a>
+                
+              </p>
+              <div id="method-i-error_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/setup.rb, line 343</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">error</span> <span class="ruby-identifier">msg</span>, <span class="ruby-identifier">e</span>
+  <span class="ruby-identifier">stat</span> = <span class="ruby-ivar">@status</span>
+  <span class="ruby-identifier">stat</span>.<span class="ruby-identifier">app</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">error</span>(<span class="ruby-identifier">e</span>)
+    <span class="ruby-identifier">stat</span>.<span class="ruby-identifier">replace</span> <span class="ruby-identifier">link</span>(<span class="ruby-string">&quot;Error&quot;</span>) { <span class="ruby-constant">Shoes</span>.<span class="ruby-identifier">show_log</span> }, <span class="ruby-string">&quot; &quot;</span>, <span class="ruby-identifier">msg</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-method_missing">
+            
+              <b>method_missing</b>(*args)
+            
+            <a href="../../classes/Gem/ShoesFace.html#method-i-method_missing" name="method-i-method_missing" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-method_missing_source')" id="l_method-i-method_missing_source">show</a>
+                
+              </p>
+              <div id="method-i-method_missing_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/setup.rb, line 365</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">method_missing</span>(*<span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">p</span> <span class="ruby-identifier">args</span>
+  <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-progress">
+            
+              <b>progress</b>(count, total)
+            
+            <a href="../../classes/Gem/ShoesFace.html#method-i-progress" name="method-i-progress" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-progress_source')" id="l_method-i-progress_source">show</a>
+                
+              </p>
+              <div id="method-i-progress_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/setup.rb, line 330</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">progress</span> <span class="ruby-identifier">count</span>, <span class="ruby-identifier">total</span>
+  <span class="ruby-comment">#@prog.fraction = count.to_f / total.to_f</span>
+  <span class="ruby-identifier">$fraction</span> = <span class="ruby-identifier">count</span>.<span class="ruby-identifier">to_f</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">total</span>.<span class="ruby-identifier">to_f</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-progress_reporter">
+            
+              <b>progress_reporter</b>(*args)
+            
+            <a href="../../classes/Gem/ShoesFace.html#method-i-progress_reporter" name="method-i-progress_reporter" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-progress_reporter_source')" id="l_method-i-progress_reporter_source">show</a>
+                
+              </p>
+              <div id="method-i-progress_reporter_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/setup.rb, line 362</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">progress_reporter</span>(*<span class="ruby-identifier">args</span>)
+  <span class="ruby-constant">ProgressReporter</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@prog</span>, <span class="ruby-ivar">@status</span>, *<span class="ruby-identifier">args</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-say">
+            
+              <b>say</b>(msg)
+            
+            <a href="../../classes/Gem/ShoesFace.html#method-i-say" name="method-i-say" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-say_source')" id="l_method-i-say_source">show</a>
+                
+              </p>
+              <div id="method-i-say_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/setup.rb, line 351</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">say</span> <span class="ruby-identifier">msg</span>
+  <span class="ruby-ivar">@status</span>.<span class="ruby-identifier">replace</span> <span class="ruby-identifier">msg</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-title">
+            
+              <b>title</b>(msg)
+            
+            <a href="../../classes/Gem/ShoesFace.html#method-i-title" name="method-i-title" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-title_source')" id="l_method-i-title_source">show</a>
+                
+              </p>
+              <div id="method-i-title_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/setup.rb, line 326</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">title</span> <span class="ruby-identifier">msg</span>
+  <span class="ruby-ivar">@title</span>.<span class="ruby-identifier">replace</span> <span class="ruby-identifier">msg</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

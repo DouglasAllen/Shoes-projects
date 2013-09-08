@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Feepogram</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Feepogram 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/lib/ext/bloops/songs/feepogram_rb.html">lib/ext/bloops/songs/feepogram.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>downloaded from <a
+href="http://github.com/aanand/feepogram">github.com/aanand/feepogram</a></p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-dub">dub</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>M</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-metaclass">metaclass</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-metaclass_eval">metaclass_eval</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-phrase">phrase</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-play">play</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-sound">sound</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+      <!-- Section attributes -->
+      <div class="sectiontitle">Attributes</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>bloops</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>length</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+      </table>
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>(bloops, &amp;block)
+            
+            <a href="../classes/Feepogram.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ext/bloops/songs/feepogram.rb, line 5</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">bloops</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-ivar">@bloops</span> = <span class="ruby-identifier">bloops</span>
+  <span class="ruby-ivar">@length</span> = <span class="ruby-number">0</span>
+
+  <span class="ruby-ivar">@sounds</span>        = {}
+  <span class="ruby-ivar">@tracks</span>        = {}
+  <span class="ruby-ivar">@track_lengths</span> = {}
+
+  <span class="ruby-identifier">instance_eval</span>(&amp;<span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-dub">
+            
+              <b>dub</b>(sound_name, notes)
+            
+            <a href="../classes/Feepogram.html#method-i-dub" name="method-i-dub" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-dub_source')" id="l_method-i-dub_source">show</a>
+                
+              </p>
+              <div id="method-i-dub_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ext/bloops/songs/feepogram.rb, line 49</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">dub</span> <span class="ruby-identifier">sound_name</span>, <span class="ruby-identifier">notes</span>
+  <span class="ruby-identifier">catchup</span> = <span class="ruby-ivar">@length</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@track_lengths</span>[<span class="ruby-identifier">sound_name</span>]
+
+  <span class="ruby-ivar">@tracks</span>[<span class="ruby-identifier">sound_name</span>] <span class="ruby-operator">&lt;&lt;</span> (<span class="ruby-string">&quot;4 &quot;</span> * <span class="ruby-identifier">catchup</span>)
+  <span class="ruby-ivar">@tracks</span>[<span class="ruby-identifier">sound_name</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">notes</span>
+  <span class="ruby-ivar">@track_lengths</span>[<span class="ruby-identifier">sound_name</span>] = <span class="ruby-identifier">length</span><span class="ruby-operator">+</span><span class="ruby-number">32</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-metaclass">
+            
+              <b>metaclass</b>()
+            
+            <a href="../classes/Feepogram.html#method-i-metaclass" name="method-i-metaclass" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-metaclass_source')" id="l_method-i-metaclass_source">show</a>
+                
+              </p>
+              <div id="method-i-metaclass_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ext/bloops/songs/feepogram.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">metaclass</span>
+  <span class="ruby-keyword">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword ruby-title">self</span>; <span class="ruby-keyword">self</span>; <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-metaclass_eval">
+            
+              <b>metaclass_eval</b>(&amp;block)
+            
+            <a href="../classes/Feepogram.html#method-i-metaclass_eval" name="method-i-metaclass_eval" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-metaclass_eval_source')" id="l_method-i-metaclass_eval_source">show</a>
+                
+              </p>
+              <div id="method-i-metaclass_eval_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ext/bloops/songs/feepogram.rb, line 20</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">metaclass_eval</span>(&amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">metaclass</span>.<span class="ruby-identifier">class_eval</span>(&amp;<span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-phrase">
+            
+              <b>phrase</b>(&amp;block)
+            
+            <a href="../classes/Feepogram.html#method-i-phrase" name="method-i-phrase" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-phrase_source')" id="l_method-i-phrase_source">show</a>
+                
+              </p>
+              <div id="method-i-phrase_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ext/bloops/songs/feepogram.rb, line 44</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">phrase</span>(&amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">instance_eval</span>(&amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-ivar">@length</span> <span class="ruby-operator">+=</span> <span class="ruby-number">32</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-play">
+            
+              <b>play</b>()
+            
+            <a href="../classes/Feepogram.html#method-i-play" name="method-i-play" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-play_source')" id="l_method-i-play_source">show</a>
+                
+              </p>
+              <div id="method-i-play_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ext/bloops/songs/feepogram.rb, line 57</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">play</span>
+  <span class="ruby-ivar">@tracks</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">sound_name</span>, <span class="ruby-identifier">notes</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">bloops</span>.<span class="ruby-identifier">tune</span> <span class="ruby-ivar">@sounds</span>[<span class="ruby-identifier">sound_name</span>], <span class="ruby-identifier">notes</span>
+
+    <span class="ruby-comment">#puts &quot;#{sound_name}: #{notes.gsub(/\s+/, ' ')}&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">bloops</span>.<span class="ruby-identifier">play</span>
+  <span class="ruby-identifier">sleep</span> <span class="ruby-number">1</span> <span class="ruby-keyword">while</span> <span class="ruby-operator">!</span><span class="ruby-identifier">bloops</span>.<span class="ruby-identifier">stopped?</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-sound">
+            
+              <b>sound</b>(name, base, &amp;block)
+            
+            <a href="../classes/Feepogram.html#method-i-sound" name="method-i-sound" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-sound_source')" id="l_method-i-sound_source">show</a>
+                
+              </p>
+              <div id="method-i-sound_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ext/bloops/songs/feepogram.rb, line 24</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">sound</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">base</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">name</span> = <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_sym</span>
+
+  <span class="ruby-identifier">sound</span> = <span class="ruby-identifier">bloops</span>.<span class="ruby-identifier">sound</span>(<span class="ruby-identifier">base</span>)
+
+  <span class="ruby-ivar">@sounds</span>[<span class="ruby-identifier">name</span>]        = <span class="ruby-identifier">sound</span>
+  <span class="ruby-ivar">@tracks</span>[<span class="ruby-identifier">name</span>]        = <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-ivar">@track_lengths</span>[<span class="ruby-identifier">name</span>] = <span class="ruby-number">0</span>
+
+  <span class="ruby-identifier">block</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">sound</span>)
+
+  <span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-node">&quot;@#{name}&quot;</span>, <span class="ruby-identifier">sound</span>)
+
+  <span class="ruby-identifier">metaclass_eval</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">define_method</span>(<span class="ruby-identifier">name</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">notes</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">dub</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">notes</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

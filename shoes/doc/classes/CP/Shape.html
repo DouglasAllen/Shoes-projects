@@ -1,0 +1,890 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>CP::Shape</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            CP::Shape 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/req/chipmunk/ext/chipmunk/rb_chipmunk_c.html">req/chipmunk/ext/chipmunk/rb_chipmunk.c</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+    <!-- Namespace -->
+    <div class="sectiontitle">Namespace</div>
+    <ul>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Shape/Circle.html">CP::Shape::Circle</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Shape/Poly.html">CP::Shape::Poly</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Shape/Segment.html">CP::Shape::Segment</a>
+        </li>
+      
+    </ul>
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>B</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-bb">bb</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-body">body</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-body-3D">body=</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-cache_bb">cache_bb</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-collision_type">collision_type</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-collision_type-3D">collision_type=</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>E</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-e">e</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-e-3D">e=</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>G</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-group">group</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-group-3D">group=</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>L</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-layers">layers</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-layers-3D">layers=</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-reset_id_counter">reset_id_counter</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-surface_v">surface_v</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-surface_v-3D">surface_v=</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>U</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-u">u</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-u-3D">u=</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+      <!-- Section attributes -->
+      <div class="sectiontitle">Attributes</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>obj</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+      </table>
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-reset_id_counter">
+            
+              <b>reset_id_counter</b>()
+            
+            <a href="../../classes/CP/Shape.html#method-c-reset_id_counter" name="method-c-reset_id_counter" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-reset_id_counter_source')" id="l_method-c-reset_id_counter_source">show</a>
+                
+              </p>
+              <div id="method-c-reset_id_counter_source" class="dyn-source">
+                <pre>static VALUE
+rb_cpShapeResetIdCounter(VALUE self)
+{
+        cpResetShapeIdCounter();
+        return Qnil;
+}</pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-bb">
+            
+              <b>bb</b>()
+            
+            <a href="../../classes/CP/Shape.html#method-i-bb" name="method-i-bb" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-bb_source')" id="l_method-i-bb_source">show</a>
+                
+              </p>
+              <div id="method-i-bb_source" class="dyn-source">
+                <pre>static VALUE
+rb_cpShapeGetBB(VALUE self)
+{
+        cpBB *bb = malloc(sizeof(cpBB));
+        *bb = SHAPE(self)-&gt;bb;
+        return Data_Wrap_Struct(c_cpBB, NULL, free, bb);
+}</pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-body">
+            
+              <b>body</b>()
+            
+            <a href="../../classes/CP/Shape.html#method-i-body" name="method-i-body" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-body_source')" id="l_method-i-body_source">show</a>
+                
+              </p>
+              <div id="method-i-body_source" class="dyn-source">
+                <pre>static VALUE
+rb_cpShapeGetBody(VALUE self)
+{
+        return rb_ivar_get(self, id_body);
+}</pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-body-3D">
+            
+              <b>body=</b>(p1)
+            
+            <a href="../../classes/CP/Shape.html#method-i-body-3D" name="method-i-body-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-body-3D_source')" id="l_method-i-body-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-body-3D_source" class="dyn-source">
+                <pre>static VALUE
+rb_cpShapeSetBody(VALUE self, VALUE body)
+{
+        SHAPE(self)-&gt;body = BODY(body);
+        rb_ivar_set(self, id_body, body);
+        
+        return body;
+}</pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-cache_bb">
+            
+              <b>cache_bb</b>()
+            
+            <a href="../../classes/CP/Shape.html#method-i-cache_bb" name="method-i-cache_bb" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-cache_bb_source')" id="l_method-i-cache_bb_source">show</a>
+                
+              </p>
+              <div id="method-i-cache_bb_source" class="dyn-source">
+                <pre>static VALUE
+rb_cpShapeCacheBB(VALUE self)
+{
+        cpShape *shape = SHAPE(self);
+        cpShapeCacheBB(shape);
+        
+        return rb_cpShapeGetBB(self);
+}</pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-collision_type">
+            
+              <b>collision_type</b>()
+            
+            <a href="../../classes/CP/Shape.html#method-i-collision_type" name="method-i-collision_type" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-collision_type_source')" id="l_method-i-collision_type_source">show</a>
+                
+              </p>
+              <div id="method-i-collision_type_source" class="dyn-source">
+                <pre>static VALUE
+rb_cpShapeGetCollType(VALUE self)
+{
+        return rb_iv_get(self, &quot;collType&quot;);
+}</pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-collision_type-3D">
+            
+              <b>collision_type=</b>(p1)
+            
+            <a href="../../classes/CP/Shape.html#method-i-collision_type-3D" name="method-i-collision_type-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-collision_type-3D_source')" id="l_method-i-collision_type-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-collision_type-3D_source" class="dyn-source">
+                <pre>static VALUE
+rb_cpShapeSetCollType(VALUE self, VALUE val)
+{
+        VALUE col_type = rb_obj_id(val);
+        rb_iv_set(self, &quot;collType&quot;, val);
+        SHAPE(self)-&gt;collision_type = NUM2UINT(col_type);
+        
+        return val;
+}</pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-e">
+            
+              <b>e</b>()
+            
+            <a href="../../classes/CP/Shape.html#method-i-e" name="method-i-e" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-e_source')" id="l_method-i-e_source">show</a>
+                
+              </p>
+              <div id="method-i-e_source" class="dyn-source">
+                <pre>static VALUE
+rb_cpShapeGetElasticity(VALUE self)
+{
+        return rb_float_new(SHAPE(self)-&gt;e);
+}</pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-e-3D">
+            
+              <b>e=</b>(p1)
+            
+            <a href="../../classes/CP/Shape.html#method-i-e-3D" name="method-i-e-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-e-3D_source')" id="l_method-i-e-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-e-3D_source" class="dyn-source">
+                <pre>static VALUE
+rb_cpShapeSetElasticity(VALUE self, VALUE val)
+{
+        SHAPE(self)-&gt;e = NUM2DBL(val);
+        return val;
+}</pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-group">
+            
+              <b>group</b>()
+            
+            <a href="../../classes/CP/Shape.html#method-i-group" name="method-i-group" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-group_source')" id="l_method-i-group_source">show</a>
+                
+              </p>
+              <div id="method-i-group_source" class="dyn-source">
+                <pre>static VALUE
+rb_cpShapeGetGroup(VALUE self)
+{
+        return rb_iv_get(self, &quot;group&quot;);
+}</pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-group-3D">
+            
+              <b>group=</b>(p1)
+            
+            <a href="../../classes/CP/Shape.html#method-i-group-3D" name="method-i-group-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-group-3D_source')" id="l_method-i-group-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-group-3D_source" class="dyn-source">
+                <pre>static VALUE
+rb_cpShapeSetGroup(VALUE self, VALUE val)
+{
+        VALUE col_type = rb_obj_id(val);
+        rb_iv_set(self, &quot;group&quot;, val);
+        SHAPE(self)-&gt;group = NUM2UINT(col_type);
+        
+        return val;
+}</pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-layers">
+            
+              <b>layers</b>()
+            
+            <a href="../../classes/CP/Shape.html#method-i-layers" name="method-i-layers" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-layers_source')" id="l_method-i-layers_source">show</a>
+                
+              </p>
+              <div id="method-i-layers_source" class="dyn-source">
+                <pre>static VALUE
+rb_cpShapeGetLayers(VALUE self)
+{
+        return UINT2NUM(SHAPE(self)-&gt;layers);
+}</pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-layers-3D">
+            
+              <b>layers=</b>(p1)
+            
+            <a href="../../classes/CP/Shape.html#method-i-layers-3D" name="method-i-layers-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-layers-3D_source')" id="l_method-i-layers-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-layers-3D_source" class="dyn-source">
+                <pre>static VALUE
+rb_cpShapeSetLayers(VALUE self, VALUE layers)
+{
+        SHAPE(self)-&gt;layers = NUM2UINT(layers);
+        
+        return layers;
+}</pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-surface_v">
+            
+              <b>surface_v</b>()
+            
+            <a href="../../classes/CP/Shape.html#method-i-surface_v" name="method-i-surface_v" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-surface_v_source')" id="l_method-i-surface_v_source">show</a>
+                
+              </p>
+              <div id="method-i-surface_v_source" class="dyn-source">
+                <pre>static VALUE
+rb_cpShapeGetSurfaceV(VALUE self)
+{
+        return VWRAP(self, &amp;SHAPE(self)-&gt;surface_v);
+}</pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-surface_v-3D">
+            
+              <b>surface_v=</b>(p1)
+            
+            <a href="../../classes/CP/Shape.html#method-i-surface_v-3D" name="method-i-surface_v-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-surface_v-3D_source')" id="l_method-i-surface_v-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-surface_v-3D_source" class="dyn-source">
+                <pre>static VALUE
+rb_cpShapeSetSurfaceV(VALUE self, VALUE val)
+{
+        SHAPE(self)-&gt;surface_v = *VGET(val);
+        return val;
+}</pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-u">
+            
+              <b>u</b>()
+            
+            <a href="../../classes/CP/Shape.html#method-i-u" name="method-i-u" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-u_source')" id="l_method-i-u_source">show</a>
+                
+              </p>
+              <div id="method-i-u_source" class="dyn-source">
+                <pre>static VALUE
+rb_cpShapeGetFriction(VALUE self)
+{
+        return rb_float_new(SHAPE(self)-&gt;u);
+}</pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-u-3D">
+            
+              <b>u=</b>(p1)
+            
+            <a href="../../classes/CP/Shape.html#method-i-u-3D" name="method-i-u-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-u-3D_source')" id="l_method-i-u-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-u-3D_source" class="dyn-source">
+                <pre>static VALUE
+rb_cpShapeSetFriction(VALUE self, VALUE val)
+{
+        SHAPE(self)-&gt;u = NUM2DBL(val);
+        return val;
+}</pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

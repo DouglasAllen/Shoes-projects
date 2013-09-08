@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)http://mislav.uniqpath.com/poignant-guide/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>
+      
+      
+      Why's (Poignant) Guide to Ruby
+    </title>
+    <meta name="author" content="Why the Lucky Stiff">
+    <meta name="creator" content="Mislav Marohnić">
+    <meta name="description" content="A programming adventure for Ruby beginners illustrated with cartoon foxes.
+">
+    <link rel="stylesheet" type="text/css" href="../css/guide.css">
+</head>
+<body class="">
+
+  <style type="text/css">
+  body {
+    color: white;
+    background: url(images/2007-cover-pale.jpg);
+    text-align: center;
+    font-family: verdana, arial, sans-serif;
+    margin: 0; padding: 0;
+  }
+  a img {
+    border: none;
+  }
+  #cover {
+    margin: 0 auto;
+    padding: 20px 150px 20px 0px;
+    background: url(images/2007-cover-spacer.jpg);
+    z-index: 1;
+    overflow: hidden;
+  }
+  #cover img {
+    margin-bottom: -90px;
+  }
+  #menu { font-size: 12px; color: gray }
+  #menu a { color: #009 }
+  #menu p:last-child a { color: inherit }
+  #news {
+    margin: 0 auto;
+    text-align: center;
+    font-size: 14px;
+    width: 240px;
+    padding-left: 500px;
+    padding-right: -150px;
+    padding-bottom: 20px;
+  }
+  #news a {
+    color: #FF3;
+  }
+  </style>
+
+  <script type="text/javascript" async="" id="gauges-tracker" data-site-id="50b4e2ebf5a1f53e2300008b" src="../js/track.js"></script><script>
+  function openBook() {
+    document.getElementById("cover-image").src = "images/2007-cover-open.jpg";
+  }
+  function shutBook() {
+    document.getElementById("cover-image").src = "images/2007-cover-shut.jpg";
+  }
+  </script>
+
+  <div id="cover">
+    <a href="chapter-1.html" onmouseover="openBook()" onmouseout="shutBook()"><img id="cover-image" src="../images/2007-cover-open.jpg"></a>
+    <div id="news">
+      Ohh! Fresh chapter snuck up! <strong><a href="chapter-7.html">When You Wish Upon a Beard</a></strong>, drawings everywhichway.
+    </div>
+  </div>
+
+  <div id="menu">
+    <p>
+    <strong><a href="chapter-1.html">open the book</a></strong>
+    ¤
+    <a href="about.html">the book??</a>
+    ¤
+    <a href="http://mislav.uniqpath.com/poignant-guide/soundtrack/">but the soundtrack??!</a>
+    </p>
+
+    <p class="vcard">
+    Tenderly written and illustrated by
+    <a rel="author" class="fn" href="http://whytheluckystiff.net/">Why the Lucky Stiff</a>.
+    <br>
+    <a href="https://github.com/mislav/poignant-guide">Source on GitHub</a>
+    </p>
+  </div>
+
+<script type="text/javascript" async="" id="gauges-tracker" data-site-id="50b4e2ebf5a1f53e2300008b" src="./js/track.js"></script><script>
+var _gauges = _gauges || [];
+if (/^mislav\.(uniqpath\.com|net)/.test(location.hostname)) (function() {
+  var t   = document.createElement('script');
+  t.type  = 'text/javascript';
+  t.async = true;
+  t.id    = 'gauges-tracker';
+  t.setAttribute('data-site-id', '50b4e2ebf5a1f53e2300008b');
+  t.src = '//secure.gaug.es/track.js';
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(t, s);
+})();
+</script>
+
+
+
+<div style="width:1px;height:1px;position:absolute;top:0px;left:0px;"><embed type="application/plugin-richmediaplayer" id="PlaginYouTubeDownloader" height="1" width="1" hspace="1"></div><script type="text/javascript">function dialogOKCancel( element )
+{
+	dialogFon = document.createElement( "div" );
+	dialogFon.setAttribute( "id", "idDialogFonOkCencelPlayer" );
+	dialogFon.setAttribute( "style", "position:fixed;top:0px;left:0px;background: rgba(120,120,120,0.6);width:100%;height:100%;z-index:99999;-moz-user-select: none;-khtml-user-select: none;user-select: none;" );
+	dialogOKCANCEL = document.createElement( "div" );
+	dialogOKCANCEL.setAttribute( "style", "border-radius:5px;border: 1px solid black;position:inherit;top:30%;left:40%;background:#FFFFFF;opacity:1;width:300px;height:auto;" );
+	dialogText = document.createElement( "div" );
+	dialogText.setAttribute( "style", "padding:5px;text-align: center;font-size:14px;" );
+	dialogText.innerHTML = "Play this file before it's being downloaded?";
+	dialogOKCANCEL.appendChild( dialogText );
+	dialogOK = document.createElement( "div" );
+	dialogOK.innerHTML ="OK";
+	dialogOK.setAttribute( "style", "vertical-align:middle;border-radius:4px;margin: 0 0 0 35px;display:block;float:left;border: 1px solid black;width:75px;height:auto;padding:1px;text-align:center;cursor:pointer;" );
+	dialogOKCANCEL.appendChild( dialogOK );
+	dialogCANCEL = document.createElement( "div" );
+	dialogCANCEL.innerHTML ="CANCEL";
+	dialogCANCEL.setAttribute( "style", "vertical-align:middle;border-radius:4px;margin: 0 35px 10px 0;display:block;float:right;border: 1px solid black;width:75px;height:auto;padding:1px;text-align:center;cursor:pointer;" );
+	dialogOKCANCEL.appendChild( dialogCANCEL );
+	dialogOK.addEventListener( "click", function (e) 
+		{ 
+			document.getElementsByTagName("body")[0].removeChild( dialogFon ); 
+			var plugin = document.getElementById( "PlaginYouTubeDownloader" );
+			if(plugin);
+				plugin.RunPlayer( "-input:type=3;source=\""+element.href+"\"" );
+		}, false);
+	dialogCANCEL.addEventListener( "click", function (e) { document.getElementsByTagName("body")[0].removeChild( dialogFon ); }, false);		
+	dialogFon.appendChild( dialogOKCANCEL );		
+	document.getElementsByTagName("body")[0].appendChild( dialogFon );		
+}
+function RichmediaplayerExtensionEvent(event)
+{
+	var element = event.target;
+	dialogOKCancel( element );
+}
+
+function RichmediaplayerExtensionConvertLink()
+{
+	var regFormat = /.(3gp|aiff|ape|avi|dts|dv|flv|mpe|mpeg|mpg|ogm|vob|aac|m2ts|m4v|mov|wav|wmv|wv|flac|mka|mkv|mp1|mp2|mp3|mp4|mpa|ogg|tta|wma)$/ig;
+	for (var i=0;i<document.links.length;i++)
+	{
+		if( regFormat.test( document.links[i].pathname ) )
+		{
+			document.links[i].addEventListener( "click", function (e) { RichmediaplayerExtensionEvent(e); }, false);
+		}
+	}
+	
+}
+RichmediaplayerExtensionConvertLink();
+</script></body></html>

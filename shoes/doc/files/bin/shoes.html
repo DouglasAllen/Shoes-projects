@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>shoes</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            shoes
+        </h1>
+        <ul class="files">
+            <li>bin/shoes</li>
+            <li>Last modified: 2013-04-22 23:58:57 -0500</li>
+        </ul>
+    </div>
+
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>ARGV.delete_if { |x| x =~ /-psn_/ }</p>
+
+<p>$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), ‘..’, ‘lib’)) require
+‘shoes’ require ‘shoes/manual’ require ‘optparse’ require ‘resolv-replace’
+if RUBY_PLATFORM =~ /win/</p>
+
+<p>class <a href="../../classes/Shoes.html">Shoes</a></p>
+
+<pre class="ruby"><span class="ruby-constant">OPTS</span> = <span class="ruby-constant">OptionParser</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">opts</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">banner</span> = <span class="ruby-string">&quot;Usage: shoes [options] (app.rb or app.shy)&quot;</span>
+
+  <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;-m&quot;</span>, <span class="ruby-string">&quot;--manual&quot;</span>,
+          <span class="ruby-string">&quot;Open the built-in manual.&quot;</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">show_manual</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;-p&quot;</span>, <span class="ruby-string">&quot;--package&quot;</span>,
+          <span class="ruby-string">&quot;Package a Shoes app for Windows, OS X and Linux.&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">make_pack</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;-g&quot;</span>, <span class="ruby-string">&quot;--gem&quot;</span>,
+          <span class="ruby-string">&quot;Passes commands to RubyGems.&quot;</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">require</span> <span class="ruby-string">'shoes/setup'</span>
+    <span class="ruby-identifier">require</span> <span class="ruby-string">'rubygems/gem_runner'</span>
+    <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">GemRunner</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">run</span>(<span class="ruby-constant">ARGV</span>)
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">SystemExit</span>, <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;--manual-html DIRECTORY&quot;</span>, <span class="ruby-string">&quot;Saves the manual to a directory as HTML.&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">dir</span><span class="ruby-operator">|</span>
+    <span class="ruby-constant">Manual</span>.<span class="ruby-identifier">as</span> :<span class="ruby-identifier">html</span>, <span class="ruby-identifier">dir</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">SystemExit</span>, <span class="ruby-node">&quot;HTML manual in: #{dir}&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;--install MODE SRC DEST&quot;</span>, <span class="ruby-string">&quot;Installs a file.&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">mode</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">src</span>, <span class="ruby-identifier">dest</span> = <span class="ruby-constant">ARGV</span>
+    <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">install</span> <span class="ruby-identifier">src</span>, <span class="ruby-identifier">dest</span>, :<span class="ruby-identifier">mode</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">mode</span>.<span class="ruby-identifier">to_i</span>(<span class="ruby-value">8</span>), :<span class="ruby-identifier">preserve</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">SystemExit</span>, <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;--nolayered&quot;</span>, <span class="ruby-string">&quot;No WS_EX_LAYERED style option.&quot;</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">$NOLAYERED</span> = <span class="ruby-value">1</span>
+    <span class="ruby-constant">Shoes</span>.<span class="ruby-identifier">args!</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on_tail</span>(<span class="ruby-string">&quot;-v&quot;</span>, <span class="ruby-string">&quot;--version&quot;</span>, <span class="ruby-string">&quot;Display the version info.&quot;</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">SystemExit</span>, <span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-node">&quot;#{DIR}/VERSION.txt&quot;</span>).<span class="ruby-identifier">strip</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on_tail</span>(<span class="ruby-string">&quot;-h&quot;</span>, <span class="ruby-string">&quot;--help&quot;</span>, <span class="ruby-string">&quot;Show this message&quot;</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">SystemExit</span>, <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">args!</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">RUBY_PLATFORM</span> <span class="ruby-operator">!~</span> <span class="ruby-regexp">/darwin/</span> <span class="ruby-keyword">and</span> <span class="ruby-constant">ARGV</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-constant">Shoes</span>.<span class="ruby-identifier">splash</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-constant">OPTS</span>.<span class="ruby-identifier">parse!</span> <span class="ruby-constant">ARGV</span>
+  <span class="ruby-constant">ARGV</span>[<span class="ruby-value">0</span>] <span class="ruby-keyword">or</span> <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">splash</span>
+  <span class="ruby-identifier">font</span> <span class="ruby-node">&quot;#{DIR}/fonts/Lacuna.ttf&quot;</span>
+  <span class="ruby-constant">Shoes</span>.<span class="ruby-identifier">app</span> :<span class="ruby-identifier">width</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">400</span>, :<span class="ruby-identifier">height</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">300</span>, :<span class="ruby-identifier">resizable</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">do</span>  
+    <span class="ruby-identifier">style</span>(<span class="ruby-constant">Para</span>, :<span class="ruby-identifier">align</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;center&quot;</span>, :<span class="ruby-identifier">weight</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;bold&quot;</span>, :<span class="ruby-identifier">font</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Lacuna Regular&quot;</span>, :<span class="ruby-identifier">size</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">13</span>)
+    <span class="ruby-identifier">style</span>(<span class="ruby-constant">Link</span>, :<span class="ruby-identifier">stroke</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">yellow</span>, :<span class="ruby-identifier">underline</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">nil</span>)
+    <span class="ruby-identifier">style</span>(<span class="ruby-constant">LinkHover</span>, :<span class="ruby-identifier">stroke</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">yellow</span>, :<span class="ruby-identifier">fill</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">nil</span>)
+
+    <span class="ruby-identifier">x1</span> = <span class="ruby-value">77</span>; <span class="ruby-identifier">y1</span> = <span class="ruby-value">122</span>
+    <span class="ruby-identifier">x2</span> = <span class="ruby-value">148</span>; <span class="ruby-identifier">y2</span> = <span class="ruby-value">-122</span>
+    <span class="ruby-identifier">x3</span> = <span class="ruby-value">245</span>; <span class="ruby-identifier">y3</span> = <span class="ruby-value">0</span>
+
+    <span class="ruby-identifier">nofill</span>
+    <span class="ruby-identifier">strokewidth</span> <span class="ruby-value">40.0</span>
+
+    <span class="ruby-ivar">@waves</span> = <span class="ruby-identifier">stack</span> :<span class="ruby-identifier">top</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>, :<span class="ruby-identifier">left</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+
+    <span class="ruby-identifier">require</span> <span class="ruby-string">'shoes/search'</span>
+    <span class="ruby-identifier">require</span> <span class="ruby-string">'shoes/help'</span>
+
+    <span class="ruby-identifier">stack</span> :<span class="ruby-identifier">margin</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">18</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">para</span> <span class="ruby-string">&quot;Welcome to&quot;</span>, :<span class="ruby-identifier">stroke</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#DFA&quot;</span>, :<span class="ruby-identifier">margin</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+      <span class="ruby-identifier">para</span> <span class="ruby-string">&quot;SHOES&quot;</span>, :<span class="ruby-identifier">size</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">48</span>, :<span class="ruby-identifier">stroke</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#DFA&quot;</span>, :<span class="ruby-identifier">margin_top</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+      <span class="ruby-identifier">stack</span> <span class="ruby-keyword">do</span>
+        <span class="ruby-identifier">background</span> <span class="ruby-identifier">black</span>(<span class="ruby-value">0.2</span>), :<span class="ruby-identifier">curve</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8</span>
+        <span class="ruby-identifier">para</span> <span class="ruby-identifier">link</span>(<span class="ruby-string">&quot;Open an App.&quot;</span>) { <span class="ruby-constant">Shoes</span>.<span class="ruby-identifier">show_selector</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">close</span> }, :<span class="ruby-identifier">margin</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">10</span>, :<span class="ruby-identifier">margin_bottom</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">4</span>
+                                      <span class="ruby-identifier">para</span> <span class="ruby-identifier">link</span>(<span class="ruby-string">&quot;Package an App.&quot;</span>) { <span class="ruby-constant">Shoes</span>.<span class="ruby-identifier">make_pack</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">close</span> }, :<span class="ruby-identifier">margin</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">10</span>, :<span class="ruby-identifier">margin_bottom</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">4</span>
+        <span class="ruby-identifier">para</span> <span class="ruby-identifier">link</span>(<span class="ruby-string">&quot;Read the Manual.&quot;</span>) { <span class="ruby-constant">Shoes</span>.<span class="ruby-identifier">show_manual</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">close</span> }, :<span class="ruby-identifier">margin</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">10</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">inscription</span> <span class="ruby-string">&quot;Alt-Slash opens the console.&quot;</span>, :<span class="ruby-identifier">stroke</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#DFA&quot;</span>, :<span class="ruby-identifier">align</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;center&quot;</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">animate</span>(<span class="ruby-value">10</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">ani</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">a</span> = <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sin</span>(<span class="ruby-identifier">ani</span> * <span class="ruby-value">0.02</span>) * <span class="ruby-value">20</span>
+      <span class="ruby-ivar">@waves</span>.<span class="ruby-identifier">clear</span> <span class="ruby-keyword">do</span>
+        <span class="ruby-identifier">background</span> <span class="ruby-identifier">white</span>
+        <span class="ruby-identifier">y</span> = <span class="ruby-value">-30</span>
+        <span class="ruby-value">16</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+          <span class="ruby-identifier">shape</span> <span class="ruby-keyword">do</span>
+            <span class="ruby-identifier">move_to</span> <span class="ruby-identifier">x</span> = (<span class="ruby-value">-300</span> <span class="ruby-operator">-</span> (<span class="ruby-identifier">i</span>*(<span class="ruby-identifier">a</span>*<span class="ruby-value">0.8</span>))), <span class="ruby-identifier">y</span>
+            <span class="ruby-identifier">c</span> = (<span class="ruby-identifier">a</span> <span class="ruby-operator">+</span> <span class="ruby-value">14</span>) * <span class="ruby-value">0.01</span>
+            <span class="ruby-identifier">stroke</span> <span class="ruby-identifier">rgb</span>(<span class="ruby-identifier">i</span> * <span class="ruby-value">0.06</span>, <span class="ruby-identifier">c</span> <span class="ruby-operator">+</span> <span class="ruby-value">0.1</span>, <span class="ruby-value">0.1</span>, <span class="ruby-value">1.0</span> <span class="ruby-operator">-</span> (<span class="ruby-identifier">ani</span> * <span class="ruby-value">0.0003</span>))
+            <span class="ruby-value">4</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span>
+              <span class="ruby-identifier">curve_to</span> <span class="ruby-identifier">x1</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">x</span>, (<span class="ruby-identifier">y1</span><span class="ruby-operator">-</span>(<span class="ruby-identifier">i</span>*<span class="ruby-identifier">a</span>)) <span class="ruby-operator">+</span> <span class="ruby-identifier">y</span>, <span class="ruby-identifier">x2</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">x</span>, (<span class="ruby-identifier">y2</span><span class="ruby-operator">+</span>(<span class="ruby-identifier">i</span>*<span class="ruby-identifier">a</span>)) <span class="ruby-operator">+</span> <span class="ruby-identifier">y</span>, <span class="ruby-identifier">x3</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">x</span>, <span class="ruby-identifier">y3</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">y</span>
+              <span class="ruby-identifier">x</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">x3</span>
+            <span class="ruby-keyword">end</span>
+          <span class="ruby-keyword">end</span>
+          <span class="ruby-identifier">y</span> <span class="ruby-operator">+=</span> <span class="ruby-value">30</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">show_manual</span>
+  <span class="ruby-constant">Manual</span>.<span class="ruby-identifier">as</span> :<span class="ruby-identifier">shoes</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">make_pack</span>
+  <span class="ruby-identifier">require</span> <span class="ruby-string">'shoes/pack'</span>
+  <span class="ruby-constant">Shoes</span>.<span class="ruby-identifier">app</span>(:<span class="ruby-identifier">width</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">500</span>, :<span class="ruby-identifier">height</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">480</span>, :<span class="ruby-identifier">resizable</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>, &amp;<span class="ruby-constant">PackMake</span>)
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>end</p>
+
+<p>Shoes.args!</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+              </div>
+
+    </div>
+  </body>
+</html>

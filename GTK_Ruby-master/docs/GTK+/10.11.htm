@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html><head>
+
+
+  <title>Hello World in Ruby-GNOME2</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <meta name="GENERATOR" content="Quanta Plus">
+  <link rel="stylesheet" type="text/css" href="site-style.css">
+</head><body>
+<h1>10.11. Calendar</h1>
+
+<p>The Calendar widget is an effective way to display and retrieve monthly date related information. 
+It is a very simple widget to create and work with.</p>
+
+<p>Creating a Calendar widget is a simple as:</p>
+
+<pre>Gtk::Calendar.new</pre>
+
+<p>There might be times where you need to change a lot of information within this widget and the following 
+methods allow you to make multiple changes to a Calendar widget without the user seeing multiple on-screen
+updates.</p>
+
+<pre>Gtk::Calendar#freeze
+
+Gtk::Calendar#thaw
+</pre>
+
+<p>They work just like the freeze/thaw methods of every other widget.</p>
+
+<p>The Calendar widget has a few options that allow you to change the way the widget both looks and 
+operates by using the method</p>
+
+<pre>Gtk::Calendar#display_options( flags )</pre>
+
+<p>The flags argument can be formed by combining either of the following five options using the logical
+bitwise OR (|) operation:</p>
+
+<pre>Gtk::Calendar::SHOW_HEADING</pre>
+
+<p>this option specifies that the month and year should be shown when drawing the calendar.</p>
+
+<pre>Gtk::Calendar::SHOW_DAY_NAMES</pre>
+
+<p>this option specifies that the three letter descriptions should be displayed for each day (eg Mon,Tue, etc.).</p>
+
+<pre>Gtk::Calendar::NO_MONTH_CHANGE</pre>
+
+<p>this option states that the user should not and can not change the currently displayed month.
+This can be good if you only need to display a particular month such as if you are displaying 12
+calendar widgets for every month in a particular year.</p>
+
+<pre>Gtk::Calendar::SHOW_WEEK_NUMBERS</pre>
+
+<p>this option specifies that the number for each week should be displayed down the left side of the
+calendar. (eg. Jan 1 = Week 1,Dec 31 = Week 52).</p>
+
+<pre>Gtk::Calendar::WEEK_START_MONDAY</pre>
+
+<p>this option states that the calander week will start on Monday instead of Sunday which is the default.
+This only affects the order in which days are displayed from left to right.</p>
+
+<p>The following methods are used to set the the currently displayed date:</p>
+
+<pre>Gtk::Calendar#select_month( month, year )
+
+Gtk::Calendar#select_day( day )
+</pre>
+
+<p>The return value from <i>Gtk::Calendar#select_month</i> is a boolean value indicating whether the
+selection was successful.</p>
+
+<p>With <i>Gtk::Calendar#select_day</i> the specified day number is selected within the current month, if
+that is possible. A day value of 0 will deselect any current selection.</p>
+
+<p>In addition to having a day selected, any number of days in the month may be "marked". A marked
+day is highlighted within the calendar display. The following methods are provided to manipulate
+marked days:</p>
+
+<pre>Gtk::Calendar#mark_day( day )
+
+Gtk::Calendar#unmark_day( day )
+
+Gtk::Calendar#clear_marks
+</pre>
+
+<p>The currently marked days are stored within an array within the Calendar structure. This array is
+31 elements long so to test whether a particular day is currently marked, you need to access the 
+corresponding element of the array.
+For example:</p>
+
+<pre>calendar = Gtk::Calendar#new
+
+    ...
+
+    # Is day 7 marked?
+    if calendar[7]
+       # day is marked
+</pre>
+
+<p>Note that marks are persistent across month and year changes.</p>
+
+<p>The final Calendar widget method is used to retrieve the currently selected date, month and/or year.</p>
+
+<pre>Gtk::Calendar#date( year, month, day )</pre>
+
+<p>This method requires you to pass variables, into which the result will be placed.
+Passing nill as a value will result in the corresponding value not being returned.</p>
+
+<p>The Calendar widget can generate a number of signals indicating date selection and change. 
+The names of these signals are self explanatory, and are:</p>
+
+<pre> month_changed
+day_selected
+day_selected_double_click
+prev_month
+next_month
+prev_year
+next_year
+</pre>
+
+<p>That just leaves us with the need to put all of this together into some basic example code.</p>
+
+<img src="images/calendar.png" border="0" width="480" height="401">
+
+<pre>CODE
+CODE
+CODE
+CODE
+CODE
+CODE
+</pre>
+
+
+<hr>
+<table>
+	<tbody><tr>
+		<td align="left"><a href="10.10.htm">Prev</a></td>
+		<td align="right"><a href="10.12.htm">Next</a></td>
+	</tr>
+</tbody></table>
+</body></html>

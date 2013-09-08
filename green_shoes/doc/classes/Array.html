@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Array</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Array 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/lib/shoes/ruby_rb.html">lib/shoes/ruby.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>#</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-2F">/</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-_clear">_clear</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-_to_s">_to_s</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-clear">clear</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-clear_all">clear_all</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-dark-3F">dark?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>L</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-light-3F">light?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-to_s">to_s</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-2F">
+            
+              <b>/</b>(len)
+            
+            <a href="../classes/Array.html#method-i-2F" name="method-i-2F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-2F_source')" id="l_method-i-2F_source">show</a>
+                
+              </p>
+              <div id="method-i-2F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/ruby.rb, line 147</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">/</span> <span class="ruby-keyword ruby-title">len</span>
+  <span class="ruby-identifier">a</span> = []
+  <span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">x</span>, <span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">a</span> <span class="ruby-operator">&lt;&lt;</span> [] <span class="ruby-keyword">if</span> <span class="ruby-identifier">i</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">len</span> <span class="ruby-operator">==</span> <span class="ruby-number">0</span>
+    <span class="ruby-identifier">a</span>.<span class="ruby-identifier">last</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">x</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">a</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-_clear">
+            
+              <b>_clear</b>()
+            
+            <a href="../classes/Array.html#method-i-_clear" name="method-i-_clear" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-_to_s">
+            
+              <b>_to_s</b>()
+            
+            <a href="../classes/Array.html#method-i-_to_s" name="method-i-_to_s" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-clear">
+            
+              <b>clear</b>()
+            
+            <a href="../classes/Array.html#method-i-clear" name="method-i-clear" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="Array.html#method-i-_clear">_clear</a>
+            </div>
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-clear_source')" id="l_method-i-clear_source">show</a>
+                
+              </p>
+              <div id="method-i-clear_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/ruby.rb, line 167</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">clear</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">each</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">clear</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">method_defined?</span> <span class="ruby-value">:clear</span>}
+  <span class="ruby-identifier">_clear</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-clear_all">
+            
+              <b>clear_all</b>()
+            
+            <a href="../classes/Array.html#method-i-clear_all" name="method-i-clear_all" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-clear_all_source')" id="l_method-i-clear_all_source">show</a>
+                
+              </p>
+              <div id="method-i-clear_all_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/ruby.rb, line 172</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">clear_all</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">each</span> &amp;<span class="ruby-value">:clear_all</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-dark-3F">
+            
+              <b>dark?</b>()
+            
+            <a href="../classes/Array.html#method-i-dark-3F" name="method-i-dark-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-dark-3F_source')" id="l_method-i-dark-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-dark-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/ruby.rb, line 156</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">dark?</span>
+  <span class="ruby-identifier">r</span>, <span class="ruby-identifier">g</span>, <span class="ruby-identifier">b</span> = <span class="ruby-keyword">self</span>
+  <span class="ruby-identifier">r</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">g</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">b</span> <span class="ruby-operator">&lt;</span> <span class="ruby-number">0x55</span> * <span class="ruby-number">3</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-light-3F">
+            
+              <b>light?</b>()
+            
+            <a href="../classes/Array.html#method-i-light-3F" name="method-i-light-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-light-3F_source')" id="l_method-i-light-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-light-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/ruby.rb, line 161</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">light?</span>
+  <span class="ruby-identifier">r</span>, <span class="ruby-identifier">g</span>, <span class="ruby-identifier">b</span> = <span class="ruby-keyword">self</span>
+  <span class="ruby-identifier">r</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">g</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">b</span> <span class="ruby-operator">&gt;</span> <span class="ruby-number">0xAA</span> * <span class="ruby-number">3</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-to_s">
+            
+              <b>to_s</b>()
+            
+            <a href="../classes/Array.html#method-i-to_s" name="method-i-to_s" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="Array.html#method-i-_to_s">_to_s</a>
+            </div>
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-to_s_source')" id="l_method-i-to_s_source">show</a>
+                
+              </p>
+              <div id="method-i-to_s_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/ruby.rb, line 177</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">to_s</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">map</span>(&amp;<span class="ruby-value">:to_s</span>).<span class="ruby-identifier">_to_s</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

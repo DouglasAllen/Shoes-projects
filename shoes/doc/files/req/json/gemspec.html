@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>gemspec</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            gemspec
+        </h1>
+        <ul class="files">
+            <li>req/json/gemspec</li>
+            <li>Last modified: 2013-04-23 09:29:54 -0500</li>
+        </ul>
+    </div>
+
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>Gem::Specification.new do |s|</p>
+
+<pre>s.name = %q{json-shoes}
+s.version = &quot;1.1.3&quot;
+
+s.required_rubygems_version = Gem::Requirement.new(&quot;&gt;= 0&quot;) if s.respond_to? :required_rubygems_version=
+s.authors = [&quot;Florian Frank&quot;]
+s.date = %q{2008-07-10}
+s.default_executable = %q{edit_json.rb}
+s.description = %q{}
+s.email = %q{flori@ping.de}
+s.executables = [&quot;edit_json.rb&quot;]
+s.extensions = [&quot;ext/json/ext/parser/extconf.rb&quot;, &quot;ext/json/ext/generator/extconf.rb&quot;]
+s.files = [&quot;install.rb&quot;, &quot;lib&quot;, &quot;lib/json.rb&quot;, &quot;lib/json&quot;, &quot;lib/json/Array.xpm&quot;, &quot;lib/json/FalseClass.xpm&quot;, &quot;lib/json/json.xpm&quot;, &quot;lib/json/editor.rb&quot;, &quot;lib/json/Hash.xpm&quot;, &quot;lib/json/Key.xpm&quot;, &quot;lib/json/common.rb&quot;, &quot;lib/json/String.xpm&quot;, &quot;lib/json/pure&quot;, &quot;lib/json/pure/generator.rb&quot;, &quot;lib/json/pure/parser.rb&quot;, &quot;lib/json/Numeric.xpm&quot;, &quot;lib/json/ext.rb&quot;, &quot;lib/json/pure.rb&quot;, &quot;lib/json/NilClass.xpm&quot;, &quot;lib/json/add&quot;, &quot;lib/json/add/rails.rb&quot;, &quot;lib/json/add/core.rb&quot;, &quot;lib/json/TrueClass.xpm&quot;, &quot;lib/json/version.rb&quot;, &quot;ext&quot;, &quot;ext/json&quot;, &quot;ext/json/ext&quot;, &quot;ext/json/ext/parser&quot;, &quot;ext/json/ext/parser/unicode.h&quot;, &quot;ext/json/ext/parser/parser.c&quot;, &quot;ext/json/ext/parser/extconf.rb&quot;, &quot;ext/json/ext/parser/unicode.c&quot;, &quot;ext/json/ext/parser/parser.rl&quot;, &quot;ext/json/ext/generator&quot;, &quot;ext/json/ext/generator/unicode.h&quot;, &quot;ext/json/ext/generator/extconf.rb&quot;, &quot;ext/json/ext/generator/generator.c&quot;, &quot;ext/json/ext/generator/unicode.c&quot;, &quot;README&quot;, &quot;diagrams&quot;, &quot;CHANGES&quot;, &quot;RUBY&quot;, &quot;TODO&quot;, &quot;VERSION&quot;, &quot;tests&quot;, &quot;tests/test_json.rb&quot;, &quot;tests/test_json_addition.rb&quot;, &quot;tests/fixtures&quot;, &quot;tests/fixtures/fail11.json&quot;, &quot;tests/fixtures/fail5.json&quot;, &quot;tests/fixtures/fail10.json&quot;, &quot;tests/fixtures/fail3.json&quot;, &quot;tests/fixtures/pass15.json&quot;, &quot;tests/fixtures/fail9.json&quot;, &quot;tests/fixtures/fail22.json&quot;, &quot;tests/fixtures/fail6.json&quot;, &quot;tests/fixtures/pass2.json&quot;, &quot;tests/fixtures/fail20.json&quot;, &quot;tests/fixtures/fail19.json&quot;, &quot;tests/fixtures/fail12.json&quot;, &quot;tests/fixtures/fail7.json&quot;, &quot;tests/fixtures/fail4.json&quot;, &quot;tests/fixtures/fail1.json&quot;, &quot;tests/fixtures/fail24.json&quot;, &quot;tests/fixtures/fail21.json&quot;, &quot;tests/fixtures/pass1.json&quot;, &quot;tests/fixtures/fail2.json&quot;, &quot;tests/fixtures/fail25.json&quot;, &quot;tests/fixtures/pass16.json&quot;, &quot;tests/fixtures/pass3.json&quot;, &quot;tests/fixtures/fail18.json&quot;, &quot;tests/fixtures/fail28.json&quot;, &quot;tests/fixtures/fail13.json&quot;, &quot;tests/fixtures/fail27.json&quot;, &quot;tests/fixtures/pass17.json&quot;, &quot;tests/fixtures/pass26.json&quot;, &quot;tests/fixtures/fail23.json&quot;, &quot;tests/fixtures/fail14.json&quot;, &quot;tests/fixtures/fail8.json&quot;, &quot;tests/runner.rb&quot;, &quot;tests/test_json_generate.rb&quot;, &quot;tests/test_json_rails.rb&quot;, &quot;tests/test_json_unicode.rb&quot;, &quot;tests/test_json_fixtures.rb&quot;, &quot;benchmarks&quot;, &quot;benchmarks/benchmark_parser.rb&quot;, &quot;benchmarks/benchmark_generator.rb&quot;, &quot;benchmarks/benchmark_rails.rb&quot;, &quot;benchmarks/benchmark.txt&quot;, &quot;Rakefile&quot;, &quot;GPL&quot;, &quot;data&quot;, &quot;data/example.json&quot;, &quot;data/index.html&quot;, &quot;data/prototype.js&quot;, &quot;bin&quot;, &quot;bin/edit_json.rb&quot;, &quot;bin/prettify_json.rb&quot;, &quot;tools&quot;, &quot;tools/fuzz.rb&quot;, &quot;tools/server.rb&quot;]
+s.has_rdoc = true
+s.homepage = %q{http://json.rubyforge.org}
+s.rdoc_options = [&quot;--title&quot;, &quot;JSON -- A JSON implemention&quot;, &quot;--main&quot;, &quot;JSON&quot;, &quot;--line-numbers&quot;]
+s.require_paths = [&quot;lib&quot;]
+s.rubyforge_project = %q{json}
+s.rubygems_version = %q{1.3.0}
+s.summary = %q{A JSON implementation as a Ruby extension}
+s.test_files = [&quot;tests/runner.rb&quot;]
+
+if s.respond_to? :specification_version= then
+  current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
+  s.specification_version = 2
+
+  if Gem::Version.new(Gem::RubyGemsVersion) &gt;= Gem::Version.new('1.2.0') then
+  else
+  end
+else
+end</pre>
+
+<p>end</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+              </div>
+
+    </div>
+  </body>
+</html>

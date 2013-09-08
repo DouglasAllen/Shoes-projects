@@ -1,0 +1,4 @@
+Opening and Reading Files
+The most common file-related procedure is reading a file’s data for use within a program. As
+you saw in Chapter 4, this is easily done:
+File.open("text.txt").each { |line| puts line }

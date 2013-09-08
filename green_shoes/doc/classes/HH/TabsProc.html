@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>HH::TabsProc</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            HH::TabsProc 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/hh/tabs_proc_rb.html">hh/tabs_proc.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>M</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-method_missing">method_missing</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-mk_tabs_proc">mk_tabs_proc</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-new_proc">new_proc</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>Q</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-quit_proc">quit_proc</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-method_missing">
+            
+              <b>method_missing</b>(m)
+            
+            <a href="../../classes/HH/TabsProc.html#method-i-method_missing" name="method-i-method_missing" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-method_missing_source')" id="l_method-i-method_missing_source">show</a>
+                
+              </p>
+              <div id="method-i-method_missing_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File hh/tabs_proc.rb, line 23</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">method_missing</span> <span class="ruby-identifier">m</span>
+  <span class="ruby-identifier">alert</span> <span class="ruby-string">'Not implemented yet'</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-mk_tabs_proc">
+            
+              <b>mk_tabs_proc</b>(tabs)
+            
+            <a href="../../classes/HH/TabsProc.html#method-i-mk_tabs_proc" name="method-i-mk_tabs_proc" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-mk_tabs_proc_source')" id="l_method-i-mk_tabs_proc_source">show</a>
+                
+              </p>
+              <div id="method-i-mk_tabs_proc_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File hh/tabs_proc.rb, line 3</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">mk_tabs_proc</span> <span class="ruby-identifier">tabs</span>
+  <span class="ruby-ivar">@new_proc_eles</span> = []
+  <span class="ruby-ivar">@new_proc_eles</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">eb</span> = <span class="ruby-identifier">edit_box</span>(<span class="ruby-identifier">width</span><span class="ruby-operator">:</span> <span class="ruby-number">400</span>, <span class="ruby-identifier">height</span><span class="ruby-operator">:</span> <span class="ruby-number">440</span>).<span class="ruby-identifier">hide</span>.<span class="ruby-identifier">move</span>(<span class="ruby-number">58</span>, <span class="ruby-number">20</span>)
+  <span class="ruby-ivar">@new_proc_eles</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">button</span>(<span class="ruby-string">'load'</span>){
+    <span class="ruby-identifier">file</span> = <span class="ruby-identifier">ask_open_file</span>
+    <span class="ruby-identifier">file</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">file</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">file</span>
+    <span class="ruby-identifier">eb</span>.<span class="ruby-identifier">text</span> = <span class="ruby-identifier">file</span>
+  }.<span class="ruby-identifier">hide</span>.<span class="ruby-identifier">move</span>(<span class="ruby-number">337</span>, <span class="ruby-number">460</span>)
+  <span class="ruby-ivar">@new_proc_eles</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">button</span>(<span class="ruby-string">'run'</span>){<span class="ruby-identifier">instance_eval</span> <span class="ruby-identifier">eb</span>.<span class="ruby-identifier">text</span>}.<span class="ruby-identifier">hide</span>.<span class="ruby-identifier">move</span>(<span class="ruby-number">381</span>, <span class="ruby-number">460</span>)
+  <span class="ruby-ivar">@new_proc_eles</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">button</span>(<span class="ruby-string">'close'</span>){<span class="ruby-ivar">@new_proc_eles</span>.<span class="ruby-identifier">each</span> &amp;<span class="ruby-value">:hide</span>}.<span class="ruby-identifier">hide</span>.<span class="ruby-identifier">move</span>(<span class="ruby-number">420</span>, <span class="ruby-number">460</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-new_proc">
+            
+              <b>new_proc</b>()
+            
+            <a href="../../classes/HH/TabsProc.html#method-i-new_proc" name="method-i-new_proc" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-new_proc_source')" id="l_method-i-new_proc_source">show</a>
+                
+              </p>
+              <div id="method-i-new_proc_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File hh/tabs_proc.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">new_proc</span>
+  <span class="ruby-ivar">@new_proc_eles</span>.<span class="ruby-identifier">each</span> &amp;<span class="ruby-value">:show</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-quit_proc">
+            
+              <b>quit_proc</b>()
+            
+            <a href="../../classes/HH/TabsProc.html#method-i-quit_proc" name="method-i-quit_proc" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-quit_proc_source')" id="l_method-i-quit_proc_source">show</a>
+                
+              </p>
+              <div id="method-i-quit_proc_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File hh/tabs_proc.rb, line 19</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">quit_proc</span>
+  <span class="ruby-identifier">exit</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

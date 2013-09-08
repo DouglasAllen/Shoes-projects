@@ -1,0 +1,828 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Shoes::Basic</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Shoes::Basic 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/lib/shoes/basic_rb.html">lib/shoes/basic.rb</a></li>
+            
+            <li><a href="../../files/lib/shoes/style_rb.html">lib/shoes/style.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-clear">clear</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-clear_all">clear_all</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>F</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-fix_size">fix_size</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>H</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-hide">hide</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>M</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-move">move</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-move2">move2</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-move3">move3</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-positioning">positioning</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-remove">remove</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-show">show</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-style">style</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-toggle">toggle</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            <a href="Mod.html">
+              Shoes::Mod
+            </a>
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+      <!-- Section attributes -->
+      <div class="sectiontitle">Attributes</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>args</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>cleared</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>hided</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>initials</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>parent</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>shows</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+      </table>
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>(args)
+            
+            <a href="../../classes/Shoes/Basic.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/basic.rb, line 4</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span> <span class="ruby-identifier">args</span>
+  <span class="ruby-ivar">@initials</span> = <span class="ruby-identifier">args</span>
+  <span class="ruby-identifier">args</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">instance_variable_set</span> <span class="ruby-node">&quot;@#{k}&quot;</span>, <span class="ruby-identifier">v</span>
+  <span class="ruby-keyword">end</span>
+
+  (<span class="ruby-ivar">@app</span>.<span class="ruby-identifier">order</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">self</span>) <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@noorder</span> <span class="ruby-keyword">or</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">EditBox</span>) <span class="ruby-keyword">or</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">EditLine</span>)
+  (<span class="ruby-ivar">@app</span>.<span class="ruby-identifier">cslot</span>.<span class="ruby-identifier">contents</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">self</span>) <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@nocontrol</span> <span class="ruby-keyword">or</span> <span class="ruby-ivar">@app</span>.<span class="ruby-identifier">cmask</span>
+  (<span class="ruby-ivar">@app</span>.<span class="ruby-identifier">cmask</span>.<span class="ruby-identifier">contents</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">self</span>) <span class="ruby-keyword">if</span> <span class="ruby-ivar">@app</span>.<span class="ruby-identifier">cmask</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Native</span>
+    <span class="ruby-ivar">@app</span>.<span class="ruby-identifier">focusables</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">self</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">state</span> = <span class="ruby-identifier">args</span>[<span class="ruby-value">:state</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">args</span>[<span class="ruby-value">:state</span>]
+    <span class="ruby-identifier">args</span>.<span class="ruby-identifier">delete</span> <span class="ruby-value">:state</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@parent</span> = <span class="ruby-ivar">@app</span>.<span class="ruby-identifier">cslot</span>
+  
+  <span class="ruby-constant">Basic</span>.<span class="ruby-identifier">class_eval</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">attr_accessor</span> *<span class="ruby-identifier">args</span>.<span class="ruby-identifier">keys</span>
+  <span class="ruby-keyword">end</span>
+
+  (<span class="ruby-ivar">@width</span>, <span class="ruby-ivar">@height</span> = <span class="ruby-ivar">@real</span>.<span class="ruby-identifier">size_request</span>) <span class="ruby-keyword">if</span> <span class="ruby-ivar">@real</span> <span class="ruby-keyword">and</span> <span class="ruby-operator">!</span><span class="ruby-keyword">self</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">TextBlock</span>)
+
+  <span class="ruby-identifier">set_margin</span>
+  <span class="ruby-ivar">@width</span> <span class="ruby-operator">+=</span> (<span class="ruby-ivar">@margin_left</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@margin_right</span>)
+  <span class="ruby-ivar">@height</span> <span class="ruby-operator">+=</span> (<span class="ruby-ivar">@margin_top</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@margin_bottom</span>)
+
+  <span class="ruby-ivar">@proc</span> = <span class="ruby-keyword">nil</span>
+  [<span class="ruby-value">:app</span>, <span class="ruby-value">:real</span>].<span class="ruby-identifier">each</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">k</span><span class="ruby-operator">|</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">delete</span> <span class="ruby-identifier">k</span>}
+  <span class="ruby-ivar">@args</span> = <span class="ruby-identifier">args</span>
+  <span class="ruby-ivar">@hovered</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-ivar">@cleared</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-ivar">@hidden</span> <span class="ruby-operator">?</span> (<span class="ruby-ivar">@hided</span>, <span class="ruby-ivar">@shows</span> = <span class="ruby-keyword">true</span>, <span class="ruby-keyword">false</span>) <span class="ruby-operator">:</span> (<span class="ruby-ivar">@hided</span>, <span class="ruby-ivar">@shows</span> = <span class="ruby-keyword">false</span>, <span class="ruby-keyword">true</span>)
+  <span class="ruby-ivar">@app</span>.<span class="ruby-identifier">fronts</span>.<span class="ruby-identifier">push</span> <span class="ruby-keyword">self</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@front</span>
+  <span class="ruby-ivar">@app</span>.<span class="ruby-identifier">backs</span>.<span class="ruby-identifier">push</span> <span class="ruby-keyword">self</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@back</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-clear">
+            
+              <b>clear</b>(flag = true)
+            
+            <a href="../../classes/Shoes/Basic.html#method-i-clear" name="method-i-clear" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="Basic.html#method-i-clear_all">clear_all</a>
+            </div>
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-clear_source')" id="l_method-i-clear_source">show</a>
+                
+              </p>
+              <div id="method-i-clear_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/basic.rb, line 89</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">clear</span> <span class="ruby-identifier">flag</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-ivar">@app</span>.<span class="ruby-identifier">delete_mouse_events</span> <span class="ruby-keyword">self</span>
+  <span class="ruby-ivar">@cleared</span> = <span class="ruby-keyword">true</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">flag</span>
+  <span class="ruby-keyword">case</span> <span class="ruby-keyword">self</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-constant">Button</span>, <span class="ruby-constant">EditLine</span>, <span class="ruby-constant">EditBox</span>, <span class="ruby-constant">ListBox</span>
+      <span class="ruby-ivar">@app</span>.<span class="ruby-identifier">cslot</span>.<span class="ruby-identifier">contents</span>.<span class="ruby-identifier">delete</span> <span class="ruby-keyword">self</span>
+      <span class="ruby-ivar">@app</span>.<span class="ruby-identifier">focusables</span>.<span class="ruby-identifier">delete</span> <span class="ruby-keyword">self</span>
+      <span class="ruby-identifier">remove</span>
+      <span class="ruby-ivar">@real</span> = <span class="ruby-keyword">nil</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-ivar">@real</span>.<span class="ruby-identifier">clear</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@real</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-clear_all">
+            
+              <b>clear_all</b>(flag = true)
+            
+            <a href="../../classes/Shoes/Basic.html#method-i-clear_all" name="method-i-clear_all" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-fix_size">
+            
+              <b>fix_size</b>()
+            
+            <a href="../../classes/Shoes/Basic.html#method-i-fix_size" name="method-i-fix_size" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-fix_size_source')" id="l_method-i-fix_size_source">show</a>
+                
+              </p>
+              <div id="method-i-fix_size_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/basic.rb, line 116</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">fix_size</span>
+  <span class="ruby-identifier">flag</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-identifier">set_margin</span>
+  <span class="ruby-keyword">case</span> <span class="ruby-keyword">self</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">EditBox</span>, <span class="ruby-constant">Button</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-number">0</span> <span class="ruby-operator">&lt;</span> <span class="ruby-ivar">@initials</span>[<span class="ruby-value">:width</span>] <span class="ruby-keyword">and</span> <span class="ruby-ivar">@initials</span>[<span class="ruby-value">:width</span>] <span class="ruby-operator">&lt;=</span> <span class="ruby-number">1.0</span>
+      <span class="ruby-ivar">@width</span> = <span class="ruby-ivar">@parent</span>.<span class="ruby-identifier">width</span> * <span class="ruby-ivar">@initials</span>[<span class="ruby-value">:width</span>] <span class="ruby-operator">-</span> <span class="ruby-ivar">@margin_left</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@margin_right</span>
+      <span class="ruby-identifier">flag</span> = <span class="ruby-keyword">true</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-number">0</span> <span class="ruby-operator">&lt;</span> <span class="ruby-ivar">@initials</span>[<span class="ruby-value">:height</span>] <span class="ruby-keyword">and</span> <span class="ruby-ivar">@initials</span>[<span class="ruby-value">:height</span>] <span class="ruby-operator">&lt;=</span> <span class="ruby-number">1.0</span>
+      <span class="ruby-ivar">@height</span> = <span class="ruby-ivar">@parent</span>.<span class="ruby-identifier">height</span> * <span class="ruby-ivar">@initials</span>[<span class="ruby-value">:height</span>] <span class="ruby-operator">-</span> <span class="ruby-ivar">@margin_top</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@margin_bottom</span>
+      <span class="ruby-identifier">flag</span> = <span class="ruby-keyword">true</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">EditLine</span>, <span class="ruby-constant">ListBox</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-number">0</span> <span class="ruby-operator">&lt;</span> <span class="ruby-ivar">@initials</span>[<span class="ruby-value">:width</span>] <span class="ruby-keyword">and</span> <span class="ruby-ivar">@initials</span>[<span class="ruby-value">:width</span>] <span class="ruby-operator">&lt;=</span> <span class="ruby-number">1.0</span>
+      <span class="ruby-ivar">@width</span> = <span class="ruby-ivar">@parent</span>.<span class="ruby-identifier">width</span> * <span class="ruby-ivar">@initials</span>[<span class="ruby-value">:width</span>] <span class="ruby-operator">-</span> <span class="ruby-ivar">@margin_left</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@margin_right</span>
+      <span class="ruby-ivar">@height</span> = <span class="ruby-number">26</span>
+      <span class="ruby-identifier">flag</span> = <span class="ruby-keyword">true</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">flag</span>
+    <span class="ruby-ivar">@real</span>.<span class="ruby-identifier">set_size_request</span> <span class="ruby-ivar">@width</span>, <span class="ruby-ivar">@height</span>
+    <span class="ruby-identifier">move</span> <span class="ruby-ivar">@left</span>, <span class="ruby-ivar">@top</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-hide">
+            
+              <b>hide</b>()
+            
+            <a href="../../classes/Shoes/Basic.html#method-i-hide" name="method-i-hide" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-hide_source')" id="l_method-i-hide_source">show</a>
+                
+              </p>
+              <div id="method-i-hide_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/basic.rb, line 67</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">hide</span>
+  <span class="ruby-ivar">@app</span>.<span class="ruby-identifier">shcs</span>.<span class="ruby-identifier">delete</span> <span class="ruby-keyword">self</span>
+  <span class="ruby-ivar">@app</span>.<span class="ruby-identifier">shcs</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">self</span>
+  <span class="ruby-ivar">@shows</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-move">
+            
+              <b>move</b>(x, y)
+            
+            <a href="../../classes/Shoes/Basic.html#method-i-move" name="method-i-move" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-move_source')" id="l_method-i-move_source">show</a>
+                
+              </p>
+              <div id="method-i-move_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/basic.rb, line 43</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">move</span> <span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>
+  <span class="ruby-ivar">@app</span>.<span class="ruby-identifier">cslot</span>.<span class="ruby-identifier">contents</span> <span class="ruby-operator">-=</span> [<span class="ruby-keyword">self</span>]
+  <span class="ruby-ivar">@app</span>.<span class="ruby-identifier">canvas</span>.<span class="ruby-identifier">move</span> <span class="ruby-ivar">@real</span>, <span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@hided</span>
+  <span class="ruby-identifier">move3</span> <span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-move2">
+            
+              <b>move2</b>(x, y)
+            
+            <a href="../../classes/Shoes/Basic.html#method-i-move2" name="method-i-move2" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-move2_source')" id="l_method-i-move2_source">show</a>
+                
+              </p>
+              <div id="method-i-move2_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/basic.rb, line 50</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">move2</span> <span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@hided</span>
+    <span class="ruby-identifier">remove</span>
+    <span class="ruby-ivar">@app</span>.<span class="ruby-identifier">canvas</span>.<span class="ruby-identifier">put</span> <span class="ruby-ivar">@real</span>, <span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">move3</span> <span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-move3">
+            
+              <b>move3</b>(x, y)
+            
+            <a href="../../classes/Shoes/Basic.html#method-i-move3" name="method-i-move3" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-move3_source')" id="l_method-i-move3_source">show</a>
+                
+              </p>
+              <div id="method-i-move3_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/basic.rb, line 58</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">move3</span> <span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>
+  <span class="ruby-ivar">@left</span>, <span class="ruby-ivar">@top</span> = <span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-positioning">
+            
+              <b>positioning</b>(x, y, max)
+            
+            <a href="../../classes/Shoes/Basic.html#method-i-positioning" name="method-i-positioning" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-positioning_source')" id="l_method-i-positioning_source">show</a>
+                
+              </p>
+              <div id="method-i-positioning_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/basic.rb, line 105</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">positioning</span> <span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>, <span class="ruby-identifier">max</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">parent</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Flow</span>) <span class="ruby-keyword">and</span> <span class="ruby-identifier">x</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@width</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-identifier">parent</span>.<span class="ruby-identifier">left</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">parent</span>.<span class="ruby-identifier">width</span>
+    <span class="ruby-identifier">move3</span> <span class="ruby-identifier">x</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">parent</span>.<span class="ruby-identifier">margin_left</span>, <span class="ruby-identifier">max</span>.<span class="ruby-identifier">top</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">parent</span>.<span class="ruby-identifier">margin_top</span>
+    <span class="ruby-identifier">max</span> = <span class="ruby-keyword">self</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">max</span>.<span class="ruby-identifier">height</span> <span class="ruby-operator">&lt;</span> <span class="ruby-ivar">@height</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">move3</span> <span class="ruby-identifier">parent</span>.<span class="ruby-identifier">left</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">parent</span>.<span class="ruby-identifier">margin_left</span>, <span class="ruby-identifier">max</span>.<span class="ruby-identifier">top</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">max</span>.<span class="ruby-identifier">height</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">parent</span>.<span class="ruby-identifier">margin_top</span>
+    <span class="ruby-identifier">max</span> = <span class="ruby-keyword">self</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">max</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-remove">
+            
+              <b>remove</b>()
+            
+            <a href="../../classes/Shoes/Basic.html#method-i-remove" name="method-i-remove" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-remove_source')" id="l_method-i-remove_source">show</a>
+                
+              </p>
+              <div id="method-i-remove_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/basic.rb, line 62</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">remove</span>
+  <span class="ruby-ivar">@app</span>.<span class="ruby-identifier">canvas</span>.<span class="ruby-identifier">remove</span> <span class="ruby-ivar">@real</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@hided</span>
+  <span class="ruby-ivar">@hided</span> = <span class="ruby-keyword">true</span> <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">ShapeBase</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-show">
+            
+              <b>show</b>()
+            
+            <a href="../../classes/Shoes/Basic.html#method-i-show" name="method-i-show" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-show_source')" id="l_method-i-show_source">show</a>
+                
+              </p>
+              <div id="method-i-show_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/basic.rb, line 74</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">show</span>
+  <span class="ruby-ivar">@app</span>.<span class="ruby-identifier">shcs</span>.<span class="ruby-identifier">delete</span> <span class="ruby-keyword">self</span>
+  <span class="ruby-ivar">@app</span>.<span class="ruby-identifier">shcs</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">self</span>
+  <span class="ruby-ivar">@shows</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-ivar">@args</span>.<span class="ruby-identifier">delete</span> <span class="ruby-value">:hidden</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-style">
+            
+              <b>style</b>(args = nil)
+            
+            <a href="../../classes/Shoes/Basic.html#method-i-style" name="method-i-style" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-style_source')" id="l_method-i-style_source">show</a>
+                
+              </p>
+              <div id="method-i-style_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/style.rb, line 73</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">style</span> <span class="ruby-identifier">args</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">return</span> {<span class="ruby-identifier">width</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@width</span>, <span class="ruby-identifier">height</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@height</span>} <span class="ruby-keyword">unless</span> <span class="ruby-identifier">args</span>
+  <span class="ruby-identifier">args</span>[<span class="ruby-value">:width</span>] <span class="ruby-operator">||=</span> <span class="ruby-ivar">@width</span>
+  <span class="ruby-identifier">args</span>[<span class="ruby-value">:height</span>] <span class="ruby-operator">||=</span> <span class="ruby-ivar">@height</span>
+  <span class="ruby-keyword">case</span> <span class="ruby-keyword">self</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-constant">Button</span>, <span class="ruby-constant">EditBox</span>, <span class="ruby-constant">EditLine</span>, <span class="ruby-constant">ListBox</span>
+      <span class="ruby-identifier">real</span>.<span class="ruby-identifier">set_size_request</span> <span class="ruby-identifier">args</span>[<span class="ruby-value">:width</span>], <span class="ruby-identifier">args</span>[<span class="ruby-value">:height</span>]
+      <span class="ruby-ivar">@height</span> = <span class="ruby-identifier">args</span>[<span class="ruby-value">:height</span>]
+    <span class="ruby-keyword">when</span> <span class="ruby-constant">Progress</span>
+      <span class="ruby-identifier">real</span>.<span class="ruby-identifier">text</span> = <span class="ruby-string">' '</span> * (<span class="ruby-identifier">args</span>[<span class="ruby-value">:width</span>] <span class="ruby-operator">/</span> <span class="ruby-number">4</span> <span class="ruby-operator">-</span> <span class="ruby-number">2</span>)
+    <span class="ruby-keyword">else</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@width</span> = <span class="ruby-identifier">args</span>[<span class="ruby-value">:width</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-toggle">
+            
+              <b>toggle</b>()
+            
+            <a href="../../classes/Shoes/Basic.html#method-i-toggle" name="method-i-toggle" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-toggle_source')" id="l_method-i-toggle_source">show</a>
+                
+              </p>
+              <div id="method-i-toggle_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/basic.rb, line 82</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">toggle</span>
+  <span class="ruby-ivar">@app</span>.<span class="ruby-identifier">shcs</span>.<span class="ruby-identifier">delete</span> <span class="ruby-keyword">self</span>
+  <span class="ruby-ivar">@app</span>.<span class="ruby-identifier">shcs</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">self</span>
+  <span class="ruby-ivar">@shows</span> = <span class="ruby-operator">!</span><span class="ruby-ivar">@shows</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

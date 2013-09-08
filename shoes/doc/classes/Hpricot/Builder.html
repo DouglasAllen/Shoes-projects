@@ -1,0 +1,715 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hpricot::Builder</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            Hpricot::Builder 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/req/hpricot/lib/hpricot/builder_rb.html">req/hpricot/lib/hpricot/builder.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>#</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-3C-3C">&lt;&lt;</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-add_child">add_child</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>B</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-build">build</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-concat">concat</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-doctype">doctype</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>H</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-head">head</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-html_tag">html_tag</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-set">set</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-tag-21">tag!</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-text">text</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-text-21">text!</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>X</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-xhtml_strict">xhtml_strict</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-xhtml_transitional">xhtml_transitional</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-set">
+            
+              <b>set</b>(option, value)
+            
+            <a href="../../classes/Hpricot/Builder.html#method-c-set" name="method-c-set" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-set_source')" id="l_method-c-set_source">show</a>
+                
+              </p>
+              <div id="method-c-set_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/hpricot/lib/hpricot/builder.rb, line 37</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">set</span>(<span class="ruby-identifier">option</span>, <span class="ruby-identifier">value</span>)
+  <span class="ruby-identifier">@@default</span>[<span class="ruby-identifier">option</span>] = <span class="ruby-identifier">value</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-3C-3C">
+            
+              <b>&lt;&lt;</b>(string)
+            
+            <a href="../../classes/Hpricot/Builder.html#method-i-3C-3C" name="method-i-3C-3C" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-add_child">
+            
+              <b>add_child</b>(ele)
+            
+            <a href="../../classes/Hpricot/Builder.html#method-i-add_child" name="method-i-add_child" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-add_child_source')" id="l_method-i-add_child_source">show</a>
+                
+              </p>
+              <div id="method-i-add_child_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/hpricot/lib/hpricot/builder.rb, line 41</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">add_child</span> <span class="ruby-identifier">ele</span>
+  <span class="ruby-identifier">ele</span>.<span class="ruby-identifier">parent</span> = <span class="ruby-keyword">self</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">children</span> <span class="ruby-operator">||=</span> []
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">children</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">ele</span>
+  <span class="ruby-identifier">ele</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-build">
+            
+              <b>build</b>(*a, &amp;b)
+            
+            <a href="../../classes/Hpricot/Builder.html#method-i-build" name="method-i-build" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-build_source')" id="l_method-i-build_source">show</a>
+                
+              </p>
+              <div id="method-i-build_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/hpricot/lib/hpricot/builder.rb, line 120</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">build</span>(*<span class="ruby-identifier">a</span>, &amp;<span class="ruby-identifier">b</span>)
+  <span class="ruby-constant">Hpricot</span>.<span class="ruby-identifier">build</span>(*<span class="ruby-identifier">a</span>, &amp;<span class="ruby-identifier">b</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-concat">
+            
+              <b>concat</b>(string)
+            
+            <a href="../../classes/Hpricot/Builder.html#method-i-concat" name="method-i-concat" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-doctype">
+            
+              <b>doctype</b>(target, pub, sys)
+            
+            <a href="../../classes/Hpricot/Builder.html#method-i-doctype" name="method-i-doctype" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-doctype_source')" id="l_method-i-doctype_source">show</a>
+                
+              </p>
+              <div id="method-i-doctype_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/hpricot/lib/hpricot/builder.rb, line 148</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">doctype</span>(<span class="ruby-identifier">target</span>, <span class="ruby-identifier">pub</span>, <span class="ruby-identifier">sys</span>)
+  <span class="ruby-identifier">add_child</span> <span class="ruby-constant">DocType</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">target</span>, <span class="ruby-identifier">pub</span>, <span class="ruby-identifier">sys</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-head">
+            
+              <b>head</b>(*args, &amp;block)
+            
+            <a href="../../classes/Hpricot/Builder.html#method-i-head" name="method-i-head" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Builds a head tag.  Adds a <code>meta</code> tag inside with Content-Type
+set to <code>text/html; charset=utf-8</code>.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-head_source')" id="l_method-i-head_source">show</a>
+                
+              </p>
+              <div id="method-i-head_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/hpricot/lib/hpricot/builder.rb, line 156</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">head</span>(*<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">tag!</span>(<span class="ruby-value">:head</span>, *<span class="ruby-identifier">args</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">tag!</span>(<span class="ruby-value">:meta</span>, <span class="ruby-string">&quot;http-equiv&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Content-Type&quot;</span>, <span class="ruby-string">&quot;content&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;text/html; charset=utf-8&quot;</span>) <span class="ruby-keyword">if</span> <span class="ruby-ivar">@output_meta_tag</span>
+    <span class="ruby-identifier">instance_eval</span>(&amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-html_tag">
+            
+              <b>html_tag</b>(sym, *args, &amp;block)
+            
+            <a href="../../classes/Hpricot/Builder.html#method-i-html_tag" name="method-i-html_tag" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Every HTML tag method goes through an <a
+href="Builder.html#method-i-html_tag">#html_tag</a> call.  So, calling
+<code>div</code> is equivalent to calling <code>html_tag(:div)</code>.  All
+HTML tags in Hpricot’s list are given generated wrappers for this method.</p>
+
+<p>If the @auto_validation setting is on, this method will check for many
+common mistakes which could lead to invalid XHTML.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-html_tag_source')" id="l_method-i-html_tag_source">show</a>
+                
+              </p>
+              <div id="method-i-html_tag_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/hpricot/lib/hpricot/builder.rb, line 130</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">html_tag</span>(<span class="ruby-identifier">sym</span>, *<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@auto_validation</span> <span class="ruby-keyword">and</span> <span class="ruby-ivar">@tagset</span>.<span class="ruby-identifier">self_closing</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">sym</span>) <span class="ruby-keyword">and</span> <span class="ruby-identifier">block</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">InvalidXhtmlError</span>, <span class="ruby-node">&quot;the `#{sym}' element is self-closing, please remove the block&quot;</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">block</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-constant">CssProxy</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">sym</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">tag!</span>(<span class="ruby-identifier">sym</span>, *<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tag-21">
+            
+              <b>tag!</b>(tag, *args, &amp;block)
+            
+            <a href="../../classes/Hpricot/Builder.html#method-i-tag-21" name="method-i-tag-21" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Create a tag named <code>tag</code>. Other than the first argument which is
+the tag name, the arguments are the same as the tags implemented via
+method_missing.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tag-21_source')" id="l_method-i-tag-21_source">show</a>
+                
+              </p>
+              <div id="method-i-tag-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/hpricot/lib/hpricot/builder.rb, line 63</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tag!</span>(<span class="ruby-identifier">tag</span>, *<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">ele_id</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@auto_validation</span> <span class="ruby-keyword">and</span> <span class="ruby-ivar">@tagset</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@tagset</span>.<span class="ruby-identifier">tagset</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">tag</span>)
+          <span class="ruby-identifier">raise</span> <span class="ruby-constant">InvalidXhtmlError</span>, <span class="ruby-node">&quot;no element `#{tag}' for #{tagset.doctype}&quot;</span>
+      <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:to_hash</span>)
+          <span class="ruby-identifier">attrs</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">to_hash</span>
+
+          <span class="ruby-keyword">if</span> <span class="ruby-ivar">@tagset</span>.<span class="ruby-identifier">forms</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">tag</span>) <span class="ruby-keyword">and</span> <span class="ruby-identifier">attrs</span>[<span class="ruby-value">:id</span>]
+            <span class="ruby-identifier">attrs</span>[<span class="ruby-value">:name</span>] <span class="ruby-operator">||=</span> <span class="ruby-identifier">attrs</span>[<span class="ruby-value">:id</span>]
+          <span class="ruby-keyword">end</span>
+
+          <span class="ruby-identifier">attrs</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+              <span class="ruby-identifier">atname</span> = <span class="ruby-identifier">k</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">downcase</span>.<span class="ruby-identifier">intern</span>
+              <span class="ruby-keyword">unless</span> <span class="ruby-identifier">k</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/:/</span> <span class="ruby-keyword">or</span> <span class="ruby-ivar">@tagset</span>.<span class="ruby-identifier">tagset</span>[<span class="ruby-identifier">tag</span>].<span class="ruby-identifier">include?</span> <span class="ruby-identifier">atname</span>
+                  <span class="ruby-identifier">raise</span> <span class="ruby-constant">InvalidXhtmlError</span>, <span class="ruby-node">&quot;no attribute `#{k}' on #{tag} elements&quot;</span>
+              <span class="ruby-keyword">end</span>
+              <span class="ruby-keyword">if</span> <span class="ruby-identifier">atname</span> <span class="ruby-operator">==</span> <span class="ruby-value">:id</span>
+                  <span class="ruby-identifier">ele_id</span> = <span class="ruby-identifier">v</span>.<span class="ruby-identifier">to_s</span>
+                  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@elements</span>.<span class="ruby-identifier">has_key?</span> <span class="ruby-identifier">ele_id</span>
+                      <span class="ruby-identifier">raise</span> <span class="ruby-constant">InvalidXhtmlError</span>, <span class="ruby-node">&quot;id `#{ele_id}' already used (id's must be unique).&quot;</span>
+                  <span class="ruby-keyword">end</span>
+              <span class="ruby-keyword">end</span>
+          <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># turn arguments into children or attributes</span>
+  <span class="ruby-identifier">childs</span> = []
+  <span class="ruby-identifier">attrs</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">grep</span>(<span class="ruby-constant">Hash</span>)
+  <span class="ruby-identifier">childs</span>.<span class="ruby-identifier">concat</span>((<span class="ruby-identifier">args</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">attrs</span>).<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">respond_to?</span> <span class="ruby-value">:to_html</span>
+      <span class="ruby-constant">Hpricot</span>.<span class="ruby-identifier">make</span>(<span class="ruby-identifier">x</span>.<span class="ruby-identifier">to_html</span>)
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">x</span>
+      <span class="ruby-constant">Text</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">x</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>.<span class="ruby-identifier">flatten</span>)
+  <span class="ruby-identifier">attrs</span> = <span class="ruby-identifier">attrs</span>.<span class="ruby-identifier">inject</span>({}) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">hsh</span>, <span class="ruby-identifier">ath</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">ath</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">hsh</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-identifier">v</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">v</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">hsh</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># create the element itself</span>
+  <span class="ruby-identifier">tag</span> = <span class="ruby-identifier">tag</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-identifier">f</span> = <span class="ruby-constant">Elem</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">tag</span>, <span class="ruby-identifier">attrs</span>, <span class="ruby-identifier">childs</span>, <span class="ruby-constant">ETag</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">tag</span>))
+
+  <span class="ruby-comment"># build children from the block</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">block</span>
+    <span class="ruby-identifier">build</span>(<span class="ruby-identifier">f</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">add_child</span> <span class="ruby-identifier">f</span>
+  <span class="ruby-identifier">f</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-text">
+            
+              <b>text</b>(string)
+            
+            <a href="../../classes/Hpricot/Builder.html#method-i-text" name="method-i-text" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Write a <code>string</code> to the HTML stream without escaping it.</p>
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="Builder.html#method-i-3C-3C">&lt;&lt;</a>, <a href="Builder.html#method-i-concat">concat</a>
+            </div>
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-text_source')" id="l_method-i-text_source">show</a>
+                
+              </p>
+              <div id="method-i-text_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/hpricot/lib/hpricot/builder.rb, line 54</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">text</span>(<span class="ruby-identifier">string</span>)
+  <span class="ruby-identifier">add_child</span> <span class="ruby-constant">Text</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">string</span>)
+  <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-text-21">
+            
+              <b>text!</b>(string)
+            
+            <a href="../../classes/Hpricot/Builder.html#method-i-text-21" name="method-i-text-21" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Write a <code>string</code> to the HTML stream, making sure to escape it.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-text-21_source')" id="l_method-i-text-21_source">show</a>
+                
+              </p>
+              <div id="method-i-text-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/hpricot/lib/hpricot/builder.rb, line 49</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">text!</span>(<span class="ruby-identifier">string</span>)
+  <span class="ruby-identifier">add_child</span> <span class="ruby-constant">Text</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">string</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-xhtml_strict">
+            
+              <b>xhtml_strict</b>(attrs = {}, &amp;block)
+            
+            <a href="../../classes/Hpricot/Builder.html#method-i-xhtml_strict" name="method-i-xhtml_strict" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Builds an html tag with XHTML 1.0 Strict doctype instead.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-xhtml_strict_source')" id="l_method-i-xhtml_strict_source">show</a>
+                
+              </p>
+              <div id="method-i-xhtml_strict_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/hpricot/lib/hpricot/builder.rb, line 172</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">xhtml_strict</span>(<span class="ruby-identifier">attrs</span> = {}, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-comment"># self.tagset = Hpricot::XHTMLStrict</span>
+  <span class="ruby-identifier">xhtml_html</span>(<span class="ruby-identifier">attrs</span>, &amp;<span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-xhtml_transitional">
+            
+              <b>xhtml_transitional</b>(attrs = {}, &amp;block)
+            
+            <a href="../../classes/Hpricot/Builder.html#method-i-xhtml_transitional" name="method-i-xhtml_transitional" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Builds an html tag.  An XML 1.0 instruction and an XHTML 1.0 Transitional
+doctype are prepended.  Also assumes <code>:xmlns =&gt;
+&quot;http://www.w3.org/1999/xhtml&quot;, :lang =&gt;
+&quot;en&quot;</code>.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-xhtml_transitional_source')" id="l_method-i-xhtml_transitional_source">show</a>
+                
+              </p>
+              <div id="method-i-xhtml_transitional_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/hpricot/lib/hpricot/builder.rb, line 166</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">xhtml_transitional</span>(<span class="ruby-identifier">attrs</span> = {}, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-comment"># self.tagset = Hpricot::XHTMLTransitional</span>
+  <span class="ruby-identifier">xhtml_html</span>(<span class="ruby-identifier">attrs</span>, &amp;<span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

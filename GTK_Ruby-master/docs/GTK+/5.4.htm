@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html><head>
+
+
+  <title>Getting Started</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <meta name="GENERATOR" content="Quanta Plus">
+  <link rel="stylesheet" type="text/css" href="site-style.css">
+</head><body>
+<h1>5.4. Packing Using Tables</h1>
+
+<p>Let's take a look at another way of packing - Tables. These can be extremely useful in certain 
+situations.</p>
+
+<p>Using tables, we create a grid that we can place widgets in. The widgets may take up as many spaces as
+we specify.</p>
+
+<p>The first thing to look at, of course, is how to create a new Gtk::Table:</p>
+
+<pre>Gtk::Table.new( rows, columns, homogeneous )</pre>
+
+<p>The first argument is the number of rows you want to make in the table, while the second is the number
+of columns. The homogeneous argument has to do with how the table's boxes are sized. If homogeneous is set
+to true, the table boxes will be resized to the size of the largest widget in the table. If homogeneous is
+set to false, the size of the table boxes is dictated by the tallest widget in it's same row, and the widest
+widget in its column.</p>
+
+<p>The rows and columns are laid out from 0 to <i>n</i>, where <i>n</i>  is was the numbers specified in the 
+call to Gtk::Table.new. For example, if you specify rows=2 and columns=2, the layout would look something
+like this:</p>
+
+<pre>  0                1                2
+0 +----------------+----------------+
+  |                |                |
+1 +----------------+----------------+
+  |                |                |
+2 +----------------+----------------+
+</pre>
+
+<p> Note that the coordinate system starts in the upper left hand corner. To place a widget into a box, use
+the following method:</p>
+
+<pre>Gtk::Table#attach( child, left_attach, right_attach, top_attach, bottom_attach, xoptions, yoptions, xpadding, ypadding)
+</pre>
+
+<p>The first argument ("child") is the widget you wish to place in the table.</p>
+
+<p>The left and right attach arguments specify where to place the widget, and how many boxes to use. If you want a button in
+the lower right table entry of our 2x2 table, and want it to fill that entry <i>only</i>, left_attach would be = 1,
+right_attach = 2, top_attach = 1, bottom_attach = 2.</p>
+
+<p>Now, if you wanted a widget to take up the whole top row of our 2x2 table, you would use left_attach = 0, right_attach 
+= 2, top_attach = 0, bottom_attach = 1.</p>
+
+<p>The xoptions and yoptions are used to specify packing options and may be bitwise OR'ed together to allow multiple 
+options.</p>
+
+<p>These options are:</p>
+
+<pre>Gtk::FILL</pre>
+<p class="def">If the table is larger than the widget, and Gtk::FILL is specified, the widget will expand to use
+all the room available.</p>
+
+<pre>Gtk::SHRINK</pre>
+<p class="def">If the table widget was allocated less space then was requested (usually be resizing the window), then
+the widgets would normally just be pushed off the bottom of the window and disappear. If Gtk::SHRINK is specified, the
+widgets will shrink with the table.</p>
+
+<pre>Gtk::EXPAND</pre>
+<p class="def">This will cause the table to expand to use up any remaining space in the window.</p>
+
+<p>Padding is just like in boxes, creating a clear area around the widget specified in pixels.</p>
+
+<p>Gtk::Table#attach has a <i>lot</i> of options. So, there's a shortcut:
+
+</p><pre>Gtk::Table#attach_defaults( child, left_attach, right_attach, top_attach, bottom_attach )</pre>
+
+<p>The X and Y options default to Gtk::FILL | Gtk::EXPAND, and X and Y padding are set to 0. The rest of the arguments are
+identical to the previous method.</p>
+
+<p>We also have Gtk::Table#set_row_spacing and Gtk::Table#set_col_spacing. These methods place spacing between the rows at
+the specified row or column.</p>
+
+<pre>Gtk::Table#set_row_spacing( row, spacing )</pre>
+
+<p>and</p>
+
+<pre>Gtk::Table#set_column_spacing( column, spacing )</pre>
+
+<p>Please note that for columns, the space goes to the right of the column, and for rows, the space goes below the row.</p>
+
+<p>You can also set a consistent spacing of all rows and/or columns with:</p>
+
+<pre>Gtk::Table#set_row_spacings( spacing )</pre>
+
+<p>and</p>
+
+<pre>Gtk::Table#set_col_spacings( spacing )</pre>
+
+<p> Note that with these calls, the last row and last column do not get any spacing.
+
+</p><hr>
+<table>
+	<tbody><tr>
+		<td align="left"><a href="5.3.htm">Prev</a></td>
+		<td align="right"><a href="5.5.htm">Next</a></td>
+	</tr>
+</tbody></table>
+</body></html>

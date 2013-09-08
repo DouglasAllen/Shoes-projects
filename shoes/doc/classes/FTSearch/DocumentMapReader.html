@@ -1,0 +1,648 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>FTSearch::DocumentMapReader</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            FTSearch::DocumentMapReader 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/req/ftsearch/lib/ftsearch/document_map_reader_rb.html">req/ftsearch/lib/ftsearch/document_map_reader.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-document_id">document_id</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-document_id_to_uri">document_id_to_uri</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-document_uri">document_uri</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-dump_data">dump_data</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>F</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-field_id">field_id</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-field_info">field_info</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-field_size">field_size</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-num_documents">num_documents</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>O</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-offsets_to_field_infos">offsets_to_field_infos</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-rank_offsets">rank_offsets</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-rank_offsets_probabilistic">rank_offsets_probabilistic</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">DEFAULT_OPTIONS</td>
+            <td>=</td>
+            <td class="attr-value">{
+:path =&gt; nil,
+:io   =&gt; nil,
+}</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>(options = {})
+            
+            <a href="../../classes/FTSearch/DocumentMapReader.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/ftsearch/lib/ftsearch/document_map_reader.rb, line 11</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">options</span> = <span class="ruby-constant">DEFAULT_OPTIONS</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">options</span>)
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:path</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:io</span>]
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Need either the path to the suffix array file or an IO.&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:path</span>]
+    <span class="ruby-identifier">io</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:path</span>], <span class="ruby-string">&quot;rb&quot;</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">io</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:io</span>]
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@uri_tbl</span>, <span class="ruby-ivar">@field_arr</span> = <span class="ruby-constant">Marshal</span>.<span class="ruby-identifier">load</span>(<span class="ruby-identifier">io</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-document_id">
+            
+              <b>document_id</b>(suffix_idx, offset)
+            
+            <a href="../../classes/FTSearch/DocumentMapReader.html#method-i-document_id" name="method-i-document_id" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-document_id_source')" id="l_method-i-document_id_source">show</a>
+                
+              </p>
+              <div id="method-i-document_id_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/ftsearch/lib/ftsearch/document_map_reader.rb, line 24</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">document_id</span>(<span class="ruby-identifier">suffix_idx</span>, <span class="ruby-identifier">offset</span>)
+  <span class="ruby-identifier">idx</span> = <span class="ruby-identifier">binary_search</span>(<span class="ruby-ivar">@field_arr</span>, <span class="ruby-identifier">offset</span>, <span class="ruby-number">0</span>, <span class="ruby-ivar">@field_arr</span>.<span class="ruby-identifier">size</span>)
+  <span class="ruby-ivar">@field_arr</span>[<span class="ruby-identifier">idx</span>][<span class="ruby-number">1</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-document_id_to_uri">
+            
+              <b>document_id_to_uri</b>(doc_id)
+            
+            <a href="../../classes/FTSearch/DocumentMapReader.html#method-i-document_id_to_uri" name="method-i-document_id_to_uri" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-document_id_to_uri_source')" id="l_method-i-document_id_to_uri_source">show</a>
+                
+              </p>
+              <div id="method-i-document_id_to_uri_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/ftsearch/lib/ftsearch/document_map_reader.rb, line 49</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">document_id_to_uri</span>(<span class="ruby-identifier">doc_id</span>)
+  <span class="ruby-ivar">@uri_tbl</span>[<span class="ruby-identifier">doc_id</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-document_uri">
+            
+              <b>document_uri</b>(suffix_idx, offset)
+            
+            <a href="../../classes/FTSearch/DocumentMapReader.html#method-i-document_uri" name="method-i-document_uri" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-document_uri_source')" id="l_method-i-document_uri_source">show</a>
+                
+              </p>
+              <div id="method-i-document_uri_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/ftsearch/lib/ftsearch/document_map_reader.rb, line 44</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">document_uri</span>(<span class="ruby-identifier">suffix_idx</span>, <span class="ruby-identifier">offset</span>)
+  <span class="ruby-identifier">doc_id</span> = <span class="ruby-identifier">document_id</span>(<span class="ruby-identifier">suffix_idx</span>, <span class="ruby-identifier">offset</span>)
+  <span class="ruby-ivar">@uri_tbl</span>[<span class="ruby-identifier">doc_id</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-dump_data">
+            
+              <b>dump_data</b>()
+            
+            <a href="../../classes/FTSearch/DocumentMapReader.html#method-i-dump_data" name="method-i-dump_data" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-dump_data_source')" id="l_method-i-dump_data_source">show</a>
+                
+              </p>
+              <div id="method-i-dump_data_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/ftsearch/lib/ftsearch/document_map_reader.rb, line 77</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">dump_data</span>
+  [<span class="ruby-ivar">@uri_tbl</span>, <span class="ruby-ivar">@field_arr</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-field_id">
+            
+              <b>field_id</b>(suffix_idx, offset)
+            
+            <a href="../../classes/FTSearch/DocumentMapReader.html#method-i-field_id" name="method-i-field_id" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-field_id_source')" id="l_method-i-field_id_source">show</a>
+                
+              </p>
+              <div id="method-i-field_id_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/ftsearch/lib/ftsearch/document_map_reader.rb, line 29</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">field_id</span>(<span class="ruby-identifier">suffix_idx</span>, <span class="ruby-identifier">offset</span>)
+  <span class="ruby-identifier">idx</span> = <span class="ruby-identifier">binary_search</span>(<span class="ruby-ivar">@field_arr</span>, <span class="ruby-identifier">offset</span>, <span class="ruby-number">0</span>, <span class="ruby-ivar">@field_arr</span>.<span class="ruby-identifier">size</span>)
+  <span class="ruby-ivar">@field_arr</span>[<span class="ruby-identifier">idx</span>][<span class="ruby-number">2</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-field_info">
+            
+              <b>field_info</b>(suffix_idx, offset)
+            
+            <a href="../../classes/FTSearch/DocumentMapReader.html#method-i-field_info" name="method-i-field_info" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-field_info_source')" id="l_method-i-field_info_source">show</a>
+                
+              </p>
+              <div id="method-i-field_info_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/ftsearch/lib/ftsearch/document_map_reader.rb, line 39</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">field_info</span>(<span class="ruby-identifier">suffix_idx</span>, <span class="ruby-identifier">offset</span>)
+  <span class="ruby-identifier">idx</span> = <span class="ruby-identifier">binary_search</span>(<span class="ruby-ivar">@field_arr</span>, <span class="ruby-identifier">offset</span>, <span class="ruby-number">0</span>, <span class="ruby-ivar">@field_arr</span>.<span class="ruby-identifier">size</span>)
+  <span class="ruby-ivar">@field_arr</span>[<span class="ruby-identifier">idx</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-field_size">
+            
+              <b>field_size</b>(suffix_idx, offset)
+            
+            <a href="../../classes/FTSearch/DocumentMapReader.html#method-i-field_size" name="method-i-field_size" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-field_size_source')" id="l_method-i-field_size_source">show</a>
+                
+              </p>
+              <div id="method-i-field_size_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/ftsearch/lib/ftsearch/document_map_reader.rb, line 34</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">field_size</span>(<span class="ruby-identifier">suffix_idx</span>, <span class="ruby-identifier">offset</span>)
+  <span class="ruby-identifier">idx</span> = <span class="ruby-identifier">binary_search</span>(<span class="ruby-ivar">@field_arr</span>, <span class="ruby-identifier">offset</span>, <span class="ruby-number">0</span>, <span class="ruby-ivar">@field_arr</span>.<span class="ruby-identifier">size</span>)
+  <span class="ruby-ivar">@field_arr</span>[<span class="ruby-identifier">idx</span>][<span class="ruby-number">3</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-num_documents">
+            
+              <b>num_documents</b>()
+            
+            <a href="../../classes/FTSearch/DocumentMapReader.html#method-i-num_documents" name="method-i-num_documents" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-num_documents_source')" id="l_method-i-num_documents_source">show</a>
+                
+              </p>
+              <div id="method-i-num_documents_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/ftsearch/lib/ftsearch/document_map_reader.rb, line 81</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">num_documents</span>
+  <span class="ruby-ivar">@uri_tbl</span>.<span class="ruby-identifier">size</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-offsets_to_field_infos">
+            
+              <b>offsets_to_field_infos</b>(offsets)
+            
+            <a href="../../classes/FTSearch/DocumentMapReader.html#method-i-offsets_to_field_infos" name="method-i-offsets_to_field_infos" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-offsets_to_field_infos_source')" id="l_method-i-offsets_to_field_infos_source">show</a>
+                
+              </p>
+              <div id="method-i-offsets_to_field_infos_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/ftsearch/lib/ftsearch/document_map_reader.rb, line 53</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">offsets_to_field_infos</span>(<span class="ruby-identifier">offsets</span>)
+  <span class="ruby-identifier">offsets</span>.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">off</span><span class="ruby-operator">|</span> <span class="ruby-ivar">@field_arr</span>[<span class="ruby-identifier">binary_search</span>(<span class="ruby-ivar">@field_arr</span>, <span class="ruby-identifier">off</span>, <span class="ruby-number">0</span>, <span class="ruby-ivar">@field_arr</span>.<span class="ruby-identifier">size</span>)]}
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-rank_offsets">
+            
+              <b>rank_offsets</b>(offsets, weights)
+            
+            <a href="../../classes/FTSearch/DocumentMapReader.html#method-i-rank_offsets" name="method-i-rank_offsets" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-rank_offsets_source')" id="l_method-i-rank_offsets_source">show</a>
+                
+              </p>
+              <div id="method-i-rank_offsets_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/ftsearch/lib/ftsearch/document_map_reader.rb, line 57</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">rank_offsets</span>(<span class="ruby-identifier">offsets</span>, <span class="ruby-identifier">weights</span>)
+  <span class="ruby-identifier">h</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">h</span>,<span class="ruby-identifier">k</span><span class="ruby-operator">|</span> <span class="ruby-identifier">h</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-number">0.0</span>}
+  <span class="ruby-identifier">offsets_to_field_infos</span>(<span class="ruby-identifier">offsets</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">offset</span>, <span class="ruby-identifier">doc_id</span>, <span class="ruby-identifier">field_id</span>, <span class="ruby-identifier">field_size</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">h</span>[<span class="ruby-identifier">doc_id</span>] <span class="ruby-operator">+=</span> <span class="ruby-identifier">weights</span>[<span class="ruby-identifier">field_id</span>] <span class="ruby-operator">/</span> <span class="ruby-identifier">field_size</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">sort_score_hash</span>(<span class="ruby-identifier">h</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-rank_offsets_probabilistic">
+            
+              <b>rank_offsets_probabilistic</b>(offsets, weights, iterations)
+            
+            <a href="../../classes/FTSearch/DocumentMapReader.html#method-i-rank_offsets_probabilistic" name="method-i-rank_offsets_probabilistic" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-rank_offsets_probabilistic_source')" id="l_method-i-rank_offsets_probabilistic_source">show</a>
+                
+              </p>
+              <div id="method-i-rank_offsets_probabilistic_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/ftsearch/lib/ftsearch/document_map_reader.rb, line 65</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">rank_offsets_probabilistic</span>(<span class="ruby-identifier">offsets</span>, <span class="ruby-identifier">weights</span>, <span class="ruby-identifier">iterations</span>)
+  <span class="ruby-identifier">h</span>     = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">h</span>,<span class="ruby-identifier">k</span><span class="ruby-operator">|</span> <span class="ruby-identifier">h</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-number">0.0</span>}
+  <span class="ruby-identifier">infos</span> = <span class="ruby-identifier">offsets_to_field_infos</span>(<span class="ruby-identifier">offsets</span>)
+  <span class="ruby-identifier">max</span>   = <span class="ruby-identifier">infos</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-keyword">while</span> <span class="ruby-identifier">iterations</span> <span class="ruby-operator">&gt;</span> <span class="ruby-number">0</span>
+    <span class="ruby-identifier">offset</span>, <span class="ruby-identifier">doc_id</span>, <span class="ruby-identifier">field_id</span>, <span class="ruby-identifier">field_size</span> = <span class="ruby-identifier">infos</span>[<span class="ruby-identifier">rand</span>(<span class="ruby-identifier">max</span>)]
+    <span class="ruby-identifier">h</span>[<span class="ruby-identifier">doc_id</span>] <span class="ruby-operator">+=</span> <span class="ruby-identifier">weights</span>[<span class="ruby-identifier">field_id</span>] <span class="ruby-operator">/</span> <span class="ruby-identifier">field_size</span>
+    <span class="ruby-identifier">iterations</span> <span class="ruby-operator">-=</span> <span class="ruby-number">1</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">sort_score_hash</span>(<span class="ruby-identifier">h</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

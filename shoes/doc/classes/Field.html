@@ -1,0 +1,809 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Field</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Field 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/samples/expert-minesweeper_rb.html">samples/expert-minesweeper.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+    <!-- Namespace -->
+    <div class="sectiontitle">Namespace</div>
+    <ul>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Field/Bomb.html">Field::Bomb</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Field/Cell.html">Field::Cell</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Field/EmptyCell.html">Field::EmptyCell</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Field/OpenCell.html">Field::OpenCell</a>
+        </li>
+      
+    </ul>
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-all_found-3F">all_found?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>B</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-bombs_left">bombs_left</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-click-21">click!</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>F</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-flag-21">flag!</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>G</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-game_over-3F">game_over?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-paint">paint</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-render_bomb">render_bomb</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-render_cell">render_cell</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-render_flag">render_flag</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-render_number">render_number</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-reveal-21">reveal!</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-total_time">total_time</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">CELL_SIZE</td>
+            <td>=</td>
+            <td class="attr-value">20</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">COLORS</td>
+            <td>=</td>
+            <td class="attr-value">%w(#00A #0A0 #A00 #004 #040 #400 #000)</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+      <!-- Section attributes -->
+      <div class="sectiontitle">Attributes</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>cell_size</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>offset</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+      </table>
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>(app, level = :beginner)
+            
+            <a href="../classes/Field.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File samples/expert-minesweeper.rb, line 35</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">app</span>, <span class="ruby-identifier">level</span> = <span class="ruby-value">:beginner</span>)
+  <span class="ruby-ivar">@app</span> = <span class="ruby-identifier">app</span>
+  <span class="ruby-ivar">@field</span> = []
+  <span class="ruby-ivar">@w</span>, <span class="ruby-ivar">@h</span>, <span class="ruby-ivar">@bombs</span> = <span class="ruby-constant">LEVELS</span>[<span class="ruby-identifier">level</span>][<span class="ruby-number">0</span>], <span class="ruby-constant">LEVELS</span>[<span class="ruby-identifier">level</span>][<span class="ruby-number">1</span>], <span class="ruby-constant">LEVELS</span>[<span class="ruby-identifier">level</span>][<span class="ruby-number">2</span>]
+  <span class="ruby-ivar">@h</span>.<span class="ruby-identifier">times</span> { <span class="ruby-ivar">@field</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@w</span>) { <span class="ruby-constant">EmptyCell</span>.<span class="ruby-identifier">new</span> } }
+  <span class="ruby-ivar">@game_over</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-ivar">@width</span>, <span class="ruby-ivar">@height</span>, <span class="ruby-ivar">@cell_size</span> = <span class="ruby-ivar">@w</span> * <span class="ruby-constant">CELL_SIZE</span>, <span class="ruby-ivar">@h</span> * <span class="ruby-constant">CELL_SIZE</span>, <span class="ruby-constant">CELL_SIZE</span>
+  <span class="ruby-ivar">@offset</span> = [(<span class="ruby-ivar">@app</span>.<span class="ruby-identifier">width</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@width</span>.<span class="ruby-identifier">to_i</span>) <span class="ruby-operator">/</span> <span class="ruby-number">2</span>, (<span class="ruby-ivar">@app</span>.<span class="ruby-identifier">height</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@height</span>.<span class="ruby-identifier">to_i</span>) <span class="ruby-operator">/</span> <span class="ruby-number">2</span>]
+  <span class="ruby-identifier">plant_bombs</span>
+  <span class="ruby-ivar">@start_time</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-all_found-3F">
+            
+              <b>all_found?</b>()
+            
+            <a href="../classes/Field.html#method-i-all_found-3F" name="method-i-all_found-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-all_found-3F_source')" id="l_method-i-all_found-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-all_found-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File samples/expert-minesweeper.rb, line 135</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">all_found?</span>
+  <span class="ruby-ivar">@field</span>.<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">compact</span>.<span class="ruby-identifier">reject</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span> <span class="ruby-operator">!</span><span class="ruby-identifier">e</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">OpenCell</span>) }.<span class="ruby-identifier">size</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@bombs</span> <span class="ruby-operator">==</span> <span class="ruby-ivar">@w</span>*<span class="ruby-ivar">@h</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-bombs_left">
+            
+              <b>bombs_left</b>()
+            
+            <a href="../classes/Field.html#method-i-bombs_left" name="method-i-bombs_left" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-bombs_left_source')" id="l_method-i-bombs_left_source">show</a>
+                
+              </p>
+              <div id="method-i-bombs_left_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File samples/expert-minesweeper.rb, line 131</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">bombs_left</span>
+  <span class="ruby-ivar">@bombs</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@field</span>.<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">compact</span>.<span class="ruby-identifier">reject</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span> <span class="ruby-operator">!</span><span class="ruby-identifier">e</span>.<span class="ruby-identifier">flag</span> }.<span class="ruby-identifier">size</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-click-21">
+            
+              <b>click!</b>(x, y)
+            
+            <a href="../classes/Field.html#method-i-click-21" name="method-i-click-21" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-click-21_source')" id="l_method-i-click-21_source">show</a>
+                
+              </p>
+              <div id="method-i-click-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File samples/expert-minesweeper.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">click!</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">cell_exists?</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">has_flag?</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">die!</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">bomb?</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>)
+  <span class="ruby-identifier">open</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>)
+  <span class="ruby-identifier">discover</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">bombs_around</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>) <span class="ruby-operator">==</span> <span class="ruby-number">0</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-flag-21">
+            
+              <b>flag!</b>(x, y)
+            
+            <a href="../classes/Field.html#method-i-flag-21" name="method-i-flag-21" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-flag-21_source')" id="l_method-i-flag-21_source">show</a>
+                
+              </p>
+              <div id="method-i-flag-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File samples/expert-minesweeper.rb, line 60</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">flag!</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">cell_exists?</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>)
+  <span class="ruby-keyword">self</span>[<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>].<span class="ruby-identifier">flag</span> = <span class="ruby-operator">!</span><span class="ruby-keyword">self</span>[<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>].<span class="ruby-identifier">flag</span> <span class="ruby-keyword">unless</span> <span class="ruby-keyword">self</span>[<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>].<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">OpenCell</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-game_over-3F">
+            
+              <b>game_over?</b>()
+            
+            <a href="../classes/Field.html#method-i-game_over-3F" name="method-i-game_over-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-game_over-3F_source')" id="l_method-i-game_over-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-game_over-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File samples/expert-minesweeper.rb, line 65</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">game_over?</span>
+  <span class="ruby-ivar">@game_over</span> 
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-paint">
+            
+              <b>paint</b>()
+            
+            <a href="../classes/Field.html#method-i-paint" name="method-i-paint" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-paint_source')" id="l_method-i-paint_source">show</a>
+                
+              </p>
+              <div id="method-i-paint_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File samples/expert-minesweeper.rb, line 117</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">paint</span>
+  <span class="ruby-number">0</span>.<span class="ruby-identifier">upto</span> <span class="ruby-ivar">@h</span><span class="ruby-operator">-</span><span class="ruby-number">1</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">y</span><span class="ruby-operator">|</span>
+    <span class="ruby-number">0</span>.<span class="ruby-identifier">upto</span> <span class="ruby-ivar">@w</span><span class="ruby-operator">-</span><span class="ruby-number">1</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span>
+      <span class="ruby-ivar">@app</span>.<span class="ruby-identifier">nostroke</span>
+      <span class="ruby-keyword">case</span> <span class="ruby-keyword">self</span>[<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>]
+        <span class="ruby-keyword">when</span> <span class="ruby-constant">EmptyCell</span> <span class="ruby-keyword">then</span> <span class="ruby-identifier">render_cell</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>)
+        <span class="ruby-keyword">when</span> <span class="ruby-constant">Bomb</span> <span class="ruby-keyword">then</span> <span class="ruby-identifier">render_bomb</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>)
+        <span class="ruby-keyword">when</span> <span class="ruby-constant">OpenCell</span> <span class="ruby-keyword">then</span> <span class="ruby-identifier">render_number</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>)
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">render_flag</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">has_flag?</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span>(<span class="ruby-identifier">game_over?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">bomb?</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>))
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-render_bomb">
+            
+              <b>render_bomb</b>(x, y)
+            
+            <a href="../classes/Field.html#method-i-render_bomb" name="method-i-render_bomb" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-render_bomb_source')" id="l_method-i-render_bomb_source">show</a>
+                
+              </p>
+              <div id="method-i-render_bomb_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File samples/expert-minesweeper.rb, line 86</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">render_bomb</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>)
+  <span class="ruby-identifier">render_cell</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>)
+  <span class="ruby-keyword">if</span> (<span class="ruby-identifier">game_over?</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">all_found?</span>) <span class="ruby-keyword">then</span> <span class="ruby-comment"># draw bomb</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>[<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>].<span class="ruby-identifier">exploded</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-identifier">render_cell</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>, <span class="ruby-ivar">@app</span>.<span class="ruby-identifier">rgb</span>(<span class="ruby-number">0xFF</span>, <span class="ruby-number">0</span>, <span class="ruby-number">0</span>, <span class="ruby-number">0.5</span>))
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-ivar">@app</span>.<span class="ruby-identifier">nostroke</span>
+    <span class="ruby-ivar">@app</span>.<span class="ruby-identifier">fill</span> <span class="ruby-ivar">@app</span>.<span class="ruby-identifier">rgb</span>(<span class="ruby-number">0</span>, <span class="ruby-number">0</span>, <span class="ruby-number">0</span>, <span class="ruby-number">0.8</span>)
+    <span class="ruby-ivar">@app</span>.<span class="ruby-identifier">oval</span>(<span class="ruby-identifier">x</span>*<span class="ruby-identifier">cell_size</span><span class="ruby-operator">+</span><span class="ruby-number">3</span>, <span class="ruby-identifier">y</span>*<span class="ruby-identifier">cell_size</span><span class="ruby-operator">+</span><span class="ruby-number">3</span>, <span class="ruby-number">13</span>)
+    <span class="ruby-ivar">@app</span>.<span class="ruby-identifier">fill</span> <span class="ruby-node">&quot;#333&quot;</span>
+    <span class="ruby-ivar">@app</span>.<span class="ruby-identifier">oval</span>(<span class="ruby-identifier">x</span>*<span class="ruby-identifier">cell_size</span><span class="ruby-operator">+</span><span class="ruby-number">5</span>, <span class="ruby-identifier">y</span>*<span class="ruby-identifier">cell_size</span><span class="ruby-operator">+</span><span class="ruby-number">5</span>, <span class="ruby-number">7</span>)
+    <span class="ruby-ivar">@app</span>.<span class="ruby-identifier">fill</span> <span class="ruby-node">&quot;#AAA&quot;</span>
+    <span class="ruby-ivar">@app</span>.<span class="ruby-identifier">oval</span>(<span class="ruby-identifier">x</span>*<span class="ruby-identifier">cell_size</span><span class="ruby-operator">+</span><span class="ruby-number">6</span>, <span class="ruby-identifier">y</span>*<span class="ruby-identifier">cell_size</span><span class="ruby-operator">+</span><span class="ruby-number">6</span>, <span class="ruby-number">3</span>)
+    <span class="ruby-ivar">@app</span>.<span class="ruby-identifier">fill</span> <span class="ruby-ivar">@app</span>.<span class="ruby-identifier">rgb</span>(<span class="ruby-number">0</span>, <span class="ruby-number">0</span>, <span class="ruby-number">0</span>, <span class="ruby-number">0.8</span>)
+    <span class="ruby-ivar">@app</span>.<span class="ruby-identifier">stroke</span> <span class="ruby-node">&quot;#222&quot;</span>
+    <span class="ruby-ivar">@app</span>.<span class="ruby-identifier">strokewidth</span> <span class="ruby-number">2</span>
+    <span class="ruby-ivar">@app</span>.<span class="ruby-identifier">oval</span>(<span class="ruby-identifier">x</span>*<span class="ruby-identifier">cell_size</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">cell_size</span> <span class="ruby-operator">/</span> <span class="ruby-number">2</span> <span class="ruby-operator">+</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">y</span>*<span class="ruby-identifier">cell_size</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">cell_size</span> <span class="ruby-operator">/</span> <span class="ruby-number">4</span> <span class="ruby-operator">-</span> <span class="ruby-number">2</span>, <span class="ruby-number">2</span>)
+    <span class="ruby-ivar">@app</span>.<span class="ruby-identifier">oval</span>(<span class="ruby-identifier">x</span>*<span class="ruby-identifier">cell_size</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">cell_size</span> <span class="ruby-operator">/</span> <span class="ruby-number">2</span> <span class="ruby-operator">+</span> <span class="ruby-number">4</span>, <span class="ruby-identifier">y</span>*<span class="ruby-identifier">cell_size</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">cell_size</span> <span class="ruby-operator">/</span> <span class="ruby-number">4</span> <span class="ruby-operator">-</span> <span class="ruby-number">2</span>, <span class="ruby-number">1</span>)
+    <span class="ruby-ivar">@app</span>.<span class="ruby-identifier">strokewidth</span> <span class="ruby-number">1</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-render_cell">
+            
+              <b>render_cell</b>(x, y, color = &quot;#AAA&quot;, stroke = true)
+            
+            <a href="../classes/Field.html#method-i-render_cell" name="method-i-render_cell" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-render_cell_source')" id="l_method-i-render_cell_source">show</a>
+                
+              </p>
+              <div id="method-i-render_cell_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File samples/expert-minesweeper.rb, line 69</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">render_cell</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>, <span class="ruby-identifier">color</span> = <span class="ruby-node">&quot;#AAA&quot;</span>, <span class="ruby-identifier">stroke</span> = <span class="ruby-keyword">true</span>)
+  <span class="ruby-ivar">@app</span>.<span class="ruby-identifier">stroke</span> <span class="ruby-node">&quot;#666&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">stroke</span>
+  <span class="ruby-ivar">@app</span>.<span class="ruby-identifier">fill</span> <span class="ruby-identifier">color</span>
+  <span class="ruby-ivar">@app</span>.<span class="ruby-identifier">rect</span> <span class="ruby-identifier">x</span>*<span class="ruby-identifier">cell_size</span>, <span class="ruby-identifier">y</span>*<span class="ruby-identifier">cell_size</span>, <span class="ruby-identifier">cell_size</span><span class="ruby-operator">-</span><span class="ruby-number">1</span>, <span class="ruby-identifier">cell_size</span><span class="ruby-operator">-</span><span class="ruby-number">1</span>
+  <span class="ruby-ivar">@app</span>.<span class="ruby-identifier">stroke</span> <span class="ruby-node">&quot;#BBB&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">stroke</span>
+  <span class="ruby-ivar">@app</span>.<span class="ruby-identifier">line</span> <span class="ruby-identifier">x</span>*<span class="ruby-identifier">cell_size</span><span class="ruby-operator">+</span><span class="ruby-number">1</span>, <span class="ruby-identifier">y</span>*<span class="ruby-identifier">cell_size</span><span class="ruby-operator">+</span><span class="ruby-number">1</span>, <span class="ruby-identifier">x</span>*<span class="ruby-identifier">cell_size</span><span class="ruby-operator">+</span><span class="ruby-identifier">cell_size</span><span class="ruby-operator">-</span><span class="ruby-number">1</span>, <span class="ruby-identifier">y</span>*<span class="ruby-identifier">cell_size</span>
+  <span class="ruby-ivar">@app</span>.<span class="ruby-identifier">line</span> <span class="ruby-identifier">x</span>*<span class="ruby-identifier">cell_size</span><span class="ruby-operator">+</span><span class="ruby-number">1</span>, <span class="ruby-identifier">y</span>*<span class="ruby-identifier">cell_size</span><span class="ruby-operator">+</span><span class="ruby-number">1</span>, <span class="ruby-identifier">x</span>*<span class="ruby-identifier">cell_size</span>, <span class="ruby-identifier">y</span>*<span class="ruby-identifier">cell_size</span><span class="ruby-operator">+</span><span class="ruby-identifier">cell_size</span><span class="ruby-operator">-</span><span class="ruby-number">1</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-render_flag">
+            
+              <b>render_flag</b>(x, y)
+            
+            <a href="../classes/Field.html#method-i-render_flag" name="method-i-render_flag" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-render_flag_source')" id="l_method-i-render_flag_source">show</a>
+                
+              </p>
+              <div id="method-i-render_flag_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File samples/expert-minesweeper.rb, line 78</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">render_flag</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>)
+  <span class="ruby-ivar">@app</span>.<span class="ruby-identifier">stroke</span> <span class="ruby-node">&quot;#000&quot;</span>
+  <span class="ruby-ivar">@app</span>.<span class="ruby-identifier">line</span>(<span class="ruby-identifier">x</span>*<span class="ruby-identifier">cell_size</span><span class="ruby-operator">+</span><span class="ruby-identifier">cell_size</span> <span class="ruby-operator">/</span> <span class="ruby-number">4</span> <span class="ruby-operator">+</span> <span class="ruby-number">1</span>, <span class="ruby-identifier">y</span>*<span class="ruby-identifier">cell_size</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">cell_size</span> <span class="ruby-operator">/</span> <span class="ruby-number">5</span>, <span class="ruby-identifier">x</span>*<span class="ruby-identifier">cell_size</span><span class="ruby-operator">+</span><span class="ruby-identifier">cell_size</span> <span class="ruby-operator">/</span> <span class="ruby-number">4</span> <span class="ruby-operator">+</span> <span class="ruby-number">1</span>, <span class="ruby-identifier">y</span>*<span class="ruby-identifier">cell_size</span><span class="ruby-operator">+</span><span class="ruby-identifier">cell_size</span> <span class="ruby-operator">/</span> <span class="ruby-number">5</span> * <span class="ruby-number">4</span>)
+  <span class="ruby-ivar">@app</span>.<span class="ruby-identifier">fill</span> <span class="ruby-node">&quot;#A00&quot;</span>
+  <span class="ruby-ivar">@app</span>.<span class="ruby-identifier">rect</span>(<span class="ruby-identifier">x</span>*<span class="ruby-identifier">cell_size</span><span class="ruby-operator">+</span><span class="ruby-identifier">cell_size</span> <span class="ruby-operator">/</span> <span class="ruby-number">4</span><span class="ruby-operator">+</span><span class="ruby-number">2</span>, <span class="ruby-identifier">y</span>*<span class="ruby-identifier">cell_size</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">cell_size</span> <span class="ruby-operator">/</span> <span class="ruby-number">5</span>, 
+    <span class="ruby-identifier">cell_size</span> <span class="ruby-operator">/</span> <span class="ruby-number">3</span>, <span class="ruby-identifier">cell_size</span> <span class="ruby-operator">/</span> <span class="ruby-number">4</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-render_number">
+            
+              <b>render_number</b>(x, y)
+            
+            <a href="../classes/Field.html#method-i-render_number" name="method-i-render_number" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-render_number_source')" id="l_method-i-render_number_source">show</a>
+                
+              </p>
+              <div id="method-i-render_number_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File samples/expert-minesweeper.rb, line 108</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">render_number</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>)
+  <span class="ruby-identifier">render_cell</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>, <span class="ruby-node">&quot;#999&quot;</span>, <span class="ruby-keyword">false</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>[<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>].<span class="ruby-identifier">number</span> <span class="ruby-operator">!=</span> <span class="ruby-number">0</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-ivar">@app</span>.<span class="ruby-identifier">nostroke</span>
+    <span class="ruby-ivar">@app</span>.<span class="ruby-identifier">para</span> <span class="ruby-keyword">self</span>[<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>].<span class="ruby-identifier">number</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value">:left</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">x</span>*<span class="ruby-identifier">cell_size</span> <span class="ruby-operator">+</span> <span class="ruby-number">3</span>, <span class="ruby-value">:top</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">y</span>*<span class="ruby-identifier">cell_size</span> <span class="ruby-operator">-</span> <span class="ruby-number">2</span>, 
+      <span class="ruby-value">:font</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'13px'</span>, <span class="ruby-value">:stroke</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">COLORS</span>[<span class="ruby-keyword">self</span>[<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>].<span class="ruby-identifier">number</span> <span class="ruby-operator">-</span> <span class="ruby-number">1</span>]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-reveal-21">
+            
+              <b>reveal!</b>(x, y)
+            
+            <a href="../classes/Field.html#method-i-reveal-21" name="method-i-reveal-21" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-reveal-21_source')" id="l_method-i-reveal-21_source">show</a>
+                
+              </p>
+              <div id="method-i-reveal-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File samples/expert-minesweeper.rb, line 139</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">reveal!</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">cell_exists?</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-keyword">self</span>[<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>].<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Field</span><span class="ruby-operator">::</span><span class="ruby-constant">OpenCell</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">flags_around</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>) <span class="ruby-operator">&gt;=</span> <span class="ruby-keyword">self</span>[<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>].<span class="ruby-identifier">number</span> <span class="ruby-keyword">then</span>
+    (<span class="ruby-number">-1</span><span class="ruby-operator">..</span><span class="ruby-number">1</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+      (<span class="ruby-number">-1</span><span class="ruby-operator">..</span><span class="ruby-number">1</span>).<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">h</span><span class="ruby-operator">|</span> <span class="ruby-identifier">click!</span>(<span class="ruby-identifier">x</span><span class="ruby-operator">+</span><span class="ruby-identifier">h</span>, <span class="ruby-identifier">y</span><span class="ruby-operator">+</span><span class="ruby-identifier">v</span>) <span class="ruby-keyword">unless</span> (<span class="ruby-identifier">v</span><span class="ruby-operator">==</span><span class="ruby-number">0</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">h</span><span class="ruby-operator">==</span><span class="ruby-number">0</span>) <span class="ruby-keyword">or</span> <span class="ruby-identifier">has_flag?</span>(<span class="ruby-identifier">x</span><span class="ruby-operator">+</span><span class="ruby-identifier">h</span>, <span class="ruby-identifier">y</span><span class="ruby-operator">+</span><span class="ruby-identifier">v</span>) }
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>      
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-total_time">
+            
+              <b>total_time</b>()
+            
+            <a href="../classes/Field.html#method-i-total_time" name="method-i-total_time" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-total_time_source')" id="l_method-i-total_time_source">show</a>
+                
+              </p>
+              <div id="method-i-total_time_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File samples/expert-minesweeper.rb, line 47</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">total_time</span>
+  <span class="ruby-ivar">@latest_time</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@start_time</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">game_over?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">all_found?</span>
+  <span class="ruby-ivar">@latest_time</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

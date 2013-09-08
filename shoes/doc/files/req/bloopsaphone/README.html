@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>README</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            README
+        </h1>
+        <ul class="files">
+            <li>req/bloopsaphone/README</li>
+            <li>Last modified: 2013-04-23 09:29:52 -0500</li>
+        </ul>
+    </div>
+
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<pre> |~~              |~~
+ |                |
+:$: bloopsaphone :$:
+ `''''''''''''''''`</pre>
+
+<p>for writing chiptune-style songs in c or ruby. you know: the sounds of
+ataris, gameboys and the like.</p>
+
+<pre>~</pre>
+
+<p>-$- ABOUT</p>
+
+<p>this is a small c library for sending chiptunes through portaudio, which is
+a rather light cross-platform audio lib. &lt;<a
+href="http://www.portaudio.com/">www.portaudio.com/</a>&gt;</p>
+
+<p>right now i’m only including ruby bindings. you are welcome to contribute
+code to hook up to other languages, though.</p>
+
+<p>i wrote this for h-ety h. &lt;<a
+href="http://hacketyhack.net/">hacketyhack.net/</a>&gt;</p>
+
+<p>i don’t have binaries ready for this yet, so if you’re on windows or os x,
+you may have to wait until HH comes out at ART AND CODE. the tribulations
+you face.</p>
+
+<pre>~</pre>
+
+<p>-$- THE BLOOPSAPHONE THEME SONG</p>
+
+<pre class="ruby">  (<span class="ruby-keyword">in</span> <span class="ruby-identifier">ruby</span>)
+
+  <span class="ruby-identifier">require</span> <span class="ruby-string">'bloops'</span>
+
+<span class="ruby-comment"># the bloops o' phone</span>
+  <span class="ruby-identifier">b</span> = <span class="ruby-constant">Bloops</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">b</span>.<span class="ruby-identifier">tempo</span> = <span class="ruby-value">320</span>
+
+<span class="ruby-comment"># melodious</span>
+  <span class="ruby-identifier">s1</span> = <span class="ruby-identifier">b</span>.<span class="ruby-identifier">sound</span> <span class="ruby-constant">Bloops</span><span class="ruby-operator">::</span><span class="ruby-constant">SQUARE</span>
+  <span class="ruby-identifier">s1</span>.<span class="ruby-identifier">punch</span> = <span class="ruby-value">0.5</span>
+  <span class="ruby-identifier">s1</span>.<span class="ruby-identifier">sustain</span> = <span class="ruby-value">0.4</span>
+  <span class="ruby-identifier">s1</span>.<span class="ruby-identifier">decay</span> = <span class="ruby-value">0.2</span>
+  <span class="ruby-identifier">s1</span>.<span class="ruby-identifier">arp</span> = <span class="ruby-value">0.4</span>
+  <span class="ruby-identifier">s1</span>.<span class="ruby-identifier">aspeed</span> = <span class="ruby-value">0.6</span>
+  <span class="ruby-identifier">s1</span>.<span class="ruby-identifier">repeat</span> = <span class="ruby-value">0.6</span>
+  <span class="ruby-identifier">s1</span>.<span class="ruby-identifier">phase</span> = <span class="ruby-value">0.2</span>
+  <span class="ruby-identifier">s1</span>.<span class="ruby-identifier">psweep</span> = <span class="ruby-value">0.2</span>
+
+<span class="ruby-comment"># beats</span>
+  <span class="ruby-identifier">s2</span> = <span class="ruby-identifier">b</span>.<span class="ruby-identifier">sound</span> <span class="ruby-constant">Bloops</span><span class="ruby-operator">::</span><span class="ruby-constant">NOISE</span>
+  <span class="ruby-identifier">s2</span>.<span class="ruby-identifier">punch</span> = <span class="ruby-value">0.5</span>
+  <span class="ruby-identifier">s2</span>.<span class="ruby-identifier">sustain</span> = <span class="ruby-value">0.2</span>
+  <span class="ruby-identifier">s2</span>.<span class="ruby-identifier">decay</span> = <span class="ruby-value">0.4</span>
+  <span class="ruby-identifier">s2</span>.<span class="ruby-identifier">slide</span> = <span class="ruby-value">-0.4</span>
+  <span class="ruby-identifier">s2</span>.<span class="ruby-identifier">phase</span> = <span class="ruby-value">0.2</span>
+  <span class="ruby-identifier">s2</span>.<span class="ruby-identifier">psweep</span> = <span class="ruby-value">0.2</span>
+
+<span class="ruby-comment"># the tracks</span>
+  <span class="ruby-identifier">b</span>.<span class="ruby-identifier">tune</span> <span class="ruby-identifier">s1</span>, <span class="ruby-node">&quot;f#5 c6 e4 b6 g5 d6 4  f#5 e5 c5 b6 c6 d6 4 &quot;</span>
+  <span class="ruby-identifier">b</span>.<span class="ruby-identifier">tune</span> <span class="ruby-identifier">s2</span>, <span class="ruby-string">&quot;4   c6 4  b5 4  4  e4 4   c6 4  b5 4  4  e4&quot;</span>
+
+<span class="ruby-comment"># and away we go</span>
+  <span class="ruby-identifier">b</span>.<span class="ruby-identifier">play</span>
+  <span class="ruby-identifier">sleep</span> <span class="ruby-value">1</span> <span class="ruby-keyword">while</span> <span class="ruby-operator">!</span><span class="ruby-identifier">b</span>.<span class="ruby-identifier">stopped?</span>
+
+           <span class="ruby-operator">~</span>
+</pre>
+
+<p>-$- BUILDING FOR <a href="../json/RUBY.html">RUBY</a></p>
+
+<p>If Ruby is in your path and PortAudio 1.9 or greater is installed:</p>
+
+<pre>make ruby</pre>
+
+<p>To install PortAudio 1.9 under Ubuntu:</p>
+
+<pre>aptitude install portaudio19-dev</pre>
+
+<p>To build from source isn’t too bad. Download PortAudio 1.9 and build it.
+&lt;<a
+href="http://www.portaudio.com/archives/pa_stable_v19_20071207.tar.gz">www.portaudio.com/archives/pa_stable_v19_20071207.tar.gz</a>&gt;</p>
+
+<p>Like this:</p>
+
+<pre>$ tar xzvf pa_stable_v19_20071207.tar.gz
+$ cd portaudio
+$ ./configure
+$ make
+$ sudo make install</pre>
+
+<p>Then go back to Bloopsaphone and do a `make ruby`.</p>
+
+<pre>~</pre>
+
+<p>-$- THE IDEALS,</p>
+
+<p>-1- ASYNCHRONOUS.</p>
+
+<pre>You send it a song and it plays in
+the background. You'll get an event
+when it finishes.</pre>
+
+<p>-2- SMALL.</p>
+
+<pre>This is just a toy, I don't want it
+to be very big and comprehensive.
+Just to play little tunes with a
+nostalgic arcade sound rather than
+the CASIO-stylings of most MIDI.</pre>
+
+<p>-3- CUSTOM NOTATION.</p>
+
+<pre>Someone told me about Nokring, iMelody,
+numbered musical notation and I did
+some reading. They're little languages
+for texting yourself a ringtone.</pre>
+
+<p>&lt;<a
+href="http://en.wikipedia.org/wiki/Ring_Tone_Transfer_Language">en.wikipedia.org/wiki/Ring_Tone_Transfer_Language</a>&gt;
+&lt;<a
+href="http://homepage.mac.com/alvinmok/ericsson/emelody.html">homepage.mac.com/alvinmok/ericsson/emelody.html</a>&gt;</p>
+
+<pre>Bloopsaphone uses a variation on RTTTL.
+
+Instead of commas, I use whitespace.
+A rest is simply a number. A plus sign
+moves everything up an octave. A minus
+down an octave.
+
+The Simpsons' Theme, for instance, would be:
+
+  32 + C E F# 8:A G E C - 8:A 8:F# 8:F# 8:F# 2:G
+
+Which translates into:
+
+ * a 1/32nd note rest.
+ * change one octave up.
+ * C quarter note.
+ * E quarter note.
+ * F# quarter note.
+ * A eighth note.
+ * G quarter.
+ * E quarter.
+ * C one-quarter note.
+ * change one octave down.
+ * A eighth.
+ * Three F# eighths.
+ * G half note.
+
+The colons are optional. They are there because you
+can place an octave number after each note. Somehow
+&quot;8B6&quot; (an eighth note of B at the sixth octave) looks
+more confusing than &quot;8:B6&quot;. I guess I figured that
+the timing &quot;8&quot; is conceptually separate from the
+actual tone &quot;B6&quot;, even though they both comprise
+the note itself.</pre>
+
+<p>-4- SERIALIZE SOUNDS.</p>
+
+<pre>To accomodate passing instruments between
+ruby and c, bloopsaphone comes with a tiny
+file format for describing sounds.
+
+You can find examples of these in the sounds/
+folder in this distro. Possible sound types
+are 'square', 'sawtooth', 'sine' and 'noise'.
+All other settings go from 0.0 to 1.0.
+
+The 'freq' setting is only used if the sound
+is played without a tune.</pre>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+              </div>
+
+    </div>
+  </body>
+</html>

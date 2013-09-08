@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Rakefile</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            Rakefile
+        </h1>
+        <ul class="files">
+            <li>req/redcarpet2/Rakefile</li>
+            <li>Last modified: 2013-04-23 09:29:54 -0500</li>
+        </ul>
+    </div>
+
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>require ‘date’ require ‘rake/clean’ require ‘rake/extensiontask’ require
+‘digest/md5’</p>
+
+<p>task :default =&gt; :test</p>
+
+<p># ========================================================== # Ruby
+Extension # ==========================================================</p>
+
+<p>Rake::ExtensionTask.new(‘redcarpet’)</p>
+
+<p># ========================================================== # Testing #
+==========================================================</p>
+
+<p>require ‘rake/testtask’ Rake::TestTask.new(‘test:unit’) do |t|</p>
+
+<pre>t.test_files = FileList['test  _test.rb']
+t.ruby_opts += ['-rubygems'] if defined? Gem</pre>
+
+<p>end task ‘test:unit’ =&gt; [:compile]</p>
+
+<p>desc ‘Run conformance tests (MARKDOWN_TEST_VER=1.0)’ task
+‘test:conformance’ =&gt; [:compile] do |t|</p>
+
+<pre>script = &quot;#{pwd}/bin/redcarpet&quot;
+test_version = ENV['MARKDOWN_TEST_VER'] || '1.0.3'
+lib_dir = &quot;#{pwd}/lib&quot;
+chdir(&quot;test/MarkdownTest_#{test_version}&quot;) do
+  sh &quot;RUBYLIB=#{lib_dir} ./MarkdownTest.pl --script='#{script}' --tidy&quot;
+end</pre>
+
+<p>end</p>
+
+<p>desc ‘Run version 1.0 conformance suite’ task ‘test:conformance:1.0’ =&gt;
+[:compile] do |t|</p>
+
+<pre>ENV['MARKDOWN_TEST_VER'] = '1.0'
+Rake::Task['test:conformance'].invoke</pre>
+
+<p>end</p>
+
+<p>desc ‘Run 1.0.3 conformance suite’ task ‘test:conformance:1.0.3’ =&gt;
+[:compile] do |t|</p>
+
+<pre>ENV['MARKDOWN_TEST_VER'] = '1.0.3'
+Rake::Task['test:conformance'].invoke</pre>
+
+<p>end</p>
+
+<p>desc ‘Run unit and conformance tests’ task :test =&gt; %w[test:unit
+test:conformance]</p>
+
+<p>desc ‘Run benchmarks’ task :benchmark =&gt; :build do |t|</p>
+
+<pre>$:.unshift 'lib'
+load 'test/benchmark.rb'</pre>
+
+<p>end</p>
+
+<p># PACKAGING
+=================================================================</p>
+
+<p>require ‘rubygems’ $spec = eval(File.read(‘redcarpet.gemspec’))</p>
+
+<p>def package(ext=”)</p>
+
+<pre>&quot;pkg/redcarpet-#{$spec.version}&quot; + ext</pre>
+
+<p>end</p>
+
+<p>desc ‘Build packages’ task :package =&gt; %w[.gem .tar.gz].map {|e|
+package(e)}</p>
+
+<p>desc ‘Build and install as local gem’ task :install =&gt; package(‘.gem’)
+do</p>
+
+<pre>sh &quot;gem install #{package('.gem')}&quot;</pre>
+
+<p>end</p>
+
+<p>directory ‘pkg/’</p>
+
+<p>file package(‘.gem’) =&gt; %w[pkg/ redcarpet.gemspec] + $spec.files do |f|</p>
+
+<pre>sh &quot;gem build redcarpet.gemspec&quot;
+mv File.basename(f.name), f.name</pre>
+
+<p>end</p>
+
+<p>file package(‘.tar.gz’) =&gt; %<a href="http://pkg/">w</a> + $spec.files do
+|f|</p>
+
+<pre>sh &quot;git archive --format=tar HEAD | gzip &gt; #{f.name}&quot;</pre>
+
+<p>end</p>
+
+<p># GEMSPEC HELPERS
+==========================================================</p>
+
+<p>def source_version</p>
+
+<pre>line = File.read('lib/redcarpet.rb')[/^\s*VERSION = .  ]
+line.match(/.*VERSION = '(.*)'/)[1]</pre>
+
+<p>end</p>
+
+<p>task :update_gem do</p>
+
+<pre class="ruby"><span class="ruby-comment"># read spec file and split out manifest section</span>
+<span class="ruby-constant">GEMFILE</span> = <span class="ruby-string">'redcarpet.gemspec'</span>
+<span class="ruby-identifier">spec</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-constant">GEMFILE</span>)
+<span class="ruby-identifier">head</span>, <span class="ruby-identifier">manifest</span>, <span class="ruby-identifier">tail</span> = <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">split</span>(<span class="ruby-node">&quot;  # = MANIFEST =\n&quot;</span>)
+<span class="ruby-identifier">head</span>.<span class="ruby-identifier">sub!</span>(<span class="ruby-regexp">/\.version = '.*'/</span>, <span class="ruby-node">&quot;.version = '#{source_version}'&quot;</span>)
+<span class="ruby-identifier">head</span>.<span class="ruby-identifier">sub!</span>(<span class="ruby-regexp">/\.date = '.*'/</span>, <span class="ruby-node">&quot;.date = '#{Date.today.to_s}'&quot;</span>)
+<span class="ruby-comment"># determine file list from git ls-files</span>
+<span class="ruby-identifier">files</span> = <span class="ruby-value">%xgit ls-files`</span>.
+  <span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;\n&quot;</span>).
+  <span class="ruby-identifier">sort</span>.
+  <span class="ruby-identifier">reject</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span> <span class="ruby-identifier">file</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/^\./</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">file</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/^test\/MarkdownTest/</span> }.
+  <span class="ruby-identifier">map</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span> <span class="ruby-node">&quot;    #{file}&quot;</span> }.
+  <span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;\n&quot;</span>)
+<span class="ruby-comment"># piece file back together and write...</span>
+<span class="ruby-identifier">manifest</span> = <span class="ruby-node">&quot;  s.files = %w[\n#{files}\n  ]\n&quot;</span>
+<span class="ruby-identifier">spec</span> = [<span class="ruby-identifier">head</span>,<span class="ruby-identifier">manifest</span>,<span class="ruby-identifier">tail</span>].<span class="ruby-identifier">join</span>(<span class="ruby-node">&quot;  # = MANIFEST =\n&quot;</span>)
+<span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-constant">GEMFILE</span>, <span class="ruby-string">'w'</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">io</span><span class="ruby-operator">|</span> <span class="ruby-identifier">io</span>.<span class="ruby-identifier">write</span>(<span class="ruby-identifier">spec</span>) }
+<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;updated #{GEMFILE}&quot;</span>
+</pre>
+
+<p>end</p>
+
+<p>desc ‘Gather required Sundown sources into extension directory’ task
+:gather =&gt; ‘sundown/src/markdown.h’ do |t|</p>
+
+<pre class="ruby"><span class="ruby-identifier">files</span> =
+  <span class="ruby-constant">FileList</span>[
+    <span class="ruby-string">'sundown/src/{markdown,buffer,stack,autolink,html_blocks}.h'</span>,
+    <span class="ruby-string">'sundown/src/{markdown,buffer,stack,autolink}.c'</span>,
+    <span class="ruby-string">'sundown/html/{html,html_smartypants,houdini_html_e,houdini_href_e}.c'</span>,
+    <span class="ruby-string">'sundown/html/{html,houdini}.h'</span>,
+  ]
+<span class="ruby-identifier">cp</span> <span class="ruby-identifier">files</span>, <span class="ruby-string">'ext/redcarpet/'</span>,
+  :<span class="ruby-identifier">preserve</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>,
+  :<span class="ruby-identifier">verbose</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>
+</pre>
+
+<p>end</p>
+
+<p>file ‘sundown/src/markdown.h’ do |t|</p>
+
+<pre>abort &quot;The Sundown submodule is required.&quot;</pre>
+
+<p>end</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+              </div>
+
+    </div>
+  </body>
+</html>

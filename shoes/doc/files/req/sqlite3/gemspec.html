@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>gemspec</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            gemspec
+        </h1>
+        <ul class="files">
+            <li>req/sqlite3/gemspec</li>
+            <li>Last modified: 2013-04-23 09:29:54 -0500</li>
+        </ul>
+    </div>
+
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>Gem::Specification.new do |s|</p>
+
+<pre class="ruby"><span class="ruby-identifier">s</span>.<span class="ruby-identifier">name</span> = <span class="ruby-string">%q{sqlite3-ruby}</span>
+<span class="ruby-identifier">s</span>.<span class="ruby-identifier">version</span> = <span class="ruby-string">&quot;1.3.0&quot;</span>
+<span class="ruby-comment">#s.platform = %q{x86-mswin32-60}</span>
+<span class="ruby-identifier">s</span>.<span class="ruby-identifier">platform</span> = <span class="ruby-string">&quot;&quot;</span>
+
+<span class="ruby-identifier">s</span>.<span class="ruby-identifier">required_rubygems_version</span> = <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Requirement</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;&gt;= 1.3.5&quot;</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">respond_to?</span> :<span class="ruby-identifier">required_rubygems_version=</span>
+<span class="ruby-identifier">s</span>.<span class="ruby-identifier">authors</span> = [<span class="ruby-string">&quot;Jamis Buck&quot;</span>, <span class="ruby-string">&quot;Luis Lavena&quot;</span>, <span class="ruby-string">&quot;Aaron Patterson&quot;</span>]
+<span class="ruby-identifier">s</span>.<span class="ruby-identifier">date</span> = <span class="ruby-string">%q{2010-06-06}</span>
+<span class="ruby-identifier">s</span>.<span class="ruby-identifier">description</span> = <span class="ruby-string">%q{This module allows Ruby programs to interface with the SQLite3
+</span></pre>
+
+<p>database engine (<a href="http://www.sqlite.org">www.sqlite.org</a>).  You
+must have the SQLite engine installed in order to build this module.</p>
+
+<p>Note that this module is NOT compatible with SQLite 2.x.}</p>
+
+<pre class="ruby"><span class="ruby-identifier">s</span>.<span class="ruby-identifier">email</span> = [<span class="ruby-string">&quot;jamis@37signals.com&quot;</span>, <span class="ruby-string">&quot;luislavena@gmail.com&quot;</span>, <span class="ruby-string">&quot;aaron@tenderlovemaking.com&quot;</span>]
+<span class="ruby-identifier">s</span>.<span class="ruby-identifier">extra_rdoc_files</span> = [<span class="ruby-string">&quot;Manifest.txt&quot;</span>, <span class="ruby-string">&quot;API_CHANGES.rdoc&quot;</span>, <span class="ruby-string">&quot;README.rdoc&quot;</span>, <span class="ruby-string">&quot;CHANGELOG.rdoc&quot;</span>, <span class="ruby-string">&quot;ext/sqlite3/database.c&quot;</span>, <span class="ruby-string">&quot;ext/sqlite3/statement.c&quot;</span>, <span class="ruby-string">&quot;ext/sqlite3/sqlite3.c&quot;</span>, <span class="ruby-string">&quot;ext/sqlite3/exception.c&quot;</span>]
+<span class="ruby-identifier">s</span>.<span class="ruby-identifier">files</span> = [<span class="ruby-string">&quot;API_CHANGES.rdoc&quot;</span>, <span class="ruby-string">&quot;CHANGELOG.rdoc&quot;</span>, <span class="ruby-string">&quot;ChangeLog.cvs&quot;</span>, <span class="ruby-string">&quot;LICENSE&quot;</span>, <span class="ruby-string">&quot;Manifest.txt&quot;</span>, <span class="ruby-string">&quot;README.rdoc&quot;</span>, <span class="ruby-string">&quot;Rakefile&quot;</span>, <span class="ruby-string">&quot;ext/sqlite3/database.c&quot;</span>, <span class="ruby-string">&quot;ext/sqlite3/database.h&quot;</span>, <span class="ruby-string">&quot;ext/sqlite3/exception.c&quot;</span>, <span class="ruby-string">&quot;ext/sqlite3/exception.h&quot;</span>, <span class="ruby-string">&quot;ext/sqlite3/extconf.rb&quot;</span>, <span class="ruby-string">&quot;ext/sqlite3/sqlite3.c&quot;</span>, <span class="ruby-string">&quot;ext/sqlite3/sqlite3_ruby.h&quot;</span>, <span class="ruby-string">&quot;ext/sqlite3/statement.c&quot;</span>, <span class="ruby-string">&quot;ext/sqlite3/statement.h&quot;</span>, <span class="ruby-string">&quot;faq/faq.rb&quot;</span>, <span class="ruby-string">&quot;faq/faq.yml&quot;</span>, <span class="ruby-string">&quot;lib/sqlite3.rb&quot;</span>, <span class="ruby-string">&quot;lib/sqlite3/constants.rb&quot;</span>, <span class="ruby-string">&quot;lib/sqlite3/database.rb&quot;</span>, <span class="ruby-string">&quot;lib/sqlite3/errors.rb&quot;</span>, <span class="ruby-string">&quot;lib/sqlite3/pragmas.rb&quot;</span>, <span class="ruby-string">&quot;lib/sqlite3/resultset.rb&quot;</span>, <span class="ruby-string">&quot;lib/sqlite3/statement.rb&quot;</span>, <span class="ruby-string">&quot;lib/sqlite3/translator.rb&quot;</span>, <span class="ruby-string">&quot;lib/sqlite3/value.rb&quot;</span>, <span class="ruby-string">&quot;lib/sqlite3/version.rb&quot;</span>, <span class="ruby-string">&quot;setup.rb&quot;</span>, <span class="ruby-string">&quot;tasks/faq.rake&quot;</span>, <span class="ruby-string">&quot;tasks/gem.rake&quot;</span>, <span class="ruby-string">&quot;tasks/native.rake&quot;</span>, <span class="ruby-string">&quot;tasks/vendor_sqlite3.rake&quot;</span>, <span class="ruby-string">&quot;test/helper.rb&quot;</span>, <span class="ruby-string">&quot;test/test_database.rb&quot;</span>, <span class="ruby-string">&quot;test/test_deprecated.rb&quot;</span>, <span class="ruby-string">&quot;test/test_encoding.rb&quot;</span>, <span class="ruby-string">&quot;test/test_integration.rb&quot;</span>, <span class="ruby-string">&quot;test/test_integration_open_close.rb&quot;</span>, <span class="ruby-string">&quot;test/test_integration_pending.rb&quot;</span>, <span class="ruby-string">&quot;test/test_integration_resultset.rb&quot;</span>, <span class="ruby-string">&quot;test/test_integration_statement.rb&quot;</span>, <span class="ruby-string">&quot;test/test_sqlite3.rb&quot;</span>, <span class="ruby-string">&quot;test/test_statement.rb&quot;</span>, <span class="ruby-string">&quot;lib/sqlite3/1.8/sqlite3_native.so&quot;</span>, <span class="ruby-string">&quot;lib/sqlite3/1.9/sqlite3_native.so&quot;</span>]
+<span class="ruby-identifier">s</span>.<span class="ruby-identifier">homepage</span> = <span class="ruby-string">%q{http://github.com/luislavena/sqlite3-ruby}</span>
+<span class="ruby-identifier">s</span>.<span class="ruby-identifier">rdoc_options</span> = [<span class="ruby-string">&quot;--main&quot;</span>, <span class="ruby-string">&quot;README.rdoc&quot;</span>]
+<span class="ruby-identifier">s</span>.<span class="ruby-identifier">require_paths</span> = [<span class="ruby-string">&quot;lib&quot;</span>]
+<span class="ruby-identifier">s</span>.<span class="ruby-identifier">required_ruby_version</span> = <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Requirement</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;&gt;= 1.8.6&quot;</span>)
+<span class="ruby-identifier">s</span>.<span class="ruby-identifier">rubyforge_project</span> = <span class="ruby-string">%q{sqlite3-ruby}</span>
+<span class="ruby-identifier">s</span>.<span class="ruby-identifier">rubygems_version</span> = <span class="ruby-string">%q{1.3.7}</span>
+<span class="ruby-identifier">s</span>.<span class="ruby-identifier">summary</span> = <span class="ruby-string">%q{This module allows Ruby programs to interface with the SQLite3 database engine (http://www.sqlite.org)}</span>
+<span class="ruby-identifier">s</span>.<span class="ruby-identifier">test_files</span> = [<span class="ruby-string">&quot;test/test_sqlite3.rb&quot;</span>, <span class="ruby-string">&quot;test/test_integration_open_close.rb&quot;</span>, <span class="ruby-string">&quot;test/test_database.rb&quot;</span>, <span class="ruby-string">&quot;test/test_integration.rb&quot;</span>, <span class="ruby-string">&quot;test/test_statement.rb&quot;</span>, <span class="ruby-string">&quot;test/test_integration_pending.rb&quot;</span>, <span class="ruby-string">&quot;test/test_deprecated.rb&quot;</span>, <span class="ruby-string">&quot;test/test_integration_statement.rb&quot;</span>, <span class="ruby-string">&quot;test/test_encoding.rb&quot;</span>, <span class="ruby-string">&quot;test/test_integration_resultset.rb&quot;</span>]
+
+<span class="ruby-keyword">if</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">respond_to?</span> :<span class="ruby-identifier">specification_version</span> <span class="ruby-keyword">then</span>
+  <span class="ruby-identifier">current_version</span> = <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Specification</span><span class="ruby-operator">::</span><span class="ruby-constant">CURRENT_SPECIFICATION_VERSION</span>
+  <span class="ruby-identifier">s</span>.<span class="ruby-identifier">specification_version</span> = <span class="ruby-value">3</span>
+
+  <span class="ruby-comment">#if Gem::Version.new(Gem::VERSION) &gt;= Gem::Version.new('1.2.0') then</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Version</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">RubyGemsVersion</span>) <span class="ruby-operator">&gt;=</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Version</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'1.2.0'</span>) <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">s</span>.<span class="ruby-identifier">add_development_dependency</span>(<span class="ruby-string">%q&lt;rubyforge&gt;</span>, [<span class="ruby-string">&quot;&gt;= 2.0.4&quot;</span>])
+    <span class="ruby-identifier">s</span>.<span class="ruby-identifier">add_development_dependency</span>(<span class="ruby-string">%q&lt;rake-compiler&gt;</span>, [<span class="ruby-string">&quot;~&gt; 0.7.0&quot;</span>])
+    <span class="ruby-identifier">s</span>.<span class="ruby-identifier">add_development_dependency</span>(<span class="ruby-string">%q&lt;hoe&gt;</span>, [<span class="ruby-string">&quot;&gt;= 2.6.0&quot;</span>])
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">s</span>.<span class="ruby-identifier">add_dependency</span>(<span class="ruby-string">%q&lt;rubyforge&gt;</span>, [<span class="ruby-string">&quot;&gt;= 2.0.4&quot;</span>])
+    <span class="ruby-identifier">s</span>.<span class="ruby-identifier">add_dependency</span>(<span class="ruby-string">%q&lt;rake-compiler&gt;</span>, [<span class="ruby-string">&quot;~&gt; 0.7.0&quot;</span>])
+    <span class="ruby-identifier">s</span>.<span class="ruby-identifier">add_dependency</span>(<span class="ruby-string">%q&lt;hoe&gt;</span>, [<span class="ruby-string">&quot;&gt;= 2.6.0&quot;</span>])
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">else</span>
+  <span class="ruby-identifier">s</span>.<span class="ruby-identifier">add_dependency</span>(<span class="ruby-string">%q&lt;rubyforge&gt;</span>, [<span class="ruby-string">&quot;&gt;= 2.0.4&quot;</span>])
+  <span class="ruby-identifier">s</span>.<span class="ruby-identifier">add_dependency</span>(<span class="ruby-string">%q&lt;rake-compiler&gt;</span>, [<span class="ruby-string">&quot;~&gt; 0.7.0&quot;</span>])
+  <span class="ruby-identifier">s</span>.<span class="ruby-identifier">add_dependency</span>(<span class="ruby-string">%q&lt;hoe&gt;</span>, [<span class="ruby-string">&quot;&gt;= 2.6.0&quot;</span>])
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>end</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+              </div>
+
+    </div>
+  </body>
+</html>

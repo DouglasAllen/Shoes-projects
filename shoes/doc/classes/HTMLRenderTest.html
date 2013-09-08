@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>HTMLRenderTest</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            HTMLRenderTest 
+            
+                <span class="parent">&lt; 
+                    
+                    Test::Unit::TestCase
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/req/redcarpet2/test/redcarpet_test_rb.html">req/redcarpet2/test/redcarpet_test.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-render_with">render_with</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-setup">setup</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-test_filter_html_doesnt_break_two_space_hard_break">test_filter_html_doesnt_break_two_space_hard_break</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_that_filter_html_works">test_that_filter_html_works</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_that_no_image_flag_works">test_that_no_image_flag_works</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_that_no_links_flag_works">test_that_no_links_flag_works</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_that_safelink_flag_works">test_that_safelink_flag_works</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-render_with">
+            
+              <b>render_with</b>(rndr, text)
+            
+            <a href="../classes/HTMLRenderTest.html#method-i-render_with" name="method-i-render_with" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-render_with_source')" id="l_method-i-render_with_source">show</a>
+                
+              </p>
+              <div id="method-i-render_with_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/redcarpet2/test/redcarpet_test.rb, line 65</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">render_with</span>(<span class="ruby-identifier">rndr</span>, <span class="ruby-identifier">text</span>)
+  <span class="ruby-constant">Redcarpet</span><span class="ruby-operator">::</span><span class="ruby-constant">Markdown</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">rndr</span>).<span class="ruby-identifier">render</span>(<span class="ruby-identifier">text</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-setup">
+            
+              <b>setup</b>()
+            
+            <a href="../classes/HTMLRenderTest.html#method-i-setup" name="method-i-setup" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-setup_source')" id="l_method-i-setup_source">show</a>
+                
+              </p>
+              <div id="method-i-setup_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/redcarpet2/test/redcarpet_test.rb, line 55</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">setup</span>
+  <span class="ruby-ivar">@markdown</span> = <span class="ruby-constant">Redcarpet</span><span class="ruby-operator">::</span><span class="ruby-constant">Markdown</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">Redcarpet</span><span class="ruby-operator">::</span><span class="ruby-constant">Render</span><span class="ruby-operator">::</span><span class="ruby-constant">HTML</span>)
+  <span class="ruby-ivar">@rndr</span> = {
+    <span class="ruby-value">:no_html</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Redcarpet</span><span class="ruby-operator">::</span><span class="ruby-constant">Render</span><span class="ruby-operator">::</span><span class="ruby-constant">HTML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:filter_html</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>),
+    <span class="ruby-value">:no_images</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Redcarpet</span><span class="ruby-operator">::</span><span class="ruby-constant">Render</span><span class="ruby-operator">::</span><span class="ruby-constant">HTML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:no_images</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>),
+    <span class="ruby-value">:no_links</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Redcarpet</span><span class="ruby-operator">::</span><span class="ruby-constant">Render</span><span class="ruby-operator">::</span><span class="ruby-constant">HTML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:no_links</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>),
+    <span class="ruby-value">:safe_links</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Redcarpet</span><span class="ruby-operator">::</span><span class="ruby-constant">Render</span><span class="ruby-operator">::</span><span class="ruby-constant">HTML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:safe_links_only</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>),
+  }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_filter_html_doesnt_break_two_space_hard_break">
+            
+              <b>test_filter_html_doesnt_break_two_space_hard_break</b>()
+            
+            <a href="../classes/HTMLRenderTest.html#method-i-test_filter_html_doesnt_break_two_space_hard_break" name="method-i-test_filter_html_doesnt_break_two_space_hard_break" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_filter_html_doesnt_break_two_space_hard_break_source')" id="l_method-i-test_filter_html_doesnt_break_two_space_hard_break_source">show</a>
+                
+              </p>
+              <div id="method-i-test_filter_html_doesnt_break_two_space_hard_break_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/redcarpet2/test/redcarpet_test.rb, line 74</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_filter_html_doesnt_break_two_space_hard_break</span>
+  <span class="ruby-identifier">markdown</span> = <span class="ruby-identifier">render_with</span>(<span class="ruby-ivar">@rndr</span>[<span class="ruby-value">:no_html</span>], <span class="ruby-string">&quot;Lorem,  \nipsum\n&quot;</span>)
+  <span class="ruby-identifier">html_equal</span> <span class="ruby-string">&quot;&lt;p&gt;Lorem,&lt;br/&gt;\nipsum&lt;/p&gt;\n&quot;</span>, <span class="ruby-identifier">markdown</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_that_filter_html_works">
+            
+              <b>test_that_filter_html_works</b>()
+            
+            <a href="../classes/HTMLRenderTest.html#method-i-test_that_filter_html_works" name="method-i-test_that_filter_html_works" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_that_filter_html_works_source')" id="l_method-i-test_that_filter_html_works_source">show</a>
+                
+              </p>
+              <div id="method-i-test_that_filter_html_works_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/redcarpet2/test/redcarpet_test.rb, line 69</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_that_filter_html_works</span>
+  <span class="ruby-identifier">markdown</span> = <span class="ruby-identifier">render_with</span>(<span class="ruby-ivar">@rndr</span>[<span class="ruby-value">:no_html</span>], <span class="ruby-string">'Through &lt;em&gt;NO&lt;/em&gt; &lt;script&gt;DOUBLE NO&lt;/script&gt;'</span>)
+  <span class="ruby-identifier">html_equal</span> <span class="ruby-string">&quot;&lt;p&gt;Through NO DOUBLE NO&lt;/p&gt;&quot;</span>, <span class="ruby-identifier">markdown</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_that_no_image_flag_works">
+            
+              <b>test_that_no_image_flag_works</b>()
+            
+            <a href="../classes/HTMLRenderTest.html#method-i-test_that_no_image_flag_works" name="method-i-test_that_no_image_flag_works" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_that_no_image_flag_works_source')" id="l_method-i-test_that_no_image_flag_works_source">show</a>
+                
+              </p>
+              <div id="method-i-test_that_no_image_flag_works_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/redcarpet2/test/redcarpet_test.rb, line 79</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_that_no_image_flag_works</span>
+  <span class="ruby-identifier">rd</span> = <span class="ruby-identifier">render_with</span>(<span class="ruby-ivar">@rndr</span>[<span class="ruby-value">:no_images</span>], <span class="ruby-string">%Q(![dust mite](http://dust.mite/image.png) &lt;img src=&quot;image.png&quot; /&gt;)</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">rd</span> <span class="ruby-operator">!~</span> <span class="ruby-regexp">/&lt;img/</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_that_no_links_flag_works">
+            
+              <b>test_that_no_links_flag_works</b>()
+            
+            <a href="../classes/HTMLRenderTest.html#method-i-test_that_no_links_flag_works" name="method-i-test_that_no_links_flag_works" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_that_no_links_flag_works_source')" id="l_method-i-test_that_no_links_flag_works_source">show</a>
+                
+              </p>
+              <div id="method-i-test_that_no_links_flag_works_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/redcarpet2/test/redcarpet_test.rb, line 84</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_that_no_links_flag_works</span>
+  <span class="ruby-identifier">rd</span> = <span class="ruby-identifier">render_with</span>(<span class="ruby-ivar">@rndr</span>[<span class="ruby-value">:no_links</span>], <span class="ruby-string">%Q([This link](http://example.net/) &lt;a href=&quot;links.html&quot;&gt;links&lt;/a&gt;)</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">rd</span> <span class="ruby-operator">!~</span> <span class="ruby-regexp">/&lt;a /</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_that_safelink_flag_works">
+            
+              <b>test_that_safelink_flag_works</b>()
+            
+            <a href="../classes/HTMLRenderTest.html#method-i-test_that_safelink_flag_works" name="method-i-test_that_safelink_flag_works" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_that_safelink_flag_works_source')" id="l_method-i-test_that_safelink_flag_works_source">show</a>
+                
+              </p>
+              <div id="method-i-test_that_safelink_flag_works_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/redcarpet2/test/redcarpet_test.rb, line 89</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_that_safelink_flag_works</span>
+  <span class="ruby-identifier">rd</span> = <span class="ruby-identifier">render_with</span>(<span class="ruby-ivar">@rndr</span>[<span class="ruby-value">:safe_links</span>], <span class="ruby-node">&quot;[IRC](irc://chat.freenode.org/#freenode)&quot;</span>)
+  <span class="ruby-identifier">html_equal</span> <span class="ruby-node">&quot;&lt;p&gt;[IRC](irc://chat.freenode.org/#freenode)&lt;/p&gt;\n&quot;</span>, <span class="ruby-identifier">rd</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

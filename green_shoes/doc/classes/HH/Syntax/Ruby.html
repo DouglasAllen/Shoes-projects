@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>HH::Syntax::Ruby</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            HH::Syntax::Ruby 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="Tokenizer.html">HH::Syntax::Tokenizer</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/lib/ext/highlighter/lang/ruby_rb.html">lib/ext/highlighter/lang/ruby.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>A tokenizer for the <a href="Ruby.html">Ruby</a> language. It recognizes
+all common syntax (and some less common syntax) but because it is not a
+true lexer, it will make mistakes on some ambiguous cases.</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-setup">setup</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-step">step</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">KEYWORDS</td>
+            <td>=</td>
+            <td class="attr-value">%w{if then elsif else end begin do rescue ensure while for
+class module def yield raise until unless and or not when
+case super undef break next redo retry in return alias
+defined?}</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>The list of all identifiers recognized as keywords.</p></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-setup">
+            
+              <b>setup</b>()
+            
+            <a href="../../../classes/HH/Syntax/Ruby.html#method-i-setup" name="method-i-setup" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Perform ruby-specific setup</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-setup_source')" id="l_method-i-setup_source">show</a>
+                
+              </p>
+              <div id="method-i-setup_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ext/highlighter/lang/ruby.rb, line 17</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">setup</span>
+  <span class="ruby-ivar">@selector</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-ivar">@allow_operator</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-ivar">@heredocs</span> = []
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-step">
+            
+              <b>step</b>()
+            
+            <a href="../../../classes/HH/Syntax/Ruby.html#method-i-step" name="method-i-step" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Step through a single iteration of the tokenization process.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-step_source')" id="l_method-i-step_source">show</a>
+                
+              </p>
+              <div id="method-i-step_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ext/highlighter/lang/ruby.rb, line 24</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">step</span>
+  <span class="ruby-keyword">case</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-identifier">bol?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">check</span>( <span class="ruby-regexp">/=begin/</span> )
+      <span class="ruby-identifier">start_group</span>( <span class="ruby-value">:comment</span>, <span class="ruby-identifier">scan_until</span>( <span class="ruby-node">/^=end#{EOL}/</span> ) )
+    <span class="ruby-keyword">when</span> <span class="ruby-identifier">bol?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">check</span>( <span class="ruby-node">/__END__#{EOL}/</span> )
+      <span class="ruby-identifier">start_group</span>( <span class="ruby-value">:comment</span>, <span class="ruby-identifier">scan_until</span>( <span class="ruby-regexp">/\Z/</span> ) )
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">case</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-identifier">check</span>( <span class="ruby-regexp">/def\s+/</span> )
+        <span class="ruby-identifier">start_group</span> <span class="ruby-value">:keyword</span>, <span class="ruby-identifier">scan</span>( <span class="ruby-regexp">/def\s+/</span> )
+        <span class="ruby-identifier">start_group</span> <span class="ruby-value">:method</span>,  <span class="ruby-identifier">scan_until</span>( <span class="ruby-node">/(?=[;(\s]|#{EOL})/</span> )
+      <span class="ruby-keyword">when</span> <span class="ruby-identifier">check</span>( <span class="ruby-regexp">/class\s+/</span> )
+        <span class="ruby-identifier">start_group</span> <span class="ruby-value">:keyword</span>, <span class="ruby-identifier">scan</span>( <span class="ruby-regexp">/class\s+/</span> )
+        <span class="ruby-identifier">start_group</span> <span class="ruby-value">:class</span>,  <span class="ruby-identifier">scan_until</span>( <span class="ruby-node">/(?=[;\s&lt;]|#{EOL})/</span> )
+      <span class="ruby-keyword">when</span> <span class="ruby-identifier">check</span>( <span class="ruby-regexp">/module\s+/</span> )
+        <span class="ruby-identifier">start_group</span> <span class="ruby-value">:keyword</span>, <span class="ruby-identifier">scan</span>( <span class="ruby-regexp">/module\s+/</span> )
+        <span class="ruby-identifier">start_group</span> <span class="ruby-value">:module</span>,  <span class="ruby-identifier">scan_until</span>( <span class="ruby-node">/(?=[;\s]|#{EOL})/</span> )
+      <span class="ruby-keyword">when</span> <span class="ruby-identifier">check</span>( <span class="ruby-regexp">/::/</span> )
+        <span class="ruby-identifier">start_group</span> <span class="ruby-value">:punct</span>, <span class="ruby-identifier">scan</span>(<span class="ruby-regexp">/::/</span>)
+      <span class="ruby-keyword">when</span> <span class="ruby-identifier">check</span>( <span class="ruby-regexp">/:&quot;/</span> )
+        <span class="ruby-identifier">start_group</span> <span class="ruby-value">:symbol</span>, <span class="ruby-identifier">scan</span>(<span class="ruby-regexp">/:/</span>)
+        <span class="ruby-identifier">scan_delimited_region</span> <span class="ruby-value">:symbol</span>, <span class="ruby-value">:symbol</span>, <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-keyword">true</span>
+        <span class="ruby-ivar">@allow_operator</span> = <span class="ruby-keyword">true</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-identifier">check</span>( <span class="ruby-regexp">/:'/</span> )
+        <span class="ruby-identifier">start_group</span> <span class="ruby-value">:symbol</span>, <span class="ruby-identifier">scan</span>(<span class="ruby-regexp">/:/</span>)
+        <span class="ruby-identifier">scan_delimited_region</span> <span class="ruby-value">:symbol</span>, <span class="ruby-value">:symbol</span>, <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-keyword">false</span>
+        <span class="ruby-ivar">@allow_operator</span> = <span class="ruby-keyword">true</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-identifier">scan</span>( <span class="ruby-regexp">/:[_a-zA-Z@$][$@\w]*[=!?]?/</span> )
+        <span class="ruby-identifier">start_group</span> <span class="ruby-value">:symbol</span>, <span class="ruby-identifier">matched</span>
+        <span class="ruby-ivar">@allow_operator</span> = <span class="ruby-keyword">true</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-identifier">scan</span>( <span class="ruby-regexp">/\?(\[^\n\r]|[^\\n\r\s])/</span> )
+        <span class="ruby-identifier">start_group</span> <span class="ruby-value">:char</span>, <span class="ruby-identifier">matched</span>
+        <span class="ruby-ivar">@allow_operator</span> = <span class="ruby-keyword">true</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-identifier">check</span>( <span class="ruby-regexp">/(__FILE__|__LINE__|true|false|nil|self)[?!]?/</span> )
+        <span class="ruby-keyword">if</span> <span class="ruby-ivar">@selector</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">matched</span>[<span class="ruby-number">-1</span>] <span class="ruby-operator">==</span> <span class="ruby-string">?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">matched</span>[<span class="ruby-number">-1</span>] <span class="ruby-operator">==</span> <span class="ruby-string">!</span>
+          <span class="ruby-identifier">start_group</span> <span class="ruby-value">:ident</span>,
+            <span class="ruby-identifier">scan</span>(<span class="ruby-regexp">/(__FILE__|__LINE__|true|false|nil|self)[?!]?/</span>)
+        <span class="ruby-keyword">else</span>
+          <span class="ruby-identifier">start_group</span> <span class="ruby-value">:constant</span>,
+            <span class="ruby-identifier">scan</span>(<span class="ruby-regexp">/(__FILE__|__LINE__|true|false|nil|self)/</span>)
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-ivar">@selector</span> = <span class="ruby-keyword">false</span>
+        <span class="ruby-ivar">@allow_operator</span> = <span class="ruby-keyword">true</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-identifier">scan</span>(<span class="ruby-regexp">/0([bB][01]+|[oO][0-7]+|[dD][0-9]+|[xX][0-9a-fA-F]+)/</span>)
+        <span class="ruby-identifier">start_group</span> <span class="ruby-value">:number</span>, <span class="ruby-identifier">matched</span>
+        <span class="ruby-ivar">@allow_operator</span> = <span class="ruby-keyword">true</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-keyword">case</span> <span class="ruby-identifier">peek</span>(<span class="ruby-number">2</span>)
+          <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;%r&quot;</span>
+            <span class="ruby-identifier">scan_delimited_region</span> <span class="ruby-value">:punct</span>, <span class="ruby-value">:regex</span>, <span class="ruby-identifier">scan</span>( <span class="ruby-regexp">/../</span> ), <span class="ruby-keyword">true</span>
+            <span class="ruby-ivar">@allow_operator</span> = <span class="ruby-keyword">true</span>
+          <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;%w&quot;</span>, <span class="ruby-string">&quot;%q&quot;</span>
+            <span class="ruby-identifier">scan_delimited_region</span> <span class="ruby-value">:punct</span>, <span class="ruby-value">:string</span>, <span class="ruby-identifier">scan</span>( <span class="ruby-regexp">/../</span> ), <span class="ruby-keyword">false</span>
+            <span class="ruby-ivar">@allow_operator</span> = <span class="ruby-keyword">true</span>
+          <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;%s&quot;</span>
+            <span class="ruby-identifier">scan_delimited_region</span> <span class="ruby-value">:punct</span>, <span class="ruby-value">:symbol</span>, <span class="ruby-identifier">scan</span>( <span class="ruby-regexp">/../</span> ), <span class="ruby-keyword">false</span>
+            <span class="ruby-ivar">@allow_operator</span> = <span class="ruby-keyword">true</span>
+          <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;%W&quot;</span>, <span class="ruby-string">&quot;%Q&quot;</span>, <span class="ruby-string">&quot;%x&quot;</span>
+            <span class="ruby-identifier">scan_delimited_region</span> <span class="ruby-value">:punct</span>, <span class="ruby-value">:string</span>, <span class="ruby-identifier">scan</span>( <span class="ruby-regexp">/../</span> ), <span class="ruby-keyword">true</span>
+            <span class="ruby-ivar">@allow_operator</span> = <span class="ruby-keyword">true</span>
+          <span class="ruby-keyword">when</span> <span class="ruby-regexp">/%[^\sa-zA-Z0-9]/</span>
+            <span class="ruby-identifier">scan_delimited_region</span> <span class="ruby-value">:punct</span>, <span class="ruby-value">:string</span>, <span class="ruby-identifier">scan</span>( <span class="ruby-regexp">/./</span> ), <span class="ruby-keyword">true</span>
+            <span class="ruby-ivar">@allow_operator</span> = <span class="ruby-keyword">true</span>
+          <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;&lt;&lt;&quot;</span>
+            <span class="ruby-identifier">saw_word</span> = ( <span class="ruby-identifier">chunk</span>[<span class="ruby-number">-1</span>,<span class="ruby-number">1</span>] <span class="ruby-operator">=~</span> <span class="ruby-regexp">/[\w!?]/</span> )
+            <span class="ruby-identifier">start_group</span> <span class="ruby-value">:punct</span>, <span class="ruby-identifier">scan</span>( <span class="ruby-regexp">/&lt;&lt;/</span> )
+            <span class="ruby-keyword">if</span> <span class="ruby-identifier">saw_word</span>
+              <span class="ruby-ivar">@allow_operator</span> = <span class="ruby-keyword">false</span>
+              <span class="ruby-keyword">return</span>
+            <span class="ruby-keyword">end</span>
+
+            <span class="ruby-identifier">float_right</span> = <span class="ruby-identifier">scan</span>( <span class="ruby-regexp">/-/</span> )
+            <span class="ruby-identifier">append</span> <span class="ruby-string">&quot;-&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">float_right</span>
+            <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">type</span> = <span class="ruby-identifier">scan</span>( <span class="ruby-regexp">/['&quot;]/</span> ) )
+              <span class="ruby-identifier">append</span> <span class="ruby-identifier">type</span>
+              <span class="ruby-identifier">delim</span> = <span class="ruby-identifier">scan_until</span>( <span class="ruby-node">/(?=#{type})/</span> )
+              <span class="ruby-keyword">if</span> <span class="ruby-identifier">delim</span>.<span class="ruby-identifier">nil?</span>
+                <span class="ruby-identifier">append</span> <span class="ruby-identifier">scan_until</span>( <span class="ruby-regexp">/\Z/</span> )
+                <span class="ruby-keyword">return</span>
+              <span class="ruby-keyword">end</span>
+            <span class="ruby-keyword">else</span>
+              <span class="ruby-identifier">delim</span> = <span class="ruby-identifier">scan</span>( <span class="ruby-regexp">/\w+/</span> ) <span class="ruby-keyword">or</span> <span class="ruby-keyword">return</span>
+            <span class="ruby-keyword">end</span>
+            <span class="ruby-identifier">start_group</span> <span class="ruby-value">:constant</span>, <span class="ruby-identifier">delim</span>
+            <span class="ruby-identifier">start_group</span> <span class="ruby-value">:punct</span>, <span class="ruby-identifier">scan</span>( <span class="ruby-node">/#{type}/</span> ) <span class="ruby-keyword">if</span> <span class="ruby-identifier">type</span>
+            <span class="ruby-ivar">@heredocs</span> <span class="ruby-operator">&lt;&lt;</span> [ <span class="ruby-identifier">float_right</span>, <span class="ruby-identifier">type</span>, <span class="ruby-identifier">delim</span> ]
+            <span class="ruby-ivar">@allow_operator</span> = <span class="ruby-keyword">true</span>
+          <span class="ruby-keyword">else</span>
+            <span class="ruby-keyword">case</span> <span class="ruby-identifier">peek</span>(<span class="ruby-number">1</span>)
+              <span class="ruby-keyword">when</span> <span class="ruby-regexp">/[\n\r]/</span>
+                <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@heredocs</span>.<span class="ruby-identifier">empty?</span>
+                  <span class="ruby-identifier">scan_heredoc</span>(*<span class="ruby-ivar">@heredocs</span>.<span class="ruby-identifier">shift</span>)
+                <span class="ruby-keyword">else</span>
+                  <span class="ruby-identifier">start_group</span> <span class="ruby-value">:normal</span>, <span class="ruby-identifier">scan</span>( <span class="ruby-regexp">/\s+/</span> )
+                <span class="ruby-keyword">end</span>
+                <span class="ruby-ivar">@allow_operator</span> = <span class="ruby-keyword">false</span>
+              <span class="ruby-keyword">when</span> <span class="ruby-regexp">/\s/</span>
+                <span class="ruby-identifier">start_group</span> <span class="ruby-value">:normal</span>, <span class="ruby-identifier">scan</span>( <span class="ruby-regexp">/\s+/</span> )
+              <span class="ruby-keyword">when</span> <span class="ruby-node">&quot;#&quot;</span>
+                <span class="ruby-identifier">start_group</span> <span class="ruby-value">:comment</span>, <span class="ruby-identifier">scan</span>( <span class="ruby-node">/#[^\n\r]*/</span> )
+              <span class="ruby-keyword">when</span> <span class="ruby-regexp">/[A-Z]/</span>
+                <span class="ruby-identifier">start_group</span> <span class="ruby-ivar">@selector</span> <span class="ruby-operator">?</span> <span class="ruby-value">:ident</span> <span class="ruby-operator">:</span> <span class="ruby-value">:constant</span>, <span class="ruby-identifier">scan</span>( <span class="ruby-regexp">/\w+/</span> )
+                <span class="ruby-ivar">@allow_operator</span> = <span class="ruby-keyword">true</span>
+              <span class="ruby-keyword">when</span> <span class="ruby-regexp">/[a-z_]/</span>
+                <span class="ruby-identifier">word</span> = <span class="ruby-identifier">scan</span>( <span class="ruby-regexp">/\w+[?!]?/</span> )
+                <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@selector</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">KEYWORDS</span>.<span class="ruby-identifier">include?</span>( <span class="ruby-identifier">word</span> )
+                  <span class="ruby-identifier">start_group</span> <span class="ruby-value">:keyword</span>, <span class="ruby-identifier">word</span>
+                  <span class="ruby-ivar">@allow_operator</span> = <span class="ruby-keyword">false</span>
+                <span class="ruby-keyword">elsif</span>
+                  <span class="ruby-identifier">start_group</span> <span class="ruby-value">:ident</span>, <span class="ruby-identifier">word</span>
+                  <span class="ruby-ivar">@allow_operator</span> = <span class="ruby-keyword">true</span>
+                <span class="ruby-keyword">end</span>
+                <span class="ruby-ivar">@selector</span> = <span class="ruby-keyword">false</span>
+              <span class="ruby-keyword">when</span> <span class="ruby-regexp">/\d/</span>
+                <span class="ruby-identifier">start_group</span> <span class="ruby-value">:number</span>,
+                  <span class="ruby-identifier">scan</span>( <span class="ruby-regexp">/[\d_]+(\.[\d_]+)?([eE][\d_]+)?/</span> )
+                <span class="ruby-ivar">@allow_operator</span> = <span class="ruby-keyword">true</span>
+              <span class="ruby-keyword">when</span> <span class="ruby-string">'&quot;'</span>
+                <span class="ruby-identifier">scan_delimited_region</span> <span class="ruby-value">:punct</span>, <span class="ruby-value">:string</span>, <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-keyword">true</span>
+                <span class="ruby-ivar">@allow_operator</span> = <span class="ruby-keyword">true</span>
+              <span class="ruby-keyword">when</span> <span class="ruby-string">'/'</span>
+                <span class="ruby-keyword">if</span> <span class="ruby-ivar">@allow_operator</span>
+                  <span class="ruby-identifier">start_group</span> <span class="ruby-value">:punct</span>, <span class="ruby-identifier">scan</span>(<span class="ruby-regexp">%r{/}</span>)
+                  <span class="ruby-ivar">@allow_operator</span> = <span class="ruby-keyword">false</span>
+                <span class="ruby-keyword">else</span>
+                  <span class="ruby-identifier">scan_delimited_region</span> <span class="ruby-value">:punct</span>, <span class="ruby-value">:regex</span>, <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-keyword">true</span>
+                  <span class="ruby-ivar">@allow_operator</span> = <span class="ruby-keyword">true</span>
+                <span class="ruby-keyword">end</span>
+              <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;'&quot;</span>
+                <span class="ruby-identifier">scan_delimited_region</span> <span class="ruby-value">:punct</span>, <span class="ruby-value">:string</span>, <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-keyword">false</span>
+                <span class="ruby-ivar">@allow_operator</span> = <span class="ruby-keyword">true</span>
+              <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;.&quot;</span>
+                <span class="ruby-identifier">dots</span> = <span class="ruby-identifier">scan</span>( <span class="ruby-regexp">/\.{1,3}/</span> )
+                <span class="ruby-identifier">start_group</span> <span class="ruby-value">:punct</span>, <span class="ruby-identifier">dots</span>
+                <span class="ruby-ivar">@selector</span> = ( <span class="ruby-identifier">dots</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-number">1</span> )
+              <span class="ruby-keyword">when</span> <span class="ruby-regexp">/[@]/</span>
+                <span class="ruby-identifier">start_group</span> <span class="ruby-value">:attribute</span>, <span class="ruby-identifier">scan</span>( <span class="ruby-regexp">/@{1,2}\w*/</span> )
+                <span class="ruby-ivar">@allow_operator</span> = <span class="ruby-keyword">true</span>
+              <span class="ruby-keyword">when</span> <span class="ruby-regexp">/[$]/</span>
+                <span class="ruby-identifier">start_group</span> <span class="ruby-value">:global</span>, <span class="ruby-identifier">scan</span>(<span class="ruby-regexp">/\$/</span>)
+                <span class="ruby-identifier">start_group</span> <span class="ruby-value">:global</span>, <span class="ruby-identifier">scan</span>( <span class="ruby-regexp">/\w+|./</span> ) <span class="ruby-keyword">if</span> <span class="ruby-identifier">check</span>(<span class="ruby-regexp">/./</span>)
+                <span class="ruby-ivar">@allow_operator</span> = <span class="ruby-keyword">true</span>
+              <span class="ruby-keyword">when</span> <span class="ruby-regexp">/[-!?*\/+=&lt;&gt;(\[\{}:;,&amp;|%]/</span>
+                <span class="ruby-identifier">start_group</span> <span class="ruby-value">:punct</span>, <span class="ruby-identifier">scan</span>(<span class="ruby-regexp">/./</span>)
+                <span class="ruby-ivar">@allow_operator</span> = <span class="ruby-keyword">false</span>
+              <span class="ruby-keyword">when</span> <span class="ruby-regexp">/[)\]]/</span>
+                <span class="ruby-identifier">start_group</span> <span class="ruby-value">:punct</span>, <span class="ruby-identifier">scan</span>(<span class="ruby-regexp">/./</span>)
+                <span class="ruby-ivar">@allow_operator</span> = <span class="ruby-keyword">true</span>
+              <span class="ruby-keyword">else</span>
+                <span class="ruby-comment"># all else just falls through this, to prevent</span>
+                <span class="ruby-comment"># infinite loops...</span>
+                <span class="ruby-identifier">append</span> <span class="ruby-identifier">getch</span>
+            <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

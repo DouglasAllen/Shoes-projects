@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>HH::Markup</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            HH::Markup 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/lib/ext/highlighter/markup_rb.html">lib/ext/highlighter/markup.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>H</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-highlight">highlight</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">TOKENIZER</td>
+            <td>=</td>
+            <td class="attr-value">HH::Syntax.load &quot;ruby&quot;</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">COLORS</td>
+            <td>=</td>
+            <td class="attr-value">{
+:comment =&gt; {:stroke =&gt; &quot;#887&quot;},
+:keyword =&gt; {:stroke =&gt; &quot;#111&quot;},
+:method =&gt; {:stroke =&gt; &quot;#C09&quot;, :weight =&gt; &quot;bold&quot;},
+# :class =&gt; {:stroke =&gt; &quot;#0c4&quot;, :weight =&gt; &quot;bold&quot;},
+# :module =&gt; {:stroke =&gt; &quot;#050&quot;},
+# :punct =&gt; {:stroke =&gt; &quot;#668&quot;, :weight =&gt; &quot;bold&quot;},
+:symbol =&gt; {:stroke =&gt; &quot;#C30&quot;},
+:string =&gt; {:stroke =&gt; &quot;#C90&quot;},
+:number =&gt; {:stroke =&gt; &quot;#396&quot; },
+:regex =&gt; {:stroke =&gt; &quot;#000&quot;, :fill =&gt; &quot;#FFC&quot; },
+# :char =&gt; {:stroke =&gt; &quot;#f07&quot;},
+:attribute =&gt; {:stroke =&gt; &quot;#369&quot; },
+# :global =&gt; {:stroke =&gt; &quot;#7FB&quot; },
+:expr =&gt; {:stroke =&gt; &quot;#722&quot; },
+# :escape =&gt; {:stroke =&gt; &quot;#277&quot; }
+:ident =&gt; {:stroke =&gt; &quot;#994c99&quot;},
+:constant =&gt; {:stroke =&gt; &quot;#630&quot;, :weight =&gt; &quot;bold&quot;},
+:class =&gt; {:stroke =&gt; &quot;#630&quot;, :weight =&gt; &quot;bold&quot;},
+:matching =&gt; {:stroke =&gt; &quot;#ff0&quot;, :weight =&gt; &quot;bold&quot;},
+}</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">OPEN_BRACKETS</td>
+            <td>=</td>
+            <td class="attr-value">{
+'{' =&gt; '}',
+'(' =&gt; ')',
+'[' =&gt; ']',
+}</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">CLOSE_BRACKETS</td>
+            <td>=</td>
+            <td class="attr-value">{
+'}' =&gt; '{',
+')' =&gt; '(',
+']' =&gt; '[',
+}</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>close_bracket = {} OPEN_BRACKETS.each{|open, close| <a
+href="http://close">opens_bracket</a> = open} <a
+href="Markup.html#CLOSE_BRACKETS">CLOSE_BRACKETS</a> = opens_bracket</p>
+
+<pre>the following is more readable :)</pre></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">BRACKETS</td>
+            <td>=</td>
+            <td class="attr-value">CLOSE_BRACKETS.keys + OPEN_BRACKETS.keys</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">OPEN_BLOCK</td>
+            <td>=</td>
+            <td class="attr-value">[
+'def',
+'class',
+'module',
+'do',
+'if',
+'unless',
+'while',
+'until',
+'begin',
+'for'
+]</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">MODIFIERS</td>
+            <td>=</td>
+            <td class="attr-value">%w[if unless while until]</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">NON_TERMINATING</td>
+            <td>=</td>
+            <td class="attr-value">%w{+ - * / , . = ~ &lt; &gt; ( [}</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-highlight">
+            
+              <b>highlight</b>(str, pos=nil, colors=COLORS)
+            
+            <a href="../../classes/HH/Markup.html#method-i-highlight" name="method-i-highlight" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-highlight_source')" id="l_method-i-highlight_source">show</a>
+                
+              </p>
+              <div id="method-i-highlight_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ext/highlighter/markup.rb, line 31</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">highlight</span> <span class="ruby-identifier">str</span>, <span class="ruby-identifier">pos</span>=<span class="ruby-keyword">nil</span>, <span class="ruby-identifier">colors</span>=<span class="ruby-constant">COLORS</span>
+  <span class="ruby-identifier">tokens</span> = []
+  <span class="ruby-constant">TOKENIZER</span>.<span class="ruby-identifier">tokenize</span>(<span class="ruby-identifier">str</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">t</span>.<span class="ruby-identifier">group</span> <span class="ruby-operator">==</span> <span class="ruby-value">:punct</span>
+      <span class="ruby-comment"># split punctuation into single characters tokens</span>
+      <span class="ruby-comment"># TODO: to it in the parser</span>
+      <span class="ruby-identifier">tokens</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">t</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">''</span>).<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-constant">HH</span><span class="ruby-operator">::</span><span class="ruby-constant">Syntax</span><span class="ruby-operator">::</span><span class="ruby-constant">Token</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">s</span>, <span class="ruby-value">:punct</span>)}
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-comment"># add token as is</span>
+      <span class="ruby-identifier">tokens</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">t</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">res</span> = []
+  <span class="ruby-identifier">tokens</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">token</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">res</span> <span class="ruby-operator">&lt;&lt;</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">colors</span>[<span class="ruby-identifier">token</span>.<span class="ruby-identifier">group</span>]
+        <span class="ruby-comment">#span(token, colors[token.group])</span>
+        <span class="ruby-identifier">tmp</span> = <span class="ruby-identifier">fg</span>(<span class="ruby-identifier">token</span>, <span class="ruby-identifier">tr_color</span>(<span class="ruby-identifier">colors</span>[<span class="ruby-identifier">token</span>.<span class="ruby-identifier">group</span>][<span class="ruby-value">:stroke</span>]))
+        <span class="ruby-identifier">colors</span>[<span class="ruby-identifier">token</span>.<span class="ruby-identifier">group</span>][<span class="ruby-value">:fill</span>] <span class="ruby-operator">?</span> <span class="ruby-identifier">bg</span>(<span class="ruby-identifier">tmp</span>, <span class="ruby-identifier">tr_color</span>(<span class="ruby-identifier">colors</span>[<span class="ruby-identifier">token</span>.<span class="ruby-identifier">group</span>][<span class="ruby-value">:fill</span>])) <span class="ruby-operator">:</span> <span class="ruby-identifier">tmp</span>
+      <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">colors</span>[<span class="ruby-value">:any</span>]
+        <span class="ruby-comment">#span(token, colors[:any])</span>
+        <span class="ruby-identifier">tmp</span> = <span class="ruby-identifier">fg</span>(<span class="ruby-identifier">token</span>, <span class="ruby-identifier">tr_color</span>(<span class="ruby-identifier">colors</span>[<span class="ruby-value">:any</span>][<span class="ruby-value">:stroke</span>]))
+        <span class="ruby-identifier">colors</span>[<span class="ruby-value">:any</span>][<span class="ruby-value">:fill</span>] <span class="ruby-operator">?</span> <span class="ruby-identifier">bg</span>(<span class="ruby-identifier">tmp</span>, <span class="ruby-identifier">tr_color</span>(<span class="ruby-identifier">colors</span>[<span class="ruby-value">:any</span>][<span class="ruby-value">:fill</span>])) <span class="ruby-operator">:</span> <span class="ruby-identifier">tmp</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">token</span>
+      <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">pos</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">pos</span> <span class="ruby-operator">&lt;</span> <span class="ruby-number">0</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">res</span>.<span class="ruby-identifier">join</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">token_index</span>, <span class="ruby-identifier">matching_index</span> = <span class="ruby-identifier">matching_token</span>(<span class="ruby-identifier">tokens</span>, <span class="ruby-identifier">pos</span>)
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">token_index</span>
+    <span class="ruby-comment">#res[token_index] = span(tokens[token_index], colors[:matching])</span>
+    <span class="ruby-identifier">tmp</span> = <span class="ruby-identifier">fg</span>(<span class="ruby-identifier">tokens</span>[<span class="ruby-identifier">token_index</span>], <span class="ruby-identifier">tr_color</span>(<span class="ruby-identifier">colors</span>[<span class="ruby-value">:matching</span>][<span class="ruby-value">:stroke</span>]))
+    <span class="ruby-identifier">res</span>[<span class="ruby-identifier">token_index</span>] = <span class="ruby-identifier">colors</span>[<span class="ruby-value">:matching</span>][<span class="ruby-value">:fill</span>] <span class="ruby-operator">?</span> <span class="ruby-identifier">bg</span>(<span class="ruby-identifier">tmp</span>, <span class="ruby-identifier">tr_color</span>(<span class="ruby-identifier">colors</span>[<span class="ruby-value">:matching</span>][<span class="ruby-value">:fill</span>])) <span class="ruby-operator">:</span> <span class="ruby-identifier">tmp</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">matching_index</span>
+      <span class="ruby-comment">#res[matching_index] = span(tokens[matching_index], colors[:matching])</span>
+      <span class="ruby-identifier">tmp</span> = <span class="ruby-identifier">fg</span>(<span class="ruby-identifier">tokens</span>[<span class="ruby-identifier">matching_index</span>], <span class="ruby-identifier">tr_color</span>(<span class="ruby-identifier">colors</span>[<span class="ruby-value">:matching</span>][<span class="ruby-value">:stroke</span>]))
+      <span class="ruby-identifier">res</span>[<span class="ruby-identifier">matching_index</span>] = <span class="ruby-identifier">colors</span>[<span class="ruby-value">:matching</span>][<span class="ruby-value">:fill</span>] <span class="ruby-operator">?</span> <span class="ruby-identifier">bg</span>(<span class="ruby-identifier">tmp</span>, <span class="ruby-identifier">tr_color</span>(<span class="ruby-identifier">colors</span>[<span class="ruby-value">:matching</span>][<span class="ruby-value">:fill</span>])) <span class="ruby-operator">:</span> <span class="ruby-identifier">tmp</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">res</span>.<span class="ruby-identifier">join</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

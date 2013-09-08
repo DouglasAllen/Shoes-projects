@@ -1,0 +1,727 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Shy</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Shy 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/lib/shoes/shy_rb.html">lib/shoes/shy.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>#</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-__hdr__">__hdr__</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-c">c</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-czf">czf</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-du">du</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>H</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-hrun">hrun</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>L</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-launchable">launchable</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>M</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-md5sum">md5sum</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-meta">meta</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-progress">progress</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>X</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-x">x</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-xzf">xzf</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">VERSION</td>
+            <td>=</td>
+            <td class="attr-value">0x0001</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">MAGIC</td>
+            <td>=</td>
+            <td class="attr-value">&quot;_shy&quot;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">LAYOUT</td>
+            <td>=</td>
+            <td class="attr-value">&quot;A4vV&quot;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+      <!-- Section attributes -->
+      <div class="sectiontitle">Attributes</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>creator</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>launch</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>name</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>version</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+      </table>
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-__hdr__">
+            
+              <b>__hdr__</b>(f)
+            
+            <a href="../classes/Shy.html#method-c-__hdr__" name="method-c-__hdr__" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-__hdr___source')" id="l_method-c-__hdr___source">show</a>
+                
+              </p>
+              <div id="method-c-__hdr___source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/shy.rb, line 29</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">__hdr__</span>(<span class="ruby-identifier">f</span>)
+  <span class="ruby-identifier">hdr</span> = <span class="ruby-identifier">f</span>.<span class="ruby-identifier">read</span>(<span class="ruby-number">10</span>).<span class="ruby-identifier">unpack</span>(<span class="ruby-constant">LAYOUT</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">IOError</span>, <span class="ruby-string">&quot;Invalid header&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">hdr</span>[<span class="ruby-number">0</span>] <span class="ruby-operator">!=</span> <span class="ruby-constant">MAGIC</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">hdr</span>[<span class="ruby-number">1</span>] <span class="ruby-operator">&gt;</span> <span class="ruby-constant">VERSION</span>
+  <span class="ruby-constant">YAML</span>.<span class="ruby-identifier">load</span>(<span class="ruby-identifier">f</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">hdr</span>[<span class="ruby-number">2</span>]))
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-c">
+            
+              <b>c</b>(path, shy, d, &amp;blk)
+            
+            <a href="../classes/Shy.html#method-c-c" name="method-c-c" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-c_source')" id="l_method-c-c_source">show</a>
+                
+              </p>
+              <div id="method-c-c_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/shy.rb, line 67</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">c</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">shy</span>, <span class="ruby-identifier">d</span>, &amp;<span class="ruby-identifier">blk</span>)
+  <span class="ruby-identifier">path</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-identifier">path</span>)
+  <span class="ruby-identifier">meta</span> = <span class="ruby-identifier">shy</span>.<span class="ruby-identifier">to_yaml</span>
+  <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">path</span>, <span class="ruby-string">&quot;wb&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">f</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-constant">MAGIC</span>, <span class="ruby-constant">VERSION</span>, <span class="ruby-identifier">meta</span>.<span class="ruby-identifier">length</span>].<span class="ruby-identifier">pack</span>(<span class="ruby-constant">LAYOUT</span>)
+    <span class="ruby-identifier">f</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">meta</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">czf</span>(<span class="ruby-identifier">f</span>, <span class="ruby-identifier">d</span>, &amp;<span class="ruby-identifier">blk</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-czf">
+            
+              <b>czf</b>(f, d, &amp;blk)
+            
+            <a href="../classes/Shy.html#method-c-czf" name="method-c-czf" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-czf_source')" id="l_method-c-czf_source">show</a>
+                
+              </p>
+              <div id="method-c-czf_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/shy.rb, line 90</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">czf</span>(<span class="ruby-identifier">f</span>, <span class="ruby-identifier">d</span>, &amp;<span class="ruby-identifier">blk</span>)
+  <span class="ruby-identifier">total</span> = <span class="ruby-identifier">du</span>(<span class="ruby-identifier">d</span>)
+  <span class="ruby-identifier">out</span> = <span class="ruby-constant">Zlib</span><span class="ruby-operator">::</span><span class="ruby-constant">GzipWriter</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">f</span>)
+  <span class="ruby-identifier">files</span> = [<span class="ruby-string">&quot;.&quot;</span>]
+  <span class="ruby-keyword">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span> <span class="ruby-identifier">d</span>
+    <span class="ruby-identifier">files</span> = [<span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">d</span>)]
+    <span class="ruby-identifier">d</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-identifier">d</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">d</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-constant">Archive</span><span class="ruby-operator">::</span><span class="ruby-constant">Tar</span><span class="ruby-operator">::</span><span class="ruby-constant">Minitar</span>.<span class="ruby-identifier">pack</span>(<span class="ruby-identifier">files</span>, <span class="ruby-identifier">out</span>, &amp;<span class="ruby-identifier">blk</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-du">
+            
+              <b>du</b>(root)
+            
+            <a href="../classes/Shy.html#method-c-du" name="method-c-du" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-du_source')" id="l_method-c-du_source">show</a>
+                
+              </p>
+              <div id="method-c-du_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/shy.rb, line 36</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">du</span>(<span class="ruby-identifier">root</span>)
+  <span class="ruby-identifier">size</span> = <span class="ruby-number">0</span>
+  <span class="ruby-constant">Find</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">root</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">path</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-constant">FileTest</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-identifier">path</span>)
+      <span class="ruby-keyword">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">path</span>)[<span class="ruby-number">0</span>] <span class="ruby-operator">==</span> <span class="ruby-string">.</span>
+        <span class="ruby-constant">Find</span>.<span class="ruby-identifier">prune</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-keyword">next</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">size</span> <span class="ruby-operator">+=</span> <span class="ruby-constant">FileTest</span>.<span class="ruby-identifier">size</span>(<span class="ruby-identifier">path</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">size</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-hrun">
+            
+              <b>hrun</b>(f)
+            
+            <a href="../classes/Shy.html#method-c-hrun" name="method-c-hrun" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-hrun_source')" id="l_method-c-hrun_source">show</a>
+                
+              </p>
+              <div id="method-c-hrun_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/shy.rb, line 116</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">hrun</span>(<span class="ruby-identifier">f</span>)
+  <span class="ruby-identifier">b</span>, <span class="ruby-identifier">i</span> = <span class="ruby-number">0</span>, <span class="ruby-number">1</span>
+  <span class="ruby-identifier">last</span> = <span class="ruby-number">65535</span>
+  <span class="ruby-keyword">while</span> <span class="ruby-identifier">i</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">last</span>
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">readline</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-regexp">/OLDSKIP=(\d+)/</span>
+      <span class="ruby-identifier">last</span> = <span class="ruby-node">$1</span>.<span class="ruby-identifier">to_i</span> 
+    <span class="ruby-keyword">when</span> <span class="ruby-regexp">/FULLSIZE=(\d+)/</span>
+      <span class="ruby-identifier">b</span> = <span class="ruby-node">$1</span>.<span class="ruby-identifier">to_i</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">i</span> <span class="ruby-operator">+=</span> <span class="ruby-number">1</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">b</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-launchable">
+            
+              <b>launchable</b>(d)
+            
+            <a href="../classes/Shy.html#method-c-launchable" name="method-c-launchable" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-launchable_source')" id="l_method-c-launchable_source">show</a>
+                
+              </p>
+              <div id="method-c-launchable_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/shy.rb, line 19</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">launchable</span>(<span class="ruby-identifier">d</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span> <span class="ruby-identifier">d</span>
+    <span class="ruby-constant">Dir</span>[<span class="ruby-node">&quot;#{d}/**/*.rb&quot;</span>].<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">path</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">path</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-node">%r#{Regexp::quote(d)}/!</span>, <span class="ruby-string">''</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    [<span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">d</span>)]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-md5sum">
+            
+              <b>md5sum</b>(path)
+            
+            <a href="../classes/Shy.html#method-c-md5sum" name="method-c-md5sum" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-md5sum_source')" id="l_method-c-md5sum_source">show</a>
+                
+              </p>
+              <div id="method-c-md5sum_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/shy.rb, line 108</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">md5sum</span>(<span class="ruby-identifier">path</span>)
+  <span class="ruby-identifier">digest</span> = <span class="ruby-constant">Digest</span><span class="ruby-operator">::</span><span class="ruby-constant">MD5</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">path</span>, <span class="ruby-string">&quot;rb&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">digest</span>.<span class="ruby-identifier">update</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">read</span>(<span class="ruby-number">8192</span>) <span class="ruby-keyword">until</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">eof</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">digest</span>.<span class="ruby-identifier">hexdigest</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-meta">
+            
+              <b>meta</b>(path, d = &quot;.&quot;)
+            
+            <a href="../classes/Shy.html#method-c-meta" name="method-c-meta" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-meta_source')" id="l_method-c-meta_source">show</a>
+                
+              </p>
+              <div id="method-c-meta_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/shy.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">meta</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">d</span> = <span class="ruby-string">&quot;.&quot;</span>)
+  <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">path</span>, <span class="ruby-string">'rb'</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">shy</span> = <span class="ruby-identifier">__hdr__</span>(<span class="ruby-identifier">f</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-progress">
+            
+              <b>progress</b>(total, &amp;blk)
+            
+            <a href="../classes/Shy.html#method-c-progress" name="method-c-progress" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-progress_source')" id="l_method-c-progress_source">show</a>
+                
+              </p>
+              <div id="method-c-progress_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/shy.rb, line 77</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">progress</span>(<span class="ruby-identifier">total</span>, &amp;<span class="ruby-identifier">blk</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">blk</span>
+    <span class="ruby-identifier">last</span>, <span class="ruby-identifier">left</span> = <span class="ruby-number">0.0</span>, <span class="ruby-identifier">total</span>
+    <span class="ruby-identifier">proc</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">action</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">stats</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">action</span> <span class="ruby-operator">==</span> <span class="ruby-value">:file_progress</span>
+        <span class="ruby-identifier">left</span> <span class="ruby-operator">-=</span> <span class="ruby-identifier">stats</span>[<span class="ruby-value">:currinc</span>]
+        <span class="ruby-identifier">prg</span> = <span class="ruby-number">1.0</span> <span class="ruby-operator">-</span> (<span class="ruby-identifier">left</span>.<span class="ruby-identifier">to_f</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">total</span>.<span class="ruby-identifier">to_f</span>)
+        <span class="ruby-identifier">blk</span>[<span class="ruby-identifier">name</span>, (<span class="ruby-identifier">last</span> = <span class="ruby-identifier">prg</span>), <span class="ruby-identifier">left</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">prg</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">last</span> <span class="ruby-operator">&gt;</span> <span class="ruby-number">0.02</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-x">
+            
+              <b>x</b>(path, d = &quot;.&quot;)
+            
+            <a href="../classes/Shy.html#method-c-x" name="method-c-x" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-x_source')" id="l_method-c-x_source">show</a>
+                
+              </p>
+              <div id="method-c-x_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/shy.rb, line 58</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">x</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">d</span> = <span class="ruby-string">&quot;.&quot;</span>)
+  <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">path</span>, <span class="ruby-string">'rb'</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">shy</span> = <span class="ruby-identifier">__hdr__</span>(<span class="ruby-identifier">f</span>)
+    <span class="ruby-identifier">inp</span> = <span class="ruby-constant">Zlib</span><span class="ruby-operator">::</span><span class="ruby-constant">GzipReader</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">f</span>)
+    <span class="ruby-constant">Archive</span><span class="ruby-operator">::</span><span class="ruby-constant">Tar</span><span class="ruby-operator">::</span><span class="ruby-constant">Minitar</span>.<span class="ruby-identifier">unpack</span>(<span class="ruby-identifier">inp</span>, <span class="ruby-identifier">d</span>)
+    <span class="ruby-identifier">shy</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-xzf">
+            
+              <b>xzf</b>(f, d, &amp;blk)
+            
+            <a href="../classes/Shy.html#method-c-xzf" name="method-c-xzf" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-xzf_source')" id="l_method-c-xzf_source">show</a>
+                
+              </p>
+              <div id="method-c-xzf_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/shy.rb, line 103</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">xzf</span>(<span class="ruby-identifier">f</span>, <span class="ruby-identifier">d</span>, &amp;<span class="ruby-identifier">blk</span>)
+  <span class="ruby-identifier">gz</span> = <span class="ruby-constant">Zlib</span><span class="ruby-operator">::</span><span class="ruby-constant">GzipReader</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">f</span>)
+  <span class="ruby-constant">Archive</span><span class="ruby-operator">::</span><span class="ruby-constant">Tar</span><span class="ruby-operator">::</span><span class="ruby-constant">Minitar</span>.<span class="ruby-identifier">unpack</span>(<span class="ruby-identifier">gz</span>, <span class="ruby-identifier">d</span>, &amp;<span class="ruby-identifier">blk</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                        </div>
+
+    </div>
+  </body>
+</html>    

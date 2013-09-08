@@ -1,0 +1,840 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Shoes::Setup</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Shoes::Setup 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/lib/shoes/setup_rb.html">lib/shoes/setup.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-activate_gem">activate_gem</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>B</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-bundler">bundler</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>G</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-gem">gem</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-gem_reset">gem_reset</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-init">init</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-install_sources">install_sources</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-no_steps-3F">no_steps?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-setup_app">setup_app</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-source">source</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-start">start</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-svn">svn</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+      <!-- Section attributes -->
+      <div class="sectiontitle">Attributes</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>script</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>steps</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+      </table>
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-gem_reset">
+            
+              <b>gem_reset</b>()
+            
+            <a href="../../classes/Shoes/Setup.html#method-c-gem_reset" name="method-c-gem_reset" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-gem_reset_source')" id="l_method-c-gem_reset_source">show</a>
+                
+              </p>
+              <div id="method-c-gem_reset_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/setup.rb, line 32</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">gem_reset</span>
+  <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">use_paths</span>(<span class="ruby-constant">GEM_DIR</span>, [<span class="ruby-constant">GEM_DIR</span>, <span class="ruby-constant">GEM_CENTRAL_DIR</span>])
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-init">
+            
+              <b>init</b>()
+            
+            <a href="../../classes/Shoes/Setup.html#method-c-init" name="method-c-init" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-init_source')" id="l_method-c-init_source">show</a>
+                
+              </p>
+              <div id="method-c-init_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/setup.rb, line 25</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">init</span>
+  <span class="ruby-identifier">gem_reset</span>
+  <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Specification</span>.<span class="ruby-identifier">find_by_name</span>(<span class="ruby-string">'sources'</span>)
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">LoadError</span>
+  <span class="ruby-identifier">install_sources</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-install_sources">
+            
+              <b>install_sources</b>()
+            
+            <a href="../../classes/Shoes/Setup.html#method-c-install_sources" name="method-c-install_sources" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-install_sources_source')" id="l_method-c-install_sources_source">show</a>
+                
+              </p>
+              <div id="method-c-install_sources_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/setup.rb, line 207</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">install_sources</span>
+    <span class="ruby-identifier">require</span> <span class="ruby-string">'base64'</span>
+    <span class="ruby-identifier">sources_gem</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">LIB_DIR</span>, <span class="ruby-string">&quot;sources-0.0.1.gem&quot;</span>)
+    <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">sources_gem</span>, <span class="ruby-string">&quot;wb&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">f</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Base64</span>.<span class="ruby-identifier">decode64</span>( <span class="ruby-string">&quot;        ZGF0YS50YXIuZ3oAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAADAwMDA2NDQAMDAwMDAwMAAwMDAwMDAwADAwMDAwMDAwMjYw
+        ADAwMDAwMDAwMDAwADAxMzMxNQAgMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB1c3RhcgAwMHdoZWVs
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAd2hlZWwAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAwMDAwMDAwADAwMDAwMDAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAfiwgAAKBzRAADyslM0i/OLy1KTi3WK0pioAkw
+        AAIzMxMwDQTotIGhCYINFgcKGBsxKBjQxjmooLS4JLEIaH15RmpqDh51hOTR
+        PTdEQG5+SmlOqoJ7ai6XgoIDNCUo2CpEK2WUlBRY6eunp+YCU0ZpUmVaflF6
+        qh6QUIoFKk1JTVMoTs1J04NqAQoh9AM5qXkpXCA80P4bBaNgFIyCUYAdAAAA
+        AP//AwBOIUx0AAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAG1ldGFkYXRhLmd6
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAw
+        MDAwNjQ0ADAwMDAwMDAAMDAwMDAwMAAwMDAwMDAwMDYzMAAwMDAwMDAwMDAw
+        MAAwMTM0MDAAIDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAdXN0YXIAMDB3aGVlbAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAHdoZWVsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAMDAwMDAwMAAwMDAwMDAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAH4sIAACgc0QAA4SRyW7cMAyG73wKNndPNCkaFDrkmntb9FIEgizR
+        thItLiVneftKHk88QYHWMqCF5E/yY9d1+ImX/u069Y9kirynIOX3mYwbnNHF
+        pYjQ7COFrJ6Jc32RKA5fD8cj5Eu/3XqEqANJzGlhQxneDX9n+nkyISBeiIvD
+        EawuVeJGiNtOfOluPqMQcv2xE7d1g7yEoPlN4o/JZZy1edIj4czp2VnKaNNL
+        9EnbcxU4JEamkAphbQZdzEV7v5YOTL8Xx6RmXaYsETr0rgcK2vl6m1KguYrL
+        E4oqNFZXTmsbCDWbYTeXtXjQS0mb3E7A0qAXXxS9klmK7n3T6l20jiXWHSad
+        FdtkJA7aZzoXZFVLqP4PUMpvp4hAsTSavF9bQ4hdXVd3V/XUzv+cRPs+TENc
+        jgfmCq0yCBKbCGQ3RhdH9UR1FmCIizKTdhuLKXHN/+sBYHCe3tleb2QO3EOh
+        XNRmbY6Ng0orz+2FXgvrlc+l3w5zd6OY97CPDNqLpZmipWjcOeYPAAAA//8D
+        ADLcAkIBAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAA
+&quot;</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/^ +/</span>, <span class="ruby-string">''</span>) )
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Installer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">sources_gem</span>).<span class="ruby-identifier">install</span>()
+  <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>(script, &amp;blk)
+            
+            <a href="../../classes/Shoes/Setup.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/setup.rb, line 85</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">script</span>, &amp;<span class="ruby-identifier">blk</span>)
+  <span class="ruby-ivar">@steps</span> = []
+  <span class="ruby-ivar">@script</span> = <span class="ruby-identifier">script</span>
+  <span class="ruby-identifier">instance_eval</span> &amp;<span class="ruby-identifier">blk</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">no_steps?</span>
+    <span class="ruby-identifier">app</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">setup_app</span>(<span class="ruby-keyword">self</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-setup_app">
+            
+              <b>setup_app</b>(setup)
+            
+            <a href="../../classes/Shoes/Setup.html#method-c-setup_app" name="method-c-setup_app" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-setup_app_source')" id="l_method-c-setup_app_source">show</a>
+                
+              </p>
+              <div id="method-c-setup_app_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/setup.rb, line 36</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">setup_app</span>(<span class="ruby-identifier">setup</span>)
+  <span class="ruby-identifier">appt</span> = <span class="ruby-node">&quot;Setting up for #{setup.script}&quot;</span>
+  <span class="ruby-constant">Shoes</span>.<span class="ruby-identifier">app</span> <span class="ruby-value">:width</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">370</span>, <span class="ruby-value">:height</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">158</span>, <span class="ruby-value">:resizable</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">false</span>, <span class="ruby-value">:title</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">appt</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">background</span> <span class="ruby-node">&quot;#EEE&quot;</span><span class="ruby-operator">..</span><span class="ruby-node">&quot;#9AA&quot;</span>
+    <span class="ruby-identifier">image</span> <span class="ruby-value">:top</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">0</span>, <span class="ruby-value">:left</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">0</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">stroke</span> <span class="ruby-node">&quot;#FFF&quot;</span>; <span class="ruby-identifier">strokewidth</span> <span class="ruby-number">0.1</span>
+      (<span class="ruby-number">0</span><span class="ruby-operator">..</span><span class="ruby-number">158</span>).<span class="ruby-identifier">step</span>(<span class="ruby-number">3</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-identifier">line</span> <span class="ruby-number">0</span>, <span class="ruby-identifier">i</span>, <span class="ruby-number">370</span>, <span class="ruby-identifier">i</span> }
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-ivar">@pulse</span> = <span class="ruby-identifier">stack</span> <span class="ruby-value">:top</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">0</span>, <span class="ruby-value">:left</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">0</span>
+    <span class="ruby-ivar">@logo</span> = <span class="ruby-identifier">image</span> <span class="ruby-node">&quot;#{DIR}/static/shoes-icon-blue.png&quot;</span>, <span class="ruby-value">:top</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">-20</span>, <span class="ruby-value">:right</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">-20</span>
+    <span class="ruby-identifier">stack</span> <span class="ruby-value">:margin</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">18</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">title</span> <span class="ruby-string">&quot;Shoes Setup&quot;</span>, <span class="ruby-value">:size</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">12</span>, <span class="ruby-value">:weight</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;bold&quot;</span>, <span class="ruby-value">:margin</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">0</span>
+      <span class="ruby-identifier">para</span> <span class="ruby-node">&quot;Preparing #{setup.script}&quot;</span>, <span class="ruby-value">:size</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">8</span>, <span class="ruby-value">:margin</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">0</span>, <span class="ruby-value">:margin_top</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">8</span>, <span class="ruby-value">:width</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">220</span>
+      <span class="ruby-ivar">@pr</span> = <span class="ruby-identifier">progress</span> <span class="ruby-value">:width</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">1.0</span>, <span class="ruby-value">:top</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">70</span>, <span class="ruby-value">:height</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">20</span>
+      <span class="ruby-identifier">button</span> <span class="ruby-string">&quot;Cancel&quot;</span>, <span class="ruby-value">:top</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">98</span>, <span class="ruby-value">:left</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">0.4</span> <span class="ruby-keyword">do</span>
+        <span class="ruby-keyword">self</span>.<span class="ruby-identifier">close</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">start</span> <span class="ruby-keyword">do</span>
+        <span class="ruby-ivar">@th</span> =
+          <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">start</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">app</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">app</span><span class="ruby-operator">|</span>
+            <span class="ruby-keyword">begin</span>
+              <span class="ruby-identifier">setup</span>.<span class="ruby-identifier">start</span>(<span class="ruby-identifier">app</span>)
+            <span class="ruby-keyword">rescue</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+              <span class="ruby-identifier">puts</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">message</span>
+            <span class="ruby-keyword">end</span>
+          <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">animate</span> <span class="ruby-number">10</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">i</span> <span class="ruby-operator">=</span> <span class="ruby-number">10</span>
+      <span class="ruby-ivar">@pulse</span>.<span class="ruby-identifier">clear</span> <span class="ruby-keyword">do</span>
+        <span class="ruby-identifier">fill</span> <span class="ruby-identifier">black</span>(<span class="ruby-number">0.2</span> <span class="ruby-operator">-</span> (<span class="ruby-identifier">i</span> * <span class="ruby-number">0.02</span>))
+        <span class="ruby-identifier">strokewidth</span>(<span class="ruby-number">3.0</span> <span class="ruby-operator">-</span> (<span class="ruby-identifier">i</span> * <span class="ruby-number">0.2</span>))
+        <span class="ruby-identifier">stroke</span> <span class="ruby-identifier">rgb</span>(<span class="ruby-number">0.7</span>, <span class="ruby-number">0.7</span>, <span class="ruby-number">0.9</span>, <span class="ruby-number">1.0</span> <span class="ruby-operator">-</span> (<span class="ruby-identifier">i</span> * <span class="ruby-number">0.1</span>))
+        <span class="ruby-identifier">oval</span>(<span class="ruby-ivar">@logo</span>.<span class="ruby-identifier">left</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">i</span>, <span class="ruby-ivar">@logo</span>.<span class="ruby-identifier">top</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">i</span>, <span class="ruby-ivar">@logo</span>.<span class="ruby-identifier">width</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">i</span> * <span class="ruby-number">2</span>))
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-ivar">@pr</span>.<span class="ruby-identifier">fraction</span> = <span class="ruby-identifier">$fraction</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-ivar">@script</span>
+        <span class="ruby-constant">Shoes</span>.<span class="ruby-identifier">visit</span>(<span class="ruby-ivar">@script</span>)
+        <span class="ruby-identifier">close</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-activate_gem">
+            
+              <b>activate_gem</b>(name, version)
+            
+            <a href="../../classes/Shoes/Setup.html#method-i-activate_gem" name="method-i-activate_gem" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-activate_gem_source')" id="l_method-i-activate_gem_source">show</a>
+                
+              </p>
+              <div id="method-i-activate_gem_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/setup.rb, line 128</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">activate_gem</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">version</span>)
+  <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Specification</span>.<span class="ruby-identifier">find_by_name</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">version</span>).<span class="ruby-identifier">activate</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-bundler">
+            
+              <b>bundler</b>(options = {})
+            
+            <a href="../../classes/Shoes/Setup.html#method-i-bundler" name="method-i-bundler" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>TODO: add GUI</p>
+
+<p>Note: this feature is experimental, and uses private Bundler APIs. Don’t
+expect this to always work, though it seems to for now. Bundler expects to
+be activated before the rest of your application. Please see the notes
+here: <a
+href="https://github.com/shoes/shoes/commit/9114457d487353a0c16e521284ad164835c64b4e#diff-0">github.com/shoes/shoes/commit/9114457d487353a0c16e521284ad164835c64b4e#diff-0</a></p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-bundler_source')" id="l_method-i-bundler_source">show</a>
+                
+              </p>
+              <div id="method-i-bundler_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/setup.rb, line 112</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">bundler</span> <span class="ruby-identifier">options</span> = {}
+  <span class="ruby-identifier">bundler_version</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:version</span>] <span class="ruby-operator">||</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Requirement</span>.<span class="ruby-identifier">default</span>
+  <span class="ruby-identifier">bundler_file</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:file</span>] <span class="ruby-operator">||</span> <span class="ruby-string">&quot;Gemfile&quot;</span>
+  <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Specification</span>.<span class="ruby-identifier">find_by_name</span>( <span class="ruby-string">&quot;bundler&quot;</span>, <span class="ruby-identifier">bundler_version</span> ).<span class="ruby-identifier">activate</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">LoadError</span>
+  <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">DependencyInstaller</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">install</span>(<span class="ruby-string">&quot;bundler&quot;</span>, <span class="ruby-identifier">bundler_version</span>)
+<span class="ruby-keyword">ensure</span>
+  <span class="ruby-identifier">require</span> <span class="ruby-string">'bundler'</span>
+  <span class="ruby-identifier">require</span> <span class="ruby-string">'bundler/cli'</span>
+  <span class="ruby-constant">Bundler</span><span class="ruby-operator">::</span><span class="ruby-constant">CLI</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:gemfile</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">bundler_file</span>).<span class="ruby-identifier">install</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-gem">
+            
+              <b>gem</b>(name, version = nil)
+            
+            <a href="../../classes/Shoes/Setup.html#method-i-gem" name="method-i-gem" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-gem_source')" id="l_method-i-gem_source">show</a>
+                
+              </p>
+              <div id="method-i-gem_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/setup.rb, line 98</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">gem</span> <span class="ruby-identifier">name</span>, <span class="ruby-identifier">version</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">arg</span> = <span class="ruby-node">&quot;#{name} #{version}&quot;</span>.<span class="ruby-identifier">strip</span>
+  <span class="ruby-identifier">name</span>, <span class="ruby-identifier">version</span> = <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">/\s+/</span>, <span class="ruby-number">2</span>)
+  <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Specification</span>.<span class="ruby-identifier">find_by_name</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">version</span>)
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">LoadError</span>
+  <span class="ruby-ivar">@steps</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-value">:gem</span>, <span class="ruby-identifier">arg</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-no_steps-3F">
+            
+              <b>no_steps?</b>()
+            
+            <a href="../../classes/Shoes/Setup.html#method-i-no_steps-3F" name="method-i-no_steps-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-no_steps-3F_source')" id="l_method-i-no_steps-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-no_steps-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/setup.rb, line 94</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">no_steps?</span>
+  (<span class="ruby-ivar">@steps</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">s</span>[<span class="ruby-number">0</span>] }.<span class="ruby-identifier">uniq</span> <span class="ruby-operator">-</span> [<span class="ruby-value">:source</span>]).<span class="ruby-identifier">empty?</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-source">
+            
+              <b>source</b>(uri)
+            
+            <a href="../../classes/Shoes/Setup.html#method-i-source" name="method-i-source" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-source_source')" id="l_method-i-source_source">show</a>
+                
+              </p>
+              <div id="method-i-source_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/setup.rb, line 124</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">source</span> <span class="ruby-identifier">uri</span>
+  <span class="ruby-ivar">@steps</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-value">:source</span>, <span class="ruby-identifier">uri</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-start">
+            
+              <b>start</b>(app)
+            
+            <a href="../../classes/Shoes/Setup.html#method-i-start" name="method-i-start" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-start_source')" id="l_method-i-start_source">show</a>
+                
+              </p>
+              <div id="method-i-start_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/setup.rb, line 132</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">start</span>(<span class="ruby-identifier">app</span>)
+  <span class="ruby-identifier">old_ui</span> = <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">DefaultUserInteraction</span>.<span class="ruby-identifier">ui</span>
+  <span class="ruby-identifier">ui</span> = <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">DefaultUserInteraction</span>.<span class="ruby-identifier">ui</span> = <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">ShoesFace</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">app</span>)
+  <span class="ruby-identifier">count</span>, <span class="ruby-identifier">total</span> = <span class="ruby-number">0.5</span>, <span class="ruby-ivar">@steps</span>.<span class="ruby-identifier">length</span>
+  <span class="ruby-identifier">ui</span>.<span class="ruby-identifier">progress</span> <span class="ruby-identifier">count</span>, <span class="ruby-identifier">total</span>
+
+  <span class="ruby-identifier">steps</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">act</span>, <span class="ruby-identifier">arg</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">act</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:gem</span>
+      <span class="ruby-identifier">name</span>, <span class="ruby-identifier">version</span> = <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">/\s+/</span>, <span class="ruby-number">2</span>)
+      <span class="ruby-identifier">count</span> <span class="ruby-operator">+=</span> <span class="ruby-number">1</span>
+      <span class="ruby-identifier">ui</span>.<span class="ruby-identifier">say</span> <span class="ruby-node">&quot;Looking for #{name}&quot;</span>
+      <span class="ruby-keyword">begin</span>
+        <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Specification</span>.<span class="ruby-identifier">find_by_name</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">version</span>)
+      <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">LoadError</span>
+        <span class="ruby-identifier">ui</span>.<span class="ruby-identifier">title</span> <span class="ruby-node">&quot;Installing #{name}&quot;</span>
+        <span class="ruby-identifier">installer</span> = <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">DependencyInstaller</span>.<span class="ruby-identifier">new</span>
+        <span class="ruby-keyword">begin</span>
+          <span class="ruby-identifier">installer</span>.<span class="ruby-identifier">install</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">version</span> <span class="ruby-operator">||</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Requirement</span>.<span class="ruby-identifier">default</span>)
+          <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">gem_reset</span>
+          <span class="ruby-identifier">activate_gem</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">version</span>)
+          <span class="ruby-identifier">ui</span>.<span class="ruby-identifier">say</span> <span class="ruby-node">&quot;Finished installing #{name}&quot;</span>
+        <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Object</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+          <span class="ruby-identifier">ui</span>.<span class="ruby-identifier">error</span> <span class="ruby-node">&quot;while installing #{name}&quot;</span>, <span class="ruby-identifier">e</span>
+          <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:source</span>
+      <span class="ruby-identifier">ui</span>.<span class="ruby-identifier">title</span> <span class="ruby-string">&quot;Switching Gem servers&quot;</span>
+      <span class="ruby-identifier">ui</span>.<span class="ruby-identifier">say</span> <span class="ruby-node">&quot;Pulling from #{arg}&quot;</span>
+      <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">sources</span>.<span class="ruby-identifier">clear</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">arg</span>
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">gem_reset</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">ui</span>.<span class="ruby-identifier">progress</span> <span class="ruby-identifier">count</span>, <span class="ruby-identifier">total</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">DefaultUserInteraction</span>.<span class="ruby-identifier">ui</span> = <span class="ruby-identifier">old_ui</span>
+  <span class="ruby-identifier">app</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-string">&quot;@script&quot;</span>, <span class="ruby-ivar">@script</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-svn">
+            
+              <b>svn</b>(dir, save_as = nil, &amp;blk)
+            
+            <a href="../../classes/Shoes/Setup.html#method-i-svn" name="method-i-svn" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-svn_source')" id="l_method-i-svn_source">show</a>
+                
+              </p>
+              <div id="method-i-svn_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/setup.rb, line 171</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">svn</span>(<span class="ruby-identifier">dir</span>, <span class="ruby-identifier">save_as</span> = <span class="ruby-keyword">nil</span>, &amp;<span class="ruby-identifier">blk</span>)
+  <span class="ruby-identifier">dir</span>.<span class="ruby-identifier">gsub!</span> <span class="ruby-regexp">/(.)\/*$/</span>, <span class="ruby-string">'\1/'</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">save_as</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">save_as</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-identifier">save_as</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">GEM_DIR</span>, <span class="ruby-string">'svn'</span>, <span class="ruby-string">'1'</span>)
+    <span class="ruby-identifier">save_as</span>.<span class="ruby-identifier">succ!</span> <span class="ruby-keyword">while</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span> <span class="ruby-identifier">save_as</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">save_as</span>.<span class="ruby-identifier">index</span>(<span class="ruby-constant">GEM_DIR</span>) <span class="ruby-operator">!=</span> <span class="ruby-number">0</span>
+    <span class="ruby-identifier">save_as</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">GEM_DIR</span>, <span class="ruby-string">'svn'</span>, <span class="ruby-identifier">save_as</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">mkdir_p</span>(<span class="ruby-identifier">save_as</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;** Pulling down #{dir}...&quot;</span>
+  <span class="ruby-identifier">svnuri</span> = <span class="ruby-constant">URI</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">dir</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">svnuri</span>.<span class="ruby-identifier">scheme</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;http&quot;</span>, <span class="ruby-string">&quot;https&quot;</span>
+    <span class="ruby-constant">REXML</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">svnuri</span>.<span class="ruby-identifier">open</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">read</span> }).
+      <span class="ruby-identifier">each_element</span>(<span class="ruby-string">&quot;/svn/index/*&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">ele</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">fname</span>, <span class="ruby-identifier">href</span> = <span class="ruby-identifier">ele</span>.<span class="ruby-identifier">attributes</span>[<span class="ruby-string">'name'</span>], <span class="ruby-identifier">ele</span>.<span class="ruby-identifier">attributes</span>[<span class="ruby-string">'href'</span>]
+        <span class="ruby-keyword">case</span> <span class="ruby-identifier">ele</span>.<span class="ruby-identifier">name</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;file&quot;</span>
+          <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;- #{dir}#{href}&quot;</span>
+          <span class="ruby-constant">URI</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-node">&quot;#{dir}#{href}&quot;</span>).<span class="ruby-identifier">open</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+            <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">save_as</span>, <span class="ruby-identifier">fname</span>), <span class="ruby-string">'wb'</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f2</span><span class="ruby-operator">|</span>
+              <span class="ruby-identifier">f2</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">read</span>(<span class="ruby-number">16384</span>) <span class="ruby-keyword">until</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">eof?</span>
+            <span class="ruby-keyword">end</span>
+          <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;dir&quot;</span>
+          <span class="ruby-identifier">svn</span>(<span class="ruby-node">&quot;#{dir}#{href}&quot;</span>, <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">save_as</span>, <span class="ruby-identifier">fname</span>))
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotSupportedByShoes</span>, <span class="ruby-string">&quot;Only HTTP addresses are supported by Shoes's Subversion module.&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">blk</span>
+    <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">save_as</span>, &amp;<span class="ruby-identifier">blk</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Range</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Range 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/lib/shoes/core_ext_rb.html">lib/shoes/core_ext.rb</a></li>
+            
+            <li><a href="../files/lib/shoes_rb.html">lib/shoes.rb</a></li>
+            
+            <li><a href="../files/req/json/lib/json/add/core_rb.html">req/json/lib/json/add/core.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>J</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-json_create">json_create</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-rand">rand</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-to_json">to_json</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-json_create">
+            
+              <b>json_create</b>(object)
+            
+            <a href="../classes/Range.html#method-c-json_create" name="method-c-json_create" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-json_create_source')" id="l_method-c-json_create_source">show</a>
+                
+              </p>
+              <div id="method-c-json_create_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/json/lib/json/add/core.rb, line 80</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">json_create</span>(<span class="ruby-identifier">object</span>)
+  <span class="ruby-identifier">new</span>(*<span class="ruby-identifier">object</span>[<span class="ruby-string">'a'</span>])
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-rand">
+            
+              <b>rand</b>()
+            
+            <a href="../classes/Range.html#method-i-rand" name="method-i-rand" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-rand_source')" id="l_method-i-rand_source">show</a>
+                
+              </p>
+              <div id="method-i-rand_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/core_ext.rb, line 9</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">rand</span>
+  <span class="ruby-identifier">conv</span> = (<span class="ruby-constant">Integer</span> <span class="ruby-operator">===</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">end</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">Integer</span> <span class="ruby-operator">===</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">begin</span> <span class="ruby-operator">?</span> <span class="ruby-value">:to_i</span> <span class="ruby-operator">:</span> <span class="ruby-value">:to_f</span>)
+  ((<span class="ruby-constant">Kernel</span>.<span class="ruby-identifier">rand</span> * (<span class="ruby-keyword">self</span>.<span class="ruby-identifier">end</span> <span class="ruby-operator">-</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">begin</span>)) <span class="ruby-operator">+</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">begin</span>).<span class="ruby-identifier">send</span>(<span class="ruby-identifier">conv</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-to_json">
+            
+              <b>to_json</b>(*args)
+            
+            <a href="../classes/Range.html#method-i-to_json" name="method-i-to_json" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-to_json_source')" id="l_method-i-to_json_source">show</a>
+                
+              </p>
+              <div id="method-i-to_json_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/json/lib/json/add/core.rb, line 84</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">to_json</span>(*<span class="ruby-identifier">args</span>)
+  {
+    <span class="ruby-string">'json_class'</span>   =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">name</span>,
+    <span class="ruby-string">'a'</span>         =<span class="ruby-operator">&gt;</span> [ <span class="ruby-identifier">first</span>, <span class="ruby-identifier">last</span>, <span class="ruby-identifier">exclude_end?</span> ]
+  }.<span class="ruby-identifier">to_json</span>(*<span class="ruby-identifier">args</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

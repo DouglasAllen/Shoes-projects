@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Shoes::Pack</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            Shoes::Pack 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/lib/shoes/pack_rb.html">lib/shoes/pack.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-dmg">dmg</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>E</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-exe">exe</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>L</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-linux">linux</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-pkg">pkg</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-rewrite">rewrite</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-dmg">
+            
+              <b>dmg</b>(script, opt, &amp;blk)
+            
+            <a href="../../classes/Shoes/Pack.html#method-c-dmg" name="method-c-dmg" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-dmg_source')" id="l_method-c-dmg_source">show</a>
+                
+              </p>
+              <div id="method-c-dmg_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/pack.rb, line 117</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">dmg</span>(<span class="ruby-identifier">script</span>, <span class="ruby-identifier">opt</span>, &amp;<span class="ruby-identifier">blk</span>)
+      <span class="ruby-identifier">name</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">script</span>).<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/\.\w+$/</span>, <span class="ruby-string">''</span>)
+      <span class="ruby-identifier">app_name</span> = <span class="ruby-identifier">name</span>.<span class="ruby-identifier">capitalize</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/[-_](\w)/</span>) { <span class="ruby-node">$1</span>.<span class="ruby-identifier">capitalize</span> }
+      <span class="ruby-identifier">vol_name</span> = <span class="ruby-identifier">name</span>.<span class="ruby-identifier">capitalize</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/[-_](\w)/</span>) { <span class="ruby-string">&quot; &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-node">$1</span>.<span class="ruby-identifier">capitalize</span> }
+      <span class="ruby-identifier">app_app</span> = <span class="ruby-node">&quot;#{app_name}.app&quot;</span>
+      <span class="ruby-identifier">vers</span> = [<span class="ruby-number">1</span>, <span class="ruby-number">0</span>]
+
+      <span class="ruby-identifier">tmp_dir</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">LIB_DIR</span>, <span class="ruby-string">&quot;+dmg&quot;</span>)
+      <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">rm_rf</span>(<span class="ruby-identifier">tmp_dir</span>)
+      <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">mkdir_p</span>(<span class="ruby-identifier">tmp_dir</span>)
+      <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">cp</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">DIR</span>, <span class="ruby-string">&quot;static&quot;</span>, <span class="ruby-string">&quot;stubs&quot;</span>, <span class="ruby-string">&quot;blank.hfz&quot;</span>),
+      <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">tmp_dir</span>, <span class="ruby-string">&quot;blank.hfz&quot;</span>))
+      <span class="ruby-identifier">app_dir</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">tmp_dir</span>, <span class="ruby-identifier">app_app</span>)
+      <span class="ruby-identifier">res_dir</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">tmp_dir</span>, <span class="ruby-identifier">app_app</span>, <span class="ruby-string">&quot;Contents&quot;</span>, <span class="ruby-string">&quot;Resources&quot;</span>)
+      <span class="ruby-identifier">mac_dir</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">tmp_dir</span>, <span class="ruby-identifier">app_app</span>, <span class="ruby-string">&quot;Contents&quot;</span>, <span class="ruby-string">&quot;MacOS&quot;</span>)
+      [<span class="ruby-identifier">res_dir</span>, <span class="ruby-identifier">mac_dir</span>].<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">mkdir_p</span>(<span class="ruby-identifier">x</span>) }
+      <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">cp</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">DIR</span>, <span class="ruby-string">&quot;static&quot;</span>, <span class="ruby-string">&quot;Shoes.icns&quot;</span>), <span class="ruby-identifier">app_dir</span>)
+      <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">cp</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">DIR</span>, <span class="ruby-string">&quot;static&quot;</span>, <span class="ruby-string">&quot;Shoes.icns&quot;</span>), <span class="ruby-identifier">res_dir</span>)
+      <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">app_dir</span>, <span class="ruby-string">&quot;Contents&quot;</span>, <span class="ruby-string">&quot;PkgInfo&quot;</span>), <span class="ruby-string">'w'</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">f</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;APPL????&quot;</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">app_dir</span>, <span class="ruby-string">&quot;Contents&quot;</span>, <span class="ruby-string">&quot;Info.plist&quot;</span>), <span class="ruby-string">'w'</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">f</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value">&lt;&lt;END
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE plist PUBLIC &quot;-//Apple Computer//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;
+&lt;plist version=&quot;1.0&quot;&gt;
+&lt;dict&gt;
+&lt;key&gt;CFBundleGetInfoString&lt;/key&gt;
+&lt;string&gt;#{app_name} #{vers.join(&quot;.&quot;)}&lt;/string&gt;
+&lt;key&gt;CFBundleExecutable&lt;/key&gt;
+&lt;string&gt;#{name}-launch&lt;/string&gt;
+&lt;key&gt;CFBundleIdentifier&lt;/key&gt;
+&lt;string&gt;org.hackety.#{name}&lt;/string&gt;
+&lt;key&gt;CFBundleName&lt;/key&gt;
+&lt;string&gt;#{app_name}&lt;/string&gt;
+&lt;key&gt;CFBundleIconFile&lt;/key&gt;
+&lt;string&gt;Shoes.icns&lt;/string&gt;
+&lt;key&gt;CFBundleShortVersionString&lt;/key&gt;
+&lt;string&gt;#{vers.join(&quot;.&quot;)}&lt;/string&gt;
+&lt;key&gt;CFBundleInfoDictionaryVersion&lt;/key&gt;
+&lt;string&gt;6.0&lt;/string&gt;
+&lt;key&gt;CFBundlePackageType&lt;/key&gt;
+&lt;string&gt;APPL&lt;/string&gt;
+&lt;key&gt;IFMajorVersion&lt;/key&gt;
+&lt;integer&gt;#{vers[0]}&lt;/integer&gt;
+&lt;key&gt;IFMinorVersion&lt;/key&gt;
+&lt;integer&gt;#{vers[1]}&lt;/integer&gt;
+&lt;/dict&gt;
+&lt;/plist&gt;
+END</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">app_dir</span>, <span class="ruby-string">&quot;Contents&quot;</span>, <span class="ruby-string">&quot;version.plist&quot;</span>), <span class="ruby-string">'w'</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">f</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value">&lt;&lt;END
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE plist PUBLIC &quot;-//Apple Computer//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;
+&lt;plist version=&quot;1.0&quot;&gt;
+&lt;dict&gt;
+&lt;key&gt;BuildVersion&lt;/key&gt;
+&lt;string&gt;1&lt;/string&gt;
+&lt;key&gt;CFBundleVersion&lt;/key&gt;
+&lt;string&gt;#{vers.join(&quot;.&quot;)}&lt;/string&gt;
+&lt;key&gt;ProjectName&lt;/key&gt;
+&lt;string&gt;#{app_name}&lt;/string&gt;
+&lt;key&gt;SourceVersion&lt;/key&gt;
+&lt;string&gt;#{Time.now.strftime(&quot;%Y%m%d&quot;)}&lt;/string&gt;
+&lt;/dict&gt;
+&lt;/plist&gt;
+END</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">mac_dir</span>, <span class="ruby-node">&quot;#{name}-launch&quot;</span>), <span class="ruby-string">'w'</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">f</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value">&lt;&lt;END
+#!/bin/bash
+SHOESPATH=/Applications/Shoes.app/Contents/MacOS
+APPPATH=&quot;${0%/*}&quot;
+unset DYLD_LIBRARY_PATH
+cd &quot;$APPPATH&quot;
+echo &quot;[Pango]&quot; &gt; /tmp/pangorc
+echo &quot;ModuleFiles=$SHOESPATH/pango.modules&quot; &gt;&gt; /tmp/pangorc
+if [ ! -d /Applications/Shoes.app ]
+  then ./cocoa-install
+    fi
+    open -a /Applications/Shoes.app &quot;#{File.basename(script)}&quot;
+    # DYLD_LIBRARY_PATH=$SHOESPATH PANGO_RC_FILE=&quot;$APPPATH/pangorc&quot; $SHOESPATH/shoes-bin &quot;#{File.basename(script)}&quot;
+END</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">cp</span>(<span class="ruby-identifier">script</span>, <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">mac_dir</span>, <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">script</span>)))
+      <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">cp</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">DIR</span>, <span class="ruby-string">&quot;static&quot;</span>, <span class="ruby-string">&quot;stubs&quot;</span>, <span class="ruby-string">&quot;cocoa-install&quot;</span>),
+      <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">mac_dir</span>, <span class="ruby-string">&quot;cocoa-install&quot;</span>))
+
+      <span class="ruby-identifier">dmg</span> = <span class="ruby-constant">Binject</span><span class="ruby-operator">::</span><span class="ruby-constant">DMG</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">tmp_dir</span>, <span class="ruby-string">&quot;blank.hfz&quot;</span>), <span class="ruby-identifier">vol_name</span>)
+      <span class="ruby-identifier">f2</span> = <span class="ruby-identifier">pkg</span>(<span class="ruby-string">&quot;osx&quot;</span>, <span class="ruby-identifier">opt</span>)
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">f2</span>
+        <span class="ruby-identifier">dmg</span>.<span class="ruby-identifier">grow</span>(<span class="ruby-number">10</span>)
+        <span class="ruby-identifier">dmg</span>.<span class="ruby-identifier">inject_file</span>(<span class="ruby-string">&quot;setup.dmg&quot;</span>, <span class="ruby-identifier">f2</span>.<span class="ruby-identifier">path</span>)
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">dmg</span>.<span class="ruby-identifier">inject_dir</span>(<span class="ruby-identifier">app_app</span>, <span class="ruby-identifier">app_dir</span>)
+      <span class="ruby-identifier">dmg</span>.<span class="ruby-identifier">chmod_file</span>(<span class="ruby-number">0755</span>, <span class="ruby-node">&quot;#{app_app}/Contents/MacOS/#{name}-launch&quot;</span>)
+      <span class="ruby-identifier">dmg</span>.<span class="ruby-identifier">chmod_file</span>(<span class="ruby-number">0755</span>, <span class="ruby-node">&quot;#{app_app}/Contents/MacOS/cocoa-install&quot;</span>)
+      <span class="ruby-identifier">dmg</span>.<span class="ruby-identifier">save</span>(<span class="ruby-identifier">script</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/\.\w+$/</span>, <span class="ruby-string">''</span>) <span class="ruby-operator">+</span> <span class="ruby-string">&quot;.dmg&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">perc</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">blk</span>[<span class="ruby-identifier">perc</span> * <span class="ruby-number">0.01</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">blk</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">rm_rf</span>(<span class="ruby-identifier">tmp_dir</span>)
+      <span class="ruby-identifier">blk</span>[<span class="ruby-number">1.0</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">blk</span>
+    <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-exe">
+            
+              <b>exe</b>(script, opt, &amp;blk)
+            
+            <a href="../../classes/Shoes/Pack.html#method-c-exe" name="method-c-exe" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-exe_source')" id="l_method-c-exe_source">show</a>
+                
+              </p>
+              <div id="method-c-exe_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/pack.rb, line 85</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">exe</span>(<span class="ruby-identifier">script</span>, <span class="ruby-identifier">opt</span>, &amp;<span class="ruby-identifier">blk</span>)
+  <span class="ruby-identifier">size</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">size</span>(<span class="ruby-identifier">script</span>)
+  <span class="ruby-identifier">f</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">script</span>, <span class="ruby-string">'rb'</span>)
+  <span class="ruby-identifier">exe</span> = <span class="ruby-constant">Binject</span><span class="ruby-operator">::</span><span class="ruby-constant">EXE</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">DIR</span>, <span class="ruby-string">&quot;static&quot;</span>, <span class="ruby-string">&quot;stubs&quot;</span>, <span class="ruby-string">&quot;blank.exe&quot;</span>))
+  <span class="ruby-identifier">size</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">script</span>.<span class="ruby-identifier">length</span>
+  <span class="ruby-identifier">exe</span>.<span class="ruby-identifier">inject</span>(<span class="ruby-string">&quot;SHOES_FILENAME&quot;</span>, <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">script</span>))
+  <span class="ruby-identifier">size</span> <span class="ruby-operator">+=</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">size</span>(<span class="ruby-identifier">script</span>)
+  <span class="ruby-identifier">exe</span>.<span class="ruby-identifier">inject</span>(<span class="ruby-string">&quot;SHOES_PAYLOAD&quot;</span>, <span class="ruby-identifier">f</span>)
+  <span class="ruby-identifier">f2</span> = <span class="ruby-identifier">pkg</span>(<span class="ruby-string">&quot;win32&quot;</span>, <span class="ruby-identifier">opt</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">f2</span>
+    <span class="ruby-identifier">size</span> <span class="ruby-operator">+=</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">size</span>(<span class="ruby-identifier">f2</span>.<span class="ruby-identifier">path</span>)
+    <span class="ruby-identifier">f3</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">f2</span>.<span class="ruby-identifier">path</span>, <span class="ruby-string">'rb'</span>)
+    <span class="ruby-identifier">exe</span>.<span class="ruby-identifier">inject</span>(<span class="ruby-string">&quot;SHOES_SETUP&quot;</span>, <span class="ruby-identifier">f3</span>)
+
+    <span class="ruby-identifier">count</span>, <span class="ruby-identifier">last</span> = <span class="ruby-number">0</span>, <span class="ruby-number">0.0</span>
+    <span class="ruby-identifier">exe</span>.<span class="ruby-identifier">save</span>(<span class="ruby-identifier">script</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/\.\w+$/</span>, <span class="ruby-string">''</span>) <span class="ruby-operator">+</span> <span class="ruby-string">&quot;.exe&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">len</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">count</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">len</span>
+      <span class="ruby-identifier">prg</span> = <span class="ruby-identifier">count</span>.<span class="ruby-identifier">to_f</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">size</span>.<span class="ruby-identifier">to_f</span>
+      <span class="ruby-identifier">blk</span>[<span class="ruby-identifier">last</span> = <span class="ruby-identifier">prg</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">blk</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">prg</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">last</span> <span class="ruby-operator">&gt;</span> <span class="ruby-number">0.02</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">prg</span> <span class="ruby-operator">&lt;</span> <span class="ruby-number">1.0</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">f</span>.<span class="ruby-identifier">close</span>
+    <span class="ruby-identifier">f2</span>.<span class="ruby-identifier">close</span>
+    <span class="ruby-identifier">f3</span>.<span class="ruby-identifier">close</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span> <span class="ruby-constant">DIR</span> <span class="ruby-operator">+</span> <span class="ruby-string">'/static/stubs'</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-node">%x.\\shoes-stub-inject.exe #{script.gsub('/', &quot;\\&quot;)}`</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">blk</span>[<span class="ruby-number">1.0</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">blk</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-linux">
+            
+              <b>linux</b>(script, opt, &amp;blk)
+            
+            <a href="../../classes/Shoes/Pack.html#method-c-linux" name="method-c-linux" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-linux_source')" id="l_method-c-linux_source">show</a>
+                
+              </p>
+              <div id="method-c-linux_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/pack.rb, line 222</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">linux</span>(<span class="ruby-identifier">script</span>, <span class="ruby-identifier">opt</span>, &amp;<span class="ruby-identifier">blk</span>)
+  <span class="ruby-identifier">name</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">script</span>).<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/\.\w+$/</span>, <span class="ruby-string">''</span>)
+  <span class="ruby-identifier">app_name</span> = <span class="ruby-identifier">name</span>.<span class="ruby-identifier">capitalize</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/[-_](\w)/</span>) { <span class="ruby-node">$1</span>.<span class="ruby-identifier">capitalize</span> }
+  <span class="ruby-identifier">run_path</span> = <span class="ruby-identifier">script</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/\.\w+$/</span>, <span class="ruby-string">''</span>) <span class="ruby-operator">+</span> <span class="ruby-string">&quot;.run&quot;</span>
+  <span class="ruby-identifier">tgz_path</span> = <span class="ruby-identifier">script</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/\.\w+$/</span>, <span class="ruby-string">''</span>) <span class="ruby-operator">+</span> <span class="ruby-string">&quot;.tgz&quot;</span>
+  <span class="ruby-identifier">tmp_dir</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">LIB_DIR</span>, <span class="ruby-string">&quot;+run&quot;</span>)
+  <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">mkdir_p</span>(<span class="ruby-identifier">tmp_dir</span>)
+  <span class="ruby-identifier">pkgf</span> = <span class="ruby-identifier">pkg</span>(<span class="ruby-string">&quot;linux&quot;</span>, <span class="ruby-identifier">opt</span>)
+  <span class="ruby-identifier">prog</span> = <span class="ruby-number">1.0</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">pkgf</span>
+    <span class="ruby-identifier">size</span> = <span class="ruby-constant">Shy</span>.<span class="ruby-identifier">hrun</span>(<span class="ruby-identifier">pkgf</span>)
+    <span class="ruby-identifier">pblk</span> = <span class="ruby-constant">Shy</span>.<span class="ruby-identifier">progress</span>(<span class="ruby-identifier">size</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span>, <span class="ruby-identifier">perc</span>, <span class="ruby-identifier">left</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">blk</span>[<span class="ruby-identifier">perc</span> * <span class="ruby-number">0.5</span>]
+    <span class="ruby-keyword">end</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">blk</span>
+    <span class="ruby-constant">Shy</span>.<span class="ruby-identifier">xzf</span>(<span class="ruby-identifier">pkgf</span>, <span class="ruby-identifier">tmp_dir</span>, &amp;<span class="ruby-identifier">pblk</span>)
+    <span class="ruby-identifier">prog</span> <span class="ruby-operator">-=</span> <span class="ruby-number">0.5</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">cp</span>(<span class="ruby-identifier">script</span>, <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">tmp_dir</span>, <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">script</span>)))
+  <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">tmp_dir</span>, <span class="ruby-string">&quot;sh-install&quot;</span>), <span class="ruby-string">'wb'</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">a</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">rewrite</span> <span class="ruby-identifier">a</span>, <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">DIR</span>, <span class="ruby-string">&quot;static&quot;</span>, <span class="ruby-string">&quot;stubs&quot;</span>, <span class="ruby-string">&quot;sh-install&quot;</span>),
+    <span class="ruby-string">'SCRIPT'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;./#{File.basename(script)}&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">chmod</span> <span class="ruby-number">0755</span>, <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">tmp_dir</span>, <span class="ruby-string">&quot;sh-install&quot;</span>)
+
+  <span class="ruby-identifier">raw</span> = <span class="ruby-constant">Shy</span>.<span class="ruby-identifier">du</span>(<span class="ruby-identifier">tmp_dir</span>)
+  <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">tgz_path</span>, <span class="ruby-string">'wb'</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">pblk</span> = <span class="ruby-constant">Shy</span>.<span class="ruby-identifier">progress</span>(<span class="ruby-identifier">raw</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span>, <span class="ruby-identifier">perc</span>, <span class="ruby-identifier">left</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">blk</span>[<span class="ruby-identifier">prog</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">perc</span> * <span class="ruby-identifier">prog</span>)]
+    <span class="ruby-keyword">end</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">blk</span>
+    <span class="ruby-constant">Shy</span>.<span class="ruby-identifier">czf</span>(<span class="ruby-identifier">f</span>, <span class="ruby-identifier">tmp_dir</span>, &amp;<span class="ruby-identifier">pblk</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">md5</span>, <span class="ruby-identifier">fsize</span> = <span class="ruby-constant">Shy</span>.<span class="ruby-identifier">md5sum</span>(<span class="ruby-identifier">tgz_path</span>), <span class="ruby-constant">File</span>.<span class="ruby-identifier">size</span>(<span class="ruby-identifier">tgz_path</span>)
+  <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">run_path</span>, <span class="ruby-string">'wb'</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">rewrite</span> <span class="ruby-identifier">f</span>, <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">DIR</span>, <span class="ruby-string">&quot;static&quot;</span>, <span class="ruby-string">&quot;stubs&quot;</span>, <span class="ruby-string">&quot;blank.run&quot;</span>),
+    <span class="ruby-string">'CRC'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'0000000000'</span>, <span class="ruby-string">'MD5'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">md5</span>, <span class="ruby-string">'LABEL'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">app_name</span>, <span class="ruby-string">'NAME'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">name</span>,
+    <span class="ruby-string">'SIZE'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">fsize</span>, <span class="ruby-string">'RAWSIZE'</span> =<span class="ruby-operator">&gt;</span> (<span class="ruby-identifier">raw</span> <span class="ruby-operator">/</span> <span class="ruby-number">1024</span>) <span class="ruby-operator">+</span> <span class="ruby-number">1</span>, <span class="ruby-string">'TIME'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>, <span class="ruby-string">'FULLSIZE'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">raw</span>
+    <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">tgz_path</span>, <span class="ruby-string">'rb'</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f2</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">f</span>.<span class="ruby-identifier">write</span> <span class="ruby-identifier">f2</span>.<span class="ruby-identifier">read</span>(<span class="ruby-number">8192</span>) <span class="ruby-keyword">until</span> <span class="ruby-identifier">f2</span>.<span class="ruby-identifier">eof</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">chmod</span> <span class="ruby-number">0755</span>, <span class="ruby-identifier">run_path</span>
+  <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">rm_rf</span>(<span class="ruby-identifier">tgz_path</span>)
+  <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">rm_rf</span>(<span class="ruby-identifier">tmp_dir</span>)
+  <span class="ruby-identifier">blk</span>[<span class="ruby-number">1.0</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">blk</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-pkg">
+            
+              <b>pkg</b>(platform, opt)
+            
+            <a href="../../classes/Shoes/Pack.html#method-c-pkg" name="method-c-pkg" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-pkg_source')" id="l_method-c-pkg_source">show</a>
+                
+              </p>
+              <div id="method-c-pkg_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/pack.rb, line 19</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">pkg</span>(<span class="ruby-identifier">platform</span>, <span class="ruby-identifier">opt</span>)
+  <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;#{platform} #{opt}&quot;</span>
+  <span class="ruby-identifier">extension</span> = <span class="ruby-keyword">case</span> <span class="ruby-identifier">platform</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;win32&quot;</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-string">&quot;exe&quot;</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;linux&quot;</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-string">&quot;run&quot;</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;osx&quot;</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-string">&quot;dmg&quot;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-string">&quot;Unknown platform&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">opt</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Shoes</span><span class="ruby-operator">::</span><span class="ruby-constant">I_YES</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">url</span> = <span class="ruby-node">&quot;http://shoes.heroku.com/pkg/#{Shoes::RELEASE_NAME.downcase}/#{platform}/shoes&quot;</span>
+    <span class="ruby-identifier">local_file_path</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">LIB_DIR</span>, <span class="ruby-constant">Shoes</span><span class="ruby-operator">::</span><span class="ruby-constant">RELEASE_NAME</span>.<span class="ruby-identifier">downcase</span>, <span class="ruby-identifier">platform</span>, <span class="ruby-node">&quot;latest_shoes.#{extension}&quot;</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Shoes</span><span class="ruby-operator">::</span><span class="ruby-constant">I_NOV</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">url</span> = <span class="ruby-node">&quot;http://shoes.heroku.com/pkg/#{Shoes::RELEASE_NAME.downcase}/#{platform}/shoes-novideo&quot;</span>
+    <span class="ruby-identifier">local_file_path</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">LIB_DIR</span>, <span class="ruby-constant">Shoes</span><span class="ruby-operator">::</span><span class="ruby-constant">RELEASE_NAME</span>.<span class="ruby-identifier">downcase</span>, <span class="ruby-identifier">platform</span>, <span class="ruby-node">&quot;latest_shoes-novideo.#{extension}&quot;</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">I_NET</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">url</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;missing download option #{opt}&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">makedirs</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">LIB_DIR</span>, <span class="ruby-constant">Shoes</span><span class="ruby-operator">::</span><span class="ruby-constant">RELEASE_NAME</span>.<span class="ruby-identifier">downcase</span>, <span class="ruby-identifier">platform</span>)
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">url</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-identifier">url</span> = <span class="ruby-identifier">open</span>(<span class="ruby-identifier">url</span>).<span class="ruby-identifier">read</span>.<span class="ruby-identifier">strip</span>
+      <span class="ruby-identifier">debug</span> <span class="ruby-identifier">url</span>
+      <span class="ruby-identifier">internet_ok</span> = <span class="ruby-keyword">true</span>
+    <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+      <span class="ruby-identifier">error</span> <span class="ruby-identifier">e</span>
+      <span class="ruby-identifier">internet_ok</span> = <span class="ruby-keyword">false</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span> <span class="ruby-identifier">local_file_path</span>
+      <span class="ruby-keyword">return</span>  <span class="ruby-identifier">open</span>(<span class="ruby-identifier">local_file_path</span>)
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">internet_ok</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-keyword">begin</span>
+        <span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;Downloading #{url}...&quot;</span>
+        <span class="ruby-identifier">downloaded</span> = <span class="ruby-identifier">open</span>(<span class="ruby-identifier">url</span>)
+        <span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;Download of #{url} finished&quot;</span>
+      <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+        <span class="ruby-identifier">error</span> <span class="ruby-node">&quot;Could not download from the internet at #{url}\n&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">e</span>
+        <span class="ruby-identifier">internet_ok</span> = <span class="ruby-keyword">false</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">internet_ok</span> <span class="ruby-keyword">then</span>
+        <span class="ruby-keyword">begin</span>
+          <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">local_file_path</span>, <span class="ruby-string">&quot;wb&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+            <span class="ruby-identifier">f</span>.<span class="ruby-identifier">write</span>(<span class="ruby-identifier">downloaded</span>.<span class="ruby-identifier">read</span>)
+          <span class="ruby-keyword">end</span>
+          <span class="ruby-keyword">return</span>  <span class="ruby-identifier">open</span>(<span class="ruby-identifier">local_file_path</span>)
+        <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+          <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;The download failed from\n#{url}\nor could not write to local files&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">e</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">noHopeMsg</span> = <span class="ruby-node">&quot;Failed to find an existing Shoes at:\n#{local_file_path}\nor download from\n#{url} to include with your script.&quot;</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-identifier">noHopeMsg</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-rewrite">
+            
+              <b>rewrite</b>(a, before, hsh)
+            
+            <a href="../../classes/Shoes/Pack.html#method-c-rewrite" name="method-c-rewrite" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-rewrite_source')" id="l_method-c-rewrite_source">show</a>
+                
+              </p>
+              <div id="method-c-rewrite_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/pack.rb, line 11</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">rewrite</span> <span class="ruby-identifier">a</span>, <span class="ruby-identifier">before</span>, <span class="ruby-identifier">hsh</span>
+  <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">before</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">b</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">b</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">a</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">line</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-node">/\#\{(\w+)\}/</span>) { <span class="ruby-identifier">hsh</span>[<span class="ruby-node">$1</span>] }
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                        </div>
+
+    </div>
+  </body>
+</html>    

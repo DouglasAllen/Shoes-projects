@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html><head>
+
+
+  <title>Hello World in Ruby-GNOME2</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <meta name="GENERATOR" content="Quanta Plus">
+  <link rel="stylesheet" type="text/css" href="site-style.css">
+</head><body>
+<h1>11.8. Viewports</h1>
+
+<p>It is unlikely that you will ever need to use the Viewport widget directly. 
+You are much more likely to use the Scrolled Window widget which itself uses 
+the Viewport.</p>
+
+<p>A viewport widget allows you to place a larger widget within it such that you 
+can view a part of it at a time. It uses Adjustments to define the area that is 
+currently in view.</p>
+
+<p>A Viewport is created with the method</p>
+
+<pre>Gtk::Viewport.new( hadjustment, vadjustment )</pre>
+
+<p>As you can see you can specify the horizontal and vertical Adjustments that the widget 
+is to use when you create the widget. It will create its own if you pass nil as the value
+of the arguments.</p>
+
+<p>You can get and set the adjustments after the widget has been created using the
+following four methods:</p>
+
+<pre>Gtk::Viewport#hadjustment
+Gtk::Viewport#vadjustment
+
+# Syntax Sugar again
+Gtk::Viewport#set_hadjustment( adjustment )
+Gtk::Viewport#hadjustment=( adjustment )
+
+# Syntax Sugar yet again
+Gtk::Viewport#set_vadjustment( adjustment )
+Gtk::Viewport#vadjustment=( adjustment )
+</pre>
+
+<p>The only other viewport methods are used to alter its appearance:</p>
+
+<pre>Gtk::Viewport#set_shadow_type( type )
+Gtk::Viewport#shadow_type=( type )
+</pre>
+
+<p>Possible values for the type parameter are:</p>
+
+<pre>Gtk::SHADOW_NONE
+Gtk::SHADOW_IN
+Gtk::SHADOW_OUT
+Gtk::SHADOW_ETCHED_IN
+Gtk::SHADOW_ETCHED_OUT
+</pre>
+
+<hr>
+<table>
+	<tbody><tr>
+		<td align="left"><a href="11.7.htm">Prev</a></td>
+		<td align="right"><a href="11.9.htm">Next</a></td>
+	</tr>
+</tbody></table>
+</body></html>

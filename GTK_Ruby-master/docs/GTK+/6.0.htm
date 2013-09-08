@@ -1,0 +1,32 @@
+<html><head>
+
+  <title>Getting Started</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <meta name="GENERATOR" content="Quanta Plus">
+  <link rel="stylesheet" type="text/css" href="site-style.css">
+</head><body>
+<h1>Chapter 6. Widget Overview</h1>
+
+<p>The general steps to creating a widget in Ruby-GNOME2 are:</p>
+<ol>
+	<li>Gtk::Widget.new to create a new widget, where Widget is the type (class) of widget you wish to create.</li>
+	<li>Connect all the signals and events we wish to use to the appropriate handlers.</li>
+	<li>Set the attributes of the widget.</li>
+	<li>Pack the widget into a container using the appropriate methods such as Gtk::Box#pack_start or Gtk::Table#attach</li>
+	<li>Gtk::Widget#show to show the widget.</li>
+</ol>
+
+<p>Gtk::Widget#show lets GTK know that we are done setting the attributes of the widget, and it is ready to be displayed. You 
+may also use Gtk::Widget#hide to make it disappear again. The order in which you show the widgets is not important, but I
+suggest showing the main window last so the whole window pops up at once rather than seeing the indvidual widgets come up on
+the screen as they're formed. The children of a widget (a window is a widget too) will not be displayed until the window 
+itself is hsow using the Gtk::Widget#show or Gtk::Widget#show_all methods.</p>
+
+<hr>
+<table>
+	<tbody><tr>
+		<td align="left"><a href="5.5.htm">Prev</a></td>
+		<td align="right"><a href="6.1.htm">Next</a></td>
+	</tr>
+</tbody></table>
+</body></html>

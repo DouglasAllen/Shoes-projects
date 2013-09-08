@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html><head>
+
+
+  <title>Getting Started</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <meta name="GENERATOR" content="Quanta Plus">
+  <link rel="stylesheet" type="text/css" href="site-style.css">
+</head><body>
+<h1>5.5. Table Packing Example</h1>
+
+<p>Here we make a window with three buttons in a 2x2 table. The first two buttons will be placed in the upper row. A third
+,quit button, is placed in the lower row, spanning both columns, which means it should look something like this:</p>
+
+<img src="5.5_files/table.htm" border="0" width="146" height="98">
+
+<p>Here is the source code for it:</p>
+
+<pre>require 'gtk2'
+
+# Our callback
+def callback( widget )
+   puts "Hello Again - #{widget} was pressed"
+end
+
+# This callback quits the program
+def delete_event( widget )
+   Gtk.main_quit
+   return false
+end
+
+Gtk.init
+
+# Create a new window
+window = Gtk::Window.new( Gtk::Window::TOPLEVEL )
+
+# Set the window title
+window.title=( "Table" )
+
+# Set a handler for delete_event immediately
+window.signal_connect( "delete_event" ) { |w| delete_event( w ) }
+
+# Sets the border width of the window
+window.border_width=( 10 )
+
+# Create a 2x2 table
+table = Gtk::Table.new( 2, 2, true )
+
+# Put the table in the main window
+window.add( table )
+
+# Create the first button
+button = Gtk::Button.new( "button 1" )
+
+# When the button is clicked, we call the "callback" method
+# passing the widget as an argument
+button.signal_connect( "clicked" ) { |w| callback( w ) }
+
+# Insert button 1 into the upper left quadrant of the table
+table.attach( button, 0, 1, 0, 1 )
+button.show
+
+# Create the second button
+button = Gtk::Button.new( "button 2" )
+
+# When the button is clicked, we call the "callback" method
+# passing the widget as an argument
+button.signal_connect( "clicked" ) { |w| callback( w ) }
+
+# Insert button 2 into the upper right quadrant of the table
+table.attach( button, 1, 2, 0, 1 )
+button.show
+
+# Create the quit button
+button = Gtk::Button.new( "Quit" )
+
+# When the button is clicked, we call the "delete_event" method
+# and the program exits
+button.signal_connect( "clicked" ) { |w| delete_event( w ) }
+
+# Insert the quit button into both of the
+# lower quadrants of the table
+table.attach( button, 0, 2, 1, 2 )
+
+# Show everything
+button.show
+table.show
+window.show
+
+Gtk.main
+</pre>
+
+<hr>
+<table>
+   <tbody><tr>
+      <td align="left"><a href="5.4.htm">Prev</a></td>
+      <td align="right"><a href="6.0.htm">Next</a></td>
+   </tr>
+</tbody></table>
+</body></html>

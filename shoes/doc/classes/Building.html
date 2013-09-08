@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Building</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Building 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/samples/expert-tankspank_rb.html">samples/expert-tankspank.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-draw">draw</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            <a href="Collisions.html">
+              Collisions
+            </a>
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+      <!-- Section attributes -->
+      <div class="sectiontitle">Attributes</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>east</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>north</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>south</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>west</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+      </table>
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>(west, east, north, south)
+            
+            <a href="../classes/Building.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File samples/expert-tankspank.rb, line 26</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">west</span>, <span class="ruby-identifier">east</span>, <span class="ruby-identifier">north</span>, <span class="ruby-identifier">south</span>)
+        <span class="ruby-ivar">@west</span>, <span class="ruby-ivar">@east</span>, <span class="ruby-ivar">@north</span>, <span class="ruby-ivar">@south</span> = <span class="ruby-identifier">west</span>, <span class="ruby-identifier">east</span>, <span class="ruby-identifier">north</span>, <span class="ruby-identifier">south</span>
+        <span class="ruby-ivar">@top</span>, <span class="ruby-ivar">@bottom</span> = <span class="ruby-number">1.1</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">rand</span>(<span class="ruby-number">3</span>) * <span class="ruby-number">0.15</span>, <span class="ruby-number">1.0</span>
+        
+        <span class="ruby-identifier">color</span> = (<span class="ruby-number">1</span><span class="ruby-operator">..</span><span class="ruby-number">3</span>).<span class="ruby-identifier">collect</span> { <span class="ruby-number">0.2</span> <span class="ruby-operator">+</span> <span class="ruby-number">0.4</span> * <span class="ruby-identifier">rand</span> }
+        <span class="ruby-identifier">color</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-number">0.9</span>
+        <span class="ruby-ivar">@stroke</span> = <span class="ruby-identifier">$app</span>.<span class="ruby-identifier">rgb</span> *<span class="ruby-identifier">color</span>
+        <span class="ruby-identifier">color</span>[<span class="ruby-number">-1</span>] = <span class="ruby-number">0.3</span>
+        <span class="ruby-ivar">@fill</span> = <span class="ruby-identifier">$app</span>.<span class="ruby-identifier">rgb</span> *<span class="ruby-identifier">color</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-draw">
+            
+              <b>draw</b>()
+            
+            <a href="../classes/Building.html#method-i-draw" name="method-i-draw" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-draw_source')" id="l_method-i-draw_source">show</a>
+                
+              </p>
+              <div id="method-i-draw_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File samples/expert-tankspank.rb, line 37</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">draw</span>
+        <span class="ruby-identifier">$app</span>.<span class="ruby-identifier">stroke</span> <span class="ruby-ivar">@stroke</span>
+        <span class="ruby-identifier">$app</span>.<span class="ruby-identifier">fill</span> <span class="ruby-ivar">@fill</span>
+        <span class="ruby-constant">Opp</span>.<span class="ruby-identifier">draw_opp_box</span>(<span class="ruby-ivar">@west</span>, <span class="ruby-ivar">@east</span>, <span class="ruby-ivar">@north</span>, <span class="ruby-ivar">@south</span>, <span class="ruby-ivar">@top</span>, <span class="ruby-ivar">@bottom</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

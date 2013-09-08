@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Redcarpet::Render::SmartyPants</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            Redcarpet::Render::SmartyPants 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/req/redcarpet2/ext/redcarpet/rc_markdown_c.html">req/redcarpet2/ext/redcarpet/rc_markdown.c</a></li>
+            
+            <li><a href="../../../files/req/redcarpet2/lib/redcarpet_rb.html">req/redcarpet2/lib/redcarpet.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p><a href="SmartyPants.html">SmartyPants</a> Mixin module</p>
+
+<p>Implements <a
+href="SmartyPants.html#method-i-postprocess">#postprocess</a>, which
+performs smartypants replacements on the <a href="HTML.html">HTML</a> file,
+once it has been fully rendered.</p>
+
+<p>To add <a href="SmartyPants.html">SmartyPants</a> postprocessing to your
+custom renderers, just mixin the module `include SmartyPants`</p>
+
+<p>You can also use this as a standalone <a
+href="SmartyPants.html">SmartyPants</a> implementation.</p>
+
+<p>Example:</p>
+
+<pre class="ruby"><span class="ruby-comment"># Mixin</span>
+<span class="ruby-keyword">class</span> <span class="ruby-constant">CoolRenderer</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">HTML</span>
+  <span class="ruby-identifier">include</span> <span class="ruby-constant">SmartyPants</span>
+  <span class="ruby-comment"># more code here</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># Standalone</span>
+<span class="ruby-constant">Redcarpet</span><span class="ruby-operator">::</span><span class="ruby-constant">Render</span><span class="ruby-operator">::</span><span class="ruby-constant">SmartyPants</span>.<span class="ruby-identifier">render</span>(<span class="ruby-string">&quot;you're&quot;</span>)
+</pre>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-postprocess">postprocess</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-render">render</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-render">
+            
+              <b>render</b>(text)
+            
+            <a href="../../../classes/Redcarpet/Render/SmartyPants.html#method-c-render" name="method-c-render" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-render_source')" id="l_method-c-render_source">show</a>
+                
+              </p>
+              <div id="method-c-render_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/redcarpet2/lib/redcarpet.rb, line 49</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">render</span>(<span class="ruby-identifier">text</span>)
+  <span class="ruby-identifier">postprocess</span> <span class="ruby-identifier">text</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-postprocess">
+            
+              <b>postprocess</b>(p1)
+            
+            <a href="../../../classes/Redcarpet/Render/SmartyPants.html#method-i-postprocess" name="method-i-postprocess" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-postprocess_source')" id="l_method-i-postprocess_source">show</a>
+                
+              </p>
+              <div id="method-i-postprocess_source" class="dyn-source">
+                <pre>static VALUE rb_redcarpet_smartypants_render(VALUE self, VALUE text)
+{
+        VALUE result;
+        struct buf *output_buf;
+
+        Check_Type(text, T_STRING);
+
+        output_buf = bufnew(128);
+
+        sdhtml_smartypants(output_buf, RSTRING_PTR(text), RSTRING_LEN(text));
+        result = redcarpet_str_new(output_buf-&gt;data, output_buf-&gt;size);
+
+        bufrelease(output_buf);
+        return result;
+}</pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

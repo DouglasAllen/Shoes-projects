@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html><head>
+
+
+  <title>Hello World in Ruby-GNOME2</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <meta name="GENERATOR" content="Quanta Plus">
+  <link rel="stylesheet" type="text/css" href="site-style.css">
+</head><body>
+<h1>10.2. Arrows</h1>
+
+<p>The Arrow widget draws an arrowhead, facing in a number of possible directions and having a number of possible styles. It 
+can be useful when placed on a button in many applications. Like the Label widget, it emits no signals.</p>
+
+<p>There are only a few methods for manipulating an Arrow widget:</p>
+
+<pre>Gtk::Arrow.new( arrow_type, shadow_type )
+Gtk::Arrow#set( arrow_type, shadow_type )
+
+# Retrieves arrow_type, returns int 0-3
+# 0 = Up
+# 1 = Down
+# 2 = Left
+# 3 = Right
+Gtk::Arrow#arrow_type
+
+# Just syntax sugar, they both do the same thing
+Gtk::Arrow#arrow_type=( arrow_type )
+Gtk::Arrow#set_arrow_type( arrow_type )
+
+# Retrieves arrow_type, returns int 1-4
+# 1 = SHADOW_IN
+# 2 = SHADOW_OUT
+# 3 = SHADOW_ETCHED_IN
+# 4 = SHADOW_ETCHED_OUT
+Gtk::Arrow#shadow_type
+
+# Just syntax sugar, they both do the same thing
+Gtk::Arrow#set_shadow_type( shadow_type )
+Gtk::Arrow#shadow_type=( shadow_type )
+</pre>
+
+<p>The first creates a new arrow widget with the indicated type and appearance. The second allows these values to be altered
+retrospectively. The next method will retrieve the <i>arrow_type</i>, and return an int value between 0 and 3. The next two
+methods will set the <i>arrow_type</i> retrospectively. The next method, <i>Gtk::Arrow#shadow_type</i> will retrieve the 
+shadow type used on the arrow. It will also return an int value between 1 and 4. The last two methods allow you to set
+<i>shadow_type</i> retrospectively. The <i>arrow_type</i> argument may take one of the following values:</p>
+
+<pre>Gtk::Arrow::UP or 0
+Gtk::Arrow::DOWN or 1
+Gtk::Arrow::LEFT or 2
+Gtk::Arrow::RIGHT or 3
+</pre>
+
+<p>These values obviously indicate the direction in which the arrow will point. You may also pass an int between 0 and 3.
+The <i>shadow_type</i> argument may take one of these values:</p>
+
+<pre>Gtk::SHADOW_IN or 1
+Gtk::SHADOW_OUT or 2 (the default)
+Gtk::SHADOW_ETCHED_IN or 3
+Gtk::SHADOW_ETCHED_OUT or 4
+</pre>
+
+<p>Here is a brief example to illustrate their use:</p>
+
+<img src="images/arrow_buttons.png" border="0" width="144" height="71">
+
+<pre>require 'gtk2'
+
+# Create an Arrow widget with the specified parameters
+# and pack it into a button
+def create_arrow_button( arrow_type, shadow_type )
+
+   button = Gtk::Button.new
+   arrow = Gtk::Arrow.new( arrow_type, shadow_type )
+   
+   button.add( arrow )
+
+   button.show
+   arrow.show
+   
+   return button
+end
+
+# Initialize the toolkit
+Gtk.init
+
+# Create a new window and set the title
+window =Gtk::Window.new( Gtk::Window::TOPLEVEL )
+window.title=( "Arrow Buttons" )
+
+# It's a good idea to do this for all windows
+window.signal_connect( "destroy" ) { Gtk.main_quit }
+
+# Sets the border width of the window
+window.border_width=( 10 )
+
+# Create a box to hold the arrows/buttons
+box = Gtk::HBox.new( false, 0 )
+box.border_width=( 2 )
+window.add( box )
+
+# Pack and show all our widgets
+box.show
+
+button = create_arrow_button( Gtk::Arrow::UP, Gtk::SHADOW_IN )
+box.pack_start( button, false, false, 3 )
+
+button = create_arrow_button( Gtk::Arrow::DOWN, Gtk::SHADOW_OUT )
+box.pack_start( button, false, false, 3 )
+
+# Showing how we can pass integers for the arrow types
+button = create_arrow_button( 2, Gtk::SHADOW_ETCHED_IN )
+box.pack_start( button, false, false, 3 )
+
+# Showing how we can pass integers for the shadow types
+button = create_arrow_button( Gtk::Arrow::RIGHT, 4 )
+box.pack_start( button, false, false, 3 )
+
+window.show
+
+Gtk.main
+</pre>
+
+<hr>
+<table>
+   <tbody><tr>
+      <td align="left"><a href="10.1.htm">Prev</a></td>
+      <td align="right"><a href="10.3.htm">Next</a></td>
+   </tr>
+</tbody></table>
+</body></html>

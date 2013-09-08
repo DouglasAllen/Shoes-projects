@@ -1,0 +1,269 @@
+
+C:\build\shoes>ls -la
+total 16
+drwxr-xr-x   13 WinDDK   Administ        0 Sep 20 15:23 .
+drwxr-xr-x   10 WinDDK   Administ        0 Sep 20 15:21 ..
+drwxr-xr-x    7 WinDDK   Administ        0 Sep 20 15:23 .git
+-rw-r--r--    1 WinDDK   Administ       65 Sep 20 15:23 .gitignore
+-rw-r--r--    1 WinDDK   Administ      601 Sep 20 15:23 CHANGELOG
+-rw-r--r--    1 WinDDK   Administ     1431 Sep 20 15:23 COPYING
+-rw-r--r--    1 WinDDK   Administ     4483 Sep 20 15:23 README
+-rw-r--r--    1 WinDDK   Administ    20476 Sep 20 15:23 Rakefile
+-rw-r--r--    1 WinDDK   Administ      146 Sep 20 15:23 app.yaml
+drwxr-xr-x    2 WinDDK   Administ        0 Sep 20 15:23 bin
+drwxr-xr-x    2 WinDDK   Administ        0 Sep 20 15:23 bugs
+drwxr-xr-x    6 WinDDK   Administ        0 Sep 20 15:25 deps
+drwxr-xr-x    2 WinDDK   Administ        0 Sep 20 15:23 fonts
+drwxr-xr-x    3 WinDDK   Administ        0 Sep 20 15:23 lib
+drwxr-xr-x    5 WinDDK   Administ        0 Sep 20 15:23 platform
+drwxr-xr-x    9 WinDDK   Administ        0 Sep 20 15:23 req
+drwxr-xr-x    2 WinDDK   Administ        0 Sep 20 15:23 samples
+drwxr-xr-x    4 WinDDK   Administ        0 Sep 20 15:23 shoes
+drwxr-xr-x    3 WinDDK   Administ        0 Sep 20 15:23 static
+-rw-r--r--    1 WinDDK   Administ      499 Sep 20 15:23 use-deps
+
+C:\build\shoes>rake
+(in C:/build/shoes)
+cp platform/msw/shoes.ico shoes/appwin32.ico
+mkdir -p dist/pkg
+cl : Command line warning D9002 : ignoring unknown option '/ML'
+app.c
+.\shoes/app.h(14) : fatal error C1083: Cannot open include file: 'ruby.h': No su
+ch file or directory
+rake aborted!
+Command failed with status (2): [cl /c /nologo /TP /Foshoes/app.obj /ML /DW...]
+
+(See full trace by running task with --trace)
+
+C:\build\shoes>rake
+(in C:/build/shoes)
+cp platform/msw/shoes.ico shoes/appwin32.ico
+mkdir -p dist/pkg
+app.c
+c:\build\shoes\deps\ruby\include\ruby-1.9.1\ruby/ruby.h(25) : fatal error C1083:
+ Cannot open include file: 'ruby/config.h': No such file or directory
+rake aborted!
+Command failed with status (2): [cl /c /nologo /TP /Foshoes/app.obj /MT /DW...]
+
+(See full trace by running task with --trace)
+
+C:\build\shoes>rake
+(in C:/build/shoes)
+cp platform/msw/shoes.ico shoes/appwin32.ico
+mkdir -p dist/pkg
+app.c
+c:\build\shoes\deps\ruby\include\ruby-1.9.1\ruby/missing.h(157) : error C2375: '
+vsnprintf' : redefinition; different linkage
+        C:\WinDDK\7600.16385.0\inc\crt\stdio.h(310) : see declaration of 'vsnpri
+ntf'
+.\shoes/config.h(152) : fatal error C1083: Cannot open include file: 'win32/win3
+2.h': No such file or directory
+rake aborted!
+Command failed with status (2): [cl /c /nologo /TP /Foshoes/app.obj /MT /DW...]
+
+(See full trace by running task with --trace)
+
+C:\build\shoes>rake
+(in C:/build/shoes)
+cp platform/msw/shoes.ico shoes/appwin32.ico
+mkdir -p dist/pkg
+app.c
+canvas.c
+effects.c
+image.c
+internal.c
+ruby.c
+world.c
+shoes/world.c(25) : warning C4273: 'shoes_world' : inconsistent dll linkage
+        .\shoes/world.h(33) : see previous definition of 'shoes_world'
+shoes/world.c(29) : warning C4273: 'shoes_world_alloc' : inconsistent dll linkag
+e
+        .\shoes/world.h(43) : see previous definition of 'shoes_world_alloc'
+shoes/world.c(69) : warning C4273: 'shoes_world_free' : inconsistent dll linkage
+
+        .\shoes/world.h(44) : see previous definition of 'shoes_world_free'
+shoes/world.c(102) : warning C4273: 'shoes_init' : inconsistent dll linkage
+        .\shoes/world.h(50) : see previous definition of 'shoes_init'
+shoes/world.c(143) : warning C4273: 'shoes_load' : inconsistent dll linkage
+        .\shoes/world.h(51) : see previous definition of 'shoes_load'
+shoes/world.c(163) : warning C4273: 'shoes_set_argv' : inconsistent dll linkage
+        .\shoes/world.h(56) : see previous definition of 'shoes_set_argv'
+shoes/world.c(181) : warning C4273: 'shoes_start' : inconsistent dll linkage
+        .\shoes/world.h(52) : see previous definition of 'shoes_start'
+shoes/world.c(231) : warning C4273: 'shoes_final' : inconsistent dll linkage
+        .\shoes/world.h(57) : see previous definition of 'shoes_final'
+windows.c
+shoes/native/windows.c(68) : warning C4273: 'shoes_win32_cmdvector' : inconsiste
+nt dll linkage
+        .\shoes/world.h(54) : see previous definition of 'shoes_win32_cmdvector'
+
+c:\build\shoes\shoes\native\windows.c(978) : warning C4700: uninitialized local
+variable 'msgs' used
+winhttp.c
+windownload.c
+shoes/http/windownload.c(93) : error C2039: 'len' : is not a member of 'RArray'
+        c:\build\shoes\deps\ruby\include\ruby-1.9.1\ruby/ruby.h(607) : see decla
+ration of 'RArray'
+rake aborted!
+Command failed with status (2): [cl /c /nologo /TP /Foshoes/http/windownloa...]
+
+(See full trace by running task with --trace)
+
+C:\build\shoes>rake
+(in C:/build/shoes)
+cp platform/msw/shoes.ico shoes/appwin32.ico
+mkdir -p dist/pkg
+app.c
+canvas.c
+effects.c
+image.c
+internal.c
+ruby.c
+world.c
+shoes/world.c(25) : warning C4273: 'shoes_world' : inconsistent dll linkage
+        .\shoes/world.h(33) : see previous definition of 'shoes_world'
+shoes/world.c(29) : warning C4273: 'shoes_world_alloc' : inconsistent dll linkag
+e
+        .\shoes/world.h(43) : see previous definition of 'shoes_world_alloc'
+shoes/world.c(69) : warning C4273: 'shoes_world_free' : inconsistent dll linkage
+
+        .\shoes/world.h(44) : see previous definition of 'shoes_world_free'
+shoes/world.c(102) : warning C4273: 'shoes_init' : inconsistent dll linkage
+        .\shoes/world.h(50) : see previous definition of 'shoes_init'
+shoes/world.c(143) : warning C4273: 'shoes_load' : inconsistent dll linkage
+        .\shoes/world.h(51) : see previous definition of 'shoes_load'
+shoes/world.c(163) : warning C4273: 'shoes_set_argv' : inconsistent dll linkage
+        .\shoes/world.h(56) : see previous definition of 'shoes_set_argv'
+shoes/world.c(181) : warning C4273: 'shoes_start' : inconsistent dll linkage
+        .\shoes/world.h(52) : see previous definition of 'shoes_start'
+shoes/world.c(231) : warning C4273: 'shoes_final' : inconsistent dll linkage
+        .\shoes/world.h(57) : see previous definition of 'shoes_final'
+windows.c
+shoes/native/windows.c(68) : warning C4273: 'shoes_win32_cmdvector' : inconsiste
+nt dll linkage
+        .\shoes/world.h(54) : see previous definition of 'shoes_win32_cmdvector'
+
+c:\build\shoes\shoes\native\windows.c(978) : warning C4700: uninitialized local
+variable 'msgs' used
+winhttp.c
+windownload.c
+LINK : fatal error LNK1181: cannot open input file 'msvcrt-ruby18.lib'
+rake aborted!
+Command failed with status (157): [link /NOLOGO /LIBPATH:C:\WinDDK\7600.16385...
+]
+
+(See full trace by running task with --trace)
+
+C:\build\shoes>rake
+(in C:/build/shoes)
+cp platform/msw/shoes.ico shoes/appwin32.ico
+mkdir -p dist/pkg
+app.c
+canvas.c
+effects.c
+image.c
+internal.c
+ruby.c
+world.c
+shoes/world.c(25) : warning C4273: 'shoes_world' : inconsistent dll linkage
+        .\shoes/world.h(33) : see previous definition of 'shoes_world'
+shoes/world.c(29) : warning C4273: 'shoes_world_alloc' : inconsistent dll linkag
+e
+        .\shoes/world.h(43) : see previous definition of 'shoes_world_alloc'
+shoes/world.c(69) : warning C4273: 'shoes_world_free' : inconsistent dll linkage
+
+        .\shoes/world.h(44) : see previous definition of 'shoes_world_free'
+shoes/world.c(102) : warning C4273: 'shoes_init' : inconsistent dll linkage
+        .\shoes/world.h(50) : see previous definition of 'shoes_init'
+shoes/world.c(143) : warning C4273: 'shoes_load' : inconsistent dll linkage
+        .\shoes/world.h(51) : see previous definition of 'shoes_load'
+shoes/world.c(163) : warning C4273: 'shoes_set_argv' : inconsistent dll linkage
+        .\shoes/world.h(56) : see previous definition of 'shoes_set_argv'
+shoes/world.c(181) : warning C4273: 'shoes_start' : inconsistent dll linkage
+        .\shoes/world.h(52) : see previous definition of 'shoes_start'
+shoes/world.c(231) : warning C4273: 'shoes_final' : inconsistent dll linkage
+        .\shoes/world.h(57) : see previous definition of 'shoes_final'
+windows.c
+shoes/native/windows.c(68) : warning C4273: 'shoes_win32_cmdvector' : inconsiste
+nt dll linkage
+        .\shoes/world.h(54) : see previous definition of 'shoes_win32_cmdvector'
+
+c:\build\shoes\shoes\native\windows.c(978) : warning C4700: uninitialized local
+variable 'msgs' used
+winhttp.c
+windownload.c
+   Creating library dist/libshoes.lib and object dist/libshoes.exp
+app.obj : warning LNK4217: locally defined symbol _shoes_world imported in funct
+ion "unsigned long __cdecl shoes_app_new(unsigned long)" (?shoes_app_new@@YAKK@Z
+)
+image.obj : warning LNK4217: locally defined symbol _shoes_world imported in fun
+ction "struct _cairo_surface * __cdecl shoes_surface_create_from_pixels(unsigned
+ int *,int,int)" (?shoes_surface_create_from_pixels@@YAPAU_cairo_surface@@PAIHH@
+Z)
+ruby.obj : warning LNK4217: locally defined symbol _shoes_world imported in func
+tion "void __cdecl shoes_ruby_init(void)" (?shoes_ruby_init@@YAXXZ)
+windows.obj : warning LNK4049: locally defined symbol _shoes_world imported
+main.c
+Microsoft (R) Windows (R) Resource Compiler Version 6.1.6908.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+rm -f dist/shoes.exe
+mkdir -p dist/ruby
+cp -r deps/ruby/lib/ruby/1.9.1 dist/ruby/lib
+rm -rf dist/ruby/lib/soap
+rm -rf dist/ruby/lib/wsdl
+rm -rf dist/ruby/lib/xsd
+cp -r req/rubygems/rbconfig dist/ruby/lib
+cp -r req/rubygems/rubygems dist/ruby/lib
+cp -r req/rubygems/rubygems.rb dist/ruby/lib
+cp -r req/rubygems/ubygems.rb dist/ruby/lib
+cp -r req/ftsearch/lib/ftsearch dist/ruby/lib
+mkdir -p dist/ruby/gems/1.9.1/specifications
+mkdir -p dist/ruby/gems/1.9.1/gems/hpricot-0.8.1/lib
+cp -r req/hpricot/lib/hpricot dist/ruby/gems/1.9.1/gems/hpricot-0.8.1/lib
+cp -r req/hpricot/lib/hpricot.rb dist/ruby/gems/1.9.1/gems/hpricot-0.8.1/lib
+mkdir -p dist/ruby/gems/1.9.1/gems/hpricot-0.8.1/lib
+cp req/hpricot/gemspec dist/ruby/gems/1.9.1/specifications/hpricot-0.8.1.gemspec
+
+mkdir -p dist/ruby/gems/1.9.1/specifications
+mkdir -p dist/ruby/gems/1.9.1/gems/json-shoes-1.1.3/lib
+cp -r req/json/lib/json dist/ruby/gems/1.9.1/gems/json-shoes-1.1.3/lib
+cp -r req/json/lib/json.rb dist/ruby/gems/1.9.1/gems/json-shoes-1.1.3/lib
+mkdir -p dist/ruby/gems/1.9.1/gems/json-shoes-1.1.3/lib/json/ext
+cp req/json/gemspec dist/ruby/gems/1.9.1/specifications/json-shoes-1.1.3.gemspec
+
+mkdir -p dist/ruby/gems/1.9.1/specifications
+mkdir -p dist/ruby/gems/1.9.1/gems/sqlite3-ruby-1.2.4/lib
+cp -r req/sqlite3/lib/sqlite3 dist/ruby/gems/1.9.1/gems/sqlite3-ruby-1.2.4/lib
+cp -r req/sqlite3/lib/sqlite3.rb dist/ruby/gems/1.9.1/gems/sqlite3-ruby-1.2.4/li
+b
+mkdir -p dist/ruby/gems/1.9.1/gems/sqlite3-ruby-1.2.4/lib
+cp req/sqlite3/gemspec dist/ruby/gems/1.9.1/specifications/sqlite3-ruby-1.2.4.ge
+mspec
+cp -r deps/ruby/bin/libeay32.dll dist/
+cp -r deps/ruby/bin/msvcrt-ruby191.dll dist/
+cp -r deps/ruby/bin/sqlite3.dll dist/
+cp -r deps/cairo/bin/giflib4.dll dist/
+cp -r deps/cairo/bin/jpeg62.dll dist/
+cp -r deps/cairo/bin/libcairo-2.dll dist/
+cp -r deps/cairo/bin/libpng12-0.dll dist/
+cp -r deps/pango/bin/iconv.dll dist/
+cp -r deps/pango/bin/intl.dll dist/
+cp -r deps/pango/bin/libglib-2.0-0.dll dist/
+cp -r deps/pango/bin/libgmodule-2.0-0.dll dist/
+cp -r deps/pango/bin/libgobject-2.0-0.dll dist/
+cp -r deps/pango/bin/libpango-1.0-0.dll dist/
+cp -r deps/pango/bin/libpangocairo-1.0-0.dll dist/
+cp -r deps/pango/bin/libpangowin32-1.0-0.dll dist/
+cp -r deps/pango/bin/zlib1.dll dist/
+cp -r fonts dist/fonts
+cp -r lib dist/lib
+cp -r samples dist/samples
+cp -r static dist/static
+cp README dist/README.txt
+cp CHANGELOG dist/CHANGELOG.txt
+cp COPYING dist/COPYING.txt
+cp platform/msw/shoes.exe.manifest dist/shoes.exe.manifest
+cp dist/zlib1.dll dist/zlib.dll
+
+C:\build\shoes>

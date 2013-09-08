@@ -1,0 +1,157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html><head>
+
+
+  <title>Hello World in Ruby-GNOME2</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <meta name="GENERATOR" content="Quanta Plus">
+  <link rel="stylesheet" type="text/css" href="site-style.css">
+</head><body>
+<h1>10.8 Text Entries</h1>
+
+<p>The Entry widget allows text to be typed and displayed in a single line text box. The text may be set with method calls
+that allow new text to replace, prepend or append the current contents of the Entry widget.</p>
+
+<p>Create a new Entry widget with the following method.</p>
+
+<pre>Gtk::Entry.new</pre>
+
+<p>The next two methods alter the text which is currently within the Entry widget.</p>
+
+<pre>Gtk::Entry#set_text( text )
+Gtk::Entry#text=( text )
+</pre>
+
+<p>The methods above set the contents of the Entry widget, replacing the current contents. Note that the class Entry
+implements the Editable interface which contains some more methods for manipulating the contents.</p>
+
+<p>The contents of the Entry can be retrieved by using a call to the following method. This is useful in the callback
+methods described below.</p>
+
+<pre>Gtk::Entry#text</pre>
+
+<p>If we don't want the contents of the Entry widget to be changed by someone typing into it, we can change its editable
+state.</p>
+
+<pre>Gtk::Entry#set_editable( editable )
+Gtk::Entry#editable=( editable )
+</pre>
+
+<p>The methods above allows us to toggle the editable state of the Entry widget by passing in a true or false value for the
+<i>editable</i> argument. You can retrieve the editable state of the widget by using:</p>
+
+<pre>Gtk::Entry#editable?  #Returns boolean</pre>
+
+<p>If we are using the Entry where we don't want the text entered to be visible, for example when a password is being
+entered, we can use the following methods, which also takes a boolean flag. The last method shows you how to retrieve
+the visible state of the Entry widget.</p>
+
+<pre>Gtk::Entry#set_visibility( visible )
+Gtk::Entry#visibility=( visible )
+Gtk::Entry#visibility?  #Returns boolean</pre>
+
+<p>A region of the text may be set as selected by using the following method. This would most be used after setting some
+default text in an Entry, making it easy for the user to remove it.</p>
+
+<pre>Gtk::Editable#select_region( start_position, end_position )</pre>
+
+<p>If we want to catch when the user has entered text, we can connect to the <i>activate</i> or <i>changed</i> signal.
+Acivate is raised when the user hits the enter key within the Entry widget. Changed is raised when the text changes at
+all, e.g. for every character entered or removed.</p>
+
+<p>The following code is an example of using an Entry widget.</p>
+
+<img src="images/gtk_entry.png" border="0" width="227" height="126">
+
+<pre>require 'gtk2'
+
+def enter_callback( entry )
+	# Print the contents of the entry
+	puts entry.text
+	
+	# Deletes the contents of the entry
+	entry.delete_text( 0, -1 )
+end
+
+def entry_toggle_editable( checkbutton, entry )
+   # Toggle whether or not the entry is editable
+	# We get the value by grabbing the boolean response
+	# from the checkbutton.
+	entry.set_editable( checkbutton.active? )
+end
+
+def entry_toggle_visibility( checkbutton, entry )
+   # Toggle whether or not the contents of the
+	# entry are readable, or whether the characthers
+	# are replaced by asteriks.
+	entry.visibility=( checkbutton.active? )
+end
+
+Gtk.init
+
+# Create a new window
+window = Gtk::Window.new( Gtk::Window::TOPLEVEL )
+
+# Set the default minium size of the window.
+window.set_default_size( 200, 100 )
+
+# Set the title and setup a signal handler
+window.title=( "Ruby-GNOME2 Entry" )
+window.signal_connect( "destroy" ) { Gtk.main_quit }
+
+# Create a new vbox
+vbox = Gtk::VBox.new( false, 0 )
+window.add( vbox )
+vbox.show
+
+entry = Gtk::Entry.new
+entry.set_max_length( 50 )
+entry.signal_connect( "activate" ) { |w| enter_callback( w ) }
+entry.set_text( "hello" )
+entry.insert_text( " world", entry.text.length)
+
+# Selects all of the text. The first argument is the starting position
+# and the second, is the end position (but not including). If the number
+# is negative like it is here, it will highlight from the start position
+# all the way to the end of the text
+entry.select_region( 0, -1 )
+
+# Pack our Entry widget
+vbox.pack_start( entry, true, true, 0 )
+entry.show
+
+hbox = Gtk::HBox.new( false, 0 )
+vbox.add( hbox )
+hbox.show
+
+check = Gtk::CheckButton.new( "Editable" )
+hbox.pack_start( check, true, true, 0 )
+check.signal_connect( "toggled" ) { |w| entry_toggle_editable( w, entry ) }
+check.set_active( true )
+check.show
+
+check = Gtk::CheckButton.new( "Visible" )
+hbox.pack_start( check, true, true, 0 )
+check.signal_connect( "toggled" ) { |w| entry_toggle_visibility( w, entry ) }
+check.set_active( true )
+check.show
+
+button = Gtk::Button.new( Gtk::Stock::QUIT )
+vbox.pack_start( button, true, true, 0 )
+button.signal_connect( "clicked" ) { Gtk.main_quit }
+button.set_flags( Gtk::Widget::CAN_DEFAULT )
+button.show
+button.grab_default
+
+window.show
+Gtk.main
+</pre>
+
+<hr>
+<table>
+	<tbody><tr>
+		<td align="left"><a href="10.7.htm">Prev</a></td>
+		<td align="right"><a href="10.9.htm">Next</a></td>
+	</tr>
+</tbody></table>
+</body></html>

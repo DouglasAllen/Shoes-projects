@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Kernel</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            Kernel 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/lib/shoes/inspect_rb.html">lib/shoes/inspect.rb</a></li>
+            
+            <li><a href="../files/req/chipmunk/ext/chipmunk/rb_cpVect_c.html">req/chipmunk/ext/chipmunk/rb_cpVect.c</a></li>
+            
+            <li><a href="../files/req/hpricot/lib/hpricot/blankslate_rb.html">req/hpricot/lib/hpricot/blankslate.rb</a></li>
+            
+            <li><a href="../files/req/json/lib/json/common_rb.html">req/json/lib/json/common.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>Since Ruby is very dynamic, methods added to the ancestors of BlankSlate
+<em>after BlankSlate is defined</em> will show up in the list of available
+BlankSlate methods.  We handle this by defining a hook in the <a
+href="Object.html">Object</a> and <a href="Kernel.html">Kernel</a> classes
+that will hide any defined</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>J</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-JSON">JSON</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>H</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-hpricot_slate_method_added">hpricot_slate_method_added</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-inspect">inspect</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>J</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-j">j</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-jj">jj</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>M</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-method_added">method_added</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-to_s">to_s</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>V</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-vec2">vec2</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-hpricot_slate_method_added">
+            
+              <b>hpricot_slate_method_added</b>(name)
+            
+            <a href="../classes/Kernel.html#method-c-hpricot_slate_method_added" name="method-c-hpricot_slate_method_added" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-method_added">
+            
+              <b>method_added</b>(name)
+            
+            <a href="../classes/Kernel.html#method-c-method_added" name="method-c-method_added" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Detect method additions to <a href="Kernel.html">Kernel</a> and remove them
+in the BlankSlate class.</p>
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="Kernel.html#method-c-hpricot_slate_method_added">hpricot_slate_method_added</a>
+            </div>
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-method_added_source')" id="l_method-c-method_added_source">show</a>
+                
+              </p>
+              <div id="method-c-method_added_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/hpricot/lib/hpricot/blankslate.rb, line 43</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">method_added</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">hpricot_slate_method_added</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span> <span class="ruby-operator">!=</span> <span class="ruby-constant">Kernel</span>
+  <span class="ruby-constant">Hpricot</span><span class="ruby-operator">::</span><span class="ruby-constant">BlankSlate</span>.<span class="ruby-identifier">hide</span>(<span class="ruby-identifier">name</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-JSON">
+            
+              <b>JSON</b>(object, opts = {})
+            
+            <a href="../classes/Kernel.html#method-i-JSON" name="method-i-JSON" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>If <em>object</em> is string-like parse the string and return the parsed
+result as a Ruby data structure. Otherwise generate a <a
+href="JSON.html">JSON</a> text from the Ruby data structure object and
+return it.</p>
+
+<p>The <em>opts</em> argument is passed through to generate/parse
+respectively, see generate and parse for their documentation.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-JSON_source')" id="l_method-i-JSON_source">show</a>
+                
+              </p>
+              <div id="method-i-JSON_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/json/lib/json/common.rb, line 337</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">JSON</span>(<span class="ruby-identifier">object</span>, <span class="ruby-identifier">opts</span> = {})
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">object</span>.<span class="ruby-identifier">respond_to?</span> <span class="ruby-value">:to_str</span>
+    <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">object</span>.<span class="ruby-identifier">to_str</span>, <span class="ruby-identifier">opts</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">generate</span>(<span class="ruby-identifier">object</span>, <span class="ruby-identifier">opts</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-inspect">
+            
+              <b>inspect</b>(hits = {})
+            
+            <a href="../classes/Kernel.html#method-i-inspect" name="method-i-inspect" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-inspect_source')" id="l_method-i-inspect_source">show</a>
+                
+              </p>
+              <div id="method-i-inspect_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/inspect.rb, line 2</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">inspect</span>(<span class="ruby-identifier">hits</span> = {})
+    <span class="ruby-keyword">return</span> <span class="ruby-node">&quot;(#{self.class} ...)&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">hits</span>[<span class="ruby-keyword">self</span>]
+    <span class="ruby-identifier">hits</span>[<span class="ruby-keyword">self</span>] = <span class="ruby-keyword">true</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">instance_variables</span>.<span class="ruby-identifier">empty?</span>
+        <span class="ruby-node">&quot;(#{self.class})&quot;</span>
+    <span class="ruby-keyword">else</span>
+        <span class="ruby-node">&quot;(#{self.class} &quot;</span> <span class="ruby-operator">+</span> 
+            <span class="ruby-identifier">instance_variables</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span>
+                <span class="ruby-identifier">v</span> = <span class="ruby-identifier">instance_variable_get</span>(<span class="ruby-identifier">x</span>)
+                <span class="ruby-node">&quot;#{x}=&quot;</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">v</span>.<span class="ruby-identifier">method</span>(<span class="ruby-value">:inspect</span>).<span class="ruby-identifier">arity</span> <span class="ruby-operator">==</span> <span class="ruby-number">0</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">inspect</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">inspect</span>(<span class="ruby-identifier">hits</span>))
+            <span class="ruby-keyword">end</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">' '</span>) <span class="ruby-operator">+</span>
+        <span class="ruby-string">&quot;)&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-j">
+            
+              <b>j</b>(*objs)
+            
+            <a href="../classes/Kernel.html#method-i-j" name="method-i-j" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Outputs <em>objs</em> to STDOUT as <a href="JSON.html">JSON</a> strings in
+the shortest form, that is in one line.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-j_source')" id="l_method-i-j_source">show</a>
+                
+              </p>
+              <div id="method-i-j_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/json/lib/json/common.rb, line 315</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">j</span>(*<span class="ruby-identifier">objs</span>)
+  <span class="ruby-identifier">objs</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">obj</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-constant">JSON</span><span class="ruby-operator">::</span><span class="ruby-identifier">generate</span>(<span class="ruby-identifier">obj</span>, <span class="ruby-value">:allow_nan</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>, <span class="ruby-value">:max_nesting</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">false</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-jj">
+            
+              <b>jj</b>(*objs)
+            
+            <a href="../classes/Kernel.html#method-i-jj" name="method-i-jj" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Ouputs <em>objs</em> to STDOUT as <a href="JSON.html">JSON</a> strings in a
+pretty format, with indentation and over many lines.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-jj_source')" id="l_method-i-jj_source">show</a>
+                
+              </p>
+              <div id="method-i-jj_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/json/lib/json/common.rb, line 324</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">jj</span>(*<span class="ruby-identifier">objs</span>)
+  <span class="ruby-identifier">objs</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">obj</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-constant">JSON</span><span class="ruby-operator">::</span><span class="ruby-identifier">pretty_generate</span>(<span class="ruby-identifier">obj</span>, <span class="ruby-value">:allow_nan</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>, <span class="ruby-value">:max_nesting</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">false</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-to_s">
+            
+              <b>to_s</b>()
+            
+            <a href="../classes/Kernel.html#method-i-to_s" name="method-i-to_s" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>def to_html</p>
+
+<pre class="ruby"><span class="ruby-identifier">obj</span> = <span class="ruby-keyword">self</span>
+ <span class="ruby-constant">Web</span>.<span class="ruby-constant">Bit</span> {
+   <span class="ruby-identifier">h1</span> <span class="ruby-node">&quot;A #{obj.class}&quot;</span>
+ }
+</pre>
+
+<p>end</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-to_s_source')" id="l_method-i-to_s_source">show</a>
+                
+              </p>
+              <div id="method-i-to_s_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/shoes/inspect.rb, line 22</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">to_s</span>; <span class="ruby-identifier">inspect</span> <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-vec2">
+            
+              <b>vec2</b>(p1, p2)
+            
+            <a href="../classes/Kernel.html#method-i-vec2" name="method-i-vec2" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-vec2_source')" id="l_method-i-vec2_source">show</a>
+                
+              </p>
+              <div id="method-i-vec2_source" class="dyn-source">
+                <pre>static VALUE
+rb_vec2(VALUE self, VALUE x, VALUE y)
+{
+        return VNEW(cpv(NUM2DBL(x), NUM2DBL(y)));
+}</pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

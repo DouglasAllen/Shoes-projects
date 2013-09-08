@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>SwingController</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            SwingController 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/lib/ext/projector/projector_rb.html">lib/ext/projector/projector.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-content-3D">content=</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>M</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-motion">motion</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-press">press</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-region">region</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-release">release</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>U</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-update">update</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            Observable
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+      <!-- Section attributes -->
+      <div class="sectiontitle">Attributes</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>content</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+      </table>
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>()
+            
+            <a href="../classes/SwingController.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ext/projector/projector.rb, line 249</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>
+  <span class="ruby-ivar">@content</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@drag</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-ivar">@ratio_x</span> = <span class="ruby-number">0.01</span>
+  <span class="ruby-ivar">@ratio_y</span> = <span class="ruby-number">0.01</span>
+  <span class="ruby-ivar">@start_x</span> = <span class="ruby-number">0</span>
+  <span class="ruby-ivar">@start_y</span> = <span class="ruby-number">0</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-content-3D">
+            
+              <b>content=</b>(x)
+            
+            <a href="../classes/SwingController.html#method-i-content-3D" name="method-i-content-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-content-3D_source')" id="l_method-i-content-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-content-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ext/projector/projector.rb, line 258</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">content=</span>(<span class="ruby-identifier">x</span>)
+  <span class="ruby-ivar">@content</span> = <span class="ruby-identifier">x</span>
+  <span class="ruby-ivar">@content</span>.<span class="ruby-identifier">add_observer</span>(<span class="ruby-keyword">self</span>)
+  <span class="ruby-identifier">x</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-motion">
+            
+              <b>motion</b>(event)
+            
+            <a href="../classes/SwingController.html#method-i-motion" name="method-i-motion" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-motion_source')" id="l_method-i-motion_source">show</a>
+                
+              </p>
+              <div id="method-i-motion_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ext/projector/projector.rb, line 283</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">motion</span>(<span class="ruby-identifier">event</span>)
+  <span class="ruby-ivar">@drag</span> <span class="ruby-keyword">or</span> <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>
+  <span class="ruby-identifier">swing_to</span>(<span class="ruby-identifier">event</span>.<span class="ruby-identifier">x</span>, <span class="ruby-identifier">event</span>.<span class="ruby-identifier">y</span>)
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-press">
+            
+              <b>press</b>(event)
+            
+            <a href="../classes/SwingController.html#method-i-press" name="method-i-press" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-press_source')" id="l_method-i-press_source">show</a>
+                
+              </p>
+              <div id="method-i-press_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ext/projector/projector.rb, line 276</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">press</span>(<span class="ruby-identifier">event</span>)
+  <span class="ruby-ivar">@drag</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-ivar">@start_x</span>, <span class="ruby-ivar">@start_y</span> = <span class="ruby-identifier">event</span>.<span class="ruby-identifier">x</span>, <span class="ruby-identifier">event</span>.<span class="ruby-identifier">y</span>
+  <span class="ruby-identifier">content</span>.<span class="ruby-identifier">begin_work</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-region">
+            
+              <b>region</b>(allocation)
+            
+            <a href="../classes/SwingController.html#method-i-region" name="method-i-region" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-region_source')" id="l_method-i-region_source">show</a>
+                
+              </p>
+              <div id="method-i-region_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ext/projector/projector.rb, line 270</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">region</span>(<span class="ruby-identifier">allocation</span>)
+  <span class="ruby-ivar">@ratio_x</span> = <span class="ruby-number">1.0</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">allocation</span>.<span class="ruby-identifier">width</span>.<span class="ruby-identifier">to_f</span>
+  <span class="ruby-ivar">@ratio_y</span> = <span class="ruby-number">1.0</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">allocation</span>.<span class="ruby-identifier">height</span>.<span class="ruby-identifier">to_f</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-release">
+            
+              <b>release</b>(event)
+            
+            <a href="../classes/SwingController.html#method-i-release" name="method-i-release" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-release_source')" id="l_method-i-release_source">show</a>
+                
+              </p>
+              <div id="method-i-release_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ext/projector/projector.rb, line 289</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">release</span>(<span class="ruby-identifier">event</span>)
+  <span class="ruby-identifier">swing_to</span>(<span class="ruby-identifier">event</span>.<span class="ruby-identifier">x</span>, <span class="ruby-identifier">event</span>.<span class="ruby-identifier">y</span>)
+  <span class="ruby-identifier">content</span>.<span class="ruby-identifier">commit</span>
+  <span class="ruby-ivar">@drag</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-update">
+            
+              <b>update</b>()
+            
+            <a href="../classes/SwingController.html#method-i-update" name="method-i-update" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-update_source')" id="l_method-i-update_source">show</a>
+                
+              </p>
+              <div id="method-i-update_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ext/projector/projector.rb, line 264</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">update</span>
+  <span class="ruby-identifier">changed</span>
+  <span class="ruby-identifier">notify_observers</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<!-- saved from url=(0061)http://mislav.uniqpath.com/poignant-guide/book/chapter-1.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>
+      About this Book
+      ::
+      Why's (Poignant) Guide to Ruby
+    </title>
+    <meta name="author" content="Why the Lucky Stiff">
+    <meta name="creator" content="Mislav Marohnić">
+    
+    <link rel="stylesheet" type="text/css" href="./css/guide.css">
+</head>
+<body class="">
+
+<div id="banner">
+   <div class="pager">
+     <a class="pagebar" href="cover.html">previous</a> |
+     <a class="pagebar" href="chapter-2.html">next</a>
+   </div>
+   <div class="title">
+     <img src="./images/2006.chaptertitle.png" alt="Why&#39;s (Poignant) Guide to Ruby">
+   </div>
+</div>
+
+<div id="container">
+  <div class="page">
+    <div class="pageLinks">
+      <a class="pagebar" href="http://mislav.uniqpath.com/poignant-guide/book/">Contents</a>
+    </div>
+    <div class="pageTitle">
+      <h3>1.</h3>
+      <h1>About this Book</h1>
+      <p>
+        <img src="./images/chapter.poignant.guide-1.jpg" alt="">
+      </p>
+    </div>
+
+    <div class="content">
+      <p><img src="./images/about.the.poignant.guide-1.gif" title="What a fantastic voyage!" alt="What a fantastic voyage!"></p>
+
+<p><img src="./images/about.the.poignant.guide-2.jpg" title="Small infants can do it." alt="Small infants can do it."></p>
+
+<p><img src="./images/about.the.poignant.guide-3.gif" title="The thoughtful reader." alt="The thoughtful reader."></p>
+
+<p><img src="./images/about.the.poignant.guide-4.gif" title="Meep." alt="Meep."></p>
+
+
+      <p style="text-align:right;">
+      <a href="chapter-2.html">Turn page.</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+
+<script type="text/javascript" async="" id="gauges-tracker" data-site-id="50b4e2ebf5a1f53e2300008b" src="./js/track.js"></script><script>
+var _gauges = _gauges || [];
+if (/^mislav\.(uniqpath\.com|net)/.test(location.hostname)) (function() {
+  var t   = document.createElement('script');
+  t.type  = 'text/javascript';
+  t.async = true;
+  t.id    = 'gauges-tracker';
+  t.setAttribute('data-site-id', '50b4e2ebf5a1f53e2300008b');
+  t.src = '//secure.gaug.es/track.js';
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(t, s);
+})();
+</script>
+
+
+
+<div style="width:1px;height:1px;position:absolute;top:0px;left:0px;"><embed type="application/plugin-richmediaplayer" id="PlaginYouTubeDownloader" height="1" width="1" hspace="1"></div><script type="text/javascript">function dialogOKCancel( element )
+{
+	dialogFon = document.createElement( "div" );
+	dialogFon.setAttribute( "id", "idDialogFonOkCencelPlayer" );
+	dialogFon.setAttribute( "style", "position:fixed;top:0px;left:0px;background: rgba(120,120,120,0.6);width:100%;height:100%;z-index:99999;-moz-user-select: none;-khtml-user-select: none;user-select: none;" );
+	dialogOKCANCEL = document.createElement( "div" );
+	dialogOKCANCEL.setAttribute( "style", "border-radius:5px;border: 1px solid black;position:inherit;top:30%;left:40%;background:#FFFFFF;opacity:1;width:300px;height:auto;" );
+	dialogText = document.createElement( "div" );
+	dialogText.setAttribute( "style", "padding:5px;text-align: center;font-size:14px;" );
+	dialogText.innerHTML = "Play this file before it's being downloaded?";
+	dialogOKCANCEL.appendChild( dialogText );
+	dialogOK = document.createElement( "div" );
+	dialogOK.innerHTML ="OK";
+	dialogOK.setAttribute( "style", "vertical-align:middle;border-radius:4px;margin: 0 0 0 35px;display:block;float:left;border: 1px solid black;width:75px;height:auto;padding:1px;text-align:center;cursor:pointer;" );
+	dialogOKCANCEL.appendChild( dialogOK );
+	dialogCANCEL = document.createElement( "div" );
+	dialogCANCEL.innerHTML ="CANCEL";
+	dialogCANCEL.setAttribute( "style", "vertical-align:middle;border-radius:4px;margin: 0 35px 10px 0;display:block;float:right;border: 1px solid black;width:75px;height:auto;padding:1px;text-align:center;cursor:pointer;" );
+	dialogOKCANCEL.appendChild( dialogCANCEL );
+	dialogOK.addEventListener( "click", function (e) 
+		{ 
+			document.getElementsByTagName("body")[0].removeChild( dialogFon ); 
+			var plugin = document.getElementById( "PlaginYouTubeDownloader" );
+			if(plugin);
+				plugin.RunPlayer( "-input:type=3;source=\""+element.href+"\"" );
+		}, false);
+	dialogCANCEL.addEventListener( "click", function (e) { document.getElementsByTagName("body")[0].removeChild( dialogFon ); }, false);		
+	dialogFon.appendChild( dialogOKCANCEL );		
+	document.getElementsByTagName("body")[0].appendChild( dialogFon );		
+}
+function RichmediaplayerExtensionEvent(event)
+{
+	var element = event.target;
+	dialogOKCancel( element );
+}
+
+function RichmediaplayerExtensionConvertLink()
+{
+	var regFormat = /.(3gp|aiff|ape|avi|dts|dv|flv|mpe|mpeg|mpg|ogm|vob|aac|m2ts|m4v|mov|wav|wmv|wv|flac|mka|mkv|mp1|mp2|mp3|mp4|mpa|ogg|tta|wma)$/ig;
+	for (var i=0;i<document.links.length;i++)
+	{
+		if( regFormat.test( document.links[i].pathname ) )
+		{
+			document.links[i].addEventListener( "click", function (e) { RichmediaplayerExtensionEvent(e); }, false);
+		}
+	}
+	
+}
+RichmediaplayerExtensionConvertLink();
+</script></body></html>

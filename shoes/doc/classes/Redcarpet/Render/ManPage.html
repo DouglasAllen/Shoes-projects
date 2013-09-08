@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Redcarpet::Render::ManPage</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Redcarpet::Render::ManPage 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="Base.html">Redcarpet::Render::Base</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/req/redcarpet2/lib/redcarpet/render_man_rb.html">req/redcarpet2/lib/redcarpet/render_man.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>B</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-block_code">block_code</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-codespan">codespan</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-double_emphasis">double_emphasis</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>E</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-emphasis">emphasis</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>H</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-header">header</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>L</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-linebreak">linebreak</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-list">list</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-list_item">list_item</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-normal_text">normal_text</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-paragraph">paragraph</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-block_code">
+            
+              <b>block_code</b>(code, language)
+            
+            <a href="../../../classes/Redcarpet/Render/ManPage.html#method-i-block_code" name="method-i-block_code" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-block_code_source')" id="l_method-i-block_code_source">show</a>
+                
+              </p>
+              <div id="method-i-block_code_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/redcarpet2/lib/redcarpet/render_man.rb, line 9</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">block_code</span>(<span class="ruby-identifier">code</span>, <span class="ruby-identifier">language</span>)
+  <span class="ruby-node">&quot;\n.nf\n#{normal_text(code)}\n.fi\n&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-codespan">
+            
+              <b>codespan</b>(code)
+            
+            <a href="../../../classes/Redcarpet/Render/ManPage.html#method-i-codespan" name="method-i-codespan" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-codespan_source')" id="l_method-i-codespan_source">show</a>
+                
+              </p>
+              <div id="method-i-codespan_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/redcarpet2/lib/redcarpet/render_man.rb, line 13</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">codespan</span>(<span class="ruby-identifier">code</span>)
+  <span class="ruby-identifier">block_code</span>(<span class="ruby-identifier">code</span>, <span class="ruby-keyword">nil</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-double_emphasis">
+            
+              <b>double_emphasis</b>(text)
+            
+            <a href="../../../classes/Redcarpet/Render/ManPage.html#method-i-double_emphasis" name="method-i-double_emphasis" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-double_emphasis_source')" id="l_method-i-double_emphasis_source">show</a>
+                
+              </p>
+              <div id="method-i-double_emphasis_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/redcarpet2/lib/redcarpet/render_man.rb, line 30</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">double_emphasis</span>(<span class="ruby-identifier">text</span>)
+  <span class="ruby-node">&quot;\\fB#{text}\\fP&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-emphasis">
+            
+              <b>emphasis</b>(text)
+            
+            <a href="../../../classes/Redcarpet/Render/ManPage.html#method-i-emphasis" name="method-i-emphasis" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-emphasis_source')" id="l_method-i-emphasis_source">show</a>
+                
+              </p>
+              <div id="method-i-emphasis_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/redcarpet2/lib/redcarpet/render_man.rb, line 34</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">emphasis</span>(<span class="ruby-identifier">text</span>)
+  <span class="ruby-node">&quot;\\fI#{text}\\fP&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-header">
+            
+              <b>header</b>(title, level)
+            
+            <a href="../../../classes/Redcarpet/Render/ManPage.html#method-i-header" name="method-i-header" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-header_source')" id="l_method-i-header_source">show</a>
+                
+              </p>
+              <div id="method-i-header_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/redcarpet2/lib/redcarpet/render_man.rb, line 17</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">header</span>(<span class="ruby-identifier">title</span>, <span class="ruby-identifier">level</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">level</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-number">1</span>
+    <span class="ruby-node">&quot;\n.TH #{title}\n&quot;</span>
+
+  <span class="ruby-keyword">when</span> <span class="ruby-number">2</span>
+    <span class="ruby-node">&quot;\n.SH #{title}\n&quot;</span>
+
+  <span class="ruby-keyword">when</span> <span class="ruby-number">3</span>
+    <span class="ruby-node">&quot;\n.SS #{title}\n&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-linebreak">
+            
+              <b>linebreak</b>()
+            
+            <a href="../../../classes/Redcarpet/Render/ManPage.html#method-i-linebreak" name="method-i-linebreak" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-linebreak_source')" id="l_method-i-linebreak_source">show</a>
+                
+              </p>
+              <div id="method-i-linebreak_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/redcarpet2/lib/redcarpet/render_man.rb, line 38</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">linebreak</span>
+  <span class="ruby-string">&quot;\n.LP\n&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-list">
+            
+              <b>list</b>(content, list_type)
+            
+            <a href="../../../classes/Redcarpet/Render/ManPage.html#method-i-list" name="method-i-list" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-list_source')" id="l_method-i-list_source">show</a>
+                
+              </p>
+              <div id="method-i-list_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/redcarpet2/lib/redcarpet/render_man.rb, line 46</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">list</span>(<span class="ruby-identifier">content</span>, <span class="ruby-identifier">list_type</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">list_type</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:ordered</span>
+    <span class="ruby-node">&quot;\n\n.nr step 0 1\n#{content}\n&quot;</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:unordered</span>
+    <span class="ruby-node">&quot;\n.\n#{content}\n&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-list_item">
+            
+              <b>list_item</b>(content, list_type)
+            
+            <a href="../../../classes/Redcarpet/Render/ManPage.html#method-i-list_item" name="method-i-list_item" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-list_item_source')" id="l_method-i-list_item_source">show</a>
+                
+              </p>
+              <div id="method-i-list_item_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/redcarpet2/lib/redcarpet/render_man.rb, line 55</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">list_item</span>(<span class="ruby-identifier">content</span>, <span class="ruby-identifier">list_type</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">list_type</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:ordered</span>
+    <span class="ruby-node">&quot;.IP \\n+[step]\n#{content.strip}\n&quot;</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:unordered</span>
+    <span class="ruby-node">&quot;.IP \\[bu] 2 \n#{content.strip}\n&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-normal_text">
+            
+              <b>normal_text</b>(text)
+            
+            <a href="../../../classes/Redcarpet/Render/ManPage.html#method-i-normal_text" name="method-i-normal_text" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-normal_text_source')" id="l_method-i-normal_text_source">show</a>
+                
+              </p>
+              <div id="method-i-normal_text_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/redcarpet2/lib/redcarpet/render_man.rb, line 5</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">normal_text</span>(<span class="ruby-identifier">text</span>)
+  <span class="ruby-identifier">text</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-string">'-'</span>, <span class="ruby-string">'\-'</span>).<span class="ruby-identifier">strip</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-paragraph">
+            
+              <b>paragraph</b>(text)
+            
+            <a href="../../../classes/Redcarpet/Render/ManPage.html#method-i-paragraph" name="method-i-paragraph" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-paragraph_source')" id="l_method-i-paragraph_source">show</a>
+                
+              </p>
+              <div id="method-i-paragraph_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/redcarpet2/lib/redcarpet/render_man.rb, line 42</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">paragraph</span>(<span class="ruby-identifier">text</span>)
+  <span class="ruby-node">&quot;\n.TP\n#{text}\n&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

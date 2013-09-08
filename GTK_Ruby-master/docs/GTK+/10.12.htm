@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html><head>
+
+
+  <title>Hello World in Ruby-GNOME2</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <meta name="GENERATOR" content="Quanta Plus">
+  <link rel="stylesheet" type="text/css" href="site-style.css">
+</head><body>
+<h1>10.12. Color Selection</h1>
+
+<p>The color selection widget is, not surprisingly, a widget for interactive selection of colors. 
+This composite widget lets the user select a color by manipulating RGB (Red, Green, Blue) and HSV 
+(Hue, Saturation, Value) triples. This is done either by adjusting single values with sliders or 
+entries, or by picking the desired color from a hue-saturation wheel/value bar. Optionally, the 
+opacity of the color can also be set.</p>
+
+<p>The color selection widget currently emits only one signal, "color_changed", which is emitted whenever the current 
+color in the widget changes, either when the user changes it or if it's set explicitly through 
+Gtk::ColorSelection#color=.</p>
+
+<p>Lets have a look at what the color selection widget has to offer us. The widget comes in two flavors:
+Gtk::ColorSelection and Gtk::ColorSelectionDialog.</p>
+
+<pre>Gtk::ColorSelection.new</pre>
+
+<p>You'll probably not be using this version directly. It creates an orphan ColorSelection widget
+which you'll have to parent yourself. The ColorSelection widget inherits from the VBox widget.</p>
+
+<pre>Gtk::ColorSelectionDialog.new( title )</pre>
+
+<p>This is the most common use of creating a color selection. It creates a ColorSelectionDialog. It consists of a
+Frame containing a ColorSelection widget, an HSeparator and an HBox with three buttons, "Ok", "Cancel" and 
+"Help". You can reach these buttons by accessing the "ok_button", "cancel_button" and "help_button" widgets
+in the ColorSelectionDialog structure, (i.e., GTK::ColorSelectionDialog#ok_button).</p>
+
+<pre>Gtk::ColorSelection#set_has_opacity_control( has_opacity )
+Gtk::ColorSelection#has_opacity_control=( has_opacity )
+</pre>
+
+<p>The color selection widget supports adjusting the opacity of a color (also known as the alpha channel). 
+This is disabled by default. Calling this method with <i>has_opacity</i> set to true enables opacity. Likewise,
+<i>has_opacity</i> set to false will disable opacity.</p>
+
+<pre>Gtk::ColorSelection#set_current_color( color )
+Gtk::ColorSelection#current_color=( color )
+
+Gtk::ColorSelection#set_current_alpha( alpha )
+Gtk::ColorSelection#current_alpha=( alpha )
+</pre>
+
+<p>You can set the current color explicitly by calling Gtk::ColorSelection#set_current_color() with a Gdk::Color
+Setting the opacity (alpha channel) is done with Gtk::ColorSelection#set_current_alpha(). The alpha
+value should be between 0 (fully transparent) and 65636 (fully opaque).</p>
+
+<pre>Gtk::ColorSelection#current_color
+
+Gtk::ColorSelection#current_alpha
+</pre>
+
+<p>When you need to query the current color, typically when you've received a "color_changed" signal, you use 
+these methods.</p>
+
+<p>Here's a simple example demonstrating the use of the ColorSelectionDialog. The program displays a color selection
+dialog, and then prints the color you selected.</p>
+
+<p>COLORSELECTION DIALOG SCREENSHOT</p>
+
+<pre>ON HOLD TILL I FIGURE OUT THE Gdk::Color* STUFF.</pre>
+
+<hr>
+<table>
+	<tbody><tr>
+		<td align="left"><a href="10.11.htm">Prev</a></td>
+		<td align="right"><a href="10.13.htm">Next</a></td>
+	</tr>
+</tbody></table>
+</body></html>

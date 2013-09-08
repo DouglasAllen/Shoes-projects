@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>MakeLinux</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            MakeLinux 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/make/linux/tasks_rb.html">make/linux/tasks.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-copy_deps_to_dist">copy_deps_to_dist</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-copy_ext">copy_ext</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>F</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-find_and_copy">find_and_copy</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>M</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-make_app">make_app</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-make_installer">make_installer</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-make_so">make_so</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-setup_system_resources">setup_system_resources</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-copy_deps_to_dist">
+            
+              <b>copy_deps_to_dist</b>()
+            
+            <a href="../classes/MakeLinux.html#method-c-copy_deps_to_dist" name="method-c-copy_deps_to_dist" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-copy_deps_to_dist_source')" id="l_method-c-copy_deps_to_dist_source">show</a>
+                
+              </p>
+              <div id="method-c-copy_deps_to_dist_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File make/linux/tasks.rb, line 34</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">copy_deps_to_dist</span>
+  <span class="ruby-identifier">cp</span>    <span class="ruby-node">&quot;#{::EXT_RUBY_LIB}/lib#{::RUBY_SO}.so&quot;</span>, <span class="ruby-node">&quot;dist/lib#{::RUBY_SO}.so&quot;</span>
+  <span class="ruby-identifier">ln_s</span>  <span class="ruby-node">&quot;lib#{::RUBY_SO}.so&quot;</span>, <span class="ruby-node">&quot;dist/lib#{::RUBY_SO}.so.#{::RUBY_V[/^\d+\.\d+/]}&quot;</span>
+  <span class="ruby-identifier">find_and_copy</span> <span class="ruby-string">&quot;libgif.so&quot;</span>, <span class="ruby-string">&quot;dist/libgif.so.4&quot;</span>
+  <span class="ruby-identifier">ln_s</span>  <span class="ruby-string">&quot;libgif.so.4&quot;</span>, <span class="ruby-string">&quot;dist/libungif.so.4&quot;</span>
+  <span class="ruby-identifier">find_and_copy</span> <span class="ruby-string">&quot;libjpeg.so&quot;</span>, <span class="ruby-string">&quot;dist/libjpeg.so.8&quot;</span>
+  <span class="ruby-identifier">find_and_copy</span> <span class="ruby-string">&quot;libcurl.so&quot;</span>, <span class="ruby-string">&quot;dist/libcurl.so.4&quot;</span>
+  <span class="ruby-identifier">find_and_copy</span> <span class="ruby-string">&quot;libportaudio.so&quot;</span>, <span class="ruby-string">&quot;dist/libportaudio.so.2&quot;</span>
+  <span class="ruby-identifier">find_and_copy</span>  <span class="ruby-string">&quot;libsqlite3.so&quot;</span>, <span class="ruby-string">&quot;dist/libsqlite3.so.0&quot;</span>
+  <span class="ruby-identifier">sh</span>    <span class="ruby-string">&quot;strip -x dist/*.so.*&quot;</span>
+  <span class="ruby-identifier">sh</span>    <span class="ruby-string">&quot;strip -x dist/*.so&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-copy_ext">
+            
+              <b>copy_ext</b>(xdir, libdir)
+            
+            <a href="../classes/MakeLinux.html#method-c-copy_ext" name="method-c-copy_ext" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-copy_ext_source')" id="l_method-c-copy_ext_source">show</a>
+                
+              </p>
+              <div id="method-c-copy_ext_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File make/linux/tasks.rb, line 9</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">copy_ext</span> <span class="ruby-identifier">xdir</span>, <span class="ruby-identifier">libdir</span>
+  <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">xdir</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">system</span> <span class="ruby-string">&quot;ruby&quot;</span>, <span class="ruby-string">&quot;extconf.rb&quot;</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">system</span> <span class="ruby-string">&quot;make&quot;</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-string">&quot;Extension build failed&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">copy_files</span> <span class="ruby-node">&quot;#{xdir}/*.so&quot;</span>, <span class="ruby-identifier">libdir</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-find_and_copy">
+            
+              <b>find_and_copy</b>(thelib,newplace)
+            
+            <a href="../classes/MakeLinux.html#method-c-find_and_copy" name="method-c-find_and_copy" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-find_and_copy_source')" id="l_method-c-find_and_copy_source">show</a>
+                
+              </p>
+              <div id="method-c-find_and_copy_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File make/linux/tasks.rb, line 18</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">find_and_copy</span> <span class="ruby-identifier">thelib</span>,<span class="ruby-identifier">newplace</span>
+    <span class="ruby-identifier">testpath</span> = <span class="ruby-constant">ENV</span>[<span class="ruby-string">'LD_LIBRARY_PATH'</span>].<span class="ruby-identifier">nil?</span> <span class="ruby-operator">?</span> [] <span class="ruby-operator">:</span> <span class="ruby-constant">ENV</span>[<span class="ruby-string">'LD_LIBRARY_PATH'</span>].<span class="ruby-identifier">split</span>(<span class="ruby-regexp">/:/</span>).<span class="ruby-identifier">map</span>(&amp;<span class="ruby-value">:strip</span>)
+    <span class="ruby-identifier">testpath</span> <span class="ruby-operator">+=</span> [
+      <span class="ruby-node">&quot;/usr/lib/#{thelib}&quot;</span>,
+      <span class="ruby-node">&quot;/usr/lib64/#{thelib}&quot;</span>,
+      <span class="ruby-node">&quot;/usr/lib/x86_64-linux-gnu/#{thelib}&quot;</span>,
+      <span class="ruby-node">&quot;/usr/lib/i386-linux-gnu/#{thelib}&quot;</span>
+    ]
+    <span class="ruby-identifier">testpath</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">tp</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span> <span class="ruby-identifier">tp</span>
+        <span class="ruby-identifier">cp</span> <span class="ruby-identifier">tp</span>, <span class="ruby-identifier">newplace</span>
+        <span class="ruby-keyword">return</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-make_app">
+            
+              <b>make_app</b>(name)
+            
+            <a href="../classes/MakeLinux.html#method-c-make_app" name="method-c-make_app" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-make_app_source')" id="l_method-c-make_app_source">show</a>
+                
+              </p>
+              <div id="method-c-make_app_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File make/linux/tasks.rb, line 51</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">make_app</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">bin</span> = <span class="ruby-node">&quot;#{name}-bin&quot;</span>
+  <span class="ruby-identifier">rm_f</span> <span class="ruby-identifier">name</span>
+  <span class="ruby-identifier">rm_f</span> <span class="ruby-identifier">bin</span>
+  <span class="ruby-identifier">sh</span> <span class="ruby-node">&quot;#{CC} -Ldist -o #{bin} bin/main.o #{LINUX_LIBS} -lshoes #{RbConfig::CONFIG['LDFLAGS']}&quot;</span>
+  <span class="ruby-identifier">rewrite</span> <span class="ruby-string">&quot;platform/nix/shoes.launch&quot;</span>, <span class="ruby-identifier">name</span>, <span class="ruby-regexp">%r/shoes-bin!</span>, <span class="ruby-node">&quot;/#{NAME}-bin&quot;</span>
+  <span class="ruby-identifier">sh</span> <span class="ruby-node">%Q{echo 'cd &quot;$OLDPWD&quot;\nLD_LIBRARY_PATH=$APPPATH $APPPATH/#{File.basename(bin)} &quot;$@&quot;' &gt;&gt; #{name}}</span>
+  <span class="ruby-identifier">chmod</span> <span class="ruby-number">0755</span>, <span class="ruby-identifier">name</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-make_installer">
+            
+              <b>make_installer</b>()
+            
+            <a href="../classes/MakeLinux.html#method-c-make_installer" name="method-c-make_installer" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-make_installer_source')" id="l_method-c-make_installer_source">show</a>
+                
+              </p>
+              <div id="method-c-make_installer_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File make/linux/tasks.rb, line 66</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">make_installer</span>
+  <span class="ruby-identifier">mkdir_p</span> <span class="ruby-string">&quot;pkg&quot;</span>
+  <span class="ruby-identifier">sh</span> <span class="ruby-node">&quot;makeself dist pkg/#{PKG}.run '#{APPNAME}' ./#{NAME}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-make_so">
+            
+              <b>make_so</b>(name)
+            
+            <a href="../classes/MakeLinux.html#method-c-make_so" name="method-c-make_so" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-make_so_source')" id="l_method-c-make_so_source">show</a>
+                
+              </p>
+              <div id="method-c-make_so_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File make/linux/tasks.rb, line 61</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">make_so</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">ldflags</span> = <span class="ruby-constant">LINUX_LDFLAGS</span>.<span class="ruby-identifier">sub!</span> <span class="ruby-regexp">/INSTALL_NAME/</span>, <span class="ruby-node">&quot;-install_name @executable_path/lib#{SONAME}.#{DLEXT}&quot;</span>
+  <span class="ruby-identifier">sh</span> <span class="ruby-node">&quot;#{CC} -o #{name} #{OBJ.join(' ')} #{LINUX_LDFLAGS} #{LINUX_LIBS}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-setup_system_resources">
+            
+              <b>setup_system_resources</b>()
+            
+            <a href="../classes/MakeLinux.html#method-c-setup_system_resources" name="method-c-setup_system_resources" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-setup_system_resources_source')" id="l_method-c-setup_system_resources_source">show</a>
+                
+              </p>
+              <div id="method-c-setup_system_resources_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File make/linux/tasks.rb, line 47</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">setup_system_resources</span>
+  <span class="ruby-identifier">cp</span> <span class="ruby-constant">APP</span>[<span class="ruby-string">'icons'</span>][<span class="ruby-string">'gtk'</span>], <span class="ruby-string">&quot;dist/static/app-icon.png&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                        </div>
+
+    </div>
+  </body>
+</html>    

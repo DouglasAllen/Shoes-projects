@@ -1,0 +1,253 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html><head>
+
+
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <link rel="stylesheet" type="text/css" href="site-style.css">
+</head><body bgcolor="white">
+
+<h1>Ruby-GNOME2 Tutorial</h1>
+
+<p><b>Joshua Keith (joshuakeith at linuxmail dot org)</b><br>
+Last Update: December 05, 2002</p>
+
+<p class="tut">
+<b>Table of Contents</b>
+</p><ol>
+	<li><a href="1.0.htm">Tutorial Availability</a></li>
+	
+	<li><a href="2.0.htm">Introduction</a></li>
+
+	<li><a href="3.0.htm">Getting Started</a><br>
+		<ul>
+			<li><a href="3.1.htm">Hello World in Ruby-GNOME2</a></li>
+			<li><a href="3.2.htm">Theory of Signals and Callbacks</a></li>
+			<li><a href="3.3.htm">Events</a></li>
+			<li><a href="3.4.htm">Stepping Through Hello World</a></li>
+      </ul></li>
+
+	<li><a href="4.0.htm">Moving On</a><br>
+		<ul>
+			<li><a href="4.1.htm">More on Signal Handlers</a></li>
+			<li><a href="4.2.htm">An Upgraded Hello World</a></li>
+      </ul></li>
+
+	<li><a href="5.0.htm">Packing Widgets</a><br>
+		<ul>
+			<li><a href="5.1.htm">Theory of Packing Boxes</a></li>
+			<li><a href="5.2.htm">Details of Packing Boxes</a></li>
+			<li><a href="5.3.htm">Packing Demonstration Program</a></li>
+			<li><a href="5.4.htm">Packing Using Tables</a></li>
+			<li><a href="5.5.htm">Table Packing Example</a></li>
+      </ul></li>
+
+	<li><a href="6.0.htm">Widget Overview</a><br>
+		<ul>
+			<li><a href="6.1.htm">Widget Hierarchy</a></li>
+			<li><a href="6.2.htm">Widgets Without Windows</a></li>
+		</ul>
+
+	</li><li><a href="7.0.htm">The Button Widget</a><br>
+		<ul>
+			<li><a href="7.1.htm">Normal Buttons</a></li>
+			<li><a href="7.2.htm">Toggle Buttons</a></li>
+			<li><a href="7.3.htm">Check Buttons</a></li>
+			<li><a href="7.4.htm">Radio Buttons</a></li>
+		</ul></li>
+
+	<li><a href="8.0.htm">Adjustments</a><br>
+		<ul>
+			<li><a href="8.1.htm">Creating an Adjustment</a></li>
+			<li><a href="8.2.htm">Using Adjustments the Easy Way</a></li>
+			<li><a href="8.3.htm">Adjustment Internals</a></li>
+<a href="8.3.htm">		</a></ul></li>
+
+<a href="8.3.htm">	</a><li><a href="9.0.htm">Range Widgets</a><br>
+		<ul>
+			<li><a href="9.1.htm">Scrollbar Widgets</a></li>
+			<li><a href="9.2.htm">Scale Widgets</a><br>
+				<ul>
+					<li><a href="9.2.1.htm">Creating a Scale Widget</a></li>
+					<li><a href="9.2.2.htm">Methods</a></li>
+				</ul></li>
+
+			<li><a href="9.3.htm">Common Range Methods</a><br>
+				<ul>
+					<li><a href="9.3.1.htm">Setting the Update Policy</a></li>
+					<li><a href="9.3.2.htm">Getting and Setting Adjustments</a></li>
+				</ul></li>
+
+			<li><a href="9.4.htm">Key and Mouse Bindings</a></li>
+			<li><a href="9.5.htm">Example</a></li>
+		</ul></li>
+
+	<li><a href="10.0.htm">Miscellaneous Widgets</a></li>
+		<ul>
+			<li><a href="10.1.htm">Labels</a></li>
+			<li><a href="10.2.htm">Arrows</a></li>
+			<li><a href="10.3.htm">The ToolTips Object</a></li>
+			<li><a href="10.4.htm">Progress Bar</a></li>
+			<li><a href="10.5.htm">Dialogs</a></li>
+			<li><a href="10.6.htm">Rulers</a></li>
+			<li><a href="10.7.htm">Statusbars</a></li>
+			<li><a href="10.8.htm">Text Entries</a></li>
+			<li><a href="10.9.htm">Spin Buttons</a></li>
+			<li><a href="10.10.htm">Combo Box</a></li>
+			<li><a href="10.11.htm">Calendar</a></li>
+			<li><a href="10.12.htm">Color Selection</a></li>
+			<li><a href="10.13.htm">File Selection</a></li>
+		</ul>
+
+	<li><a href="11.0.htm">Container Widgets</a><br>
+		<ul>
+			<li><a href="11.1.htm">The EventBox</a></li>
+			<li><a href="11.2.htm">The Alignment Widget</a></li>
+			<li><a href="11.3.htm">Fixed Container</a></li>
+			<li><a href="11.4.htm">Layout Container</a></li>
+			<li><a href="11.5.htm">Frames</a></li>
+			<li><a href="11.6.htm">Aspect Frame</a></li>
+			<li><a href="11.7.htm">Paned Window Widgets</a></li>
+			<li><a href="11.8.htm">Viewports</a></li>
+			<li><a href="11.9.htm">Scrolled Windows</a></li>
+			<li><a href="11.10.htm">Button Boxes</a></li>
+			<li><a href="11.11.htm">Toolbar</a></li>
+			<li><a href="11.12.htm">Notebooks</a></li>
+		</ul></li>
+
+	<li><a href="12.0.htm">Menu Widgets</a><br>
+		<ul>
+			<li><a href="12.1.htm">Manual Menu Creation</a></li>
+			<li><a href="12.2.htm">Manual Menu Example</a></li>
+			<li><a href="12.3.htm">Using ItemFactory</a><br>
+				<ul>
+					<li><a href="12.3.1.htm">ItemFactory entries</a></li>
+					<li><a href="12.3.2.htm">Creating an ItemFactory</a></li>
+					<li><a href="12.3.3.htm">Making use of the menu and its menu items</a></li>
+				</ul></li>
+
+			<li><a href="12.4.htm">ItemFactory Example</a></li>
+		</ul></li>
+
+	<li><a href="13.0.htm">Undocumented Widgets</a><br>
+		<ul>
+			<li><a href="13.1.htm">Accel Label</a></li>
+			<li><a href="13.2.htm">Option Menu</a></li>
+			<li><a href="13.3.htm">Menu Items</a><br>
+				<ul>
+					<li><a href="13.3.1.htm">Check Menu Item</a></li>
+					<li><a href="13.3.2.htm">Radio Menu Item</a></li>
+					<li><a href="13.3.3.htm">Separator Menu Item</a></li>
+					<li><a href="13.3.4.htm">Tearoff Menu Item</a></li>
+				</ul></li>
+			<li><a href="13.4.htm">Curves</a></li>
+			<li><a href="13.5.htm">Drawing Area</a></li>
+			<li><a href="13.6.htm">Font Selection Dialog</a></li>
+			<li><a href="13.7.htm">Message Dialog</a></li>
+			<li><a href="13.8.htm">Gamma Curve</a></li>
+			<li><a href="13.9.htm">Image</a></li>
+			<li><a href="13.10.htm">Plugs and Sockets</a></li>
+			<li><a href="13.11.htm">Tree View</a></li>
+			<li><a href="13.12.htm">Text View</a></li>
+		</ul></li>
+
+	<li><a href="14.0.htm">Setting Widget Attributes</a><br>
+		<ul>
+			<li>Widget Flag Methods</li>
+			<li>Widget Display Methods</li>
+			<li>Widget Accelerators</li>
+			<li>Widget Name Methods</li>
+			<li>Widget Styles</li>
+		</ul></li>
+
+	<li><a href="15.0.htm">Timeouts, IO, and Idle Methods</a><br>
+		<ul>
+			<li><a href="15.1.htm">Timeouts</a></li>
+			<li><a href="15.2.htm">Monitoring IO</a></li>
+			<li><a href="15.3.htm">Idle Methods</a></li>
+		</ul></li>
+
+	<li><a href="16.0.htm">Advanced Event and Signal Handling</a><br>
+		<ul>
+			<li><a href="16.1.htm">Signal Methods</a><br>
+				<ul>
+					<li><a href="16.1.1.htm">Connecting and Disconnecting Signal Handlers</a></li>
+					<li><a href="16.1.2.htm">Blocking and Unblocking Signal Handlers</a></li><li>
+					</li><li><a href="16.1.3.htm">Emitting and Stopping Signals</a></li>
+				</ul></li>
+				
+			<li><a href="16.2.htm">Signal Emission and Propagation</a></li>
+		</ul></li>
+
+	<li><a href="17.0.htm">Managing Selections</a><br>
+		<ul>
+			<li><a href="17.1.htm">Overview</a></li>
+			<li><a href="17.2.htm">Retrieving the Selection</a></li>
+			<li><a href="17.3.htm">Supplying the Selection</a></li>
+		</ul></li>
+
+	<li><a href="18.0.htm">Drag-and-Drop (DND)</a><br>
+		<ul>
+			<li><a href="18.1.htm">Overview</a></li>
+			<li><a href="18.2.htm">Properties</a></li>
+			<li><a href="18.3.htm">Methods</a></li>
+		</ul></li>
+
+	<li>Glib</li>
+
+	<li>GTK's rc Files<br>
+		<ul>
+			<li>Methods for rc Files</li>
+			<li>Ruby-GNOME2's rc File Format</li>
+			<li>Example rc File</li>
+		</ul></li>
+
+	<li>Writing Your Own Widgets</li>
+
+	<li>Scribble, A Simple Example Drawing Program</li>
+
+	<li>Tips for Writing Ruby-GNOME2 Applications</li>
+
+	<li>Contributing</li>
+
+	<li>Credits</li>
+
+	<li>Tutorial Copyright and Permissions Notice</li>
+
+	<li>GTK Signals<br>
+		<ul>
+			<li>Gtk::Object</li>
+			<li>Gtk::Widget</li>
+			<li>Gtk::Data</li>
+			<li>Gtk::Container</li>
+			<li>Gtk::Calendar</li>
+			<li>Gtk::Editable</li>
+			<li>Gtk::Notebook</li>
+			<li>Gtk::List</li>
+			<li>Gtk::MenuShell</li>
+			<li>Gtk::Toolbar</li>
+			<li>Gtk::Button</li>
+			<li>Gtk::Item</li>
+			<li>Gtk::Window</li>
+			<li>Gtk::HandleBox</li>
+			<li>Gtk::ToggleButton</li>
+			<li>Gtk::MenuItem</li>
+			<li>Gtk::CheckMenuItem</li>
+			<li>Gtk::InputDialog</li>
+			<li>Gtk::ColorSelection</li>
+			<li>Gtk::StatusBar</li>
+			<li>Gtk::Curve</li>
+			<li>Gtk::Adjustment</li>
+		</ul></li>
+		
+	<li>GDK Event Types</li>
+	<li>Code Examples<br>
+		<ul>
+			<li>Tictactoe</li>
+			<li>GtkDial</li>
+			<li>Scribble</li>
+		</ul></li>
+
+</ol>
+<p>
+</p><hr>
+</body></html>

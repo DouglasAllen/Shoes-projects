@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>CP</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            CP 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/req/chipmunk/ext/chipmunk/rb_chipmunk_c.html">req/chipmunk/ext/chipmunk/rb_chipmunk.c</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+    <!-- Namespace -->
+    <div class="sectiontitle">Namespace</div>
+    <ul>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="CP/Joint.html">CP::Joint</a>
+        </li>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="CP/Shape.html">CP::Shape</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="CP/BB.html">CP::BB</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="CP/Body.html">CP::Body</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="CP/Space.html">CP::Space</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="CP/Vec2.html">CP::Vec2</a>
+        </li>
+      
+    </ul>
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>B</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-bias_coef">bias_coef</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-bias_coef-3D">bias_coef=</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-collision_slop">collision_slop</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-collision_slop-3D">collision_slop=</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-damped_spring">damped_spring</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>M</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-moment_for_circle">moment_for_circle</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-moment_for_poly">moment_for_poly</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-bias_coef">
+            
+              <b>bias_coef</b>()
+            
+            <a href="../classes/CP.html#method-c-bias_coef" name="method-c-bias_coef" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-bias_coef_source')" id="l_method-c-bias_coef_source">show</a>
+                
+              </p>
+              <div id="method-c-bias_coef_source" class="dyn-source">
+                <pre>static VALUE
+rb_get_cp_bias_coef(VALUE self)
+{
+        return rb_float_new(cp_bias_coef);
+}</pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-bias_coef-3D">
+            
+              <b>bias_coef=</b>(p1)
+            
+            <a href="../classes/CP.html#method-c-bias_coef-3D" name="method-c-bias_coef-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-bias_coef-3D_source')" id="l_method-c-bias_coef-3D_source">show</a>
+                
+              </p>
+              <div id="method-c-bias_coef-3D_source" class="dyn-source">
+                <pre>static VALUE
+rb_set_cp_bias_coef(VALUE self, VALUE num)
+{
+        cp_bias_coef = NUM2DBL(num);
+        return num;
+}</pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-collision_slop">
+            
+              <b>collision_slop</b>()
+            
+            <a href="../classes/CP.html#method-c-collision_slop" name="method-c-collision_slop" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-collision_slop_source')" id="l_method-c-collision_slop_source">show</a>
+                
+              </p>
+              <div id="method-c-collision_slop_source" class="dyn-source">
+                <pre>static VALUE
+rb_get_cp_collision_slop(VALUE self)
+{
+        return rb_float_new(cp_collision_slop);
+}</pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-collision_slop-3D">
+            
+              <b>collision_slop=</b>(p1)
+            
+            <a href="../classes/CP.html#method-c-collision_slop-3D" name="method-c-collision_slop-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-collision_slop-3D_source')" id="l_method-c-collision_slop-3D_source">show</a>
+                
+              </p>
+              <div id="method-c-collision_slop-3D_source" class="dyn-source">
+                <pre>static VALUE
+rb_set_cp_collision_slop(VALUE self, VALUE num)
+{
+        cp_collision_slop = NUM2DBL(num);
+        return num;
+}</pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-damped_spring">
+            
+              <b>damped_spring</b>(p1, p2, p3, p4, p5, p6, p7, p8)
+            
+            <a href="../classes/CP.html#method-c-damped_spring" name="method-c-damped_spring" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-damped_spring_source')" id="l_method-c-damped_spring_source">show</a>
+                
+              </p>
+              <div id="method-c-damped_spring_source" class="dyn-source">
+                <pre>static VALUE
+rb_dampedSpring(VALUE self, VALUE a, VALUE b, VALUE r1, VALUE r2, VALUE len, VALUE k, VALUE dmp, VALUE dt)
+{
+        cpDampedSpring(BODY(a), BODY(b), *VGET(r1), *VGET(r2), NUM2DBL(len), NUM2DBL(k), NUM2DBL(dmp), NUM2DBL(dt));
+        return Qnil;
+}</pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-moment_for_circle">
+            
+              <b>moment_for_circle</b>(p1, p2, p3, p4)
+            
+            <a href="../classes/CP.html#method-c-moment_for_circle" name="method-c-moment_for_circle" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-moment_for_circle_source')" id="l_method-c-moment_for_circle_source">show</a>
+                
+              </p>
+              <div id="method-c-moment_for_circle_source" class="dyn-source">
+                <pre>static VALUE
+rb_momentForCircle(VALUE self, VALUE m, VALUE r1, VALUE r2, VALUE offset)
+{
+        cpFloat i = cpMomentForCircle(NUM2DBL(m), NUM2DBL(r1), NUM2DBL(r2), *VGET(offset));
+        return rb_float_new(i);
+}</pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-moment_for_poly">
+            
+              <b>moment_for_poly</b>(p1, p2, p3)
+            
+            <a href="../classes/CP.html#method-c-moment_for_poly" name="method-c-moment_for_poly" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-moment_for_poly_source')" id="l_method-c-moment_for_poly_source">show</a>
+                
+              </p>
+              <div id="method-c-moment_for_poly_source" class="dyn-source">
+                <pre>static VALUE
+rb_momentForPoly(VALUE self, VALUE m, VALUE arr, VALUE offset)
+{
+        Check_Type(arr, T_ARRAY);
+        int numVerts = RARRAY_LEN(arr);
+        cpVect verts[numVerts];
+        
+        for(int i=0; i&lt;numVerts; i++)
+                verts[i] = *VGET(RARRAY_PTR(arr)[i]);
+        
+        cpFloat inertia = cpMomentForPoly(NUM2DBL(m), numVerts, verts, *VGET(offset));
+        return rb_float_new(inertia);
+}</pre>
+              </div>
+            </div>
+            
+          </div>
+                        </div>
+
+    </div>
+  </body>
+</html>    

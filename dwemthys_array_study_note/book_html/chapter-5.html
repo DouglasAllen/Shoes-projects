@@ -1,0 +1,3040 @@
+<!DOCTYPE html>
+<!-- saved from url=(0061)http://mislav.uniqpath.com/poignant-guide/book/chapter-5.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>
+      Them What Make the Rules and Them What Live the Dream
+      ::
+      Why's (Poignant) Guide to Ruby
+    </title>
+    <meta name="author" content="Why the Lucky Stiff">
+    <meta name="creator" content="Mislav Marohnić">
+    
+    <link rel="stylesheet" type="text/css" href="./css/guide.css">
+</head>
+<body class="">
+
+<div id="banner">
+   <div class="pager">
+     <a class="pagebar" href="chapter-4.html">previous</a> |
+     <a class="pagebar" href="chapter-6.html">next</a>
+   </div>
+   <div class="title">
+     <img src="./images/2006.chaptertitle.png" alt="Why&#39;s (Poignant) Guide to Ruby">
+   </div>
+</div>
+
+<div id="container">
+  <div class="page">
+    <div class="pageLinks">
+      <a class="pagebar" href="about.html">Contents</a>
+    </div>
+    <div class="pageTitle">
+      <h3>5.</h3>
+      <h1>Them What Make the Rules and Them What Live the Dream</h1>
+      <p>
+        <img src="./images/chapter.poignant.guide-5.jpg" alt="">
+      </p>
+    </div>
+
+    <div class="content">
+      <p><img src="./images/dr.cham-1.gif" title="Through space and time... in his bell
+jar... on a mission to find himself..." alt="Through space and time... in his bell jar... on a mission to find
+himself..."></p>
+
+<p>Frankly, I’m sick and tired of hearing that Dr. Cham was a madman. Yes, he tried
+to bury himself alive. Yes, he electrocuted his niece. Yes, in fact, he did
+dynamite a retirement home. But this was all with good cause and, in each case,
+I believe he took the correct course of action.</p>
+
+<p>I’m sure you’d like to side with popular opinion, but you’re bound to feel some
+small trickle of admiration for him once he’s taken time to teach you all about
+Ruby’s class definitions. And moreso when you learn about mixins. And perhaps,
+by the end of the chapter, we can all start to look beyond the Doctor’s grievous
+past and stop calling him a madman.</p>
+
+<p>So if you need to call him a madman, I’d start heading down to the train tracks
+to smash up some long fluorescent light bulbs. Get it out of your system right
+now, before we dig in.</p>
+
+<p><a name="section1"></a></p>
+
+<h2>1. This One’s For the Disenfranchised</h2>
+
+<p><img src="./images/elderly-1.gif" title="Some
+people still can&#39;t get past what he did." alt="Some people still can&#39;t get past what he did."></p>
+
+<p>If you give me a number, which is any year from Dr. Cham’s life, I’ll give you a
+synopsis of that time period. And I’ll do it as a Ruby method, so it’s an
+independent piece, an isolated chunk of code which can be hooked up to the voice
+of a robotic volcano, when such a thing becomes the apex of authoritative voice
+talents.</p>
+
+<p>Okay, so I need you to notice <code>def</code> and <code>case</code> and <code>when</code>. You’ve seen the
+Ranges, the closed accordions of <code>1895..1913</code>, back in chapter 3. They contain
+both ends and in between. And the backslashes at the end of each line simply
+ignore the <em>Enter</em> key at the end of each line, assuring Ruby that there is
+<em>more of this line to come</em>.</p>
+
+<p>So, please: <code>def</code> and <code>case</code> and <code>when</code>.</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="k">def</span> <span class="nf">dr_chams_timeline</span><span class="p">(</span> <span class="n">year</span> <span class="p">)</span>
+  <span class="k">case</span> <span class="n">year</span>
+  <span class="k">when</span> <span class="mi">1894</span>
+    <span class="s2">"Born."</span>
+  <span class="k">when</span> <span class="mi">1895</span><span class="o">.</span><span class="n">.</span><span class="mi">1913</span>
+    <span class="s2">"Childhood in Lousville, Winston Co., Mississippi."</span>
+  <span class="k">when</span> <span class="mi">1914</span><span class="o">.</span><span class="n">.</span><span class="mi">1919</span>
+    <span class="s2">"Worked at a pecan nursery; punched a Quaker."</span>
+  <span class="k">when</span> <span class="mi">1920</span><span class="o">.</span><span class="n">.</span><span class="mi">1928</span>
+    <span class="s2">"Sailed in the Brotherhood of River Wisdomming, which journeyed \</span>
+<span class="s2">     the Mississippi River and engaged in thoughtful self-improvement, \</span>
+<span class="s2">     where he finished 140 credit hours from their Oarniversity."</span>
+  <span class="k">when</span> <span class="mi">1929</span>
+    <span class="s2">"Returned to Louisville to pen a novel about time-travelling pheasant hunters."</span>
+  <span class="k">when</span> <span class="mi">1930</span><span class="o">.</span><span class="n">.</span><span class="mi">1933</span>
+    <span class="s2">"Took up a respectable career insuring pecan nurseries.  Financially stable, he \</span>
+<span class="s2">     spent time in Brazil and New Mexico, buying up rare paper-shell pecan trees.  Just \</span>
+<span class="s2">     as his notariety came to a crescendo: gosh, he tried to buried himself alive."</span>
+  <span class="k">when</span> <span class="mi">1934</span>
+    <span class="s2">"Went back to writing his novel.  Changed the hunters to insurance tycoons and the \</span>
+<span class="s2">     pheasants to Quakers."</span>
+  <span class="k">when</span> <span class="mi">1935</span><span class="o">.</span><span class="n">.</span><span class="mi">1940</span>
+    <span class="s2">"Took Arthur Cone, the Headmaster of the Brotherhood of River Wisdomming, as a \</span>
+<span class="s2">     houseguest.  Together for five years, engineering and inventing."</span>
+  <span class="k">when</span> <span class="mi">1941</span>
+    <span class="s2">"And this is where things got interesting."</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+
+
+<p>The <code>def</code> keyword. Here is our first <strong>method definition</strong>. A plain kernel
+method, which can be used anywhere in Ruby. And how do we run it?</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="nb">puts</span> <span class="n">dr_chams_timeline</span><span class="p">(</span> <span class="mi">1941</span> <span class="p">)</span>
+</code></pre></div>
+
+
+<p>Which answers with “And this is where things got interesting.” It’s the same
+story again and again: <em>use your answers.</em> I’ve set things up above so that the
+<code>case</code> statement always answers with a string. And since the case statement is
+the final (and only) statement in the method, then the method answers with that
+string. Trickling water spilling down from ledge to ledge.</p>
+
+<p>Let me be clear about the <code>case</code> statement. Actually, I should call it a
+<code>case..when</code> statement, since they cannot be used separately. The <code>case</code> keyword
+is followed by a value, which is compared against each of the values which
+follow <code>when</code> keywords. The first value to qualify as a match is the one the
+case uses and the rest are ignored. You can do the same thing with a bunch of
+<code>if..elsif</code> statements, but it’s wordier.</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="k">case</span> <span class="n">year</span>
+<span class="k">when</span> <span class="mi">1894</span>
+  <span class="s2">"Born."</span>
+<span class="k">when</span> <span class="mi">1895</span><span class="o">.</span><span class="n">.</span><span class="mi">1913</span>
+  <span class="s2">"Childhood in Lousville, Winston Co., Mississippi."</span>
+<span class="k">else</span>
+  <span class="s2">"No information about this year."</span>
+<span class="k">end</span>
+</code></pre></div>
+
+
+<p>Is identical to:</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="k">if</span> <span class="mi">1894</span> <span class="o">===</span> <span class="n">year</span>
+  <span class="s2">"Born."</span>
+<span class="k">elsif</span> <span class="p">(</span><span class="mi">1895</span><span class="o">.</span><span class="n">.</span><span class="mi">1913</span><span class="p">)</span> <span class="o">===</span> <span class="n">year</span>
+  <span class="s2">"Childhood in Lousville, Winston Co., Mississippi."</span>
+<span class="k">else</span>
+  <span class="s2">"No information about this year."</span>
+<span class="k">end</span>
+</code></pre></div>
+
+
+<p>The <strong>triple equals</strong> is a length of velvet rope, checking values much like the
+double equals. It’s just: the triple equals is a longer rope and it sags a bit
+in the middle. It’s not as strict, it’s a bit more flexible.</p>
+
+<p>Take the Ranges above. <code>(1895..1913)</code> isn’t at all <strong>equal</strong> to <code>1905</code>. No, the
+Range <code>(1895..1913)</code> is only truly <strong>equal</strong> to any other Range <code>(1895..1913)</code>.
+In the case of a Range, the triple equals cuts you a break and lets the Integer
+<code>1905</code> in, because even though it’s not <strong>equal</strong> to the Range, it’s
+<strong>included</strong> in the set of Integers represented by the Range. Which is good
+enough in some cases, such as the timeline I put together earlier.</p>
+
+<p>Which actually looked like a timeline, didn’t it? I mean, sure,
+<code>dr_chams_timeline</code> method is code, but it does read like a timeline, clean and
+lovely.</p>
+
+<p><img src="./images/elderly-2.gif" title="What research revealed." alt="What research revealed."></p>
+
+<div class="sidebar"><aside>
+
+<h2>Caring For You. And Your Wellness.</h2>
+
+<p>I need you to be in a good mental state for the latter half of this book. Now is
+the time to begin conditioning you.</p>
+
+<p>Let’s start with some deep breathing. Give me a good deep breath and count to
+four with me.</p>
+
+<p>Here we go. 1. 2. 3. 4. Now exhale. You can feel your eyes. Good, that’s exactly
+it.</p>
+
+<p>Now let’s take a deep breath and, in your mind, draw a hippopotamus as fast as
+you can. Quick quick. His legs, his folds, his marshmallow teeth. Okay, done.
+Now exhale.</p>
+
+<p>Take another deep breath and hold it tight. As you hold it tightly in your
+chest, imagine the tightness is shrinking you down into a bug. You’ve held your
+breath so hard that you’re an insect. And all the other bugs saw you shrink and
+they loved the stunt. They’re clapping and rubbing their feelers together madly.
+But you had an apple in your hand when you were big and it just caught up with
+you, crushed the whole crowd. You’re dead, too. Now exhale.</p>
+
+<p>Give me a solid deep breath and imagine you live in a town where everything is
+made of telephone cords. The houses are all telephone cords, the shingles, the
+rafters. The doorways are a thick mass of telephone cords which you simply
+thrust yourself through. When you go to bed, the bedspread is telephone cords.
+And the mattress and box springs are telephone cords, too. Like I said,
+everything is made out of telephone cords. The telephone itself is made of
+telephone cords. But the telephone cord going to the telephone is made out of
+bread and a couple sticks. Now exhale.</p>
+
+<p>Breathe in. 1. 2. 3. 4. Breathe out.</p>
+
+<p>Breath in. 1. 2. Another short breath in. 3. 4. Imagine both of your hands
+snapping off at the wrists and flying into your computer screen and programming
+it from the inside. Exhale.</p>
+
+<p>Big, big deep breath. Deep down inside you there is a submarine. It has a
+tongue. Exhale.</p>
+
+<p>Breathe through your nostrils. Deep breath. Filter the air through your
+nostrils. Breathing through the nostrils gives you quality air. Your nostrils
+flare, you are taking breaths of nature’s air, the way God intended. Imagine a
+floppy disk drive clogged up with orphans. And while it chokes on orphans, you
+have good, wholesome God’s breath in your lungs. But that pleasurable,
+life-giving air will become a powerful toxin if held too long. <em>Hurry, exhale
+God and nature’s air!</em></p>
+
+<p>Now, you will wake up, smoothing out the creases of this page in your web
+browser. You will have full recollection of your whole life and not forgetting
+any one of the many adventures you have had in your life. You will feel rich and
+renewed and expert. You will have no remembrance of this short exercise, you
+will instead remember teaching a rabbit to use scissors from a great distance.</p>
+
+<p>And as you will wake up with your eyes directed to the top of this exercise, you
+will begin again. But this time, try to imagine that even <em>your shadow</em> is a
+telephone cord.</p>
+
+</aside></div>
+
+
+<h3>But Was He Sick??</h3>
+
+<p>You know, he had such bad timing. He was scattered as a novelist, but his
+ventures into alchemy were very promising. He had an elixir of goat’s milk and
+sea salt that got rid of leg aches. One guy even grew an inch on a thumb he’d
+lost. He had an organic health smoke that smelled like foot but gave you night
+vision. He was working on something called Liquid Ladder, but I’ve never seen or
+read anything else about it. It can’t have been for climbing. Who knows.</p>
+
+<p>One local newspaper actually visited Dr. Cham. Their book reviewer gave him four
+stars. Really. She did an article on him. Gave him a rating.</p>
+
+<p>Just know that Dr. N. Harold Cham felt terrible about his niece. He felt the
+shock treatment would work. The polio probably would have killed her anyway, but
+he took the chance.</p>
+
+<p>On Sept. 9, 1941, after sedating her with a dose of phenacetin in his private
+operating room, he attached the conducting clips to Hannah’s nose, tongue, toes,
+and elbows. Assisted by his apprentice, a bespeckled undergraduate named Marvin
+Holyoake, they sprinkled the girl with the flakes of a substance the doctor
+called <em>opus magnum</em>. A white powder gold which would carry the current and
+blatantly energize the girl, forcing her blood to bloom and fight and vanquish.</p>
+
+<p>But how it failed, oh, and how, when the lever was tossed, she arched and
+kicked—and  <strong><span class="caps">KABLAM</span>!</strong>—and <strong><span class="caps">BLOY</span>-OY-OY-KKPOY!</strong> Ringlets of hair and a wall of light,
+and the bell of death rang. The experiment collapsed in a dire plume of smoke
+and her innocence (<em>for weeks, everyone started out with, “And she will never
+have the chance…”</em>) was a great pit in the floor and in their lungs.</p>
+
+<p>To Hannah, I code.</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="n">opus_magnum</span> <span class="o">=</span> <span class="kp">true</span>
+<span class="k">def</span> <span class="nf">save_hannah</span>
+  <span class="n">success</span> <span class="o">=</span> <span class="n">opus_magnum</span>
+<span class="k">end</span>
+</code></pre></div>
+
+
+<p>A method is its own island. And what goes on inside is unaffected by the simple
+variables around it. Dr. Cham couldn’t breach the illness of his niece, no more
+than an <code>opus_magnum</code> variable can penetrate the steely exterior of a method.</p>
+
+<p>Should we run the <code>save_hannah</code> method, Ruby will squawk at us, claiming it sees
+no <code>opus_magnum</code>.</p>
+
+<p>I’m talking about <strong>scope</strong>. Microscopes narrow and magnify your vision.
+Telescopes extend the range of your vision. In Ruby, <strong>scope</strong> refers to a field
+of vision inside methods and blocks.</p>
+
+<p>A method’s <code>def</code> statement opens its vision. Variable names introduced there
+will be seen by the method and kept meaningful until its <code>end</code> closes its eyes.
+You can pass data into a method by using arguments and data can be returned from
+the method, but the names used inside the method are only good for its scope.</p>
+
+<p>Some variables have wider scope. Global variables like <code>$LOAD_PATH</code>, which start
+with a <strong>cash</strong> symbol, are available in any scope. Instance variables like
+<code>@names</code>, which start with an <strong>at</strong> are available anywhere inside a class
+scope. Same goes for class variables like <code>@@tickets</code>. Class and instance
+variables will be explored in a moment.</p>
+
+<p>Blocks have scope, but it’s a bit fuzzier. More flexible.</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="n">verb</span> <span class="o">=</span> <span class="s1">'rescued'</span>
+<span class="o">[</span><span class="s1">'sedated'</span><span class="p">,</span> <span class="s1">'sprinkled'</span><span class="p">,</span> <span class="s1">'electrocuted'</span><span class="o">].</span>
+<span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">verb</span><span class="o">|</span>
+  <span class="nb">puts</span> <span class="s2">"Dr. Cham "</span> <span class="o">+</span> <span class="n">verb</span> <span class="o">+</span> <span class="s2">" his niece Hannah."</span>
+<span class="k">end</span>
+<span class="nb">puts</span> <span class="s2">"Finally, Dr. Cham "</span> <span class="o">+</span> <span class="n">verb</span> <span class="o">+</span> <span class="s2">" his niece Hannah."</span>
+</code></pre></div>
+
+
+<p>The block <em>iterates</em> (spins, cycles) through each of the Doctor’s actions. The
+<code>verb</code> variable changes with each pass. In one pass, he’s sedating. In the next,
+he’s powdering. Then, he’s electrocuting.</p>
+
+<p>So, the question is: after the block’s over, will he have rescued Hannah?</p>
+
+<pre class="result">Dr. Cham sedated his niece Hannah.
+Dr. Cham sprinkled his niece Hannah.
+Dr. Cham electrocuted his niece Hannah.
+Finally, Dr. Cham rescued his niece Hannah.
+</pre>
+
+
+<p>Blocks are allowed to see variables in the vicinity. But this block has its own
+<code>verb</code> variable which is updated each cycle. When the block completed and its
+tiny life ended, the outer <code>verb</code> stayed the same as it were before.</p>
+
+<p>This is the nature of local variables. When its <strong>scope</strong> closes, the variable
+goes away with it. Say that <code>verb</code> wasn’t used before the block.</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="o">[</span><span class="s1">'sedated'</span><span class="p">,</span> <span class="s1">'powdered'</span><span class="p">,</span> <span class="s1">'electrocuted'</span><span class="o">].</span>
+<span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">verb</span><span class="o">|</span>
+  <span class="nb">puts</span> <span class="s2">"Dr. Cham "</span> <span class="o">+</span> <span class="n">verb</span> <span class="o">+</span> <span class="s2">" his niece Hannah."</span>
+<span class="k">end</span>
+<span class="nb">puts</span> <span class="s2">"Yes, Dr. Cham "</span> <span class="o">+</span> <span class="n">verb</span> <span class="o">+</span> <span class="s2">" his niece Hannah."</span>
+</code></pre></div>
+
+
+<p>Pulls an error: <code>undefined local variable or method `verb'</code>. Poof. The inner
+variable won’t leak outside its scope.</p>
+
+<p>It must be something difficult, even for a great scientist, to carry away the
+corpse of a young girl whose dress is still starched and embroidered, but whose
+mouth is darkly clotted purple at the corners. In Dr. Cham’s journal, he writes
+that he was tormented by her ghost, which glistened gold and scorched lace. His
+delusions grew and he ran from hellhounds and massive vengeful, angelic hands.</p>
+
+<p>Only weeks later, he was gone, propelled from these regrets, vanishing in the
+explosion that lifted him from the planet.</p>
+
+<p>And even as you are reading this now, sometime in these moments, the bell jar
+craft of our lone Dr. Cham touched down upon a distant planet after a sixty year
+burn. As the new world came into view, as the curvature of the planet widened,
+as the bell jar whisked through the upset heavens, tearing through sheets of
+aurora and solar wind, Dr. Cham’s eyes were shaken open.</p>
+
+<p><img src="./images/dr.cham-2.gif" title="Safe landing. Amazement." alt="Safe landing.  Amazement."></p>
+
+<p>What you are witnessing is the landing of Dr. Cham on the planet Endertromb.
+From what I can gather, he landed during the cusp of the Desolate Season, a time
+when there really isn’t much happening on the planet. Most of the inhabitants
+find their minds locked into a listless hum which causes them to disintegrate
+into just vapid ghosts of one-part-wisdom and three-parts-steam for a time.</p>
+
+<p>My modest grasp of the history and climate of Endertromb has been assembled from
+hanging around my daughter’s organ instructor, who grew up on the planet.</p>
+
+<p><img src="./images/elderly-3.gif" title="Dead
+husbands could destroy the Doctor." alt="Dead husbands could destroy the Doctor."></p>
+
+<p>I frequently drill my daughter’s organ instructor in order to ensure that he can
+keep appointments adequately. That he can take house calls at odd hours and
+promptly answer emergency calls. When he finally revealed to me that he was an
+alien whose waking day consisted of five-hundred and forty waking hours, I was
+incredibly elated and opened a contractual relationship with him which will last
+into 2060.</p>
+
+<p>For three days (by his pocket watch’s account), Dr. Cham traveled the dark
+shafts of air, sucking the dusty wind of the barren planet. But on the third
+day, he found the Desolate Season ending and he awoke to a brilliant vista,
+decorated with spontaneous apple blossoms and dewy castle tiers.</p>
+
+<p><a name="section2"></a></p>
+
+<h2>2. A Castle Has Its Computers</h2>
+
+<p><img src="./images/dr.cham-3.jpg" title="The
+panoramic vales of Sedna on Endertromb." alt="The panoramic vales of Sedna on Endertromb."></p>
+
+<p>Our intrepid Doctor set off for the alien castle, dashing through the flowers.
+The ground belted past his heels. The castle inched up the horizon. He desired a
+stallion, but no stallion appeared. And that’s how he discovered that the planet
+wouldn’t read his mind and answer his wishes.</p>
+
+<p>As my daughter’s organ instructor explained it, however, the planet <strong>could read
+minds</strong> and it <strong>could grant wishes</strong>. Just not both at the same time.</p>
+
+<p>One day as I quizzed the organ maestro, he sketched out the following Ruby code
+on a pad of cheese-colored paper. (And queer cheese smells were coming from
+somewhere, I can’t say where.)</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="nb">require</span> <span class="s1">'endertromb'</span>
+<span class="k">class</span> <span class="nc">WishMaker</span>
+  <span class="k">def</span> <span class="nf">initialize</span>
+    <span class="vi">@energy</span> <span class="o">=</span> <span class="nb">rand</span><span class="p">(</span> <span class="mi">6</span> <span class="p">)</span>
+  <span class="k">end</span>
+  <span class="k">def</span> <span class="nf">grant</span><span class="p">(</span> <span class="n">wish</span> <span class="p">)</span>
+    <span class="k">if</span> <span class="n">wish</span><span class="o">.</span><span class="n">length</span> <span class="o">&gt;</span> <span class="mi">10</span> <span class="ow">or</span> <span class="n">wish</span><span class="o">.</span><span class="n">include?</span> <span class="s1">' '</span>
+      <span class="k">raise</span> <span class="no">ArgumentError</span><span class="p">,</span> <span class="s2">"Bad wish."</span>
+    <span class="k">end</span>
+    <span class="k">if</span> <span class="vi">@energy</span><span class="o">.</span><span class="n">zero?</span>
+      <span class="k">raise</span> <span class="no">Exception</span><span class="p">,</span> <span class="s2">"No energy left."</span>
+    <span class="k">end</span>
+    <span class="vi">@energy</span> <span class="o">-=</span> <span class="mi">1</span>
+    <span class="ss">Endertromb</span><span class="p">:</span><span class="ss">:make</span><span class="p">(</span> <span class="n">wish</span> <span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+
+
+<p>This is the wish maker.</p>
+
+<p>Actually, no, this is a <strong>definition for a wish maker.</strong> To Ruby, it’s a <strong>class
+definition</strong>. The code describes how a certain <strong>object</strong> will work.</p>
+
+<p>Each morning, the wish maker starts out with up to five wishes available for
+granting. A new <code>WishMaker</code> is created at sun up.</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="n">todays_wishes</span> <span class="o">=</span> <span class="no">WishMaker</span><span class="o">.</span><span class="n">new</span>
+</code></pre></div>
+
+
+<p>The <code>new</code> method is a class method which creates a new, blank object. It also
+calls the object’s <code>initialize</code> method automatically. In the <code>WishMaker</code>
+definition, you’ll see the <code>initialize</code> method, which contains a single line of
+code: <code>@energy = rand( 6 )</code>.</p>
+
+<p>The <code>rand( 6 )</code> picks a number between 0 and 5. This number will represent the
+number of wishes left in the day. So, occasionally there are no wishes
+available from the wish maker.</p>
+
+<p>The random number is assigned to an <strong>instance variable</strong> which is named
+<code>@energy</code>. This instance variable will be available any time throughout the
+class. The variable can’t be used outside the <strong>scope</strong> of the class.</p>
+
+<p>In chapter three, we briefly looked at instance variables and decided to respect
+them as <strong>attributes</strong>. (The <strong>at symbol</strong> could mean <strong>attribute</strong>.) Instance
+variables can be used to store any kind of information, but they’re most often
+used to store bits of information about the object represented by the class.</p>
+
+<p>In the above case, each wish maker for the day has its own energy level. If the
+wish maker were a machine, you might see a gauge on it that points to the energy
+left inside. The <code>@energy</code> instance variable is going to act as that gauge.</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="n">todays_wishes</span> <span class="o">=</span> <span class="no">WishMaker</span><span class="o">.</span><span class="n">new</span>
+<span class="n">todays_wishes</span><span class="o">.</span><span class="n">grant</span><span class="p">(</span> <span class="s2">"antlers"</span> <span class="p">)</span>
+</code></pre></div>
+
+
+<p>Okay, step back and ensure you understand the example here. The <code>WishMaker</code>
+class is an outline we’ve laid out for how the whole magic wish program works.
+It’s not the <em>actual</em> genie in the bottle, it’s the paperwork behind the scenes.
+It’s the rules and obligations the genie has to live by.</p>
+
+<p>It’s <code>todays_wishes</code> that’s the genie in the bottle. And here we’re giving it a
+wish to grant. Give us antlers, genie. (If you really get antlers from this
+example, I don’t want to hear about it. Go leap in meadows with your own kind
+now.)</p>
+
+<p>In the last chapter, the drill was: Ruby has two halves.</p>
+
+<ol>
+<li>Defining things.</li>
+<li>Putting those things into action.</li>
+</ol>
+
+
+<p>What are the actions in Ruby? Methods. And now, you’re having a lick of the
+definition language built-in to Ruby. Method definitions using <code>def</code>. Class
+definitions using <code>class</code>.</p>
+
+<p>At this point in your instruction, it’s easier to understand that <strong>everything
+in Ruby is an object.</strong></p>
+
+<div class="highlight"><pre><code class="ruby"><span class="n">number</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="nb">print</span> <span class="n">number</span><span class="o">.</span><span class="n">next</span>                   <span class="c1"># prints '6'</span>
+
+<span class="n">phrase</span> <span class="o">=</span> <span class="s1">'wishing for antlers'</span>
+<span class="nb">print</span> <span class="n">phrase</span><span class="o">.</span><span class="n">length</span>                 <span class="c1"># prints '19'</span>
+
+<span class="n">todays_wishes</span> <span class="o">=</span> <span class="no">WishMaker</span><span class="o">.</span><span class="n">new</span>
+<span class="n">todays_wishes</span><span class="o">.</span><span class="n">grant</span><span class="p">(</span> <span class="s2">"antlers"</span> <span class="p">)</span>
+</code></pre></div>
+
+
+<p>And, consequently, each object has a class behind the scenes.</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="nb">print</span> <span class="mi">5</span><span class="o">.</span><span class="n">class</span>                       <span class="c1"># prints 'Integer'</span>
+<span class="nb">print</span> <span class="s1">'wishing for antlers'</span><span class="o">.</span><span class="n">class</span>   <span class="c1"># prints 'String'</span>
+<span class="nb">print</span> <span class="no">WishMaker</span><span class="o">.</span><span class="n">new</span><span class="o">.</span><span class="n">class</span>           <span class="c1"># prints 'WishMaker'</span>
+</code></pre></div>
+
+
+<p>Dr. Cham never saw the wish maker as he hustled across the landspace. It lay far
+beyond his landing in the valley of Sedna. Down sheer cliffs stuffed with layers
+of thicket, where you might toss your wish (written on a small 1” x 6” slip),
+down into the gaping void. Hopefully it will land on a lizard’s back, sticking
+to its spindly little horn.</p>
+
+<p>And let’s say your wish makes it that far. Well, then, <em>down the twisted wood</em>
+goes the skinny salamander, scurrying through the decaying churches which had
+been <strong>pushed</strong> over that steep canyon ledge once and for all. And the expired
+priest inside, <em>who weathered the fall</em> as well, will kill the little
+amphibian—strangle it to death with a blessed gold chain—and save it for the
+annual <em>Getting To Know You</em> breakfast. He’ll step on your precious little wish
+and, when the <strong>thieves come</strong>, that slip will still be there, stuck on his
+sole. Of course, the thieves’ <strong>preferred method of torture</strong> is to cut a priest
+in thin deli-shaved slices <em>from top to bottom</em>. Who can cull evidence from
+that? And when they chop that last thin slice of shoe sole, they’ll have that
+<strong>rubber scalp</strong> in hand for <em>good luck</em> and <em>good times</em>. But they <strong>canoe</strong>
+much too hard, these thieves. They slap their paddles swiftly in the current to
+get that great <em>outboard motor mist</em> going. But the shoe sole is <em>on a weak
+chain</em>, tied to one man’s belt. And a <strong>hairy old carp</strong> <em>leaps, latches</em> on to
+that minute fraction of footwear. And the thieves <em>can try</em>, but they don’t see
+<em>underwater</em>. If they could, they’d see that <strong>mighty cable</strong>, packed with
+millions of <em>needly</em> fiber optics. Indeed, <strong>that fish is a peripheral plugged</strong>
+right into the <em>core workings</em> of the planet Endertromb. <strong>All it takes is one
+swallow</strong> from that fish <strong>and your wish is home free!</strong></p>
+
+<p>And that’s how wishes come true for children in this place.</p>
+
+<p>Once my daughter’s organ instructor had drawn up the class for the wish maker,
+he then followed with a class for the planet’s mind reader.</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="nb">require</span> <span class="s1">'endertromb'</span>
+<span class="k">class</span> <span class="nc">MindReader</span>
+  <span class="k">def</span> <span class="nf">initialize</span>
+    <span class="vi">@minds</span> <span class="o">=</span> <span class="ss">Endertromb</span><span class="p">:</span><span class="ss">:scan_for_sentience</span>
+  <span class="k">end</span>
+  <span class="k">def</span> <span class="nf">read</span>
+    <span class="vi">@minds</span><span class="o">.</span><span class="n">collect</span> <span class="k">do</span> <span class="o">|</span><span class="n">mind</span><span class="o">|</span>
+       <span class="n">mind</span><span class="o">.</span><span class="n">read</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+
+
+<p>Much as you’ve seen before, the <code>initialize</code> happens when a new <code>MindReader</code>
+object is created. This <code>initialize</code> gathers scans of the planet for mindshare.
+It looks like these minds are stored in an array, since they are later iterated
+over using the <code>collect</code> method.</p>
+
+<p>Both the wish maker and the mind reader refer to a class named <code>Endertromb</code>.
+This class is stored in a file <code>endertromb.rb</code>, which is loaded with the code:
+<code>require 'endertromb'</code>. Often you’ll use other classes to accomplish part of
+your task. Most of the latter half of this book will explore the wide variety of
+helpful classes that can be loaded in Ruby.</p>
+
+<h3>Dr. Cham Ventures Inside</h3>
+
+<p>But as Dr. Cham neared the castle, although the planet was aware of his
+thoughts, sensing his wonderment and anticipation, all Dr. Cham felt was
+deadness. He tromped up the steps of its open gate and through the entrance of
+the most beautiful architecture and was almost certain it was deserted.</p>
+
+<p>For a while he knocked. Which paid off.</p>
+
+<p><img src="./images/castle-1.jpg" title="Blocky whale greeting." alt="Blocky whale greeting."></p>
+
+<p>He watched the baby whale rise like a determined balloon. He marveled at his
+first alien introduction and felt some concern that it had passed so quickly.
+Well, he would wait inside.</p>
+
+<p>As he stepped through the castle door, he felt fortunate that the door hadn’t
+been answered by a huge eagle with greedy talons, eager to play. Or a giant
+mouse head. Or even a man-sized hurricane. Just a tubby little choo-choo whale.</p>
+
+<p>“Not a place to sit down in this castle,” he said.</p>
+
+<p>At first, he had thought he had just entered a very dim hallway, but as his eyes
+adjusted, he saw the entrance extended into a tunnel. The castle door had opened
+right into a passage made of long, flat slabs of rock. Some parts were congruous
+and resembled a corridor. Other parts narrowed, and even tilted, then finally
+tipped away out of view.</p>
+
+<p>The passage was lit by small doorless refrigerators, big enough to hold an
+armful of cabbage, down by his feet. He peered inside one, which was hollow,
+illuminated along all sides, and turning out ice shards methodically.</p>
+
+<p>He pawed the ice chips, which clung dryly to his fingertips, and he scrubbed his
+hands in the ice. Which left some muddy streaks on his hands, but satisfied a
+small part of his longing to bathe. How long had it been? Ten years? Thirty?</p>
+
+<p>Along the passage, long tubes of cloth cluttered some sections. Later, bright
+pixel matter in porcelain scoops and buckets.</p>
+
+<p>He happened upon a room which had been burrowed out of the tunnel which had a
+few empty turtle shells on the ground and a large illuminated wall. He stared
+into the room, bewildered. What could this be? In one state of mind, he thought
+of having a seat on a shell. This could be the entrance at last, some kind of
+receiving room. On the other hand, spiders could pour out of the shell’s hollow
+when he sat. He moved on.</p>
+
+<h3>Meal in a Castle’s Pocket</h3>
+
+<p>As he journeyed along the passageways (for the central tunnel forked and joined
+larger, vacuous caverns), he picked up themes in some locations. Groups of rooms
+infested with pumping machinery. Cloth and vats of glue dominated another area.
+He followed voices down a plush, pillowed cavity, which led him to a dead end: a
+curved wall with a small room carved at eye-level.</p>
+
+<p>He approached the wall and, right in the cubby hole, were two aardvarks eating
+at a table.</p>
+
+<p>They gazed at him serenely, both munching on some excavated beetle twice their
+size, cracked open and frozen on its back on the table.</p>
+
+<p>“Hello, little puppets,” he said, and they finished their bites and kept looking
+with their forks held aloof.</p>
+
+<p>“I wish my niece Hannah were here to meet you,” he told the attentive miniature
+aardvarks. “She’d think you were an intricate puppet show.” He peered in at the
+dining area, shelves with sets of plates, hand towels. Half of a tiny rabbit was
+jutting out from the top a machine, creamy red noodles were spilling out
+underneath it. A door at the back of the room hung ajar. Dr. Cham could see a
+flickering room with chairs and whirring motors through the door.</p>
+
+<p>“Any child would want this dollhouse,” he said. “Hannah, my niece, as I
+mentioned, she has a wind-up doll that sits at a spindle and spins yarn. It’s an
+illusion, of course. The doll produces no yarn at all.”</p>
+
+<p>One of the aardvarks opened a trapdoor in the floor and pressed a button down
+inside, which lit. Then, a small film projector slowly came up on a rod. The
+other aardvark sat and watched Dr. Cham.</p>
+
+<p>“But Hannah still reaches down into the dollhouse and collects all the imaginary
+yarn into a bundle. Which she takes to her mother, my sister, who is very good
+at humoring Hannah. She sews a dress to the doll’s dimensions, which Hannah
+takes back to the doll.</p>
+
+<p>“And she tells the doll, ‘Here, look, your hard work and perseverance has
+resulted in this beautiful dress. You can now accept the Chief of Police’s
+invitation to join him tonight at the Governor’s Mansion.’ And she has a doll in
+a policeman’s uniform who plays the part of the Chief. He’s too scrawny to be an
+actual Chief, that would require quite a bit of plastic.”</p>
+
+<p>The aardvark responsible for the film projector loaded a reel and aimed the
+projector at the back wall. The film spun to life and the aardvark took a seat.
+A green square appeared on the wall. The attentive aardvark stared at Dr. Cham
+still.</p>
+
+<p>“Your films are colored,” said Dr. Cham. “What a lovely, little life.”</p>
+
+<p>The film played on: a blue square. Then, a red circle. Then, an orange square.
+The attentive aardvark turned away, watched the screen change to a pink
+triangle, and both aardvarks resumed eating.</p>
+
+<p>A purple star. A red square. With quietness settling, Dr. Cham could hear notes
+droning from the projector. Like a slow, plodding music box trying to roll its
+gears along the train tracks.</p>
+
+<p>“Yes, enjoy your supper,” said Dr. Cham and he politely tipped his head away,
+marching back up the path he’d taken.</p>
+
+<h3>Another Dead End Where Things Began</h3>
+
+<p>He found himself lost in the castle’s tunnels. Nothing looked familiar. He
+wasn’t worried much, though. He was on another planet. He would be lost
+regardless.</p>
+
+<p>He wound through the tunnels, attempting to recall his paths, but far too
+interested in exploring to keep track of his steps. He followed a single tunnel
+deep, down, down, which slanted so steeply that he had to leap across ledges and
+carefully watch his footholds. The gravity here seemed no different than Earth.
+His legs were pulled into slides just as easily.</p>
+
+<p>Although he had no absolute way of knowing where he was, he felt certain that he
+had left the castle’s boundaries. This deep, this long of a walk. It had been an
+hour since he’d entered through the door. And, as the tunnel wound back up, he
+was sure that he would emerge into a new dwelling, perhaps even a manhole which
+he could peek out from and see the castle. Perhaps he shouldn’t have come so far
+down this route. He hoped nothing was hibernating down here.</p>
+
+<p>The tunnel came to a stop. A dark, dead end.</p>
+
+<p><img src="./images/dr.cham-4.gif" title="At
+the end of the tunnels: a computer and a book." alt="At the end of the tunnels: a computer and a book."></p>
+
+<p>He had time. So he read the book. He read of the foxes and their pursuit of the
+porcupine who stole their pickup truck. He read of the elf and the ham. He saw
+the pictographs of himself and found he could really relate to his own
+struggles. He even learned Ruby. He saw how it all ended.</p>
+
+<p>Were I him, I couldn’t have stomached it. But he did. And he pledged in his
+bosom to see things out just as they happened.</p>
+
+<p>On the computer monitor, Dr. Cham saw the flashing <code>irb</code> prompt. Like Dr. Cham,
+you might recognize the <code>irb</code> prompt from <a href="http://mislav.uniqpath.com/poignant-guide/book/expansion-pak-1.html">The Tiger’s Vest</a> (the first
+expansion pak to this book, which includes a basic introduction to Interactive
+Ruby.)</p>
+
+<p>Whereas he had just been exploring tunnels by foot, he now explored the
+machine’s setup with the prompt. He set the book back where he had found it. He
+didn’t need it anymore. This was all going to happen whether he used it or not.</p>
+
+<p>He started with:</p>
+
+<pre><code>irb&gt; Object::constants
+  =&gt; ["Marshal", "String", "Dir", "LoadError", "Float", ... and so on ]
+</code></pre>
+
+<p>This command lists all the top-level constants. Classes are also listed as
+constants, so this list can be great to see what’s loaded into Ruby at any time.</p>
+
+<p>He scanned the list for anything unfamiliar. Any classes which didn’t come with
+Ruby. <code>Marshal</code>, <code>String</code>, <code>Dir</code>, <code>LoadError</code>, <code>Float</code>. Each of those came with
+Ruby.</p>
+
+<p>But further down the list:</p>
+
+<pre><code>... "Struct", "Values", "Time", "Elevator", "Range" ...
+</code></pre>
+
+<p><em>Elevator?</em> Exactly the kind of class to poke around with. He had a go.</p>
+
+<pre><code>irb&gt; Elevator::methods
+  =&gt; ["method", "freeze", "allocate", ... another long list ... ]
+irb&gt; Elevator::class_variables
+  =&gt; ['@@diagnostic_report', '@@power_circuit_active', '@@maintenance_password']
+irb&gt; Elevator::constants
+  =&gt; []
+</code></pre>
+
+<p>Looks like the <code>Elevator</code> class had plenty of methods. Most of these looked like
+they were the same methods every object has in Ruby. For example, <code>method</code>,
+<code>freeze</code> and <code>allocate</code> come with every class in Ruby. (<code>Elevator::freeze</code> would
+keep the <code>Elevator</code> class from being changed. <code>Elevator::allocate</code> would make a
+new <code>Elevator</code> object without calling the <code>initialize</code> method.)</p>
+
+<p>The <code>class_variables</code> were interesting to Dr. Cham. This elevator appeared
+genuine. But no available <code>constants</code>. This tells us there are no classes nested
+inside the <code>Elevator</code> class.</p>
+
+<p>He tried to create an <code>Elevator</code> object.</p>
+
+<pre><code>irb&gt; e = Elevator::new
+ArgumentError: wrong number of arguments (0 for 1), requires a password
+        from (irb):2:in `initialize'
+        from (irb):2:in `new'
+        from (irb):2
+        from :0
+</code></pre>
+
+<p>He tried a few passwords.</p>
+
+<pre><code>irb&gt; e = Elevator::new( "going up" )
+AccessDeniedError: bad password
+irb&gt; e = Elevator::new( "going_up" )
+AccessDeniedError: bad password
+irb&gt; e = Elevator::new( "stairs_are_bad" )
+AccessDeniedError: bad password
+irb&gt; e = Elevator::new( "StairsAreBad" )
+AccessDeniedError: bad password
+</code></pre>
+
+<p>That was useless. <em>Oh, wait!</em> The maintenance password. Listed in the <code>class_variables</code>.</p>
+
+<pre><code>irb&gt; Elevator::maintenance_password
+NoMethodError: undefined method `maintenance_password' for Elevator:Class
+        from (irb):1
+        from :0
+</code></pre>
+
+<p>Hmm. Instance variables are only available inside an object. And class variables
+are only available inside a class. How to get at that password?</p>
+
+<pre><code>irb&gt; class Elevator
+irb&gt;   def Elevator.maintenance_password
+irb&gt;     @@maintenance_password
+irb&gt;   end
+irb&gt; end
+  =&gt; nil
+irb&gt; Elevator::maintenance_password
+  =&gt; "stairs_are_history!"
+</code></pre>
+
+<p>Alright! He got the password. Did you see that?</p>
+
+<p>He added a class method to the <code>Elevator</code> class. Isn’t that great how you can
+start a new class definition for <code>Elevator</code> and Ruby just adds your changes to
+the existing class definition?</p>
+
+<p>Class methods are usually called with the <strong>double colon</strong>. But, a period is
+fine as well. Since <code>Elevator</code> is a class itself, Ruby will figure that if you
+call <code>Elevator.maintenance_password</code>, you’re calling a class method. The double
+colon simply helps make class methods obvious to the reader.</p>
+
+<p>And justly so. Class methods are a bit unusual. Normally you won’t want to store
+information directly inside of a class. However, if you have a bit of
+information that you need to share among all objects of a class, then you have a
+good reason to use the class for storage. It’s understandable that the
+<code>@@maintenance_password</code> would be stored in the class, instead of in each
+separate object. This way, the objects can simply reach up into the class and
+see the shared password.</p>
+
+<p>Here’s probably how the password protection works.</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="k">class</span> <span class="nc">Elevator</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span> <span class="n">pass</span> <span class="p">)</span>
+    <span class="k">raise</span> <span class="no">AccessDeniedError</span><span class="p">,</span> <span class="s2">"bad password"</span> <span class="p">\</span>
+      <span class="k">unless</span> <span class="n">pass</span><span class="o">.</span><span class="n">equals?</span> <span class="vc">@@maintenance_password</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+
+
+<p>Passwording a class like this is pointless, since anything in Ruby can be
+altered and overwritten and remolded. Dr. Cham had the password and ownership of
+the elevator is his.</p>
+
+<pre><code>irb&gt; e = Elevator.new( "stairs_are_history!" )
+#&lt;Elevator:0x81f12f4 @level=4&gt;
+irb&gt; e.level = 1
+</code></pre>
+
+<p>Dr. Cham was standing right there when the elevator doors, off behind the
+computer terminal, opened for him. With an exasperated sense of accomplishment
+and a good deal of excitement surrounding all of the events that lie ahead, he
+stepped into the elevator and pressed 4.</p>
+
+<div class="sidebar"><aside>
+
+<h2>An Evening of Unobstructed Voltage</h2>
+
+<p>I dug up this article from <em>The Consistent Reminder</em>, a Connecticut newspaper
+which ran the four star review of Dr. Cham. Midgie Dare, the book reviewer who
+suddenly opened her critical eye to anything tangible, praised the Doctor for
+his manners and innovations in the very same daily edition that she defamed
+cantaloupe and docked Manitoba for having crackly telephone service.</p>
+
+<p>I got a kick out of the end of her article. Here you go.</p>
+
+<blockquote><p>He dismounted his horse with unquestionable care for anyone who might be in
+the vicinity. Attentive of all sides, he lowered himself from the saddle
+gently, slowing to a pace which must be measured in micrometers per second to
+be appreciated.</p>
+
+<p>Those of us in his company found ourselves with maws agape, watching his boot
+touch down upon the ground. So precise and clean a step that it seemed it
+would never meet the earth, only hover slight above it. Then, before the
+landing had actually registered with any of us, we were off to the cuisine,
+whisked away in the shroud of gaiety that was always right in front of Harold
+Cham, always just behind him, and most especially concentrate directly in his
+own luminary self.</p>
+
+<p>He also carried loosely at his side a capitally ignorant statesman’s daughter,
+who spared us no leave from her constant criticisms of atheists and railway
+routes.</p>
+
+<p>“At home, my efforts to light a candle were trounced upon by further train
+rumblings, which thrusted the match in my hand nearer the curtains!” She
+derided Dr. Cham for his waning grip on her forearm and became jealous when he
+was able to tune into a pleasurable woman’s voice on the radio once we
+returned to the residence.</p>
+
+<p>The dusk did settle, however, and we found ourselves in a communal daze
+beneath the thick particles of cotton drift that wafted through the polished
+piano room, quite entertained by the <em>Afternoon Nap Program</em>, which played
+their phonograph so quietly at the station that we could only hear the
+scratching of dead Napoleon’s sleeves across the bedsheets. I felt a great
+shriek inside me at the thought! Still, on yonder chairs, the two lovers kept
+an abrupt distance between themselves and I felt encompassed by Dr. Cham’s
+warm gaze and his playful tip of the sherry glass.</p></blockquote>
+
+</aside></div>
+
+
+<p><a name="section3"></a></p>
+
+<h2>3. The Continued Story of My Daughter’s Organ Instructor</h2>
+
+<p>I know you may be alarmed to hear that I have a daughter. You think my writing
+is indicative of a palsied or infantile mind. Well, please rest. I don’t have a
+daughter. But I can’t let that stop me from sorting out her musical training.</p>
+
+<p>As I was related these elaborate histories of the planet Endertromb, I found
+myself wandering through hallways, running my fingertips along the tightly
+buttoned sofas and soaking myself in the saturated bellowings of the pipes, as
+played by my daughter’s organ instructor. His notes resounded so deep and hollow
+in the walls of his manor that I began to casually mistake them for an ominous
+silence, and found it even easier to retreat into deep space with my thoughts.
+To think upon the ancient planet and its darker philosophies: its flesh temples,
+tanned from the dermal remains of its martyrs; its whale cartels, ingesting
+their enemies and holding them within for decades, dragging them up and down the
+staircases of ribs; its poison fogs and its painful doorways; and, the atrocious
+dynasties of The Originals, the species which claims fathership to all of the
+intelligent beings across the universe.</p>
+
+<p>But, eventually, I’d hear those pipes of a higher octave sing and I’d be back in
+the very same breezy afternoon where I’d left.</p>
+
+<p>How interesting that even the breeze of our planet is quite a strange thing to
+some outsiders. For he had also told me of the travelers from Rath-d, who
+ventured to Earth five centuries ago, but quickly dissipated in our air currents
+since they and their crafts and their armor were all composed of charcoal.</p>
+
+<p>I had sat at the organ, listening to his faint tales of his colony, while he
+punctuated his symphonies to greater volumes and the story would disappear for
+awhile, until the coda came back around. He spoke of he and his brothers piling
+into the hollow of his mother’s tail and tearing the waxy crescent tissue from
+the inner wall. Juicy and spongy and syrupy soap which bleached their mouths and
+purged their esophagus as it went down. They chewed and chomped the stuff and it
+foamed. After they ate, they blew bubbles at each other, each bubble filled with
+a dense foam, which they slept upon. And early in the morning, when mother
+opened her tail again, she watched serenely as her babies lay cradled in the
+stew of dark meatballs and sweet, sticky froth.</p>
+
+<p>He spelled out all the tastes of Endertromb. Of their salmon’s starchy organs,
+which cooked into a pasta, and its eyes which melted into rich cream. Of their
+buttermelon with tentacles. And he was just beginning to appreciate the
+delicacies as a child, only to be lifted from a schoolyard by a pair of upright
+pygmy elephants who reached at him, through the heavens, and snatched upon his
+collar with a vast length of crane.</p>
+
+<p>They transplanted him on Earth, led him from their craft, trumpeting their
+snouts loudly for the city of Grand Rapids to hear, then left, weeping and
+embracing each other.</p>
+
+<p>“But, strangely (em-pithy-dah), I learned upon, played upon (pon-shoo) the
+organs on my home (oth-rea) planet,” he said.</p>
+
+<p>My daughter’s organ instructor speaks these extra words you see in parentheses.
+Who knows if they are from his native tongue or if they are his own soundful
+hiccups. He keeps another relic from Endertromb as well: he has twelve names.</p>
+
+<p>“No, (wen-is-wen),” he said. “I have one name (im-apalla) which is said (iff)
+many-many different ways.”</p>
+
+<p>I call him Paij-ree in the morning and Paij-plo in the later evening. Since it
+is day as I write, I will call him Paij-ree here.</p>
+
+<h3>Mumble-Free Earplugs</h3>
+
+<p style="float:right"><img src="./images/my.daughters.organ-1.gif" title="Alien at the keys." alt="Alien at the keys."></p>
+
+
+<p>So I told Paij-ree, “Paij-ree, I am writing a book. To teach the world Ruby.”</p>
+
+<p>“Oh, (pill-nog-pill-yacht) nice,” he said. He’s known Ruby longer than I have,
+but still: <em>I</em> will be my daughter’s Ruby instructor.</p>
+
+<p>And I said, “Paij-ree, you are in the book. And the stories of your planet.” I
+talk to him like he’s E.T. I don’t know why. Just like how I said next, “And
+then maybe someday you can go home to your mom and dad!”</p>
+
+<p>To which he said, “(pon-shoo) (pon-shoo) (em-pithy-dah).” Which is his way of
+speaking out loud his silence and awe.</p>
+
+<p>He wanted to see what I’d written, so I showed him this short method I’ve
+written for you.</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="k">def</span> <span class="nf">wipe_mutterings_from</span><span class="p">(</span> <span class="n">sentence</span> <span class="p">)</span>
+  <span class="k">while</span> <span class="n">sentence</span><span class="o">.</span><span class="n">include?</span> <span class="s1">'('</span>
+    <span class="nb">open</span> <span class="o">=</span> <span class="n">sentence</span><span class="o">.</span><span class="n">index</span><span class="p">(</span> <span class="s1">'('</span> <span class="p">)</span>
+    <span class="n">close</span> <span class="o">=</span> <span class="n">sentence</span><span class="o">.</span><span class="n">index</span><span class="p">(</span> <span class="s1">')'</span><span class="p">,</span> <span class="nb">open</span> <span class="p">)</span>
+    <span class="n">sentence</span><span class="o">[</span><span class="nb">open</span><span class="o">.</span><span class="n">.close</span><span class="o">]</span> <span class="o">=</span> <span class="s1">''</span> <span class="k">if</span> <span class="n">close</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+
+
+<p>“Can you see what this does, Paij-ree? Any old Smotchkkiss can use this method
+to take all the incoherent babblings out of your speaking,” I said.</p>
+
+<p>And I fed something he said earlier into the method.</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="n">what_he_said</span> <span class="o">=</span> <span class="s2">"But, strangely (em-pithy-dah),</span>
+<span class="s2">  I learned upon, played upon (pon-shoo) the</span>
+<span class="s2">  organs on my home (oth-rea) planet."</span>
+<span class="n">wipe_mutterings_from</span><span class="p">(</span> <span class="n">what_he_said</span> <span class="p">)</span>
+<span class="nb">print</span> <span class="n">what_he_said</span>
+</code></pre></div>
+
+
+<p>And it came out as a rather plain sentence.</p>
+
+<pre><code>But, strangely ,
+I learned upon, played upon the
+organs on my home planet.
+</code></pre>
+
+<p>“You shouldn’t use that (wary-to) while loop,” he said. “There are lovelier,
+(thopt-er), gentler ways.”</p>
+
+<p>In the <code>wipe_mutterings_from</code> method, I’m basically searching for opening
+parentheses. When I find one, I scan for a closing paren which follows it. Once
+I’ve found both, I replace them and their contents with an empty string. The
+<code>while</code> loop continues until all parentheses are gone. The mutterings are
+removed and the method ends.</p>
+
+<p>“Now that I look at this method,” I said. “I see that there are some confusing
+aspects and some ways I could do this better.” Please don’t look down on me as
+your teacher for writing some of this code. I figure that it’s okay to show you
+some sloppy techniques to help you work through them with me. So let’s.</p>
+
+<p>Okay, <strong>Confusing Aspect No. 1</strong>: This method cleans a string. But what if we
+accidentally give it a <code>File</code>? Or a number? What happens? What if we run
+<code>wipe_mutterings_from( 1 )</code>?</p>
+
+<p>If we give <code>wipe_mutterings_from</code> the number 1, Ruby will print the following
+and exit.</p>
+
+<pre><code>NoMethodError: undefined method `include?' for 1:Fixnum
+        from (irb):2:in `wipe_mutterings_from'
+        from (irb):8
+</code></pre>
+
+<p>What you see here is a rather twisted and verbose (but at times very helpful)
+little fellow called the <strong>backtrace</strong>. He’s a wound-up policeman who, at the
+slightest sign of trouble, immediately apprehends any and all suspects, pinning
+them against the wall and spelling out their rights so quickly that none can
+quite hear it all. But it’s plain that there’s a problem. And, of course, it’s
+all a big misunderstanding, right?</p>
+
+<p>When Ruby reads you these Miranda rights, listen hardest to the beginning. The
+first line is often all you need. In this first line is contained the essential
+message. And in the above, the first line is telling us that there is no
+<code>include?</code> method for the number 1. Remember, when we were talking about the
+<code>reverse</code> method in the last chapter? Back then, I said, “<strong>a lot of methods are
+only available with certain types of values</strong>.” Both <code>reverse</code> and <code>include?</code>
+are methods which work with strings but are meaningless and unavailable for
+numbers.</p>
+
+<p>To be clear: the method tries to use to the number. The method will start with
+<code>sentence</code> set to 1. Then, it hits the second line: <code>while sentence.include?
+'('</code>. Numbers have no <code>include?</code> method. Great, the backtrace has shown us where
+the problem is. I didn’t expect anyone to pass in a number, so I’m using methods
+that don’t work with numbers.</p>
+
+<p><strong>See, this is just it.</strong> Our method is its own little pocket tool, right? It
+acts as its own widget independent of anything else. To anyone out there using
+the <code>wipe_mutterings_from</code> method, should they pass in a number, they’ll be
+tossed this panic message that doesn’t make sense to them. They’ll be asked to
+poke around inside the method, which really isn’t their business. They don’t
+know their way around in there.</p>
+
+<p>Fortunately, we can throw our own errors, our own <strong>exceptions</strong>, which may make
+more sense to someone who inadvertently hands the wrong object in for cleaning.</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="k">def</span> <span class="nf">wipe_mutterings_from</span><span class="p">(</span> <span class="n">sentence</span> <span class="p">)</span>
+  <span class="k">unless</span> <span class="n">sentence</span><span class="o">.</span><span class="n">respond_to?</span> <span class="ss">:include?</span>
+    <span class="k">raise</span> <span class="no">ArgumentError</span><span class="p">,</span>
+      <span class="s2">"cannot wipe mutterings from a </span><span class="si">#{</span> <span class="n">sentence</span><span class="o">.</span><span class="n">class</span> <span class="si">}</span><span class="s2">"</span>
+  <span class="k">end</span>
+  <span class="k">while</span> <span class="n">sentence</span><span class="o">.</span><span class="n">include?</span> <span class="s1">'('</span>
+    <span class="nb">open</span> <span class="o">=</span> <span class="n">sentence</span><span class="o">.</span><span class="n">index</span><span class="p">(</span> <span class="s1">'('</span> <span class="p">)</span>
+    <span class="n">close</span> <span class="o">=</span> <span class="n">sentence</span><span class="o">.</span><span class="n">index</span><span class="p">(</span> <span class="s1">')'</span><span class="p">,</span> <span class="nb">open</span> <span class="p">)</span>
+    <span class="n">sentence</span><span class="o">[</span><span class="nb">open</span><span class="o">.</span><span class="n">.close</span><span class="o">]</span> <span class="o">=</span> <span class="s1">''</span> <span class="k">if</span> <span class="n">close</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+
+
+<p>This time, if we pass in a number (again, the number 1), we’ll get something
+more sensible.</p>
+
+<pre><code>ArgumentError: cannot wipe mutterings from a Fixnum
+        from (irb):3:in `wipe_mutterings_from'
+        from (irb):12
+</code></pre>
+
+<p>The <code>respond_to?</code> method is really nice and I plead that you never forget it’s
+there. The <code>respond_to?</code> checks any object to be sure that it has a certain
+method. It then gives back a <code>true</code> or <code>false</code>. In the above case, the incoming
+<code>sentence</code> object is checked for an <code>include?</code> method. If no <code>include?</code> method
+is found, then we raise the error.</p>
+
+<p>You might be wondering why I used a symbol with <code>respond_to?</code>. I used a symbol
+<code>:include?</code> instead of a string <code>'include?'</code>. Actually, either will work with
+<code>respond_to?</code>.</p>
+
+<p>Usually symbols are used when you are passing around the name of a method or any
+other Ruby construct. It’s more efficient, but it also catches the eye. The
+<code>respond_to?</code> asks Ruby to look inside itself and see if a method is available.
+We’re talking to Ruby, so the symbol helps denote that. It’s not a big deal,
+Ruby just recognizes symbols quicker than strings.</p>
+
+<p>Now, <strong>Confusing Aspect No. 2</strong>: Have you noticed how our method changes the
+sentence?</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="n">something_said</span> <span class="o">=</span> <span class="s2">"A (gith) spaceship."</span>
+<span class="n">wipe_mutterings_from</span><span class="p">(</span> <span class="n">something_said</span> <span class="p">)</span>
+<span class="nb">print</span> <span class="n">something_said</span>
+</code></pre></div>
+
+
+<p>Did you notice this? In the first line of the above code, the <code>something_said</code>
+variable contains the string <code>"A (gith) spaceship."</code>. But, after the method
+invocation, on the third line, we print the <code>something_said</code> variable and by
+then it contains the cleaned string <code>"A  spaceship."</code>.</p>
+
+<p>How does this work? How does the method change the string? Shouldn’t it make a
+copy of the string before changing it?</p>
+
+<p>Yes, absolutely, it should! <strong>It’s bad manners to change strings like that.</strong>
+We’ve used <code>gsub</code> and <code>gsub!</code> in the last chapter. Do you remember which of
+those two methods is a <strong>destructive method</strong>, which changes strings directly?</p>
+
+<p>Either we need to call this method <code>wipe_mutterings_from!</code> (as a courtesy to all
+the other good folks out there that might use this method) or change the method
+to work on a copy of the string rather than the real thing. Which is an easy
+change! We just need to <code>dup</code> the string.</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="k">def</span> <span class="nf">wipe_mutterings_from</span><span class="p">(</span> <span class="n">sentence</span> <span class="p">)</span>
+  <span class="k">unless</span> <span class="n">sentence</span><span class="o">.</span><span class="n">respond_to?</span> <span class="ss">:include?</span>
+    <span class="k">raise</span> <span class="no">ArgumentError</span><span class="p">,</span>
+      <span class="s2">"cannot wipe mutterings from a </span><span class="si">#{</span> <span class="n">sentence</span><span class="o">.</span><span class="n">class</span> <span class="si">}</span><span class="s2">"</span>
+  <span class="k">end</span>
+  <span class="n">sentence</span> <span class="o">=</span> <span class="n">sentence</span><span class="o">.</span><span class="n">dup</span>
+  <span class="k">while</span> <span class="n">sentence</span><span class="o">.</span><span class="n">include?</span> <span class="s1">'('</span>
+    <span class="nb">open</span> <span class="o">=</span> <span class="n">sentence</span><span class="o">.</span><span class="n">index</span><span class="p">(</span> <span class="s1">'('</span> <span class="p">)</span>
+    <span class="n">close</span> <span class="o">=</span> <span class="n">sentence</span><span class="o">.</span><span class="n">index</span><span class="p">(</span> <span class="s1">')'</span><span class="p">,</span> <span class="nb">open</span> <span class="p">)</span>
+    <span class="n">sentence</span><span class="o">[</span><span class="nb">open</span><span class="o">.</span><span class="n">.close</span><span class="o">]</span> <span class="o">=</span> <span class="s1">''</span> <span class="k">if</span> <span class="n">close</span>
+  <span class="k">end</span>
+  <span class="n">sentence</span>
+<span class="k">end</span>
+</code></pre></div>
+
+
+<p>The <code>dup</code> method makes a copy of any object. Look at that line we added again on
+its own:</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="n">sentence</span> <span class="o">=</span> <span class="n">sentence</span><span class="o">.</span><span class="n">dup</span>
+</code></pre></div>
+
+
+<p>What a peculiar line of code. How does <code>sentence</code> become a copy of <code>sentence</code>?
+Does it erase itself? What happens to the original <code>sentence</code>? Does it
+disappear?</p>
+
+<p>Remember that variables are just nicknames. When you see <code>sentence = "A (gith)
+spaceship."</code>, you see Ruby creating a string and then giving that string a
+nickname.</p>
+
+<p>Likewise, when you see <code>sentence = sentence.dup</code>, you see Ruby creating a new
+string and then giving that string a nickname. This is handy inside your method
+because now <code>sentence</code> is a nickname for a new copy of the string that you can
+safely use <strong>without changing the string that was passed into the method</strong>.</p>
+
+<p>You’ll see plenty of examples of variable names being reused.</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="c1"># x now equals 6</span>
+
+<span class="n">y</span> <span class="o">=</span> <span class="s2">"Endertromb"</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">length</span>
+<span class="c1"># y now equals 10</span>
+
+<span class="n">z</span> <span class="o">=</span> <span class="ss">:include?</span>
+<span class="n">z</span> <span class="o">=</span> <span class="s2">"a string"</span><span class="o">.</span><span class="n">respond_to?</span> <span class="n">z</span>
+<span class="c1"># z now equals true</span>
+</code></pre></div>
+
+
+<p>And, yes, sometimes objects disappear. <strong>If you can’t get to an object through a
+variable, then Ruby will figure you are done with it and will get rid of it.</strong>
+Periodically, Ruby sends out its <strong>garbage collector</strong> to set these objects
+free. Every object is kept in your computer’s memory until the garbage collector
+gets rid of it.</p>
+
+<div class="sidebar"><aside>
+
+<h2>An Excerpt from The Scarf Eaters</h2>
+
+<p>(<em>from Chapter <span class="caps">VII</span>: When Push Comes to Shove—or
+Love</em>.)</p>
+
+<p>“Never say my name again!” screamed Chester, and with the same gusto, he turned
+back to the <strong>File &gt; Publish Settings…</strong> dialog to further optimize his movie
+down to a measly 15k.</p>
+
+</aside></div>
+
+
+<p>Oh, and one more thing about <code>dup</code>. Some things can’t be dup’d. Numbers, for
+instance. Symbols (which look like <code>:death</code>) are identical when spelled the
+same. Like numbers.</p>
+
+<p>Also, some of the special variables: <code>nil</code>, <code>true</code>, <code>false</code>. These are things
+that Ruby won’t let you alter, so there’s so point making a copy anyway. I mean,
+imagine if you could change <code>false</code> to be <code>true</code>. The whole thing becomes a lie.</p>
+
+<p>Perhaps <strong>Confusing Aspect No. 3</strong> is a simple one. I’m using those square
+brackets on the string. I’m treating the string like it’s an Array or Hash. I
+can do that. Because strings have a <code>[]</code> method.</p>
+
+<p>When used on a string, the square brackets will extract part of the string.
+Again, slots for a forklift’s prongs. The string is a long shelf and the
+forklift is pulling out a slab of the string.</p>
+
+<p>Inside the brackets, we pass the <em>index</em>. It’s the label we’ve placed right
+between the prongs where the worker can see it. When it comes to strings, we can
+use a variety of objects as our index.</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="n">str</span> <span class="o">=</span> <span class="s2">"A string is a long shelf of letters and spaces."</span>
+<span class="nb">puts</span> <span class="n">str</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span>       <span class="c1"># prints 'A'</span>
+<span class="nb">puts</span> <span class="n">str</span><span class="o">[</span><span class="mi">0</span><span class="o">.</span><span class="n">.</span><span class="o">-</span><span class="mi">1</span><span class="o">]</span>   <span class="c1"># prints 'A string is a long shelf of letters and spaces.'</span>
+<span class="nb">puts</span> <span class="n">str</span><span class="o">[</span><span class="mi">1</span><span class="o">.</span><span class="n">.</span><span class="o">-</span><span class="mi">2</span><span class="o">]</span>   <span class="c1"># prints ' string is a long shelf of letters and spaces'</span>
+<span class="nb">puts</span> <span class="n">str</span><span class="o">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="o">]</span>    <span class="c1"># prints 'A s'</span>
+<span class="nb">puts</span> <span class="n">str</span><span class="o">[</span><span class="s1">'shelf'</span><span class="o">]</span> <span class="c1"># prints 'shelf'</span>
+</code></pre></div>
+
+
+<p>Alright, the last <strong>Confusing Aspect No. 4</strong>: this method can be sent into an
+endless loop. You can give this method a string which will cause the method to
+hang and never come back. Take a look at the method. Can you throw in a muddy
+stick to clog the loop?</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="k">def</span> <span class="nf">wipe_mutterings_from</span><span class="p">(</span> <span class="n">sentence</span> <span class="p">)</span>
+  <span class="k">unless</span> <span class="n">sentence</span><span class="o">.</span><span class="n">respond_to?</span> <span class="ss">:include?</span>
+    <span class="k">raise</span> <span class="no">ArgumentError</span><span class="p">,</span>
+      <span class="s2">"cannot wipe mutterings from a </span><span class="si">#{</span> <span class="n">sentence</span><span class="o">.</span><span class="n">class</span> <span class="si">}</span><span class="s2">"</span>
+  <span class="k">end</span>
+  <span class="n">sentence</span> <span class="o">=</span> <span class="n">sentence</span><span class="o">.</span><span class="n">dup</span>
+  <span class="k">while</span> <span class="n">sentence</span><span class="o">.</span><span class="n">include?</span> <span class="s1">'('</span>
+    <span class="nb">open</span> <span class="o">=</span> <span class="n">sentence</span><span class="o">.</span><span class="n">index</span><span class="p">(</span> <span class="s1">'('</span> <span class="p">)</span>
+    <span class="n">close</span> <span class="o">=</span> <span class="n">sentence</span><span class="o">.</span><span class="n">index</span><span class="p">(</span> <span class="s1">')'</span><span class="p">,</span> <span class="nb">open</span> <span class="p">)</span>
+    <span class="n">sentence</span><span class="o">[</span><span class="nb">open</span><span class="o">.</span><span class="n">.close</span><span class="o">]</span> <span class="o">=</span> <span class="s1">''</span> <span class="k">if</span> <span class="n">close</span>
+  <span class="k">end</span>
+  <span class="n">sentence</span>
+<span class="k">end</span>
+</code></pre></div>
+
+
+<p>Here, give the muddy stick a curve before you jam it.</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="n">muddy_stick</span> <span class="o">=</span> <span class="s2">"Here's a ( curve."</span>
+<span class="n">wipe_mutterings_from</span><span class="p">(</span> <span class="n">muddy_stick</span> <span class="p">)</span>
+</code></pre></div>
+
+
+<p>Why does the method hang? Well, the <code>while</code> loop waits until all the open
+parentheses are gone before it stops looping. And it only replaces open
+parentheses that have a matching closing parentheses. So, if no closing paren is
+found, the open paren won’t be replaced and the <code>while</code> will never be satisfied.</p>
+
+<p>How would you rewrite this method? Me, I know my way around Ruby, so I’d use a
+regular expression.</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="k">def</span> <span class="nf">wipe_mutterings_from</span><span class="p">(</span> <span class="n">sentence</span> <span class="p">)</span>
+  <span class="k">unless</span> <span class="n">sentence</span><span class="o">.</span><span class="n">respond_to?</span> <span class="ss">:gsub</span>
+    <span class="k">raise</span> <span class="no">ArgumentError</span><span class="p">,</span>
+      <span class="s2">"cannot wipe mutterings from a </span><span class="si">#{</span> <span class="n">sentence</span><span class="o">.</span><span class="n">class</span> <span class="si">}</span><span class="s2">"</span>
+  <span class="k">end</span>
+  <span class="n">sentence</span><span class="o">.</span><span class="n">gsub</span><span class="p">(</span> <span class="sr">/\([-\w]+\)/</span><span class="p">,</span> <span class="s1">''</span> <span class="p">)</span>
+<span class="k">end</span>
+</code></pre></div>
+
+
+<p>Do your best to think through your loops. It’s especially easy for <code>while</code> and
+<code>until</code> loops to get out of hand. Best to use an iterator. And we’ll get to
+regular expressions in time.</p>
+
+<p>In summary, here’s what we’ve learned about writing methods:</p>
+
+<ol>
+<li>Don’t be surprised if people pass unexpected objects into your methods. If
+you absolutely can’t use what they give you, <code>raise</code> an error.</li>
+<li>It’s poor etiquette to change objects your method is given. Use <code>dup</code> to make
+a copy. Or find a method like <code>gsub</code> that automatically makes a copy as it
+does its job.</li>
+<li>The square brackets can be used to lookup parts inside any <code>Array</code>, <code>Hash</code> or
+<code>String</code> objects, as these objects provide a <code>[]</code> method. Also, since these
+objects provide a <code>[]=</code> method, the square brackets can be used in assignment
+(on the left-hand side of the equals sign) to change the parts of those objects.</li>
+<li>Watch for runaway loops. Avoid <code>while</code> and <code>until</code> if you can.</li>
+</ol>
+
+
+<h3>The Mechanisms of Name-Calling</h3>
+
+<p style="float:right"><img src="./images/my.daughters.organ-2.gif" title="Cat
+salesmen from the sky." alt="Cat salesmen from the sky."></p>
+
+
+<p>Forthwith there is a rustling in the trees behind Paij-ree’s house and it turns
+out to be a man falling from the sky. His name is Doug and he sells cats.</p>
+
+<p>So, just as he comes into to view, when his shadow (and the shadows of the cats
+tied to his foot) obscures the bird on the lawn that we’re trying to hit with a
+racquetball, as he’s squeezing a wisp of helium from his big balloon, we shout,
+“Hello, Doug!”</p>
+
+<p>And he says, “Hello, Gonk-ree! Hello, Why!”</p>
+
+<p>Paij-ree checks his pockets to be sure he has the dollar-twenty-seven he’ll need
+in order to buy the three cats he’ll need to keep the furnace stoked and the
+satellite dish turning. These cats generate gobs of static once Paij-ree tosses
+them in the generator, where they’ll be outnumbered by the giant glass rods,
+which caress the cats continually—But, wait! Did you see how the cat broker
+called him Gonk-ree?</p>
+
+<p>And he calls him Gonk-ree in the morning and Gonk-plo at night.</p>
+
+<p>So the suffix is definitely subject to the sunlight. As far as I can tell, the
+prefix indicates the namecaller’s relationship to Paij-ree.</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="k">class</span> <span class="nc">String</span>
+
+  <span class="c1"># The parts of my daughter's organ</span>
+  <span class="c1"># instructor's name.</span>
+  <span class="vc">@@syllables</span> <span class="o">=</span> <span class="o">[</span>
+    <span class="p">{</span> <span class="s1">'Paij'</span> <span class="o">=&gt;</span> <span class="s1">'Personal'</span><span class="p">,</span>
+      <span class="s1">'Gonk'</span> <span class="o">=&gt;</span> <span class="s1">'Business'</span><span class="p">,</span>
+      <span class="s1">'Blon'</span> <span class="o">=&gt;</span> <span class="s1">'Slave'</span><span class="p">,</span>
+      <span class="s1">'Stro'</span> <span class="o">=&gt;</span> <span class="s1">'Master'</span><span class="p">,</span>
+      <span class="s1">'Wert'</span> <span class="o">=&gt;</span> <span class="s1">'Father'</span><span class="p">,</span>
+      <span class="s1">'Onnn'</span> <span class="o">=&gt;</span> <span class="s1">'Mother'</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="s1">'ree'</span>  <span class="o">=&gt;</span> <span class="s1">'AM'</span><span class="p">,</span>
+      <span class="s1">'plo'</span>  <span class="o">=&gt;</span> <span class="s1">'PM'</span> <span class="p">}</span>
+  <span class="o">]</span>
+
+  <span class="c1"># A method to determine what a</span>
+  <span class="c1"># certain name of his means.</span>
+  <span class="k">def</span> <span class="nf">name_significance</span>
+    <span class="n">parts</span> <span class="o">=</span> <span class="nb">self</span><span class="o">.</span><span class="n">split</span><span class="p">(</span> <span class="s1">'-'</span> <span class="p">)</span>
+    <span class="n">syllables</span> <span class="o">=</span> <span class="vc">@@syllables</span><span class="o">.</span><span class="n">dup</span>
+    <span class="n">signif</span> <span class="o">=</span> <span class="n">parts</span><span class="o">.</span><span class="n">collect</span> <span class="k">do</span> <span class="o">|</span><span class="nb">p</span><span class="o">|</span>
+      <span class="n">syllables</span><span class="o">.</span><span class="n">shift</span><span class="o">[</span><span class="nb">p</span><span class="o">]</span>
+    <span class="k">end</span>
+    <span class="n">signif</span><span class="o">.</span><span class="n">join</span><span class="p">(</span> <span class="s1">' '</span> <span class="p">)</span>
+  <span class="k">end</span>
+
+<span class="k">end</span>
+</code></pre></div>
+
+
+<p>Now I’ve gone beyond just showing you sloppy code. Here be a grave debauchery
+and a crime against nature. A crime most languages won’t allow you to commit.
+We’re changing the <code>String</code>, <strong>one of the core classes of Ruby</strong>!</p>
+
+<p>“I know this is a bit dangerous,” I said, when I passed this one under
+Paij-ree’s nose. “I hope nobody gets hurt.”</p>
+
+<p>“Every Smotchkkiss must taste what this (kep-yo-iko) danger does,” he said.
+“Dogs and logs and swampy bogs (kul-ip), all must be tasted.” And he took a swig
+of his Beagle Berry marsh drink.</p>
+
+<p>So what is it that I’m adding to the <code>String</code> class? Two things: a class
+variable and a method. A normal <strong>instance method</strong>.</p>
+
+<p>I like to look at the <strong>at</strong> symbol as a character meaning <strong>attribute</strong>. The
+<strong>double at</strong> stands for <strong>attribute all</strong>. A class variable. All instances of a
+class can look at this variable and it is the same for all of them. The
+<code>@@syllables</code> variable is an Array that can now be used inside the String class.</p>
+
+<p>The new method is <code>name_significance</code> and this new method can be used with any
+string.</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="nb">print</span> <span class="s2">"Paij-ree"</span><span class="o">.</span><span class="n">name_significance</span>
+<span class="c1">#=&gt; Personal AM</span>
+</code></pre></div>
+
+
+<p>As you can see, Paij-ree is a personal name. A name friends use in the early
+hours.</p>
+
+<p>Make sure you see the line of code which uses <code>self</code>. This is a special
+variable, a variable which represents the object whose method you are calling.
+To simplify things a bit, let’s try making a method which breaks up a string on
+its dashes.</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="k">class</span> <span class="nc">String</span>
+  <span class="k">def</span> <span class="nf">dash_split</span>
+    <span class="nb">self</span><span class="o">.</span><span class="n">split</span><span class="p">(</span> <span class="s1">'-'</span> <span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+
+
+<p>Again, here’s a method which can be used with any string.</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="s2">"Gonk-plo"</span><span class="o">.</span><span class="n">dash_split</span>
+<span class="c1">#=&gt; ['Gonk', 'plo']</span>
+</code></pre></div>
+
+
+<p>Using <code>self</code> marks the beginning of crossing over into many of the more advanced
+ideas in Ruby. This is definition language. You’re defining a method, designing
+it before it gets used. You’re preparing for the existence of an object which
+uses that method. You’re saying, “When <code>dash_split</code> gets used, there will be a
+string at that time which is the one we’re dash-splitting. And <code>self</code> is a
+special variable which refers to that string.”</p>
+
+<p>Ruby is a knockout definition language. A succulent and brain-splitting
+discussion is coming your way deeper in this book.</p>
+
+<p>Most often you won’t need to use <code>self</code> explicitly, since you can call methods
+directly from inside other method definitions.</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="k">class</span> <span class="nc">String</span>
+  <span class="k">def</span> <span class="nf">dash_split</span><span class="p">;</span> <span class="nb">split</span><span class="p">(</span> <span class="s1">'-'</span> <span class="p">);</span> <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+
+
+<p>In the <code>name_significance</code> method, find the loop. Learning about <code>Array#collect</code>
+is essential. Let’s look close.</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="n">signif</span> <span class="o">=</span> <span class="n">parts</span><span class="o">.</span><span class="n">collect</span> <span class="k">do</span> <span class="o">|</span><span class="nb">p</span><span class="o">|</span>
+  <span class="n">syllables</span><span class="o">.</span><span class="n">shift</span><span class="o">[</span><span class="nb">p</span><span class="o">]</span>
+<span class="k">end</span>
+</code></pre></div>
+
+
+<p>The <code>parts</code> Array contains the separated name. <code>['Paij', 'plo']</code>, for instance.
+We’re iterating through each item in that Array with <code>collect</code>. But <code>collect</code>
+steps beyond what <code>each</code> does. Like <code>each</code>, collect slides each item down the
+chute as a block variable. And then, at the end of the block, <code>collect</code> <strong>keeps
+the answer the block gives back and adds it to a new Array</strong>. The <code>collect</code>
+method is the perfect way of building a new Array which is based on the items in
+an existing Array.</p>
+
+<p>Doug has three cats for sale. One is twelve cents, one is sixty-three cents, one
+is nine cents. Let’s see how much each cat would cost if we added a 20% tip.</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="n">catsandtips</span> <span class="o">=</span> <span class="o">[</span><span class="mi">0</span><span class="o">.</span><span class="mi">12</span><span class="p">,</span> <span class="mi">0</span><span class="o">.</span><span class="mi">63</span><span class="p">,</span> <span class="mi">0</span><span class="o">.</span><span class="mi">09</span><span class="o">].</span><span class="n">collect</span> <span class="p">{</span> <span class="o">|</span><span class="n">catcost</span><span class="o">|</span> <span class="n">catcost</span> <span class="o">+</span> <span class="p">(</span> <span class="n">catcost</span> <span class="o">*</span> <span class="mi">0</span><span class="o">.</span><span class="mi">20</span> <span class="p">)</span> <span class="p">}</span>
+</code></pre></div>
+
+
+<p>I say Paij-ree’s property is a very charming section of woods when it’s not
+raining cats and Doug. For many days, Paij-ree and I camped in tents by the
+river behind his house, subsisting on smoked blackbird and whittling little
+sleeping Indians by the dusklight. On occasion he would lose a game of spades
+and I knew his mind was distracted, thinking of Endertromb. All of this must
+have been stirring inside of him for sometime. I was the first ear he’d ever
+had.</p>
+
+<p>“I just came from Ambrose,” I said. “Sort of my own underground home, a place
+where elves strive to perfect animals.”</p>
+
+<p>He mumbled and nodded. “You can’t be (poth-in-oin) part of (in) such things.”</p>
+
+<p>“You think we will fail?”</p>
+
+<p>“I (preep) have been there before,” he said. And then, he spoke of the
+Lotteries.</p>
+
+<p><a name="section4"></a></p>
+
+<h2>4. The Goat Wants to Watch a Whole Film</h2>
+
+<p><img src="./images/the.goat-1.gif" title="Blinky, winky, a goat... awakes..." alt="Blinky, winky, a goat... awakes..."></p>
+
+<p>The elevator had opened into a green room full of shelves and file cabinets.
+Reels of tape and film canisters and video tape everywhere. Dr. Cham hadn’t a
+clue what most of it was. All he saw was a big, futuristic mess.</p>
+
+<p>He called out again, stumbling through alleys of narrow shelves, “Hello-o-o??
+I’m looking for intelligent life! I’m a space traveler!” He tripped when his
+foot slid right into a <span class="caps">VCR</span> slot. “Any other beings I
+can communicate with?”</p>
+
+<p>Hand cupped around mouth, he yelled, “Hello-o-o?”</p>
+
+<p>“Crying out loud.” The sleepy goat came tromping down the aisle.</p>
+
+<p><img src="./images/dr.cham-5.gif" title="The goat already knows Dr. Cham." alt="The goat already knows Dr. Cham."></p>
+
+<p>“I hate that book,” said the goat. “I believe the author is disingenuous.”</p>
+
+<p>“Really?” asked Dr. Cham.</p>
+
+<p>“I’m sure it’s all true. It’s just so heavily embellished. I’m like: Enough
+already. I get it. Cut it out.”</p>
+
+<p>“I’m not quite sure what to make of it,” said the Doctor. “It seems like an
+honest effort. I actually wrote something in Ruby back there.”</p>
+
+<p>“It doesn’t give goats a very good name,” said the goat.</p>
+
+<p>“But you are the only goat in the book,” said the Doctor.</p>
+
+<p>“And I’m totally misquoted.”</p>
+
+<p><img src="./images/dr.cham-6.gif" title="The mechanics behind devouring Dr. Cham." alt="The mechanics behind devouring Dr. Cham."></p>
+
+<p>The goat closed his mouth and Dr. Cham held his heart.</p>
+
+<p>“I’m actually very literate,” said the goat. “Albeit, more recently, I’ve
+switched to movies. I love foreign films. One of my relatives just brought back
+<em>Ishtar</em> from your planet. Wow, that was excellent.”</p>
+
+<div class="sidebar"><aside>
+<pre>we want a tambourine!
+           /
+          |  we want all a tambourine!
+          |      /
+          \__  |
+        /  o o \__/\__/\_
+      /.           \ o o \____
+       /'      ----/          \
+_____ /  '    / /.\\   #------/
+       /     /        /     \\
+             /       ///
+      /so               \
+           /\   \me time\\..
+       /pp/  \s these pictur\\
+      /es/   \don't w\ \ork out\
+     ***      *** right but i
+       think this time
+          they did
+            ooo o
+             oo
+            o
+         o
+      {o}
+   ^
+</pre>
+</aside></div>
+
+
+<p>“I haven’t been to my planet in a long time. It would be difficult to consider
+it my home at this stage.”</p>
+
+<p>“Well, Warren Beatty is delightful. His character is basically socially
+crippled. He actually tries to kill himself, but Dustin Hoffman sits in the
+window sill and starts crying and singing this totally hilarious heartbreak
+song. I’ve got it here, you should see it.”</p>
+
+<p>“Can I get something to eat?” asked the Doctor. And he still felt filthy.</p>
+
+<p>“How about we watch a film and you can have a buttermelon with tentacles?” said
+the goat.</p>
+
+<p>So, they worked their way back toward the goat’s projector. Back by the freezer
+locker, they sat on a giant rug and broke off the appendages of frozen
+buttermelons. The shell was solid, but once it cracked, rich fruit cream was in
+abundance. Sweet to taste and a very pleasant scent.</p>
+
+<p>“First film, you’ve got to see,” said the goat. “Locally filmed and produced.
+I’m good friends with the lady who did casting. Dated her for awhile. Knew
+everyone who was going to play the different roles long before it was
+announced.”</p>
+
+<p>The goat set the projector by Dr. Cham. “I’ve got the music on the surround
+sound. You can man the knob.”</p>
+
+<p><img src="./images/filmstrip-1.gif" title="The Originals and their lonesome planet." alt="The Originals and their lonesome planet."></p>
+
+<p>Dr. Cham’s mind wandered at this point in the presentation, just as the land war
+mounted between the two throngs of animal settlers. The details of their wars
+and campaigns continued to consume the spool of transparent film that Dr. Cham
+was feeding through the projector.</p>
+
+<p>War after war after war. The Sieging of Elmer Lake. The Last Stand of Newton P.
+Giraffe and Sons. Dog Invasion of Little Abandoned Cloud. No animals died in
+these wars. Most often an attack consisted of bopping another animal on the
+head. And they philipped each other’s noses. But, believe me, it was
+humiliating.</p>
+
+<p>Blasted crying shame. Things could have worked out.</p>
+
+<h3>The Birth of an Object</h3>
+
+<p>“Don’t worry,” said the goat, anxious to sway Dr. Cham’s attention back to the
+film. “Things <em>do</em> work out.”</p>
+
+<p>In Ruby, the Object is the very center of all things. It is The Original.</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="k">class</span> <span class="nc">ToastyBear</span> <span class="o">&lt;</span> <span class="no">Object</span><span class="p">;</span> <span class="k">end</span>
+</code></pre></div>
+
+
+<p>The angle bracket indicates <strong>inheritance</strong>. This means that the new
+<code>ToastyBear</code> class is a new class based on the <code>Object</code> class. Every method that
+<code>Object</code> has will be available in <code>ToastyBear</code>. Constants available in <code>Object</code>
+will be available in <code>ToastyBear</code>.</p>
+
+<p>But every object inherits from <code>Object</code>. The code…</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="k">class</span> <span class="nc">ToastyBear</span><span class="p">;</span> <span class="k">end</span>
+</code></pre></div>
+
+
+<p>Is identical to…</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="k">class</span> <span class="nc">ToastyBear</span> <span class="o">&lt;</span> <span class="no">Object</span><span class="p">;</span> <span class="k">end</span>
+</code></pre></div>
+
+
+<p>Inheritance is handy. You can create species of objects which relate to each
+other. Often, when you’re dissecting a problem, you’ll come across various
+objects which share attributes. You can save yourself work by inheriting from
+classes which already solve part of that problem.</p>
+
+<p>You may have a <code>UnitedStatesAddress</code> class which stores the address, city,
+state, and zip code for someone living in the United States. When you start
+storing addresses from England, you could add a <code>UnitedKingdomAddress</code> class. If
+you then ensure that both addresses inherit from a parent <code>Address</code> class, you
+can design your mailing software to accept any kind of address.</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="k">def</span> <span class="nf">mail_them_a_kit</span><span class="p">(</span> <span class="n">address</span> <span class="p">)</span>
+  <span class="k">unless</span> <span class="n">address</span><span class="o">.</span><span class="n">is_a?</span> <span class="no">Address</span>
+    <span class="k">raise</span> <span class="no">ArgumentError</span><span class="p">,</span> <span class="s2">"No Address object found."</span>
+  <span class="k">end</span>
+  <span class="nb">print</span> <span class="n">address</span><span class="o">.</span><span class="n">formatted</span>
+<span class="k">end</span>
+</code></pre></div>
+
+
+<p>Also, inheritance is great if you want to override certain behaviors in a
+class. For example, perhaps you want to make your own slight variation to the
+<code>Array</code> class. You want to enhance the <code>join</code> method. But if you change
+<code>Array#join</code> directly, you will affect other classes in Ruby that use Arrays.</p>
+
+<p>So you start your own class called <code>ArrayMine</code>, which is based on The Original
+<code>Array</code>.</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="k">class</span> <span class="nc">ArrayMine</span> <span class="o">&lt;</span> <span class="nb">Array</span>
+  <span class="c1"># Build a string from this array, formatting each entry</span>
+  <span class="c1"># then joining them together.</span>
+  <span class="k">def</span> <span class="nf">join</span><span class="p">(</span> <span class="n">sep</span> <span class="o">=</span> <span class="vg">$,</span><span class="p">,</span> <span class="nb">format</span> <span class="o">=</span> <span class="s2">"%s"</span> <span class="p">)</span>
+    <span class="n">collect</span> <span class="k">do</span> <span class="o">|</span><span class="n">item</span><span class="o">|</span>
+      <span class="nb">sprintf</span><span class="p">(</span> <span class="nb">format</span><span class="p">,</span> <span class="n">item</span> <span class="p">)</span>
+    <span class="k">end</span><span class="o">.</span><span class="n">join</span><span class="p">(</span> <span class="n">sep</span> <span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+
+
+<p><code>ArrayMine</code> is now a custom <code>Array</code> class with its own <code>join</code> method. <code>Array</code> is
+the <strong>superclass</strong> of <code>ArrayMine</code>. Every object has a <code>superclass</code> method where
+you can verify this relationship.</p>
+
+<pre><code>irb&gt; ArrayMine.superclass
+  =&gt; Array
+</code></pre>
+
+<p>Perfect. We manage a hotel and we have an <code>Array</code> of our room sizes: <code>[3, 4, 6]</code>. Let’s get it nicely printed for a brochure.</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="n">rooms</span> <span class="o">=</span> <span class="no">ArrayMine</span><span class="o">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="o">]</span>
+<span class="nb">print</span> <span class="s2">"We have "</span> <span class="o">+</span> <span class="n">rooms</span><span class="o">.</span><span class="n">join</span><span class="p">(</span> <span class="s2">", "</span><span class="p">,</span> <span class="s2">"%d bed"</span> <span class="p">)</span> <span class="o">+</span> <span class="s2">" rooms available."</span>
+</code></pre></div>
+
+
+<p>Which prints, “We have 3 bed, 4 bed, 6 bed rooms available.”</p>
+
+<p>Dr. Cham was looking around for a bathroom, but archival video tape was
+everywhere. He eventually found a place, it may have been a bathroom. It had a
+metal bin. More importantly, it was dark and out of eyesight.</p>
+
+<p>While he’s in there, let me add that while The Originals slaughtered The
+Invaders to prove their rights as First Creatures, the Ruby Object doesn’t have
+any such dispute. It is the absolute king Object the First.</p>
+
+<p>Watch.</p>
+
+<pre><code>irb&gt; Class.superclass
+  =&gt; Module
+irb&gt; Kernel.class
+  =&gt; Module
+irb&gt; Module.superclass
+  =&gt; Object
+irb&gt; Object.superclass
+  =&gt; nil
+</code></pre>
+
+<p>Even <code>Class</code> is an <code>Object</code>! See, although classes are the definition language
+for objects, we still call class methods on them and treat them like objects
+occasionally. It may seem like a dizzying circle, but it’s truly a very strict
+parentage. And it ensures that when you alter the <code>Object</code>, you alter
+<strong>everything in Ruby</strong>. Which is impossibly scary and all-powerful and
+cataclysmic and awesome! <strong>Ruby does not restrict you, my sister, my brother!</strong></p>
+
+<p>Between <code>Class</code> and <code>Object</code>, do you see <code>Module</code>? If <code>Object</code> is the king, the
+one who has sired every other part of Ruby, then <code>Module</code> is the poor waifish
+nun, shielding and protecting all her little Ruby townspeople children. (To
+complete the analogy: <code>Class</code> is the village school teacher and <code>Kernel</code> is the
+self-important colonel.)</p>
+
+<p>The whole point of <code>Module</code>’s existence is to give food and shelter to code.
+Methods can stay dry under <code>Module</code>’s shawl. <code>Module</code> can hold classes and
+constants and variables of any kind.</p>
+
+<p>“But what does a Module <em>do</em>?” you ask. “How is it gainfully employed??”</p>
+
+<p>“That’s all it does!!” I retort, stretching out my open palms in the greatest
+expression of futility known to man. “Now hear me—for I will never speak it
+again—that Module Mother Superior has given these wretched objects a place to
+stay!!”</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="c1"># See, here is the module -- where else could our code possibly stay?</span>
+<span class="k">module</span> <span class="nn">WatchfulSaintAgnes</span>
+
+  <span class="c1"># A CONSTANT is laying here by the doorway.  Fine.</span>
+  <span class="no">TOOTHLESS_MAN_WITH_FORK</span> <span class="o">=</span> <span class="o">[</span><span class="s1">'man'</span><span class="p">,</span> <span class="s1">'fork'</span><span class="p">,</span> <span class="s1">'exposed gums'</span><span class="o">]</span>
+
+  <span class="c1"># A Class is eating, living well in the kitchen.</span>
+  <span class="k">class</span> <span class="nc">FatWaxyChild</span><span class="p">;</span> <span class="k">end</span>
+
+  <span class="c1"># A Method is hiding back in the banana closet, God knows why.</span>
+  <span class="k">def</span> <span class="nf">timid_foxfaced_girl</span><span class="p">;</span> <span class="p">{</span><span class="s1">'please'</span> <span class="o">=&gt;</span> <span class="s1">'i want an acorn please'</span><span class="p">};</span> <span class="k">end</span>
+
+<span class="k">end</span>
+</code></pre></div>
+
+
+<p>Now you have to go through Saint Agnes to find them.</p>
+
+<pre><code>&gt;&gt; WatchfulSaintAgnes::TOOTHLESS_MAN_WITH_FORK
+=&gt; ["man", "fork", "exposed gums"]
+&gt;&gt; WatchfulSaintAgnes::FatWaxyChild.new
+=&gt; #&lt;WatchfulSaintAgnes::FatWaxyChild:0xb7d2ad78&gt;
+&gt;&gt; WatchfulSaintAgnes::instance_methods
+=&gt; ["timid_foxfaced_girl"]
+</code></pre>
+
+<p>Always remember that a <code>Module</code> is only an inn. A roof over their heads. It is
+not a self-aware <code>Class</code> and, therefore, cannot be brought to life with <code>new</code>.</p>
+
+<pre><code>&gt;&gt; WatchfulSaintAgnes.new
+NoMethodError: undefined method `new' for WatchfulSaintAgnes:Module
+        from (irb):2
+</code></pre>
+
+<p>St. Agnes has given up her whole life in order that she may care for these
+desperate bits of code. Please. Don’t take that away from her.</p>
+
+<p>If you wanted to steal from St. Agnes, though, I can help you. You can bring in
+a larger abbey to swallow up the ministry of <code>WatchfulSaintAgnes</code> and then what
+is she left with?</p>
+
+<p>For this you can use <code>extend</code>, which will pull all the methods from a module
+into a class or an object.</p>
+
+<pre><code>&gt;&gt; class TheTimeWarnerAolCitibankCaringAndLovingFacility; end
+&gt;&gt; TheTimeWarnerAolCitibankCaringAndLovingFacility.extend WatchfulSaintAgnes
+&gt;&gt; TheTimeWarnerAolCitibankCaringAndLovingFacility::instance_methods
+=&gt; ["timid_foxfaced_girl"]
+</code></pre>
+
+<p>In truth, no one’s <em>stolen</em> from <code>WatchfulSaintAgnes</code>, only borrowed. The
+<code>timid_foxfaced_girl</code> now has two addresses.</p>
+
+<p>You gotta admit. The old abbey can get bought out a zillion times and that
+little fox-faced girl will <em>still</em> be back in the banana closet wanting an
+acorn! Too bad we can’t feed her. She’s a method with no arguments.</p>
+
+<p>When Dr. Cham came out refreshed, the filmstrip was a bit behind. But the goat
+hadn’t noticed, so the Doctor advanced frames until it made some sense.</p>
+
+<p><img src="./images/filmstrip-2.gif" title="The goats that told a planet it was ugly." alt="The goats that told a planet it was ugly."></p>
+
+<p>So the invaders left the planet.</p>
+
+<p>“This planet <em>is</em> decrepit,” said Dr. Cham. “The castle is nice. But inside it’s
+a disaster.”</p>
+
+<p>“The whole castle look is a projection,” said the goat. “All the flowers and
+apple blossoms and the sky even. It’s a low-resolution projection.”</p>
+
+<p>“Yes? It is enchanting.”</p>
+
+<p>“I guess.”</p>
+
+<p><img src="./images/filmstrip-3.gif" title="The spool ends." alt="The spool ends."></p>
+
+<p>“That’s messed up!” said the goat. “That’s not the way the film ends! There’s no
+blood! What happened? What happened? Did you screw up the knob, idiot?”</p>
+
+<p>“Well, I don’t know,” said Dr. Cham. He turned the knob reverse and forward.
+Tapped the lens.</p>
+
+<p>“Check the film! Check the film!”</p>
+
+<p>Dr. Cham pulled out a length of film from the projection feed, melted and
+dripping from its end.</p>
+
+<p>“Curse that! These projectors are quality! I’ve never had this happen. There’s
+no way.”</p>
+
+<h3>Hunting For a Voice</h3>
+
+<p>“I don’t think it was the projector,” said Dr. Cham. “Something flew across that
+screen and uttered a blistering moan.”</p>
+
+<p>“I don’t have any dupes of that movie,” said the goat somberly. “And that girl.
+That casting director. I never see her anymore.”</p>
+
+<p>Dr. Cham stood up and looked over the dumpy aisles of magnetic carnage,
+searching.</p>
+
+<p>“Oh, hey, you should call that girl,” the goat went on. “You could talk to her,
+get an understanding. Tell her about me. Don’t act like your my friend, just,
+you know, ‘Oh, that guy? Yeah, whatta maroon.’”</p>
+
+<p>Dr. Cham spotted the doorway and exited.</p>
+
+<p>The hallways were an entirely new world of mess. In the goat’s archives, the
+shelves had been messy. In the hallway, shelves were completely tipped. Sinks
+were falling through the ceiling. The Doctor ventured under the debris, kicking
+through plywood when necessary.</p>
+
+<p>“You shouldn’t be out here,” said the goat. “You’re on someone else’s property
+at this point. A couple of pygmy elephants own all this. They’re nasty guys.
+They’ll beat the crap outta you with their trunks. They ball it up and just
+whack ya.”</p>
+
+<p>Dr. Cham pushed a file cabinet out of his way, which fell through a flimsy wall,
+then through the floor of the next room over. And they heard it fall through
+several floors after that.</p>
+
+<p>“I’m trying to remember how it goes in the book,” said Dr. Cham, as he walked
+swiftly through the hall. “That milky fog that swept across the projection. We
+find that thing.” He jiggled a door handle, broke it off. Forged through the
+doorway and disappeared inside.</p>
+
+<p>“You really get a kick out of beating stuff up, don’t you?” said the goat.
+“Walls, doors.” The goat headbutted a wall. The wall shuddered and then laid
+still.</p>
+
+<p>Then, it was quiet. And black.</p>
+
+<p>The goat stayed put in the bleak hallway, expecting Dr. Cham to flip over a few
+desks and emerge, ready to move on from the room he’d busted into. But Dr. Cham
+didn’t return, and the goat opted to share a moment with the neglected wreckage
+left by his neighbors. Not that he could see at all. He could only hear the
+occasional rustling of the piles of invoices and carbon copy masters and manila
+envelopes when he shifted his legs.</p>
+
+<p>The ground seemed to buckling right under the goat, as if the heaps of kipple
+around him were beginning to slide toward his weight. He would be at the center
+of this whirlpool of elephant documentation. Would he die of papercuts first? Or
+would he suffocate under the solid burial by office supplies?</p>
+
+<p>A soft light, however, crept up to him. A floating, silver fish. No, it was
+a—was it scissors? The scissors grew into a shimmering cluster of intelligent
+bread, each slice choking on glitter. But, no, it was hands. And an Easter hat.</p>
+
+<p><img src="./images/hannah-1.gif" title="The goat alone in the hallway, meets an apparition." alt="The goat alone in the hallway, meets an apparition."></p>
+
+<p>In another room, Dr. Cham stood under the clear glass silently. The ceiling had
+abruptly gone transparent, then starlight washed over his pants and jacket. He
+walked further to the room’s center in muted colors, lit as softly as an ancient
+manuscript in its own box at the museum. More stars, more cotton clusters of
+fire, unveiled as he came across the floor. And it peeked into view soon enough,
+he expected it to be larger, but it wasn’t.</p>
+
+<p>Earth. Like a painted egg, still fresh. He felt long cello strings sing right up
+against his spine. How could that be called Peoplemud? Here was a vibrant and
+grassy lightbulb. The one big ball that had something going for it.</p>
+
+<p>He thought of The Rockettes. Actually, he missed The Rockettes. What a bunch of
+great dancers. He had yelled something to The Rockettes when he saw them.
+Something very observant and flattering.</p>
+
+<p>Oh, yes, while The Rockettes were spinning, arm in arm, he had yelled,
+“Concentric circles!” Which no one else cared to observe.</p>
+
+<p>And this thought was enough to feed Dr. Cham’s superiority complex. He wore a
+goofy smile as he retraced his footsteps. He truthfully felt his genius coming
+through in such a statement. To realize the simplicity of a circle was his. He
+reflected on it all the way back to the hallway.</p>
+
+<p>Which I think is great. Adore yourself when you have a second.</p>
+
+<p><img src="./images/hannah-2.gif" title="The Doctor knows this ghost." alt="The Doctor knows this ghost."></p>
+
+<p>“Oh, right,” said the goat. “Your niece. The niece you killed. I’m with ya now.”</p>
+
+<p>For just a few moments, they all looked at each other. Just enough time for both
+Dr. Cham and the goat to think: <em>Oh, yeah. Hannah causes us a lot of trouble.
+She’s already talking about maple donuts.</em></p>
+
+<p>“Does she start talking about maple donuts right away like that?” asked the
+goat.</p>
+
+<p>“Yes, she does,” said the Doctor. “She brings it up to you, then she brings it
+up to me. She sees a maple donut somewhere—I don’t quite remember where.”</p>
+
+<p>“Do I see a real maple donut?” Hannah said. “I need a real one.”</p>
+
+<p>“Okay, okay,” said the goat. “Yeah, I remember: here’s where she says that if
+she gets a real maple donut, she’ll become a real person again. Because her real
+destiny was to own a bakery and you ruined that destiny and now she’s trapped as
+a ghost.”</p>
+
+<p>“Hey, that’s the truth!” Hannah yelped.</p>
+
+<p>“It’s terrible that we must bear through this whole scene again,” said the
+Doctor. “The donuts are immaterial. They should be left out altogether.”</p>
+
+<p>“Man, I am having a <em>hard</em> time remembering all of this chapter,” said the goat.
+“I don’t even remember how to get out of this hallway. I must have read that
+book like thirty times. Do we blast through a wall? Do we scream until someone
+finds us?”</p>
+
+<p>“We get Hannah to float through walls and she finds some kind of machine,” says
+Dr. Cham. “I have to write a program—it all works out somehow.”</p>
+
+<p>“But, you know what I’m saying?” said the goat. “I forget all the details.
+Especially the earlier chapters. I mean I can remember the ending perfectly.
+It’s hard to sit through all this. The end is so much better.”</p>
+
+<p>Dr. Cham folded his arms and teetered on a heel. “The porcupine.” He smiled
+greedily at the goat.</p>
+
+<p>“Oh, totally. The porcupine is definitely who I want to meet,” said the goat. “I
+wonder what he does with all that money when the book is over.”</p>
+
+<p>Dr. Cham nodded respectfully. “I’m very excited to see him wearing slippers.”</p>
+
+<p>“Those infernal slippers!” said the goat and he haw-hawed coarsely, a shower of
+saliva cascading from his jaws.</p>
+
+<p>Hannah’s mind rattled, waiting for this nonsense to break for a moment. She
+tipped her head on its side and the rattle slid along the curve of her cranium.
+The little noise died away, though, as the back of her head vanished (<em>fluxed
+out</em> is what she called it) and then her head was back again with its little
+rattle and she caught herself doing that careless moaning again. <strong><span class="caps">HRRRRRR</span>-RRR-OH-RRRR-RRRR.</strong></p>
+
+<p>“I’m not as into the chunky bacon stuff,” said the goat. “I don’t see what’s so
+great about it.”</p>
+
+<p>Could she speak while moaning? <strong><span class="caps">BON</span>-BON.</strong> With a
+French moan. <strong><span class="caps">BOHN</span>-BOHN. <span class="caps">BOHN</span>-APPE-TEET-OHHHH-RRRR.</strong></p>
+
+<p>“I know she’s harmless, but that sound freaks me out. My hair is <strong>completely</strong>
+on end.”</p>
+
+<p>“Hannah?” said Dr. Cham. “Where are you, child? Come do a good turn for us, my
+niece.”</p>
+
+<p>She was right near them, in and out. And they could hear her cleaning up her
+voice, bright, speaking like a angel scattering stardust. Yes, the whole maple
+donut story came out again, and more about the bakery she would own, the muffins
+and rolls and baguettes.</p>
+
+<p><a name="section5"></a></p>
+
+<h2>5. The Theft of the Lottery Captain</h2>
+
+<p style="float:right"><img src="./images/my.daughters.organ-3.gif" title="The
+piping and mixtures of the lotteries." alt="The piping and mixtures of the
+lotteries."></p>
+
+
+<p>And now, Paij-ree’s stories of the Lotteries.</p>
+
+<p>On Endertromb, the organist’s father invented the lottery. The idea came while
+he was praying to Digger Dosh.</p>
+
+<p>Digger Dosh is sort of like their God. But ten times scarier. This guy dug an
+infinitely deep tunnel straight through the planet and came out dead. But he’s
+really not dead. He’s really just <em>one second</em> behind them. And he eats time.</p>
+
+<p>It’s kind of complicated because Digger Dosh totally kills people. But I guess
+if you do what he says, it’s not so bad. Maybe I’ll talk about it later. It’s
+such a pain to talk about because it’s so scary and yet one of my friends
+actually believes the whole thing. I get kind of choked up—not like I’m crying,
+more like I’m choking.</p>
+
+<p>Anyway, once while praying, three numbers came to Paij-ree’s father.</p>
+
+<p>He then asked his mind, “What are these numbers?”</p>
+
+<p>And his mind played a short video clip of him selling all kinds of numbers. And,
+for years and years, traveling and selling numbers.</p>
+
+<p>And he asked his brain, “People will buy numbers?”</p>
+
+<p>And his brain said, “If they buy the right three numbers, give them a prize.”</p>
+
+<p>At which he imagined himself launching off a ski jump and showering people with
+presents. No question: he would be an icon.</p>
+
+<p>So he went and did as his brain said and sold numbers. The father’s simple
+lottery consisted of three unique numbers, drawn from a set of 25 numbers.</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="k">class</span> <span class="nc">LotteryTicket</span>
+
+  <span class="no">NUMERIC_RANGE</span> <span class="o">=</span> <span class="mi">1</span><span class="o">.</span><span class="n">.</span><span class="mi">25</span>
+
+  <span class="kp">attr_reader</span> <span class="ss">:picks</span><span class="p">,</span> <span class="ss">:purchased</span>
+
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span> <span class="o">*</span><span class="n">picks</span> <span class="p">)</span>
+    <span class="k">if</span> <span class="n">picks</span><span class="o">.</span><span class="n">length</span> <span class="o">!=</span> <span class="mi">3</span>
+      <span class="k">raise</span> <span class="no">ArgumentError</span><span class="p">,</span> <span class="s2">"three numbers must be picked"</span>
+    <span class="k">elsif</span> <span class="n">picks</span><span class="o">.</span><span class="n">uniq</span><span class="o">.</span><span class="n">length</span> <span class="o">!=</span> <span class="mi">3</span>
+      <span class="k">raise</span> <span class="no">ArgumentError</span><span class="p">,</span> <span class="s2">"the three picks must be different numbers"</span>
+    <span class="k">elsif</span> <span class="n">picks</span><span class="o">.</span><span class="n">detect</span> <span class="p">{</span> <span class="o">|</span><span class="nb">p</span><span class="o">|</span> <span class="ow">not</span> <span class="no">NUMERIC_RANGE</span> <span class="o">===</span> <span class="nb">p</span> <span class="p">}</span>
+      <span class="k">raise</span> <span class="no">ArgumentError</span><span class="p">,</span> <span class="s2">"the three picks must be numbers between 1 and 25"</span>
+    <span class="k">end</span>
+    <span class="vi">@picks</span> <span class="o">=</span> <span class="n">picks</span>
+    <span class="vi">@purchased</span> <span class="o">=</span> <span class="no">Time</span><span class="o">.</span><span class="n">now</span>
+  <span class="k">end</span>
+
+<span class="k">end</span>
+</code></pre></div>
+
+
+<p>Yes, the <code>LotteryTicket</code> class contained the three numbers (<code>@picks</code>) and the
+time when the ticket was bought (<code>@purchased</code>). The allowed range of numbers
+(from <strong>one</strong> to <strong>twenty-five</strong>) is kept in the constant <code>NUMERIC_RANGE</code>.</p>
+
+<p>The <code>initialize</code> method here can have any number of arguments passed in. The
+<strong>asterisk</strong> in the <code>picks</code> argument means that <strong>any arguments will be passed
+in as an Array</strong>. Having the arguments in an Array means that methods like
+<code>uniq</code> and <code>detect</code> can be used on the arguments together.</p>
+
+<p>This class contains two definitions: the method definition (<code>def</code>) and an
+attributes definition (<code>attr_reader</code>). Both are <strong>really just method
+definitions</strong> though.</p>
+
+<p>The <code>attr_reader</code> shortcut is identical to writing this Ruby code:</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="k">class</span> <span class="nc">LotteryTicket</span>
+  <span class="k">def</span> <span class="nf">picks</span><span class="p">;</span> <span class="vi">@picks</span><span class="p">;</span> <span class="k">end</span>
+  <span class="k">def</span> <span class="nf">purchased</span><span class="p">;</span> <span class="vi">@purchased</span><span class="p">;</span> <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+
+
+<p>Attributes are wrapper methods for instance variables (such as <code>@picks</code>) which
+can be used <strong>outside of the class itself</strong>. Paij-ree’s father wanted to code a
+machine which could read the numbers and the date of purchase from the ticket.
+In order to do that, those instance variables must be exposed.</p>
+
+<p>Let’s create a random ticket and read back the numbers:</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="n">ticket</span> <span class="o">=</span> <span class="no">LotteryTicket</span><span class="o">.</span><span class="n">new</span><span class="p">(</span> <span class="nb">rand</span><span class="p">(</span> <span class="mi">25</span> <span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nb">rand</span><span class="p">(</span> <span class="mi">25</span> <span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">rand</span><span class="p">(</span> <span class="mi">25</span> <span class="p">)</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">)</span>
+<span class="nb">p</span> <span class="n">ticket</span><span class="o">.</span><span class="n">picks</span>
+</code></pre></div>
+
+
+<p>Running the above, I just got: <code>[23, 14, 20]</code>. You will get an error if two of
+the random numbers happen to be identical.</p>
+
+<p>However, I can’t change the lottery ticket’s picks from outside of the class.</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="n">ticket</span><span class="o">.</span><span class="n">picks</span> <span class="o">=</span> <span class="o">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">19</span><span class="o">]</span>
+</code></pre></div>
+
+
+<p>I get an error: <code>undefined method `picks='</code>. This is because <code>attr_reader</code>
+only adds a <strong>reader</strong> method, not a writer method. That’s fine, though. We
+don’t want the numbers or the date to change.</p>
+
+<p>So, the tickets are <em>objects</em>. Instances of the <code>LotteryTicket</code> class. Make a
+ticket with <code>LotteryTicket.new</code>. Each ticket has it’s own <code>@picks</code> and it’s own
+<code>@purchased</code> instance variables.</p>
+
+<p>The lottery captain would need to draw three random numbers at the close of the
+lottery, so we’ll add a convenient class method for generating random tickets.</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="k">class</span> <span class="nc">LotteryTicket</span>
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">new_random</span>
+    <span class="kp">new</span><span class="p">(</span> <span class="nb">rand</span><span class="p">(</span> <span class="mi">25</span> <span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">rand</span><span class="p">(</span> <span class="mi">25</span> <span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">rand</span><span class="p">(</span> <span class="mi">25</span> <span class="p">)</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+
+
+<p>Oh, no. But we have that stupid error that pops up if two of the random numbers
+happen to be identical. If two numbers are the same, the <code>initialize</code> throws an
+<code>ArgumentError</code>.</p>
+
+<p>The trick is going to be restarting the method if an error happens. We can use
+Ruby’s <code>rescue</code> to handle the error and <code>retry</code> to start the method over.</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="k">class</span> <span class="nc">LotteryTicket</span>
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">new_random</span>
+    <span class="kp">new</span><span class="p">(</span> <span class="nb">rand</span><span class="p">(</span> <span class="mi">25</span> <span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">rand</span><span class="p">(</span> <span class="mi">25</span> <span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">rand</span><span class="p">(</span> <span class="mi">25</span> <span class="p">)</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">)</span>
+  <span class="k">rescue</span> <span class="no">ArgumentError</span>
+    <span class="k">retry</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+
+
+<p>Better. It may take a couple times for the numbers to fall together right, but
+it’ll happen. The wait will build suspense, huh?</p>
+
+<p>The lottery captain kept a roster of everyone who bought tickets, along with the
+numbers they drew.</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="k">class</span> <span class="nc">LotteryDraw</span>
+  <span class="vc">@@tickets</span> <span class="o">=</span> <span class="p">{}</span>
+  <span class="k">def</span> <span class="nc">LotteryDraw</span><span class="o">.</span><span class="nf">buy</span><span class="p">(</span> <span class="n">customer</span><span class="p">,</span> <span class="o">*</span><span class="n">tickets</span> <span class="p">)</span>
+    <span class="k">unless</span> <span class="vc">@@tickets</span><span class="o">.</span><span class="n">has_key?</span><span class="p">(</span> <span class="n">customer</span> <span class="p">)</span>
+      <span class="vc">@@tickets</span><span class="o">[</span><span class="n">customer</span><span class="o">]</span> <span class="o">=</span> <span class="o">[]</span>
+    <span class="k">end</span>
+    <span class="vc">@@tickets</span><span class="o">[</span><span class="n">customer</span><span class="o">]</span> <span class="o">+=</span> <span class="n">tickets</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+
+
+<p>Yal-dal-rip-sip was the first customer.</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="no">LotteryDraw</span><span class="o">.</span><span class="n">buy</span> <span class="s1">'Yal-dal-rip-sip'</span><span class="p">,</span>
+    <span class="no">LotteryTicket</span><span class="o">.</span><span class="n">new</span><span class="p">(</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">19</span> <span class="p">),</span>
+    <span class="no">LotteryTicket</span><span class="o">.</span><span class="n">new</span><span class="p">(</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span> <span class="p">),</span>
+    <span class="no">LotteryTicket</span><span class="o">.</span><span class="n">new</span><span class="p">(</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span> <span class="p">)</span>
+</code></pre></div>
+
+
+<p>When it came time for the lottery draw, Paij-ree’s father (the lottery captain)
+added a bit of code to randomly select the numbers.</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="k">class</span> <span class="nc">LotteryTicket</span>
+  <span class="k">def</span> <span class="nf">score</span><span class="p">(</span> <span class="n">final</span> <span class="p">)</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">final</span><span class="o">.</span><span class="n">picks</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">note</span><span class="o">|</span>
+      <span class="n">count</span> <span class="o">+=</span><span class="mi">1</span> <span class="k">if</span> <span class="n">picks</span><span class="o">.</span><span class="n">include?</span> <span class="n">note</span>
+    <span class="k">end</span>
+    <span class="n">count</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+
+
+<p>The <code>score</code> method compares a <code>LotteryTicket</code> against a random ticket, which
+represents the winning combination. The random ticket is passed in through the
+<code>final</code> variable. The ticket gets one point for every winning number. The point
+total is returned from the <code>score</code> method.</p>
+
+<pre><code>irb&gt; ticket = LotteryTicket.new( 2, 5, 19 )
+irb&gt; winner = LotteryTicket.new( 4, 5, 19 )
+irb&gt; ticket.score( winner )
+  =&gt; 2
+</code></pre>
+
+<p>You will see how brilliant Paij-ree is, in time. His father commissioned him to
+finish the lottery for him, while the demand for tickets consumed the lottery
+captain’s daylight hours. Can’t you just imagine young Paij-ree in his stuffy
+suit, snapping a rubber band in his young thumbs at the company meetings where
+he proposed the final piece of the system? Sure, when he stood up, his dad did
+all the talking for him, but he flipped on the projector and performed all the
+hand motions.</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="k">class</span> <span class="o">&lt;&lt;</span> <span class="no">LotteryDraw</span>
+  <span class="k">def</span> <span class="nf">play</span>
+    <span class="n">final</span> <span class="o">=</span> <span class="no">LotteryTicket</span><span class="o">.</span><span class="n">new_random</span>
+    <span class="n">winners</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="vc">@@tickets</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">buyer</span><span class="p">,</span> <span class="n">ticket_list</span><span class="o">|</span>
+      <span class="n">ticket_list</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">ticket</span><span class="o">|</span>
+        <span class="n">score</span> <span class="o">=</span> <span class="n">ticket</span><span class="o">.</span><span class="n">score</span><span class="p">(</span> <span class="n">final</span> <span class="p">)</span>
+        <span class="k">next</span> <span class="k">if</span> <span class="n">score</span><span class="o">.</span><span class="n">zero?</span>
+        <span class="n">winners</span><span class="o">[</span><span class="n">buyer</span><span class="o">]</span> <span class="o">||=</span> <span class="o">[]</span>
+        <span class="n">winners</span><span class="o">[</span><span class="n">buyer</span><span class="o">]</span> <span class="o">&lt;&lt;</span> <span class="o">[</span> <span class="n">ticket</span><span class="p">,</span> <span class="n">score</span> <span class="o">]</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+    <span class="vc">@@tickets</span><span class="o">.</span><span class="n">clear</span>
+    <span class="n">winners</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+
+
+<p>His father’s associates were stunned. What was this? (Paij-ree knew this was
+just another class method definition—they would all feel completely demoralized
+when he told them so.) They couldn’t understand the <strong>double angle bracket</strong> up
+there! Yes, it was a concatenator, but how is it in the class title?</p>
+
+<p><em>Infants</em>, thought Paij-ree, although he held everyone of those men in very high
+esteem. He was just a kid and kids are tough as a brick’s teeth.</p>
+
+<p>The <code>&lt;&lt;</code> operator allows you to alter the definition of an object. Had Paij-ree
+simply used <code>class LotteryDraw</code>, his <code>play</code> method would be a normal instance
+method. But since he used the <code>&lt;&lt;</code> operator, the <code>play</code> method will be added
+directly to the class, as a class method.</p>
+
+<p>When you see <code>class &lt;&lt; obj</code>, believe in your heart, <em>I’m adding directly to the
+definition of <code>obj</code>.</em></p>
+
+<p>The budding organ instructor also threw in a tricky syntax worth examining. In
+the ninth line, a winner has been found.</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="n">winners</span><span class="o">[</span><span class="n">buyer</span><span class="o">]</span> <span class="o">||=</span> <span class="o">[]</span>
+<span class="n">winners</span><span class="o">[</span><span class="n">buyer</span><span class="o">]</span> <span class="o">&lt;&lt;</span> <span class="o">[</span> <span class="n">ticket</span><span class="p">,</span> <span class="n">score</span> <span class="o">]</span>
+</code></pre></div>
+
+
+<p>The <code>||=</code> syntax is a shortcut.</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="n">winners</span><span class="o">[</span><span class="n">buyer</span><span class="o">]</span> <span class="o">=</span> <span class="n">winners</span><span class="o">[</span><span class="n">buyer</span><span class="o">]</span> <span class="o">||</span> <span class="o">[]</span>
+</code></pre></div>
+
+
+<p>The <strong>double pipe</strong> is an <strong>or</strong> logic. Set <code>winners[buyer]</code> equal to
+<code>winners[buyer]</code> or, if <code>winners[buyer]</code> is nil, set it to <code>[]</code>. This shortcut
+is a little strange, but if you can really plant it in your head, it’s a nice
+time-saver. You’re just making sure a variable is set before using it.</p>
+
+<pre><code>irb&gt; LotteryDraw.play.each do |winner, tickets|
+irb&gt;   puts winner + "won on " + tickets.length + " ticket(s)!" 
+irb&gt;   tickets.each do |ticket, score|
+irb&gt;     puts "\t" + ticket.picks.join( ', ' ) + ": " + score
+irb&gt;   end
+irb&gt; end
+
+Gram-yol won on 2 ticket(s)!
+    25, 14, 33: 1
+    12, 11, 29: 1
+Tarker-azain won on 1 ticket(s)!
+    13, 15, 29: 2
+Bramlor-exxon won on 1 ticket(s)!
+    2, 6, 14: 1
+</code></pre>
+
+<p>But these salad days were not to continue for Paij-ree and his father. His
+father often neglected to launder his uniform and contracted a moss disease on
+his shoulders. The disease gradually stole his equilibrium and his sense of
+direction.</p>
+
+<p>His father still futilely attempted to keep the business running. He spiraled
+through the city, sometimes tumbling leg-over-leg down the cobbled stone, most
+often slowly feeling the walls, counting bricks to the math parlors and
+coachmen stations, where he would thrust tickets at the bystanders, who hounded
+him and slapped him away with long, wet beets. Later, Paij-ree would find him in
+a corner, his blood running into the city drains alongside the juices of the
+dark, splattered beets, which juice weaseled its way up into his veins and stung
+and clotted and glowed fiercely like a congested army of brake lights fighting
+their way through toll bridges.</p>
+
+<h3>A Word About Accessors (Because I Love You and I Hope For Your Success and My Hair is On End About This and Dreams Really Do Come True)</h3>
+
+<p>Earlier, I mentioned that <code>attr_reader</code> adds <strong>reader</strong> methods, but not
+<strong>writer</strong> methods.</p>
+
+<pre><code>irb&gt; ticket = LotteryTicket.new
+irb&gt; ticket.picks = 3
+NoMethodError: undefined method `picks=' for #&lt;LotteryTicket:0xb7d49110&gt;
+</code></pre>
+
+<p>Which is okay in this case, since Paij-ree’s father didn’t want the numbers to
+be changed after the ticket was bought. If we were interested in having instance
+variables which had <strong>both readers and writers</strong>, we would use <code>attr_accessor</code>.</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="k">class</span> <span class="nc">LotteryTicket</span>
+  <span class="kp">attr_accessor</span> <span class="ss">:picks</span><span class="p">,</span> <span class="ss">:purchased</span>
+<span class="k">end</span>
+</code></pre></div>
+
+
+<p>Which is exactly the same as this lengthier code:</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="k">class</span> <span class="nc">LotteryTicket</span>
+  <span class="k">def</span> <span class="nf">picks</span><span class="p">;</span>           <span class="vi">@picks</span><span class="p">;</span>            <span class="k">end</span>
+  <span class="k">def</span> <span class="nf">picks</span><span class="o">=</span><span class="p">(</span><span class="n">var</span><span class="p">);</span>     <span class="vi">@picks</span> <span class="o">=</span> <span class="n">var</span><span class="p">;</span>      <span class="k">end</span>
+  <span class="k">def</span> <span class="nf">purchased</span><span class="p">;</span>       <span class="vi">@purchased</span><span class="p">;</span>        <span class="k">end</span>
+  <span class="k">def</span> <span class="nf">purchased</span><span class="o">=</span><span class="p">(</span><span class="n">var</span><span class="p">);</span> <span class="vi">@purchased</span> <span class="o">=</span> <span class="n">var</span><span class="p">;</span>  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+
+
+<p>Holy cats! Look at those writer methods for a moment. They are the methods named
+<code>picks=</code> and <code>purchased=</code>. These methods <strong>intercept outside assignment</strong> to
+instance variables. Usually you will just let <code>attr_reader</code> or <code>attr_accessor</code>
+(or even perhaps <code>attr_writer</code>) do the work for you. Other times you may want to
+put a guard at the door yourself, checking variables in closer detail.</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="k">class</span> <span class="nc">SkatingContest</span>
+  <span class="k">def</span> <span class="nf">the_winner</span><span class="p">;</span> <span class="vi">@the_winner</span><span class="p">;</span> <span class="k">end</span>
+  <span class="k">def</span> <span class="nf">the_winner</span><span class="o">=</span><span class="p">(</span> <span class="nb">name</span> <span class="p">)</span>
+    <span class="k">unless</span> <span class="nb">name</span><span class="o">.</span><span class="n">respond_to?</span> <span class="ss">:to_str</span>
+      <span class="k">raise</span> <span class="no">ArgumentError</span><span class="p">,</span> <span class="s2">"The winner's name must be a String,</span>
+<span class="s2">        not a math problem or a list of names or any of that business."</span>
+    <span class="k">end</span>
+    <span class="vi">@the_winner</span> <span class="o">=</span> <span class="nb">name</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+
+
+<p>Most of the time you won’t use this. But, as we move along through your lessons,
+you’ll find that Ruby has lots of escape hatches and alley ways you can sneak
+into and hack code into. I’m also preparing you for metaprogramming, which, if
+you can smell that dragon, is ominously near.</p>
+
+<div class="sidebar"><aside>
+
+<h2>Another Excerpt from The Scarf Eaters</h2>
+
+<p>(<em>from Chapter <span class="caps">VIII</span>: Sky High</em>.)</p>
+
+<p>“I know you,” said Brent. “And I know your timelines. You couldn’t have done
+this Flash piece.”</p>
+
+<p>“So, you’re saying I’m predictable?” said Deborah. She opened her hands and the
+diced potatoes stumbled like little, drunk sea otters happily into the open
+crockpot.</p>
+
+<p>“You’re very linear,” said Brent. He took up a mechanical pencil, held it
+straight before his eyes, gazing tightly at it before replacing it in the pencil
+holder on the counter. “Do you even know how to load a scene? How to jump
+frames? This movie I saw was all over the place, Deb.”</p>
+
+<p>She heaped five knit scarves and a single bandanna into the slow cooker and set
+it on high. She closed the lid, leaving her hand resting upon it.</p>
+
+<p>“What is it about this movie?” Deborah asked. “You go to Flash sites all the
+time. You played the Elf Snowball game for two seconds, it didn’t interest you.
+You didn’t care for Elf Bowling games even. And you weren’t even phased by that
+Hit The Penguin flash game. Elf versus Penguin? Don’t even ask!</p>
+
+<p>“Now this movie comes along and you can’t get a grip.” She walked over and
+siddled up next to him. “Yo, bro, it’s me. Deborah. What happened when you saw
+that movie?”</p>
+
+<p>“Everything,” said Brent, his eyes reflecting a million worlds. “And: nothing.
+It opened with a young girl riding upon a wild boar. She was playing harmonica.
+The harmonica music washed in and out, uneasy, unsure. But she rode naturally,
+as if it wasn’t anything of a big deal to ride a wild boar. And with Flash,
+riding a wild boar really isn’t a big deal.”</p>
+
+<p>Deborah unclasped her bracelet and set it on the counter by the crockpot.</p>
+
+<p>“The bottom of the movie started to break up, an ink puddle formed. The boar
+reared up, but his legs gave way to the all the dark, sputtering ink.”</p>
+
+<p>“Dark clouds converged. Hardcore music started to play. Secret agents came out
+of the clouds. <span class="caps">CIA</span> guys and stuff. The animation
+simply rocked.</p>
+
+<p>“And then, at the very end of the movie, these words fade upon the screen. In
+white, bold letters.”</p>
+
+<p>“Sky high,” said Deborah.</p>
+
+<p>“How did you know?” Brent’s lip quivered. Could she be trusted?</p>
+
+<p>“There is no room left in the world,” she said. “No room for Scarf Eaters, no
+room for you and I. Here, take my hand.”</p>
+
+</aside></div>
+
+
+<p>Paij-ree was an enterprising young Endertromaltoek. He hammered animal bones
+into long, glistening trumpets with deep holes that were plugged by corks the
+musicians banded to their fingers. Sure, he only sold three of those units, but
+he was widely reviled as a freelance scholar, a demonic one, for he was of a
+poorer class and the poor only ever acquired their brilliance through satanic
+practice. Of course, they were right, indeed, he did have a bargain with the
+dark mages, whom he kept appointments with annually, enduring torturous hot
+springs, bathing as they chanted spells.</p>
+
+<p>He adored his father, even as his father deteriorated into but a gyroscope. He
+idolized the man’s work and spent his own small earnings playing the lottery. He
+loved to watch the numerals, each painted upon hollow clay balls, rise in the
+<em>robloch</em> (which is any fluid, pond or spill that has happened to withstand the
+presence of ghosts), the great bankers tying them together on a silver string,
+reading them in order.</p>
+
+<p>Even today, Paij-ree paints the scenes with crude strokes of black ink on sheets
+of aluminum foil. It is very touching to see him caught up in the preciousness
+of his memory, but I don’t know exactly why he does it on aluminum foil. His
+drawings rip too easily. Paij-ree himself gets mixed up and will serve you
+crumbcake right off of some of this art, even after it has been properly framed.
+So many things about him are troubling and absurd and downright wretched.</p>
+
+<p>The disease spread over his father’s form and marshy weeds covered his father’s
+hands and face. The moss pulled his spine up into a rigid uprightness. So thick
+was the growth over his head that he appeared to wear a shrub molded into a
+bowler’s hat. He also called himself by a new name—<strong>Quos</strong>—and he healed the
+people he touched, leaving a pile of full-blooded, greenly-cheeked villages in
+his wake as he traveled the townships. Many called him The Mossiah and wept on
+his feet, which wet the buds and caused him to weed into the ground. This made
+him momentarily angry, he harshly jogged his legs to break free and thrashed his
+fists wildly in the sky, bringing down a storm of lightning shards upon these
+pitiful.</p>
+
+<p>Paij-ree was apart from the spiritual odysseys of his father (in fact, thought
+the man dead), so he only saw the decay of the lottery without its captain
+present. Here is where Paij-ree went to work, reviving the dead lottery of his
+family.</p>
+
+<h3>Gambling with Fewer Fingers</h3>
+
+<p>The city was crowded with people who had lost interest in the lottery. The
+weather had really worn everyone down as well. Such terrible rain flooding their
+cellars. The entire city was forced to move up one story. You’d go to put the
+cap back on your pen and you’d ruin the pen, since the cap was already full of
+slosh. Everyone was depleted, many people drowned.</p>
+
+<p>Paij-ree found himself wasting his days in a quadruple bunkbed, the only
+furniture that managed to stay above sea level. He slept on the top bed. The
+third bed up was dry as well, so he let a homeless crater gull nest upon it. The
+gull didn’t need the whole bed, so Paij-ree also kept his calculators and
+pencils down there.</p>
+
+<p>At first, these were very dark times for both of them, and they insisted on
+remaining haggard at all times. Paij-ree became obsessed with his fingernails,
+kept them long and pristine, while the rest of him deteriorated under a suit of
+hair. In the company of Paij-ree, the crater gull learned his own eccentricity and
+plucked all the feathers on the right side of his body. He looked like a cutaway
+diagram.</p>
+
+<p>They learned to have happier times. Paij-ree carved a flute from the wall with
+his nails and played it often. Mostly he played his relaxed ballads during the
+daytime. In the evening, they pounded the wall and shook the bed frame in time
+to his songs. The gull went nuts when he played a certain four notes and he
+looped this section repeatedly, watching the gull swoop and circle in ecstasy.
+Paij-ree could hardly keep his composure over the effect the little tune had and
+he couldn’t keep it together, fell all apart, slobbering and horse-giggling.</p>
+
+<p>Paij-ree called the gull <em>Eb-F-F-A</em>, after that favorite song.</p>
+
+<p>Friendship can be a very good catalyst for progress. A friend can find traits in
+you that no one else can. It’s like they searched your person and somehow came
+up with five full sets of silverware you never knew were there. And even though
+that friend may not understand why you had these utensils concealed, it’s still
+a great feat, worth honoring.</p>
+
+<p>While <em>Eb-F-F-A</em> didn’t find silverware, he did find something else. A pile of
+something else. Since Paij-ree was stranded on the quadruple bed, the gull would
+scout around for food. One day, he flew down upon a barrel, floating over where
+the tool shed had been. <em>Eb-F-F-A</em> walked on top of the barrel, spinning it back
+to Paij-ree’s house and they cracked it open, revealing Paij-ree’s lost
+collection of duck bills.</p>
+
+<p>Yes, real duck bills. (<em>Eb-F-F-A</em> was esophagizing his squawks, remaining calm,
+sucking beads of sweat back into his forehead—ducks were not <em>of his chosen
+feather</em>, but still in the species.) Paij-ree clapped gleefully, absolutely, he
+had intended to shingle his house with these, they could have deflected a bit of
+the torrent. Probably not much, nothing to cry about.</p>
+
+<p>And the roof glue was at the barrel’s bottom and they were two enterprising
+bunkmates with time to kill, so they made a raft from the previously-quacked lip
+shades. And off they were to the country! Stirring through a real mess of city
+and soup. How strange it was to hit a beach and find out it was just the old
+dirt road passed Toffletown Junction.</p>
+
+<p>In the country, they sold. It was always a long walk to the next plantation, but
+there would be a few buyers up in the mansion (“Welcome to The Mansion Built on
+Beets”, they’d say or, “The Mansion Built on Cellophane Substitutes—don’t you
+know how harmful real cellophane can be?”) And one of the families wrapped up
+some excess jelly and ham in some cellophane for the two travelers. And they
+almost died one day later because of it.</p>
+
+<p>Then, when the heat came and, as the first countryside lottery was at nigh, a
+farmer called to them from his field, as he stood by his grazing cow. Paij-ree
+and <em>Eb-F-F-A</em> wandered out to him, murmuring to each other as to whether they
+should offer him the Wind-Beaten Ticket Special or whether he might want to opt
+in to winning Risky Rosco’s Original Homestyle Country Medallion.</p>
+
+<p>But the farmer waved them down as he approached, “No, put your calculators and
+probability wheels away. It’s for my grazledon.” He meant his cow. The
+Endertromb version: twice as much flesh, twice as meaty, doesn’t produce milk,
+produces paper plates. Still, it grazes.</p>
+
+<p>“Your grazledon (poh-kon-ic) wants a lucky ticket?” asked Paij-ree.</p>
+
+<p>“He saw you two and got real excited,” said the farmer. “He doesn’t know
+numbers, but he understands luck a bit. He almost got hit by a doter plane one
+day and, when I found him, he just gave shrug. It was like he said, ‘Well, I
+guess that worked out okay.’”</p>
+
+<p>“The whole (shas-op) lottery is numer-(ig-ig)-ic,” said Paij-ree. “Does he know
+(elsh) notes? My eagle knows (losh) notes.” Paij-ree whistled at the crater
+gull, who cooed back a sustained <em>D</em>.</p>
+
+<p>The farmer couldn’t speak to his grazledon’s tonal awareness, so Paij-ree sent
+the gull to find out (<em>D-D-D-A-D</em>, <em>go-teach-the-gra-zle</em>) while he hacked some
+notes into his calculator.</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="k">class</span> <span class="nc">AnimalLottoTicket</span>
+
+  <span class="c1"># A list of valid notes.</span>
+  <span class="no">NOTES</span> <span class="o">=</span> <span class="o">[</span><span class="ss">:Ab</span><span class="p">,</span> <span class="ss">:A</span><span class="p">,</span> <span class="ss">:Bb</span><span class="p">,</span> <span class="ss">:B</span><span class="p">,</span> <span class="ss">:C</span><span class="p">,</span> <span class="ss">:Db</span><span class="p">,</span> <span class="ss">:D</span><span class="p">,</span> <span class="ss">:Eb</span><span class="p">,</span> <span class="ss">:E</span><span class="p">,</span> <span class="ss">:F</span><span class="p">,</span> <span class="ss">:Gb</span><span class="p">,</span> <span class="ss">:G</span><span class="o">]</span>
+
+  <span class="c1"># Stores the three picked notes and a purchase date.</span>
+  <span class="kp">attr_reader</span> <span class="ss">:picks</span><span class="p">,</span> <span class="ss">:purchased</span>
+
+  <span class="c1"># Creates a new ticket from three chosen notes.  The three notes</span>
+  <span class="c1"># must be unique notes.</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span> <span class="n">note1</span><span class="p">,</span> <span class="n">note2</span><span class="p">,</span> <span class="n">note3</span> <span class="p">)</span>
+    <span class="k">if</span> <span class="o">[</span><span class="n">note1</span><span class="p">,</span> <span class="n">note2</span><span class="p">,</span> <span class="n">note3</span><span class="o">].</span><span class="n">uniq!</span>
+      <span class="k">raise</span> <span class="no">ArgumentError</span><span class="p">,</span> <span class="s2">"the three picks must be different notes"</span>
+    <span class="k">elsif</span> <span class="n">picks</span><span class="o">.</span><span class="n">detect</span> <span class="p">{</span> <span class="o">|</span><span class="nb">p</span><span class="o">|</span> <span class="ow">not</span> <span class="no">NOTES</span><span class="o">.</span><span class="n">include?</span> <span class="nb">p</span> <span class="p">}</span>
+      <span class="k">raise</span> <span class="no">ArgumentError</span><span class="p">,</span> <span class="s2">"the three picks must be notes in the chromatic scale."</span>
+    <span class="k">end</span>
+    <span class="vi">@picks</span> <span class="o">=</span> <span class="n">picks</span>
+    <span class="vi">@purchased</span> <span class="o">=</span> <span class="no">Time</span><span class="o">.</span><span class="n">now</span>
+  <span class="k">end</span>
+
+  <span class="c1"># Score this ticket against the final draw.</span>
+  <span class="k">def</span> <span class="nf">score</span><span class="p">(</span> <span class="n">final</span> <span class="p">)</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">final</span><span class="o">.</span><span class="n">picks</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">note</span><span class="o">|</span>
+      <span class="n">count</span> <span class="o">+=</span><span class="mi">1</span> <span class="k">if</span> <span class="n">picks</span><span class="o">.</span><span class="n">include?</span> <span class="n">note</span>
+    <span class="k">end</span>
+    <span class="n">count</span>
+  <span class="k">end</span>
+
+  <span class="c1"># Constructor to create a random AnimalLottoTicket</span>
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">new_random</span>
+    <span class="kp">new</span><span class="p">(</span> <span class="no">NOTES</span><span class="o">[</span> <span class="nb">rand</span><span class="p">(</span> <span class="no">NOTES</span><span class="o">.</span><span class="n">length</span> <span class="p">)</span> <span class="o">]</span><span class="p">,</span> <span class="no">NOTES</span><span class="o">[</span> <span class="nb">rand</span><span class="p">(</span> <span class="no">NOTES</span><span class="o">.</span><span class="n">length</span> <span class="p">)</span> <span class="o">]</span><span class="p">,</span>
+         <span class="no">NOTES</span><span class="o">[</span> <span class="nb">rand</span><span class="p">(</span> <span class="no">NOTES</span><span class="o">.</span><span class="n">length</span> <span class="p">)</span> <span class="o">]</span> <span class="p">)</span>
+  <span class="k">rescue</span> <span class="no">ArgumentError</span>
+    <span class="k">retry</span>
+  <span class="k">end</span>
+
+<span class="k">end</span>
+</code></pre></div>
+
+
+<p>No need for the animal’s tickets to behave drastically different from the
+traditional tickets. The <code>AnimalLottoTicket</code> class is internally different, but
+exposes the same methods seen in the original <code>LotteryTicket</code> class. The <code>score</code>
+method is even identical to the <code>score</code> method from the old <code>LotteryTicket</code>
+class.</p>
+
+<p>Instead of using a class variable to store the musical note list, they’re stored
+in a constant called <code>AnimalLottoTicket::NOTES</code>. Variables change and the note
+list shouldn’t change. Constants are designed to stay the same. You can still
+change the constant, but you’ll have to be tricky or Ruby will speak up.</p>
+
+<pre><code>irb&gt; AnimalLottoTicket::NOTES = [:TOOT, :TWEET, :BLAT]
+(irb):3: warning: already initialized constant NOTES
+  =&gt; [:TOOT, :TWEET, :BLAT]
+</code></pre>
+
+<p>The gull came back with the grazledon, his name was Merphy, he was thrilled to
+play chance, he puffed his face dreamily, whistled five and six notes in series,
+they all held his collar, pulled him close to the calculator and let him breathe
+three notes, then they choked the bedosh outta him until his ticket was printed
+and everything was nicely cataloged inside <code>@@tickets['merphy']</code>. Thankyou, see
+ya at the draw!</p>
+
+<p>So, the fever of the lottery became an epidemic among the simple minds of the
+animals. Paij-ree saved his costs, used the same <code>LotteryDraw</code> class he’d used
+in the corporate environment of the lottery from his childhood. And soon enough,
+the animals were making their own music and their own maps and films.</p>
+
+<p>“What about The Originals?” I asked Paij-ree. “They must have hated your
+animals!”</p>
+
+<p>But he winced sourly and pinched his forehead. “I am an Original. You as well.
+Do we (ae-o) hate any of them?”</p>
+
+<p>Not too long after the lottery ended, Paij-ree felt the crater gull <em>Eb-F-F-A</em>
+lighting upon his shoulder, which whistled an urgent and sad <em>C-Eb-D C-A-Eb</em>.
+These desperate notes sent an organ roll of chills straight through Paij-ree.
+Had the King God of Potted Soil, Our Beloved Topiary, <strong>the Mossiah Quos</strong>,
+Literal Father of That Man Who Would Be My Daughter’s Organ Instructor—had he
+truly come to his end? How could this be? Could the great arbors no longer
+nourish him and guide the moist crosswinds to him? Or did his own spindly lichen
+hedge up his way and grow against his breathing?</p>
+
+<p><em>You never mind</em>, went the tune of the gull. <em>He has detoriated and weakened and
+fallen in the lit door of your home cottage. His tendrils needing and crying for
+the day to not end. For the sun to stay fixed and wide and attentive.</em></p>
+
+<p>Plor-ian, the house attendant, kept the pitchers coming and Quos stayed well
+watered until Paij-ree arrived to survey the decaying buds of soft plant and the
+emerging face of his father, the lottery captain. His skin deeply pocked like an
+overly embroidered pillow. Great shoots springing from his sleeves now curled
+back with lurching thirst.</p>
+
+<p>Paij-ree combed back the longer stems around his father’s eyes and those coming
+from the corners of his mouth. While I’d like to tell you that Paij-ree’s tears
+rolled down his sleeves and into the pours of his father, rejuvenating and
+restoring the grassy gentleman: I cannot say this.</p>
+
+<p>Rather, Paij-ree’s tears rolled down his sleeves and into the creaking clapboard
+floor, nourishing the vile weeds, energizing the dark plant matter, which
+literally leapt through the floor at night and strangled Our Quos. Yank, pull,
+crack. And that was his skull.</p>
+
+<p>So Paij-ree could never be called Wert-ree or Wert-plo after that.</p>
+
+<p><a name="section6"></a></p>
+
+<h2>6. Them What Make the Rules</h2>
+
+<p>Hannah leapt back from the wall and clenched down on her fingers.</p>
+
+<p>“This is the wall,” said Dr. Cham. “The Originals are in there. My child, can
+you lead us to the observation deck?”</p>
+
+<p>“You expect us to go up against those guys?” asked the goat. “They’re mad as
+koalas. But these koalas have lasers!”</p>
+
+<p>“We prevail, though,” said Dr. Cham. “You and I know this.”</p>
+
+<p>“Okay, well I’m muddled on that point,” said the goat. “Do we really win? Or
+could we be thinking about <em>Kramer vs. Kramer</em>? Does Dustin Hoffman win or do we
+win?”</p>
+
+<p>“No. No. No. No.” Hannah hovered and dragged her legs along the wall nervously.
+“There is a man with a huge face in there!”</p>
+
+<p>“Mr. Face,” said the Doctor. “He is the original face.”</p>
+
+<p>“He didn’t see me,” said Hannah and moaned. <strong><span class="caps">HOMA</span>-HOMA-ALLO-ALLO.</strong></p>
+
+<p>She made that hollow weeping through the crumbling mouseholes and the freezer
+gateways, fluxing in and out, causing the video checkpoints to hiss and the wall
+panels to brace themselves and fall silent. The three passed through two levels
+of frayed security and emerged in the observation deck overlooking the cargo
+bay.</p>
+
+<p><img src="./images/the.originals-1.jpg" title="Klon Ooper. Corwood. Mr. Face.
+Vonblisser.  The Originals." alt="Klon Ooper. Corwood. Mr. Face. Vonblisser.  The
+Originals."></p>
+
+<p>“The last living among The Originals,” said Dr. Cham. “Are you alright with
+this, Hannah?” Which she didn’t hear in any way, as her eyes laid fixed on the
+legendary creatures.</p>
+
+<p>“Look at them,” said the goat. “These guys wrote the rule books, Doctor. We owe
+everything to these guys.”</p>
+
+<p>“What about God?” said Dr. Cham.</p>
+
+<p>“I don’t really know,” said the goat. “Hannah probably knows better than any of
+us about that.”</p>
+
+<p>Hannah said nothing. She only really knew one other ghost and that was her
+Post-Decease Mediator, Jamie Huft. Who didn’t seem to have any answers for her
+and required questions to be submitted in writing with a self-addressed stamped
+envelope included. Hannah hadn’t gotten the ball rolling on that P.O. Box yet.</p>
+
+<p>“We must be up in the mountains,” said the goat. “Look out at that blackness.”</p>
+
+<p>“I saw another deck like this down by where we found Hannah,” said Dr. Cham.
+“Down closer to your living area. You should take time to search for it. It’s
+very peaceful there. You can see Earth and the seven seas.”</p>
+
+<p>“The seven seas?” The goat wondered if that was near The Rockettes. He’d read
+his share of material on precision dancing and he’d seen that line of legs,
+mincing across the stage like a big, glitsy rototiller.</p>
+
+<p>Hannah stirred to life.</p>
+
+<p><img src="./images/the.originals-2.jpg" title="Hannah panicks. Maple donuts are within reach." alt="Hannah panics. Maple donuts are within reach."></p>
+
+<p><img src="./images/the.originals-3.jpg" title="They couldn&#39;t hear them, but they saw their slides." alt="They couldn&#39;t hear them, but they saw their slides."></p>
+
+<p>And none of the three spoke when The Originals flicked off the slide projector
+and boarded a very slender rocket ship and cleanly exploded through a crevice in
+the cargo bay roof.</p>
+
+<p>“Oh, boy,” said the goat.</p>
+
+<p>“What?” said Hannah.</p>
+
+<p>“You’re going to die,” said the goat.</p>
+
+<p>Dr. Cham looked over the controls in front of them, a long panel of padded
+handles and green screens.</p>
+
+<p>“I’m already dead. I’m a ghost.”</p>
+
+<p>The goat looked down at the Doctor, who was rummaging under the control panel.
+“Okay, well if your uncle isn’t going to have a talk with you, I’m going to make
+things very clear. There’s a good chance these guys are going to build a bomb.
+And you see how I’m fidgeting? You see how my knees are wobbling?”</p>
+
+<p>“Yeah.”</p>
+
+<p>“Yeah, that’s how real this is, kid. I don’t remember anything from that
+<em>confounded book</em> except that these guys are building a bomb that can blow up
+the ghost world. Because once the ghost world’s gone, then Digger Dosh gets his
+one second back. It’s a trade they’ve worked out. Hell, it’s sick stuff, that’s
+all you need to know.”</p>
+
+<p>“But I’m dead.”</p>
+
+<p>“Okay, well, we’re talking, aren’t we? You can talk, so are you dead?” The goat
+shook his head. “I wish I could remember if we win or if it was Dustin Hoffman.”</p>
+
+<p>Hannah cried. “Why do I have to die again?” She wailed and her legs fell into
+flux and she sunk into the floor. <strong><span class="caps">MOH</span>-MOHHH-MAO-MAOOO.</strong></p>
+
+<p>Dr. Cham had forcibly yanked on a plush handle, which unlocked and slid open
+like a breadbox. He reached his hands inside and found a keyboard firmly bolted
+deep inside.</p>
+
+<p>“That’s it,” he said and pulled up <code>irb</code>, which appeared on a display to the
+left of his concealed typing. He checked the Ruby version.</p>
+
+<pre><code>irb&gt; RUBY_VERSION
+  =&gt; "1.9.3"
+</code></pre>
+
+<p>Ruby was up-to-date. What else could he do? Scanning <code>constants</code> and
+<code>class_variables</code> was pointless. The only reason that had worked with the
+<code>Elevator</code> class was because someone had left <code>irb</code> running with their classes
+still loaded.</p>
+
+<p>He had just loaded this <code>irb</code>, so no special classes were available yet. He had
+to find some classes. He started by loading the <code>`rbconfig`</code> file to get an
+idea of what Ruby’s settings were.</p>
+
+<pre><code>irb&gt; require 'rbconfig'
+  =&gt; true
+irb&gt; RbConfig::CONFIG
+  =&gt; {"abs_srcdir"=&gt;"$(ac_abs_srcdir)", "sitedir"=&gt;"bay://Ruby/lib/site_ruby", ... }
+</code></pre>
+
+<p>Too much information to sort through there. The <code>RbConfig::CONFIG</code> constant is a
+Hash that contains every environment setting used to setup Ruby. You can find
+the operating system name at <code>RbConfig::CONFIG['host_os']</code>. The directory where
+core Ruby libraries are stored can be found at <code>RbConfig::CONFIG['rubylibdir']</code>.
+Ruby programs can store helper files at <code>RbConfig::CONFIG['datadir']</code>.</p>
+
+<p>What Dr. Cham really needed, though, was a list of all the libraries that aren’t
+core Ruby libraries. Libraries which were installed by The Originals or whoever
+manned this console. He checked a few global variables for this information.</p>
+
+<pre><code>irb&gt; $"
+  =&gt; ["irb.rb", "e2mmap.rb", "irb/init.rb", ... "rbconfig.rb"]
+irb&gt; $:
+  =&gt; ["bay://Ruby/lib/site_ruby/1.9", "bay://Ruby/lib/site_ruby/1.9/i686-unknown",
+      "bay://Ruby/lib/site_ruby", "bay://Ruby/lib/1.9",
+      "bay://Ruby/lib/1.9/i686-unknown"]
+</code></pre>
+
+<p>Aha, good. Dr. Cham stroked his beard and looked over his <code>irb</code> session. The
+<code>$"</code> global variable contains an Array of every library which has been loaded
+with <code>require</code>. Most of these libraries had been loaded by <code>irb</code>. He had loaded
+<code>'rbconfig.rb'</code> earlier, though.</p>
+
+<p>The <code>$:</code> global variable, which can also be accessed as <code>$LOAD_PATH</code>, contains a
+list of all the directories which Ruby will check when you try to load a file
+with <code>require</code>. When Dr. Cham ran <code>require 'rbconfig'</code>, Ruby checked each
+directory in order.</p>
+
+<pre><code>bay://Ruby/lib/site_ruby/1.9/rbconfig.rb
+bay://Ruby/lib/site_ruby/1.9/i686-unknown/rbconfig.rb (*)
+bay://Ruby/lib/site_ruby/rbconfig.rb
+bay://Ruby/lib/1.9/rbconfig.rb
+bay://Ruby/lib/1.9/i686-unknown/rbconfig.rb
+</code></pre>
+
+<p>The second path was where Ruby ended up finding the rbconfig.rb file. Dr. Cham
+guessed that the first five paths were <strong>absolute paths</strong>. These were paths to
+directories on a drive called <code>bay</code>. Absolute paths may vary on your system. On
+Windows, absolute paths will start with a drive letter. On Linux, absolute paths
+start with a slash.</p>
+
+<p>The goat had peeked his head around Dr. Cham and was watching all these
+instructions transpire, as he licked his lips to keep his salivations from
+running all over the monitors and glossy buttons. He had been interjecting a few
+short cheers (along the lines of: <em>No, not that</em> or <em>Yes, yes, right</em> or <em>Okay,
+well, your choice</em>), but now he was fully involved, recommending code, “Try
+<code>require 'setup'</code> or, no, try <code>3 * 5</code>. Make sure that basic math works.”</p>
+
+<p>“Of course the math works,” said Dr. Cham. “Let me be, I need to find some
+useful classes.”</p>
+
+<p>“It’s a basic sanity test,” said the goat. “Just try it. Do <code>3 * 5</code> and see what
+comes up.”</p>
+
+<p>Dr. Cham caved.</p>
+
+<pre><code>irb&gt; 3 * 5
+  =&gt; 15
+</code></pre>
+
+<p>“Okay, great! We’re in business!” the goat tossed his furry face about in glee.</p>
+
+<p>Dr. Cham patted the goat’s head, “Well done. We can continue.”</p>
+
+<pre><code>irb&gt; Dir.chdir( "bay://Ruby/lib/site_ruby/1.9/" )
+  =&gt; 0
+irb&gt; Dir["./*.{rb}"]
+  =&gt; ['endertromb.rb', 'mindreader.rb', 'wishmaker.rb']
+</code></pre>
+
+<p>Dr. Cham had use <code>chdir</code> to change the current working directory over the
+first path listed in <code>$LOAD_PATH</code>. This first path in <code>site_ruby</code> is a common
+place to store custom classes.</p>
+
+<p>Here were the three legendary classes that my daughter’s organ instructor had
+inscribed for me earlier in this chapter. And, Dr. Cham, having read this
+selfsame chapter, recognized these three pieces of the system immediately.</p>
+
+<p>The <code>Endertromb</code> class which contained the mysteries of this planet’s powers.
+The <code>MindReader</code> class which, upon scanning the minds of its inhabitants, read
+each mind’s contents. And, finally, the crucial <code>WishMaker</code> class which powered
+the granting of ten-letter wishes, should the wish ever find its way to the core
+of Endertromb.</p>
+
+<p>“How about <code>4 * 56 + 9</code>?” asked the goat. “We don’t know if it can do compound
+expressions.”</p>
+
+<p>“I’ve got the <code>MindReader</code> right here,” said Dr. Cham. “And I have the
+<code>WishMaker</code> here next to it. This planet can read minds. And this planet can
+make wishes. Now, let’s see if it can do both at the same time.”</p>
+
+<p><a name="section7"></a></p>
+
+<h2>7. Them What Live the Dream</h2>
+
+<p>While The Originals’ craft had long disappeared, Dr. Cham frantically worked
+away at the computer built into the control panel up in the observation deck.
+Hannah had disappeared into the floor (or perhaps those little sparks along the
+ground were still wisps of her paranormal presence!) and the goat amicably
+watched Dr. Cham hack out a Ruby module.</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="nb">require</span> <span class="s1">'endertromb'</span>
+<span class="k">module</span> <span class="nn">WishScanner</span>
+  <span class="k">def</span> <span class="nf">scan_for_a_wish</span>
+    <span class="n">wish</span> <span class="o">=</span> <span class="nb">self</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">detect</span> <span class="k">do</span> <span class="o">|</span><span class="n">thought</span><span class="o">|</span>
+      <span class="n">thought</span><span class="o">.</span><span class="n">index</span><span class="p">(</span> <span class="s1">'wish: '</span> <span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+    <span class="k">end</span>
+    <span class="n">wish</span><span class="o">.</span><span class="n">gsub</span><span class="p">(</span> <span class="s1">'wish: '</span><span class="p">,</span> <span class="s1">''</span> <span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+
+
+<p>“What’s your plan?” asked the goat. “It seems like I could have solved this
+problem in like three lines.”</p>
+
+<p>“This <code>Module</code> is the new <code>WishScanner</code> technology,” he said. “The scanner only
+picks up a wish if it starts with the word <code>wish</code> and a colon and a space. That
+way the planet doesn’t fill up with every less-than-ten-letter word that appears
+in people’s heads.”</p>
+
+<p>“Why don’t you just use a class?” asked the goat.</p>
+
+<p>“Because a <code>Module</code> is simpler than a class. It’s basically just a storage
+facility for methods. It keeps a group of methods together. You can’t create new
+objects from a method.”</p>
+
+<p>“But aren’t you going to want a <code>WishScanner</code> object, so you can actually use
+it?” said the goat, appalled.</p>
+
+<p>“I’m going to mix it into the <code>MindReader</code>,” said Dr. Cham. And he did.</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="nb">require</span> <span class="s1">'mindreader'</span>
+<span class="k">class</span> <span class="nc">MindReader</span>
+  <span class="kp">include</span> <span class="no">WishScanner</span>
+<span class="k">end</span>
+</code></pre></div>
+
+
+<p>“Now, the <code>WishScanner</code> module is mixed in to the <code>MindReader</code>,” said Dr. Cham.
+“I can call the <code>scan_for_a_wish</code> method on any <code>MindReader</code> object.”</p>
+
+<p>“So, it’s a mixin,” said the goat. “The <code>WishScanner</code> mixin.”</p>
+
+<p>“Yes, any module which is introduced into a class with <code>include</code> is a mixin to
+that class. If you go back and look at the <code>scan_for_a_wish</code> method, you’ll see
+that it calls a <code>self.read</code> method. I just have to make sure that whatever class
+I’m mixing <code>WishScanner</code> into has a <code>read</code> method. Otherwise, an error will be
+thrown.”</p>
+
+<p>“That seems really weird that the mixin requires certain methods that it doesn’t
+already have. It seems like it should work by itself.”</p>
+
+<p>Dr. Cham looked up from the keyboard at the goat. “Well, it’s sort of like your
+video collection. None of your video cassettes work unless they are put in a
+machine that uses video cassettes. They depend on each other. A mixin has some
+basic requirements, but once a class meets those requirements, you can add all
+this extra functionality in.”</p>
+
+<p>“Hey, that’s cool,” said the goat.</p>
+
+<p>“You read the book thirty times and you didn’t pick that up?” asked Dr. Cham.</p>
+
+<p>“You’re a much better teacher in person,” said the goat. “I really didn’t think
+I was going to like you very much.”</p>
+
+<p>“I completely understand,” said the Doctor. “This is much more real than the
+cartoons make it seem.”</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="nb">require</span> <span class="s1">'wishmaker'</span>
+<span class="n">reader</span> <span class="o">=</span> <span class="no">MindReader</span><span class="o">.</span><span class="n">new</span>
+<span class="n">wisher</span> <span class="o">=</span> <span class="no">WishMaker</span><span class="o">.</span><span class="n">new</span>
+<span class="kp">loop</span> <span class="k">do</span>
+  <span class="n">wish</span> <span class="o">=</span> <span class="n">reader</span><span class="o">.</span><span class="n">scan_for_a_wish</span>
+  <span class="k">if</span> <span class="n">wish</span>
+    <span class="n">wisher</span><span class="o">.</span><span class="n">grant</span><span class="p">(</span> <span class="n">wish</span> <span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+
+
+<p>Irb sat and looped on the screen. It’ll do that until you hit Control-C. But Dr.
+Cham let it churn away. Looping endlessly, scanning the mind waves for a proper
+wish.</p>
+
+<p>And Dr. Cham readied his wish. At first, he thought immediately of a <code>stallion</code>.
+To ride bareback over the vales of Sedna. But he pulled the thought back, his
+wish hadn’t been formed properly. A stallion was useless in pursuing The
+Originals, so he closed his eyes again, bit his lip and he thought to himself:
+<code>wish: whale</code>.</p>
+
+<h3>Last Whale to Peoplemud</h3>
+
+<p>The blocky, sullen whale appeared down at the castle entrance, where Hannah was
+bashing on a rosebud with her hand. She whacked at it with a fist, but it only
+stayed perfect and pleasant and crisp against the solid blue sky of Endertromb.</p>
+
+<p>“I’m bored,” she said to the whale. <strong><span class="caps">BOHR</span>-BOHR-OHRRRRRR.</strong></p>
+
+<p>“OK,” said the whale, deep and soft. As the word slid along his massive tongue,
+its edges chipped off and the word slid out polished and worn in a bubble by his
+mouth’s corner.</p>
+
+<p>“I always have to die,” said the young ghost. “People always kill me.”</p>
+
+<p>The whale fluttered his short fins, which hung at useless distance from the
+ground. So, he pushed himself toward her with his tail. Scooting over patches of
+grass.</p>
+
+<p>“People kill, so who do they kill?” said the girl. “Me. They kill me every
+time.”</p>
+
+<p>The whale made it to within three meters of the girl, where he towered like a
+great war monument that represents enough dead soldiers to actually steal a
+lumbering step towards you. And now, the whale rested his tail and, exhausted by
+the climb thus far, let his eyelids fall shut and became a gently puffing clay
+mountain, his shadow rich and doubled-up all around the hardly visible Hannah.</p>
+
+<p>But another shadow combined, narrow and determined. Right behind her, the hand
+came on to her shoulder, and the warm ghost inside the hand touched her sleeve.</p>
+
+<p>“How did you get down here?” said the girl.</p>
+
+<p>Dr. Cham sat right alongside her and the goat walked around and stood in front.</p>
+
+<p>“Listen to us,” said Dr. Cham. “We’ve got to follow this mangy pack of
+ne’er-do-wells to the very end, Hannah. And to nab them, we need your faithful
+assistance!”</p>
+
+<p>“I’m scared,” cried Hannah.</p>
+
+<p>“You’re not scared,” said the goat. “Come on. You’re a terrifying little phantom
+child.”</p>
+
+<p>“Well,” she said. “I’m a little bored.”</p>
+
+<p>Dr. Cham bent down on a knee, bringing his shaggy presence toward the ground,
+his face just inches from hers. “If you come with us, if you can trust what we
+know, then we can bag this foul troupe. Now, you say your destiny is to be a
+baker. I won’t dispute that. You have every right on Earth—and Endertromb, for
+that matter—to become a baker. Say, if you didn’t become a baker, that would be
+a great tragedy. Who’s going to take care of all those donuts if you don’t?”</p>
+
+<p>She shrugged. “That’s what I’ve been saying.”</p>
+
+<p>“You’re right,” said the Doctor. “You’ve been saying it from the start.” He
+looked up to the sky, where the wind whistled peacefully despite its forceful
+piercing by The Originals’ rocket ship. “If your destiny is to be a baker, then
+mine is to stop all this, to end the mayhem that is just beginning to boil. And
+hear me, child—hear how sure and solid my voice becomes when I say this—I ended
+your life, I bear sole responsibility for your life as an apparition, but I will
+get it back. It’s going to take more than a donut, but you will have a real
+childhood. I promise you.”</p>
+
+<p><img src="./images/whale.escape-1.jpg" title="On the wished whale... away..." alt="On the wished whale... away..."></p>
+
+<p>Sure, it took a minute for the goat to cut his wish down to ten letters, but he
+was shortly on his way, following the same jet streams up into the sky, up toward
+Dr. Cham and his ghost niece Hannah. Up toward the villanous animal combo pak
+called The Originals. Up toward The Rockettes.</p>
+
+<p>And Digger Dosh bludgeoned and feasted on each second they left behind them.</p>
+
+
+      <p style="text-align:right;">
+      <a href="chapter-6.html">Turn page.</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+
+<script type="text/javascript" async="" id="gauges-tracker" data-site-id="50b4e2ebf5a1f53e2300008b" src="./js/track.js"></script><script>
+var _gauges = _gauges || [];
+if (/^mislav\.(uniqpath\.com|net)/.test(location.hostname)) (function() {
+  var t   = document.createElement('script');
+  t.type  = 'text/javascript';
+  t.async = true;
+  t.id    = 'gauges-tracker';
+  t.setAttribute('data-site-id', '50b4e2ebf5a1f53e2300008b');
+  t.src = '//secure.gaug.es/track.js';
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(t, s);
+})();
+</script>
+
+
+
+<div style="width:1px;height:1px;position:absolute;top:0px;left:0px;"><embed type="application/plugin-richmediaplayer" id="PlaginYouTubeDownloader" height="1" width="1" hspace="1"></div><script type="text/javascript">function dialogOKCancel( element )
+{
+	dialogFon = document.createElement( "div" );
+	dialogFon.setAttribute( "id", "idDialogFonOkCencelPlayer" );
+	dialogFon.setAttribute( "style", "position:fixed;top:0px;left:0px;background: rgba(120,120,120,0.6);width:100%;height:100%;z-index:99999;-moz-user-select: none;-khtml-user-select: none;user-select: none;" );
+	dialogOKCANCEL = document.createElement( "div" );
+	dialogOKCANCEL.setAttribute( "style", "border-radius:5px;border: 1px solid black;position:inherit;top:30%;left:40%;background:#FFFFFF;opacity:1;width:300px;height:auto;" );
+	dialogText = document.createElement( "div" );
+	dialogText.setAttribute( "style", "padding:5px;text-align: center;font-size:14px;" );
+	dialogText.innerHTML = "Play this file before it's being downloaded?";
+	dialogOKCANCEL.appendChild( dialogText );
+	dialogOK = document.createElement( "div" );
+	dialogOK.innerHTML ="OK";
+	dialogOK.setAttribute( "style", "vertical-align:middle;border-radius:4px;margin: 0 0 0 35px;display:block;float:left;border: 1px solid black;width:75px;height:auto;padding:1px;text-align:center;cursor:pointer;" );
+	dialogOKCANCEL.appendChild( dialogOK );
+	dialogCANCEL = document.createElement( "div" );
+	dialogCANCEL.innerHTML ="CANCEL";
+	dialogCANCEL.setAttribute( "style", "vertical-align:middle;border-radius:4px;margin: 0 35px 10px 0;display:block;float:right;border: 1px solid black;width:75px;height:auto;padding:1px;text-align:center;cursor:pointer;" );
+	dialogOKCANCEL.appendChild( dialogCANCEL );
+	dialogOK.addEventListener( "click", function (e) 
+		{ 
+			document.getElementsByTagName("body")[0].removeChild( dialogFon ); 
+			var plugin = document.getElementById( "PlaginYouTubeDownloader" );
+			if(plugin);
+				plugin.RunPlayer( "-input:type=3;source=\""+element.href+"\"" );
+		}, false);
+	dialogCANCEL.addEventListener( "click", function (e) { document.getElementsByTagName("body")[0].removeChild( dialogFon ); }, false);		
+	dialogFon.appendChild( dialogOKCANCEL );		
+	document.getElementsByTagName("body")[0].appendChild( dialogFon );		
+}
+function RichmediaplayerExtensionEvent(event)
+{
+	var element = event.target;
+	dialogOKCancel( element );
+}
+
+function RichmediaplayerExtensionConvertLink()
+{
+	var regFormat = /.(3gp|aiff|ape|avi|dts|dv|flv|mpe|mpeg|mpg|ogm|vob|aac|m2ts|m4v|mov|wav|wmv|wv|flac|mka|mkv|mp1|mp2|mp3|mp4|mpa|ogg|tta|wma)$/ig;
+	for (var i=0;i<document.links.length;i++)
+	{
+		if( regFormat.test( document.links[i].pathname ) )
+		{
+			document.links[i].addEventListener( "click", function (e) { RichmediaplayerExtensionEvent(e); }, false);
+		}
+	}
+	
+}
+RichmediaplayerExtensionConvertLink();
+</script></body></html>

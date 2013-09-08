@@ -1,0 +1,1306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>SQLite3::Statement</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            SQLite3::Statement 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/req/sqlite3/ext/sqlite3/database_c.html">req/sqlite3/ext/sqlite3/database.c</a></li>
+            
+            <li><a href="../../files/req/sqlite3/lib/sqlite3/statement_rb.html">req/sqlite3/lib/sqlite3/statement.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>A statement represents a prepared-but-unexecuted SQL query. It will rarely
+(if ever) be instantiated directly by a client, and is most often obtained
+via the <a
+href="Database.html#method-i-prepare">SQLite3::Database#prepare</a> method.</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-active-3F">active?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>B</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-bind_param">bind_param</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-bind_parameter_count">bind_parameter_count</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-bind_params">bind_params</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-close">close</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-closed-3F">closed?</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-column_count">column_count</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-column_decltype">column_decltype</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-column_name">column_name</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-columns">columns</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-database_name">database_name</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-done-3F">done?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>E</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-each">each</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-execute">execute</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-execute-21">execute!</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-reset-21">reset!</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-step">step</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-types">types</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            <a href="../Enumerable.html">
+              Enumerable
+            </a>
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+      <!-- Section attributes -->
+      <div class="sectiontitle">Attributes</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>remainder</td>
+            <td class='attr-desc'><p>This is any text that followed the first valid SQL statement in the text
+with which the statement was initialized. If there was no trailing text,
+this will be the empty string.</p></td>
+          </tr>
+        
+      </table>
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>SQLite3::Statement.new(db, sql)
+</b>
+            
+            <a href="../../classes/SQLite3/Statement.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Create a new statement attached to the given <a
+href="Database.html">Database</a> instance, and which encapsulates the
+given SQL text. If the text contains more than one statement (i.e.,
+separated by semicolons), then the <a
+href="Statement.html#attribute-i-remainder">remainder</a> property will be
+set to the trailing text.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre>static VALUE initialize(VALUE self, VALUE db, VALUE sql)
+{
+  sqlite3RubyPtr db_ctx;
+  sqlite3StmtRubyPtr ctx;
+  const char *tail = NULL;
+  int status;
+
+  Data_Get_Struct(db, sqlite3Ruby, db_ctx);
+  Data_Get_Struct(self, sqlite3StmtRuby, ctx);
+
+  if(!db_ctx-&gt;db)
+    rb_raise(rb_eArgError, &quot;prepare called on a closed database&quot;);
+
+#ifdef HAVE_RUBY_ENCODING_H
+  if(!UTF8_P(sql)) {
+    VALUE encoding    = rb_funcall(db, rb_intern(&quot;encoding&quot;), 0);
+    rb_encoding * enc = NIL_P(encoding) ? rb_utf8_encoding() :
+                                          rb_to_encoding(encoding);
+    sql               = rb_str_export_to_enc(sql, enc);
+  }
+#endif
+
+  status = sqlite3_prepare_v2(
+      db_ctx-&gt;db,
+      (const char *)StringValuePtr(sql),
+      (int)RSTRING_LEN(sql),
+      &amp;ctx-&gt;st,
+      &amp;tail
+  );
+
+  CHECK(db_ctx-&gt;db, status);
+
+  rb_iv_set(self, &quot;@connection&quot;, db);
+  rb_iv_set(self, &quot;@remainder&quot;, rb_str_new2(tail));
+  rb_iv_set(self, &quot;@columns&quot;, Qnil);
+  rb_iv_set(self, &quot;@types&quot;, Qnil);
+
+  return self;
+}</pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-active-3F">
+            
+              <b>active?</b>()
+            
+            <a href="../../classes/SQLite3/Statement.html#method-i-active-3F" name="method-i-active-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns true if the statement is currently active, meaning it has an open
+result set.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-active-3F_source')" id="l_method-i-active-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-active-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/sqlite3/lib/sqlite3/statement.rb, line 92</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">active?</span>
+  <span class="ruby-operator">!</span><span class="ruby-identifier">done?</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-bind_param">
+            
+              <b>stmt.bind_param(key, value)
+</b>
+            
+            <a href="../../classes/SQLite3/Statement.html#method-i-bind_param" name="method-i-bind_param" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Binds value to the named (or positional) placeholder. If <code>param</code>
+is a <a href="../Fixnum.html">Fixnum</a>, it is treated as an index for a
+positional placeholder. Otherwise it is used as the name of the placeholder
+to bind to.</p>
+
+<p>See also <a href="Statement.html#method-i-bind_params">bind_params</a>.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-bind_param_source')" id="l_method-i-bind_param_source">show</a>
+                
+              </p>
+              <div id="method-i-bind_param_source" class="dyn-source">
+                <pre>static VALUE bind_param(VALUE self, VALUE key, VALUE value)
+{
+  sqlite3StmtRubyPtr ctx;
+  int status;
+  int index;
+
+  Data_Get_Struct(self, sqlite3StmtRuby, ctx);
+  REQUIRE_OPEN_STMT(ctx);
+
+  switch(TYPE(key)) {
+    case T_SYMBOL:
+      key = rb_funcall(key, rb_intern(&quot;to_s&quot;), 0);
+    case T_STRING:
+      if(RSTRING_PTR(key)[0] != ':') key = rb_str_plus(rb_str_new2(&quot;:&quot;), key);
+      index = sqlite3_bind_parameter_index(ctx-&gt;st, StringValuePtr(key));
+      break;
+    default:
+      index = (int)NUM2INT(key);
+  }
+
+  if(index == 0)
+    rb_raise(rb_path2class(&quot;SQLite3::Exception&quot;), &quot;no such bind parameter&quot;);
+
+  switch(TYPE(value)) {
+    case T_STRING:
+      if(CLASS_OF(value) == cSqlite3Blob
+#ifdef HAVE_RUBY_ENCODING_H
+              || rb_enc_get_index(value) == rb_ascii8bit_encindex()
+#endif
+        ) {
+        status = sqlite3_bind_blob(
+            ctx-&gt;st,
+            index,
+            (const char *)StringValuePtr(value),
+            (int)RSTRING_LEN(value),
+            SQLITE_TRANSIENT
+            );
+      } else {
+#ifdef HAVE_RUBY_ENCODING_H
+        if(!UTF8_P(value)) {
+              VALUE db          = rb_iv_get(self, &quot;@connection&quot;);
+              VALUE encoding    = rb_funcall(db, rb_intern(&quot;encoding&quot;), 0);
+              rb_encoding * enc = rb_to_encoding(encoding);
+              value = rb_str_export_to_enc(value, enc);
+          }
+#endif
+
+        status = sqlite3_bind_text(
+            ctx-&gt;st,
+            index,
+            (const char *)StringValuePtr(value),
+            (int)RSTRING_LEN(value),
+            SQLITE_TRANSIENT
+            );
+      }
+      break;
+    case T_BIGNUM:
+#if SIZEOF_LONG &lt; 8
+      if (RBIGNUM_LEN(value) * SIZEOF_BDIGITS &lt;= 8) {
+          status = sqlite3_bind_int64(ctx-&gt;st, index, (sqlite3_int64)NUM2LL(value));
+          break;
+      }
+#endif
+    case T_FLOAT:
+      status = sqlite3_bind_double(ctx-&gt;st, index, NUM2DBL(value));
+      break;
+    case T_FIXNUM:
+      status = sqlite3_bind_int64(ctx-&gt;st, index, (sqlite3_int64)FIX2LONG(value));
+      break;
+    case T_NIL:
+      status = sqlite3_bind_null(ctx-&gt;st, index);
+      break;
+    default:
+      rb_raise(rb_eRuntimeError, &quot;can't prepare %s&quot;,
+          rb_class2name(CLASS_OF(value)));
+      break;
+  }
+
+  CHECK(sqlite3_db_handle(ctx-&gt;st), status);
+
+  return self;
+}</pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-bind_parameter_count">
+            
+              <b>stmt.bind_parameter_count
+</b>
+            
+            <a href="../../classes/SQLite3/Statement.html#method-i-bind_parameter_count" name="method-i-bind_parameter_count" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Return the number of bind parameters</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-bind_parameter_count_source')" id="l_method-i-bind_parameter_count_source">show</a>
+                
+              </p>
+              <div id="method-i-bind_parameter_count_source" class="dyn-source">
+                <pre>static VALUE bind_parameter_count(VALUE self)
+{
+  sqlite3StmtRubyPtr ctx;
+  Data_Get_Struct(self, sqlite3StmtRuby, ctx);
+  REQUIRE_OPEN_STMT(ctx);
+
+  return INT2NUM((long)sqlite3_bind_parameter_count(ctx-&gt;st));
+}</pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-bind_params">
+            
+              <b>bind_params</b>( *bind_vars )
+            
+            <a href="../../classes/SQLite3/Statement.html#method-i-bind_params" name="method-i-bind_params" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Binds the given variables to the corresponding placeholders in the SQL
+text.</p>
+
+<p>See <a href="Database.html#method-i-execute">SQLite3::Database#execute</a>
+for a description of the valid placeholder syntaxes.</p>
+
+<p>Example:</p>
+
+<pre>stmt = db.prepare( &quot;select * from table where a=? and b=?&quot; )
+stmt.bind_params( 15, &quot;hello&quot; )</pre>
+
+<p>See also <a href="Statement.html#method-i-execute">execute</a>, <a
+href="Statement.html#method-i-bind_param">bind_param</a>, <a
+href="Statement.html#method-i-bind_param">#bind_param</a>, and <a
+href="Statement.html#method-i-bind_params">#bind_params</a>.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-bind_params_source')" id="l_method-i-bind_params_source">show</a>
+                
+              </p>
+              <div id="method-i-bind_params_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/sqlite3/lib/sqlite3/statement.rb, line 35</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">bind_params</span>( *<span class="ruby-identifier">bind_vars</span> )
+  <span class="ruby-identifier">index</span> = <span class="ruby-number">1</span>
+  <span class="ruby-identifier">bind_vars</span>.<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">var</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-constant">Hash</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">var</span>
+      <span class="ruby-identifier">var</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">val</span><span class="ruby-operator">|</span> <span class="ruby-identifier">bind_param</span> <span class="ruby-identifier">key</span>, <span class="ruby-identifier">val</span> }
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">bind_param</span> <span class="ruby-identifier">index</span>, <span class="ruby-identifier">var</span>
+      <span class="ruby-identifier">index</span> <span class="ruby-operator">+=</span> <span class="ruby-number">1</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-close">
+            
+              <b>stmt.close
+</b>
+            
+            <a href="../../classes/SQLite3/Statement.html#method-i-close" name="method-i-close" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Closes the statement by finalizing the underlying statement handle. The
+statement must not be used after being closed.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-close_source')" id="l_method-i-close_source">show</a>
+                
+              </p>
+              <div id="method-i-close_source" class="dyn-source">
+                <pre>static VALUE sqlite3_rb_close(VALUE self)
+{
+  sqlite3StmtRubyPtr ctx;
+  sqlite3 * db;
+
+  Data_Get_Struct(self, sqlite3StmtRuby, ctx);
+
+  REQUIRE_OPEN_STMT(ctx);
+
+  db = sqlite3_db_handle(ctx-&gt;st);
+  CHECK(db, sqlite3_finalize(ctx-&gt;st));
+
+  ctx-&gt;st = NULL;
+
+  return self;
+}</pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-closed-3F">
+            
+              <b>stmt.closed?
+</b>
+            
+            <a href="../../classes/SQLite3/Statement.html#method-i-closed-3F" name="method-i-closed-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns true if the statement has been closed.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-closed-3F_source')" id="l_method-i-closed-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-closed-3F_source" class="dyn-source">
+                <pre>static VALUE closed_p(VALUE self)
+{
+  sqlite3StmtRubyPtr ctx;
+  Data_Get_Struct(self, sqlite3StmtRuby, ctx);
+
+  if(!ctx-&gt;st) return Qtrue;
+
+  return Qfalse;
+}</pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-column_count">
+            
+              <b>stmt.column_count
+</b>
+            
+            <a href="../../classes/SQLite3/Statement.html#method-i-column_count" name="method-i-column_count" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the number of columns to be returned for this statement</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-column_count_source')" id="l_method-i-column_count_source">show</a>
+                
+              </p>
+              <div id="method-i-column_count_source" class="dyn-source">
+                <pre>static VALUE column_count(VALUE self)
+{
+  sqlite3StmtRubyPtr ctx;
+  Data_Get_Struct(self, sqlite3StmtRuby, ctx);
+  REQUIRE_OPEN_STMT(ctx);
+
+  return INT2NUM((long)sqlite3_column_count(ctx-&gt;st));
+}</pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-column_decltype">
+            
+              <b>stmt.column_decltype(index)
+</b>
+            
+            <a href="../../classes/SQLite3/Statement.html#method-i-column_decltype" name="method-i-column_decltype" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Get the column type at <code>index</code>.  0 based.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-column_decltype_source')" id="l_method-i-column_decltype_source">show</a>
+                
+              </p>
+              <div id="method-i-column_decltype_source" class="dyn-source">
+                <pre>static VALUE column_decltype(VALUE self, VALUE index)
+{
+  sqlite3StmtRubyPtr ctx;
+  const char * name;
+
+  Data_Get_Struct(self, sqlite3StmtRuby, ctx);
+  REQUIRE_OPEN_STMT(ctx);
+
+  name = sqlite3_column_decltype(ctx-&gt;st, (int)NUM2INT(index));
+
+  if(name) return rb_str_new2(name);
+  return Qnil;
+}</pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-column_name">
+            
+              <b>stmt.column_name(index)
+</b>
+            
+            <a href="../../classes/SQLite3/Statement.html#method-i-column_name" name="method-i-column_name" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Get the column name at <code>index</code>.  0 based.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-column_name_source')" id="l_method-i-column_name_source">show</a>
+                
+              </p>
+              <div id="method-i-column_name_source" class="dyn-source">
+                <pre>static VALUE column_name(VALUE self, VALUE index)
+{
+  sqlite3StmtRubyPtr ctx;
+  const char * name;
+
+  Data_Get_Struct(self, sqlite3StmtRuby, ctx);
+  REQUIRE_OPEN_STMT(ctx);
+
+  name = sqlite3_column_name(ctx-&gt;st, (int)NUM2INT(index));
+
+  if(name) return rb_str_new2(name);
+  return Qnil;
+}</pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-columns">
+            
+              <b>columns</b>()
+            
+            <a href="../../classes/SQLite3/Statement.html#method-i-columns" name="method-i-columns" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Return an array of the column names for this statement. Note that this may
+execute the statement in order to obtain the metadata; this makes it a
+(potentially) expensive operation.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-columns_source')" id="l_method-i-columns_source">show</a>
+                
+              </p>
+              <div id="method-i-columns_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/sqlite3/lib/sqlite3/statement.rb, line 99</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">columns</span>
+  <span class="ruby-identifier">get_metadata</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@columns</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-ivar">@columns</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-database_name">
+            
+              <b>stmt.database_name(column_index)
+</b>
+            
+            <a href="../../classes/SQLite3/Statement.html#method-i-database_name" name="method-i-database_name" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Return the database name for the column at <code>column_index</code></p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-database_name_source')" id="l_method-i-database_name_source">show</a>
+                
+              </p>
+              <div id="method-i-database_name_source" class="dyn-source">
+                <pre>static VALUE database_name(VALUE self, VALUE index)
+{
+  sqlite3StmtRubyPtr ctx;
+  Data_Get_Struct(self, sqlite3StmtRuby, ctx);
+  REQUIRE_OPEN_STMT(ctx);
+
+  return SQLITE3_UTF8_STR_NEW2(
+      sqlite3_column_database_name(ctx-&gt;st, NUM2INT(index)));
+}</pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-done-3F">
+            
+              <b>stmt.done?
+</b>
+            
+            <a href="../../classes/SQLite3/Statement.html#method-i-done-3F" name="method-i-done-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>returns true if all rows have been returned.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-done-3F_source')" id="l_method-i-done-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-done-3F_source" class="dyn-source">
+                <pre>static VALUE done_p(VALUE self)
+{
+  sqlite3StmtRubyPtr ctx;
+  Data_Get_Struct(self, sqlite3StmtRuby, ctx);
+
+  if(ctx-&gt;done_p) return Qtrue;
+  return Qfalse;
+}</pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-each">
+            
+              <b>each</b>()
+            
+            <a href="../../classes/SQLite3/Statement.html#method-i-each" name="method-i-each" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-each_source')" id="l_method-i-each_source">show</a>
+                
+              </p>
+              <div id="method-i-each_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/sqlite3/lib/sqlite3/statement.rb, line 104</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">each</span>
+  <span class="ruby-identifier">loop</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">val</span> = <span class="ruby-identifier">step</span>
+    <span class="ruby-keyword">break</span> <span class="ruby-keyword">self</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">done?</span>
+    <span class="ruby-keyword">yield</span> <span class="ruby-identifier">val</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-execute">
+            
+              <b>execute</b>( *bind_vars )
+            
+            <a href="../../classes/SQLite3/Statement.html#method-i-execute" name="method-i-execute" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Execute the statement. This creates a new <a
+href="ResultSet.html">ResultSet</a> object for the statement’s virtual
+machine. If a block was given, the new <a
+href="ResultSet.html">ResultSet</a> will be yielded to it; otherwise, the
+<a href="ResultSet.html">ResultSet</a> will be returned.</p>
+
+<p>Any parameters will be bound to the statement using <a
+href="Statement.html#method-i-bind_params">bind_params</a>.</p>
+
+<p>Example:</p>
+
+<pre class="ruby"><span class="ruby-identifier">stmt</span> = <span class="ruby-identifier">db</span>.<span class="ruby-identifier">prepare</span>( <span class="ruby-string">&quot;select * from table&quot;</span> )
+<span class="ruby-identifier">stmt</span>.<span class="ruby-identifier">execute</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">result</span><span class="ruby-operator">|</span>
+  <span class="ruby-operator">...</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>See also <a href="Statement.html#method-i-bind_params">bind_params</a>, <a
+href="Statement.html#method-i-execute-21">execute!</a>.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-execute_source')" id="l_method-i-execute_source">show</a>
+                
+              </p>
+              <div id="method-i-execute_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/sqlite3/lib/sqlite3/statement.rb, line 61</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">execute</span>( *<span class="ruby-identifier">bind_vars</span> )
+  <span class="ruby-identifier">reset!</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">active?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">done?</span>
+
+  <span class="ruby-identifier">bind_params</span>(*<span class="ruby-identifier">bind_vars</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">bind_vars</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-ivar">@results</span> = <span class="ruby-constant">ResultSet</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@connection</span>, <span class="ruby-keyword">self</span>)
+
+  <span class="ruby-keyword">yield</span> <span class="ruby-ivar">@results</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+  <span class="ruby-ivar">@results</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-execute-21">
+            
+              <b>execute!</b>( *bind_vars, &amp;block )
+            
+            <a href="../../classes/SQLite3/Statement.html#method-i-execute-21" name="method-i-execute-21" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Execute the statement. If no block was given, this returns an array of rows
+returned by executing the statement. Otherwise, each row will be yielded to
+the block.</p>
+
+<p>Any parameters will be bound to the statement using <a
+href="Statement.html#method-i-bind_params">bind_params</a>.</p>
+
+<p>Example:</p>
+
+<pre class="ruby"><span class="ruby-identifier">stmt</span> = <span class="ruby-identifier">db</span>.<span class="ruby-identifier">prepare</span>( <span class="ruby-string">&quot;select * from table&quot;</span> )
+<span class="ruby-identifier">stmt</span>.<span class="ruby-identifier">execute!</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">row</span><span class="ruby-operator">|</span>
+  <span class="ruby-operator">...</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>See also <a href="Statement.html#method-i-bind_params">bind_params</a>, <a
+href="Statement.html#method-i-execute">execute</a>.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-execute-21_source')" id="l_method-i-execute-21_source">show</a>
+                
+              </p>
+              <div id="method-i-execute-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/sqlite3/lib/sqlite3/statement.rb, line 85</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">execute!</span>( *<span class="ruby-identifier">bind_vars</span>, &amp;<span class="ruby-identifier">block</span> )
+  <span class="ruby-identifier">execute</span>(*<span class="ruby-identifier">bind_vars</span>)
+  <span class="ruby-identifier">block_given?</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">each</span>(&amp;<span class="ruby-identifier">block</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">to_a</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-reset-21">
+            
+              <b>stmt.reset!
+</b>
+            
+            <a href="../../classes/SQLite3/Statement.html#method-i-reset-21" name="method-i-reset-21" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Resets the statement. This is typically done internally, though it might
+occassionally be necessary to manually reset the statement.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-reset-21_source')" id="l_method-i-reset-21_source">show</a>
+                
+              </p>
+              <div id="method-i-reset-21_source" class="dyn-source">
+                <pre>static VALUE reset_bang(VALUE self)
+{
+  sqlite3StmtRubyPtr ctx;
+  int status;
+
+  Data_Get_Struct(self, sqlite3StmtRuby, ctx);
+  REQUIRE_OPEN_STMT(ctx);
+
+  status = sqlite3_reset(ctx-&gt;st);
+  CHECK(sqlite3_db_handle(ctx-&gt;st), status);
+
+  ctx-&gt;done_p = 0;
+
+  return self;
+}</pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-step">
+            
+              <b>step</b>()
+            
+            <a href="../../classes/SQLite3/Statement.html#method-i-step" name="method-i-step" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-step_source')" id="l_method-i-step_source">show</a>
+                
+              </p>
+              <div id="method-i-step_source" class="dyn-source">
+                <pre>static VALUE step(VALUE self)
+{
+  sqlite3StmtRubyPtr ctx;
+  sqlite3_stmt *stmt;
+  int value, length;
+  VALUE list;
+#ifdef HAVE_RUBY_ENCODING_H
+  rb_encoding * internal_encoding;
+  int enc_index;
+#endif
+
+  Data_Get_Struct(self, sqlite3StmtRuby, ctx);
+
+  REQUIRE_OPEN_STMT(ctx);
+
+  if(ctx-&gt;done_p) return Qnil;
+
+#ifdef HAVE_RUBY_ENCODING_H
+  {
+      VALUE db          = rb_iv_get(self, &quot;@connection&quot;);
+      VALUE encoding    = rb_funcall(db, rb_intern(&quot;encoding&quot;), 0);
+      enc_index = NIL_P(encoding) ? rb_utf8_encindex() : rb_to_encoding_index(encoding);
+      internal_encoding = rb_default_internal_encoding();
+  }
+#endif
+
+  stmt = ctx-&gt;st;
+
+  value = sqlite3_step(stmt);
+  length = sqlite3_column_count(stmt);
+  list = rb_ary_new2((long)length);
+
+  switch(value) {
+    case SQLITE_ROW:
+      {
+        int i;
+        for(i = 0; i &lt; length; i++) {
+          switch(sqlite3_column_type(stmt, i)) {
+            case SQLITE_INTEGER:
+              rb_ary_push(list, LL2NUM(sqlite3_column_int64(stmt, i)));
+              break;
+            case SQLITE_FLOAT:
+              rb_ary_push(list, rb_float_new(sqlite3_column_double(stmt, i)));
+              break;
+            case SQLITE_TEXT:
+              {
+                VALUE str = rb_tainted_str_new(
+                    (const char *)sqlite3_column_text(stmt, i),
+                    (long)sqlite3_column_bytes(stmt, i)
+                );
+#ifdef HAVE_RUBY_ENCODING_H
+                rb_enc_associate_index(str, enc_index);
+                if(internal_encoding)
+                  str = rb_str_export_to_enc(str, internal_encoding);
+#endif
+                rb_ary_push(list, str);
+              }
+              break;
+            case SQLITE_BLOB:
+              {
+                VALUE str = rb_tainted_str_new(
+                    (const char *)sqlite3_column_blob(stmt, i),
+                    (long)sqlite3_column_bytes(stmt, i)
+                );
+                rb_ary_push(list, str);
+              }
+              break;
+            case SQLITE_NULL:
+              rb_ary_push(list, Qnil);
+              break;
+            default:
+              rb_raise(rb_eRuntimeError, &quot;bad type&quot;);
+          }
+        }
+      }
+      break;
+    case SQLITE_DONE:
+      ctx-&gt;done_p = 1;
+      return Qnil;
+      break;
+    default:
+      CHECK(sqlite3_db_handle(ctx-&gt;st), value);
+  }
+
+  return list;
+}</pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-types">
+            
+              <b>types</b>()
+            
+            <a href="../../classes/SQLite3/Statement.html#method-i-types" name="method-i-types" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Return an array of the data types for each column in this statement. Note
+that this may execute the statement in order to obtain the metadata; this
+makes it a (potentially) expensive operation.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-types_source')" id="l_method-i-types_source">show</a>
+                
+              </p>
+              <div id="method-i-types_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/sqlite3/lib/sqlite3/statement.rb, line 115</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">types</span>
+  <span class="ruby-identifier">must_be_open!</span>
+  <span class="ruby-identifier">get_metadata</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@types</span>
+  <span class="ruby-ivar">@types</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

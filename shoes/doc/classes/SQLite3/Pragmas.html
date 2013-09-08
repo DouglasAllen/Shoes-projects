@@ -1,0 +1,1421 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>SQLite3::Pragmas</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            SQLite3::Pragmas 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/req/sqlite3/lib/sqlite3/pragmas_rb.html">req/sqlite3/lib/sqlite3/pragmas.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>This module is intended for inclusion solely by the <a
+href="Database.html">Database</a> class. It defines convenience methods for
+the various pragmas supported by <a href="../SQLite3.html">SQLite3</a>.</p>
+
+<p>For a detailed description of these pragmas, see the <a
+href="../SQLite3.html">SQLite3</a> documentation at <a
+href="http://sqlite.org/pragma.html.">sqlite.org/pragma.html.</a></p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-auto_vacuum">auto_vacuum</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-auto_vacuum-3D">auto_vacuum=</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-cache_size">cache_size</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-cache_size-3D">cache_size=</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-database_list">database_list</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-default_cache_size">default_cache_size</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-default_cache_size-3D">default_cache_size=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-default_synchronous">default_synchronous</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-default_synchronous-3D">default_synchronous=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-default_temp_store">default_temp_store</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-default_temp_store-3D">default_temp_store=</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>F</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-foreign_key_list">foreign_key_list</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-full_column_names">full_column_names</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-full_column_names-3D">full_column_names=</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-index_info">index_info</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-index_list">index_list</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-integrity_check">integrity_check</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-parser_trace">parser_trace</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-parser_trace-3D">parser_trace=</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-schema_cookie">schema_cookie</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-schema_cookie-3D">schema_cookie=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-synchronous">synchronous</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-synchronous-3D">synchronous=</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-table_info">table_info</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-temp_store">temp_store</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-temp_store-3D">temp_store=</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>U</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-user_cookie">user_cookie</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-user_cookie-3D">user_cookie=</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>V</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-vdbe_trace">vdbe_trace</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-vdbe_trace-3D">vdbe_trace=</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">SYNCHRONOUS_MODES</td>
+            <td>=</td>
+            <td class="attr-value">[ [ 'full', 2 ], [ 'normal', 1 ], [ 'off', 0 ] ]</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>The enumeration of valid synchronous modes.</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">TEMP_STORE_MODES</td>
+            <td>=</td>
+            <td class="attr-value">[ [ 'default', 0 ], [ 'file', 1 ], [ 'memory', 2 ] ]</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>The enumeration of valid temp store modes.</p></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-auto_vacuum">
+            
+              <b>auto_vacuum</b>()
+            
+            <a href="../../classes/SQLite3/Pragmas.html#method-i-auto_vacuum" name="method-i-auto_vacuum" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-auto_vacuum_source')" id="l_method-i-auto_vacuum_source">show</a>
+                
+              </p>
+              <div id="method-i-auto_vacuum_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/sqlite3/lib/sqlite3/pragmas.rb, line 104</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">auto_vacuum</span>
+  <span class="ruby-identifier">get_boolean_pragma</span> <span class="ruby-string">&quot;auto_vacuum&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-auto_vacuum-3D">
+            
+              <b>auto_vacuum=</b>( mode )
+            
+            <a href="../../classes/SQLite3/Pragmas.html#method-i-auto_vacuum-3D" name="method-i-auto_vacuum-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-auto_vacuum-3D_source')" id="l_method-i-auto_vacuum-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-auto_vacuum-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/sqlite3/lib/sqlite3/pragmas.rb, line 108</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">auto_vacuum=</span>( <span class="ruby-identifier">mode</span> )
+  <span class="ruby-identifier">set_boolean_pragma</span> <span class="ruby-string">&quot;auto_vacuum&quot;</span>, <span class="ruby-identifier">mode</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-cache_size">
+            
+              <b>cache_size</b>()
+            
+            <a href="../../classes/SQLite3/Pragmas.html#method-i-cache_size" name="method-i-cache_size" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-cache_size_source')" id="l_method-i-cache_size_source">show</a>
+                
+              </p>
+              <div id="method-i-cache_size_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/sqlite3/lib/sqlite3/pragmas.rb, line 128</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">cache_size</span>
+  <span class="ruby-identifier">get_int_pragma</span> <span class="ruby-string">&quot;cache_size&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-cache_size-3D">
+            
+              <b>cache_size=</b>( size )
+            
+            <a href="../../classes/SQLite3/Pragmas.html#method-i-cache_size-3D" name="method-i-cache_size-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-cache_size-3D_source')" id="l_method-i-cache_size-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-cache_size-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/sqlite3/lib/sqlite3/pragmas.rb, line 132</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">cache_size=</span>( <span class="ruby-identifier">size</span> )
+  <span class="ruby-identifier">set_int_pragma</span> <span class="ruby-string">&quot;cache_size&quot;</span>, <span class="ruby-identifier">size</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-database_list">
+            
+              <b>database_list</b>( )
+            
+            <a href="../../classes/SQLite3/Pragmas.html#method-i-database_list" name="method-i-database_list" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-database_list_source')" id="l_method-i-database_list_source">show</a>
+                
+              </p>
+              <div id="method-i-database_list_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/sqlite3/lib/sqlite3/pragmas.rb, line 200</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">database_list</span>( &amp;<span class="ruby-identifier">block</span> ) <span class="ruby-comment"># :yields: row</span>
+  <span class="ruby-identifier">get_query_pragma</span> <span class="ruby-string">&quot;database_list&quot;</span>, &amp;<span class="ruby-identifier">block</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-default_cache_size">
+            
+              <b>default_cache_size</b>()
+            
+            <a href="../../classes/SQLite3/Pragmas.html#method-i-default_cache_size" name="method-i-default_cache_size" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-default_cache_size_source')" id="l_method-i-default_cache_size_source">show</a>
+                
+              </p>
+              <div id="method-i-default_cache_size_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/sqlite3/lib/sqlite3/pragmas.rb, line 136</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">default_cache_size</span>
+  <span class="ruby-identifier">get_int_pragma</span> <span class="ruby-string">&quot;default_cache_size&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-default_cache_size-3D">
+            
+              <b>default_cache_size=</b>( size )
+            
+            <a href="../../classes/SQLite3/Pragmas.html#method-i-default_cache_size-3D" name="method-i-default_cache_size-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-default_cache_size-3D_source')" id="l_method-i-default_cache_size-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-default_cache_size-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/sqlite3/lib/sqlite3/pragmas.rb, line 140</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">default_cache_size=</span>( <span class="ruby-identifier">size</span> )
+  <span class="ruby-identifier">set_int_pragma</span> <span class="ruby-string">&quot;default_cache_size&quot;</span>, <span class="ruby-identifier">size</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-default_synchronous">
+            
+              <b>default_synchronous</b>()
+            
+            <a href="../../classes/SQLite3/Pragmas.html#method-i-default_synchronous" name="method-i-default_synchronous" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-default_synchronous_source')" id="l_method-i-default_synchronous_source">show</a>
+                
+              </p>
+              <div id="method-i-default_synchronous_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/sqlite3/lib/sqlite3/pragmas.rb, line 144</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">default_synchronous</span>
+  <span class="ruby-identifier">get_enum_pragma</span> <span class="ruby-string">&quot;default_synchronous&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-default_synchronous-3D">
+            
+              <b>default_synchronous=</b>( mode )
+            
+            <a href="../../classes/SQLite3/Pragmas.html#method-i-default_synchronous-3D" name="method-i-default_synchronous-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-default_synchronous-3D_source')" id="l_method-i-default_synchronous-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-default_synchronous-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/sqlite3/lib/sqlite3/pragmas.rb, line 148</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">default_synchronous=</span>( <span class="ruby-identifier">mode</span> )
+  <span class="ruby-identifier">set_enum_pragma</span> <span class="ruby-string">&quot;default_synchronous&quot;</span>, <span class="ruby-identifier">mode</span>, <span class="ruby-constant">SYNCHRONOUS_MODES</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-default_temp_store">
+            
+              <b>default_temp_store</b>()
+            
+            <a href="../../classes/SQLite3/Pragmas.html#method-i-default_temp_store" name="method-i-default_temp_store" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-default_temp_store_source')" id="l_method-i-default_temp_store_source">show</a>
+                
+              </p>
+              <div id="method-i-default_temp_store_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/sqlite3/lib/sqlite3/pragmas.rb, line 160</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">default_temp_store</span>
+  <span class="ruby-identifier">get_enum_pragma</span> <span class="ruby-string">&quot;default_temp_store&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-default_temp_store-3D">
+            
+              <b>default_temp_store=</b>( mode )
+            
+            <a href="../../classes/SQLite3/Pragmas.html#method-i-default_temp_store-3D" name="method-i-default_temp_store-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-default_temp_store-3D_source')" id="l_method-i-default_temp_store-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-default_temp_store-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/sqlite3/lib/sqlite3/pragmas.rb, line 164</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">default_temp_store=</span>( <span class="ruby-identifier">mode</span> )
+  <span class="ruby-identifier">set_enum_pragma</span> <span class="ruby-string">&quot;default_temp_store&quot;</span>, <span class="ruby-identifier">mode</span>, <span class="ruby-constant">TEMP_STORE_MODES</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-foreign_key_list">
+            
+              <b>foreign_key_list</b>( table )
+            
+            <a href="../../classes/SQLite3/Pragmas.html#method-i-foreign_key_list" name="method-i-foreign_key_list" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-foreign_key_list_source')" id="l_method-i-foreign_key_list_source">show</a>
+                
+              </p>
+              <div id="method-i-foreign_key_list_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/sqlite3/lib/sqlite3/pragmas.rb, line 204</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">foreign_key_list</span>( <span class="ruby-identifier">table</span>, &amp;<span class="ruby-identifier">block</span> ) <span class="ruby-comment"># :yields: row</span>
+  <span class="ruby-identifier">get_query_pragma</span> <span class="ruby-string">&quot;foreign_key_list&quot;</span>, <span class="ruby-identifier">table</span>, &amp;<span class="ruby-identifier">block</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-full_column_names">
+            
+              <b>full_column_names</b>()
+            
+            <a href="../../classes/SQLite3/Pragmas.html#method-i-full_column_names" name="method-i-full_column_names" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-full_column_names_source')" id="l_method-i-full_column_names_source">show</a>
+                
+              </p>
+              <div id="method-i-full_column_names_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/sqlite3/lib/sqlite3/pragmas.rb, line 176</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">full_column_names</span>
+  <span class="ruby-identifier">get_boolean_pragma</span> <span class="ruby-string">&quot;full_column_names&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-full_column_names-3D">
+            
+              <b>full_column_names=</b>( mode )
+            
+            <a href="../../classes/SQLite3/Pragmas.html#method-i-full_column_names-3D" name="method-i-full_column_names-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-full_column_names-3D_source')" id="l_method-i-full_column_names-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-full_column_names-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/sqlite3/lib/sqlite3/pragmas.rb, line 180</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">full_column_names=</span>( <span class="ruby-identifier">mode</span> )
+  <span class="ruby-identifier">set_boolean_pragma</span> <span class="ruby-string">&quot;full_column_names&quot;</span>, <span class="ruby-identifier">mode</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-index_info">
+            
+              <b>index_info</b>( index )
+            
+            <a href="../../classes/SQLite3/Pragmas.html#method-i-index_info" name="method-i-index_info" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-index_info_source')" id="l_method-i-index_info_source">show</a>
+                
+              </p>
+              <div id="method-i-index_info_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/sqlite3/lib/sqlite3/pragmas.rb, line 208</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">index_info</span>( <span class="ruby-identifier">index</span>, &amp;<span class="ruby-identifier">block</span> ) <span class="ruby-comment"># :yields: row</span>
+  <span class="ruby-identifier">get_query_pragma</span> <span class="ruby-string">&quot;index_info&quot;</span>, <span class="ruby-identifier">index</span>, &amp;<span class="ruby-identifier">block</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-index_list">
+            
+              <b>index_list</b>( table )
+            
+            <a href="../../classes/SQLite3/Pragmas.html#method-i-index_list" name="method-i-index_list" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-index_list_source')" id="l_method-i-index_list_source">show</a>
+                
+              </p>
+              <div id="method-i-index_list_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/sqlite3/lib/sqlite3/pragmas.rb, line 212</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">index_list</span>( <span class="ruby-identifier">table</span>, &amp;<span class="ruby-identifier">block</span> ) <span class="ruby-comment"># :yields: row</span>
+  <span class="ruby-identifier">get_query_pragma</span> <span class="ruby-string">&quot;index_list&quot;</span>, <span class="ruby-identifier">table</span>, &amp;<span class="ruby-identifier">block</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-integrity_check">
+            
+              <b>integrity_check</b>()
+            
+            <a href="../../classes/SQLite3/Pragmas.html#method-i-integrity_check" name="method-i-integrity_check" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Does an integrity check on the database. If the check fails, a <a
+href="Exception.html">SQLite3::Exception</a> will be raised. Otherwise it
+returns silently.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-integrity_check_source')" id="l_method-i-integrity_check_source">show</a>
+                
+              </p>
+              <div id="method-i-integrity_check_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/sqlite3/lib/sqlite3/pragmas.rb, line 98</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">integrity_check</span>
+  <span class="ruby-identifier">execute</span>( <span class="ruby-string">&quot;PRAGMA integrity_check&quot;</span> ) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">row</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">Exception</span>, <span class="ruby-identifier">row</span>[<span class="ruby-number">0</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">row</span>[<span class="ruby-number">0</span>] <span class="ruby-operator">!=</span> <span class="ruby-string">&quot;ok&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-parser_trace">
+            
+              <b>parser_trace</b>()
+            
+            <a href="../../classes/SQLite3/Pragmas.html#method-i-parser_trace" name="method-i-parser_trace" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-parser_trace_source')" id="l_method-i-parser_trace_source">show</a>
+                
+              </p>
+              <div id="method-i-parser_trace_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/sqlite3/lib/sqlite3/pragmas.rb, line 184</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">parser_trace</span>
+  <span class="ruby-identifier">get_boolean_pragma</span> <span class="ruby-string">&quot;parser_trace&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-parser_trace-3D">
+            
+              <b>parser_trace=</b>( mode )
+            
+            <a href="../../classes/SQLite3/Pragmas.html#method-i-parser_trace-3D" name="method-i-parser_trace-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-parser_trace-3D_source')" id="l_method-i-parser_trace-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-parser_trace-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/sqlite3/lib/sqlite3/pragmas.rb, line 188</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">parser_trace=</span>( <span class="ruby-identifier">mode</span> )
+  <span class="ruby-identifier">set_boolean_pragma</span> <span class="ruby-string">&quot;parser_trace&quot;</span>, <span class="ruby-identifier">mode</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-schema_cookie">
+            
+              <b>schema_cookie</b>()
+            
+            <a href="../../classes/SQLite3/Pragmas.html#method-i-schema_cookie" name="method-i-schema_cookie" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-schema_cookie_source')" id="l_method-i-schema_cookie_source">show</a>
+                
+              </p>
+              <div id="method-i-schema_cookie_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/sqlite3/lib/sqlite3/pragmas.rb, line 112</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">schema_cookie</span>
+  <span class="ruby-identifier">get_int_pragma</span> <span class="ruby-string">&quot;schema_cookie&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-schema_cookie-3D">
+            
+              <b>schema_cookie=</b>( cookie )
+            
+            <a href="../../classes/SQLite3/Pragmas.html#method-i-schema_cookie-3D" name="method-i-schema_cookie-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-schema_cookie-3D_source')" id="l_method-i-schema_cookie-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-schema_cookie-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/sqlite3/lib/sqlite3/pragmas.rb, line 116</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">schema_cookie=</span>( <span class="ruby-identifier">cookie</span> )
+  <span class="ruby-identifier">set_int_pragma</span> <span class="ruby-string">&quot;schema_cookie&quot;</span>, <span class="ruby-identifier">cookie</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-synchronous">
+            
+              <b>synchronous</b>()
+            
+            <a href="../../classes/SQLite3/Pragmas.html#method-i-synchronous" name="method-i-synchronous" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-synchronous_source')" id="l_method-i-synchronous_source">show</a>
+                
+              </p>
+              <div id="method-i-synchronous_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/sqlite3/lib/sqlite3/pragmas.rb, line 152</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">synchronous</span>
+  <span class="ruby-identifier">get_enum_pragma</span> <span class="ruby-string">&quot;synchronous&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-synchronous-3D">
+            
+              <b>synchronous=</b>( mode )
+            
+            <a href="../../classes/SQLite3/Pragmas.html#method-i-synchronous-3D" name="method-i-synchronous-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-synchronous-3D_source')" id="l_method-i-synchronous-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-synchronous-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/sqlite3/lib/sqlite3/pragmas.rb, line 156</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">synchronous=</span>( <span class="ruby-identifier">mode</span> )
+  <span class="ruby-identifier">set_enum_pragma</span> <span class="ruby-string">&quot;synchronous&quot;</span>, <span class="ruby-identifier">mode</span>, <span class="ruby-constant">SYNCHRONOUS_MODES</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-table_info">
+            
+              <b>table_info</b>(table)
+            
+            <a href="../../classes/SQLite3/Pragmas.html#method-i-table_info" name="method-i-table_info" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns information about <code>table</code>.  Yields each row of table
+information if a block is provided.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-table_info_source')" id="l_method-i-table_info_source">show</a>
+                
+              </p>
+              <div id="method-i-table_info_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/sqlite3/lib/sqlite3/pragmas.rb, line 219</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">table_info</span> <span class="ruby-identifier">table</span>
+  <span class="ruby-identifier">stmt</span>    = <span class="ruby-identifier">prepare</span> <span class="ruby-node">&quot;PRAGMA table_info(#{table})&quot;</span>
+  <span class="ruby-identifier">columns</span> = <span class="ruby-identifier">stmt</span>.<span class="ruby-identifier">columns</span>
+
+  <span class="ruby-identifier">needs_tweak_default</span> =
+    <span class="ruby-identifier">version_compare</span>(<span class="ruby-constant">SQLite3</span>.<span class="ruby-identifier">libversion</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-string">&quot;3.3.7&quot;</span>) <span class="ruby-operator">&gt;</span> <span class="ruby-number">0</span>
+
+  <span class="ruby-identifier">result</span> = [] <span class="ruby-keyword">unless</span> <span class="ruby-identifier">block_given?</span>
+  <span class="ruby-identifier">stmt</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">row</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">new_row</span> = <span class="ruby-constant">Hash</span>[*<span class="ruby-identifier">columns</span>.<span class="ruby-identifier">zip</span>(<span class="ruby-identifier">row</span>).<span class="ruby-identifier">flatten</span>]
+
+    <span class="ruby-comment"># FIXME: This should be removed but is required for older versions</span>
+    <span class="ruby-comment"># of rails</span>
+    <span class="ruby-keyword">if</span>(<span class="ruby-constant">Object</span>.<span class="ruby-identifier">const_defined?</span>(<span class="ruby-value">:ActiveRecord</span>))
+      <span class="ruby-identifier">new_row</span>[<span class="ruby-string">'notnull'</span>] = <span class="ruby-identifier">new_row</span>[<span class="ruby-string">'notnull'</span>].<span class="ruby-identifier">to_s</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">tweak_default</span>(<span class="ruby-identifier">new_row</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">needs_tweak_default</span>
+
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+      <span class="ruby-keyword">yield</span> <span class="ruby-identifier">new_row</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">new_row</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">stmt</span>.<span class="ruby-identifier">close</span>
+
+  <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-temp_store">
+            
+              <b>temp_store</b>()
+            
+            <a href="../../classes/SQLite3/Pragmas.html#method-i-temp_store" name="method-i-temp_store" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-temp_store_source')" id="l_method-i-temp_store_source">show</a>
+                
+              </p>
+              <div id="method-i-temp_store_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/sqlite3/lib/sqlite3/pragmas.rb, line 168</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">temp_store</span>
+  <span class="ruby-identifier">get_enum_pragma</span> <span class="ruby-string">&quot;temp_store&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-temp_store-3D">
+            
+              <b>temp_store=</b>( mode )
+            
+            <a href="../../classes/SQLite3/Pragmas.html#method-i-temp_store-3D" name="method-i-temp_store-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-temp_store-3D_source')" id="l_method-i-temp_store-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-temp_store-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/sqlite3/lib/sqlite3/pragmas.rb, line 172</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">temp_store=</span>( <span class="ruby-identifier">mode</span> )
+  <span class="ruby-identifier">set_enum_pragma</span> <span class="ruby-string">&quot;temp_store&quot;</span>, <span class="ruby-identifier">mode</span>, <span class="ruby-constant">TEMP_STORE_MODES</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-user_cookie">
+            
+              <b>user_cookie</b>()
+            
+            <a href="../../classes/SQLite3/Pragmas.html#method-i-user_cookie" name="method-i-user_cookie" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-user_cookie_source')" id="l_method-i-user_cookie_source">show</a>
+                
+              </p>
+              <div id="method-i-user_cookie_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/sqlite3/lib/sqlite3/pragmas.rb, line 120</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">user_cookie</span>
+  <span class="ruby-identifier">get_int_pragma</span> <span class="ruby-string">&quot;user_cookie&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-user_cookie-3D">
+            
+              <b>user_cookie=</b>( cookie )
+            
+            <a href="../../classes/SQLite3/Pragmas.html#method-i-user_cookie-3D" name="method-i-user_cookie-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-user_cookie-3D_source')" id="l_method-i-user_cookie-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-user_cookie-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/sqlite3/lib/sqlite3/pragmas.rb, line 124</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">user_cookie=</span>( <span class="ruby-identifier">cookie</span> )
+  <span class="ruby-identifier">set_int_pragma</span> <span class="ruby-string">&quot;user_cookie&quot;</span>, <span class="ruby-identifier">cookie</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-vdbe_trace">
+            
+              <b>vdbe_trace</b>()
+            
+            <a href="../../classes/SQLite3/Pragmas.html#method-i-vdbe_trace" name="method-i-vdbe_trace" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-vdbe_trace_source')" id="l_method-i-vdbe_trace_source">show</a>
+                
+              </p>
+              <div id="method-i-vdbe_trace_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/sqlite3/lib/sqlite3/pragmas.rb, line 192</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">vdbe_trace</span>
+  <span class="ruby-identifier">get_boolean_pragma</span> <span class="ruby-string">&quot;vdbe_trace&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-vdbe_trace-3D">
+            
+              <b>vdbe_trace=</b>( mode )
+            
+            <a href="../../classes/SQLite3/Pragmas.html#method-i-vdbe_trace-3D" name="method-i-vdbe_trace-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-vdbe_trace-3D_source')" id="l_method-i-vdbe_trace-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-vdbe_trace-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/sqlite3/lib/sqlite3/pragmas.rb, line 196</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">vdbe_trace=</span>( <span class="ruby-identifier">mode</span> )
+  <span class="ruby-identifier">set_boolean_pragma</span> <span class="ruby-string">&quot;vdbe_trace&quot;</span>, <span class="ruby-identifier">mode</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

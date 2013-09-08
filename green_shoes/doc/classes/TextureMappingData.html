@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>TextureMappingData</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            TextureMappingData 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/lib/ext/projector/projector_rb.html">lib/ext/projector/projector.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>B</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-begin_work">begin_work</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-commit">commit</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>F</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-face_list-3D">face_list=</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-swing_step">swing_step</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-texture-3D">texture=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-transform-3D">transform=</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>U</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-update">update</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            Observable
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">SCALE_A</td>
+            <td>=</td>
+            <td class="attr-value">50.0</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+      <!-- Section attributes -->
+      <div class="sectiontitle">Attributes</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>face_list</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>texture</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>transform</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+      </table>
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>()
+            
+            <a href="../classes/TextureMappingData.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ext/projector/projector.rb, line 125</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>
+  <span class="ruby-ivar">@texture</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@transform</span> = <span class="ruby-constant">Matrix3d</span><span class="ruby-operator">::</span><span class="ruby-identifier">identity</span>
+  <span class="ruby-ivar">@transform</span> <span class="ruby-operator">*=</span> <span class="ruby-constant">Matrix3d</span><span class="ruby-operator">::</span><span class="ruby-identifier">rotate</span>(<span class="ruby-number">+20.0</span>, <span class="ruby-constant">Vector</span>[<span class="ruby-number">1.0</span>, <span class="ruby-number">0.0</span>, <span class="ruby-number">0.0</span>, <span class="ruby-number">1.0</span>])
+  <span class="ruby-ivar">@transform</span> <span class="ruby-operator">*=</span> <span class="ruby-constant">Matrix3d</span><span class="ruby-operator">::</span><span class="ruby-identifier">rotate</span>(<span class="ruby-number">+30.0</span>, <span class="ruby-constant">Vector</span>[<span class="ruby-number">0.0</span>, <span class="ruby-number">1.0</span>, <span class="ruby-number">0.0</span>, <span class="ruby-number">1.0</span>])
+  <span class="ruby-ivar">@transform</span> <span class="ruby-operator">*=</span> <span class="ruby-constant">Matrix3d</span><span class="ruby-operator">::</span><span class="ruby-identifier">rotate</span>(<span class="ruby-number">+90.0</span>, <span class="ruby-constant">Vector</span>[<span class="ruby-number">0.0</span>, <span class="ruby-number">0.0</span>, <span class="ruby-number">1.0</span>, <span class="ruby-number">1.0</span>])
+  <span class="ruby-ivar">@face_list</span> = []
+  <span class="ruby-ivar">@transform_begin</span> = <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-begin_work">
+            
+              <b>begin_work</b>()
+            
+            <a href="../classes/TextureMappingData.html#method-i-begin_work" name="method-i-begin_work" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-begin_work_source')" id="l_method-i-begin_work_source">show</a>
+                
+              </p>
+              <div id="method-i-begin_work_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ext/projector/projector.rb, line 141</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">begin_work</span>
+  <span class="ruby-ivar">@transform_begin</span> = <span class="ruby-ivar">@transform</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-commit">
+            
+              <b>commit</b>()
+            
+            <a href="../classes/TextureMappingData.html#method-i-commit" name="method-i-commit" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-commit_source')" id="l_method-i-commit_source">show</a>
+                
+              </p>
+              <div id="method-i-commit_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ext/projector/projector.rb, line 153</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">commit</span>
+  <span class="ruby-ivar">@transform_begin</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-face_list-3D">
+            
+              <b>face_list=</b>(x)
+            
+            <a href="../classes/TextureMappingData.html#method-i-face_list-3D" name="method-i-face_list-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-face_list-3D_source')" id="l_method-i-face_list-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-face_list-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ext/projector/projector.rb, line 123</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">face_list=</span>(<span class="ruby-identifier">x</span>) <span class="ruby-ivar">@face_list</span> = <span class="ruby-identifier">x</span>; <span class="ruby-identifier">update</span>; <span class="ruby-identifier">x</span> <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-swing_step">
+            
+              <b>swing_step</b>(dx, dy)
+            
+            <a href="../classes/TextureMappingData.html#method-i-swing_step" name="method-i-swing_step" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-swing_step_source')" id="l_method-i-swing_step_source">show</a>
+                
+              </p>
+              <div id="method-i-swing_step_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ext/projector/projector.rb, line 146</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">swing_step</span>(<span class="ruby-identifier">dx</span>, <span class="ruby-identifier">dy</span>)
+  <span class="ruby-identifier">a</span> = <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-identifier">sqrt</span>(<span class="ruby-identifier">dx</span> * <span class="ruby-identifier">dx</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">dy</span> * <span class="ruby-identifier">dy</span>) * <span class="ruby-constant">SCALE_A</span>
+  <span class="ruby-identifier">a</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">a</span> * <span class="ruby-constant">Float</span><span class="ruby-operator">::</span><span class="ruby-constant">EPSILON</span> <span class="ruby-keyword">or</span> <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">transform</span> = <span class="ruby-constant">Matrix3d</span><span class="ruby-operator">::</span><span class="ruby-identifier">rotate</span>(<span class="ruby-identifier">a</span>, <span class="ruby-constant">Vector</span>[<span class="ruby-identifier">dy</span>, <span class="ruby-identifier">dx</span>, <span class="ruby-number">0.0</span>, <span class="ruby-number">1.0</span>]) * <span class="ruby-ivar">@transform_begin</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-texture-3D">
+            
+              <b>texture=</b>(x)
+            
+            <a href="../classes/TextureMappingData.html#method-i-texture-3D" name="method-i-texture-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-texture-3D_source')" id="l_method-i-texture-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-texture-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ext/projector/projector.rb, line 121</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">texture=</span>(<span class="ruby-identifier">x</span>)   <span class="ruby-ivar">@texture</span> =   <span class="ruby-identifier">x</span>; <span class="ruby-identifier">update</span>; <span class="ruby-identifier">x</span> <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-transform-3D">
+            
+              <b>transform=</b>(x)
+            
+            <a href="../classes/TextureMappingData.html#method-i-transform-3D" name="method-i-transform-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-transform-3D_source')" id="l_method-i-transform-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-transform-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ext/projector/projector.rb, line 122</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">transform=</span>(<span class="ruby-identifier">x</span>) <span class="ruby-ivar">@transform</span> = <span class="ruby-identifier">x</span>; <span class="ruby-identifier">update</span>; <span class="ruby-identifier">x</span> <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-update">
+            
+              <b>update</b>()
+            
+            <a href="../classes/TextureMappingData.html#method-i-update" name="method-i-update" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-update_source')" id="l_method-i-update_source">show</a>
+                
+              </p>
+              <div id="method-i-update_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ext/projector/projector.rb, line 135</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">update</span>
+  <span class="ruby-identifier">changed</span>
+  <span class="ruby-identifier">notify_observers</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

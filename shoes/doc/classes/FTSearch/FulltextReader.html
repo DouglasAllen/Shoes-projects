@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>FTSearch::FulltextReader</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            FTSearch::FulltextReader 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/req/ftsearch/lib/ftsearch/fulltext_reader_rb.html">req/ftsearch/lib/ftsearch/fulltext_reader.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-dump_data">dump_data</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>G</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-get_data">get_data</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">DEFAULT_OPTIONS</td>
+            <td>=</td>
+            <td class="attr-value">{
+:path =&gt; nil,
+:io   =&gt; nil,
+}</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>(options = {})
+            
+            <a href="../../classes/FTSearch/FulltextReader.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/ftsearch/lib/ftsearch/fulltext_reader.rb, line 11</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">options</span> = <span class="ruby-constant">DEFAULT_OPTIONS</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">options</span>)
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:path</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:io</span>]
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Need either the path to the suffix array file or an IO.&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">init_internal_structures</span>(<span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-dump_data">
+            
+              <b>dump_data</b>(&amp;block)
+            
+            <a href="../../classes/FTSearch/FulltextReader.html#method-i-dump_data" name="method-i-dump_data" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-dump_data_source')" id="l_method-i-dump_data_source">show</a>
+                
+              </p>
+              <div id="method-i-dump_data_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/ftsearch/lib/ftsearch/fulltext_reader.rb, line 24</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">dump_data</span>(&amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">blocksize</span> = <span class="ruby-number">32768</span>
+  <span class="ruby-ivar">@io</span>.<span class="ruby-identifier">pos</span> = <span class="ruby-number">0</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">size</span> = <span class="ruby-ivar">@io</span>.<span class="ruby-identifier">stat</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-number">1</span>
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">NoMethodError</span> <span class="ruby-comment"># try with StringIO's interface</span>
+    <span class="ruby-identifier">size</span> = <span class="ruby-ivar">@io</span>.<span class="ruby-identifier">string</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-number">1</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">read</span> = <span class="ruby-number">0</span>
+  <span class="ruby-comment">#buffer = &quot; &quot; * blocksize</span>
+  <span class="ruby-keyword">while</span> <span class="ruby-identifier">read</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">size</span>
+    <span class="ruby-comment">#@io.read([size - read, blocksize].min, buffer)</span>
+    <span class="ruby-comment">#yield buffer</span>
+    <span class="ruby-identifier">data</span> = <span class="ruby-ivar">@io</span>.<span class="ruby-identifier">read</span>([<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">read</span>, <span class="ruby-identifier">blocksize</span>].<span class="ruby-identifier">min</span>)
+    <span class="ruby-identifier">read</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">data</span>.<span class="ruby-identifier">size</span>
+    <span class="ruby-keyword">yield</span> <span class="ruby-identifier">data</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-get_data">
+            
+              <b>get_data</b>(offset, size)
+            
+            <a href="../../classes/FTSearch/FulltextReader.html#method-i-get_data" name="method-i-get_data" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-get_data_source')" id="l_method-i-get_data_source">show</a>
+                
+              </p>
+              <div id="method-i-get_data_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File req/ftsearch/lib/ftsearch/fulltext_reader.rb, line 19</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">get_data</span>(<span class="ruby-identifier">offset</span>, <span class="ruby-identifier">size</span>)
+  <span class="ruby-ivar">@io</span>.<span class="ruby-identifier">pos</span> = <span class="ruby-identifier">offset</span>
+  <span class="ruby-ivar">@io</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">size</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

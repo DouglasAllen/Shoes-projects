@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>Want_to_use_default_setting - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body class="file">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  
+<div id="table-of-contents">
+  <nav class="section">
+    <h3 class="section-header">Table of Contents</h3>
+    <ul>
+      <li><a href="#label-Want+to+use+default+setting">Want to use default setting</a>
+      <li><a href="#label-step11.rb"><a href="http://github.com/ashbb/dwemthys_array_study_note/blob/master/steps/step11.rb">step11.rb</a></a>
+      <li><a href="#label-step12.rb"><a href="http://github.com/ashbb/dwemthys_array_study_note/blob/master/steps/step12.rb">step12.rb</a></a>
+      <li><a href="#label-step13.rb"><a href="http://github.com/ashbb/dwemthys_array_study_note/blob/master/steps/step13.rb">step13.rb</a></a>
+      <li><a href="#label-Note">Note</a>
+    </ul>
+  </nav>
+</div>
+
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./Art_of_symbols_md.html">Art_of_symbols</a>
+  
+    <li class="file"><a href="./Fight_a_battle_by_turns_md.html">Fight_a_battle_by_turns</a>
+  
+    <li class="file"><a href="./Let_s_play_the_mini_adventure_game_md.html">Let_s_play_the_mini_adventure_game</a>
+  
+    <li class="file"><a href="./Want_to_use_default_setting_md.html">Want_to_use_default_setting</a>
+  
+    <li class="file"><a href="./Want_to_write_like_this_md.html">Want_to_write_like_this</a>
+  
+    <li class="file"><a href="./doc/created_rid.html">created.rid</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Object.html">Object</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation" class="description">
+  
+<h1 id="label-Want+to+use+default+setting">Want to use default setting<span><a href="#label-Want+to+use+default+setting">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+
+<p>Look at the <a
+href="http://github.com/ashbb/dwemthys_array_study_note/tree/master/steps/scoreline.log">scoreline
+log</a>, line 28-29.</p>
+
+<p>Rabbit class object <code>r</code> has 5 instance variables with default
+values. But, when were they setted?</p>
+
+<p>Okay, let me try to think about that. At first, check the instance
+variables with the method <code>instance_variables</code> like this:</p>
+
+<h1 id="label-step11.rb"><a href="http://github.com/ashbb/dwemthys_array_study_note/blob/master/steps/step11.rb">step11.rb</a><span><a href="#label-step11.rb">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+
+<pre class="ruby">    <span class="ruby-comment"># step11.rb</span>
+    <span class="ruby-keyword">class</span> <span class="ruby-constant">Creature</span>
+      <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">life</span> <span class="ruby-identifier">val</span>
+        <span class="ruby-ivar">@traits</span> <span class="ruby-operator">||=</span> {}
+        <span class="ruby-ivar">@traits</span>[:<span class="ruby-identifier">life</span>] = <span class="ruby-identifier">val</span>
+        <span class="ruby-identifier">p</span> <span class="ruby-ivar">@traits</span> <span class="ruby-comment"># debug</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">class</span> <span class="ruby-constant">Rabbit</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">Creature</span>
+      <span class="ruby-identifier">life</span> <span class="ruby-value">10</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">r</span> = <span class="ruby-constant">Rabbit</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">p</span> <span class="ruby-identifier">r</span>.<span class="ruby-identifier">instance_variables</span>
+    <span class="ruby-identifier">p</span> <span class="ruby-constant">Rabbit</span>.<span class="ruby-identifier">instance_variables</span>
+    <span class="ruby-identifier">p</span> <span class="ruby-identifier">r</span>.<span class="ruby-identifier">life</span>
+</pre>
+
+<p>Output is:</p>
+
+<pre class="ruby">    <span class="ruby-operator">&gt;</span><span class="ruby-identifier">ruby</span> <span class="ruby-identifier">step11</span>.<span class="ruby-identifier">rb</span>
+    {:<span class="ruby-identifier">life=</span><span class="ruby-operator">&gt;</span><span class="ruby-value">10</span>}
+    []
+    [<span class="ruby-string">&quot;@traits&quot;</span>]
+    <span class="ruby-identifier">step11</span>.<span class="ruby-identifier">rb</span>:<span class="ruby-value">17</span><span class="ruby-operator">:</span> <span class="ruby-identifier">undefined</span> <span class="ruby-identifier">method</span> <span class="ruby-node">%xlife' for #&lt;Rabbit:0x2b82a5c&gt; (NoMethodError)
+    &gt;Exit code: 1
+</span></pre>
+
+<p>Oops, Rabbit object <code>r</code> has no instance variables.</p>
+
+<p>Well, let me try to improve the code.</p>
+
+<h1 id="label-step12.rb"><a href="http://github.com/ashbb/dwemthys_array_study_note/blob/master/steps/step12.rb">step12.rb</a><span><a href="#label-step12.rb">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+
+<pre class="ruby">    <span class="ruby-comment"># step12.rb</span>
+    <span class="ruby-keyword">class</span> <span class="ruby-constant">Creature</span>
+      <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">life</span> <span class="ruby-identifier">val</span>
+        <span class="ruby-ivar">@traits</span> <span class="ruby-operator">||=</span> {}
+        <span class="ruby-ivar">@traits</span>[:<span class="ruby-identifier">life</span>] = <span class="ruby-identifier">val</span>
+        <span class="ruby-identifier">p</span> <span class="ruby-ivar">@traits</span> <span class="ruby-comment"># debug</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">traits</span>
+        <span class="ruby-ivar">@traits</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>
+        <span class="ruby-ivar">@life</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">traits</span>[:<span class="ruby-identifier">life</span>]
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">attr_reader</span> :<span class="ruby-identifier">life</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">class</span> <span class="ruby-constant">Rabbit</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">Creature</span>
+      <span class="ruby-identifier">life</span> <span class="ruby-value">10</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">r</span> = <span class="ruby-constant">Rabbit</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">p</span> <span class="ruby-identifier">r</span>.<span class="ruby-identifier">life</span>
+</pre>
+
+<p>Output is:</p>
+
+<pre class="ruby">    <span class="ruby-operator">&gt;</span><span class="ruby-identifier">ruby</span> <span class="ruby-identifier">step12</span>.<span class="ruby-identifier">rb</span>
+    {:<span class="ruby-identifier">life=</span><span class="ruby-operator">&gt;</span><span class="ruby-value">10</span>}
+    <span class="ruby-value">10</span>
+    <span class="ruby-operator">&gt;</span><span class="ruby-constant">Exit</span> <span class="ruby-identifier">code</span><span class="ruby-operator">:</span> <span class="ruby-value">0</span>
+</pre>
+
+<p>I got it!</p>
+
+<p>The above Creature class is added the followings:</p>
+<ol><li>
+<p>define class method <code>traits</code> which returns the value of
+class-instance variable <code>@traits</code>.</p>
+</li><li>
+<p>define <code>initialize</code> method which creats an instance variable
+<code>@life</code> with the class method <code>traits</code>.</p>
+</li><li>
+<p>define attribute reader <code>:life</code>.</p>
+</li></ol>
+
+<p>Now, I understood what I have to do. Let me try to improve the Creature
+class of <code>step05.rb</code>.</p>
+
+<h1 id="label-step13.rb"><a href="http://github.com/ashbb/dwemthys_array_study_note/blob/master/steps/step13.rb">step13.rb</a><span><a href="#label-step13.rb">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+
+<pre class="ruby">    <span class="ruby-comment"># step13.rb</span>
+    <span class="ruby-keyword">class</span> <span class="ruby-constant">Creature</span>
+      <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">traits</span> <span class="ruby-operator">*</span><span class="ruby-identifier">arr</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-ivar">@traits</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">arr</span>.<span class="ruby-identifier">empty?</span>
+        <span class="ruby-identifier">attr_reader</span> <span class="ruby-operator">*</span><span class="ruby-identifier">arr</span>
+
+        <span class="ruby-identifier">arr</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">trait</span><span class="ruby-operator">|</span>
+          <span class="ruby-identifier">meta</span> = (<span class="ruby-keyword">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">self</span>; <span class="ruby-keyword">self</span>; <span class="ruby-keyword">end</span>)
+          <span class="ruby-identifier">meta</span>.<span class="ruby-identifier">instance_eval</span> <span class="ruby-keyword">do</span>
+            <span class="ruby-identifier">define_method</span> <span class="ruby-identifier">trait</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">val</span><span class="ruby-operator">|</span>
+              <span class="ruby-ivar">@traits</span> <span class="ruby-operator">||=</span> {}
+              <span class="ruby-ivar">@traits</span>[<span class="ruby-identifier">trait</span>] = <span class="ruby-identifier">val</span>
+              <span class="ruby-identifier">p</span> <span class="ruby-ivar">@traits</span>  <span class="ruby-comment"># debug</span>
+            <span class="ruby-keyword">end</span>
+          <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>
+        <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">traits</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">trait</span>,<span class="ruby-identifier">val</span><span class="ruby-operator">|</span>
+          <span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-node">&quot;@#{trait}&quot;</span>, <span class="ruby-identifier">val</span>)
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">traits</span> :<span class="ruby-identifier">life</span>, :<span class="ruby-identifier">strength</span>, :<span class="ruby-identifier">charisma</span>, :<span class="ruby-identifier">weapon</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">class</span> <span class="ruby-constant">Rabbit</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">Creature</span>
+      <span class="ruby-identifier">traits</span> :<span class="ruby-identifier">bombs</span>
+      <span class="ruby-identifier">life</span> <span class="ruby-value">10</span>
+      <span class="ruby-identifier">bombs</span> <span class="ruby-value">3</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">r</span> = <span class="ruby-constant">Rabbit</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">p</span> <span class="ruby-identifier">r</span>.<span class="ruby-identifier">life</span>
+    <span class="ruby-identifier">p</span> <span class="ruby-identifier">r</span>.<span class="ruby-identifier">bombs</span>
+</pre>
+
+<p>Output is:</p>
+
+<pre class="ruby">    <span class="ruby-operator">&gt;</span><span class="ruby-identifier">ruby</span> <span class="ruby-identifier">step13</span>.<span class="ruby-identifier">rb</span>
+    {:<span class="ruby-identifier">life=</span><span class="ruby-operator">&gt;</span><span class="ruby-value">10</span>}
+    {:<span class="ruby-identifier">bombs=</span><span class="ruby-operator">&gt;</span><span class="ruby-value">3</span>, :<span class="ruby-identifier">life=</span><span class="ruby-operator">&gt;</span><span class="ruby-value">10</span>}
+    <span class="ruby-value">10</span>
+    <span class="ruby-value">3</span>
+    <span class="ruby-operator">&gt;</span><span class="ruby-constant">Exit</span> <span class="ruby-identifier">code</span><span class="ruby-operator">:</span> <span class="ruby-value">0</span>
+</pre>
+
+<p>Done! This works pretty well.</p>
+<ol><li>
+<p>class method <code>traits</code> is already defined. so, just add the
+function which returns the value of <code>@traits</code> when using with no
+block. look at line 4.</p>
+</li><li>
+<p>define <code>initialize</code> method which creats instance variables
+dynamically with the method <code>instance_variable_set</code>. look at
+line 19-23.</p>
+</li><li>
+<p>define attribute readers. look at line 5.</p>
+</li></ol>
+
+<h2 id="label-Note">Note<span><a href="#label-Note">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<p>Looked at <a
+href="http://github.com/ashbb/dwemthys_array_study_note/tree/master/whys_code/dwemthy.rb">original
+code</a>.</p>
+
+<p>_why adds <code>class_eval</code> method. But in this case, it’s enough
+without the method.</p>
+
+<p>I guess he used it to introduce Metaprogramming. ;-)</p>
+
+</div>
+
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.1.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

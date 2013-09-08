@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>MakeDarwin</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            MakeDarwin 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/make/darwin/tasks_rb.html">make/darwin/tasks.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-copy_deps_to_dist">copy_deps_to_dist</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-copy_ext">copy_ext</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>G</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-get_dylibs">get_dylibs</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>M</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-make_app">make_app</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-make_installer">make_installer</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-make_so">make_so</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-make_stub">make_stub</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-setup_system_resources">setup_system_resources</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-copy_deps_to_dist">
+            
+              <b>copy_deps_to_dist</b>()
+            
+            <a href="../classes/MakeDarwin.html#method-c-copy_deps_to_dist" name="method-c-copy_deps_to_dist" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-copy_deps_to_dist_source')" id="l_method-c-copy_deps_to_dist_source">show</a>
+                
+              </p>
+              <div id="method-c-copy_deps_to_dist_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File make/darwin/tasks.rb, line 27</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">copy_deps_to_dist</span>
+  <span class="ruby-comment"># Generate a list of dependencies straight from the generated files.</span>
+  <span class="ruby-comment"># Start with dependencies of shoes-bin, and then add the dependencies</span>
+  <span class="ruby-comment"># of those dependencies. Finally, add any oddballs that must be</span>
+  <span class="ruby-comment"># included.</span>
+  <span class="ruby-identifier">dylibs</span> = <span class="ruby-identifier">get_dylibs</span>(<span class="ruby-node">&quot;dist/#{NAME}-bin&quot;</span>)
+  <span class="ruby-identifier">dylibs</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">dylib</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">get_dylibs</span>(<span class="ruby-identifier">dylib</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">d</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">dylibs</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">d</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">dylibs</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">lib</span><span class="ruby-operator">|</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">lib</span>)}.<span class="ruby-identifier">include?</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">d</span>))
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">dylibs</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">'/usr/local/etc/pango/pango.modules'</span>
+  <span class="ruby-identifier">dylibs</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">libn</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">cp</span> <span class="ruby-node">&quot;#{libn}&quot;</span>, <span class="ruby-string">&quot;dist/&quot;</span>
+  <span class="ruby-keyword">end</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">libn</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">next</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">libn</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">%r/lib/(.+?\.dylib)$!</span>
+    <span class="ruby-identifier">libf</span> = <span class="ruby-node">$1</span>
+    <span class="ruby-comment"># Get the actual name that the file is calling itself</span>
+    <span class="ruby-identifier">otool_lib_id</span> = <span class="ruby-node">%xotool -D dist/#{libf} | sed -n 2p`</span>.<span class="ruby-identifier">chomp</span>
+    <span class="ruby-identifier">sh</span> <span class="ruby-node">&quot;install_name_tool -id @executable_path/#{libf} dist/#{libf}&quot;</span>
+    [<span class="ruby-node">&quot;dist/#{NAME}-bin&quot;</span>, *<span class="ruby-constant">Dir</span>[<span class="ruby-string">'dist/*.dylib'</span>]].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">lib2</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">sh</span> <span class="ruby-node">&quot;install_name_tool -change #{otool_lib_id} @executable_path/#{libf} #{lib2}&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-copy_ext">
+            
+              <b>copy_ext</b>(xdir, libdir)
+            
+            <a href="../classes/MakeDarwin.html#method-c-copy_ext" name="method-c-copy_ext" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-copy_ext_source')" id="l_method-c-copy_ext_source">show</a>
+                
+              </p>
+              <div id="method-c-copy_ext_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File make/darwin/tasks.rb, line 9</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">copy_ext</span> <span class="ruby-identifier">xdir</span>, <span class="ruby-identifier">libdir</span>
+  <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">xdir</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-value">%xruby extconf.rb; make`</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">copy_files</span> <span class="ruby-node">&quot;#{xdir}/*.bundle&quot;</span>, <span class="ruby-identifier">libdir</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-get_dylibs">
+            
+              <b>get_dylibs</b>(lib)
+            
+            <a href="../classes/MakeDarwin.html#method-c-get_dylibs" name="method-c-get_dylibs" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Get a list of linked libraries for lib (discard the non-indented lines)</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-get_dylibs_source')" id="l_method-c-get_dylibs_source">show</a>
+                
+              </p>
+              <div id="method-c-get_dylibs_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File make/darwin/tasks.rb, line 17</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">get_dylibs</span> <span class="ruby-identifier">lib</span>
+  <span class="ruby-node">%xotool -L #{lib}`</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;\n&quot;</span>).<span class="ruby-identifier">inject</span>([]) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">dylibs</span>, <span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span>  <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/^\S/</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/System|@executable_path|libobjc/</span>
+      <span class="ruby-identifier">dylibs</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">dylibs</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">line</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/\s\(compatibility.*$/</span>, <span class="ruby-string">''</span>).<span class="ruby-identifier">strip</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-make_app">
+            
+              <b>make_app</b>(name)
+            
+            <a href="../classes/MakeDarwin.html#method-c-make_app" name="method-c-make_app" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-make_app_source')" id="l_method-c-make_app_source">show</a>
+                
+              </p>
+              <div id="method-c-make_app_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File make/darwin/tasks.rb, line 80</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">make_app</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">bin</span> = <span class="ruby-node">&quot;#{name}-bin&quot;</span>
+  <span class="ruby-identifier">rm_f</span> <span class="ruby-identifier">name</span>
+  <span class="ruby-identifier">rm_f</span> <span class="ruby-identifier">bin</span>
+  <span class="ruby-identifier">sh</span> <span class="ruby-node">&quot;#{CC} -Ldist -o #{bin} bin/main.o #{LINUX_LIBS} -lshoes #{OSX_ARCH}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-make_installer">
+            
+              <b>make_installer</b>()
+            
+            <a href="../classes/MakeDarwin.html#method-c-make_installer" name="method-c-make_installer" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-make_installer_source')" id="l_method-c-make_installer_source">show</a>
+                
+              </p>
+              <div id="method-c-make_installer_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File make/darwin/tasks.rb, line 95</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">make_installer</span>
+  <span class="ruby-identifier">dmg_ds</span>, <span class="ruby-identifier">dmg_jpg</span> = <span class="ruby-string">&quot;platform/mac/dmg_ds_store&quot;</span>, <span class="ruby-string">&quot;static/shoes-dmg.jpg&quot;</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">APP</span>[<span class="ruby-string">'dmg'</span>]
+    <span class="ruby-identifier">dmg_ds</span>, <span class="ruby-identifier">dmg_jpg</span> = <span class="ruby-constant">APP</span>[<span class="ruby-string">'dmg'</span>][<span class="ruby-string">'ds_store'</span>], <span class="ruby-constant">APP</span>[<span class="ruby-string">'dmg'</span>][<span class="ruby-string">'background'</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">mkdir_p</span> <span class="ruby-string">&quot;pkg&quot;</span>
+  <span class="ruby-identifier">rm_rf</span> <span class="ruby-string">&quot;dmg&quot;</span>
+  <span class="ruby-identifier">mkdir_p</span> <span class="ruby-string">&quot;dmg&quot;</span>
+  <span class="ruby-identifier">cp_r</span> <span class="ruby-node">&quot;#{APPNAME}.app&quot;</span>, <span class="ruby-string">&quot;dmg&quot;</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-constant">ENV</span>[<span class="ruby-string">'APP'</span>]
+    <span class="ruby-identifier">mv</span> <span class="ruby-node">&quot;dmg/#{APPNAME}.app/Contents/MacOS/samples&quot;</span>, <span class="ruby-string">&quot;dmg/samples&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">ln_s</span> <span class="ruby-string">&quot;/Applications&quot;</span>, <span class="ruby-string">&quot;dmg/Applications&quot;</span>
+  <span class="ruby-identifier">sh</span> <span class="ruby-node">&quot;chmod +x dmg/\&quot;#{APPNAME}.app\&quot;/Contents/MacOS/#{NAME}&quot;</span>
+  <span class="ruby-identifier">sh</span> <span class="ruby-node">&quot;chmod +x dmg/\&quot;#{APPNAME}.app\&quot;/Contents/MacOS/#{NAME}-bin&quot;</span>
+  <span class="ruby-identifier">sh</span> <span class="ruby-node">&quot;chmod +x dmg/\&quot;#{APPNAME}.app\&quot;/Contents/MacOS/#{NAME}-launch&quot;</span>
+  <span class="ruby-identifier">sh</span> <span class="ruby-node">&quot;DYLD_LIBRARY_PATH= platform/mac/pkg-dmg --target pkg/#{PKG}.dmg --source dmg --volname '#{APPNAME}' --copy #{dmg_ds}:/.DS_Store --mkdir /.background --copy #{dmg_jpg}:/.background&quot;</span> <span class="ruby-comment"># --format UDRW&quot;</span>
+  <span class="ruby-identifier">rm_rf</span> <span class="ruby-string">&quot;dmg&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-make_so">
+            
+              <b>make_so</b>(name)
+            
+            <a href="../classes/MakeDarwin.html#method-c-make_so" name="method-c-make_so" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-make_so_source')" id="l_method-c-make_so_source">show</a>
+                
+              </p>
+              <div id="method-c-make_so_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File make/darwin/tasks.rb, line 87</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">make_so</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">ldflags</span> = <span class="ruby-constant">LINUX_LDFLAGS</span>.<span class="ruby-identifier">sub!</span> <span class="ruby-regexp">/INSTALL_NAME/</span>, <span class="ruby-node">&quot;-install_name @executable_path/lib#{SONAME}.#{DLEXT}&quot;</span>
+  <span class="ruby-identifier">sh</span> <span class="ruby-node">&quot;#{CC} -o #{name} #{OBJ.join(' ')} #{LINUX_LDFLAGS} #{LINUX_LIBS}&quot;</span>
+  <span class="ruby-node">%w[libpostproc.dylib libavformat.dylib libavcodec.dylib libavutil.dylib libruby.dylib]</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">libn</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">sh</span> <span class="ruby-node">&quot;install_name_tool -change /tmp/dep/lib/#{libn} ./deps/lib/#{libn} #{name}&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-make_stub">
+            
+              <b>make_stub</b>()
+            
+            <a href="../classes/MakeDarwin.html#method-c-make_stub" name="method-c-make_stub" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-make_stub_source')" id="l_method-c-make_stub_source">show</a>
+                
+              </p>
+              <div id="method-c-make_stub_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File make/darwin/tasks.rb, line 75</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">make_stub</span>
+  <span class="ruby-constant">ENV</span>[<span class="ruby-string">'MACOSX_DEPLOYMENT_TARGET'</span>] = <span class="ruby-string">'10.4'</span>
+  <span class="ruby-identifier">sh</span> <span class="ruby-string">&quot;gcc -O -isysroot /Developer/SDKs/MacOSX10.4u.sdk -arch i386 -arch ppc -framework Cocoa -o stub platform/mac/stub.m -I.&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-setup_system_resources">
+            
+              <b>setup_system_resources</b>()
+            
+            <a href="../classes/MakeDarwin.html#method-c-setup_system_resources" name="method-c-setup_system_resources" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-setup_system_resources_source')" id="l_method-c-setup_system_resources_source">show</a>
+                
+              </p>
+              <div id="method-c-setup_system_resources_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File make/darwin/tasks.rb, line 53</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">setup_system_resources</span>
+  <span class="ruby-identifier">rm_rf</span> <span class="ruby-node">&quot;#{APPNAME}.app&quot;</span>
+  <span class="ruby-identifier">mkdir</span> <span class="ruby-node">&quot;#{APPNAME}.app&quot;</span>
+  <span class="ruby-identifier">mkdir</span> <span class="ruby-node">&quot;#{APPNAME}.app/Contents&quot;</span>
+  <span class="ruby-identifier">cp_r</span> <span class="ruby-string">&quot;dist&quot;</span>, <span class="ruby-node">&quot;#{APPNAME}.app/Contents/MacOS&quot;</span>
+  <span class="ruby-identifier">mkdir</span> <span class="ruby-node">&quot;#{APPNAME}.app/Contents/Resources&quot;</span>
+  <span class="ruby-identifier">mkdir</span> <span class="ruby-node">&quot;#{APPNAME}.app/Contents/Resources/English.lproj&quot;</span>
+  <span class="ruby-identifier">sh</span> <span class="ruby-node">&quot;ditto \&quot;#{APP['icons']['osx']}\&quot; \&quot;#{APPNAME}.app/App.icns\&quot;&quot;</span>
+  <span class="ruby-identifier">sh</span> <span class="ruby-node">&quot;ditto \&quot;#{APP['icons']['osx']}\&quot; \&quot;#{APPNAME}.app/Contents/Resources/App.icns\&quot;&quot;</span>
+  <span class="ruby-identifier">rewrite</span> <span class="ruby-string">&quot;platform/mac/Info.plist&quot;</span>, <span class="ruby-node">&quot;#{APPNAME}.app/Contents/Info.plist&quot;</span>
+  <span class="ruby-identifier">cp</span> <span class="ruby-string">&quot;platform/mac/version.plist&quot;</span>, <span class="ruby-node">&quot;#{APPNAME}.app/Contents/&quot;</span>
+  <span class="ruby-identifier">rewrite</span> <span class="ruby-string">&quot;platform/mac/pangorc&quot;</span>, <span class="ruby-node">&quot;#{APPNAME}.app/Contents/MacOS/pangorc&quot;</span>
+  <span class="ruby-identifier">cp</span> <span class="ruby-string">&quot;platform/mac/command-manual.rb&quot;</span>, <span class="ruby-node">&quot;#{APPNAME}.app/Contents/MacOS/&quot;</span>
+  <span class="ruby-identifier">rewrite</span> <span class="ruby-string">&quot;platform/mac/shoes-launch&quot;</span>, <span class="ruby-node">&quot;#{APPNAME}.app/Contents/MacOS/#{NAME}-launch&quot;</span>
+  <span class="ruby-identifier">chmod</span> <span class="ruby-number">0755</span>, <span class="ruby-node">&quot;#{APPNAME}.app/Contents/MacOS/#{NAME}-launch&quot;</span>
+  <span class="ruby-identifier">chmod</span> <span class="ruby-number">0755</span>, <span class="ruby-node">&quot;#{APPNAME}.app/Contents/MacOS/#{NAME}-bin&quot;</span>
+  <span class="ruby-identifier">rewrite</span> <span class="ruby-string">&quot;platform/mac/shoes&quot;</span>, <span class="ruby-node">&quot;#{APPNAME}.app/Contents/MacOS/#{NAME}&quot;</span>
+  <span class="ruby-identifier">chmod</span> <span class="ruby-number">0755</span>, <span class="ruby-node">&quot;#{APPNAME}.app/Contents/MacOS/#{NAME}&quot;</span>
+  <span class="ruby-comment"># cp InfoPlist.strings YourApp.app/Contents/Resources/English.lproj/</span>
+  <span class="ruby-node">%xecho -n 'APPL????' &gt; &quot;#{APPNAME}.app/Contents/PkgInfo&quot;`</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                        </div>
+
+    </div>
+  </body>
+</html>    

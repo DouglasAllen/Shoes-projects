@@ -1,0 +1,1308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>WebserverAbstract</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            WebserverAbstract 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/lib/plugins/httpd_rb.html">lib/plugins/httpd.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>Tiny embeded webserver</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-do_service">do_service</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>E</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-error">error</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-escape">escape</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>H</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-hescape">hescape</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-httpdate">httpdate</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-info">info</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>L</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-logg">logg</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>M</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-makeIndex">makeIndex</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-mime">mime</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-n3">n3</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>O</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-observe">observe</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-redirect">redirect</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-request">request</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-run">run</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-sendData">sendData</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-sendError">sendError</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-sendFile">sendFile</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-serve">serve</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-stop_browser">stop_browser</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-to_absolute">to_absolute</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-to_relative">to_relative</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-to_table">to_table</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-to_tableb">to_tableb</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>U</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-unescape">unescape</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">LICON</td>
+            <td>=</td>
+            <td class="attr-value">&quot;&amp;#9728;&amp;#9731;&amp;#9742;&amp;#9745;&amp;#9745;&amp;#9760;&amp;#9763;&amp;#9774;&amp;#9786;&amp;#9730;&quot;.split(/;/).map {|c| c+&quot;;&quot;}</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">MIME</td>
+            <td>=</td>
+            <td class="attr-value">{&quot;png&quot; =&gt; &quot;image/png&quot;, &quot;gif&quot; =&gt; &quot;image/gif&quot;, &quot;html&quot; =&gt; &quot;text/html&quot;,&quot;htm&quot; =&gt; &quot;text/html&quot;,
+&quot;js&quot; =&gt; &quot;text/javascript&quot; ,&quot;css&quot; =&gt; &quot;text/css&quot;,&quot;jpeg&quot; =&gt; &quot;image/jpeg&quot; ,&quot;jpg&quot; =&gt; &quot;image/jpeg&quot; ,
+&quot;pdf&quot;=&gt; &quot;application/pdf&quot;   , &quot;svg&quot; =&gt; &quot;image/svg+xml&quot;,&quot;svgz&quot; =&gt; &quot;image/svg+xml&quot;,
+&quot;xml&quot; =&gt; &quot;text/xml&quot;   ,&quot;xsl&quot; =&gt; &quot;text/xml&quot;   ,&quot;bmp&quot; =&gt; &quot;image/bmp&quot;  ,&quot;txt&quot; =&gt; &quot;text/plain&quot; ,
+&quot;rb&quot;  =&gt; &quot;text/plain&quot; ,&quot;pas&quot; =&gt; &quot;text/plain&quot; ,&quot;tcl&quot; =&gt; &quot;text/plain&quot; ,&quot;java&quot; =&gt; &quot;text/plain&quot; ,
+&quot;c&quot; =&gt; &quot;text/plain&quot; ,&quot;h&quot; =&gt; &quot;text/plain&quot; ,&quot;cpp&quot; =&gt; &quot;text/plain&quot;, &quot;xul&quot; =&gt; &quot;application/vnd.mozilla.xul+xml&quot;,
+&quot;doc&quot; =&gt; &quot;application/msword&quot;, &quot;docx&quot; =&gt; &quot;application/msword&quot;,&quot;dot&quot;=&gt; &quot;application/msword&quot;,
+&quot;xls&quot; =&gt; &quot;application/vnd.ms-excel&quot;,&quot;xla&quot; =&gt; &quot;application/vnd.ms-excel&quot;,&quot;xlt&quot; =&gt; &quot;application/vnd.ms-excel&quot;,&quot;xlsx&quot; =&gt; &quot;application/vnd.ms-excel&quot;,
+&quot;ppt&quot; =&gt; &quot;application/vnd.ms-powerpoint&quot;,      &quot;pptx&quot; =&gt; &quot;application/vnd.ms-powerpoint&quot;
+}</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>(port,root,name,cadence,timeout,options)
+            
+            <a href="../classes/WebserverAbstract.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/plugins/httpd.rb, line 22</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">port</span>,<span class="ruby-identifier">root</span>,<span class="ruby-identifier">name</span>,<span class="ruby-identifier">cadence</span>,<span class="ruby-identifier">timeout</span>,<span class="ruby-identifier">options</span>)
+  <span class="ruby-ivar">@cb_log</span>= <span class="ruby-identifier">options</span>[<span class="ruby-string">&quot;logg&quot;</span>] 
+  <span class="ruby-ivar">@last_mtime</span>=<span class="ruby-constant">File</span>.<span class="ruby-identifier">mtime</span>(<span class="ruby-keyword">__FILE__</span>)
+      <span class="ruby-ivar">@port</span>=<span class="ruby-identifier">port</span>
+      <span class="ruby-ivar">@root</span>=<span class="ruby-identifier">root</span>
+      <span class="ruby-ivar">@name</span>=<span class="ruby-identifier">name</span>
+      <span class="ruby-ivar">@rootd</span>=<span class="ruby-identifier">root</span>[<span class="ruby-number">-1</span>,<span class="ruby-number">1</span>]<span class="ruby-operator">==</span><span class="ruby-string">&quot;/&quot;</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">root</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">root</span><span class="ruby-operator">+</span><span class="ruby-string">&quot;/&quot;</span> 
+      <span class="ruby-ivar">@timeout</span>=<span class="ruby-identifier">timeout</span>
+      <span class="ruby-ivar">@th</span>={}
+      <span class="ruby-ivar">@cb</span>={}
+      <span class="ruby-ivar">@redirect</span>={}
+      <span class="ruby-ivar">@server</span> = <span class="ruby-constant">TCPServer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'0.0.0.0'</span>, <span class="ruby-ivar">@port</span>)
+      <span class="ruby-ivar">@server</span>.<span class="ruby-identifier">setsockopt</span>(<span class="ruby-constant">Socket</span><span class="ruby-operator">::</span><span class="ruby-constant">SOL_SOCKET</span>,<span class="ruby-constant">Socket</span><span class="ruby-operator">::</span><span class="ruby-constant">SO_REUSEADDR</span>, <span class="ruby-keyword">true</span>)
+      <span class="ruby-identifier">info</span>(<span class="ruby-node">&quot; serveur http #{port} on #{@rootd} ready!&quot;</span>)
+      <span class="ruby-identifier">observe</span>(<span class="ruby-identifier">cadence</span>,<span class="ruby-identifier">timeout</span>*<span class="ruby-number">2</span>)
+      <span class="ruby-ivar">@thm</span>=<span class="ruby-constant">Thread</span>.<span class="ruby-identifier">new</span> {
+              <span class="ruby-identifier">loop</span> { <span class="ruby-keyword">begin</span>
+                <span class="ruby-keyword">while</span> (<span class="ruby-identifier">session</span> = <span class="ruby-ivar">@server</span>.<span class="ruby-identifier">accept</span>)
+                   <span class="ruby-identifier">run</span>(<span class="ruby-identifier">session</span>)
+                <span class="ruby-keyword">end</span>
+              <span class="ruby-keyword">rescue</span>
+                <span class="ruby-identifier">error</span>(<span class="ruby-identifier">$!</span>.<span class="ruby-identifier">to_s</span>)
+                <span class="ruby-identifier">session</span>.<span class="ruby-identifier">close</span> <span class="ruby-identifier">raise</span> <span class="ruby-keyword">nil</span>
+              <span class="ruby-keyword">end</span>
+              <span class="ruby-identifier">sleep</span>(<span class="ruby-number">10</span>); <span class="ruby-identifier">info</span>(<span class="ruby-string">&quot;restart accept&quot;</span>)
+              }
+      }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-do_service">
+            
+              <b>do_service</b>(session,request,service,user_passwd,params)
+            
+            <a href="../classes/WebserverAbstract.html#method-i-do_service" name="method-i-do_service" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-do_service_source')" id="l_method-i-do_service_source">show</a>
+                
+              </p>
+              <div id="method-i-do_service_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/plugins/httpd.rb, line 87</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">do_service</span>(<span class="ruby-identifier">session</span>,<span class="ruby-identifier">request</span>,<span class="ruby-identifier">service</span>,<span class="ruby-identifier">user_passwd</span>,<span class="ruby-identifier">params</span>)
+  <span class="ruby-identifier">logg</span>(<span class="ruby-identifier">session</span>.<span class="ruby-identifier">peeraddr</span>.<span class="ruby-identifier">last</span>,<span class="ruby-identifier">request</span>) 
+      <span class="ruby-identifier">redir</span>=<span class="ruby-ivar">@redirect</span>[<span class="ruby-string">&quot;/&quot;</span><span class="ruby-operator">+</span><span class="ruby-identifier">service</span>]
+      <span class="ruby-identifier">service</span>=<span class="ruby-identifier">redir</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/^\//</span>,<span class="ruby-string">&quot;&quot;</span>) <span class="ruby-keyword">if</span> <span class="ruby-ivar">@redirect</span>[<span class="ruby-identifier">redir</span>]
+      <span class="ruby-identifier">aservice</span>=<span class="ruby-identifier">to_absolute</span>(<span class="ruby-identifier">service</span>)
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">redir</span> <span class="ruby-operator">&amp;&amp;</span>  <span class="ruby-operator">!</span> <span class="ruby-ivar">@redirect</span>[<span class="ruby-identifier">redir</span>] 
+        <span class="ruby-identifier">do_service</span>(<span class="ruby-identifier">session</span>,<span class="ruby-identifier">request</span>,<span class="ruby-identifier">redir</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/^\//</span>,<span class="ruby-string">&quot;&quot;</span>),<span class="ruby-identifier">user_passwd</span>,<span class="ruby-identifier">params</span>)
+      <span class="ruby-keyword">elsif</span> <span class="ruby-ivar">@cb</span>[<span class="ruby-string">&quot;/&quot;</span><span class="ruby-operator">+</span><span class="ruby-identifier">service</span>]
+        <span class="ruby-keyword">begin</span>
+         <span class="ruby-identifier">code</span>,<span class="ruby-identifier">type</span>,<span class="ruby-identifier">data</span>= <span class="ruby-ivar">@cb</span>[<span class="ruby-string">&quot;/&quot;</span><span class="ruby-operator">+</span><span class="ruby-identifier">service</span>].<span class="ruby-identifier">call</span>(<span class="ruby-identifier">params</span>)
+         <span class="ruby-keyword">if</span> <span class="ruby-identifier">code</span><span class="ruby-operator">==</span><span class="ruby-number">0</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">data</span> <span class="ruby-operator">!=</span> <span class="ruby-string">'/'</span><span class="ruby-operator">+</span><span class="ruby-identifier">service</span>
+                <span class="ruby-identifier">do_service</span>(<span class="ruby-identifier">session</span>,<span class="ruby-identifier">request</span>,<span class="ruby-identifier">data</span>[<span class="ruby-number">1</span><span class="ruby-operator">..</span><span class="ruby-number">-1</span>],<span class="ruby-identifier">user_passwd</span>,<span class="ruby-identifier">params</span>)
+         <span class="ruby-keyword">else</span>
+               <span class="ruby-identifier">code</span><span class="ruby-operator">==</span><span class="ruby-number">200</span> <span class="ruby-operator">?</span>  <span class="ruby-identifier">sendData</span>(<span class="ruby-identifier">session</span>,<span class="ruby-identifier">type</span>,<span class="ruby-identifier">data</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">sendError</span>(<span class="ruby-identifier">session</span>,<span class="ruby-identifier">code</span>,<span class="ruby-identifier">data</span>)
+         <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">rescue</span>
+         <span class="ruby-identifier">logg</span> <span class="ruby-identifier">session</span>.<span class="ruby-identifier">peeraddr</span>.<span class="ruby-identifier">last</span>,<span class="ruby-node">&quot;Error in get /#{service} : #{$!}&quot;</span>
+         <span class="ruby-identifier">sendError</span>(<span class="ruby-identifier">session</span>,<span class="ruby-number">501</span>,<span class="ruby-identifier">$!</span>.<span class="ruby-identifier">to_s</span>)
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">service</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/^stop/</span> 
+        <span class="ruby-identifier">sendData</span>(<span class="ruby-identifier">session</span>,<span class="ruby-string">&quot;.html&quot;</span>,<span class="ruby-string">&quot;Stopping...&quot;</span>);        
+        <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">new</span>() { <span class="ruby-identifier">sleep</span>(<span class="ruby-number">0.1</span>); <span class="ruby-identifier">stop_browser</span>()  }
+      <span class="ruby-keyword">elsif</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-identifier">aservice</span>)
+        <span class="ruby-identifier">sendData</span>(<span class="ruby-identifier">session</span>,<span class="ruby-string">&quot;.html&quot;</span>,<span class="ruby-identifier">makeIndex</span>(<span class="ruby-identifier">aservice</span>))
+      <span class="ruby-keyword">elsif</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-identifier">aservice</span>)
+        <span class="ruby-identifier">sendFile</span>(<span class="ruby-identifier">session</span>,<span class="ruby-identifier">aservice</span>)
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">info</span>(<span class="ruby-node">&quot;unknown request serv=#{service} params=#{params.inspect} #{File.exists?(service)}&quot;</span>)
+        <span class="ruby-identifier">sendError</span>(<span class="ruby-identifier">session</span>,<span class="ruby-number">500</span>);
+      <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-error">
+            
+              <b>error</b>(txt)
+            
+            <a href="../classes/WebserverAbstract.html#method-i-error" name="method-i-error" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-error_source')" id="l_method-i-error_source">show</a>
+                
+              </p>
+              <div id="method-i-error_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/plugins/httpd.rb, line 10</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">error</span>(<span class="ruby-identifier">txt</span>) ; <span class="ruby-identifier">logg</span>(<span class="ruby-string">&quot;nw&gt;e&gt;&quot;</span>,<span class="ruby-identifier">txt</span>) ; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-escape">
+            
+              <b>escape</b>(string)
+            
+            <a href="../classes/WebserverAbstract.html#method-i-escape" name="method-i-escape" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-escape_source')" id="l_method-i-escape_source">show</a>
+                
+              </p>
+              <div id="method-i-escape_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/plugins/httpd.rb, line 12</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">escape</span>(<span class="ruby-identifier">string</span>) ; <span class="ruby-identifier">string</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/([^ \/a-zA-Z0-9_.-]+)/</span>) { <span class="ruby-string">'%'</span> <span class="ruby-operator">+</span> <span class="ruby-node">$1</span>.<span class="ruby-identifier">unpack</span>(<span class="ruby-string">'H2'</span> * <span class="ruby-node">$1</span>.<span class="ruby-identifier">size</span>).<span class="ruby-identifier">join</span>(<span class="ruby-string">'%'</span>).<span class="ruby-identifier">upcase</span> }.<span class="ruby-identifier">tr</span>(<span class="ruby-string">' '</span>, <span class="ruby-string">'+'</span>);  <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-hescape">
+            
+              <b>hescape</b>(string)
+            
+            <a href="../classes/WebserverAbstract.html#method-i-hescape" name="method-i-hescape" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-hescape_source')" id="l_method-i-hescape_source">show</a>
+                
+              </p>
+              <div id="method-i-hescape_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/plugins/httpd.rb, line 13</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">hescape</span>(<span class="ruby-identifier">string</span>) ;  <span class="ruby-identifier">escape</span>(<span class="ruby-identifier">string</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-string">&quot;/./&quot;</span>,<span class="ruby-string">&quot;/&quot;</span>).<span class="ruby-identifier">gsub</span>(<span class="ruby-string">&quot;//&quot;</span>,<span class="ruby-string">&quot;/&quot;</span>)) ; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-httpdate">
+            
+              <b>httpdate</b>( aTime )
+            
+            <a href="../classes/WebserverAbstract.html#method-i-httpdate" name="method-i-httpdate" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-httpdate_source')" id="l_method-i-httpdate_source">show</a>
+                
+              </p>
+              <div id="method-i-httpdate_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/plugins/httpd.rb, line 172</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">httpdate</span>( <span class="ruby-identifier">aTime</span> ); (<span class="ruby-identifier">aTime</span><span class="ruby-operator">||</span><span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>).<span class="ruby-identifier">gmtime</span>.<span class="ruby-identifier">strftime</span>( <span class="ruby-string">&quot;%a, %d %b %Y %H:%M:%S GMT&quot;</span> ); <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-info">
+            
+              <b>info</b>(txt)
+            
+            <a href="../classes/WebserverAbstract.html#method-i-info" name="method-i-info" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-info_source')" id="l_method-i-info_source">show</a>
+                
+              </p>
+              <div id="method-i-info_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/plugins/httpd.rb, line 9</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">info</span>(<span class="ruby-identifier">txt</span>) ; <span class="ruby-identifier">logg</span>(<span class="ruby-string">&quot;nw&gt;i&gt;&quot;</span>,<span class="ruby-identifier">txt</span>) ;  <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-logg">
+            
+              <b>logg</b>(*args)
+            
+            <a href="../classes/WebserverAbstract.html#method-i-logg" name="method-i-logg" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-logg_source')" id="l_method-i-logg_source">show</a>
+                
+              </p>
+              <div id="method-i-logg_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/plugins/httpd.rb, line 8</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">logg</span>(*<span class="ruby-identifier">args</span>)  <span class="ruby-ivar">@cb_log</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@cb_log</span>.<span class="ruby-identifier">call</span>(<span class="ruby-ivar">@name</span>,*<span class="ruby-identifier">args</span>) <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-makeIndex">
+            
+              <b>makeIndex</b>(adir)
+            
+            <a href="../classes/WebserverAbstract.html#method-i-makeIndex" name="method-i-makeIndex" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-makeIndex_source')" id="l_method-i-makeIndex_source">show</a>
+                
+              </p>
+              <div id="method-i-makeIndex_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/plugins/httpd.rb, line 123</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">makeIndex</span>(<span class="ruby-identifier">adir</span>)
+  <span class="ruby-identifier">dir</span>=<span class="ruby-identifier">to_relative</span>(<span class="ruby-identifier">adir</span>)
+      <span class="ruby-identifier">dirs</span>,<span class="ruby-identifier">files</span>=<span class="ruby-constant">Dir</span>.<span class="ruby-identifier">glob</span>(<span class="ruby-identifier">adir</span><span class="ruby-operator">==</span><span class="ruby-ivar">@rootd</span> <span class="ruby-operator">?</span> <span class="ruby-node">&quot;#{@rootd}*&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-node">&quot;#{adir}/*&quot;</span>).<span class="ruby-identifier">sort</span>.<span class="ruby-identifier">partition</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-identifier">f</span>)}
+      <span class="ruby-identifier">updir</span> = <span class="ruby-identifier">hescape</span>(  <span class="ruby-identifier">dir</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">/\//</span>)[<span class="ruby-number">0</span><span class="ruby-operator">..</span><span class="ruby-number">-2</span>].<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;/&quot;</span>)) 
+      <span class="ruby-identifier">updir</span>=<span class="ruby-string">&quot;/&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">updir</span>.<span class="ruby-identifier">length</span><span class="ruby-operator">==</span><span class="ruby-number">0</span>
+      <span class="ruby-identifier">up</span>=(<span class="ruby-identifier">dir!</span>=<span class="ruby-string">&quot;/&quot;</span>) <span class="ruby-operator">?</span> <span class="ruby-node">&quot;&lt;input type='button' onclick='location.href=\&quot;#{updir}\&quot;' value='Parent'&gt;&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-string">&quot;&quot;</span>
+      <span class="ruby-node">&quot;&lt;html&gt;&lt;head&gt;&lt;title&gt;#{dir}&lt;/title&gt;&lt;/head&gt;\n&lt;body&gt;&lt;h3&gt;&lt;center&gt;#{@name} : #{dir[0..-1]}&lt;/center&gt;&lt;/h3&gt;\n&lt;hr&gt;#{up}&lt;br&gt;#{to_table(dirs.map {|s| &quot; &lt;a href='#{hescape(to_relative(s))}'&gt;&quot;+File.basename(s)+&quot;/&quot;+&quot;&lt;/a&gt;\n&quot;})}&lt;hr&gt;#{to_tableb(files) {|f| [&quot; &lt;a href='#{hescape(to_relative(f))}'&gt;&quot;+File.basename(f)+&quot;&lt;/a&gt;&quot;,n3(File.size(f)),File.mtime(f).strftime(&quot;%d/%m/%Y %H:%M:%S&quot;)]}}&lt;/body&gt;&lt;/html&gt;&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-mime">
+            
+              <b>mime</b>(string)
+            
+            <a href="../classes/WebserverAbstract.html#method-i-mime" name="method-i-mime" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-mime_source')" id="l_method-i-mime_source">show</a>
+                
+              </p>
+              <div id="method-i-mime_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/plugins/httpd.rb, line 173</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">mime</span>(<span class="ruby-identifier">string</span>)
+       <span class="ruby-constant">MIME</span>[<span class="ruby-identifier">string</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">/\./</span>).<span class="ruby-identifier">last</span>] <span class="ruby-operator">||</span> <span class="ruby-string">&quot;application/octet-stream&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-n3">
+            
+              <b>n3</b>(n)
+            
+            <a href="../classes/WebserverAbstract.html#method-i-n3" name="method-i-n3" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-n3_source')" id="l_method-i-n3_source">show</a>
+                
+              </p>
+              <div id="method-i-n3_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/plugins/httpd.rb, line 133</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">n3</span>(<span class="ruby-identifier">n</span>)
+   <span class="ruby-identifier">u</span>=<span class="ruby-string">&quot; B&quot;</span>
+   <span class="ruby-keyword">if</span> <span class="ruby-identifier">n</span><span class="ruby-operator">&gt;</span> <span class="ruby-number">10000000</span>
+          <span class="ruby-identifier">n</span>=<span class="ruby-identifier">n</span><span class="ruby-operator">/</span>(<span class="ruby-number">1024</span>*<span class="ruby-number">1024</span>)
+              <span class="ruby-identifier">u</span>=<span class="ruby-string">&quot; MB&quot;</span>
+   <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">n</span><span class="ruby-operator">&gt;</span> <span class="ruby-number">100000</span>
+          <span class="ruby-identifier">n</span>=<span class="ruby-identifier">n</span><span class="ruby-operator">/</span><span class="ruby-number">1024</span>
+              <span class="ruby-identifier">u</span>=<span class="ruby-string">&quot; KB&quot;</span>
+       <span class="ruby-keyword">end</span>
+  <span class="ruby-node">&quot;&lt;div style='width:100px;text-align:right;'&gt;#{(n.round.to_i.to_s.reverse.gsub(/(\d\d\d)(?=\d)/,'\1 ' ).reverse) +u} | &lt;/div&gt;&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-observe">
+            
+              <b>observe</b>(sleeping,delta)
+            
+            <a href="../classes/WebserverAbstract.html#method-i-observe" name="method-i-observe" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-observe_source')" id="l_method-i-observe_source">show</a>
+                
+              </p>
+              <div id="method-i-observe_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/plugins/httpd.rb, line 14</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">observe</span>(<span class="ruby-identifier">sleeping</span>,<span class="ruby-identifier">delta</span>)
+      <span class="ruby-ivar">@tho</span>=<span class="ruby-constant">Thread</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword">do</span> <span class="ruby-identifier">loop</span> <span class="ruby-keyword">do</span>
+        <span class="ruby-identifier">sleep</span>(<span class="ruby-identifier">sleeping</span>) 
+        <span class="ruby-identifier">nowDelta</span>=<span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span><span class="ruby-operator">-</span><span class="ruby-identifier">delta</span>
+        <span class="ruby-identifier">l</span>=<span class="ruby-ivar">@th</span>.<span class="ruby-identifier">select</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">th</span>,<span class="ruby-identifier">tm</span><span class="ruby-operator">|</span> (<span class="ruby-identifier">tm</span>[<span class="ruby-number">0</span>]<span class="ruby-operator">&lt;</span><span class="ruby-identifier">nowDelta</span>) }
+        <span class="ruby-identifier">l</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">th</span>,<span class="ruby-identifier">tm</span><span class="ruby-operator">|</span> <span class="ruby-identifier">info</span>(<span class="ruby-string">&quot;killing thread&quot;</span>) ; <span class="ruby-identifier">th</span>.<span class="ruby-identifier">kill</span>; <span class="ruby-ivar">@th</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">th</span>)  ; <span class="ruby-identifier">tm</span>[<span class="ruby-number">1</span>].<span class="ruby-identifier">close</span> <span class="ruby-keyword">rescue</span> <span class="ruby-keyword">nil</span> }
+      <span class="ruby-keyword">end</span> ; <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-redirect">
+            
+              <b>redirect</b>(o,d)
+            
+            <a href="../classes/WebserverAbstract.html#method-i-redirect" name="method-i-redirect" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-redirect_source')" id="l_method-i-redirect_source">show</a>
+                
+              </p>
+              <div id="method-i-redirect_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/plugins/httpd.rb, line 84</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">redirect</span>(<span class="ruby-identifier">o</span>,<span class="ruby-identifier">d</span>)
+ <span class="ruby-ivar">@redirect</span>[<span class="ruby-identifier">o</span>]=<span class="ruby-identifier">d</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-request">
+            
+              <b>request</b>(session)
+            
+            <a href="../classes/WebserverAbstract.html#method-i-request" name="method-i-request" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-request_source')" id="l_method-i-request_source">show</a>
+                
+              </p>
+              <div id="method-i-request_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/plugins/httpd.rb, line 64</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">request</span>(<span class="ruby-identifier">session</span>)
+        <span class="ruby-identifier">request</span> = <span class="ruby-identifier">session</span>.<span class="ruby-identifier">gets</span>
+        <span class="ruby-identifier">uri</span> = (<span class="ruby-identifier">request</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">/\s+/</span>)<span class="ruby-operator">+</span>[<span class="ruby-string">''</span>,<span class="ruby-string">''</span>,<span class="ruby-string">''</span>])[<span class="ruby-number">1</span>] 
+        <span class="ruby-comment">#info uri</span>
+        <span class="ruby-identifier">service</span>,<span class="ruby-identifier">param</span>,*<span class="ruby-identifier">bidon</span>=(<span class="ruby-identifier">uri</span><span class="ruby-operator">+</span><span class="ruby-string">&quot;?&quot;</span>).<span class="ruby-identifier">split</span>(<span class="ruby-regexp">/\?/</span>)
+        <span class="ruby-identifier">params</span>=<span class="ruby-constant">Hash</span>[*(<span class="ruby-identifier">param</span>.<span class="ruby-identifier">split</span>(<span class="ruby-node">/#/</span>)[<span class="ruby-number">0</span>].<span class="ruby-identifier">split</span>(<span class="ruby-regexp">/[=&amp;]/</span>))] <span class="ruby-keyword">rescue</span> {}
+        <span class="ruby-identifier">params</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">params</span>[<span class="ruby-identifier">k</span>]=<span class="ruby-identifier">unescape</span>(<span class="ruby-identifier">v</span>) }
+        <span class="ruby-identifier">uri</span>=<span class="ruby-identifier">unescape</span>(<span class="ruby-identifier">service</span>)[<span class="ruby-number">1</span><span class="ruby-operator">..</span><span class="ruby-number">-1</span>].<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/\.\./</span>,<span class="ruby-string">&quot;&quot;</span>)
+        <span class="ruby-identifier">userpass</span>=<span class="ruby-keyword">nil</span>
+        <span class="ruby-keyword">if</span> (<span class="ruby-identifier">buri</span>=<span class="ruby-identifier">uri</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">/@/</span>)).<span class="ruby-identifier">size</span><span class="ruby-operator">&gt;</span><span class="ruby-number">1</span>
+              <span class="ruby-identifier">uri</span>=<span class="ruby-identifier">buri</span>[<span class="ruby-number">1</span><span class="ruby-operator">..</span><span class="ruby-number">-1</span>].<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;@&quot;</span>)
+              <span class="ruby-identifier">userpass</span>=<span class="ruby-identifier">buri</span>[<span class="ruby-number">0</span>].<span class="ruby-identifier">split</span>(<span class="ruby-regexp">/:/</span>)
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">do_service</span>(<span class="ruby-identifier">session</span>,<span class="ruby-identifier">request</span>,<span class="ruby-identifier">uri</span>,<span class="ruby-identifier">userpass</span>,<span class="ruby-identifier">params</span>)
+<span class="ruby-keyword">rescue</span>
+      <span class="ruby-identifier">error</span>(<span class="ruby-node">&quot;Error Web get on #{request}: \n #{$!.to_s} \n #{$!.backtrace.join(&quot;\n     &quot;)}&quot;</span> ) <span class="ruby-keyword">rescue</span> <span class="ruby-keyword">nil</span>
+      <span class="ruby-identifier">session</span>.<span class="ruby-identifier">write</span> <span class="ruby-node">&quot;HTTP/1.1 501 NOK\r\nContent-type: text/html\r\n\r\n&lt;html&gt;&lt;head&gt;&lt;title&gt;WS&lt;/title&gt;&lt;/head&gt;&lt;body&gt;Error : #{$!}&quot;</span> <span class="ruby-keyword">rescue</span> <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">ensure</span>
+      <span class="ruby-identifier">session</span>.<span class="ruby-identifier">close</span> <span class="ruby-keyword">rescue</span> <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-run">
+            
+              <b>run</b>(session)
+            
+            <a href="../classes/WebserverAbstract.html#method-i-run" name="method-i-run" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-run_source')" id="l_method-i-run_source">show</a>
+                
+              </p>
+              <div id="method-i-run_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/plugins/httpd.rb, line 50</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">run</span>(<span class="ruby-identifier">session</span>)
+      <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-ivar">@root</span>)
+        <span class="ruby-identifier">sendError</span>(<span class="ruby-identifier">session</span>,<span class="ruby-number">500</span>,<span class="ruby-identifier">txt</span>=<span class="ruby-node">&quot;root directory unknown: #{@root}&quot;</span>) 
+      <span class="ruby-keyword">else</span>
+              <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">session</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">sess</span><span class="ruby-operator">|</span>
+                 <span class="ruby-ivar">@th</span>[<span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>]=[<span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>,<span class="ruby-identifier">sess</span>]
+                 <span class="ruby-identifier">request</span>(<span class="ruby-identifier">sess</span>) 
+                 <span class="ruby-ivar">@th</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>) 
+              <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-sendData">
+            
+              <b>sendData</b>(sock,type,content)
+            
+            <a href="../classes/WebserverAbstract.html#method-i-sendData" name="method-i-sendData" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-sendData_source')" id="l_method-i-sendData_source">show</a>
+                
+              </p>
+              <div id="method-i-sendData_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/plugins/httpd.rb, line 156</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">sendData</span>(<span class="ruby-identifier">sock</span>,<span class="ruby-identifier">type</span>,<span class="ruby-identifier">content</span>)
+      <span class="ruby-identifier">sock</span>.<span class="ruby-identifier">write</span> <span class="ruby-node">&quot;HTTP/1.0 200 OK\r\nContent-type: #{mime(type)}\r\nContent-size: #{content.size}\r\n\r\n&quot;</span>
+      <span class="ruby-identifier">sock</span>.<span class="ruby-identifier">write</span>(<span class="ruby-identifier">content</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-sendError">
+            
+              <b>sendError</b>(sock,no,txt=nil)
+            
+            <a href="../classes/WebserverAbstract.html#method-i-sendError" name="method-i-sendError" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-sendError_source')" id="l_method-i-sendError_source">show</a>
+                
+              </p>
+              <div id="method-i-sendError_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/plugins/httpd.rb, line 150</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">sendError</span>(<span class="ruby-identifier">sock</span>,<span class="ruby-identifier">no</span>,<span class="ruby-identifier">txt</span>=<span class="ruby-keyword">nil</span>) 
+       <span class="ruby-keyword">if</span> <span class="ruby-identifier">txt</span>
+         <span class="ruby-identifier">txt</span>=<span class="ruby-node">&quot;&lt;html&gt;&lt;body&gt;&lt;code&gt;&lt;pre&gt;&lt;/pre&gt;#{txt}&lt;/code&gt;&lt;/body&gt;&lt;/html&gt;&quot;</span>
+       <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">sock</span>.<span class="ruby-identifier">write</span> <span class="ruby-node">&quot;HTTP/1.0 #{no} NOK\r\nContent-type: #{mime(&quot;.html&quot;)}\r\n\r\n &lt;html&gt;&lt;p&gt;Error #{no} : #{txt}&lt;/p&gt;&lt;/html&gt;&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-sendFile">
+            
+              <b>sendFile</b>(sock,filename)
+            
+            <a href="../classes/WebserverAbstract.html#method-i-sendFile" name="method-i-sendFile" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-sendFile_source')" id="l_method-i-sendFile_source">show</a>
+                
+              </p>
+              <div id="method-i-sendFile_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/plugins/httpd.rb, line 160</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">sendFile</span>(<span class="ruby-identifier">sock</span>,<span class="ruby-identifier">filename</span>)
+      <span class="ruby-identifier">s</span>=<span class="ruby-constant">File</span>.<span class="ruby-identifier">size</span>(<span class="ruby-identifier">filename</span>)
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">s</span> <span class="ruby-operator">&lt;</span> <span class="ruby-number">0</span> <span class="ruby-operator">||</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">extname</span>(<span class="ruby-identifier">filename</span>).<span class="ruby-identifier">downcase</span><span class="ruby-operator">==</span><span class="ruby-string">&quot;.lnk&quot;</span>
+              <span class="ruby-identifier">sendError</span>(<span class="ruby-identifier">sock</span>,<span class="ruby-number">500</span>,<span class="ruby-node">&quot;Error reading file #{filename} : (size=#{s})&quot;</span> )
+              <span class="ruby-keyword">return</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">sock</span>.<span class="ruby-identifier">write</span> <span class="ruby-node">&quot;HTTP/1.0 200 OK\r\nContent-type: #{mime(filename)}\r\nContent-size: #{File.size(filename)}\r\nLast-Modified: #{httpdate(File.mtime(filename))}\r\nDate: #{httpdate(Time.now)}\r\n\r\n&quot;</span>
+      <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">filename</span>,<span class="ruby-string">&quot;rb&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> 
+        <span class="ruby-identifier">f</span>.<span class="ruby-identifier">binmode</span>; <span class="ruby-identifier">sock</span>.<span class="ruby-identifier">binmode</span>; 
+        ( <span class="ruby-identifier">sock</span>.<span class="ruby-identifier">write</span>(<span class="ruby-identifier">f</span>.<span class="ruby-identifier">read</span>(<span class="ruby-number">32000</span>)) <span class="ruby-keyword">while</span> (<span class="ruby-operator">!</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">eof?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span> <span class="ruby-identifier">sock</span>.<span class="ruby-identifier">closed?</span>) ) <span class="ruby-keyword">rescue</span> <span class="ruby-keyword">nil</span>
+      <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-serve">
+            
+              <b>serve</b>(uri,&amp;blk)
+            
+            <a href="../classes/WebserverAbstract.html#method-i-serve" name="method-i-serve" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-serve_source')" id="l_method-i-serve_source">show</a>
+                
+              </p>
+              <div id="method-i-serve_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/plugins/httpd.rb, line 61</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">serve</span>(<span class="ruby-identifier">uri</span>,&amp;<span class="ruby-identifier">blk</span>)
+      <span class="ruby-ivar">@cb</span>[<span class="ruby-identifier">uri</span>] = <span class="ruby-identifier">blk</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-stop_browser">
+            
+              <b>stop_browser</b>()
+            
+            <a href="../classes/WebserverAbstract.html#method-i-stop_browser" name="method-i-stop_browser" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-stop_browser_source')" id="l_method-i-stop_browser_source">show</a>
+                
+              </p>
+              <div id="method-i-stop_browser_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/plugins/httpd.rb, line 118</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">stop_browser</span>
+      <span class="ruby-identifier">info</span> <span class="ruby-string">&quot;exit on web demand !&quot;</span>
+      <span class="ruby-ivar">@serveur</span>.<span class="ruby-identifier">close</span> <span class="ruby-keyword">rescue</span> <span class="ruby-keyword">nil</span>
+      [<span class="ruby-ivar">@tho</span>,<span class="ruby-ivar">@thm</span>].<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">th</span><span class="ruby-operator">|</span> <span class="ruby-identifier">th</span>.<span class="ruby-identifier">kill</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-to_absolute">
+            
+              <b>to_absolute</b>(f)
+            
+            <a href="../classes/WebserverAbstract.html#method-i-to_absolute" name="method-i-to_absolute" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-to_absolute_source')" id="l_method-i-to_absolute_source">show</a>
+                
+              </p>
+              <div id="method-i-to_absolute_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/plugins/httpd.rb, line 132</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">to_absolute</span>(<span class="ruby-identifier">f</span>)  <span class="ruby-node">&quot;#{@rootd}#{f.gsub(/^\//,'')}&quot;</span> <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-to_relative">
+            
+              <b>to_relative</b>(f)
+            
+            <a href="../classes/WebserverAbstract.html#method-i-to_relative" name="method-i-to_relative" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-to_relative_source')" id="l_method-i-to_relative_source">show</a>
+                
+              </p>
+              <div id="method-i-to_relative_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/plugins/httpd.rb, line 131</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">to_relative</span>(<span class="ruby-identifier">f</span>)  <span class="ruby-identifier">f</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-node">/^#{@rootd}/</span>,<span class="ruby-string">&quot;/&quot;</span>) <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-to_table">
+            
+              <b>to_table</b>(l)
+            
+            <a href="../classes/WebserverAbstract.html#method-i-to_table" name="method-i-to_table" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-to_table_source')" id="l_method-i-to_table_source">show</a>
+                
+              </p>
+              <div id="method-i-to_table_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/plugins/httpd.rb, line 144</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">to_table</span>(<span class="ruby-identifier">l</span>)
+       <span class="ruby-node">&quot;&lt;table&gt;&lt;tr&gt;#{l.map {|s| &quot;&lt;td&gt;#{s}&lt;/td&gt;&quot;}.join(&quot;&lt;/tr&gt;&lt;tr&gt;&quot;)}&lt;/tr&gt;&lt;/table&gt;&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-to_tableb">
+            
+              <b>to_tableb</b>(l,&amp;bl)
+            
+            <a href="../classes/WebserverAbstract.html#method-i-to_tableb" name="method-i-to_tableb" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-to_tableb_source')" id="l_method-i-to_tableb_source">show</a>
+                
+              </p>
+              <div id="method-i-to_tableb_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/plugins/httpd.rb, line 147</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">to_tableb</span>(<span class="ruby-identifier">l</span>,&amp;<span class="ruby-identifier">bl</span>)
+       <span class="ruby-node">&quot;&lt;table&gt;&lt;tr&gt;#{l.map {|s| &quot;&lt;td&gt;#{bl.call(s).join(&quot;&lt;/td&gt;&lt;td&gt;&quot;)}&lt;/td&gt;&quot;}.join(&quot;&lt;/tr&gt;&lt;tr&gt;&quot;)}&lt;/tr&gt;&lt;/table&gt;&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-unescape">
+            
+              <b>unescape</b>(string)
+            
+            <a href="../classes/WebserverAbstract.html#method-i-unescape" name="method-i-unescape" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-unescape_source')" id="l_method-i-unescape_source">show</a>
+                
+              </p>
+              <div id="method-i-unescape_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/plugins/httpd.rb, line 11</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">unescape</span>(<span class="ruby-identifier">string</span>) ; <span class="ruby-identifier">string</span>.<span class="ruby-identifier">tr</span>(<span class="ruby-string">'+'</span>, <span class="ruby-string">' '</span>).<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/((?:%[0-9a-fA-F]{2}))/</span>) { [<span class="ruby-node">$1</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-string">'%'</span>)].<span class="ruby-identifier">pack</span>(<span class="ruby-string">'H*'</span>) } ;  <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    
