@@ -1,5 +1,0 @@
-# starbucks.rb
-
-require 'ostruct'
-
-

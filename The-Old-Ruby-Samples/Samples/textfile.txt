@@ -1,5 +1,0 @@
-readlines accepts line after line of input until a terminator, most commonly known as
-EOF (End Of File), is found. You can create EOF on most platforms by pressing Ctrl+D. When
-the terminating line is found, all the lines of input given are put into an array that’s assigned to
-lines. This is particularly ideal for programs that accept piped or redirected input on standard
-input. For example, say you have a script called linecount.rb containing this single line:

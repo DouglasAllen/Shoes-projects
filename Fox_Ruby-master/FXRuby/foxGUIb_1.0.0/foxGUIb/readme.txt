@@ -1,1 +1,0 @@
-please have a look at doc/www/index.html or http://fox-tool.rubyforge.org

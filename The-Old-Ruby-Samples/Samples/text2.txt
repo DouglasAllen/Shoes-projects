@@ -1,8 +1,0 @@
-The File class’s open method is used to open the text file, text.txt, and upon that File
-object, the each method returns each line one by one. You can also do it this way:
-File.new("text.txt", "r").each { |line| puts line }
-This method clarifies the process involved. By opening a file, you’re creating a new File
-object that you can then use. The second parameter, "r", defines that you’re opening the file
-for reading. This is the default mode, but when using File.new, it can help to clarify what you
-want to do with the file. This becomes important later when you write to files or create new
-ones from scratch.
