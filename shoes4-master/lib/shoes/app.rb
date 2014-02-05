@@ -41,16 +41,16 @@ class Shoes
       set_initial_attributes
       set_margin
 
-      # @gui = Shoes.configuration.backend::App.new @app
-      @gui = Shoes.configuration.backend = :swt
+      @gui = Shoes.configuration.backend::App.new @app
+      # @gui = Shoes.configuration.backend = :swt
 
       execution_blk = create_execution_block(blk)
-      #@top_slot = Flow.new self, self, { width: @width, height: @height}, &execution_blk
+      @top_slot = Flow.new self, self, { width: @width, height: @height}, &execution_blk
 
-      # add_console
+      add_console
 
       Shoes.register self
-      # @gui.open
+      @gui.open
     end
     
     def add_child(child)

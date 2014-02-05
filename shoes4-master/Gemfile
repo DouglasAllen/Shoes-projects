@@ -1,3 +1,25 @@
 source 'https://rubygems.org'
 
-gemspec
+#gemspec
+
+gem "log4jruby"
+gem "swt", "~>0.16"
+gem "furoshiki"
+gem "nokogiri" # For converting the manual to HTML
+gem "after_do"
+
+gem "guard"
+gem "guard-rspec"
+gem "pry"
+gem "pry-nav"
+
+gem "rspec", "~>2.10"
+gem "rake"
+
+gem "yard"
+gem "kramdown"
+gem 'simplecov'
+gem 'coveralls'
+gem 'jruby-lint'
+gem 'vcr'
+gem 'webmock'

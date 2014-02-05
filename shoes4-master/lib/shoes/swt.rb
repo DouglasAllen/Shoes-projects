@@ -1,25 +1,27 @@
 require 'java'
+p $:.unshift(File.expand_path("../"))
 require 'swt'
 require 'after_do'
 require 'shoes'
 
 module Swt
+
   include_package 'org.eclipse.swt.graphics'
   include_package 'org.eclipse.swt.events'
   include_package 'org.eclipse.swt.dnd'
 
   module Events
-    import org.eclipse.swt.events.PaintListener
+    java_import 'org.eclipse.swt.events.PaintListener'
   end
 
   module Widgets
-    import org.eclipse.swt.widgets
-    import org.eclipse.swt.widgets.Layout
+    include_package 'org.eclipse.swt.widgets'
+    java_import 'org.eclipse.swt.widgets.Layout'
   end
 
   module Graphics
-    import org.eclipse.swt.graphics
-    import org.eclipse.swt.graphics.Pattern
+    include_package 'org.eclipse.swt.graphics'
+    java_import 'org.eclipse.swt.graphics.Pattern'
   end
 end
 

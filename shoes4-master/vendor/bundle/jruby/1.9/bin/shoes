@@ -1,0 +1,22 @@
+#!/usr/bin/env sh
+case "${MACHTYPE:-}" in
+  (*darwin*)
+    swt_opt="-J-XstartOnFirstThread"
+    ;;
+esac
+include="lib"
+
+# Rewrite args as a ruby array of strings
+args="["
+while [ $# -gt 0 ]; do
+  args=$args\"${1}\"
+  shift
+  if [ $# -gt 0 ]; then
+    args=$args", "
+  fi
+done
+args=$args"]"
+
+cmd="jruby --1.9 ${swt_opt:-} -I$include -rshoes/cli -e 'Shoes::CLI.new.run("$args")'"
+eval $cmd
+

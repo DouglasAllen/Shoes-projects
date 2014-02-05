@@ -13,9 +13,9 @@ class Shoes
   module Swt
     class Sound
       JFile = java.io.File
-      import java.io.BufferedInputStream
-      import javax.sound.sampled
-      import java.io.IOException
+      java_import 'java.io.BufferedInputStream'
+      include_package 'javax.sound.sampled'
+      java_import 'java.io.IOException'
 
       BufferSize = 4096
 

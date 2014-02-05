@@ -4,6 +4,7 @@
 #
 Shoes.app :height => 260, :width => 250 do
   @radius, @centerx, @centery = 90, 126, 140
+  
   animate(8) do
     @time = Time.now
     clear do
@@ -21,6 +22,7 @@ Shoes.app :height => 260, :width => 250 do
       clock_hand @time.hour + (@time.min / 60.0),8,6
     end
   end
+  
   def draw_background
     background rgb(230, 240, 200)
 
@@ -40,6 +42,7 @@ Shoes.app :height => 260, :width => 250 do
     line(@centerx + 95, @centery, @centerx + 102, @centery)
     line(@centerx, @centery + 95, @centerx, @centery + 102)
   end
+  
   def clock_hand(time, sw, unit=30, color=black)
     radius_local = unit == 30 ? @radius : @radius - 15
     _x = radius_local * Math.sin( time * Math::PI / unit )

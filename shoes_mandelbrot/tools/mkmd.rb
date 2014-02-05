@@ -20,7 +20,7 @@ Dir.glob("../*.md").each do |file|
   open(file, 'w') do |f|
     lines.each do |line|
       new_line = line
-      line.sub(/^# *(.*\.rb)/){new_line = read_src($1)}
+      p line.sub(/^# *(.*\.rb)/){new_line = read_src($1)}
       line.sub(/^# *(.*\.(png|jpg))/){new_line = make_link($1)}
       f.puts new_line
     end

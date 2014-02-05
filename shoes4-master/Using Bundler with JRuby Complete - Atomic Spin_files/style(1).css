@@ -1,0 +1,533 @@
+/*
+Theme Name: Atomic Spin
+Theme URI: spin.atomicobject.com
+Description: Atomic Object Spin Wordpress Template - child theme of Thematic
+Author: Atomic Object
+Author URI: atomicobject.com
+Template: thematic
+Version: .7
+.
+General comments/License Statement if any.
+.
+*/
+
+
+/* Atomic Colors
+
+#ef3e42 - Red
+#00aaa1 - GreenBlue
+#597b7c - Dark GreenBlue
+
+#002225 - Black
+
+#e3e7ea - Light Grey
+#abb0b1 - Medium Grey
+#5e6465 - Dark Grey
+#393d3d - Darker Grey
+
+#fff6dc - Yellow
+
+*/
+
+a, a:link, a:active {
+  color: #007F71;
+}
+  a:visited {
+    color: #597B7C;
+  }
+  a:hover, .aside a:active, .aside a:hover {
+    color: #EF3E42;
+  }
+
+.entry-content h3 {
+  font-size: 18px;
+  padding-top: 18px;
+  padding-bottom: 12px;
+}
+.entry-content h4 {
+  margin-bottom: 5px;
+}
+
+table{
+  font-size: 12px;
+  width: 99%;
+  line-height: 1.3em;
+}
+  table thead td {
+    font-size: 13px;
+    font-weight: bold;
+  }
+  table td {
+    vertical-align: middle; /* Added by Paul September 12, 2011 */
+  }
+
+/* Header */
+#header{
+  background:#002225 url(images/header-bg.gif);
+  border-bottom:9px solid #597b7c;
+  height: 197px;
+}
+#searchform input {
+  height: 28px;
+}
+#atomic-icon{
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:url(images/ao-icon.png) no-repeat right top;
+}
+#branding{
+  padding:30px 0;
+  position:relative;
+  z-index:5;
+}
+#atomic-branding{
+  font-family: "ff-market-web-1", "ff-market-web-2", cursive;
+  position:relative;
+}
+#sub-title{
+  position:absolute;
+  top:67px;
+  left:108px;
+  color:#9db9ba;
+  font-size:19px;
+  font-weight: 100;
+}
+
+h2.entry-title:hover{
+  color:#EF3E42;
+}
+.entry-title a:hover, .entry-title a:active {
+  color: #EF3E42;
+}
+
+#access {
+  border-bottom: 0;
+}
+
+/* ================================================================================================ */
+/*  Navigation  */
+/* ================================================================================================ */
+
+ul.sf-menu {
+  border: 0;
+  overflow: hidden;
+}
+.sf-menu li {
+  margin-right: 10px;
+}
+ul.sf-menu a:link, .sf-menu a:visited {
+  position: relative;
+  display: block;
+  padding: 14px 14px 10px 14px;
+  height: 13px;
+  font-family: "ff-din-web-1","ff-din-web-2",sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #597B7C;
+  background: #153639;
+  border: 0;
+}
+
+ul.sf-menu li a:hover, .sf-menu .current-menu-item a, .sf-menu .current-menu-parent a, .sf-menu .current-category-ancestor a {
+  background: #597B7C;
+  color: #002225;
+}
+
+li#menu-item-77020 a {
+  width: 67px;
+  text-align: center;
+}
+
+ul.sub-nav li,
+ul.featured-items li {
+  position: relative;
+  font-size: 14px;
+  line-height: 24px;
+  padding-left: 15px;
+  background: url(images/arrow-right-green8x8.png) no-repeat left 7px;
+}
+  ul.sub-nav li li {
+    background: none;
+  }
+  ul.sub-nav ul {
+    margin-bottom: 0;
+  }
+
+ul.featured-items li {
+  background: none;
+  padding-left: 0;
+  line-height: 20px;
+  margin-bottom: 13px;
+}
+
+.windows .sf-menu a {
+  font-size: 13px;
+}
+
+
+/* ================================================================================================ */
+/* ››››› Section Headers ‹‹‹‹‹ */
+/* ================================================================================================ */
+
+h1.page-title {
+  display: block;
+  background: #00aaa1;
+  padding: 10px 10px 7px 10px;
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #e3e7ea;
+  text-transform: uppercase;
+  font-family: "ff-din-web-1","ff-din-web-2",sans-serif;
+}
+  h1.page-title span {
+    color: #fff;
+    font-style: normal;
+  }
+h2.entry-title a {
+  color:#002225;
+}
+
+.category-business-of-software h1.page-title,
+.category-process-practices h1.page-title,
+.category-company h1.page-title,
+.category-design-development h1.page-title { 
+  padding-top: 122px;
+  padding-bottom: 10px;
+}
+
+.category-business-of-software h1.page-title {
+  background: url(images/section-postits.jpg) no-repeat 0 0;
+}
+.category-process-practices h1.page-title {
+  background: url(images/section-whiteboard.jpg) no-repeat 0 0;
+}
+.category-company h1.page-title {
+  background: url(images/section-mug.jpg) no-repeat 0 0;
+}
+.category-design-development h1.page-title {
+  background: url(images/section-code.jpg) no-repeat 0 0;
+}
+
+
+/* ================================================================================================ */
+/*  Entry Post  */
+/* ================================================================================================ */
+
+.entry-content, .entry-meta, .entry-utility, #nav-below a{
+  font-family:Arial, sans-serif;
+}
+.entry-content{
+  color: #525758;
+}
+.entry-title{
+  font-family: "ff-din-web-1","ff-din-web-2",sans-serif;
+  font-weight:normal;
+  font-size: 26px;
+}
+.entry-meta{
+  font-style:normal;
+}
+.entry-meta .n{
+  text-transform:capitalize;
+  font-size:inherit;
+  letter-spacing:0;
+}
+.entry-meta abbr{
+  text-transform:capitalize;
+  font-size:inherit;
+  letter-spacing:0;
+}
+.entry-utility{
+  padding:7px 12px;
+  border-radius:7px;
+  -moz-border-radius:7px;
+  background:#eff3f6;
+  color:#9099a0;
+  box-shadow:inset 2px 2px 3px #e3e7ea;
+}
+.entry-utility a{
+  font-style:normal;
+  color:#9099a0;
+}
+.cat-links a{
+  background:#fff;
+  border-radius:3px;
+  padding:1px 3px;
+}
+.tag-links a{
+  background:#fff url(images/tag_fill_8x8.png) no-repeat 4px 5px;
+  border-radius:3px;
+  padding:1px 5px 1px 15px;
+}
+#nav-below a{
+  font-style:normal;
+}
+
+/* content */
+#content{
+  font-family:Arial, sans-serif;
+  width:600px;
+}
+
+/* Images in a post */
+.wp-caption {
+  margin:0 0 18px 0;
+  padding:5px 0 0 0;
+  background:#e3e7ea;
+  border:none;
+}
+  .alignright.wp-caption {
+    margin-left: 20px;
+  }
+  .alignleft.wp-caption {
+    margin-right: 20px;
+  }
+
+
+blockquote {
+  color: #597b7c; /* Dark Green */
+  color: #393d3d; /* Darker Grey */
+}
+  blockquote.alt {
+    padding: 20px 20px 5px 20px;
+    margin-bottom: 15px;
+  }
+    blockquote.alt.grey {
+      background: #e3e7ea;
+    }
+    blockquote.alt.yellow {
+      background: #FFF6DC; 
+    }
+
+/* aside */
+.aside{
+  font-family:Arial, sans-serif;
+}
+.aside h3{
+  font-style:normal;
+  font-weight:normal;
+  color:#597b7c;
+  font-family: "ff-din-web-1","ff-din-web-2",sans-serif;
+  text-transform:uppercase;
+}
+.aside input{
+  font-family:Arial, sans-serif;
+  color:#999;
+  width:250px;
+}
+#primary{
+  border:none;
+  padding-top: 0;
+  margin-top: -23px;
+}
+
+/* About Atomic */
+#text-3{
+  padding:15px;
+  box-shadow:inset 2px 2px 6px rgba(239, 225, 183, 0.5);
+  background:#fff6dc url("images/ao-icon-about.png") no-repeat 138px -68px;
+  -moz-border-radius:7px;
+  border-radius:7px;
+  margin-bottom:18px;
+  position: relative;
+}
+#text-3 h3{
+  color:#ef3e42;
+}
+#text-3 a.home{
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  text-indent: -5000px;
+  left: 0;
+  top: 0;
+}
+
+/* comments*/
+#commentform, #comment, #submit, #comments-list ol{
+  font-family:Arial, sans-serif;
+}
+#comments h3{
+  font-family: "ff-din-web-1","ff-din-web-2",sans-serif;
+  text-transform:uppercase;
+  color:#597b7c;
+}
+#comments-list ol{
+  border:none;
+}
+#comments-list li{
+  border-bottom:1px solid #e3e7ea;
+}
+#comments-list li.bypostauthor{
+  background:#e3e7ea url(images/ao-icon-comment.png) no-repeat 449px -71px;
+}
+
+/* footer */
+#footer{
+  background:#002225 url(images/header-bg.gif);
+  border-top:4px solid #597b7c;
+  font-family:Arial, sans-serif;
+}
+#siteinfo, #siteinfo a{
+  color:#9db9ba;
+}
+
+/* CodeRay overrides */
+table.CodeRay{
+  width:99%;
+}
+
+/* Override wp_syntax plugin */
+.wp_syntax {
+  width: 99% !important;
+}
+  .wp_syntax table {
+    margin-bottom: 0;
+    border: 0;
+  }
+  .wp_syntax table tr {
+    border: 0;
+  }
+  .wp_sytax td.line_numbers {
+    width: 30px;
+  }
+  .wp_syntax td.code {
+    width: 100%;
+  }
+
+.entry-content img {
+  margin-bottom: 0;
+}
+
+/* ================================================================================================ */
+/*  Related Posts Widget  */
+/* ================================================================================================ */
+
+h3.nr_title {
+  font-family: "ff-din-web-1","ff-din-web-2",sans-serif;
+  color: #597B7C;
+  text-transform: uppercase;
+  font-style: normal;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.nr_inner ul {
+  margin: 0 0 5px 0;
+  padding: 0;
+  overflow: hidden;
+}
+  .nr_inner ul li {
+    display: block;
+    position: relative;
+    float: left;
+    width: 145px;
+    margin: 0;
+    padding: 0;
+    margin-left: 5px;
+    overflow: hidden;
+  }
+    .nr_inner ul li:first-child {
+      margin-left: 0;
+    }
+  .nr_inner ul li a {
+    display: block;
+    min-height: 140px;
+    padding: 10px;
+    font-size: 16px;
+    background: #e3e7ea;
+    text-decoration: none;
+    font-family: Georgia, 'Times New Roman', serif;
+  }
+  .nr_inner ul li a:hover {
+    color: #e3e7ea;
+    background: #597B7C;
+  }
+  .nrelate_default .nr_post_title {
+    font-weight: normal !important;
+  }
+
+/* ================================================================================================ */
+/* Overrides for Detroit banner - DELETE when done */
+/* ================================================================================================ */
+
+/* Meta info banner */ 
+#meta_info_wrapper {
+  display: block;
+  position: absolute;
+  width: 100%;
+  z-index: 110;
+}
+  #meta_info {
+    position: relative;
+    display: block;
+    margin: 0 auto;  
+    width: 940px;
+    height: 110px;
+  }
+  #meta_info h3 {
+    margin: 0;
+  }
+  #meta_info h3 a {
+    position: relative;
+    width: 145px;
+    height: 99px;
+    text-indent: 100%;
+    white-space: pre;
+    float: left;
+    margin-left: 4px;
+    overflow: hidden;
+    background: url('images/hiring-hanging-banner.png') no-repeat 0 0;
+    z-index: 3;
+  }
+  #meta_info p {
+    position: absolute;
+    float: left;
+    left: 150px;
+    padding: 10px 20px 10px 50px;
+    margin: 22px 0 0 -40px;
+    font-family: "ff-din-web-1","ff-din-web-2",sans-serif;
+    font-weight: 500;
+    font-size: 17px;
+    color: #143538;
+    z-index: 2;
+    -moz-box-shadow: inset 0 0 25px #ffd56e;
+    -webkit-box-shadow: inset 0 0 25px #ffd56e;
+    box-shadow: inset 0 0 25px #ffd56e;
+    -webkit-border-radius: 5px 5px;
+    -moz-border-radius: 5px / 5px;
+    -o-border-radius: 5px / 5px;
+    -ms-border-radius: 5px / 5px;
+    -khtml-border-radius: 5px / 5px;
+    border-radius: 5px / 5px;
+    background: #ffefc4;
+  }
+  a.readmore {
+    text-transform: uppercase;
+    color: #00aaa1;
+    padding-right: 12px;
+    margin-left: 16px;
+    white-space: pre;
+    text-decoration: none;
+    line-height: 1em;
+    font-size: 14px;
+    font-weight: 500h;
+    background: url('images/arrow-right-green.png') no-repeat right center;
+  }
+    #meta_info a.readmore {
+      font-size: 16px;
+    }
+    #meta_info a:hover {
+      color: #597B7C;
+    }
+
+/* Overrides */
+#main {
+  padding-top: 120px;
+}
+
+
+
+
+

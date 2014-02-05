@@ -1,6 +1,8 @@
 require 'java'
-$:.unshift(File.expand_path("../../lib", __FILE__))
-require 'swt'
+#$:.unshift(File.expand_path("../../lib", __FILE__))
+require './lib/swt/swt_wrapper'
+
+#~ java_import 'org.eclipse.swt.Widgets'
 
 class ButtonExample
 
@@ -38,10 +40,10 @@ class ButtonExample
   def start
     display = Swt::Widgets::Display.get_current
     
-    # until the window (the Shell) has been closed
+    ##until the window (the Shell) has been closed
     while !@shell.isDisposed
     
-      # check for and dispatch new gui events
+      ##check for and dispatch new gui events
       display.sleep unless display.read_and_dispatch
     end
 

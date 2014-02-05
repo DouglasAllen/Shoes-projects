@@ -4,7 +4,7 @@
 #
 require 'bigdecimal'
 require 'date'
-require 'green_shoes'
+# require 'green_shoes'
 
 def bd(var)
   BigDecimal(var.to_s)
@@ -75,7 +75,7 @@ Shoes.app :height => 760, :width => 1024, :title => "        Greenwich Mean Side
 	 
   end
 
-  def clock_hand(time, sw, unit, color)
+  def clock_hand(time, sw, color, unit=30)
     radius_local = unit == 30 ? @radius / 2 - 8 : @radius / 2 - 55
     _x = radius_local * Math.sin( time * Math::PI / unit )
     _y = radius_local * Math.cos( time * Math::PI / unit )
@@ -98,9 +98,9 @@ Shoes.app :height => 760, :width => 1024, :title => "        Greenwich Mean Side
   end
   
   
-  24.times{| i | 5.times{| j | hour << clock_hand( i + ( j / 5.0 ), 8, 12, green )}}
-  60.times{| i | 4.times{| j | min << clock_hand( i + ( j / 4.0 ), 5, 30, green )}}
-  60.times{| i | 8.times{| j | sec << clock_hand( i + ( j / 8.0 ), 2, 30, red )}}
+  24.times{| i | 5.times{| j | hour << clock_hand( i + ( j / 5.0 ), 8, gold, 12 )}}
+  60.times{| i | 4.times{| j | min << clock_hand( i + ( j / 4.0 ), 5, gold )}}
+  60.times{| i | 8.times{| j | sec << clock_hand( i + ( j / 8.0 ), 2, red )}}
 
   animate(8, false) do |i|
     time_now

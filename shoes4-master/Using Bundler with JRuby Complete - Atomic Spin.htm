@@ -1,0 +1,690 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0063)http://spin.atomicobject.com/2013/04/24/bundler-jruby-complete/ -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xmlns:fb="http://ogp.me/ns/fb#" xmlns:addthis="http://www.addthis.com/help/api-spec" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#" class="wf-ffdinweb1-i3-active wf-ffdinweb1-i4-active wf-ffdinweb1-i6-active wf-ffdinweb1-i7-active wf-ffdinweb1-i9-active wf-ffdinweb1-n3-active wf-ffdinweb1-n4-active wf-ffdinweb1-n6-active wf-ffdinweb1-n7-active wf-ffdinweb1-n9-active wf-ffmarketweb1-n4-active wf-active"><head profile="http://gmpg.org/xfn/11"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" src="./Using Bundler with JRuby Complete - Atomic Spin_files/shares.json"></script><script src="./Using Bundler with JRuby Complete - Atomic Spin_files/cb=gapi.loaded_1" async=""></script><script src="./Using Bundler with JRuby Complete - Atomic Spin_files/cb=gapi.loaded_0" async=""></script><script type="text/javascript" src="./Using Bundler with JRuby Complete - Atomic Spin_files/auth014.js"></script><script type="text/javascript" src="./Using Bundler with JRuby Complete - Atomic Spin_files/counter016.js"></script><link rel="stylesheet" type="text/css" href="./Using Bundler with JRuby Complete - Atomic Spin_files/counter013.css" media="all"><script type="text/javascript" src="./Using Bundler with JRuby Complete - Atomic Spin_files/plusone.js" gapi_processed="true"></script><link rel="stylesheet" type="text/css" href="./Using Bundler with JRuby Complete - Atomic Spin_files/widget115.css" media="all"><link rel="stylesheet" type="text/css" href="./Using Bundler with JRuby Complete - Atomic Spin_files/buttons3.css"><script src="./Using Bundler with JRuby Complete - Atomic Spin_files/quant.js" async="" type="text/javascript"></script><script type="text/javascript" async="" id="gauges-tracker" data-site-id="51f6979ff5a1f521f90000df" src="./Using Bundler with JRuby Complete - Atomic Spin_files/track.js"></script><script type="text/javascript" src="./Using Bundler with JRuby Complete - Atomic Spin_files/spin-atomicobject-com.js" id="nrelate-widget-cs"></script><script type="text/javascript" src="./Using Bundler with JRuby Complete - Atomic Spin_files/beacon.js" id="nrelate-tracking"></script>
+	<title>Using Bundler with JRuby Complete - Atomic Spin</title>
+
+	
+
+	<meta name="robots" content="index,follow">
+
+	<link rel="canonical" href="./Using Bundler with JRuby Complete - Atomic Spin_files/Using Bundler with JRuby Complete - Atomic Spin.htm">
+
+
+<link rel="stylesheet" type="text/css" href="./Using Bundler with JRuby Complete - Atomic Spin_files/style.css">
+<link rel="stylesheet" type="text/css" href="./Using Bundler with JRuby Complete - Atomic Spin_files/coderay.css">
+<link rel="stylesheet" type="text/css" href="./Using Bundler with JRuby Complete - Atomic Spin_files/style(1).css">
+
+	<link rel="pingback" href="http://spin.atomicobject.com/xmlrpc.php">
+
+
+	<style type="text/css">
+		#fancybox-close{right:-15px;top:-15px}
+		div#fancybox-content{border-color:#FFFFFF}
+		div#fancybox-title{background-color:#FFFFFF}
+		div#fancybox-outer{background-color:#FFFFFF}
+		div#fancybox-title-inside{color:#333333}
+	</style>
+
+	
+<!-- This site is optimized with the Yoast WordPress SEO plugin v1.4.13 - http://yoast.com/wordpress/seo/ -->
+<meta name="description" content="How to set up a JRuby project using the jruby-complete.jar using Bundler to manage gem dependencies.">
+<link rel="canonical" href="./Using Bundler with JRuby Complete - Atomic Spin_files/Using Bundler with JRuby Complete - Atomic Spin.htm">
+<link rel="publisher" href="https://plus.google.com/b/110228015808150756207/110228015808150756207">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Using Bundler with JRuby Complete - Atomic Spin">
+<meta property="og:description" content="How to set up a JRuby project using the jruby-complete.jar using Bundler to manage gem dependencies.">
+<meta property="og:url" content="http://spin.atomicobject.com/2013/04/24/bundler-jruby-complete/">
+<meta property="og:site_name" content="Atomic Spin">
+<meta property="fb:admins" content="886890430">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@atomicobject">
+<meta name="twitter:domain" content="Atomic Spin">
+<meta name="twitter:creator" content="@atomicobject">
+<meta name="twitter:image:src" content="">
+<!-- / Yoast WordPress SEO plugin. -->
+
+<script type="text/javascript" async="" src="./Using Bundler with JRuby Complete - Atomic Spin_files/ga.js"></script><script type="text/javascript" async="" src="./Using Bundler with JRuby Complete - Atomic Spin_files/buttons.js"></script><script type="text/javascript">
+(function() {
+	var s = document.createElement('SCRIPT'), s1 = document.getElementsByTagName('SCRIPT')[0];
+	s.type = 'text/javascript';
+	s.async = true;
+	s.src = 'http://widgets.digg.com/buttons.js';
+	s1.parentNode.insertBefore(s, s1);
+})();
+</script>
+<link rel="alternate" type="application/rss+xml" title="Atomic Spin » Feed" href="http://spin.atomicobject.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="Atomic Spin » Comments Feed" href="http://spin.atomicobject.com/comments/feed/">
+
+            <script type="text/javascript">//<![CDATA[
+            // Google Analytics for WordPress by Yoast v4.3.3 | http://yoast.com/wordpress/google-analytics/
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-628002-3']);
+				            _gaq.push(['_setCustomVar',1,'author',"patrick-bacon",3],['_setCustomVar',2,'year','2013',3],['_setCustomVar',3,'category','tools',3],['_trackPageview']);
+            (function () {
+                var ga = document.createElement('script');
+                ga.type = 'text/javascript';
+                ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(ga, s);
+            })();
+            //]]></script>
+			<link rel="alternate" type="application/rss+xml" title="Atomic Spin » Using Bundler with JRuby Complete Comments Feed" href="http://spin.atomicobject.com/2013/04/24/bundler-jruby-complete/feed/">
+<link rel="stylesheet" id="output-css" href="./Using Bundler with JRuby Complete - Atomic Spin_files/output.css" type="text/css" media="all">
+<link rel="stylesheet" id="nrelate-style-common-0-52-4-css" href="./Using Bundler with JRuby Complete - Atomic Spin_files/nrelate-panels-common.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="fancybox-css" href="./Using Bundler with JRuby Complete - Atomic Spin_files/fancybox.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-syntax-css-css" href="./Using Bundler with JRuby Complete - Atomic Spin_files/wp-syntax.css" type="text/css" media="all">
+<link rel="stylesheet" id="sharedaddy-css" href="./Using Bundler with JRuby Complete - Atomic Spin_files/sharing.css" type="text/css" media="all">
+  <script type="text/javascript">var nr_domain = "spin.atomicobject.com", nr_is_home = 0, nr_pageurl = 'http://spin.atomicobject.com/2013/04/24/bundler-jruby-complete/';</script>
+  <script async="" type="text/javascript" id="nrelate_loader_script" data-nrelate-options="{&quot;plugins&quot;:{&quot;related&quot;:{&quot;cssstyle&quot;:&quot;none&quot;,&quot;thumbsize&quot;:110,&quot;widgetstyle&quot;:0}}}" src="./Using Bundler with JRuby Complete - Atomic Spin_files/nrelate_js.min.js"></script><script type="text/javascript" src="./Using Bundler with JRuby Complete - Atomic Spin_files/jquery.js"></script>
+<script type="text/javascript" src="./Using Bundler with JRuby Complete - Atomic Spin_files/jquery-migrate.min.js"></script>
+<script type="text/javascript" src="./Using Bundler with JRuby Complete - Atomic Spin_files/comment-reply.min.js"></script>
+<script type="text/javascript" src="./Using Bundler with JRuby Complete - Atomic Spin_files/jquery.fancybox.js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://spin.atomicobject.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://d37rcl8t6g8sj5.cloudfront.net/wp-includes/wlwmanifest.xml"> 
+
+<link rel="shortlink" href="http://spin.atomicobject.com/?p=96286">
+
+<script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
+
+<!-- Fancybox for WordPress v3.0.1 -->
+<script type="text/javascript">
+jQuery(function(){
+
+jQuery.fn.getTitle = function() { // Copy the title of every IMG tag and add it to its parent A so that fancybox can show titles
+	var arr = jQuery("a.fancybox");
+	jQuery.each(arr, function() {
+		var title = jQuery(this).children("img").attr("title");
+		jQuery(this).attr('title',title);
+	})
+}
+
+// Supported file extensions
+var thumbnails = jQuery("a:has(img)").not(".nolightbox").filter( function() { return /\.(jpe?g|png|gif|bmp)$/i.test(jQuery(this).attr('href')) });
+
+thumbnails.addClass("fancybox").attr("rel","fancybox").getTitle();
+jQuery("a.fancybox").fancybox({
+	'cyclic': false,
+	'autoScale': true,
+	'padding': 10,
+	'opacity': true,
+	'speedIn': 500,
+	'speedOut': 500,
+	'changeSpeed': 300,
+	'overlayShow': true,
+	'overlayOpacity': "0.3",
+	'overlayColor': "#666666",
+	'titleShow': true,
+	'titlePosition': 'inside',
+	'enableEscapeButton': true,
+	'showCloseButton': true,
+	'showNavArrows': true,
+	'hideOnOverlayClick': true,
+	'hideOnContentClick': false,
+	'width': 560,
+	'height': 340,
+	'transitionIn': "fade",
+	'transitionOut': "fade",
+	'centerOnScroll': true
+});
+
+
+})
+</script>
+<!-- END Fancybox for WordPress -->
+<style type="text/css">
+#author-bio-box {
+	float:left;
+	width:575px;
+	background: url('http://d37rcl8t6g8sj5.cloudfront.net/wp-content/themes/spin/images/ao-icon-comment.png') no-repeat 475px -71px #e3e7ea;
+	border: 1px solid #bbb;
+	box-shadow: 5px 5px 2px #888;
+	padding: 5px;
+        margin-bottom: 35px;
+}
+#author-bio-box img {
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 2px;
+        padding: 8px
+}
+#author-bio-box .author-name {
+	font-weight: bold;
+	margin: 0px;
+	font-size: 14px;
+}
+#author-bio-box p {
+	font-size: 10px;
+	line-height: 14px;
+}
+#author-bio-box thead th {
+	border: 0;
+}
+#author-bio-box tbody {
+	border: 0;
+}
+.bio-spacer { min-height:44px; padding: 1px; display: block; clear: both; border:1px;}
+.bio-socials {
+	border-top:solid 1px;
+	border-bottom:none;
+	border-left:none;
+	border-right:none;
+	width: 575px;
+	height: 32px;
+	clear: both;
+}
+</style>    <!-- Typekit for Spin Production Site -->
+    <script type="text/javascript" src="./Using Bundler with JRuby Complete - Atomic Spin_files/gov5cku.js"></script>
+    <style type="text/css">.tk-ff-din-web{font-family:"ff-din-web-1","ff-din-web-2",sans-serif;}.tk-ff-market-web{font-family:"ff-market-web-1","ff-market-web-2",cursive;}</style><link rel="stylesheet" href="http://use.typekit.com/c/73f743/ff-din-web-1:i3:i4:i6:i7:i9:n3:n4:n6:n7:n9,ff-market-web-1:n4.Tq4:F:2,TkM:F:2,Tmq:F:2,Tc8:F:2,Tq1:F:2,Tq5:F:2,TkL:F:2,Tq2:F:2,TcY:F:2,Tq3:F:2,Y03:F:2/d?3bb2a6e53c9684ffdc9a9bf01b5b2a62ec6379d745fd2575909b9342fc2b3f1d5037810b287857f66a9528de5fe97b28e55445305f49e5af01550d206dace9afb3ab1b7394442cef62345a5e7d0f6b30e095c0f299df8ede70b9b2108cb9af1f2f707668303a0e2291f3bd95d1715badc091aef9ef85b74ce87b85058382856840355b7a5c09707f5143098dc898aea439f9fb8515a23654990f338e5f7969304e"><script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    
+<!-- Dynamic Widgets v1.5.4 by QURL - http://www.qurl.nl //-->
+		<link rel="stylesheet" id="custom-css-css" type="text/css" href="./Using Bundler with JRuby Complete - Atomic Spin_files/saved_resource">
+		<!-- ## NXS/OG ## -->
+<!-- ## NXS/OG ## -->
+
+<link rel="stylesheet" type="text/css" id="gravatar-card-css" href="./Using Bundler with JRuby Complete - Atomic Spin_files/hovercard.css"><link rel="stylesheet" type="text/css" id="gravatar-card-services-css" href="./Using Bundler with JRuby Complete - Atomic Spin_files/services.css"><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}
+.fb_invisible{display:none}
+.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}
+.fb_reset > div{overflow:hidden}
+.fb_link img{border:none}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}
+.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}
+.fb_dialog_content{background:#fff;color:#333}
+.fb_dialog_close_icon{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px;top:8px\9;right:7px\9}
+.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}
+.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}
+.fb_dialog_close_icon:hover{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}
+.fb_dialog_close_icon:active{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}
+.fb_dialog_loader{background-color:#f2f2f2;border:1px solid #606060;font-size:24px;padding:20px}
+.fb_dialog_top_left,
+.fb_dialog_top_right,
+.fb_dialog_bottom_left,
+.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}
+.fb_dialog_top_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}
+.fb_dialog_top_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}
+.fb_dialog_bottom_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}
+.fb_dialog_bottom_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}
+.fb_dialog_vert_left,
+.fb_dialog_vert_right,
+.fb_dialog_horiz_top,
+.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}
+.fb_dialog_vert_left,
+.fb_dialog_vert_right{width:10px;height:100%}
+.fb_dialog_vert_left{margin-left:-10px}
+.fb_dialog_vert_right{right:0;margin-right:-10px}
+.fb_dialog_horiz_top,
+.fb_dialog_horiz_bottom{width:100%;height:10px}
+.fb_dialog_horiz_top{margin-top:-10px}
+.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}
+.fb_dialog_iframe{line-height:0}
+.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3b5998;color:#fff;font-size:14px;font-weight:bold;margin:0}
+.fb_dialog_content .dialog_title > span{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif)
+no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}
+body.fb_hidden{-webkit-transform:none;height:100%;margin:0;left:-10000px;overflow:visible;position:absolute;top:-10000px;width:100%
+}
+.fb_dialog.fb_dialog_mobile.loading{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif)
+white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}
+.fb_dialog.fb_dialog_mobile.loading.centered{max-height:590px;min-height:590px;max-width:500px;min-width:500px}
+#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;left:0;top:0;width:100%;min-height:100%;z-index:10000}
+#fb-root #fb_dialog_ipad_overlay.hidden{display:none}
+.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}
+.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0 0, 0 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}
+.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%
+}
+.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px
+}
+.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px
+}
+.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0 0, 0 100%, from(#4966A6),
+color-stop(0.5, #355492), to(#2A4887));border:1px solid #29447e;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset,
+rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}
+.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}
+.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}
+.fb_dialog_content .dialog_content{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}
+.fb_dialog_content .dialog_footer{background:#f2f2f2;border:1px solid #555;border-top-color:#ccc;height:40px}
+#fb_dialog_loader_close{float:left}
+.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}
+.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}
+.fb_iframe_widget{display:inline-block;position:relative}
+.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}
+.fb_iframe_widget iframe{position:absolute}
+.fb_iframe_widget_lift{z-index:1}
+.fb_hide_iframes iframe{position:relative;left:-10000px}
+.fb_iframe_widget_loader{position:relative;display:inline-block}
+.fb_iframe_widget_fluid{display:inline}
+.fb_iframe_widget_fluid span{width:100%}
+.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}
+.fb_iframe_widget_loader .FB_Loader{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}
+.fb_connect_bar_container div,
+.fb_connect_bar_container span,
+.fb_connect_bar_container a,
+.fb_connect_bar_container img,
+.fb_connect_bar_container strong{background:none;border-spacing:0;border:0;direction:ltr;font-style:normal;font-variant:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal;vertical-align:baseline}
+.fb_connect_bar_container{position:fixed;left:0 !important;right:0 !important;height:42px !important;padding:0 25px !important;margin:0 !important;vertical-align:middle !important;border-bottom:1px solid #333 !important;background:#3b5998 !important;z-index:99999999 !important;overflow:hidden !important}
+.fb_connect_bar_container_ie6{position:absolute;top:expression(document.compatMode=="CSS1Compat"? document.documentElement.scrollTop+"px":body.scrollTop+"px")}
+.fb_connect_bar{position:relative;margin:auto;height:100%;width:100%;padding:6px 0 0 0 !important;background:none;color:#fff !important;font-family:"lucida grande", tahoma, verdana, arial, sans-serif !important;font-size:13px !important;font-style:normal !important;font-variant:normal !important;font-weight:normal !important;letter-spacing:normal !important;line-height:1 !important;text-decoration:none !important;text-indent:0 !important;text-shadow:none !important;text-transform:none !important;white-space:normal !important;word-spacing:normal !important}
+.fb_connect_bar a:hover{color:#fff}
+.fb_connect_bar .fb_profile img{height:30px;width:30px;vertical-align:middle;margin:0 6px 5px 0}
+.fb_connect_bar div a,
+.fb_connect_bar span,
+.fb_connect_bar span a{color:#bac6da;font-size:11px;text-decoration:none}
+.fb_connect_bar .fb_buttons{float:right;margin-top:7px}
+.fb_edge_widget_with_comment{position:relative;*z-index:1000}
+.fb_edge_widget_with_comment span.fb_edge_comment_widget{position:absolute}
+.fb_edge_widget_with_comment span.fb_send_button_form_widget{z-index:1}
+.fb_edge_widget_with_comment span.fb_send_button_form_widget .FB_Loader{left:0;top:1px;margin-top:6px;margin-left:0;background-position:50% 50%;background-color:#fff;height:150px;width:394px;border:1px #666 solid;border-bottom:2px solid #283e6c;z-index:1}
+.fb_edge_widget_with_comment span.fb_send_button_form_widget.dark .FB_Loader{background-color:#000;border-bottom:2px solid #ccc}
+.fb_edge_widget_with_comment span.fb_send_button_form_widget.siderender
+.FB_Loader{margin-top:0}
+.fbpluginrecommendationsbarleft,
+.fbpluginrecommendationsbarright{position:fixed !important;bottom:0;z-index:999}
+.fbpluginrecommendationsbarleft{left:10px}
+.fbpluginrecommendationsbarright{right:10px}</style></head>
+
+<body class="single single-post postid-96286 single-format-standard windows chrome ch29-0" style=""><div id="nrelate_related_0-api_call" style="display: none;"><iframe frameborder="0"></iframe></div>
+
+<div id="wrapper" class="hfeed">   
+
+    <div id="header">
+    
+            <div id="atomic-icon"></div>
+    <div id="branding">
+    <div id="atomic-branding">
+      <a href="http://spin.atomicobject.com/"><img src="./Using Bundler with JRuby Complete - Atomic Spin_files/AO-wordmark-white.png" alt="Atomic Object Spin"></a>
+      <div id="sub-title">Atomic Object's Blog On Software Design &amp; Development</div>
+    </div>
+    		</div><!--  #branding -->
+	    
+	    <div id="access">
+	    		
+	    	<div class="skip-link"><a href="http://spin.atomicobject.com/2013/04/24/bundler-jruby-complete/#content" title="Skip navigation to the content">Skip to content</a></div><!-- .skip-link -->
+	    		
+	    	<div class="menu"><ul id="menu-main-navigation" class="sf-menu"><li id="menu-item-80974" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-80974"><a href="http://spin.atomicobject.com/">Main</a></li>
+<li id="menu-item-77016" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-77016"><a href="http://spin.atomicobject.com/category/business-of-software/">Business of Software</a></li>
+<li id="menu-item-77163" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-77163"><a href="http://spin.atomicobject.com/category/process-practices/">Process &amp; Practices</a></li>
+<li id="menu-item-77018" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-77018"><a href="http://spin.atomicobject.com/category/design-development/">Design &amp; Development</a></li>
+<li id="menu-item-77015" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-77015"><a href="http://spin.atomicobject.com/category/company/">Company</a></li>
+</ul></div>	        
+		</div><!-- #access -->
+		
+		
+	</div><!-- #header-->
+    <div id="meta_info_wrapper"><div id="meta_info"><h3><a href="http://detroit.atomicobject.com/?utm_source=spin&utm_medium=header&utm_campaign=aod-hiring" title="Visit our Detroit info page">We're hiring!</a></h3><p>We're actively seeking developers for our new Detroit location. <a href="http://detroit.atomicobject.com/?utm_source=spin&utm_medium=header&utm_campaign=aod-hiring" class="readmore" title="Visit our Detroit info page">Learn more</a></p></div></div>   
+    <div id="main">
+    
+		<div id="container">
+			
+						
+			<div id="content">
+		
+    	        
+				<div id="nav-above" class="navigation">
+					<div class="nav-previous"><a href="http://spin.atomicobject.com/2013/04/23/values-that-matter-to-me/" rel="prev"><span class="meta-nav">«</span> Three Values that Matter to Me in a Work Environment</a></div>
+					<div class="nav-next"><a href="http://spin.atomicobject.com/2013/04/25/design-for-good-2013/" rel="next">Design for Good 2013 <span class="meta-nav">»</span></a></div>
+				</div>
+
+			
+				<div id="post-96286" class="post-96286 post type-post status-publish format-standard hentry category-tools tag-bundler tag-jruby tag-jruby-complete tag-ruby tag-rubygems"><h1 class="entry-title">Using Bundler with JRuby Complete</h1>
+<div class="entry-meta"><span class="meta-prep meta-prep-author">By </span><span class="author vcard"><a class="url fn n" href="http://spin.atomicobject.com/author/bacon/" title="View all posts by Patrick Bacon">Patrick Bacon</a></span><span class="meta-sep meta-sep-entry-date"> | </span><span class="meta-prep meta-prep-entry-date">Published: </span><span class="entry-date"><abbr class="published" title="2013-04-24T08:00:41-0400">April 24, 2013</abbr></span></div><!-- .entry-meta -->
+					<div class="entry-content">
+<div addthis:url="http://spin.atomicobject.com/2013/04/24/bundler-jruby-complete/" addthis:title="Using Bundler with JRuby Complete " class="addthis_toolbox addthis_default_style ">
+<a class="addthis_button_tweet at300b"><iframe frameborder="0" role="presentation" scrolling="no" allowtransparency="true" scrollbars="no" style="width:110px; height:20px;" src="./Using Bundler with JRuby Complete - Atomic Spin_files/tweet027.htm"></iframe></a><a class="addthis_button_linkedin_counter at300b"><iframe frameborder="0" role="presentation" scrolling="no" allowtransparency="true" scrollbars="no" style="width:100px; height:18px;" src="./Using Bundler with JRuby Complete - Atomic Spin_files/linkedin021.htm"></iframe></a> <a class="addthis_button_facebook_like at300b" fb:like:layout="button_count"><div class="fb-like fb_edge_widget_with_comment fb_iframe_widget" data-ref=".Ui35aEhF5wQ.like" data-layout="button_count" data-show_faces="false" data-action="like" data-width="90" data-font="arial" data-href="http://spin.atomicobject.com/2013/04/24/bundler-jruby-complete/" data-send="false" fb-xfbml-state="rendered"><span style="height: 20px; width: 71px;"><iframe id="f19e564704" name="ffb8d62c8" scrolling="no" title="Like this content on Facebook." class="fb_ltr" src="./Using Bundler with JRuby Complete - Atomic Spin_files/like.htm" style="border: none; overflow: hidden; height: 20px; width: 71px;"></iframe></span></div></a><a class="addthis_button_google_plusone at300b" g:plusone:annotation="bubble"><div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; background-color: transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 70px; height: 15px; background-position: initial initial; background-repeat: initial initial;"><iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 70px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 15px;" tabindex="0" vspace="0" width="100%" id="I0_1378744682322" name="I0_1378744682322" src="./Using Bundler with JRuby Complete - Atomic Spin_files/fastbutton.htm" data-gapiattached="true" title="+1"></iframe></div></a> <a class="addthis_counter addthis_pill_style addthis_nonzero" href="http://spin.atomicobject.com/2013/04/24/bundler-jruby-complete/#" style="display: inline-block;"><a class="atc_s addthis_button_compact"><span></span></a><a class="addthis_button_expanded" target="_blank" title="View more services" href="http://spin.atomicobject.com/2013/04/24/bundler-jruby-complete/#">1</a></a><div class="atclear"></div></div>
+<p>I am currently working on a project using JRuby for a server-side component. One of the team’s deployment goals has been to avoid relying on the production environment having JRuby installed in it (either globally or with <span class="caps">RVM</span>). Instead we have been using the jruby-complete.jar to bundle the entire JRuby runtime with our application. This post <a href="http://spin.atomicobject.com/2010/02/01/the-case-for-embedding-jruby-complete-into-your-application/">that argues for using jruby-complete</a> still does a good job of explaining why this is a good thing (even if it is a few years old). </p>
+<p>When starting this project, I already had a pretty good blueprint on how to <a href="http://spin.atomicobject.com/2010/02/01/running-a-ruby-application-with-jruby-complete/">run a Ruby application with jruby-complete</a>. However, in the time since that post was written <a href="http://gembundler.com/" onclick="javascript:_gaq.push([&#39;_trackEvent&#39;,&#39;outbound-article&#39;,&#39;http://gembundler.com/&#39;]);">Bundler</a> has become the defacto way of managing gem dependencies. In this post, I want to share how we are using jruby-complete with Bundler in our development and production environments.</p>
+<p><span id="more-96286"></span><br>
+</p><h2>Bundler</h2>
+<p></p>
+<p>In order to use Bundler to manage your project’s gems, you first need to install it. We chose to put it in <code>vendor/gem_home</code>:</p>
+
+<div class="wp_syntax"><table><tbody><tr><td class="code"><pre class="bash" style="font-family:monospace;">  java <span style="color: #660033;">-jar</span> vendor<span style="color: #000000; font-weight: bold;">/</span>jruby-complete-1.7.0.jar <span style="color: #660033;">-S</span> gem <span style="color: #c20cb9; font-weight: bold;">install</span> <span style="color: #660033;">-i</span> vendor<span style="color: #000000; font-weight: bold;">/</span>gem_home <span style="color: #660033;">--no-rdoc</span> <span style="color: #660033;">--no-ri</span> bundler</pre></td></tr></tbody></table></div>
+
+<p>In order for JRuby to know where to find the installed Bundler gem, you need to set the <code>GEM_HOME</code> and <code>GEM_PATH</code> environment variables to point to <code>vendor/gem_home</code>. You should be able to see that Bundler has been installed by doing a <code>gem list</code>.</p>
+
+<div class="wp_syntax"><table><tbody><tr><td class="code"><pre class="bash" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">&gt;</span> <span style="color: #007800;">GEM_HOME</span>=vendor<span style="color: #000000; font-weight: bold;">/</span>gem_home <span style="color: #007800;">GEM_PATH</span>=vendor<span style="color: #000000; font-weight: bold;">/</span>gem_home java <span style="color: #660033;">-jar</span> vendor<span style="color: #000000; font-weight: bold;">/</span>jruby-complete-1.7.0.jar <span style="color: #660033;">-S</span> gem list
+&nbsp;
+<span style="color: #000000; font-weight: bold;">***</span> LOCAL GEMS <span style="color: #000000; font-weight: bold;">***</span>
+&nbsp;
+bundler <span style="color: #7a0874; font-weight: bold;">(</span>1.3.5<span style="color: #7a0874; font-weight: bold;">)</span></pre></td></tr></tbody></table></div>
+
+<h2>Bundler with Binstubs</h2>
+<p>My preference is to install all of the gems specified in the Gemfile into a separate directory. For this you can use the <code>--path</code> command line option. In addition you should use the <code>--binstubs</code> option to get a <code>bin</code> directory containing scripts that can be used to run gems without having to use “bundle exec.” We ran into all sorts of trouble trying to <code>bundle exec</code> using jruby-complete, but no problems at all with the binstubs scripts.</p>
+<p>For example, using the following Gemfile:</p>
+
+<div class="wp_syntax"><table><tbody><tr><td class="code"><pre class="ruby" style="font-family:monospace;">source <span style="color:#996600;">'https://rubygems.org'</span>
+&nbsp;
+gem <span style="color:#996600;">"rake"</span>
+gem <span style="color:#996600;">"rspec"</span>
+gem <span style="color:#996600;">"hamsterdam"</span></pre></td></tr></tbody></table></div>
+
+<p>I can install the specified Gems like so:</p>
+
+<div class="wp_syntax"><table><tbody><tr><td class="code"><pre class="bash" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">&gt;</span> <span style="color: #007800;">GEM_HOME</span>=vendor<span style="color: #000000; font-weight: bold;">/</span>gem_home <span style="color: #007800;">GEM_PATH</span>=vendor<span style="color: #000000; font-weight: bold;">/</span>gem_home java <span style="color: #660033;">-jar</span> vendor<span style="color: #000000; font-weight: bold;">/</span>jruby-complete-1.7.0.jar <span style="color: #660033;">-S</span> bundle <span style="color: #c20cb9; font-weight: bold;">install</span> <span style="color: #660033;">--path</span>=vendor<span style="color: #000000; font-weight: bold;">/</span>bundle <span style="color: #660033;">--binstubs</span>
+&nbsp;
+Fetching gem metadata from https:<span style="color: #000000; font-weight: bold;">//</span>rubygems.org<span style="color: #000000; font-weight: bold;">/</span>.........
+Fetching gem metadata from https:<span style="color: #000000; font-weight: bold;">//</span>rubygems.org<span style="color: #000000; font-weight: bold;">/</span>..
+Installing rake <span style="color: #7a0874; font-weight: bold;">(</span>10.0.4<span style="color: #7a0874; font-weight: bold;">)</span>
+Installing diff-lcs <span style="color: #7a0874; font-weight: bold;">(</span>1.2.4<span style="color: #7a0874; font-weight: bold;">)</span>
+Installing hamster <span style="color: #7a0874; font-weight: bold;">(</span>0.4.3<span style="color: #7a0874; font-weight: bold;">)</span>
+Installing hamsterdam <span style="color: #7a0874; font-weight: bold;">(</span>1.0.6<span style="color: #7a0874; font-weight: bold;">)</span>
+Installing rspec-core <span style="color: #7a0874; font-weight: bold;">(</span>2.13.1<span style="color: #7a0874; font-weight: bold;">)</span>
+Installing rspec-expectations <span style="color: #7a0874; font-weight: bold;">(</span>2.13.0<span style="color: #7a0874; font-weight: bold;">)</span>
+Installing rspec-mocks <span style="color: #7a0874; font-weight: bold;">(</span>2.13.1<span style="color: #7a0874; font-weight: bold;">)</span>
+Installing rspec <span style="color: #7a0874; font-weight: bold;">(</span>2.13.0<span style="color: #7a0874; font-weight: bold;">)</span>
+Using bundler <span style="color: #7a0874; font-weight: bold;">(</span>1.3.5<span style="color: #7a0874; font-weight: bold;">)</span>
+Your bundle is <span style="color: #7a0874; font-weight: bold;">complete</span><span style="color: #000000; font-weight: bold;">!</span>
+It was installed into .<span style="color: #000000; font-weight: bold;">/</span>vendor<span style="color: #000000; font-weight: bold;">/</span>bundle</pre></td></tr></tbody></table></div>
+
+<h2>Rake in the Gemfile</h2>
+<p>In a normal <span class="caps">MRI</span> environment, you will almost certainly have Rake installed as a system gem. But in this environment, we are listing rake in the Gemfile and using the binstub to run it:</p>
+
+<div class="wp_syntax"><table><tbody><tr><td class="code"><pre class="bash" style="font-family:monospace;"><span style="color: #007800;">GEM_HOME</span>=vendor<span style="color: #000000; font-weight: bold;">/</span>gem_home <span style="color: #007800;">GEM_PATH</span>=vendor<span style="color: #000000; font-weight: bold;">/</span>gem_home java <span style="color: #660033;">-jar</span> vendor<span style="color: #000000; font-weight: bold;">/</span>jruby-complete-1.7.0.jar <span style="color: #660033;">-S</span> bin<span style="color: #000000; font-weight: bold;">/</span>rake <span style="color: #660033;">-T</span></pre></td></tr></tbody></table></div>
+
+<h2>Package and Ignore</h2>
+<p>I think it is a good idea to <em>package</em> the bundled gems and add <code>vendor/bundle</code> to your <code>.gitignore</code> (or equivalent). Packaging the gems puts them into <code>vendor/cache</code> and means that you can bundle install without having to access rubygems.org.</p>
+
+<div class="wp_syntax"><table><tbody><tr><td class="code"><pre class="bash" style="font-family:monospace;"><span style="color: #007800;">GEM_HOME</span>=vendor<span style="color: #000000; font-weight: bold;">/</span>gem_home <span style="color: #007800;">GEM_PATH</span>=vendor<span style="color: #000000; font-weight: bold;">/</span>gem_home java <span style="color: #660033;">-jar</span> vendor<span style="color: #000000; font-weight: bold;">/</span>jruby-complete-1.7.0.jar <span style="color: #660033;">-S</span> bundle package</pre></td></tr></tbody></table></div>
+
+<h2>Aliases</h2>
+<p>At this point you have a functioning environment that can run your Ruby code using jruby-complete with its bundled gems. The biggest pain now is the long commands that need to be run. I have been using bash aliases to make this less painful. For example:</p>
+
+<div class="wp_syntax"><table><tbody><tr><td class="code"><pre class="bash" style="font-family:monospace;">  <span style="color: #7a0874; font-weight: bold;">alias</span> <span style="color: #007800;">jruby</span>=<span style="color: #ff0000;">"PATH=bin:<span style="color: #007800;">$PATH</span> GEM_HOME=vendor/gem_home GEM_PATH=vendor/gem_home java -jar vendor/jruby-complete-1.7.0.jar"</span>
+  <span style="color: #7a0874; font-weight: bold;">alias</span> <span style="color: #007800;">rspec</span>=<span style="color: #ff0000;">"jruby -S rspec"</span>
+  <span style="color: #7a0874; font-weight: bold;">alias</span> <span style="color: #007800;">rake</span>=<span style="color: #ff0000;">"jruby -S rake"</span>
+  <span style="color: #7a0874; font-weight: bold;">alias</span> <span style="color: #007800;">bundle</span>=<span style="color: #ff0000;">"jruby -S bundle"</span></pre></td></tr></tbody></table></div>
+
+<p>Put this in an <code>environment</code> file and source it when working on this project. If you have <span class="caps">RVM</span> installed, you can have <span class="caps">RVM</span> source the environment for you when you cd into the project directory automatically. Just put <code>source environment</code> in the <code>.rvmrc</code> file.</p>
+<h2>Conclusion</h2>
+<p>If I am going to be using the jruby-complete jar in production, then I want to also be using it in development if at all possible. It turns out that it is very possible, and in fact quite convenient once you get the environment configured as I have described above.<br>
+&nbsp;</p>
+<div class="nr_related_placeholder" data-permalink="http://spin.atomicobject.com/2013/04/24/bundler-jruby-complete/" data-title="Using Bundler with JRuby Complete"><div id="nrelate_related_0" class="nrelate nrelate_related nr_clear nrelate_none nr_text nr_1col nr_setup"><h3 class="nr_title"><span>You might also like:</span></h3><div class="nr_inner"><ul><li><a class="nr_rc_link nr_link nr_internal nr_unit_1 nr_col_1 nr_row_1 nr_first_col nr_first_row nr_odd_row nr_odd_col" data-tracking-params="{&quot;nrid&quot;:&quot;42754c8a268c9f8b6a26bc70fc94c16c&quot;}" href="http://spin.atomicobject.com/2013/09/09/5-unix-commands/" style="min-height: 0px;"><span class="nr_post_title">5 Unix Commands I Wish I'd Discovered Years Earlier</span></a></li><li><a class="nr_rc_link nr_link nr_internal nr_unit_2 nr_col_2 nr_row_1 nr_first_row nr_odd_row nr_even_col" data-tracking-params="{&quot;nrid&quot;:&quot;c5d016b6908eae8ea521b4baf90f1102&quot;}" href="http://spin.atomicobject.com/2013/09/08/framework-documentation/" style="min-height: 0px;"><span class="nr_post_title">Framework Docs Are a First-Class Citizen</span></a></li><li><a class="nr_rc_link nr_link nr_internal nr_unit_3 nr_col_3 nr_row_1 nr_first_row nr_odd_row nr_odd_col" data-tracking-params="{&quot;nrid&quot;:&quot;a3a69ec1978690cc30a88c2e18e5f901&quot;}" href="http://spin.atomicobject.com/2013/09/07/leveraging-intuition/" style="min-height: 0px;"><span class="nr_post_title">Leveraging Your Intuition</span></a></li><li><a class="nr_rc_link nr_link nr_internal nr_unit_4 nr_col_4 nr_row_1 nr_last_col nr_first_row nr_odd_row nr_even_col" data-tracking-params="{&quot;nrid&quot;:&quot;af6e0bec50e1594f2272ce2ee5da1f05&quot;}" href="http://spin.atomicobject.com/2013/09/06/ruby-off-rails-experience/" style="min-height: 0px;"><span class="nr_post_title">My Experiences with Ruby off Rails</span></a></li></ul><div style="clear:both;"></div></div></div></div>
+<div id="author-bio-box"><img alt="" src="./Using Bundler with JRuby Complete - Atomic Spin_files/fa719c0a9dc02461d466b0c4dd1a9023" class="avatar avatar-80 photo grav-hashed grav-hijack" height="80" width="80" id="grav-fa719c0a9dc02461d466b0c4dd1a9023-0"><span class="author-name"> Patrick Bacon (<a href="http://spin.atomicobject.com/author/bacon/">40 Posts</a>)</span>
+<p>I’m a software developer at Atomic Object (since 2005) in Grand Rapids, MI.</p>
+<div class="bio-socials"><a rel="author" href="http://spin.atomicobject.com/author/bacon/"><img class="bio-img" src="./Using Bundler with JRuby Complete - Atomic Spin_files/author_info.png" alt="Author Info"></a><a href="https://plus.google.com/102643556486710617554" onclick="javascript:_gaq.push([&#39;_trackEvent&#39;,&#39;outbound-article&#39;,&#39;http://plus.google.com/102643556486710617554&#39;]);" target="_blank"><img class="bio-img" src="./Using Bundler with JRuby Complete - Atomic Spin_files/Google_Plus.png"></a><a href="http://www.linkedin.com/in/patrickbacon" onclick="javascript:_gaq.push([&#39;_trackEvent&#39;,&#39;outbound-article&#39;,&#39;http://www.linkedin.com/in/patrickbacon&#39;]);" target="_blank"><img class="bio-img" src="./Using Bundler with JRuby Complete - Atomic Spin_files/Linkedin.png"></a><a href="https://twitter.com/patrickbacon" onclick="javascript:_gaq.push([&#39;_trackEvent&#39;,&#39;outbound-article&#39;,&#39;http://twitter.com/patrickbacon&#39;]);" target="_blank"><img class="bio-img" src="./Using Bundler with JRuby Complete - Atomic Spin_files/twitter-social-iconB.png"></a><a href="https://github.com/baconpat" onclick="javascript:_gaq.push([&#39;_trackEvent&#39;,&#39;outbound-article&#39;,&#39;http://github.com/baconpat&#39;]);" target="_blank"><img class="bio-img" src="./Using Bundler with JRuby Complete - Atomic Spin_files/Github.png"></a></div>
+</div>
+
+											</div><!-- .entry-content -->
+					<div class="entry-utility"><span class="cat-links">This entry was posted in <a href="http://spin.atomicobject.com/category/design-development/tools/" title="View all posts in Tools" rel="category tag">Tools</a></span><span class="tag-links">  and tagged <a href="http://spin.atomicobject.com/tag/bundler/" rel="tag">Bundler</a>, <a href="http://spin.atomicobject.com/tag/jruby/" rel="tag">jruby</a>, <a href="http://spin.atomicobject.com/tag/jruby-complete/" rel="tag">jruby-complete</a>, <a href="http://spin.atomicobject.com/tag/ruby/" rel="tag">ruby</a>, <a href="http://spin.atomicobject.com/tag/rubygems/" rel="tag">rubygems</a></span>. Bookmark the <a href="./Using Bundler with JRuby Complete - Atomic Spin_files/Using Bundler with JRuby Complete - Atomic Spin.htm" title="Permalink to Using Bundler with JRuby Complete">permalink</a>. Trackbacks are closed, but you can <a class="comment-link" href="http://spin.atomicobject.com/2013/04/24/bundler-jruby-complete/#respond" title="Post a comment">post a comment</a>.</div><!-- .entry-utility -->
+				</div><!-- #post -->
+		
+			<div id="nav-below" class="navigation">
+				<div class="nav-previous"><a href="http://spin.atomicobject.com/2013/04/23/values-that-matter-to-me/" rel="prev"><span class="meta-nav">«</span> Three Values that Matter to Me in a Work Environment</a></div>
+				<div class="nav-next"><a href="http://spin.atomicobject.com/2013/04/25/design-for-good-2013/" rel="next">Design for Good 2013 <span class="meta-nav">»</span></a></div>
+			</div>
+
+			<div id="comments">
+
+
+								<div id="respond" class="comment-respond">
+				<h3 id="reply-title" class="comment-reply-title">Post a Comment <small><a rel="nofollow" id="cancel-comment-reply-link" href="http://spin.atomicobject.com/2013/04/24/bundler-jruby-complete/#respond" style="display:none;">Cancel reply</a></small></h3>
+									<form action="http://spin.atomicobject.com/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+																			<p class="comment-notes">Your email is <em>never</em> published nor shared. Required fields are marked <span class="required">*</span></p>							<div id="form-section-author" class="form-section"><div class="form-label"><label for="author">Name</label> <span class="required">*</span></div><div class="form-input"><input id="author" name="author" type="text" value="" size="30" maxlength="20" tabindex="3" aria-required="true"></div></div><!-- #form-section-author .form-section -->
+<div id="form-section-email" class="form-section"><div class="form-label"><label for="email">Email</label> <span class="required">*</span></div><div class="form-input"><input id="email" name="email" type="text" value="" size="30" maxlength="50" tabindex="4" aria-required="true"></div></div><!-- #form-section-email .form-section -->
+<div id="form-section-url" class="form-section"><div class="form-label"><label for="url">Website</label></div><div class="form-input"><input id="url" name="url" type="text" value="" size="30" maxlength="50" tabindex="5"></div></div><!-- #form-section-url .form-section -->
+												<div id="form-section-comment" class="form-section"><div class="form-label"><label for="comment">Comment</label></div><div class="form-textarea"><textarea id="comment" name="comment" cols="45" rows="8" tabindex="6" aria-required="true"></textarea></div></div><!-- #form-section-comment .form-section -->						<div id="form-allowed-tags" class="form-section"><p><span>You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes:</span> <code>&lt;a href="" title=""&gt; &lt;abbr title=""&gt; &lt;acronym title=""&gt; &lt;b&gt; &lt;blockquote cite=""&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=""&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=""&gt; &lt;strike&gt; &lt;strong&gt; </code></p></div>						<p class="form-submit">
+							<input name="submit" type="submit" id="submit" value="Post Comment">
+							<input type="hidden" name="comment_post_ID" value="96286" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+						</p>
+						<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="cea0c76fc7"></p><!-- BEGIN: subscribe to comments reloaded --><p><label for="subscribe-reloaded"><select name="subscribe-reloaded" id="subscribe-reloaded">
+				<option value="none">Don't subscribe</option>
+				<option value="yes" selected="selected">All</option>
+				<option value="replies">Replies to my comments</option>
+				<!-- option value='digest'>Daily digest</option -->
+			</select> Notify me of followup comments via e-mail. You can also <a href="http://spin.atomicobject.com/comment-subscriptions?srp=96286&sra=s">subscribe</a> without commenting.</label></p><!-- END: subscribe to comments reloaded -->					</form>
+							</div><!-- #respond -->
+			        <script type="text/javascript">
+            jQuery(document).ready(function () {
+                jQuery('#commentform').submit(function () {
+                    _gaq.push(
+                            ['_setAccount', 'UA-628002-3'],
+                            ['_trackEvent', 'comment', 'submit']
+                    );
+                });
+            });
+        </script>
+					
+			</div><!-- #comments -->
+		
+			</div><!-- #content -->
+			
+			 
+			
+		</div><!-- #container -->
+		
+
+<div id="primary" class="aside main-aside">
+	<ul class="xoxo">
+<li id="search-2" class="widgetcontainer widget_search"><h3 class="widgettitle"><label for="s">Search</label></h3>
+
+	<form id="searchform" method="get" action="http://spin.atomicobject.com/">
+		<div>
+			<input id="s" name="s" type="text" value="To search, type and hit enter" onfocus="if (this.value == &#39;To search, type and hit enter&#39;) {this.value = &#39;&#39;;}" onblur="if (this.value == &#39;&#39;) {this.value = &#39;To search, type and hit enter&#39;;}" size="32" tabindex="1">
+			<input id="searchsubmit" name="searchsubmit" type="submit" value="Search" tabindex="2">
+		</div>
+	</form></li><li id="text-3" class="widgetcontainer widget_text"><h3 class="widgettitle">About Atomic Object</h3>
+			<div class="textwidget"><p style="font-style: italic;">We design and build world-class software for all sorts of clients.</p>
+<a class="home" href="http://www.atomicobject.com/?utm_source=spin&utm_medium=widget&utm_campaign=about-ao">Atomic Object</a>
+
+<a href="http://www.atomicobject.com/pages/Contact+Us" title="Contact us on our website at atomicobject.com" class="readmore">Contact Us</a></div>
+		</li><li id="categories-2" class="widgetcontainer widget_categories"><h3 class="widgettitle">Categories</h3>
+		<ul>
+	<li class="cat-item cat-item-512"><a href="http://spin.atomicobject.com/category/business-of-software/" title="On planning, budgeting, and building software products">Business of Software</a>
+<ul class="children">
+	<li class="cat-item cat-item-634"><a href="http://spin.atomicobject.com/category/business-of-software/budgeting/" title="View all posts filed under Budgeting">Budgeting</a>
+</li>
+	<li class="cat-item cat-item-632"><a href="http://spin.atomicobject.com/category/business-of-software/marketing/" title="View all posts filed under Marketing">Marketing</a>
+</li>
+	<li class="cat-item cat-item-635"><a href="http://spin.atomicobject.com/category/business-of-software/project-planning/" title="View all posts filed under Project Planning">Project Planning</a>
+</li>
+	<li class="cat-item cat-item-633"><a href="http://spin.atomicobject.com/category/business-of-software/risk/" title="View all posts filed under Risk">Risk</a>
+</li>
+	<li class="cat-item cat-item-575"><a href="http://spin.atomicobject.com/category/business-of-software/startups/" title="View all posts filed under Startups">Startups</a>
+</li>
+	<li class="cat-item cat-item-1257"><a href="http://spin.atomicobject.com/category/business-of-software/women-in-software/" title="View all posts filed under Women in Software">Women in Software</a>
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-536"><a href="http://spin.atomicobject.com/category/company/" title="Everything Atomic, from culture and people to events and reviews">Company</a>
+<ul class="children">
+	<li class="cat-item cat-item-537"><a href="http://spin.atomicobject.com/category/company/community/" title="View all posts filed under Community">Community</a>
+</li>
+	<li class="cat-item cat-item-639"><a href="http://spin.atomicobject.com/category/company/culture/" title="View all posts filed under Culture">Culture</a>
+</li>
+	<li class="cat-item cat-item-538"><a href="http://spin.atomicobject.com/category/company/events/" title="View all posts filed under Events">Events</a>
+</li>
+	<li class="cat-item cat-item-520"><a href="http://spin.atomicobject.com/category/company/news/" title="View all posts filed under News">News</a>
+</li>
+	<li class="cat-item cat-item-522"><a href="http://spin.atomicobject.com/category/company/reviews/" title="View all posts filed under Reviews">Reviews</a>
+</li>
+	<li class="cat-item cat-item-642"><a href="http://spin.atomicobject.com/category/company/workplace/" title="View all posts filed under Workplace">Workplace</a>
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-525"><a href="http://spin.atomicobject.com/category/design-development/" title="Tools, tips and tech for software makers.">Design &amp; Development</a>
+<ul class="children">
+	<li class="cat-item cat-item-513"><a href="http://spin.atomicobject.com/category/design-development/embedded-software/" title="View all posts filed under Embedded Software">Embedded Software</a>
+</li>
+	<li class="cat-item cat-item-1011"><a href="http://spin.atomicobject.com/category/design-development/hardware-design/" title="View all posts filed under Hardware Design">Hardware Design</a>
+</li>
+	<li class="cat-item cat-item-527"><a href="http://spin.atomicobject.com/category/design-development/languages/" title="View all posts filed under Languages">Languages</a>
+</li>
+	<li class="cat-item cat-item-533"><a href="http://spin.atomicobject.com/category/design-development/mobile/" title="View all posts filed under Mobile">Mobile</a>
+</li>
+	<li class="cat-item cat-item-518"><a href="http://spin.atomicobject.com/category/design-development/tools/" title="View all posts filed under Tools">Tools</a>
+</li>
+	<li class="cat-item cat-item-539"><a href="http://spin.atomicobject.com/category/design-development/unix-linux-and-bash/" title="View all posts filed under Unix, Linux, and Bash">Unix, Linux, and Bash</a>
+</li>
+	<li class="cat-item cat-item-1016"><a href="http://spin.atomicobject.com/category/design-development/user-experience-design-development/" title="View all posts filed under User Experience">User Experience</a>
+</li>
+	<li class="cat-item cat-item-576"><a href="http://spin.atomicobject.com/category/design-development/visual-design/" title="View all posts filed under Visual Design">Visual Design</a>
+</li>
+	<li class="cat-item cat-item-535"><a href="http://spin.atomicobject.com/category/design-development/web/" title="View all posts filed under Web">Web</a>
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-1175"><a href="http://spin.atomicobject.com/category/miscellaneous/" title="View all posts filed under Miscellaneous">Miscellaneous</a>
+</li>
+	<li class="cat-item cat-item-516"><a href="http://spin.atomicobject.com/category/process-practices/" title="The how of building high quality software.">Process &amp; Practices</a>
+<ul class="children">
+	<li class="cat-item cat-item-640"><a href="http://spin.atomicobject.com/category/process-practices/estimating/" title="View all posts filed under Estimating">Estimating</a>
+</li>
+	<li class="cat-item cat-item-641"><a href="http://spin.atomicobject.com/category/process-practices/iterative-development/" title="View all posts filed under Iterative Development">Iterative Development</a>
+</li>
+	<li class="cat-item cat-item-637"><a href="http://spin.atomicobject.com/category/process-practices/pairing/" title="View all posts filed under Pairing">Pairing</a>
+</li>
+	<li class="cat-item cat-item-534"><a href="http://spin.atomicobject.com/category/process-practices/project-management/" title="View all posts filed under Project Management">Project Management</a>
+</li>
+	<li class="cat-item cat-item-636"><a href="http://spin.atomicobject.com/category/process-practices/prototyping/" title="View all posts filed under Prototyping">Prototyping</a>
+</li>
+	<li class="cat-item cat-item-514"><a href="http://spin.atomicobject.com/category/process-practices/testing/" title="View all posts filed under Testing">Testing</a>
+</li>
+	<li class="cat-item cat-item-638"><a href="http://spin.atomicobject.com/category/process-practices/usability/" title="View all posts filed under Usability">Usability</a>
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-869"><a href="http://spin.atomicobject.com/category/project-stories/" title="View all posts filed under Project Stories">Project Stories</a>
+</li>
+	<li class="cat-item cat-item-1"><a href="http://spin.atomicobject.com/category/uncategorized/" title="View all posts filed under Uncategorized">Uncategorized</a>
+</li>
+		</ul>
+</li><li id="text-6" class="widgetcontainer widget_text"><h3 class="widgettitle">Stay Connected</h3>
+			<div class="textwidget"><a href="http://spin.atomicobject.com/feed" target="_blank"><img src="./Using Bundler with JRuby Complete - Atomic Spin_files/rss_icon.png" style="margin-right: 5px" alt="rss icon for atomic object"></a>
+<a href="http://twitter.com/atomicobject" onclick="javascript:_gaq.push([&#39;_trackEvent&#39;,&#39;outbound-widget&#39;,&#39;http://twitter.com/atomicobject&#39;]);" target="_blank"><img src="./Using Bundler with JRuby Complete - Atomic Spin_files/twitter_icon.png" style="margin-right: 5px" alt="twitter icon for atomic object"></a>
+<a href="http://facebook.com/atomicobject" onclick="javascript:_gaq.push([&#39;_trackEvent&#39;,&#39;outbound-widget&#39;,&#39;http://facebook.com/atomicobject&#39;]);" target="_blank"><img src="./Using Bundler with JRuby Complete - Atomic Spin_files/fb_icon.png" style="margin-right: 5px" alt="facebook icon for atomic object"></a>
+<a href="http://flickr.com/atomicobject" onclick="javascript:_gaq.push([&#39;_trackEvent&#39;,&#39;outbound-widget&#39;,&#39;http://flickr.com/atomicobject&#39;]);" target="_blank"><img src="./Using Bundler with JRuby Complete - Atomic Spin_files/flickr_icon.png" style="margin-right: 5px" alt="facebook icon for atomic object"></a></div>
+		</li>
+	</ul>
+</div><!-- #primary .aside -->
+
+<div id="secondary" class="aside main-aside">
+	<ul class="xoxo">
+<li id="text-4" class="widgetcontainer widget_text">			<div class="textwidget"><a href="http://greatnotbig.com/?utm_source=spin&utm_medium=banner&utm_campaign=spin" onclick="javascript:_gaq.push([&#39;_trackEvent&#39;,&#39;outbound-widget&#39;,&#39;http://greatnotbig.com/?utm_source=spin&amp;utm_medium=banner&amp;utm_campaign=spin&#39;]);"><img src="./Using Bundler with JRuby Complete - Atomic Spin_files/great-not-big.jpg" alt="Great Not Big" style="margin: 5px 0;"></a>
+Carl is the president and co-founder of <a href="http://www.atomicobject.com/">Atomic Object</a></div>
+		</li>
+	</ul>
+</div><!-- #secondary .aside -->
+
+    </div><!-- #main -->
+    
+        
+
+	<div id="footer">
+    
+            
+        <div id="siteinfo">        
+
+    	Copyright © <a href="http://www.atomicobject.com/">Atomic Object LLC.</a> — Grand Rapids +1 616 776 6020 — Detroit +1 313 444 6010 — <a href="http://www.atomicobject.com/pages/Contact+Us">Contact Us</a>    
+		</div><!-- #siteinfo -->
+    
+    	        
+	</div><!-- #footer -->
+	
+    </div><!-- #wrapper .hfeed -->  
+
+<script type="text/javascript">
+var _sf_async_config={uid:17044,domain:"atomicobject.com"};
+(function(){
+  function loadChartbeat() {
+    window._sf_endpt=(new Date()).getTime();
+    var e = document.createElement('script');
+    e.setAttribute('language', 'javascript');
+    e.setAttribute('type', 'text/javascript');
+    e.setAttribute('src',
+       (("https:" == document.location.protocol) ? "https://s3.amazonaws.com/" : "http://") +
+       "static.chartbeat.com/js/chartbeat.js");
+    document.body.appendChild(e);
+  }
+  var oldonload = window.onload;
+  window.onload = (typeof window.onload != 'function') ?
+     loadChartbeat : function() { oldonload(); loadChartbeat(); };
+})();
+</script>
+	<div style="display:none">
+	<div class="grofile-hash-map-fa719c0a9dc02461d466b0c4dd1a9023">
+	</div>
+	</div>
+<script type="text/javascript">if (typeof(addthis_share) == "undefined"){ addthis_share = {"url_transforms":{"shorten":{"twitter":"bitly"}},"shorteners":{"bitly":{"login":"atomicobject","apiKey":"R_3f9f9f46960e499db1cfd461ef04c4c1"}}};}
+
+var addthis_config = {"data_track_clickback":true,"data_ga_property":"UA-628002-3","data_ga_social":true,"data_track_addressbar":false,"data_track_textcopy":false,"ui_atversion":"300"};
+var addthis_product = 'wpp-3.1';
+</script><script type="text/javascript" src="./Using Bundler with JRuby Complete - Atomic Spin_files/addthis_widget.js"></script><div id="_atssh" style="visibility: hidden; height: 1px; width: 1px; position: absolute; z-index: 100000;"><iframe id="_atssh128" title="AddThis utility frame" style="height: 1px; width: 1px; position: absolute; z-index: 100000; border: 0px; left: 0px; top: 0px;" src="./Using Bundler with JRuby Complete - Atomic Spin_files/sh136.htm"></iframe></div><script type="text/javascript" src="./Using Bundler with JRuby Complete - Atomic Spin_files/core094.js"></script><script type="text/javascript" src="./Using Bundler with JRuby Complete - Atomic Spin_files/devicepx-jetpack.js"></script>
+<script type="text/javascript" src="./Using Bundler with JRuby Complete - Atomic Spin_files/gprofiles.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Using Bundler with JRuby Complete - Atomic Spin_files/wpgroho.js"></script>
+  <script type="text/javascript">
+    (function() {
+      var t   = document.createElement('script');
+      t.type  = 'text/javascript';
+      t.async = true;
+      t.id    = 'gauges-tracker';
+      t.setAttribute('data-site-id', '51f6979ff5a1f521f90000df');
+      t.src = '//secure.gaug.es/track.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(t, s);
+    })();
+  </script>
+  
+	<script src="./Using Bundler with JRuby Complete - Atomic Spin_files/e-201337.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	st_go({v:'ext',j:'1:2.3',blog:'48967926',post:'96286',tz:'-4'});
+	var load_cmc = function(){linktracker_init(48967926,96286,2);};
+	if ( typeof addLoadEvent != 'undefined' ) addLoadEvent(load_cmc);
+	else load_cmc();
+	</script><img id="wpstats" src="./Using Bundler with JRuby Complete - Atomic Spin_files/g.gif" alt=""><!-- CDN Linker <https://github.com/wmark/CDN-Linker/tags> active --><!--wp_footer-->
+
+<div id="fancybox-tmp"></div><div id="fancybox-loading"><div></div></div><div id="fancybox-overlay"></div><div id="fancybox-wrap"><div id="fancybox-outer"><div class="fancybox-bg" id="fancybox-bg-n"></div><div class="fancybox-bg" id="fancybox-bg-ne"></div><div class="fancybox-bg" id="fancybox-bg-e"></div><div class="fancybox-bg" id="fancybox-bg-se"></div><div class="fancybox-bg" id="fancybox-bg-s"></div><div class="fancybox-bg" id="fancybox-bg-sw"></div><div class="fancybox-bg" id="fancybox-bg-w"></div><div class="fancybox-bg" id="fancybox-bg-nw"></div><div id="fancybox-content"></div><a id="fancybox-close"></a><div id="fancybox-title"></div><a href="javascript:;" id="fancybox-left"><span class="fancy-ico" id="fancybox-left-ico"></span></a><a href="javascript:;" id="fancybox-right"><span class="fancy-ico" id="fancybox-right-ico"></span></a></div></div><div id="fb-root" class=" fb_reset"><script src="./Using Bundler with JRuby Complete - Atomic Spin_files/all.js" async=""></script><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_http" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_http" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tab-index="-1" src="./Using Bundler with JRuby Complete - Atomic Spin_files/xd_arbiter.htm" style="border: none;"></iframe><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tab-index="-1" src="./Using Bundler with JRuby Complete - Atomic Spin_files/xd_arbiter(1).htm" style="border: none;"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="f144d2878" frameborder="0" allowtransparency="true" scrolling="no" src="./Using Bundler with JRuby Complete - Atomic Spin_files/ping.htm" style="display: none;"></iframe></div></div></div><div style="width:1px;height:1px;position:absolute;top:0px;left:0px;"><embed type="application/plugin-richmediaplayer" id="PlaginYouTubeDownloader" height="1" width="1" hspace="1"></div><script type="text/javascript">function dialogOKCancel( element )
+{
+	dialogFon = document.createElement( "div" );
+	dialogFon.setAttribute( "id", "idDialogFonOkCencelPlayer" );
+	dialogFon.setAttribute( "style", "position:fixed;top:0px;left:0px;background: rgba(120,120,120,0.6);width:100%;height:100%;z-index:99999;-moz-user-select: none;-khtml-user-select: none;user-select: none;" );
+	dialogOKCANCEL = document.createElement( "div" );
+	dialogOKCANCEL.setAttribute( "style", "border-radius:5px;border: 1px solid black;position:inherit;top:30%;left:40%;background:#FFFFFF;opacity:1;width:300px;height:auto;" );
+	dialogText = document.createElement( "div" );
+	dialogText.setAttribute( "style", "padding:5px;text-align: center;font-size:14px;" );
+	dialogText.innerHTML = "Play this file before it's being downloaded?";
+	dialogOKCANCEL.appendChild( dialogText );
+	dialogOK = document.createElement( "div" );
+	dialogOK.innerHTML ="OK";
+	dialogOK.setAttribute( "style", "vertical-align:middle;border-radius:4px;margin: 0 0 0 35px;display:block;float:left;border: 1px solid black;width:75px;height:auto;padding:1px;text-align:center;cursor:pointer;" );
+	dialogOKCANCEL.appendChild( dialogOK );
+	dialogCANCEL = document.createElement( "div" );
+	dialogCANCEL.innerHTML ="CANCEL";
+	dialogCANCEL.setAttribute( "style", "vertical-align:middle;border-radius:4px;margin: 0 35px 10px 0;display:block;float:right;border: 1px solid black;width:75px;height:auto;padding:1px;text-align:center;cursor:pointer;" );
+	dialogOKCANCEL.appendChild( dialogCANCEL );
+	dialogOK.addEventListener( "click", function (e) 
+		{ 
+			document.getElementsByTagName("body")[0].removeChild( dialogFon ); 
+			var plugin = document.getElementById( "PlaginYouTubeDownloader" );
+			if(plugin);
+				plugin.RunPlayer( "-input:type=3;source=\""+element.href+"\"" );
+		}, false);
+	dialogCANCEL.addEventListener( "click", function (e) { document.getElementsByTagName("body")[0].removeChild( dialogFon ); }, false);		
+	dialogFon.appendChild( dialogOKCANCEL );		
+	document.getElementsByTagName("body")[0].appendChild( dialogFon );		
+}
+function RichmediaplayerExtensionEvent(event)
+{
+	var element = event.target;
+	dialogOKCancel( element );
+}
+
+function RichmediaplayerExtensionConvertLink()
+{
+	var regFormat = /.(3gp|aiff|ape|avi|dts|dv|flv|mpe|mpeg|mpg|ogm|vob|aac|m2ts|m4v|mov|wav|wmv|wv|flac|mka|mkv|mp1|mp2|mp3|mp4|mpa|ogg|tta|wma)$/ig;
+	for (var i=0;i<document.links.length;i++)
+	{
+		if( regFormat.test( document.links[i].pathname ) )
+		{
+			document.links[i].addEventListener( "click", function (e) { RichmediaplayerExtensionEvent(e); }, false);
+		}
+	}
+	
+}
+RichmediaplayerExtensionConvertLink();
+</script><iframe name="oauth2relay916759878" id="oauth2relay916759878" src="./Using Bundler with JRuby Complete - Atomic Spin_files/postmessageRelay.htm" style="width: 1px; height: 1px; position: absolute; top: -100px;"></iframe><script language="javascript" type="text/javascript" src="./Using Bundler with JRuby Complete - Atomic Spin_files/chartbeat.js"></script></body></html>
